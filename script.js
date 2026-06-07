@@ -1,6 +1,32 @@
 // HAMPDEN COUNTY MESH NETWORK
 // Dispatch Console Effects
 
+// ---------------------------
+// RADIO SCANNER DISPLAY
+// ---------------------------
+
+const scanDisplay =
+    document.getElementById("scan-frequency");
+
+if (scanDisplay) {
+
+    let freq = 902.300;
+
+    setInterval(() => {
+
+        freq += (Math.random() * 0.6);
+
+        if (freq > 927.700) {
+            freq = 902.300;
+        }
+
+        scanDisplay.textContent =
+            freq.toFixed(3) + " MHz";
+
+    }, 120);
+
+}
+
 document.addEventListener("DOMContentLoaded", () => {
 
     // -----------------------------------
