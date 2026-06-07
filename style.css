@@ -619,3 +619,22 @@ footer{
 
     line-height:1.8;
 }
+.frequency-display{
+
+    transition:.2s;
+
+    text-shadow:
+        0 0 10px rgba(255,179,71,.7),
+        0 0 25px rgba(255,179,71,.25);
+
+}
+
+.frequency-display.locked{
+
+    color:var(--green);
+
+    text-shadow:
+        0 0 8px rgba(124,255,154,.8),
+        0 0 25px rgba(124,255,154,.4);
+
+}
