@@ -1,11 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Hampden County Mesh Network</title>
 
+    <meta name="description" content="Community-owned mesh networking, radio experimentation, and communications infrastructure across Hampden County, Massachusetts.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 
-<script src="script.js"></script>
+<body>
+
+    <div class="noise"></div>
+
+    <!-- HEADER -->
+
+    <header>
+        <div class="container">
+
+            <div class="brand">
+                <span class="brand-icon">📡</span>
+                <span>HAMPDEN COUNTY MESH NETWORK</span>
+            </div>
+
+            <nav>
+                <a href="#operations">Operations</a>
+                <a href="#coverage">Coverage</a>
+                <a href="#resources">Resources</a>
+                <a href="#community">Community</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-panel">
+
+            <div class="frequency-display">
+                915.000 MHz
+            </div>
+
+            <div class="status-line">
+                <span class="status-dot"></span>
+                COUNTY NETWORK STATUS: ONLINE
+            </div>
+
+            <h1>
+                HAMPDEN COUNTY<br>
+                MESH NETWORK
+            </h1>
+
+            <p class="hero-text">
+                Community-owned communications infrastructure,
+                radio experimentation, and mesh networking
+                throughout Hampden County.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a
+                    class="btn primary"
+                    href="https://discord.gg/TGsxp2q9v"
+                    target="_blank">
+                    Join Dispatch Channel
+                </a>
+
+                <a
+                    class="btn secondary"
+                    href="#coverage">
+                    View Coverage
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- TICKER -->
+
+    <section class="ticker-section">
+
+        <div class="ticker">
+            <div id="ticker-content">
+
+                COUNTY NETWORK ONLINE •
+                COMMUNITY OWNED INFRASTRUCTURE •
+                NEW NODE DEPLOYMENTS WELCOME •
+                MESHCORE •
+                MESHTASTIC •
+                AMATEUR RADIO •
+                GMRS •
+                COVERAGE REPORTS ACCEPTED •
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- OPERATIONS -->
+
+    <section id="operations">
+
+        <div class="container">
+
+            <div class="section-heading">
+                COUNTY OPERATIONS BOARD
+            </div>
+
+            <div class="dashboard-grid">
+
+                <div class="dashboard-card">
+                    <h3>NETWORK STATUS</h3>
+                    <div class="value online">ONLINE</div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>ACTIVE NODES</h3>
+                    <div id="nodes-count" class="value">
+                        27
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>GATEWAYS</h3>
+                    <div id="gateway-count" class="value">
+                        4
+                    </div>
+                </div>
+
+                <div class="dashboard-card">
+                    <h3>LAST HEARD</h3>
+                    <div id="last-heard" class="value">
+                        12 SEC
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SIGNAL METER -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-heading">
+                SIGNAL ACTIVITY
+            </div>
+
+            <div class="signal-meter">
+
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- COVERAGE -->
+
+    <section id="coverage">
+
+        <div class="container">
+
+            <div class="section-heading">
+                COUNTY COVERAGE OVERVIEW
+            </div>
+
+            <div class="map-panel">
+
+                <div class="map-grid"></div>
+
+                <div class="map-overlay">
+
+                    <h2>HAMPDEN COUNTY</h2>
+
+                    <p>
+                        Future home of the live node map,
+                        coverage reports, gateways,
+                        and network infrastructure.
+                    </p>
+
+                    <p>
+                        This section will later integrate
+                        MeshCore and Meshtastic data.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- COMMUNICATIONS LOG -->
+
+    <section>
+
+        <div class="container">
+
+            <div class="section-heading">
+                COMMUNICATIONS LOG
+            </div>
+
+            <div class="log-panel">
+
+                <ul id="dispatch-log">
+
+                    <li>07:14 — Gateway online</li>
+                    <li>07:31 — Coverage report received</li>
+                    <li>08:02 — New operator joined</li>
+                    <li>08:18 — Telemetry updated</li>
+                    <li>08:42 — Node check completed</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- RESOURCES -->
+
+    <section id="resources">
+
+        <div class="container">
+
+            <div class="section-heading">
+                RESOURCE CENTER
+            </div>
+
+            <div class="resource-grid">
+
+                <div class="resource-card">
+                    <h3>MeshCore</h3>
+                    <p>
+                        Documentation, setup guides,
+                        and local deployment information.
+                    </p>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Meshtastic</h3>
+                    <p>
+                        Device configuration,
+                        mapping, and node management.
+                    </p>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Radio Operations</h3>
+                    <p>
+                        Amateur radio, GMRS,
+                        propagation, and field operations.
+                    </p>
+                </div>
+
+                <div class="resource-card">
+                    <h3>Infrastructure</h3>
+                    <p>
+                        Antennas, power systems,
+                        mounting, and network expansion.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- COMMUNITY -->
+
+    <section id="community">
+
+        <div class="container">
+
+            <div class="community-panel">
+
+                <div class="section-heading">
+                    COMMUNITY DISPATCH
+                </div>
+
+                <p>
+                    Join the county network, coordinate tests,
+                    share coverage reports, and help expand
+                    community-owned communications.
+                </p>
+
+                <a
+                    class="btn primary large"
+                    href="https://discord.gg/TGsxp2q9v"
+                    target="_blank">
+
+                    Join Discord
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-title">
+                HAMPDEN COUNTY MESH NETWORK
+            </div>
+
+            <div class="footer-subtitle">
+                MeshCore • Meshtastic • Amateur Radio • GMRS
+            </div>
+
+            <div class="footer-subtitle">
+                Community-Owned Communications Infrastructure
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="script.js"></script>
+
 </body>
+</html>
