@@ -585,3 +585,37 @@ footer{
         padding:2rem;
     }
 }
+
+/* NET INFO CARD */
+
+.net-info-card{
+    margin-top:1.5rem;
+
+    background:rgba(255,179,71,.05);
+
+    border:1px solid rgba(255,179,71,.25);
+
+    border-left:4px solid var(--amber);
+
+    border-radius:10px;
+
+    padding:1rem;
+}
+
+.net-info-title{
+    font-family:'Special Elite',cursive;
+
+    color:var(--amber);
+
+    margin-bottom:.75rem;
+}
+
+.freq-list{
+    margin-top:1rem;
+
+    font-family:monospace;
+
+    color:var(--green);
+
+    line-height:1.8;
+}
