@@ -1,0 +1,28 @@
+name: Node Deployment Proposal
+description: Propose a new node deployment or infrastructure location.
+title: "[NODE] "
+labels:
+  - deployment
+
+body:
+  - type: input
+    id: location
+    attributes:
+      label: General Location
+      description: City, town, or landmark.
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Proposal Details
+      description: Describe the deployment and expected benefits.
+
+  - type: textarea
+    id: equipment
+    attributes:
+      label: Proposed Equipment
+
+  - type: textarea
+    id: goals
+    attributes:
+      label: Coverage Goals
