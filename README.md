@@ -66,3 +66,11 @@ https://hampdencountymesh.github.io/
 Community participation is welcome.
 
 If you're interested in mesh networking, radio communications, infrastructure development, mapping, or testing, join the community and help expand the network.
+
+## Why Hampden County Mesh?
+
+Modern communications increasingly depend on centralized infrastructure.
+
+Hampden County Mesh explores decentralized alternatives using open-source hardware, LoRa radio technologies, and community-owned infrastructure.
+
+The project exists to encourage experimentation, education, resiliency, and regional collaboration.
