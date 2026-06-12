@@ -1,0 +1,25 @@
+name: Community Issue
+description: Report an issue involving community resources.
+title: "[COMMUNITY] "
+labels:
+  - community
+
+body:
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Discord
+        - Website
+        - GitHub
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: Description
+    validations:
+      required: true
