@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Infrastructure | Hampden County Mesh Network</title>
+
+<meta name="description" content="Infrastructure supporting the Hampden County Mesh Network.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+<header>
+    <div class="container">
+
+        <div class="brand">
+            <span class="brand-icon">📡</span>
+            <span>HAMPDEN COUNTY MESH NETWORK</span>
+        </div>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="getting-started.html">Getting Started</a>
+    <a href="infrastructure.html">Infrastructure</a>
+    <a href="radio-reference.html">Radio Reference</a>
+</nav>
+
+    </div>
+</header>
+
+<section class="hero">
+
+    <div class="hero-panel">
+
+        <div class="frequency-display">
+            INFRASTRUCTURE
+        </div>
+
+        <div class="status-line">
+            <span class="status-dot"></span>
+            NETWORK SYSTEMS
+        </div>
+
+        <h1>
+            NETWORK<br>
+            INFRASTRUCTURE
+        </h1>
+
+        <p class="hero-text">
+            The Hampden County Mesh Network is supported by
+            community-operated infrastructure designed to improve
+            network visibility, coverage, monitoring, and future services.
+        </p>
+
+    </div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-heading">
+INFRASTRUCTURE OVERVIEW
+</div>
+
+<div class="community-panel">
+
+<p>
+The Hampden County Mesh Network is supported by a growing
+collection of infrastructure dedicated to communications,
+monitoring, experimentation, and future network services.
+</p>
+
+<p>
+These systems form the foundation of current operations
+and provide a platform for future expansion.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-heading">
+CURRENT SYSTEMS
+</div>
+
+<div class="resource-grid">
+
+<div class="resource-card">
+
+<h3>Hampden Room Observer</h3>
+
+<p>
+The Hampden Room Observer monitors network activity
+and supports future mapping, analytics,
+and monitoring initiatives.
+</p>
+
+</div>
+
+<div class="resource-card">
+
+<h3>MeshCore-Hub</h3>
+
+<p>
+The MeshCore-Hub provides logging,
+MQTT experimentation, infrastructure development,
+and future service hosting.
+</p>
+
+</div>
+
+<div class="resource-card">
+
+<h3>Fixed Infrastructure</h3>
+
+<p>
+Outdoor infrastructure supports coverage expansion,
+field testing, and long-term network deployment
+through solar-powered field installations.
+</p>
+
+</div>
+
+<div class="resource-card">
+
+<h3>Monitoring & Analytics</h3>
+
+<p>
+Network logs, MQTT services, and future analytics
+tools help improve visibility into network activity
+and infrastructure health.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-heading">
+CURRENT STATUS
+</div>
+
+<div class="community-panel">
+
+<p>
+Observer systems, MQTT services,
+and network monitoring infrastructure
+are currently operational.
+</p>
+
+<p>
+Infrastructure testing and development
+continue as the project expands.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-heading">
+PLANNED INFRASTRUCTURE
+</div>
+
+<div class="community-panel">
+
+<ul>
+<li>Additional fixed nodes</li>
+<li>Expanded monitoring systems</li>
+<li>Coverage mapping tools</li>
+<li>Discord integrations</li>
+<li>Infrastructure status dashboard</li>
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<div class="footer-title">
+HAMPDEN COUNTY MESH NETWORK
+</div>
+
+<div class="footer-subtitle">
+Community-Owned Communications Infrastructure
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
