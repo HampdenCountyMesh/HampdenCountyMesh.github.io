@@ -1,0 +1,23 @@
+name: Documentation Improvement
+description: Suggest improvements to project documentation.
+title: "[DOCS] "
+labels:
+  - documentation
+
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Document or Page
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: What needs improvement?
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested Change
