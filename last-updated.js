@@ -12,7 +12,6 @@ fetch('https://api.github.com/repos/HampdenCountyMesh/HampdenCountyMesh.github.i
         minute: '2-digit'
       });
   })
-  .catch(error => {
-    console.error(error);
+  .catch(() => {
     document.getElementById('last-updated').textContent = 'Unavailable';
   });
