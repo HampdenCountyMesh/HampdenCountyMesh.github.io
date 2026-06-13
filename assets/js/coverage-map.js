@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", async () => {
     const mapElement = document.getElementById("hcmn-map");
+    const statsElement = document.getElementById("hcmn-map-stats");
 
     if (!mapElement) {
         return;
     }
-
-    const statsElement = document.getElementById("hcmn-map-stats");
 
     const map = L.map("hcmn-map", {
         scrollWheelZoom: false
@@ -21,22 +20,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     const coverageTestLayer = L.layerGroup().addTo(map);
 
     try {
-        const [countyResponse, nodesResponse, statusResponse] = await Promise.all([
-            fetch("data/coverage/hampden-county.geojson"),
-            fetch("data/nodes.json"),
-            fetch("data/status.json")
-        ]);
+        const countyResponse = await fetch("data/coverage/hampden-county.geojson");
+        const nodesResponse = await fetch("data/nodes.json");
+        const statusResponse = await fetch("data/status.json");
 
-        if (!countyResponse.ok) {
-            throw new Error("Could not load Hampden County GeoJSON.");
-        }
-
-        if (!nodesResponse.ok) {
-            throw new Error("Could not load nodes.json.");
-        }
-
-        if (!statusResponse.ok) {
-            throw new Error("Could not load status.json.");
+        if (!countyResponse.ok || !nodesResponse.ok || !statusResponse.ok) {
+            throw new Error("One or more map data files could not be loaded.");
         }
 
         const countyGeojson = await countyResponse.json();
@@ -57,13 +46,32 @@ document.addEventListener("DOMContentLoaded", async () => {
             padding: [20, 20]
         });
 
-        const infrastructure = getInfrastructure(nodeData);
-        const observedTraffic = getObservedTraffic(nodeData);
-        const coverageTests = getCoverageTests(nodeData);
+        const infrastructure = Array.isArray(nodeData.infrastructure)
+            ? nodeData.infrastructure
+            : [];
 
-        addInfrastructureMarkers(infrastructure, infrastructureLayer);
-        addObservedTrafficMarkers(observedTraffic, observedTrafficLayer);
-        addCoverageTestMarkers(coverageTests, coverageTestLayer);
+        const observedTraffic = Array.isArray(nodeData.observed_traffic)
+            ? nodeData.observed_traffic
+            : [];
+
+        const coverageTests = Array.isArray(nodeData.coverage_tests)
+            ? nodeData.coverage_tests
+            : [];
+
+        addMarkers(infrastructure, infrastructureLayer, {
+            layerName: "Project Infrastructure",
+            color: "#ffb347"
+        });
+
+        addMarkers(observedTraffic, observedTrafficLayer, {
+            layerName: "Observed MeshCore Traffic",
+            color: "#7cff9a"
+        });
+
+        addMarkers(coverageTests, coverageTestLayer, {
+            layerName: "Field-Tested Coverage",
+            color: "#ffd27a"
+        });
 
         L.control.layers(
             null,
@@ -77,18 +85,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
         ).addTo(map);
 
-        const mappedItemCount =
-            countMappedItems(infrastructure) +
-            countMappedItems(observedTraffic) +
-            countMappedItems(coverageTests);
-
-        if (mappedItemCount === 0) {
-            addMapNotice(
-                map,
-                "No public-safe node coordinates are currently published. The county boundary and activity statistics are still loaded below."
-            );
-        }
-
         updateStats({
             infrastructure,
             observedTraffic,
@@ -96,50 +92,33 @@ document.addEventListener("DOMContentLoaded", async () => {
             nodeData,
             statusData
         });
+
+        const totalMapped =
+            countMappedItems(infrastructure) +
+            countMappedItems(observedTraffic) +
+            countMappedItems(coverageTests);
+
+        if (totalMapped === 0) {
+            addMapNotice(
+                map,
+                "No public-safe node coordinates are currently published. The county boundary and activity statistics are loaded below."
+            );
+        }
     } catch (error) {
-        console.error("Map data could not be loaded:", error);
+        console.error("Coverage map error:", error);
 
         if (statsElement) {
             statsElement.innerHTML = `
                 <div class="status-note">
                     <strong>Status:</strong> Map data could not be loaded.<br>
-                    Check that the following files exist in the correct folders:<br>
-                    <code>data/coverage/hampden-county.geojson</code><br>
-                    <code>data/nodes.json</code><br>
-                    <code>data/status.json</code>
+                    Check <code>data/coverage/hampden-county.geojson</code>,
+                    <code>data/nodes.json</code>, and
+                    <code>data/status.json</code>.
                 </div>
             `;
         }
     }
 });
-
-function getInfrastructure(nodeData) {
-    if (Array.isArray(nodeData.infrastructure)) {
-        return nodeData.infrastructure;
-    }
-
-    if (Array.isArray(nodeData.nodes)) {
-        return nodeData.nodes;
-    }
-
-    return [];
-}
-
-function getObservedTraffic(nodeData) {
-    if (Array.isArray(nodeData.observed_traffic)) {
-        return nodeData.observed_traffic;
-    }
-
-    return [];
-}
-
-function getCoverageTests(nodeData) {
-    if (Array.isArray(nodeData.coverage_tests)) {
-        return nodeData.coverage_tests;
-    }
-
-    return [];
-}
 
 function hasPublicCoordinates(item) {
     return (
@@ -154,7 +133,7 @@ function countMappedItems(items) {
     return items.filter(hasPublicCoordinates).length;
 }
 
-function addInfrastructureMarkers(items, layerGroup) {
+function addMarkers(items, layerGroup, options) {
     items.forEach((item) => {
         if (!hasPublicCoordinates(item)) {
             return;
@@ -162,111 +141,32 @@ function addInfrastructureMarkers(items, layerGroup) {
 
         const marker = L.circleMarker([item.latitude, item.longitude], {
             radius: 8,
-            color: "#ffb347",
+            color: options.color,
             weight: 2,
-            fillColor: "#ffb347",
-            fillOpacity: 0.8
-        }).addTo(layerGroup);
-
-        marker.bindPopup(`
-            <strong>${escapeHtml(item.name || "Infrastructure Node")}</strong><br>
-            Layer: Project Infrastructure<br>
-            Role: ${escapeHtml(item.role || "Unknown")}<br>
-            Device: ${escapeHtml(item.device || "Unknown")}<br>
-            Status: ${escapeHtml(item.status || "Unknown")}<br>
-            Location: ${escapeHtml(item.location_label || "Generalized / not specified")}<br>
-            Accuracy: ${escapeHtml(item.location_accuracy || "Unknown")}
-        `);
-    });
-}
-
-function addObservedTrafficMarkers(items, layerGroup) {
-    items.forEach((item) => {
-        if (!hasPublicCoordinates(item)) {
-            return;
-        }
-
-        const marker = L.circleMarker([item.latitude, item.longitude], {
-            radius: 7,
-            color: "#7cff9a",
-            weight: 2,
-            fillColor: "#7cff9a",
+            fillColor: options.color,
             fillOpacity: 0.75
         }).addTo(layerGroup);
 
         marker.bindPopup(`
-            <strong>${escapeHtml(item.name || item.node_name || "Observed MeshCore Traffic")}</strong><br>
-            Layer: Observed MeshCore Traffic<br>
-            Last seen: ${escapeHtml(item.last_seen || "Unknown")}<br>
-            Heard by: ${escapeHtml(item.heard_by || "Unknown")}<br>
-            RSSI: ${escapeHtml(formatOptionalValue(item.rssi))}<br>
-            SNR: ${escapeHtml(formatOptionalValue(item.snr))}<br>
-            Location source: ${escapeHtml(item.location_source || "Unknown")}<br>
-            Accuracy: ${escapeHtml(item.location_accuracy || "Unknown")}
-        `);
-    });
-}
-
-function addCoverageTestMarkers(items, layerGroup) {
-    items.forEach((item) => {
-        if (!hasPublicCoordinates(item)) {
-            return;
-        }
-
-        const marker = L.circleMarker([item.latitude, item.longitude], {
-            radius: 7,
-            color: "#ffd27a",
-            weight: 2,
-            fillColor: "#ffd27a",
-            fillOpacity: 0.65
-        }).addTo(layerGroup);
-
-        marker.bindPopup(`
-            <strong>${escapeHtml(item.name || "Coverage Test")}</strong><br>
-            Layer: Field-Tested Coverage<br>
-            Test date: ${escapeHtml(item.test_date || "Unknown")}<br>
-            Result: ${escapeHtml(item.result || "Unknown")}<br>
-            Tested with: ${escapeHtml(item.tested_with || "Unknown")}<br>
+            <strong>${escapeHtml(item.name || item.node_name || item.id || "Map Point")}</strong><br>
+            Layer: ${escapeHtml(options.layerName)}<br>
+            Role: ${escapeHtml(item.role || "Not specified")}<br>
+            Status: ${escapeHtml(item.status || item.result || "Unknown")}<br>
             Location: ${escapeHtml(item.location_label || "Generalized / not specified")}<br>
+            Accuracy: ${escapeHtml(item.location_accuracy || "Unknown")}<br>
             Notes: ${escapeHtml(item.notes || "No notes provided.")}
         `);
 
         if (Number.isFinite(item.radius_meters) && item.radius_meters > 0) {
             L.circle([item.latitude, item.longitude], {
                 radius: item.radius_meters,
-                color: "#ffd27a",
+                color: options.color,
                 weight: 1,
-                fillColor: "#ffd27a",
+                fillColor: options.color,
                 fillOpacity: 0.08
             }).addTo(layerGroup);
         }
     });
-}
-
-function addMapNotice(map, message) {
-    const notice = L.control({
-        position: "bottomleft"
-    });
-
-    notice.onAdd = function () {
-        const div = L.DomUtil.create("div", "hcmn-map-notice");
-
-        div.innerHTML = escapeHtml(message);
-
-        div.style.maxWidth = "320px";
-        div.style.padding = "0.75rem";
-        div.style.background = "rgba(15, 13, 10, 0.9)";
-        div.style.color = "#efe3c2";
-        div.style.border = "1px solid rgba(255, 179, 71, 0.35)";
-        div.style.borderRadius = "10px";
-        div.style.fontSize = "0.85rem";
-        div.style.lineHeight = "1.4";
-        div.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.35)";
-
-        return div;
-    };
-
-    notice.addTo(map);
 }
 
 function updateStats(data) {
@@ -398,12 +298,30 @@ function renderItemList(items, emptyMessage) {
     `;
 }
 
-function formatOptionalValue(value) {
-    if (value === null || value === undefined || value === "") {
-        return "Unknown";
-    }
+function addMapNotice(map, message) {
+    const notice = L.control({
+        position: "bottomleft"
+    });
 
-    return String(value);
+    notice.onAdd = function () {
+        const div = L.DomUtil.create("div", "hcmn-map-notice");
+
+        div.innerHTML = escapeHtml(message);
+
+        div.style.maxWidth = "320px";
+        div.style.padding = "0.75rem";
+        div.style.background = "rgba(15, 13, 10, 0.9)";
+        div.style.color = "#efe3c2";
+        div.style.border = "1px solid rgba(255, 179, 71, 0.35)";
+        div.style.borderRadius = "10px";
+        div.style.fontSize = "0.85rem";
+        div.style.lineHeight = "1.4";
+        div.style.boxShadow = "0 8px 20px rgba(0, 0, 0, 0.35)";
+
+        return div;
+    };
+
+    notice.addTo(map);
 }
 
 function escapeHtml(value) {
