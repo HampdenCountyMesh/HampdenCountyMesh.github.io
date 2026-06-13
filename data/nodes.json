@@ -1,9 +1,28 @@
 {
+  "schema_version": "2026-06-13-activity-map-v1",
   "last_updated": "2026-06-13",
-  "region_alignment": "BDL / Windsor Locks MeshMapper region",
+  "map_title": "Mesh Activity & Coverage",
   "county": "Hampden County, Massachusetts",
-  "nodes": [
+  "region_alignment": "BDL / Windsor Locks MeshMapper region",
+  "location_privacy_note": "Public map coordinates are intentionally generalized or omitted. Map points should not be treated as exact node locations.",
+  "data_note": "This file separates project infrastructure, observed MeshCore traffic, and field-tested coverage. Observed activity is not the same thing as guaranteed coverage.",
+  "layers": {
+    "infrastructure": {
+      "label": "Project Infrastructure",
+      "description": "Nodes and systems intentionally documented by Hampden County Mesh."
+    },
+    "observed_traffic": {
+      "label": "Observed MeshCore Traffic",
+      "description": "MeshCore activity seen through logs, observers, MQTT, analyzer data, or community reports."
+    },
+    "coverage_tests": {
+      "label": "Field-Tested Coverage",
+      "description": "Areas where operators have intentionally tested send, receive, or routing behavior."
+    }
+  },
+  "infrastructure": [
     {
+      "id": "hampden-room-observer",
       "name": "Hampden Room Observer",
       "device": "Heltec V3 ESP32-S3",
       "role": "observer",
@@ -14,9 +33,12 @@
       "location_label": "Hampden County, MA",
       "latitude": null,
       "longitude": null,
-      "notes": "Indoor observer connected through the MeshCore hub infrastructure. Used for logging, MQTT testing, and future status reporting."
+      "show_on_public_map": false,
+      "location_accuracy": "not_published",
+      "notes": "Indoor observer connected through the MeshCore hub infrastructure. Used for logging, MQTT testing, and future status reporting. Exact public location is not published."
     },
     {
+      "id": "hampden-county-tree-node",
       "name": "HampdenCountyTreeNode",
       "device": "SEEED SenseCAP Solar Node P1-Pro",
       "role": "repeater",
@@ -24,12 +46,15 @@
       "fixed": true,
       "public_id": "",
       "public_key": "334a8314d576e063c5dda5d1cb08636652078ee3953aaefa87aa5eb392a0d9e1",
-      "location_label": "Hampden County, MA",
+      "location_label": "Western Hampden County, MA",
       "latitude": null,
       "longitude": null,
-      "notes": "Outdoor solar repeater mounted approximately 20–30 feet up in a tree."
+      "show_on_public_map": false,
+      "location_accuracy": "not_published",
+      "notes": "Outdoor solar repeater mounted approximately 20–30 feet up in a tree. Exact public location is not published."
     },
     {
+      "id": "cassiopeia",
       "name": "Cassiopeia",
       "device": "SEEED Wio Tracker L1 Pro",
       "role": "companion",
@@ -37,10 +62,14 @@
       "fixed": false,
       "public_id": "",
       "public_key": "",
-      "location_label": "Portable",
+      "location_label": "Portable / mobile",
       "latitude": null,
       "longitude": null,
-      "notes": "Portable companion node and owner device for observer configuration."
+      "show_on_public_map": false,
+      "location_accuracy": "mobile_not_mapped",
+      "notes": "Portable companion node and owner device for observer configuration. Not shown on the public coverage map because it is mobile."
     }
-  ]
+  ],
+  "observed_traffic": [],
+  "coverage_tests": []
 }
