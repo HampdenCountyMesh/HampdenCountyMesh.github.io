@@ -1,0 +1,10 @@
+{
+  "last_updated": "2026-06-13",
+  "network_status": "building",
+  "observer_status": "operational",
+  "mqtt_status": "testing",
+  "meshmapper_region": "BDL / Windsor Locks",
+  "local_broker": "installed",
+  "public_live_data": false,
+  "notes": "Hampden County Mesh is building local infrastructure. Current public statistics are manually maintained until automated observer and MQTT reporting are ready."
+}
