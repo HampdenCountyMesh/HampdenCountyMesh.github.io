@@ -152,9 +152,19 @@ nav a:hover{
 
     margin-bottom:1rem;
 
+    transition:.2s;
+
     text-shadow:
         0 0 10px rgba(255,179,71,.7),
         0 0 25px rgba(255,179,71,.25);
+}
+
+.frequency-display.locked{
+    color:var(--green);
+
+    text-shadow:
+        0 0 8px rgba(124,255,154,.8),
+        0 0 25px rgba(124,255,154,.4);
 }
 
 .status-line{
@@ -420,6 +430,120 @@ section{
     color:var(--muted);
 }
 
+/* HAMPDEN COUNTY LIVE MAP */
+
+.hcmn-map{
+    width:100%;
+    min-height:480px;
+
+    border:1px solid rgba(255,179,71,.35);
+    border-radius:18px;
+
+    overflow:hidden;
+
+    background:var(--panel);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.35),
+        inset 0 0 40px rgba(255,179,71,.04);
+
+    margin:1.5rem 0;
+}
+
+.hcmn-map .leaflet-container{
+    font-family:'Inter',sans-serif;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip{
+    background:var(--panel);
+    color:var(--cream);
+    border:1px solid var(--border);
+}
+
+.leaflet-popup-content{
+    color:var(--cream);
+    line-height:1.5;
+}
+
+.leaflet-popup-content strong{
+    color:var(--amber);
+}
+
+.leaflet-control-attribution{
+    background:rgba(15,13,10,.82) !important;
+    color:var(--muted) !important;
+}
+
+.leaflet-control-attribution a{
+    color:var(--amber) !important;
+}
+
+/* MAP STATS */
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+    gap:1rem;
+    margin-top:1.5rem;
+}
+
+.stat-card{
+    background:var(--panel);
+
+    border:1px solid rgba(255,179,71,.25);
+
+    border-radius:14px;
+
+    padding:1.2rem;
+
+    text-align:center;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.22);
+}
+
+.stat-number{
+    display:block;
+
+    font-size:2rem;
+    font-weight:800;
+
+    color:var(--amber);
+
+    line-height:1;
+}
+
+.stat-label{
+    display:block;
+
+    margin-top:.5rem;
+
+    color:var(--muted);
+
+    font-size:.9rem;
+}
+
+.status-note{
+    grid-column:1 / -1;
+
+    background:rgba(255,179,71,.05);
+
+    border:1px solid rgba(255,179,71,.25);
+    border-left:4px solid var(--amber);
+
+    border-radius:10px;
+
+    padding:1rem;
+
+    color:var(--muted);
+
+    line-height:1.7;
+}
+
+.status-note strong{
+    color:var(--cream);
+}
+
 /* LOG PANEL */
 
 .log-panel{
@@ -499,6 +623,40 @@ section{
     margin:0 auto 1.5rem auto;
 
     color:var(--muted);
+}
+
+/* NET INFO CARD */
+
+.net-info-card{
+    margin-top:1.5rem;
+
+    background:rgba(255,179,71,.05);
+
+    border:1px solid rgba(255,179,71,.25);
+
+    border-left:4px solid var(--amber);
+
+    border-radius:10px;
+
+    padding:1rem;
+}
+
+.net-info-title{
+    font-family:'Special Elite',cursive;
+
+    color:var(--amber);
+
+    margin-bottom:.75rem;
+}
+
+.freq-list{
+    margin-top:1rem;
+
+    font-family:monospace;
+
+    color:var(--green);
+
+    line-height:1.8;
 }
 
 /* FOOTER */
@@ -596,57 +754,20 @@ footer{
     .map-overlay{
         padding:2rem;
     }
-}
 
-/* NET INFO CARD */
+    .hcmn-map{
+        min-height:360px;
+    }
 
-.net-info-card{
-    margin-top:1.5rem;
+    .community-panel{
+        padding:2rem;
+    }
 
-    background:rgba(255,179,71,.05);
+    .stat-card{
+        padding:1rem;
+    }
 
-    border:1px solid rgba(255,179,71,.25);
-
-    border-left:4px solid var(--amber);
-
-    border-radius:10px;
-
-    padding:1rem;
-}
-
-.net-info-title{
-    font-family:'Special Elite',cursive;
-
-    color:var(--amber);
-
-    margin-bottom:.75rem;
-}
-
-.freq-list{
-    margin-top:1rem;
-
-    font-family:monospace;
-
-    color:var(--green);
-
-    line-height:1.8;
-}
-.frequency-display{
-
-    transition:.2s;
-
-    text-shadow:
-        0 0 10px rgba(255,179,71,.7),
-        0 0 25px rgba(255,179,71,.25);
-
-}
-
-.frequency-display.locked{
-
-    color:var(--green);
-
-    text-shadow:
-        0 0 8px rgba(124,255,154,.8),
-        0 0 25px rgba(124,255,154,.4);
-
+    .stat-number{
+        font-size:1.7rem;
+    }
 }
