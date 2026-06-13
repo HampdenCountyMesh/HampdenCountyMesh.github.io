@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>Coverage | Hampden County Mesh Network</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="Coverage information for the Hampden County Mesh Network.">
+    <title>Coverage | Hampden County Mesh Network</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta
+        name="description"
+        content="Coverage information, county boundary mapping, and documented infrastructure for the Hampden County Mesh Network."
+    >
 
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-/>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📡</text></svg>">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E"
+    >
 </head>
 
 <body>
@@ -28,7 +40,6 @@
 
 <header>
     <div class="container">
-
         <div class="brand">
             <span class="brand-icon">📡</span>
             <span>HAMPDEN COUNTY MESH NETWORK</span>
@@ -44,14 +55,11 @@
             <a href="roadmap.html">Roadmap</a>
             <a href="radio-reference.html">Radio Reference</a>
         </nav>
-
     </div>
 </header>
 
 <section class="hero">
-
     <div class="hero-panel">
-
         <div class="frequency-display">
             COVERAGE
         </div>
@@ -67,184 +75,228 @@
         </h1>
 
         <p class="hero-text">
-            Coverage testing, infrastructure deployment,
-            and mapping efforts throughout Hampden County
-            and Western Massachusetts.
+            Coverage testing, infrastructure deployment, and mapping efforts
+            throughout Hampden County and Western Massachusetts.
         </p>
-
     </div>
-
 </section>
 
 <section>
     <div class="container">
-
         <div class="section-heading">
             COVERAGE OVERVIEW
         </div>
 
         <div class="community-panel">
-
             <p>
-                Coverage mapping is an ongoing effort.
-                The network continues to expand as new
-                infrastructure and operators join the project.
+                Hampden County Mesh is building a county-focused view of local
+                mesh infrastructure, testing activity, and future coverage data.
             </p>
 
             <p>
-                Current coverage information is based on
-                known infrastructure locations and field testing.
+                Current public coverage information is based on documented
+                infrastructure, known node roles, and ongoing field testing.
+                Public node locations may be generalized for privacy and safety.
             </p>
-
         </div>
-
     </div>
-</section>
-    <section>
-  <div class="container">
-    <div class="section-heading">
-      HAMPDEN COUNTY MAP
-    </div>
-
-    <div class="community-panel">
-      <p>
-        This map shows the Hampden County boundary and documented Hampden County Mesh infrastructure.
-        Public node locations may be generalized for privacy and safety.
-      </p>
-    </div>
-
-    <div id="hcmn-map" class="hcmn-map"></div>
-
-    <div id="hcmn-map-stats" class="stats-grid">
-      <p>Loading map statistics...</p>
-    </div>
-  </div>
 </section>
 
 <section>
     <div class="container">
+        <div class="section-heading">
+            HAMPDEN COUNTY MAP
+        </div>
 
+        <div class="community-panel">
+            <p>
+                This map loads the Hampden County boundary from the project data
+                folder and uses the same node and status files that will support
+                future live infrastructure reporting.
+            </p>
+
+            <p>
+                The map is intentionally data-driven. As the project matures,
+                manually maintained JSON can be replaced or supplemented by
+                generated observer, MQTT, or logging data.
+            </p>
+        </div>
+
+        <div id="hcmn-map" class="hcmn-map"></div>
+
+        <div id="hcmn-map-stats" class="stats-grid">
+            <p>Loading map statistics...</p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
         <div class="section-heading">
             CURRENT INFRASTRUCTURE
         </div>
 
         <div class="resource-grid">
-
             <div class="resource-card">
                 <h3>Hampden Room Observer</h3>
+
                 <p>
-                    Network observation and monitoring.
+                    Indoor Heltec V3 observer used for MeshCore monitoring,
+                    logging, MQTT testing, and future status reporting.
                 </p>
             </div>
 
             <div class="resource-card">
                 <h3>MeshCore-Hub</h3>
+
                 <p>
-                    Infrastructure services and MQTT systems.
+                    Linux-based infrastructure host for local logging,
+                    MQTT services, documentation, and future automation.
                 </p>
             </div>
 
             <div class="resource-card">
                 <h3>HampdenCountyTreeNode</h3>
+
                 <p>
-                    SEEED SenseCAP Solar Node P1-Pro deployed
-                    as fixed outdoor infrastructure supporting
-                    coverage expansion and field testing.
+                    SEEED SenseCAP Solar Node P1-Pro deployed as fixed outdoor
+                    infrastructure supporting coverage expansion and field testing.
                 </p>
             </div>
 
             <div class="resource-card">
-                <h3>Community Nodes</h3>
+                <h3>Cassiopeia</h3>
+
                 <p>
-                    Additional operator-owned nodes are encouraged.
+                    SEEED Wio Tracker L1 Pro companion node used for portable
+                    testing and observer ownership/configuration.
                 </p>
             </div>
-
         </div>
-
     </div>
 </section>
 
 <section>
     <div class="container">
-
         <div class="section-heading">
             KNOWN COVERAGE
         </div>
 
         <div class="community-panel">
-
             <p>
-                Coverage is currently strongest near active
-                infrastructure and participating operators.
+                Coverage is currently strongest near active infrastructure,
+                participating operators, and areas where field testing has been
+                performed.
             </p>
 
             <p>
-                Additional testing and mapping efforts
-                are ongoing.
+                The public map is not yet a guarantee of real-time network
+                availability. It is a foundation for documenting infrastructure
+                and improving local coverage over time.
             </p>
-
         </div>
-
     </div>
 </section>
 
 <section>
     <div class="container">
+        <div class="section-heading">
+            REGIONAL ALIGNMENT
+        </div>
 
+        <div class="community-panel">
+            <p>
+                Hampden County Mesh is focused on local community building while
+                aligning with the existing BDL / Windsor Locks regional mapping
+                area where appropriate.
+            </p>
+
+            <p>
+                The goal is not to duplicate nearby communities, but to document
+                Hampden County activity clearly and make local participation
+                easier for new operators.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
         <div class="section-heading">
             PLANNED EXPANSION
         </div>
 
-        <div class="community-panel">
+        <div class="resource-grid">
+            <div class="resource-card">
+                <h3>Additional Fixed Nodes</h3>
 
-            <p>• Additional fixed nodes</p>
-            <p>• Coverage surveys</p>
-            <p>• Community testing events</p>
-            <p>• MeshMapper participation</p>
-            <p>• Future coverage visualization tools</p>
+                <p>
+                    Add more stable infrastructure locations as operators,
+                    sites, and equipment become available.
+                </p>
+            </div>
 
+            <div class="resource-card">
+                <h3>Coverage Surveys</h3>
+
+                <p>
+                    Use portable nodes, mobile testing, and logging to identify
+                    strong, weak, and untested areas.
+                </p>
+            </div>
+
+            <div class="resource-card">
+                <h3>Community Testing Events</h3>
+
+                <p>
+                    Organize practical testing days for newcomers, radio users,
+                    and mesh operators.
+                </p>
+            </div>
+
+            <div class="resource-card">
+                <h3>Live Data Integration</h3>
+
+                <p>
+                    Eventually connect observer, MQTT, and status data into the
+                    website without rebuilding the public map.
+                </p>
+            </div>
         </div>
-
     </div>
 </section>
 
 <section>
     <div class="container">
-
         <div class="section-heading">
             GET INVOLVED
         </div>
 
         <div class="community-panel">
-
             <p>
-                Interested in mesh networking, radio communications,
-                coverage testing, infrastructure deployment,
-                or simply learning more?
+                Interested in mesh networking, radio communications, coverage
+                testing, infrastructure deployment, or simply learning more?
             </p>
 
             <p>
-                Community participation is always welcome.
+                Community participation is welcome. You do not need to be an
+                expert to start learning or testing.
             </p>
 
             <a
                 class="btn primary large"
                 href="https://discord.gg/TGsxp2q9v"
                 target="_blank"
-                rel="noopener noreferrer">
+                rel="noopener noreferrer"
+            >
                 Join Discord
             </a>
-
         </div>
-
     </div>
 </section>
 
 <footer>
-
     <div class="container">
-
         <div class="footer-title">
             HAMPDEN COUNTY MESH NETWORK
         </div>
@@ -256,16 +308,12 @@
         <div class="footer-subtitle">
             Last Updated: <span id="last-updated">Loading...</span>
         </div>
-
     </div>
-
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="assets/js/coverage-map.js"></script>
 <script src="last-updated.js"></script>
-
-</body>
 
 </body>
 </html>
