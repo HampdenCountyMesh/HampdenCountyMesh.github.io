@@ -1,0 +1,46 @@
+{
+  "last_updated": "2026-06-13",
+  "region_alignment": "BDL / Windsor Locks MeshMapper region",
+  "county": "Hampden County, Massachusetts",
+  "nodes": [
+    {
+      "name": "Hampden Room Observer",
+      "device": "Heltec V3 ESP32-S3",
+      "role": "observer",
+      "status": "operational",
+      "fixed": true,
+      "public_id": "",
+      "public_key": "",
+      "location_label": "Hampden County, MA",
+      "latitude": null,
+      "longitude": null,
+      "notes": "Indoor observer connected through the MeshCore hub infrastructure. Used for logging, MQTT testing, and future status reporting."
+    },
+    {
+      "name": "HampdenCountyTreeNode",
+      "device": "SEEED SenseCAP Solar Node P1-Pro",
+      "role": "repeater",
+      "status": "operational",
+      "fixed": true,
+      "public_id": "",
+      "public_key": "334a8314d576e063c5dda5d1cb08636652078ee3953aaefa87aa5eb392a0d9e1",
+      "location_label": "Hampden County, MA",
+      "latitude": null,
+      "longitude": null,
+      "notes": "Outdoor solar repeater mounted approximately 20–30 feet up in a tree."
+    },
+    {
+      "name": "Cassiopeia",
+      "device": "SEEED Wio Tracker L1 Pro",
+      "role": "companion",
+      "status": "operational",
+      "fixed": false,
+      "public_id": "",
+      "public_key": "",
+      "location_label": "Portable",
+      "latitude": null,
+      "longitude": null,
+      "notes": "Portable companion node and owner device for observer configuration."
+    }
+  ]
+}
