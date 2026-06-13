@@ -6,7 +6,7 @@ This repository includes website source code, documentation, data files, and med
 
 Unless otherwise noted, photographs in `assets/images/` were taken by the Hampden County Mesh project maintainer and are used as project website assets.
 
-These photographs include, but are not limited to:
+Current project photographs include:
 
 - Mount Tom radio tower photographs
 - Mount Tom State Reservation sign photographs
@@ -19,6 +19,12 @@ Photographs and image assets in `assets/images/` are not automatically licensed 
 
 Please ask for permission before reusing, modifying, redistributing, or republishing project photographs or image assets.
 
+## Personal Images
+
+Some project photographs may include the project maintainer, their hands, their equipment, or personally owned devices.
+
+These images are included for project documentation and website presentation. They should not be reused in unrelated projects, advertisements, training material, social media posts, or derivative works without permission.
+
 ## Code and Documentation
 
 Source code, documentation, and non-photo project files are covered by the repository license unless otherwise noted.
@@ -26,3 +32,18 @@ Source code, documentation, and non-photo project files are covered by the repos
 ## Third-Party Assets
 
 Third-party logos, maps, fonts, icons, libraries, or external services remain the property of their respective owners and are subject to their own licenses and terms.
+
+This includes, but is not limited to:
+
+- OpenStreetMap map tiles and attribution
+- Leaflet
+- Google Fonts
+- GitHub Pages
+- External community links
+- Any referenced radio, mesh, or device projects
+
+## Contact
+
+For questions about asset reuse or permissions, contact:
+
+HampdenCountyMesh@protonmail.com
