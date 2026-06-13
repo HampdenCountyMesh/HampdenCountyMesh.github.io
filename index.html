@@ -2,34 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Hampden County Mesh Network</title>
 
-    <meta name="description" content="Community-owned mesh networking, radio experimentation, and communications infrastructure across Hampden County, Massachusetts.">
+    <meta
+        name="description"
+        content="Community-owned mesh networking, radio experimentation, and communications infrastructure across Hampden County, Massachusetts."
+    >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📡</text></svg>">
+
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E"
+    >
 </head>
 
 <body>
 
-    <div class="noise"></div>
+<div class="noise"></div>
 
-    <!-- HEADER -->
+<header>
+    <div class="container">
+        <div class="brand">
+            <span class="brand-icon">📡</span>
+            <span>HAMPDEN COUNTY MESH NETWORK</span>
+        </div>
 
-    <header>
-        <div class="container">
-
-            <div class="brand">
-                <span class="brand-icon">📡</span>
-                <span>HAMPDEN COUNTY MESH NETWORK</span>
-            </div>
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
@@ -40,203 +50,213 @@
             <a href="roadmap.html">Roadmap</a>
             <a href="radio-reference.html">Radio Reference</a>
         </nav>
+    </div>
+</header>
 
-
-        </div>
-    </header>
-
-    <!-- HERO -->
-
-    <section class="hero">
-
-        <div class="hero-panel">
-
-<div class="frequency-display">
-    WESTERN MASSACHUSETTS
-</div>
-
-            <div class="status-line">
-                <span class="status-dot"></span>
-                COUNTY NETWORK STATUS: ONLINE
-            </div>
-
-            <h1>
-                HAMPDEN COUNTY<br>
-                MESH NETWORK
-            </h1>
-
-            <p class="hero-text">
-                Community-owned communications infrastructure,
-                radio experimentation, and mesh networking
-                throughout Hampden County.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a
-                    class="btn primary"
-                    href="https://discord.gg/TGsxp2q9v"
-                    target="_blank">
-                    Join Dispatch Channel
-                </a>
-
-                <a
-                    class="btn secondary"
-                    href="#coverage">
-                    View Coverage
-                </a>
-
-            </div>
-
+<section class="hero">
+    <div class="hero-panel">
+        <div class="frequency-display">
+            WESTERN MASSACHUSETTS
         </div>
 
-    </section>
-
-    <!-- TICKER -->
-
-    <section class="ticker-section">
-
-        <div class="ticker">
-            <div id="ticker-content">
-
-                COUNTY NETWORK ONLINE •
-                COMMUNITY OWNED INFRASTRUCTURE •
-                NEW NODE DEPLOYMENTS WELCOME •
-                MESHCORE •
-                MESHTASTIC •
-                AMATEUR RADIO •
-                GMRS •
-                CB •
-                FRS •
-                MURS •
-                TWO CANS CONNECTED BY A BIT OF STRING •
-                COVERAGE REPORTS ACCEPTED •
-
-            </div>
+        <div class="status-line">
+            <span class="status-dot"></span>
+            CORE INFRASTRUCTURE ONLINE • NETWORK BUILDING
         </div>
 
-    </section>
-    
-    <!-- COVERAGE -->
+        <h1>
+            HAMPDEN COUNTY<br>
+            MESH NETWORK
+        </h1>
 
-    <section id="coverage">
+        <p class="hero-text">
+            Community-owned communications infrastructure, radio experimentation,
+            and mesh networking throughout Hampden County.
+        </p>
 
+        <div class="hero-buttons">
+            <a
+                class="btn primary"
+                href="https://discord.gg/TGsxp2q9v"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Join Dispatch Channel
+            </a>
+
+            <a
+                class="btn secondary"
+                href="coverage.html"
+            >
+                View Mesh Activity Map
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="ticker-section">
+    <div class="ticker">
+        <div id="ticker-content">
+            CORE INFRASTRUCTURE ONLINE •
+            NETWORK BUILDING •
+            PUBLIC LIVE DATA IN DEVELOPMENT •
+            COMMUNITY OWNED INFRASTRUCTURE •
+            NEW NODE DEPLOYMENTS WELCOME •
+            MESHCORE •
+            MESHTASTIC •
+            AMATEUR RADIO •
+            GMRS •
+            CB •
+            FRS •
+            MURS •
+            TWO CANS CONNECTED BY A BIT OF STRING •
+            COVERAGE REPORTS ACCEPTED •
+        </div>
+    </div>
+</section>
+
+<section id="coverage">
     <div class="container">
-
         <div class="section-heading">
-            NETWORK STATUS
+            PROJECT STATUS
         </div>
 
         <div class="map-panel">
-
             <div class="map-grid"></div>
 
             <div class="map-overlay">
-
-                <h2>ACTIVE INFRASTRUCTURE</h2>
+                <h2>CORE INFRASTRUCTURE ONLINE</h2>
 
                 <p>
-                    Hampden County Mesh currently operates
-                    a MeshCore Room Observer, a Linux-based
-                    Meshcore-Hub, and MQTT services supporting
-                    future analytics and mapping efforts.
+                    Hampden County Mesh currently operates documented project
+                    infrastructure including a MeshCore Room Observer,
+                    a Linux-based MeshCore-Hub, and local MQTT services.
                 </p>
 
                 <p>
-                    Additional observers, repeaters,
-                    coverage mapping, and community-hosted
-                    infrastructure are currently in development.
+                    The wider county network is still being built. Additional
+                    observers, repeaters, coverage testing, community-hosted
+                    infrastructure, and public live data tools are in development.
                 </p>
 
+                <a class="btn secondary" href="status.html">
+                    View Status
+                </a>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
-    <!-- RESOURCES -->
-
-  <div class="resource-card">
-    <h3>Getting Started</h3>
-    <p>
-        Learn what mesh networking is,
-        choose a device, and join the network.
-    </p>
-</div>
-
-<div class="resource-card">
-    <h3>Infrastructure</h3>
-    <p>
-        Current operational systems,
-        future deployments, and network goals.
-    </p>
-</div>
-
-<div class="resource-card">
-    <h3>Radio Reference</h3>
-    <p>
-        FRS, GMRS, MURS, CB,
-        Amateur Radio, MeshCore, and Meshtastic.
-    </p>
-</div>
-
-<div class="resource-card">
-    <h3>Community</h3>
-    <p>
-        Join local operators,
-        participate in testing,
-        and help expand coverage.
-    </p>
-</div>
-    <!-- COMMUNITY -->
-
-    <section id="community">
-
-        <div class="container">
-
-            <div class="community-panel">
-
-                <div class="section-heading">
-                    COMMUNITY DISCORD
-                </div>
-
-                <p>
-                    Join the county network, coordinate tests and nets,
-                    share coverage reports, and help expand
-                    infrastructure.
-                </p>
-
-                <a
-                    class="btn primary large"
-                    href="https://discord.gg/TGsxp2q9v"
-                    target="_blank">
-
-                    Join Discord
-
-                </a>
-
-            </div>
-
+<section>
+    <div class="container">
+        <div class="section-heading">
+            CURRENT FOCUS
         </div>
 
-    </section>
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <h3>CORE INFRASTRUCTURE</h3>
+                <div class="value online">ONLINE</div>
+            </div>
 
-    <section id="contact">
+            <div class="dashboard-card">
+                <h3>PUBLIC LIVE DATA</h3>
+                <div class="value">DEV</div>
+            </div>
 
+            <div class="dashboard-card">
+                <h3>COUNTY NETWORK</h3>
+                <div class="value">BUILDING</div>
+            </div>
+
+            <div class="dashboard-card">
+                <h3>COMMUNITY</h3>
+                <div class="value">OPEN</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
     <div class="container">
+        <div class="section-heading">
+            RESOURCES
+        </div>
 
+        <div class="resource-grid">
+            <div class="resource-card">
+                <h3>Getting Started</h3>
+
+                <p>
+                    Learn what mesh networking is, choose a device,
+                    and join the network.
+                </p>
+            </div>
+
+            <div class="resource-card">
+                <h3>Infrastructure</h3>
+
+                <p>
+                    Current operational systems, future deployments,
+                    and network goals.
+                </p>
+            </div>
+
+            <div class="resource-card">
+                <h3>Radio Reference</h3>
+
+                <p>
+                    FRS, GMRS, MURS, CB, Amateur Radio, MeshCore,
+                    and Meshtastic.
+                </p>
+            </div>
+
+            <div class="resource-card">
+                <h3>Community</h3>
+
+                <p>
+                    Join local operators, participate in testing,
+                    and help expand coverage.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="community">
+    <div class="container">
         <div class="community-panel">
+            <div class="section-heading">
+                COMMUNITY DISCORD
+            </div>
 
+            <p>
+                Join the county network, coordinate tests and nets,
+                share coverage reports, and help expand infrastructure.
+            </p>
+
+            <a
+                class="btn primary large"
+                href="https://discord.gg/TGsxp2q9v"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Join Discord
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="community-panel">
             <div class="section-heading">
                 CONTACT
             </div>
 
             <p>
-                Questions, collaboration opportunities,
-                coverage reports, infrastructure discussions,
-                or community partnerships?
+                Questions, collaboration opportunities, coverage reports,
+                infrastructure discussions, or community partnerships?
             </p>
 
             <p>
@@ -244,41 +264,31 @@
             </p>
 
             <p>
-                We welcome radio operators, mesh enthusiasts,
-                educators, makers, and organizations interested
-                in helping expand resilient local communications.
+                We welcome radio operators, mesh enthusiasts, educators,
+                makers, and organizations interested in helping expand
+                resilient local communications.
             </p>
-
         </div>
-
     </div>
-
 </section>
 
-    <!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-title">
+            HAMPDEN COUNTY MESH NETWORK
+        </div>
 
-  <footer>
+        <div class="footer-subtitle">
+            Community-Owned Communications Infrastructure
+        </div>
 
-<div class="container">
-
-<div class="footer-title">
-HAMPDEN COUNTY MESH NETWORK
-</div>
-
-<div class="footer-subtitle">
-Community-Owned Communications Infrastructure
-</div>
-
-<div class="footer-subtitle">
-Last Updated: <span id="last-updated">Loading...</span>
-</div>
-
-</div>
-
+        <div class="footer-subtitle">
+            Last Updated: <span id="last-updated">Loading...</span>
+        </div>
+    </div>
 </footer>
 
- <script src="last-updated.js"></script>
-
+<script src="last-updated.js"></script>
 
 </body>
 </html>
