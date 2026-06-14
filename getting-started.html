@@ -1,21 +1,36 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>Getting Started | Hampden County Mesh Network</title>
+    <meta http-equiv="refresh" content="0; url=guides/getting-started.html">
 
-<meta name="description" content="Learn how to get started with MeshCore, Meshtastic, and the Hampden County Mesh Network.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Getting Started Moved | Hampden County Mesh Network</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta
+        name="description"
+        content="The Getting Started guide has moved to the Hampden County Mesh Network Guides section."
+    >
 
-<link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📡</text></svg>">
+    <link rel="canonical" href="guides/getting-started.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E"
+    >
 </head>
 
 <body>
@@ -24,364 +39,67 @@
 
 <header>
     <div class="container">
-
-    <div class="brand">
-        <span class="brand-icon">📡</span>
-        <span>HAMPDEN COUNTY MESH NETWORK</span>
-    </div>
+        <div class="brand">
+            <span class="brand-icon">📡</span>
+            <span>HAMPDEN COUNTY MESH NETWORK</span>
+        </div>
 
         <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
-            <a href="getting-started.html">Getting Started</a>
-            <a href="infrastructure.html">Infrastructure</a>
+            <a href="guides/index.html">Guides</a>
             <a href="coverage.html">Coverage</a>
             <a href="status.html">Status</a>
             <a href="roadmap.html">Roadmap</a>
-            <a href="radio-reference.html">Radio Reference</a>
         </nav>
-
-</div>
-
+    </div>
 </header>
 
 <section class="hero">
+    <div class="hero-panel">
+        <div class="frequency-display">
+            GUIDE MOVED
+        </div>
 
-<div class="hero-panel">
+        <div class="status-line">
+            <span class="status-dot"></span>
+            REDIRECTING TO GUIDES
+        </div>
 
-    <div class="frequency-display">
-        GET STARTED
+        <h1>
+            GETTING STARTED<br>
+            HAS MOVED
+        </h1>
+
+        <p class="hero-text">
+            The Getting Started page now lives in the Guides section with the rest
+            of the project’s educational and how-to material.
+        </p>
+
+        <div class="hero-actions">
+            <a class="btn primary" href="guides/getting-started.html">Open Getting Started</a>
+            <a class="btn secondary" href="guides/index.html">View All Guides</a>
+        </div>
     </div>
-
-    <div class="status-line">
-        <span class="status-dot"></span>
-        NEW OPERATORS WELCOME
-    </div>
-
-    <h1>
-        JOIN THE<br>
-        NETWORK
-    </h1>
-
-    <p class="hero-text">
-        Learn how to get started with MeshCore,
-        Meshtastic, and local mesh networking in
-        Hampden County and Western Massachusetts.
-    </p>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="section-heading">
-STEP 1 — WHAT IS A MESH NETWORK?
-</div>
-
-<div class="community-panel">
-
-<p>
-A mesh network is a group of radios that can pass messages between one another without requiring cellular service, internet access, or a central communications tower.
-</p>
-
-<p>
-When you send a message from your device, it is transmitted over LoRa radio. If the destination is too far away to hear you directly, another node can receive the message and repeat it. Additional nodes can continue relaying the message until it reaches its destination.
-</p>
-
-<p>
-For example:
-</p>
-
-<p>
-Your Node → Repeater Node → Observer Node → Destination Node
-</p>
-
-<p>
-Each participating node helps extend the reach of the network. As more nodes are deployed throughout an area, the network becomes larger, more resilient, and capable of reaching greater distances.
-</p>
-
-<p>
-Unlike traditional repeater systems, mesh networks can use multiple paths through the network. If one node goes offline, messages may be able to find another route through neighboring nodes.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="section-heading">
-STEP 2 — CHOOSE A DEVICE
-</div>
-
-<div class="resource-grid">
-
-<div class="resource-card">
-
-<h3>Heltec V3</h3>
-
-<p>
-Affordable, easy to find, and an excellent starting point for most new operators.
-</p>
-
-<p>
-Currently used by Hampden County Mesh infrastructure.
-</p>
-
-</div>
-
-<div class="resource-card">
-
-<h3>Seeed Studio</h3>
-
-<p>
-Devices such as the Wio Tracker and T1000-E provide portable and GPS-capable options.
-</p>
-
-</div>
-
-<div class="resource-card">
-
-<h3>RAK Wireless</h3>
-
-<p>
-Popular for permanent infrastructure deployments, battery-powered installations, and solar projects.
-</p>
-
-</div>
-
-<div class="resource-card">
-
-<h3>Elecrow</h3>
-
-<p>
-Compact and affordable LoRa devices suitable for experimentation and learning.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="section-heading">
-STEP 3 — INSTALL FIRMWARE
-</div>
-
-<div class="community-panel">
-
-<p>
-Most supported devices can run either MeshCore or Meshtastic.
-</p>
-
-<p>
-While Hampden County Mesh focuses primarily on MeshCore, both platforms are widely used throughout the broader mesh networking community and are worth understanding.
-</p>
-
-<p>
-For users interested in participating directly in Hampden County Mesh activities, MeshCore is currently the recommended starting point.
-</p>
-
-<p>
-Follow the official installation instructions provided by your device manufacturer and the MeshCore or Meshtastic documentation.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="section-heading">
-STEP 4 — CONFIGURE YOUR NODE
-</div>
-
-<div class="community-panel">
-
-<p>
-After installing firmware, configure your node before attempting to join the network.
-</p>
-
-<p>
-Important items to verify:
-</p>
-
-<p>
-• Choose a unique node name<br>
-• Verify you are using United States frequency settings<br>
-• Verify your radio settings match the local network<br>
-• Test transmission and reception
-</p>
-
-<p>
-Many connection issues are caused by devices using European or United Kingdom frequency plans instead of United States frequencies.
-</p>
-
-<p>
-If you are unsure about your configuration, ask for assistance in Discord before making changes.
-</p>
-
-<p>
-Don't worry about building the perfect setup immediately. Most operators continue refining their configuration as they gain experience.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="section-heading">
-STEP 5 — JOIN THE COMMUNITY
-</div>
-
-<div class="community-panel">
-
-<p>
-The easiest way to get involved is to join the Hampden County Mesh Discord server.
-</p>
-
-<p>
-Ask questions, share your setup, report coverage results, and connect with other operators.
-</p>
-
-<p>
-New users are welcome regardless of technical experience level.
-</p>
-
-<a
-class="btn primary large"
-href="https://discord.gg/TGsxp2q9v"
-target="_blank">
-
-Join Discord
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="section-heading">
-STEP 6 — HELP BUILD THE NETWORK
-</div>
-
-<div class="resource-grid">
-
-<div class="resource-card">
-<h3>Deploy a Node</h3>
-<p>
-Every node helps expand coverage and strengthen the network.
-</p>
-</div>
-
-<div class="resource-card">
-<h3>Host Infrastructure</h3>
-<p>
-Repeaters, observers, and gateways help improve network reach and visibility.
-</p>
-</div>
-
-<div class="resource-card">
-<h3>Share Coverage Reports</h3>
-<p>
-Testing and reporting results help guide future deployments.
-</p>
-</div>
-
-<div class="resource-card">
-<h3>Support Outreach</h3>
-<p>
-Help organize demonstrations, presentations, and community events.
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="section-heading">
-CURRENT INFRASTRUCTURE
-</div>
-
-<div class="community-panel">
-
-<p>
-Current Hampden County Mesh infrastructure includes:
-</p>
-
-<p>
-• Hampden Room Observer<br>
-• Meshcore-Hub<br>
-• MQTT Services<br>
-• Community Website
-</p>
-
-<p>
-Additional observers, repeaters, and network services are planned.
-</p>
-
-</div>
-
-</div>
-
 </section>
 
 <footer>
+    <div class="container">
+        <div class="footer-title">
+            HAMPDEN COUNTY MESH NETWORK
+        </div>
 
-<div class="container">
+        <div class="footer-subtitle">
+            Community-Owned Communications Infrastructure
+        </div>
 
-<div class="footer-title">
-HAMPDEN COUNTY MESH NETWORK
-</div>
-
-<div class="footer-subtitle">
-Community-Owned Communications Infrastructure
-</div>
-
-<div class="footer-subtitle">
-Last Updated: <span id="last-updated">Loading...</span>
-</div>
-
-</div>
-
+        <div class="footer-subtitle">
+            Last Updated: <span id="last-updated">Loading...</span>
+        </div>
+    </div>
 </footer>
 
- <script src="last-updated.js"></script>
-
+<script src="last-updated.js"></script>
 
 </body>
 </html>
