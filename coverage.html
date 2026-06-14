@@ -410,16 +410,36 @@
             attribution: "&copy; OpenStreetMap contributors"
         }).addTo(map);
 
-        L.circle([42.12, -72.63], {
-            radius: 26000,
-            color: "#9daf88",
-            fillColor: "#263b2a",
-            fillOpacity: 0.12,
-            weight: 2
-        }).addTo(map).bindPopup(
-            "<strong>Hampden County Mesh focus area</strong><br>" +
-            "General community focus area. Not a live coverage boundary."
+const hampdenCountyUrl =
+    "https://services1.arcgis.com/hGdibHYSPO59RG1h/ArcGIS/rest/services/Massachusetts_Counties_with_Generalized_Coastline/FeatureServer/1/query?where=COUNTY%3D%27HAMPDEN%27&outFields=COUNTY,FIPS_STCO&outSR=4326&f=geojson";
+
+fetch(hampdenCountyUrl)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (countyData) {
+        const countyOutline = L.geoJSON(countyData, {
+            style: {
+                color: "#ffb347",
+                weight: 3,
+                opacity: 0.95,
+                fillColor: "#9daf88",
+                fillOpacity: 0.08
+            }
+        }).addTo(map);
+
+        countyOutline.bindPopup(
+            "<strong>Hampden County</strong><br>" +
+            "General community focus area for local mesh and radio notes."
         );
+
+        map.fitBounds(countyOutline.getBounds(), {
+            padding: [20, 20]
+        });
+    })
+    .catch(function () {
+        console.warn("Could not load Hampden County outline.");
+    });
 
         const coverageMarkers = [
             {
