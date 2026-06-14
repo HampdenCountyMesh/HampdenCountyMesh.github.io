@@ -6,9 +6,11 @@ The server is for people interested in MeshCore, Meshtastic, local radio, resili
 
 ## Join the Discord
 
-Discord invite:
+Temporary Discord invite:
 
-[Hampden County Mesh Network](https://discord.gg/fC9ARr85)
+https://discord.gg/fC9ARr85
+
+This invite may expire or reach its use limit during the initial soft-launch period. If the link does not work, ask a project maintainer for a current invite.
 
 If the public invite is not active yet, ask a project maintainer for an invite.
 
