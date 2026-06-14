@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Radio Reference | Hampden County Mesh Network</title>
+
+    <meta
+        name="description"
+        content="A plain-language radio reference for FRS, GMRS, MURS, CB, Amateur Radio, MeshCore, Meshtastic, and local communications around Hampden County."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E"
+    >
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+<header>
+    <div class="container">
+        <div class="brand">
+            <span class="brand-icon">📡</span>
+            <span>HAMPDEN COUNTY MESH NETWORK</span>
+        </div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="index.html">Guides</a>
+            <a href="../coverage.html">Coverage</a>
+            <a href="../status.html">Status</a>
+            <a href="../roadmap.html">Roadmap</a>
+        </nav>
+    </div>
+</header>
+
+<main class="docs-shell">
+    <div class="container">
+        <div class="docs-layout">
+
+            <aside class="docs-sidebar">
+                <div class="docs-sidebar-title">Guide Library</div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Introduction</div>
+                    <a href="index.html">Guides Home</a>
+                    <a href="what-is-mesh.html">What Is Mesh?</a>
+                    <a href="getting-started.html">Getting Started</a>
+                    <a href="glossary.html">Glossary</a>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Radio Basics</div>
+                    <a class="active" href="radio-reference.html">Radio Reference</a>
+                    <a href="frs-gmrs-murs-cb.html">FRS / GMRS / MURS / CB</a>
+                    <a href="amateur-radio.html">Amateur Radio</a>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Mesh Networking</div>
+                    <a href="meshcore-basics.html">MeshCore Basics</a>
+                    <a href="meshtastic-basics.html">Meshtastic Basics</a>
+                    <a href="nodes-repeaters-observers.html">Nodes, Repeaters, and Observers</a>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Field Work</div>
+                    <a href="coverage-testing.html">Coverage Testing</a>
+                    <a href="reporting-coverage.html">Reporting Coverage</a>
+                    <a href="documenting-a-node.html">Documenting a Node</a>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Community</div>
+                    <a href="discord.html">Discord</a>
+                    <a href="hosting-a-session.html">Hosting a Session</a>
+                    <a href="contributing-notes.html">Contributing Notes</a>
+                </div>
+            </aside>
+
+            <article class="docs-content">
+                <div class="docs-article">
+                    <div class="docs-breadcrumb">
+                        Guides / Radio Basics
+                    </div>
+
+                    <h1>Radio Reference</h1>
+
+                    <p class="docs-lede">
+                        This is a plain-language overview of common radio and mesh
+                        communication tools. It is meant to help people understand what
+                        each tool is good for, where it has limits, and how it may fit into
+                        practical local communications around Hampden County.
+                    </p>
+
+                    <div class="docs-note">
+                        This page is for learning, not legal advice. Radio rules can change,
+                        and different services have different licensing, equipment, power,
+                        antenna, and operating restrictions. Check current FCC rules before
+                        transmitting.
+                    </div>
+
+                    <section class="docs-section" id="quick-comparison">
+                        <h2>Quick Comparison</h2>
+
+                        <p>
+                            No single radio service is best for every situation. Some are
+                            simple and low-barrier. Some require a license. Some are better
+                            for voice. Some are better for experimentation, repeaters,
+                            messaging, logging, or field testing.
+                        </p>
+
+                        <div class="docs-card-grid">
+                            <div class="docs-card">
+                                <h3>FRS</h3>
+                                <p>
+                                    Simple short-range handheld radio service. Useful for
+                                    families, events, neighborhood use, and basic local voice.
+                                </p>
+                            </div>
+
+                            <div class="docs-card">
+                                <h3>GMRS</h3>
+                                <p>
+                                    License-required personal radio service. Useful for
+                                    handhelds, mobile radios, base stations, and repeaters.
+                                </p>
+                            </div>
+
+                            <div class="docs-card">
+                                <h3>MURS</h3>
+                                <p>
+                                    VHF short-distance voice service with a small channel set.
+                                    Useful for simple local practical communication.
+                                </p>
+                            </div>
+
+                            <div class="docs-card">
+                                <h3>CB</h3>
+                                <p>
+                                    27 MHz voice radio service with a long history in mobile,
+                                    road, local, and hobby communication.
+                                </p>
+                            </div>
+
+                            <div class="docs-card">
+                                <h3>Amateur Radio</h3>
+                                <p>
+                                    License-required radio service for learning, experimentation,
+                                    repeaters, public service, and many bands and modes.
+                                </p>
+                            </div>
+
+                            <div class="docs-card">
+                                <h3>MeshCore / Meshtastic</h3>
+                                <p>
+                                    LoRa-based mesh tools used for local experimentation,
+                                    messaging, coverage testing, observers, and field work.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="docs-section" id="frs">
+                        <h2>FRS</h2>
+
+                        <p>
+                            FRS stands for Family Radio Service. It is one of the easiest
+                            radio services to start with because individual licenses are not
+                            required. FRS radios are commonly sold as simple handheld
+                            walkie-talkies.
+                        </p>
+
+                        <h3>Useful for</h3>
+
+                        <ul>
+                            <li>Short-range neighborhood communication.</li>
+                            <li>Events, hikes, parks, and family use.</li>
+                            <li>Learning basic radio etiquette.</li>
+                            <li>Simple voice communication without much setup.</li>
+                        </ul>
+
+                        <h3>Limits</h3>
+
+                        <ul>
+                            <li>Range is usually limited compared with higher sites or better antennas.</li>
+                            <li>Radios are generally fixed in capability and not meant for modification.</li>
+                            <li>FRS is mainly a voice service, not a mesh networking system.</li>
+                        </ul>
+
+                        <p>
+                            FRS is a good first exposure to radio, but it is not the same
+                            thing as building local mesh infrastructure.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="gmrs">
+                        <h2>GMRS</h2>
+
+                        <p>
+                            GMRS stands for General Mobile Radio Service. It requires an FCC
+                            license, but there is no exam. GMRS can support handheld radios,
+                            mobile radios, base stations, and repeaters.
+                        </p>
+
+                        <h3>Useful for</h3>
+
+                        <ul>
+                            <li>Family and small-group local voice communication.</li>
+                            <li>Mobile and base station use.</li>
+                            <li>Repeaters that can extend practical coverage.</li>
+                            <li>Neighborhood, event, and preparedness communication.</li>
+                        </ul>
+
+                        <h3>Limits</h3>
+
+                        <ul>
+                            <li>An FCC license is required.</li>
+                            <li>Users need to understand channel and repeater etiquette.</li>
+                            <li>It is mainly a voice radio service, not a data mesh by itself.</li>
+                        </ul>
+
+                        <p>
+                            GMRS can pair well with a local mesh project because it gives
+                            people a practical voice option alongside text-based or
+                            data-oriented tools.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="murs">
+                        <h2>MURS</h2>
+
+                        <p>
+                            MURS stands for Multi-Use Radio Service. It operates in the VHF
+                            range around 151–154 MHz and is used for short-distance, two-way
+                            voice communication.
+                        </p>
+
+                        <h3>Common MURS channels</h3>
+
+                        <ul>
+                            <li>151.820 MHz</li>
+                            <li>151.880 MHz</li>
+                            <li>151.940 MHz</li>
+                            <li>154.570 MHz</li>
+                            <li>154.600 MHz</li>
+                        </ul>
+
+                        <h3>Useful for</h3>
+
+                        <ul>
+                            <li>Simple local voice communication.</li>
+                            <li>Small groups, farms, businesses, events, and field use.</li>
+                            <li>People who want something different from UHF FRS/GMRS.</li>
+                        </ul>
+
+                        <h3>Limits</h3>
+
+                        <ul>
+                            <li>Small number of channels.</li>
+                            <li>Not intended as a mesh networking system.</li>
+                            <li>Users still need to follow current FCC equipment and operating rules.</li>
+                        </ul>
+                    </section>
+
+                    <section class="docs-section" id="cb">
+                        <h2>CB</h2>
+
+                        <p>
+                            CB stands for Citizens Band Radio Service. It has 40 shared
+                            channels around 27 MHz and has a long history with mobile
+                            operators, road communication, hobby use, and informal local
+                            contact.
+                        </p>
+
+                        <h3>Useful for</h3>
+
+                        <ul>
+                            <li>Vehicle-to-vehicle communication.</li>
+                            <li>Road and local area communication.</li>
+                            <li>Learning about antennas, propagation, and radio conditions.</li>
+                            <li>Low-barrier radio experimentation within CB rules.</li>
+                        </ul>
+
+                        <h3>Limits</h3>
+
+                        <ul>
+                            <li>Signal conditions can vary widely.</li>
+                            <li>Antennas are physically larger than many handheld UHF/VHF options.</li>
+                            <li>CB is not a structured mesh networking system.</li>
+                        </ul>
+
+                        <p>
+                            CB is not the center of Hampden County Mesh, but it belongs in
+                            the wider local communications toolbox.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="amateur-radio">
+                        <h2>Amateur Radio</h2>
+
+                        <p>
+                            Amateur Radio, often called ham radio, is a license-required
+                            radio service for learning, experimentation, technical skill
+                            building, public service, and communication across many bands
+                            and modes.
+                        </p>
+
+                        <h3>Useful for</h3>
+
+                        <ul>
+                            <li>Learning radio theory and operating practice.</li>
+                            <li>Using repeaters, simplex voice, digital modes, and packet systems.</li>
+                            <li>Emergency-minded communication and public service events.</li>
+                            <li>Antenna building, propagation study, and technical experimentation.</li>
+                            <li>Connecting with local clubs, nets, and experienced operators.</li>
+                        </ul>
+
+                        <h3>Limits</h3>
+
+                        <ul>
+                            <li>An Amateur Radio license is required to transmit.</li>
+                            <li>Operators need to identify properly and follow amateur rules.</li>
+                            <li>Amateur Radio is not for business communication or encrypted private messaging.</li>
+                        </ul>
+
+                        <p>
+                            Ham radio knowledge can make mesh work better. Antennas, line of
+                            sight, repeater placement, power planning, and disciplined
+                            operating habits all carry over.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="meshcore">
+                        <h2>MeshCore</h2>
+
+                        <p>
+                            MeshCore is a major focus of Hampden County Mesh. It is used for
+                            LoRa-based mesh experimentation, companion devices, repeaters,
+                            observers, logging, and local infrastructure work.
+                        </p>
+
+                        <h3>Useful for</h3>
+
+                        <ul>
+                            <li>Local LoRa mesh experimentation.</li>
+                            <li>Fixed repeaters and portable nodes.</li>
+                            <li>Observer setups that help understand network activity.</li>
+                            <li>Testing coverage across real terrain.</li>
+                            <li>Learning how local infrastructure behaves over time.</li>
+                        </ul>
+
+                        <h3>Limits</h3>
+
+                        <ul>
+                            <li>Coverage depends heavily on terrain, placement, antenna, and settings.</li>
+                            <li>Public mapping and dashboards may require additional infrastructure.</li>
+                            <li>Device roles and firmware choices matter.</li>
+                            <li>It is still part of a developing local project, not a finished service.</li>
+                        </ul>
+
+                        <p>
+                            For this project, MeshCore is not just an app or device. It is one
+                            way to build local knowledge about how low-power mesh communication
+                            performs in Hampden County.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="meshtastic">
+                        <h2>Meshtastic</h2>
+
+                        <p>
+                            Meshtastic is a popular LoRa mesh project often used for portable
+                            messaging, outdoor activity, events, hiking, neighborhood testing,
+                            and local experimentation.
+                        </p>
+
+                        <h3>Useful for</h3>
+
+                        <ul>
+                            <li>Portable text messaging between LoRa devices.</li>
+                            <li>Field tests and outdoor experiments.</li>
+                            <li>Learning basic mesh concepts with widely available hardware.</li>
+                            <li>Comparing local LoRa performance with other mesh tools.</li>
+                        </ul>
+
+                        <h3>Limits</h3>
+
+                        <ul>
+                            <li>Settings, channels, regions, and privacy choices need to be understood.</li>
+                            <li>Range depends on terrain, antenna, power, and placement.</li>
+                            <li>It should be treated as one tool in the local communications toolbox.</li>
+                        </ul>
+                    </section>
+
+                    <section class="docs-section" id="choosing">
+                        <h2>Choosing the Right Tool</h2>
+
+                        <p>
+                            A useful communications plan usually has layers. A simple voice
+                            radio, a mesh node, a repeater, a phone, a notebook, and a local
+                            contact list may all solve different problems.
+                        </p>
+
+                        <ul>
+                            <li>Use FRS for simple short-range voice.</li>
+                            <li>Use GMRS when licensed family or group voice and repeaters make sense.</li>
+                            <li>Use MURS for simple VHF local voice where appropriate.</li>
+                            <li>Use CB for vehicle, road, and 27 MHz communication interests.</li>
+                            <li>Use Amateur Radio for deeper learning, repeaters, experimentation, and public service.</li>
+                            <li>Use MeshCore or Meshtastic for LoRa mesh experimentation and field testing.</li>
+                        </ul>
+
+                        <p>
+                            The stronger approach is not depending on one system for everything.
+                            Local communication is more resilient when more people understand
+                            several tools and know what each one can and cannot do.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="operating-aids">
+                        <h2>Operating Aids</h2>
+
+                        <p>
+                            You do not need to memorize every radio shorthand list. A few basic
+                            operating aids can make voice communication clearer and field notes
+                            more useful.
+                        </p>
+
+                        <h3>NATO phonetic alphabet</h3>
+
+                        <p>
+                            Use phonetics when spelling names, callsigns, locations, or confusing
+                            words over voice radio. For example, “HCMN” can be spoken as
+                            “Hotel Charlie Mike November.”
+                        </p>
+
+                        <h3>Q signals</h3>
+
+                        <p>
+                            Q signals are short codes used heavily in Morse code and sometimes
+                            in voice operating. They are useful to recognize, but plain language
+                            is usually better for beginners and mixed groups.
+                        </p>
+
+                        <h3>RST reports</h3>
+
+                        <p>
+                            Amateur operators often use RST reports to describe readability,
+                            signal strength, and tone. For casual project notes, plain descriptions
+                            like “clear audio,” “weak but readable,” or “heard from the parking
+                            lot” may be more useful.
+                        </p>
+
+                        <h3>UTC time</h3>
+
+                        <p>
+                            Radio logs often use UTC so reports from different locations and
+                            time zones are easier to compare. For local beginner notes, it is
+                            fine to include both local time and UTC if you know them.
+                        </p>
+
+                        <h3>Good field notes</h3>
+
+                        <p>
+                            Useful notes usually include date, time, rough location, device,
+                            antenna, power source, settings, what was heard, and what did not work.
+                            Failed tests are still useful.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="local-practice">
+                        <h2>Local Practice Matters</h2>
+
+                        <p>
+                            A frequency chart cannot tell you what works from a driveway in
+                            Westfield, a ridge near Mount Tom, a dense street in Springfield,
+                            a wooded trail, a workplace parking lot, or a low spot near the river.
+                        </p>
+
+                        <p>
+                            Local reports are what turn radio theory into useful community
+                            knowledge. When people share what they tested, what equipment they
+                            used, and what they heard, the project becomes easier for the next
+                            person to join.
+                        </p>
+
+                        <div class="docs-card-grid">
+                            <a class="docs-card" href="coverage-testing.html">
+                                <h3>Coverage Testing</h3>
+                                <p>
+                                    Learn how to make field reports useful to other people.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="documenting-a-node.html">
+                                <h3>Documenting a Node</h3>
+                                <p>
+                                    Keep notes on equipment, placement, firmware, antennas,
+                                    power, and results.
+                                </p>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="docs-section" id="reference-links">
+                        <h2>Rules, Band Plans, and References</h2>
+
+                        <p>
+                            This page stays short on purpose. Use these links when you need
+                            the official rules, deeper operating references, or current band
+                            plan information.
+                        </p>
+
+                        <div class="docs-card-grid">
+                            <a class="docs-card" href="https://www.fcc.gov/consumers/guides/personal-radio-services-prs-keeping-touch" target="_blank" rel="noopener noreferrer">
+                                <h3>FCC Personal Radio Services</h3>
+                                <p>
+                                    FCC consumer guide covering personal radio services such
+                                    as FRS, GMRS, MURS, and CB.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95" target="_blank" rel="noopener noreferrer">
+                                <h3>eCFR Part 95</h3>
+                                <p>
+                                    Current federal rules for Personal Radio Services.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97" target="_blank" rel="noopener noreferrer">
+                                <h3>eCFR Part 97</h3>
+                                <p>
+                                    Current federal rules for the Amateur Radio Service.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service" target="_blank" rel="noopener noreferrer">
+                                <h3>FCC Amateur Radio Service</h3>
+                                <p>
+                                    FCC overview of the Amateur Radio Service.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="https://www.arrl.org/graphical-frequency-allocations" target="_blank" rel="noopener noreferrer">
+                                <h3>ARRL Frequency Allocations</h3>
+                                <p>
+                                    Amateur Radio frequency allocation charts and band information.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="https://www.arrl.org/band-plan" target="_blank" rel="noopener noreferrer">
+                                <h3>ARRL Band Plans</h3>
+                                <p>
+                                    Amateur Radio band-plan reference and operating guidance.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="https://www.arrl.org/quick-reference-operating-aids" target="_blank" rel="noopener noreferrer">
+                                <h3>ARRL Quick Operating Aids</h3>
+                                <p>
+                                    RST, phonetics, UTC, and other common operating references.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="https://www.arrl.org/operating-aids" target="_blank" rel="noopener noreferrer">
+                                <h3>ARRL Q Signals</h3>
+                                <p>
+                                    Common Q signals and operating shorthand.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="https://www.nato.int/en/about-us/nato-history/history-by-theme/symbols-of-nato/nato-phonetic-alphabet" target="_blank" rel="noopener noreferrer">
+                                <h3>NATO Phonetic Alphabet</h3>
+                                <p>
+                                    Standard spelling words for clearer voice communication.
+                                </p>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </article>
+
+            <aside class="docs-toc">
+                <div class="docs-toc-title">On This Page</div>
+                <a href="#quick-comparison">Quick Comparison</a>
+                <a href="#frs">FRS</a>
+                <a href="#gmrs">GMRS</a>
+                <a href="#murs">MURS</a>
+                <a href="#cb">CB</a>
+                <a href="#amateur-radio">Amateur Radio</a>
+                <a href="#meshcore">MeshCore</a>
+                <a href="#meshtastic">Meshtastic</a>
+                <a href="#choosing">Choosing the Right Tool</a>
+                <a href="#operating-aids">Operating Aids</a>
+                <a href="#local-practice">Local Practice Matters</a>
+                <a href="#reference-links">Rules and References</a>
+            </aside>
+
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-title">
+            HAMPDEN COUNTY MESH NETWORK
+        </div>
+
+        <div class="footer-subtitle">
+            Community-Owned Communications Infrastructure
+        </div>
+
+        <div class="footer-subtitle">
+            Last Updated: <span id="last-updated">Loading...</span>
+        </div>
+    </div>
+</footer>
+
+<script src="../last-updated.js"></script>
+
+</body>
+</html>
