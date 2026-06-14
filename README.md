@@ -32,6 +32,15 @@ Project website:
 
 https://hampdencountymesh.github.io/
 
+## Community Discord
+
+Hampden County Mesh uses Discord for community discussion, onboarding, node help, coverage reports, field testing, website work, mapping, MQTT/logging discussion, and project coordination.
+
+* [Discord server guide](docs/discord.md)
+* Temporary Discord invite: https://discord.gg/fC9ARr85
+
+This invite may expire or reach its use limit during the initial soft-launch period.
+
 ## Technologies
 
 * MeshCore
@@ -61,7 +70,7 @@ https://hampdencountymesh.github.io/
 * 🔄 Multi-Day Stability Testing In Progress
 * 📡 Additional Infrastructure Planned
 
-* Discord integration test: GitHub webhook connected and tested.
+* Discord integration test: GitHub webhook connected and retested.
 
 ## Contributing
 
