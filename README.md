@@ -1,87 +1,188 @@
 # Hampden County Mesh Network
 
-Community-owned communications infrastructure, mesh networking, and radio experimentation throughout Hampden County, Massachusetts.
+Hampden County Mesh is a local communications community focused on mesh networking, radio experimentation, practical local infrastructure, field notes, documentation, and community coordination across Hampden County and Western Massachusetts.
 
-## About
+The network and community are in an early buildout stage. Core systems are online, public live data tools are still being developed, and local coverage knowledge is growing through casual signal checks, notes, documentation, and community participation.
 
-Hampden County Mesh is a community-driven project focused on building resilient local communications infrastructure using MeshCore, Meshtastic, and other radio technologies.
+## What Hampden County Mesh is for
 
-The project supports experimentation, education, emergency preparedness, and the development of decentralized communications networks across Western Massachusetts.
+Hampden County Mesh exists to help local people learn, test, document, and build practical communications options together.
 
-## Current Infrastructure
+The community focuses on:
 
-### Hampden Room Observer
+* MeshCore and LoRa mesh experimentation
+* Meshtastic and related mesh tools
+* Casual coverage checks and field notes
+* Local node, repeater, and observer documentation
+* Radio basics, including FRS, GMRS, MURS, CB, and Amateur Radio
+* Public guides and beginner-friendly documentation
+* Community coordination for local communications
+* Workshops, demonstrations, and future learning sessions
 
-* Hardware: Heltec V3
-* Status: Operational
-* Purpose: MeshCore network observation, analytics, and mapping support
+The goal is not just to collect devices. The goal is to build shared local knowledge that people can actually use.
 
-### Meshcore-Hub
+## You do not need to be an expert
 
-* Platform: Linux Mint
-* Status: Operational
-* Services:
-  * Mosquitto MQTT Broker
-  * MeshCore infrastructure development
-  * Log collection and analysis
-  * Future mapping and network services
+Beginners are welcome.
+
+You do not need to know every radio service, own expensive equipment, understand every technical detail, or fill out formal reports to participate.
+
+Useful participation can be as simple as:
+
+* Asking a beginner question
+* Bringing a node along while you are out
+* Seeing what your device can hear from a park, street, hill, or parking lot
+* Sharing that something worked or did not work
+* Taking a useful photo of a setup or public test location
+* Helping someone else understand the basics
+* Suggesting a good place for a future meetup or learning session
+
+Documentation helps, but it is not a barrier to entry. Casual notes are welcome.
+
+## Current status
+
+Hampden County Mesh currently has working documented systems for local testing, logging, observer work, and website development.
+
+Current public status:
+
+* Core infrastructure: online
+* Public live data: in development
+* County network: building
+* Community: open
+
+Public maps, dashboards, automated stats, and live activity displays are planned, but they should not be treated as complete yet.
 
 ## Website
 
-Project website:
+Public website:
 
 https://hampdencountymesh.github.io/
 
-## Community Discord
+Main sections:
 
-Hampden County Mesh uses Discord for community discussion, onboarding, node help, coverage reports, field testing, website work, mapping, MQTT/logging discussion, and project coordination.
+* Home
+* About
+* Guides
+* Coverage
+* Status
+* Roadmap
 
-* [Discord server guide](docs/discord.md)
-* Temporary Discord invite: https://discord.gg/fC9ARr85
+The Guides section is the home for educational, technical, reference, and how-to material.
 
-This invite may expire or reach its use limit during the initial soft-launch period.
+## Guides
 
-## Technologies
+The Guides section includes:
 
-* MeshCore
-* Meshtastic
-* MQTT
-* LoRa
-* ESP32
-* Linux
-* Mosquitto
+* What Is Mesh?
+* Getting Started
+* Radio Reference
+* Coverage Testing
+* Documenting a Node
+* Discord
 
-## Project Goals
+More guides will be added over time, including MeshCore basics, Meshtastic basics, operating aids, glossary terms, hosting sessions, and field notes.
 
-* Expand local mesh networking throughout Hampden County
-* Deploy community infrastructure
-* Improve mapping and network visibility
-* Support new operators and node deployments
-* Collaborate with neighboring mesh communities
+## Coverage and field notes
 
+Coverage is being learned through real-world use.
 
-## Current Project Status
+That does not need to be formal. Most of the time it just means bringing a node or radio somewhere, seeing what it can hear, and sharing anything useful you notice.
 
-* ✅ Hampden Room Observer Operational
-* ✅ Meshcore-Hub Operational
-* ✅ MQTT Broker Operational
-* ✅ NTP Synchronization Verified
-* ✅ MeshCore Analyzer Connectivity Verified
-* 🔄 Multi-Day Stability Testing In Progress
-* 📡 Additional Infrastructure Planned
+Helpful details, when you have them, include:
 
-* Discord integration test: GitHub webhook connected and retested.
+* General location or public landmark
+* Device used
+* Antenna and placement
+* What connected or was heard
+* What did not connect or was not heard
+* Notes about terrain, buildings, trees, or weather
+
+You do not need to publish exact private locations. General areas, public landmarks, road corridors, parks, neighborhoods, and town-level notes are often enough.
+
+## Community
+
+Hampden County Mesh is open to:
+
+* Beginners
+* Radio operators
+* Mesh networking users
+* Makers and electronics hobbyists
+* Educators
+* Libraries
+* Clubs
+* Community spaces
+* People interested in local communications, field notes, and practical infrastructure
+
+The Discord is used for questions, updates, field notes, node help, and community coordination.
+
+## Important limits
+
+Hampden County Mesh is a community communications and learning effort.
+
+It is not:
+
+* An emergency service
+* A replacement for 911
+* A guarantee of coverage during an outage
+* An official public safety system
+* A finished county-wide network
+
+The community is building useful local options, practical skills, shared documentation, and communications knowledge that can help people coordinate when ordinary systems are unavailable, overloaded, or inconvenient.
+
+## Repository purpose
+
+This repository contains the public website and supporting documentation for Hampden County Mesh.
+
+It may include:
+
+* Website pages
+* Public guides
+* Coverage notes
+* Documentation templates
+* Community documents
+* Roadmap material
+* Issue templates
+* Contribution guidelines
+
+Backend services, private keys, credentials, private node locations, and sensitive infrastructure details should not be committed here.
 
 ## Contributing
 
-Community participation is welcome.
+Contributions are welcome.
 
-If you're interested in mesh networking, radio communications, infrastructure development, mapping, or testing, join the community and help expand the network.
+Useful contributions include:
 
-## Why Hampden County Mesh?
+* Documentation edits
+* Coverage notes
+* Guide improvements
+* Website fixes
+* Accessibility improvements
+* Node documentation templates
+* Issue reports
+* Suggestions for workshops or learning sessions
 
-Modern communications increasingly depend on centralized infrastructure.
+Please read `CONTRIBUTING.md` before making larger changes.
 
-Hampden County Mesh explores decentralized alternatives using open-source hardware, LoRa radio technologies, and community-owned infrastructure.
+## Safety and privacy
 
-The project exists to encourage experimentation, education, resiliency, and regional collaboration.
+Do not publish:
+
+* Private addresses without permission
+* Private keys
+* Passwords
+* API tokens
+* Exact private node locations unless intentionally public
+* Photos that reveal sensitive personal or location details
+* Unverified emergency claims
+
+When in doubt, use general areas and plain summaries.
+
+## License
+
+See `LICENSE` for repository license information.
+
+## Contact
+
+Email:
+
+[HampdenCountyMesh@protonmail.com](mailto:HampdenCountyMesh@protonmail.com)
