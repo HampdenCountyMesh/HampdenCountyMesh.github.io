@@ -1219,4 +1219,22 @@ footer{
     .docs-card-grid {
         grid-template-columns: 1fr;
     }
+}/* =========================================================
+   Guides / Planned Items
+   ========================================================= */
+
+.docs-planned {
+    display: block;
+    color: rgba(216, 200, 159, 0.52);
+    font-size: 0.92rem;
+    line-height: 1.45;
+    padding: 7px 8px;
+    border-radius: 8px;
+    cursor: default;
+}
+
+.docs-planned::after {
+    content: "  · planned";
+    color: rgba(157, 175, 136, 0.72);
+    font-size: 0.78rem;
 }
