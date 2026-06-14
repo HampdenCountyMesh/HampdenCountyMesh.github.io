@@ -9,7 +9,7 @@
 
     <meta
         name="description"
-        content="A beginner-friendly guide to getting started with mesh networking and local radio communications in Hampden County."
+        content="A beginner-friendly guide for getting started with Hampden County Mesh, mesh networking, radio basics, local coverage testing, and community communications."
     >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,284 +51,317 @@
     </div>
 </header>
 
-<section class="hero">
-    <div class="hero-panel">
-        <div class="frequency-display">
-            GETTING STARTED
-        </div>
-
-        <div class="status-line">
-            <span class="status-dot"></span>
-            FIRST STEPS • LOCAL COMMS • SHARED KNOWLEDGE
-        </div>
-
-        <h1>
-            START<br>
-            BUILDING
-        </h1>
-
-        <p class="hero-text">
-            You do not need to be an expert to begin. Hampden County Mesh is about
-            learning practical communications skills, testing what works locally,
-            and helping build useful options for the places we actually live.
-        </p>
-
-        <div class="hero-actions">
-            <a class="btn primary" href="#first-steps">First Steps</a>
-            <a class="btn secondary" href="radio-reference.html">Radio Reference</a>
-        </div>
-    </div>
-</section>
-
-<section id="first-steps">
+<main class="docs-shell">
     <div class="container">
-        <div class="section-heading">
-            FIRST STEPS
-        </div>
+        <div class="docs-layout">
 
-        <div class="resource-grid">
-            <div class="resource-card">
-                <h3>1. Learn what mesh is</h3>
+            <aside class="docs-sidebar">
+                <div class="docs-sidebar-title">Guide Library</div>
 
-                <p>
-                    A mesh network is a group of devices that can pass messages or
-                    data between each other without every device needing a direct
-                    connection to the internet or a central tower.
-                </p>
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Introduction</div>
+                    <a href="index.html">Guides Home</a>
+                    <a href="what-is-mesh.html">What Is Mesh?</a>
+                    <a class="active" href="getting-started.html">Getting Started</a>
+                    <a href="glossary.html">Glossary</a>
+                </div>
 
-                <p>
-                    In practice, that means local people can experiment with ways
-                    to communicate across neighborhoods, hills, roads, buildings,
-                    and valleys using small radio devices.
-                </p>
-            </div>
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Radio Basics</div>
+                    <a href="radio-reference.html">Radio Reference</a>
+                    <a href="frs-gmrs-murs-cb.html">FRS / GMRS / MURS / CB</a>
+                    <a href="amateur-radio.html">Amateur Radio</a>
+                </div>
 
-            <div class="resource-card">
-                <h3>2. Join the community</h3>
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Mesh Networking</div>
+                    <a href="meshcore-basics.html">MeshCore Basics</a>
+                    <a href="meshtastic-basics.html">Meshtastic Basics</a>
+                    <a href="nodes-repeaters-observers.html">Nodes, Repeaters, and Observers</a>
+                </div>
 
-                <p>
-                    The easiest way to begin is to ask questions, see what other
-                    people are testing, and learn what equipment is already being
-                    used around Hampden County and nearby regions.
-                </p>
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Field Work</div>
+                    <a href="coverage-testing.html">Coverage Testing</a>
+                    <a href="reporting-coverage.html">Reporting Coverage</a>
+                    <a href="documenting-a-node.html">Documenting a Node</a>
+                </div>
 
-                <p>
-                    You can participate even before you own a node. Coverage notes,
-                    local knowledge, event hosting, documentation, and testing all
-                    help the project.
-                </p>
-            </div>
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Community</div>
+                    <a href="discord.html">Discord</a>
+                    <a href="hosting-a-session.html">Hosting a Session</a>
+                    <a href="contributing-notes.html">Contributing Notes</a>
+                </div>
+            </aside>
 
-            <div class="resource-card">
-                <h3>3. Choose a path</h3>
+            <article class="docs-content">
+                <div class="docs-article">
+                    <div class="docs-breadcrumb">
+                        Guides / Introduction
+                    </div>
 
-                <p>
-                    Some people start with MeshCore. Some start with Meshtastic.
-                    Some come from amateur radio, GMRS, CB, FRS, MURS, scanning,
-                    emergency preparedness, or general electronics.
-                </p>
+                    <h1>Getting Started</h1>
 
-                <p>
-                    You do not need to do everything at once. Start with one tool,
-                    learn how it behaves locally, and document what you find.
-                </p>
-            </div>
+                    <p class="docs-lede">
+                        You do not need to be an expert, own expensive equipment, or
+                        understand every radio service to begin. Hampden County Mesh is
+                        about learning practical communications skills, testing what works
+                        locally, and helping build shared knowledge for the community.
+                    </p>
 
-            <div class="resource-card">
-                <h3>4. Share what you learn</h3>
+                    <div class="docs-note">
+                        The best first step is usually not buying hardware. Start by learning
+                        the basics, asking questions, reading local notes, and understanding
+                        what kind of participation makes sense for you.
+                    </div>
 
-                <p>
-                    A useful local network depends on shared knowledge. If you test
-                    a device, hear a node, find a bad coverage area, build an antenna,
-                    or solve a setup problem, write it down so others can benefit.
-                </p>
-            </div>
+                    <section class="docs-section" id="quick-start">
+                        <h2>Quick Start</h2>
+
+                        <p>
+                            If you are brand new, use this order:
+                        </p>
+
+                        <ul>
+                            <li>Read <a href="what-is-mesh.html">What Is Mesh?</a>.</li>
+                            <li>Join the community Discord from the homepage.</li>
+                            <li>Look through the radio reference and coverage pages.</li>
+                            <li>Ask what devices and settings are currently being used locally.</li>
+                            <li>Choose one small thing to test, document, or learn.</li>
+                        </ul>
+
+                        <p>
+                            A good local communications network grows from repeated small
+                            contributions: notes, tests, node placements, maps, explanations,
+                            and people helping each other understand the tools.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="ways-to-help">
+                        <h2>Ways to Help Without Hardware</h2>
+
+                        <p>
+                            You can participate before owning a node. Hardware is only one
+                            part of the project.
+                        </p>
+
+                        <ul>
+                            <li>Share useful local terrain knowledge.</li>
+                            <li>Suggest good testing locations around Hampden County.</li>
+                            <li>Help write or edit documentation.</li>
+                            <li>Offer a meeting space, classroom, library room, or club connection.</li>
+                            <li>Help beginners understand radio basics.</li>
+                            <li>Take photos of local radio, terrain, antennas, field tests, or events.</li>
+                            <li>Report places where coverage would be useful during outages or events.</li>
+                        </ul>
+
+                        <p>
+                            The point is not just to collect devices. The point is to build
+                            local knowledge that other people can use.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="choose-a-path">
+                        <h2>Choose a Starting Path</h2>
+
+                        <p>
+                            Hampden County Mesh touches several related areas. You do not
+                            need to do all of them.
+                        </p>
+
+                        <h3>MeshCore</h3>
+
+                        <p>
+                            MeshCore is a major focus of this project. It is useful for
+                            experimenting with LoRa mesh communication, repeaters, observers,
+                            companion devices, logging, and local infrastructure.
+                        </p>
+
+                        <h3>Meshtastic</h3>
+
+                        <p>
+                            Meshtastic is another popular LoRa mesh project. It is often used
+                            for portable messaging, field testing, events, hiking, and local
+                            experimentation.
+                        </p>
+
+                        <h3>Traditional radio</h3>
+
+                        <p>
+                            FRS, GMRS, MURS, CB, and Amateur Radio can all be useful, but they
+                            have different rules, ranges, equipment, and limits. They are
+                            different tools, not replacements for each other.
+                        </p>
+
+                        <div class="docs-card-grid">
+                            <a class="docs-card" href="meshcore-basics.html">
+                                <h3>MeshCore Basics</h3>
+                                <p>
+                                    Learn how MeshCore fits into the local project.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="radio-reference.html">
+                                <h3>Radio Reference</h3>
+                                <p>
+                                    Compare FRS, GMRS, MURS, CB, Amateur Radio, MeshCore,
+                                    and Meshtastic.
+                                </p>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="docs-section" id="first-device">
+                        <h2>Thinking About a First Device</h2>
+
+                        <p>
+                            Before buying anything, ask what people nearby are currently
+                            testing. Device choice depends on what you want to do.
+                        </p>
+
+                        <ul>
+                            <li>Portable messaging or hiking-style use may point toward one device.</li>
+                            <li>A fixed home node may need different power and antenna planning.</li>
+                            <li>A repeater needs careful placement, weather protection, and power.</li>
+                            <li>An observer may be useful for logging and public network awareness.</li>
+                        </ul>
+
+                        <p>
+                            If you are unsure, start with the community before starting with
+                            a shopping cart. A cheap device in a good location may be more
+                            useful than an expensive device in a bad location.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="coverage-matters">
+                        <h2>Coverage Matters</h2>
+
+                        <p>
+                            Hampden County terrain matters. Hills, trees, valleys, old brick
+                            buildings, dense neighborhoods, campuses, roads, and river corridors
+                            all affect radio coverage.
+                        </p>
+
+                        <p>
+                            That is why real field testing matters. A useful report says where
+                            you tested, what device and antenna you used, what you heard, what
+                            settings were involved, and what the conditions were like.
+                        </p>
+
+                        <div class="docs-card-grid">
+                            <a class="docs-card" href="../coverage.html">
+                                <h3>Coverage Page</h3>
+                                <p>
+                                    Public-facing coverage information and project status.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="coverage-testing.html">
+                                <h3>Coverage Testing</h3>
+                                <p>
+                                    How to make field tests useful to other people.
+                                </p>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="docs-section" id="document">
+                        <h2>Document What You Learn</h2>
+
+                        <p>
+                            Documentation turns one person’s experiment into something the
+                            rest of the community can use.
+                        </p>
+
+                        <p>
+                            Useful notes include:
+                        </p>
+
+                        <ul>
+                            <li>Device model and firmware.</li>
+                            <li>Node name or role.</li>
+                            <li>Antenna type and placement.</li>
+                            <li>Power source.</li>
+                            <li>General location or test area.</li>
+                            <li>What was heard or reached.</li>
+                            <li>Problems, failures, and things to try next.</li>
+                        </ul>
+
+                        <p>
+                            Failed tests are still useful. Knowing what did not work can save
+                            someone else time later.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="community">
+                        <h2>Join the Community</h2>
+
+                        <p>
+                            The Discord is the easiest place to ask questions, compare notes,
+                            coordinate testing, share coverage reports, and find out what is
+                            being worked on.
+                        </p>
+
+                        <p>
+                            Beginner questions are welcome. The project benefits when more
+                            people can understand, explain, repair, test, and teach the system.
+                        </p>
+
+                        <div class="docs-card-grid">
+                            <a class="docs-card" href="../index.html#community">
+                                <h3>Join Discord</h3>
+                                <p>
+                                    Connect with local operators and people learning the same tools.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="hosting-a-session.html">
+                                <h3>Host a Session</h3>
+                                <p>
+                                    Notes for libraries, clubs, makerspaces, radio groups,
+                                    and community spaces.
+                                </p>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="docs-section" id="good-first-goals">
+                        <h2>Good First Goals</h2>
+
+                        <ul>
+                            <li>Understand the basic idea of mesh networking.</li>
+                            <li>Join the community and ask what is currently active locally.</li>
+                            <li>Read the radio reference.</li>
+                            <li>Learn what devices people nearby are using.</li>
+                            <li>Help document a field test or local coverage note.</li>
+                            <li>Attend or help organize a beginner session.</li>
+                            <li>Bring one node online only after you know what role you want it to serve.</li>
+                        </ul>
+
+                        <p>
+                            Start small. A local network becomes stronger through steady,
+                            shared work, not through everyone trying to do everything at once.
+                        </p>
+                    </section>
+                </div>
+            </article>
+
+            <aside class="docs-toc">
+                <div class="docs-toc-title">On This Page</div>
+                <a href="#quick-start">Quick Start</a>
+                <a href="#ways-to-help">Ways to Help Without Hardware</a>
+                <a href="#choose-a-path">Choose a Starting Path</a>
+                <a href="#first-device">Thinking About a First Device</a>
+                <a href="#coverage-matters">Coverage Matters</a>
+                <a href="#document">Document What You Learn</a>
+                <a href="#community">Join the Community</a>
+                <a href="#good-first-goals">Good First Goals</a>
+            </aside>
+
         </div>
     </div>
-</section>
-
-<section>
-    <div class="container">
-        <div class="section-heading">
-            WHAT YOU CAN DO WITHOUT BUYING ANYTHING
-        </div>
-
-        <div class="community-panel">
-            <p>
-                You do not need to spend money before participating. A strong local
-                communications project needs people who can organize, document,
-                explain, test, host, map, teach, and connect others.
-            </p>
-
-            <p>
-                Useful first contributions include joining the Discord, reading the
-                guides, sharing local terrain knowledge, suggesting good testing
-                locations, offering a meeting space, helping write documentation,
-                or helping someone else understand the basics.
-            </p>
-
-            <p>
-                Libraries, schools, clubs, makerspaces, neighborhood groups, and
-                radio operators can all help make communications knowledge more
-                available to the community.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <div class="section-heading">
-            COMMON STARTING POINTS
-        </div>
-
-        <div class="resource-grid">
-            <a class="resource-card action-card" href="radio-reference.html">
-                <h3>I am new to radio</h3>
-
-                <p>
-                    Start with the radio reference. It explains FRS, GMRS, MURS,
-                    CB, Amateur Radio, MeshCore, and Meshtastic in plain language.
-                </p>
-
-                <span class="card-link">Open radio reference →</span>
-            </a>
-
-            <a class="resource-card action-card" href="../coverage.html">
-                <h3>I want to help test coverage</h3>
-
-                <p>
-                    Field testing helps show what works across hills, wooded areas,
-                    downtown streets, neighborhoods, roads, and valleys.
-                </p>
-
-                <span class="card-link">View coverage page →</span>
-            </a>
-
-            <a class="resource-card action-card" href="../status.html">
-                <h3>I want to see what is online</h3>
-
-                <p>
-                    Check the status page for current project infrastructure,
-                    public data progress, and known work in development.
-                </p>
-
-                <span class="card-link">View status →</span>
-            </a>
-
-            <a class="resource-card action-card" href="../index.html#community">
-                <h3>I want to ask questions</h3>
-
-                <p>
-                    Join the community Discord to ask about devices, local testing,
-                    radio basics, seminars, or ways to help.
-                </p>
-
-                <span class="card-link">Join the community →</span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <div class="section-heading">
-            BASIC DEVICE PATHS
-        </div>
-
-        <div class="community-panel">
-            <h3>MeshCore</h3>
-
-            <p>
-                MeshCore is one of the main focuses of Hampden County Mesh. It is
-                useful for experimenting with local LoRa mesh communications,
-                observers, repeaters, companion devices, and local infrastructure.
-            </p>
-
-            <h3>Meshtastic</h3>
-
-            <p>
-                Meshtastic is another popular LoRa mesh project. Many people use it
-                for portable messaging, field testing, hiking, events, and local
-                experimentation.
-            </p>
-
-            <h3>Traditional radio</h3>
-
-            <p>
-                FRS, GMRS, MURS, CB, and Amateur Radio can all be useful depending
-                on the situation. They are not replacements for each other. They are
-                different tools with different rules, ranges, limits, and strengths.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <div class="section-heading">
-            GOOD FIRST GOALS
-        </div>
-
-        <div class="resource-grid">
-            <div class="resource-card">
-                <h3>Listen first</h3>
-
-                <p>
-                    Learn what nearby operators are using, what frequencies or
-                    settings matter, and what local nodes or repeaters may already
-                    be reachable.
-                </p>
-            </div>
-
-            <div class="resource-card">
-                <h3>Document your setup</h3>
-
-                <p>
-                    Keep track of your device model, antenna, firmware, location
-                    type, power setup, and what you can hear.
-                </p>
-            </div>
-
-            <div class="resource-card">
-                <h3>Test from real places</h3>
-
-                <p>
-                    Parks, hilltops, libraries, neighborhoods, roads, workplaces,
-                    and wooded areas all teach different things about coverage.
-                </p>
-            </div>
-
-            <div class="resource-card">
-                <h3>Share results</h3>
-
-                <p>
-                    Coverage reports and setup notes help others avoid repeating
-                    the same work and make the network easier to grow.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <div class="container">
-        <div class="community-panel">
-            <div class="section-heading">
-                NEED HELP STARTING?
-            </div>
-
-            <p>
-                Ask questions in the Discord or contact the project by email.
-                Beginner questions are welcome.
-            </p>
-
-            <p>
-                HampdenCountyMesh@protonmail.com
-            </p>
-        </div>
-    </div>
-</section>
+</main>
 
 <footer>
     <div class="container">
