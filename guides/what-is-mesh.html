@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>What Is Mesh? | Hampden County Mesh Network</title>
+
+    <meta
+        name="description"
+        content="A plain-language introduction to mesh networking, local communications, nodes, repeaters, observers, and practical community radio infrastructure."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E"
+    >
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+<header>
+    <div class="container">
+        <div class="brand">
+            <span class="brand-icon">📡</span>
+            <span>HAMPDEN COUNTY MESH NETWORK</span>
+        </div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="index.html">Guides</a>
+            <a href="../coverage.html">Coverage</a>
+            <a href="../status.html">Status</a>
+            <a href="../roadmap.html">Roadmap</a>
+        </nav>
+    </div>
+</header>
+
+<main class="docs-shell">
+    <div class="container">
+        <div class="docs-layout">
+
+            <aside class="docs-sidebar">
+                <div class="docs-sidebar-title">Guide Library</div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Introduction</div>
+                    <a href="index.html">Guides Home</a>
+                    <a class="active" href="what-is-mesh.html">What Is Mesh?</a>
+                    <a href="getting-started.html">Getting Started</a>
+                    <a href="glossary.html">Glossary</a>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Radio Basics</div>
+                    <a href="radio-reference.html">Radio Reference</a>
+                    <a href="frs-gmrs-murs-cb.html">FRS / GMRS / MURS / CB</a>
+                    <a href="amateur-radio.html">Amateur Radio</a>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Mesh Networking</div>
+                    <a href="meshcore-basics.html">MeshCore Basics</a>
+                    <a href="meshtastic-basics.html">Meshtastic Basics</a>
+                    <a href="nodes-repeaters-observers.html">Nodes, Repeaters, and Observers</a>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Field Work</div>
+                    <a href="coverage-testing.html">Coverage Testing</a>
+                    <a href="reporting-coverage.html">Reporting Coverage</a>
+                    <a href="documenting-a-node.html">Documenting a Node</a>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Community</div>
+                    <a href="discord.html">Discord</a>
+                    <a href="hosting-a-session.html">Hosting a Session</a>
+                    <a href="contributing-notes.html">Contributing Notes</a>
+                </div>
+            </aside>
+
+            <article class="docs-content">
+                <div class="docs-article">
+                    <div class="docs-breadcrumb">
+                        Guides / Introduction
+                    </div>
+
+                    <h1>What Is Mesh?</h1>
+
+                    <p class="docs-lede">
+                        A mesh network is a group of devices that can communicate with
+                        each other and help pass messages along. Instead of depending on
+                        one central tower, provider, or internet connection, a mesh can
+                        use many smaller devices working together.
+                    </p>
+
+                    <div class="docs-note">
+                        Mesh networking is not magic and it is not a replacement for every
+                        other communication tool. It is one practical way for local people
+                        to build communication options, learn radio skills, and share useful
+                        infrastructure.
+                    </div>
+
+                    <section class="docs-section" id="basic-idea">
+                        <h2>The Basic Idea</h2>
+
+                        <p>
+                            In a normal network, devices often depend on a central service.
+                            A phone may need a cell tower. A computer may need an internet
+                            provider. A website may need a remote server.
+                        </p>
+
+                        <p>
+                            In a mesh network, nearby devices can communicate directly or
+                            pass messages through other devices. If one device cannot reach
+                            the destination by itself, another device may be able to help
+                            carry the message farther.
+                        </p>
+
+                        <p>
+                            The result is a network that can grow from the ground up. More
+                            people, better placement, better antennas, and good documentation
+                            can all make the local network more useful over time.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="why-local">
+                        <h2>Why Local Mesh Matters</h2>
+
+                        <p>
+                            Local communications are shaped by local conditions. Hampden
+                            County has hills, valleys, wooded areas, dense neighborhoods,
+                            old mill buildings, highways, campuses, hospitals, schools,
+                            and rural edges. A setup that works in one place may not work
+                            the same way somewhere else.
+                        </p>
+
+                        <p>
+                            That is why local testing matters. A practical network is built
+                            by people learning what works from real locations: homes,
+                            hilltops, libraries, parks, workplaces, vehicles, sidewalks,
+                            and community spaces.
+                        </p>
+
+                        <p>
+                            Shared local knowledge helps everyone. When someone documents a
+                            good test location, a working antenna setup, a bad coverage area,
+                            or a reliable node placement, other people do not have to start
+                            from zero.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="common-roles">
+                        <h2>Common Mesh Roles</h2>
+
+                        <h3>Node</h3>
+
+                        <p>
+                            A node is a device that participates in the mesh. It may send,
+                            receive, or relay messages depending on the hardware, software,
+                            settings, and network design.
+                        </p>
+
+                        <h3>Repeater</h3>
+
+                        <p>
+                            A repeater is usually placed to help extend coverage. Height,
+                            antenna choice, power, and terrain all matter. A well-placed
+                            repeater can help connect areas that would otherwise have weak
+                            or no coverage.
+                        </p>
+
+                        <h3>Observer</h3>
+
+                        <p>
+                            An observer listens for mesh activity and can help document what
+                            is being heard. Observers are useful for coverage awareness,
+                            logging, mapping, troubleshooting, and understanding network
+                            behavior.
+                        </p>
+
+                        <h3>Gateway or bridge</h3>
+
+                        <p>
+                            Some systems can connect radio activity to internet-based tools
+                            such as maps, dashboards, logs, or community services. These are
+                            useful, but they are background infrastructure. The public goal is
+                            still practical communication and shared local knowledge.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="what-it-can-do">
+                        <h2>What Mesh Can Do</h2>
+
+                        <ul>
+                            <li>Support local text-based communication between devices.</li>
+                            <li>Help test radio coverage across real terrain.</li>
+                            <li>Provide another communication path during outages or events.</li>
+                            <li>Teach practical skills in radio, antennas, mapping, and documentation.</li>
+                            <li>Help communities coordinate field tests, workshops, and local experiments.</li>
+                            <li>Build shared knowledge about what works in Hampden County.</li>
+                        </ul>
+                    </section>
+
+                    <section class="docs-section" id="what-it-cannot-do">
+                        <h2>What Mesh Cannot Do</h2>
+
+                        <p>
+                            Mesh is useful, but it has limits. It is not a guaranteed emergency
+                            service, not a replacement for 911, and not automatically private
+                            or secure just because it uses radio.
+                        </p>
+
+                        <ul>
+                            <li>Range depends on terrain, antennas, device placement, and settings.</li>
+                            <li>Small devices may have limited power and limited bandwidth.</li>
+                            <li>Dense buildings, hills, and wooded areas can reduce signal quality.</li>
+                            <li>Some radio services require licenses or have specific legal rules.</li>
+                            <li>Public maps and dashboards may not show every device or every message.</li>
+                        </ul>
+
+                        <p>
+                            The safest way to treat mesh is as one tool among many. It works
+                            best alongside other communication options, local relationships,
+                            and realistic planning.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="meshcore-meshtastic">
+                        <h2>MeshCore and Meshtastic</h2>
+
+                        <p>
+                            Hampden County Mesh is especially interested in MeshCore, but
+                            Meshtastic is also relevant. Both are used for LoRa-based mesh
+                            experimentation, but they are different projects with different
+                            designs, apps, settings, communities, and use cases.
+                        </p>
+
+                        <p>
+                            You do not need to pick a side before learning. Many useful skills
+                            carry across both: understanding line of sight, antenna placement,
+                            firmware, device roles, power, logging, and field testing.
+                        </p>
+
+                        <div class="docs-card-grid">
+                            <a class="docs-card" href="meshcore-basics.html">
+                                <h3>MeshCore Basics</h3>
+                                <p>
+                                    Learn the basic MeshCore concepts and how they relate to
+                                    local project infrastructure.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="meshtastic-basics.html">
+                                <h3>Meshtastic Basics</h3>
+                                <p>
+                                    Learn how Meshtastic fits into the wider local mesh and
+                                    radio experimentation toolbox.
+                                </p>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="docs-section" id="first-steps">
+                        <h2>Good First Steps</h2>
+
+                        <p>
+                            The best first step is not always buying hardware. You can begin
+                            by learning the basics, joining the community, reading field notes,
+                            asking questions, or helping document local knowledge.
+                        </p>
+
+                        <div class="docs-card-grid">
+                            <a class="docs-card" href="getting-started.html">
+                                <h3>Getting Started</h3>
+                                <p>
+                                    First steps for learning, joining the project, choosing a
+                                    path, or helping without owning a node.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="coverage-testing.html">
+                                <h3>Coverage Testing</h3>
+                                <p>
+                                    Learn how local operators test what can be heard from
+                                    real places around the county.
+                                </p>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </article>
+
+            <aside class="docs-toc">
+                <div class="docs-toc-title">On This Page</div>
+                <a href="#basic-idea">The Basic Idea</a>
+                <a href="#why-local">Why Local Mesh Matters</a>
+                <a href="#common-roles">Common Mesh Roles</a>
+                <a href="#what-it-can-do">What Mesh Can Do</a>
+                <a href="#what-it-cannot-do">What Mesh Cannot Do</a>
+                <a href="#meshcore-meshtastic">MeshCore and Meshtastic</a>
+                <a href="#first-steps">Good First Steps</a>
+            </aside>
+
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-title">
+            HAMPDEN COUNTY MESH NETWORK
+        </div>
+
+        <div class="footer-subtitle">
+            Community-Owned Communications Infrastructure
+        </div>
+
+        <div class="footer-subtitle">
+            Last Updated: <span id="last-updated">Loading...</span>
+        </div>
+    </div>
+</footer>
+
+<script src="../last-updated.js"></script>
+
+</body>
+</html>
