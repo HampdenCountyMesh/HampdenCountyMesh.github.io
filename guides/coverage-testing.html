@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coverage Testing | Hampden County Mesh Network</title>
+
+    <meta
+        name="description"
+        content="A practical guide for testing mesh and radio coverage around Hampden County, documenting results, and sharing useful field reports."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E"
+    >
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+<header>
+    <div class="container">
+        <div class="brand">
+            <span class="brand-icon">📡</span>
+            <span>HAMPDEN COUNTY MESH NETWORK</span>
+        </div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="index.html">Guides</a>
+            <a href="../coverage.html">Coverage</a>
+            <a href="../status.html">Status</a>
+            <a href="../roadmap.html">Roadmap</a>
+        </nav>
+    </div>
+</header>
+
+<main class="docs-shell">
+    <div class="container">
+        <div class="docs-layout">
+
+            <aside class="docs-sidebar">
+                <div class="docs-sidebar-title">Guide Library</div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Introduction</div>
+                    <a href="index.html">Guides Home</a>
+                    <a href="what-is-mesh.html">What Is Mesh?</a>
+                    <a href="getting-started.html">Getting Started</a>
+                    <span class="docs-planned">Glossary</span>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Radio Basics</div>
+                    <a href="radio-reference.html">Radio Reference</a>
+                    <span class="docs-planned">FRS / GMRS / MURS / CB</span>
+                    <span class="docs-planned">Amateur Radio</span>
+                    <span class="docs-planned">Operating Aids</span>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Mesh Networking</div>
+                    <span class="docs-planned">MeshCore Basics</span>
+                    <span class="docs-planned">Meshtastic Basics</span>
+                    <span class="docs-planned">Nodes, Repeaters, and Observers</span>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Field Work</div>
+                    <a class="active" href="coverage-testing.html">Coverage Testing</a>
+                    <span class="docs-planned">Reporting Coverage</span>
+                    <span class="docs-planned">Documenting a Node</span>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Community</div>
+                    <span class="docs-planned">Discord</span>
+                    <span class="docs-planned">Hosting a Session</span>
+                    <span class="docs-planned">Contributing Notes</span>
+                </div>
+            </aside>
+
+            <article class="docs-content">
+                <div class="docs-article">
+                    <div class="docs-breadcrumb">
+                        Guides / Field Work
+                    </div>
+
+                    <h1>Coverage Testing</h1>
+
+                    <p class="docs-lede">
+                        Coverage testing means checking what can be heard from real places.
+                        A useful test does not need to be complicated. The goal is to turn
+                        one person’s trip, walk, drive, or field session into notes that
+                        help the whole community understand the local network.
+                    </p>
+
+                    <div class="docs-note">
+                        Coverage reports do not need to expose exact home addresses or private
+                        locations. A general area, nearby landmark, road, park, neighborhood,
+                        or public place is usually enough for community notes.
+                    </div>
+
+                    <section class="docs-section" id="why-test">
+                        <h2>Why Coverage Testing Matters</h2>
+
+                        <p>
+                            Radio coverage is shaped by the real world. Hills, valleys, trees,
+                            buildings, antenna height, device placement, and weather can all
+                            change what works.
+                        </p>
+
+                        <p>
+                            Hampden County has a mix of wooded hills, dense city streets,
+                            river corridors, old industrial buildings, campuses, hospitals,
+                            highways, parks, and rural edges. A device that works well in one
+                            place may behave very differently a few miles away.
+                        </p>
+
+                        <p>
+                            Field testing helps turn guesses into shared local knowledge.
+                            When people write down what they tested and what happened, others
+                            can make better decisions about nodes, repeaters, antennas, and
+                            future test locations.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="simple-test">
+                        <h2>A Simple Test</h2>
+
+                        <p>
+                            A basic test can be as simple as taking a node or radio to a public
+                            location and writing down what it can hear.
+                        </p>
+
+                        <ul>
+                            <li>Pick a safe place to test from.</li>
+                            <li>Note the general location.</li>
+                            <li>Turn on the device and let it run long enough to hear activity.</li>
+                            <li>Record what nodes, repeaters, stations, or signals were heard.</li>
+                            <li>Write down the device, antenna, power, and any important settings.</li>
+                            <li>Share the result with the community.</li>
+                        </ul>
+
+                        <p>
+                            The test does not have to be perfect. A short, honest note is more
+                            useful than waiting forever for a perfect report.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="what-to-record">
+                        <h2>What to Record</h2>
+
+                        <p>
+                            The most useful reports include enough detail that someone else can
+                            understand the result later.
+                        </p>
+
+                        <h3>Location</h3>
+
+                        <p>
+                            Use a general location unless there is a good reason to be more
+                            specific. Examples: “Stanley Park parking area,” “downtown Westfield,”
+                            “near Mt Tom,” “Springfield riverfront,” or “public library parking lot.”
+                        </p>
+
+                        <h3>Date and time</h3>
+
+                        <p>
+                            Include the date and approximate time. If you know UTC, include it.
+                            If not, local time is fine.
+                        </p>
+
+                        <h3>Device and role</h3>
+
+                        <p>
+                            Note what you used: handheld radio, MeshCore node, Meshtastic node,
+                            observer, repeater, mobile setup, or another device.
+                        </p>
+
+                        <h3>Antenna and placement</h3>
+
+                        <p>
+                            Antenna details matter. A small antenna inside a car, a mag-mount
+                            on a roof, a handheld at chest height, and a fixed antenna up high
+                            can all perform very differently.
+                        </p>
+
+                        <h3>What was heard</h3>
+
+                        <p>
+                            Record node names, station calls, signal reports, message activity,
+                            logs, or anything else that helps describe what was reachable.
+                        </p>
+
+                        <h3>What did not work</h3>
+
+                        <p>
+                            Failed tests are useful. If nothing was heard, say that. If one area
+                            was dead but another nearby spot worked, that is worth documenting.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="report-template">
+                        <h2>Simple Report Template</h2>
+
+                        <p>
+                            You can copy this format into Discord, a GitHub issue, a notebook,
+                            or a text file.
+                        </p>
+
+                        <div class="docs-note">
+                            <strong>Coverage report</strong><br>
+                            Date/time:<br>
+                            General location:<br>
+                            Device used:<br>
+                            Antenna / placement:<br>
+                            Power source:<br>
+                            Service or mode tested:<br>
+                            Settings, if relevant:<br>
+                            What was heard:<br>
+                            What was not heard:<br>
+                            Notes about terrain/buildings/weather:<br>
+                            Anything to try next:
+                        </div>
+                    </section>
+
+                    <section class="docs-section" id="good-places">
+                        <h2>Good Places to Test</h2>
+
+                        <p>
+                            Good test locations are places that teach something about the
+                            landscape. Do not trespass or create a safety problem just to get
+                            a radio test.
+                        </p>
+
+                        <ul>
+                            <li>Public parks and overlooks.</li>
+                            <li>Library or community center parking lots.</li>
+                            <li>Hilltops and ridgelines where public access is allowed.</li>
+                            <li>Downtown streets and dense neighborhoods.</li>
+                            <li>Road corridors and river corridors.</li>
+                            <li>Workplaces or campuses where you have permission to test.</li>
+                            <li>Places where communication would be useful during an outage or event.</li>
+                        </ul>
+
+                        <p>
+                            Testing from ordinary places matters. A network is only useful if
+                            people understand how it behaves where they actually live, work,
+                            travel, and gather.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="terrain">
+                        <h2>Terrain and Placement</h2>
+
+                        <p>
+                            Radio signals are often better with height and clearer paths. A
+                            small change in placement can make a large difference.
+                        </p>
+
+                        <ul>
+                            <li>A node near a window may work better than one deep inside a building.</li>
+                            <li>A hilltop may hear more than a valley.</li>
+                            <li>A mag-mount antenna on a vehicle roof may beat a handheld inside the car.</li>
+                            <li>Trees, wet leaves, brick, metal, and concrete can reduce signal quality.</li>
+                            <li>Outdoor repeaters need careful thought about weather, power, and mounting.</li>
+                        </ul>
+
+                        <p>
+                            When a test works, try to write down why it may have worked. When
+                            a test fails, write down what may have blocked it.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="privacy">
+                        <h2>Privacy and Safety</h2>
+
+                        <p>
+                            Coverage reports are meant to help the community, not expose people’s
+                            private lives. Keep reports useful without oversharing.
+                        </p>
+
+                        <ul>
+                            <li>Do not post someone else’s private address.</li>
+                            <li>Do not publish exact home locations unless the owner clearly wants that shared.</li>
+                            <li>Use general areas when possible.</li>
+                            <li>Do not trespass for a test.</li>
+                            <li>Do not block roads, drive distracted, or create a public safety issue.</li>
+                            <li>Follow the rules for whatever radio service you are using.</li>
+                        </ul>
+
+                        <p>
+                            A good community map does not need to expose every person or every
+                            exact location. It needs enough information to understand coverage.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="sharing">
+                        <h2>Sharing Results</h2>
+
+                        <p>
+                            Share coverage reports in the community Discord or by email. Over
+                            time, reports can be turned into better public notes, maps, guides,
+                            and planning for future nodes or repeaters.
+                        </p>
+
+                        <div class="docs-card-grid">
+                            <a class="docs-card" href="../coverage.html">
+                                <h3>Coverage Page</h3>
+                                <p>
+                                    Public-facing coverage information and future map work.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="../index.html#community">
+                                <h3>Join Discord</h3>
+                                <p>
+                                    Share test results, ask questions, and coordinate local field work.
+                                </p>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="docs-section" id="first-goals">
+                        <h2>Good First Coverage Goals</h2>
+
+                        <ul>
+                            <li>Test from one public place near you.</li>
+                            <li>Write down what device and antenna you used.</li>
+                            <li>Note whether you heard any known nodes, repeaters, or stations.</li>
+                            <li>Compare two nearby locations, such as a low spot and a higher spot.</li>
+                            <li>Share one short report with the community.</li>
+                            <li>Repeat the same test later after settings, antennas, or node locations change.</li>
+                        </ul>
+
+                        <p>
+                            Small repeatable tests are better than vague claims. The goal is to
+                            build a local record that becomes more useful over time.
+                        </p>
+                    </section>
+                </div>
+            </article>
+
+            <aside class="docs-toc">
+                <div class="docs-toc-title">On This Page</div>
+                <a href="#why-test">Why Coverage Testing Matters</a>
+                <a href="#simple-test">A Simple Test</a>
+                <a href="#what-to-record">What to Record</a>
+                <a href="#report-template">Simple Report Template</a>
+                <a href="#good-places">Good Places to Test</a>
+                <a href="#terrain">Terrain and Placement</a>
+                <a href="#privacy">Privacy and Safety</a>
+                <a href="#sharing">Sharing Results</a>
+                <a href="#first-goals">Good First Coverage Goals</a>
+            </aside>
+
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-title">
+            HAMPDEN COUNTY MESH NETWORK
+        </div>
+
+        <div class="footer-subtitle">
+            Community-Owned Communications Infrastructure
+        </div>
+
+        <div class="footer-subtitle">
+            Last Updated: <span id="last-updated">Loading...</span>
+        </div>
+    </div>
+</footer>
+
+<script src="../last-updated.js"></script>
+
+</body>
+</html>
