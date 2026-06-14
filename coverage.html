@@ -9,7 +9,7 @@
 
     <meta
         name="description"
-        content="Coverage information, county boundary mapping, and documented infrastructure for the Hampden County Mesh Network."
+        content="Coverage information, field testing, map work, and local terrain notes for Hampden County Mesh Network."
     >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,12 +21,12 @@
         rel="stylesheet"
     >
 
-    <link rel="stylesheet" href="style.css">
-
     <link
         rel="stylesheet"
         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     >
+
+    <link rel="stylesheet" href="style.css">
 
     <link
         rel="icon"
@@ -45,14 +45,14 @@
             <span>HAMPDEN COUNTY MESH NETWORK</span>
         </div>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="guides/index.html">Guides</a>
-    <a href="coverage.html">Coverage</a>
-    <a href="status.html">Status</a>
-    <a href="roadmap.html">Roadmap</a>
-</nav>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="guides/index.html">Guides</a>
+            <a href="coverage.html">Coverage</a>
+            <a href="status.html">Status</a>
+            <a href="roadmap.html">Roadmap</a>
+        </nav>
     </div>
 </header>
 
@@ -64,38 +64,75 @@
 
         <div class="status-line">
             <span class="status-dot"></span>
-            ACTIVE MAPPING
+            FIELD TESTING • LOCAL TERRAIN • COUNTY BUILDOUT
         </div>
 
         <h1>
-            NETWORK<br>
-            COVERAGE
+            COVERAGE<br>
+            AND FIELD WORK
         </h1>
 
         <p class="hero-text">
-            Coverage testing, infrastructure deployment, and mapping efforts
-            throughout Hampden County and Western Massachusetts.
+            Hampden County Mesh coverage is being built through real-world testing,
+            local notes, node documentation, and community reports from the places
+            people actually live, work, travel, and gather.
         </p>
+
+        <div class="hero-actions">
+            <a class="btn primary" href="#coverage-map-section">View Map</a>
+            <a class="btn secondary" href="#report-coverage">Report Coverage</a>
+        </div>
+    </div>
+</section>
+
+<section id="coverage-map-section">
+    <div class="container">
+        <div class="section-heading">
+            COVERAGE MAP
+        </div>
+
+        <div class="coverage-map-panel">
+            <div id="coverage-map" aria-label="Early Hampden County Mesh coverage map"></div>
+
+            <div class="coverage-map-note">
+                <strong>Early buildout map:</strong>
+                This map is a planning and field-testing aid. It does not show live
+                network activity yet, does not show exact private node locations, and
+                should not be treated as a complete coverage map.
+            </div>
+        </div>
     </div>
 </section>
 
 <section>
     <div class="container">
         <div class="section-heading">
-            COVERAGE OVERVIEW
+            CURRENT COVERAGE STATUS
         </div>
 
-        <div class="community-panel">
-            <p>
-                Hampden County Mesh is building a county-focused view of local
-                mesh infrastructure, testing activity, and future coverage data.
-            </p>
+        <div class="map-panel">
+            <div class="map-grid"></div>
 
-            <p>
-                Current public coverage information is based on documented
-                infrastructure, known node roles, and ongoing field testing.
-                Public node locations may be generalized for privacy and safety.
-            </p>
+            <div class="map-overlay">
+                <h2>COUNTY COVERAGE IS BEING MAPPED</h2>
+
+                <p>
+                    Public coverage information is still in development. The project
+                    is collecting field reports, node notes, observer logs, and
+                    practical test results before presenting coverage as reliable
+                    county-wide coverage.
+                </p>
+
+                <p>
+                    For now, the most useful contribution is a clear report: where
+                    you tested, what equipment you used, what you heard, and what
+                    did not work.
+                </p>
+
+                <a class="btn secondary" href="guides/coverage-testing.html">
+                    Learn How to Test Coverage
+                </a>
+            </div>
         </div>
     </div>
 </section>
@@ -103,60 +140,76 @@
 <section>
     <div class="container">
         <div class="section-heading">
-            HAMPDEN COUNTY MAP
+            WHY LOCAL TESTING MATTERS
         </div>
 
-        <div class="community-panel">
-            <p>
-                This map loads the Hampden County boundary from the project data
-                folder and uses the same node and status files that will support
-                future live infrastructure reporting.
-            </p>
-
-            <p>
-                The map is intentionally data-driven. As the project matures,
-                manually maintained JSON can be replaced or supplemented by
-                generated observer, MQTT, or logging data.
-            </p>
-        </div>
-
-        <div id="hcmn-map" class="hcmn-map"></div>
-        <div id="hcmn-map-stats" class="stats-grid">
-            <p>Loading map statistics...</p>
-        </div>
-
-        <div class="image-feature" style="margin-top: 2rem;">
+        <div class="image-feature">
             <div class="image-frame">
                 <img
                     src="assets/images/coverage/wio-tracker-field-test-01.jpg"
-                    alt="Handheld MeshCore node being used outdoors during field testing"
+                    alt="A mesh device used during field testing"
                 >
 
                 <div class="image-caption">
-                    Portable MeshCore field testing in Hampden County.
+                    Field testing helps turn individual experiments into shared local knowledge.
                 </div>
             </div>
 
             <div class="image-copy">
-                <h3>Coverage starts with real-world testing.</h3>
+                <h3>Coverage is shaped by real terrain.</h3>
 
                 <p>
-                    Mesh activity maps are useful, but local testing is what shows how
-                    devices actually behave across terrain, neighborhoods, roads, hills,
-                    buildings, and outdoor operating locations.
+                    Hampden County has hills, valleys, wooded areas, dense neighborhoods,
+                    old brick buildings, river corridors, highways, campuses, hospitals,
+                    parks, and rural edges. Radio coverage changes across all of that.
                 </p>
 
                 <p>
-                    Hampden County Mesh uses portable nodes, fixed infrastructure,
-                    observer logs, and community reports to build a clearer picture of
-                    where MeshCore traffic can be heard and how the network performs.
+                    A device that works from one hilltop may not work from a nearby low
+                    spot. A node near a window may behave differently than the same node
+                    inside a building or vehicle.
                 </p>
 
                 <p>
-                    Public map points may be generalized or omitted for privacy and
-                    safety. Observed traffic and field testing are documented separately
-                    from guaranteed coverage.
+                    Field testing helps the project learn what actually works here, not
+                    just what should work on paper.
                 </p>
+
+                <a class="btn secondary" href="guides/documenting-a-node.html">
+                    Document a Node
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="report-coverage">
+    <div class="container">
+        <div class="section-heading">
+            REPORT COVERAGE
+        </div>
+
+        <div class="community-panel">
+            <p>
+                Coverage reports do not need to be perfect. A short, honest field note
+                is useful if it tells other people what was tested and what happened.
+            </p>
+
+            <p>
+                Useful reports include the date, general location, device, antenna,
+                placement, service or mode tested, what was heard, what was not heard,
+                and any notes about terrain, buildings, trees, or weather.
+            </p>
+
+            <p>
+                You do not need to publish exact home addresses or private locations.
+                General areas, public landmarks, road corridors, parks, neighborhoods,
+                and town-level notes are often enough.
+            </p>
+
+            <div class="hero-actions">
+                <a class="btn primary" href="guides/coverage-testing.html">Use the Report Template</a>
+                <a class="btn secondary" href="index.html#community">Share in Discord</a>
             </div>
         </div>
     </div>
@@ -165,164 +218,152 @@
 <section>
     <div class="container">
         <div class="section-heading">
-            CURRENT INFRASTRUCTURE
+            WHAT TO TEST
         </div>
 
         <div class="resource-grid">
-            <div class="resource-card">
-                <h3>Hampden Room Observer</h3>
+            <a class="resource-card action-card" href="guides/coverage-testing.html">
+                <h3>Public places</h3>
 
                 <p>
-                    Indoor Heltec V3 observer used for MeshCore monitoring,
-                    logging, MQTT testing, and future status reporting.
+                    Parks, library parking lots, downtown areas, public overlooks,
+                    road corridors, and community spaces can all teach something
+                    about coverage.
                 </p>
-            </div>
 
-            <div class="resource-card">
-                <h3>MeshCore-Hub</h3>
-
-                <p>
-                    Linux-based infrastructure host for local logging,
-                    MQTT services, documentation, and future automation.
-                </p>
-            </div>
-
-            <div class="resource-card">
-                <h3>HampdenCountyTreeNode</h3>
-
-                <p>
-                    SEEED SenseCAP Solar Node P1-Pro deployed as fixed outdoor
-                    infrastructure supporting coverage expansion and field testing.
-                </p>
-            </div>
-
-            <div class="resource-card">
-                <h3>Cassiopeia</h3>
-
-                <p>
-                    SEEED Wio Tracker L1 Pro companion node used for portable
-                    testing and observer ownership/configuration.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <div class="section-heading">
-            KNOWN COVERAGE
-        </div>
-
-        <div class="community-panel">
-            <p>
-                Coverage is currently strongest near active infrastructure,
-                participating operators, and areas where field testing has been
-                performed.
-            </p>
-
-            <p>
-                The public map is not yet a guarantee of real-time network
-                availability. It is a foundation for documenting infrastructure
-                and improving local coverage over time.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <div class="section-heading">
-            REGIONAL ALIGNMENT
-        </div>
-
-        <div class="community-panel">
-            <p>
-                Hampden County Mesh is focused on local community building while
-                aligning with the existing BDL / Windsor Locks regional mapping
-                area where appropriate.
-            </p>
-
-            <p>
-                The goal is not to duplicate nearby communities, but to document
-                Hampden County activity clearly and make local participation
-                easier for new operators.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <div class="section-heading">
-            PLANNED EXPANSION
-        </div>
-
-        <div class="resource-grid">
-            <div class="resource-card">
-                <h3>Additional Fixed Nodes</h3>
-
-                <p>
-                    Add more stable infrastructure locations as operators,
-                    sites, and equipment become available.
-                </p>
-            </div>
-
-            <div class="resource-card">
-                <h3>Coverage Surveys</h3>
-
-                <p>
-                    Use portable nodes, mobile testing, and logging to identify
-                    strong, weak, and untested areas.
-                </p>
-            </div>
-
-            <div class="resource-card">
-                <h3>Community Testing Events</h3>
-
-                <p>
-                    Organize practical testing days for newcomers, radio users,
-                    and mesh operators.
-                </p>
-            </div>
-
-            <div class="resource-card">
-                <h3>Live Data Integration</h3>
-
-                <p>
-                    Eventually connect observer, MQTT, and status data into the
-                    website without rebuilding the public map.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section>
-    <div class="container">
-        <div class="section-heading">
-            GET INVOLVED
-        </div>
-
-        <div class="community-panel">
-            <p>
-                Interested in mesh networking, radio communications, coverage
-                testing, infrastructure deployment, or simply learning more?
-            </p>
-
-            <p>
-                Community participation is welcome. You do not need to be an
-                expert to start learning or testing.
-            </p>
-
-            <a
-                class="btn primary large"
-                href="https://discord.gg/TGsxp2q9v"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Join Discord
+                <span class="card-link">Read the field guide →</span>
             </a>
+
+            <a class="resource-card action-card" href="guides/documenting-a-node.html">
+                <h3>Node locations</h3>
+
+                <p>
+                    Fixed nodes, repeaters, observers, window placements, tree mounts,
+                    vehicle setups, and temporary test points should be documented.
+                </p>
+
+                <span class="card-link">Document a node →</span>
+            </a>
+
+            <a class="resource-card action-card" href="status.html">
+                <h3>Known systems</h3>
+
+                <p>
+                    Check what project systems are currently online, what is still
+                    being developed, and what should not be treated as complete yet.
+                </p>
+
+                <span class="card-link">View status →</span>
+            </a>
+
+            <a class="resource-card action-card" href="roadmap.html">
+                <h3>Future map work</h3>
+
+                <p>
+                    Public maps, dashboards, and live coverage tools are planned,
+                    but they need real field data and careful wording first.
+                </p>
+
+                <span class="card-link">View roadmap →</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-heading">
+            COVERAGE PRINCIPLES
+        </div>
+
+        <div class="resource-grid">
+            <div class="resource-card">
+                <h3>Use real places</h3>
+
+                <p>
+                    Test from places people actually use: homes, streets, parks,
+                    workplaces, hilltops, libraries, campuses, vehicles, and
+                    community spaces.
+                </p>
+            </div>
+
+            <div class="resource-card">
+                <h3>Write down failures</h3>
+
+                <p>
+                    Dead spots and failed tests are useful. Knowing where something
+                    does not work helps the project plan better nodes and repeaters.
+                </p>
+            </div>
+
+            <div class="resource-card">
+                <h3>Protect privacy</h3>
+
+                <p>
+                    General areas are usually enough. Do not expose private addresses,
+                    private property, or someone else’s exact location without permission.
+                </p>
+            </div>
+
+            <div class="resource-card">
+                <h3>Repeat tests</h3>
+
+                <p>
+                    Coverage changes with antenna placement, firmware, weather,
+                    power, foliage, and new infrastructure. Repeated tests matter.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-heading">
+            MAP STATUS
+        </div>
+
+        <div class="community-panel">
+            <p>
+                A public Hampden County coverage map is a project goal, but the map
+                should be based on real notes and honest status. Until then, the map
+                is best treated as a planning tool, not a live network display.
+            </p>
+
+            <p>
+                Future map work may include public coverage areas, generalized node
+                reports, field test points, observer notes, and live data where it is
+                accurate and appropriate to publish.
+            </p>
+
+            <p>
+                The goal is useful public information without exposing private homes,
+                private infrastructure, or unfinished backend details that are not
+                helpful to visitors.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="community-panel">
+            <div class="section-heading">
+                SEND A COVERAGE UPDATE
+            </div>
+
+            <p>
+                Have a field report, node note, observer update, useful test location,
+                or correction to this page?
+            </p>
+
+            <p>
+                HampdenCountyMesh@protonmail.com
+            </p>
+
+            <p>
+                You can also share reports in the community Discord from the homepage.
+            </p>
         </div>
     </div>
 </section>
@@ -344,8 +385,78 @@
 </footer>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="assets/js/coverage-map.js"></script>
 <script src="last-updated.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const mapElement = document.getElementById("coverage-map");
+
+        if (!mapElement || typeof L === "undefined") {
+            return;
+        }
+
+        const map = L.map("coverage-map", {
+            scrollWheelZoom: false
+        }).setView([42.12, -72.63], 10);
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 18,
+            attribution: "&copy; OpenStreetMap contributors"
+        }).addTo(map);
+
+        L.circle([42.12, -72.63], {
+            radius: 26000,
+            color: "#9daf88",
+            fillColor: "#263b2a",
+            fillOpacity: 0.12,
+            weight: 2
+        }).addTo(map).bindPopup(
+            "<strong>Hampden County Mesh focus area</strong><br>" +
+            "General county buildout area. Not a live coverage boundary."
+        );
+
+        const coverageMarkers = [
+            {
+                coords: [42.1015, -72.5898],
+                title: "Springfield area",
+                text: "General county population center and future coverage-report area. Not a node location."
+            },
+            {
+                coords: [42.1251, -72.7495],
+                title: "Westfield area",
+                text: "General western county field-testing area. Useful for comparing city, road, and hill/valley coverage."
+            },
+            {
+                coords: [42.2706, -72.6426],
+                title: "Mount Tom / ridge reference",
+                text: "High-ground reference area. Terrain around ridges can strongly affect radio coverage."
+            },
+            {
+                coords: [42.0645, -72.7704],
+                title: "Southwick / CT border area",
+                text: "General southern coverage-interest area near the state line. Reports wanted."
+            },
+            {
+                coords: [42.1487, -72.6079],
+                title: "Holyoke / river corridor area",
+                text: "General coverage-interest area shaped by hills, urban terrain, and the river corridor."
+            }
+        ];
+
+        coverageMarkers.forEach(function (point) {
+            L.marker(point.coords)
+                .addTo(map)
+                .bindPopup(
+                    "<strong>" + point.title + "</strong><br>" +
+                    point.text
+                );
+        });
+
+        setTimeout(function () {
+            map.invalidateSize();
+        }, 250);
+    });
+</script>
 
 </body>
 </html>
