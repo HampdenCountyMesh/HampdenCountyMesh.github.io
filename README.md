@@ -61,7 +61,7 @@ https://hampdencountymesh.github.io/
 * 🔄 Multi-Day Stability Testing In Progress
 * 📡 Additional Infrastructure Planned
 
-* Discord integration test: GitHub webhook connected.
+* Discord integration test: GitHub webhook connected and tested.
 
 ## Contributing
 
