@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Documenting a Node | Hampden County Mesh Network</title>
+
+    <meta
+        name="description"
+        content="A practical guide for documenting mesh nodes, repeaters, observers, antennas, firmware, placement, and coverage notes for Hampden County Mesh."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E"
+    >
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+<header>
+    <div class="container">
+        <div class="brand">
+            <span class="brand-icon">📡</span>
+            <span>HAMPDEN COUNTY MESH NETWORK</span>
+        </div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="index.html">Guides</a>
+            <a href="../coverage.html">Coverage</a>
+            <a href="../status.html">Status</a>
+            <a href="../roadmap.html">Roadmap</a>
+        </nav>
+    </div>
+</header>
+
+<main class="docs-shell">
+    <div class="container">
+        <div class="docs-layout">
+
+            <aside class="docs-sidebar">
+                <div class="docs-sidebar-title">Guide Library</div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Introduction</div>
+                    <a href="index.html">Guides Home</a>
+                    <a href="what-is-mesh.html">What Is Mesh?</a>
+                    <a href="getting-started.html">Getting Started</a>
+                    <span class="docs-planned">Glossary</span>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Radio Basics</div>
+                    <a href="radio-reference.html">Radio Reference</a>
+                    <span class="docs-planned">FRS / GMRS / MURS / CB</span>
+                    <span class="docs-planned">Amateur Radio</span>
+                    <span class="docs-planned">Operating Aids</span>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Mesh Networking</div>
+                    <span class="docs-planned">MeshCore Basics</span>
+                    <span class="docs-planned">Meshtastic Basics</span>
+                    <span class="docs-planned">Nodes, Repeaters, and Observers</span>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Field Work</div>
+                    <a href="coverage-testing.html">Coverage Testing</a>
+                    <span class="docs-planned">Reporting Coverage</span>
+                    <a class="active" href="documenting-a-node.html">Documenting a Node</a>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Community</div>
+                    <span class="docs-planned">Discord</span>
+                    <span class="docs-planned">Hosting a Session</span>
+                    <span class="docs-planned">Contributing Notes</span>
+                </div>
+            </aside>
+
+            <article class="docs-content">
+                <div class="docs-article">
+                    <div class="docs-breadcrumb">
+                        Guides / Field Work
+                    </div>
+
+                    <h1>Documenting a Node</h1>
+
+                    <p class="docs-lede">
+                        A node is more useful to the community when people know what it is,
+                        what role it plays, how it is powered, where it roughly operates,
+                        and what it can hear. Good documentation turns one device into shared
+                        local knowledge.
+                    </p>
+
+                    <div class="docs-note">
+                        Do not publish private addresses or sensitive locations without clear
+                        permission. For public notes, a general area is usually enough.
+                    </div>
+
+                    <section class="docs-section" id="why-document">
+                        <h2>Why Documentation Matters</h2>
+
+                        <p>
+                            A mesh network is not just hardware. It is also notes, testing,
+                            maintenance, local knowledge, and people who understand how the
+                            pieces fit together.
+                        </p>
+
+                        <p>
+                            If a node works well, documentation helps others learn from it.
+                            If a node fails, documentation helps people troubleshoot it. If a
+                            node disappears, moves, or changes firmware, documentation helps
+                            the community understand what changed.
+                        </p>
+
+                        <p>
+                            This is especially important for shared infrastructure like fixed
+                            repeaters, observers, solar nodes, community-hosted devices, and
+                            test equipment used during field work.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="what-counts">
+                        <h2>What Counts as a Node?</h2>
+
+                        <p>
+                            For documentation purposes, “node” can mean a few different things.
+                            The exact label matters less than clearly explaining the role.
+                        </p>
+
+                        <h3>Portable node</h3>
+
+                        <p>
+                            A handheld, pocket, vehicle, or temporary device used for field
+                            testing, messaging, or moving around the county.
+                        </p>
+
+                        <h3>Fixed node</h3>
+
+                        <p>
+                            A device that usually stays in one place, such as a home, workplace,
+                            club, library, garage, window, or other regular location.
+                        </p>
+
+                        <h3>Repeater</h3>
+
+                        <p>
+                            A device placed to help extend coverage. Repeaters benefit from
+                            good height, antenna placement, reliable power, weather protection,
+                            and clear documentation.
+                        </p>
+
+                        <h3>Observer</h3>
+
+                        <p>
+                            A device that listens for activity and helps document what can be
+                            heard. Observers are useful for status, logging, mapping, and
+                            understanding how the network behaves over time.
+                        </p>
+
+                        <h3>Hub or support system</h3>
+
+                        <p>
+                            A computer, script, logger, broker, dashboard, or other backend
+                            system that supports the project. These should be documented too,
+                            but they do not need to be public-facing in the same way.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="minimum-info">
+                        <h2>Minimum Useful Information</h2>
+
+                        <p>
+                            A basic node note does not need to be fancy. Start with the details
+                            someone else would need to understand what the device is doing.
+                        </p>
+
+                        <ul>
+                            <li>Node name.</li>
+                            <li>Device model.</li>
+                            <li>Role: portable node, fixed node, repeater, observer, or hub.</li>
+                            <li>General area or type of location.</li>
+                            <li>Antenna type and placement.</li>
+                            <li>Power source.</li>
+                            <li>Firmware or software version, if known.</li>
+                            <li>Service or network: MeshCore, Meshtastic, GMRS, ham, or other.</li>
+                            <li>What it can hear or reach.</li>
+                            <li>Known problems or maintenance needs.</li>
+                        </ul>
+
+                        <p>
+                            If you do not know every detail, write down what you do know. Partial
+                            notes are better than no notes.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="privacy">
+                        <h2>Location and Privacy</h2>
+
+                        <p>
+                            Useful documentation does not require exposing private addresses.
+                            For most public notes, use a general location description.
+                        </p>
+
+                        <h3>Usually okay for public notes</h3>
+
+                        <ul>
+                            <li>Town or neighborhood.</li>
+                            <li>General landmark area.</li>
+                            <li>“Near Mount Tom,” “downtown Westfield,” or “Springfield riverfront.”</li>
+                            <li>“Residential window,” “tree-mounted,” “vehicle roof,” or “library parking lot.”</li>
+                        </ul>
+
+                        <h3>Avoid unless clearly intentional</h3>
+
+                        <ul>
+                            <li>Exact home addresses.</li>
+                            <li>Private property coordinates.</li>
+                            <li>Someone else’s workplace or residence.</li>
+                            <li>Photos that reveal private details unintentionally.</li>
+                        </ul>
+
+                        <p>
+                            The goal is to understand coverage and infrastructure without making
+                            people uncomfortable or exposing more than necessary.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="template">
+                        <h2>Node Documentation Template</h2>
+
+                        <p>
+                            Use this as a starting point for Discord posts, GitHub notes,
+                            local files, or project documentation.
+                        </p>
+
+                        <div class="docs-note">
+                            <strong>Node name:</strong><br>
+                            <strong>Device model:</strong><br>
+                            <strong>Role:</strong><br>
+                            <strong>Service / project:</strong><br>
+                            <strong>Firmware / software:</strong><br>
+                            <strong>General location:</strong><br>
+                            <strong>Placement:</strong><br>
+                            <strong>Antenna:</strong><br>
+                            <strong>Power source:</strong><br>
+                            <strong>Owner / maintainer:</strong><br>
+                            <strong>Public ID / callsign, if appropriate:</strong><br>
+                            <strong>What it can hear:</strong><br>
+                            <strong>What can hear it:</strong><br>
+                            <strong>Known issues:</strong><br>
+                            <strong>Last checked:</strong><br>
+                            <strong>Notes:</strong>
+                        </div>
+                    </section>
+
+                    <section class="docs-section" id="meshcore">
+                        <h2>MeshCore Notes</h2>
+
+                        <p>
+                            For MeshCore devices, it is helpful to record the role clearly.
+                            A companion device, repeater, observer, and room server do not all
+                            do the same thing.
+                        </p>
+
+                        <ul>
+                            <li>Device name used on the mesh.</li>
+                            <li>Device model, such as Heltec, Wio Tracker, or SenseCAP Solar Node.</li>
+                            <li>Role, such as companion, repeater, observer, or room server.</li>
+                            <li>Firmware build or version, if known.</li>
+                            <li>Frequency, spreading factor, bandwidth, and coding rate, if relevant.</li>
+                            <li>Public ID or key only if it is appropriate to share.</li>
+                            <li>Observed logs, reachable nodes, or coverage notes.</li>
+                        </ul>
+
+                        <p>
+                            For public-facing pages, avoid getting too deep into backend services.
+                            People usually need to know what the node does, where it generally
+                            helps, and whether it is currently useful.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="meshtastic">
+                        <h2>Meshtastic Notes</h2>
+
+                        <p>
+                            For Meshtastic devices, useful notes may include the device model,
+                            region, channel settings, antenna, placement, role, and whether it
+                            is portable or fixed.
+                        </p>
+
+                        <ul>
+                            <li>Device model and firmware version.</li>
+                            <li>Region and channel settings, if appropriate to share.</li>
+                            <li>Role: client, router, repeater, or other.</li>
+                            <li>Antenna and power setup.</li>
+                            <li>General operating area.</li>
+                            <li>Known nodes heard or reached.</li>
+                        </ul>
+
+                        <p>
+                            Be thoughtful about privacy settings and public maps. Not every
+                            device needs to expose its exact location.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="photos">
+                        <h2>Photos</h2>
+
+                        <p>
+                            Photos can help a lot, especially for antennas, mounting, field
+                            tests, and hardware setups. They also need a little care.
+                        </p>
+
+                        <h3>Useful photos</h3>
+
+                        <ul>
+                            <li>Device on a workbench.</li>
+                            <li>Antenna setup.</li>
+                            <li>Solar or battery setup.</li>
+                            <li>General field test location.</li>
+                            <li>Public hilltop, park, or terrain view.</li>
+                        </ul>
+
+                        <h3>Before posting</h3>
+
+                        <ul>
+                            <li>Check that the photo does not reveal private addresses.</li>
+                            <li>Remove location metadata when needed.</li>
+                            <li>Avoid showing keys, passwords, private screens, or personal details.</li>
+                            <li>Use a general caption that explains why the photo matters.</li>
+                        </ul>
+
+                        <p>
+                            A good photo should help someone understand the setup, not expose
+                            more information than intended.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="maintenance">
+                        <h2>Maintenance Notes</h2>
+
+                        <p>
+                            Fixed infrastructure needs occasional checking. A node that was
+                            working last month may not still be working now.
+                        </p>
+
+                        <ul>
+                            <li>Last date checked.</li>
+                            <li>Battery or power status.</li>
+                            <li>Weather damage or mounting issues.</li>
+                            <li>Firmware changes.</li>
+                            <li>Antenna changes.</li>
+                            <li>Observed traffic or lack of traffic.</li>
+                            <li>Anything that needs repair, replacement, or retesting.</li>
+                        </ul>
+
+                        <p>
+                            Maintenance notes help prevent “mystery infrastructure” where nobody
+                            knows what is still online, who maintains it, or what changed.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="sharing">
+                        <h2>Sharing Node Notes</h2>
+
+                        <p>
+                            Node notes can be shared in Discord, kept in GitHub documentation,
+                            added to local project files, or summarized on public status and
+                            coverage pages.
+                        </p>
+
+                        <p>
+                            Keep public notes readable. Deep technical logs are useful, but most
+                            visitors need a plain summary first: what the node is, what role it
+                            plays, and whether it helps the local network.
+                        </p>
+
+                        <div class="docs-card-grid">
+                            <a class="docs-card" href="coverage-testing.html">
+                                <h3>Coverage Testing</h3>
+                                <p>
+                                    Learn how to turn field tests into useful coverage reports.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="../status.html">
+                                <h3>Status Page</h3>
+                                <p>
+                                    See how public status information is summarized for visitors.
+                                </p>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="docs-section" id="good-first-goals">
+                        <h2>Good First Goals</h2>
+
+                        <ul>
+                            <li>Write a short note for one device you already use.</li>
+                            <li>Add the model, role, antenna, power, and general location.</li>
+                            <li>Record the last time it was checked.</li>
+                            <li>Share one useful coverage result.</li>
+                            <li>Take one safe, non-private photo of the setup.</li>
+                            <li>Update the note when the device moves or changes firmware.</li>
+                        </ul>
+
+                        <p>
+                            Start with simple notes. Documentation can get more detailed as the
+                            network grows.
+                        </p>
+                    </section>
+                </div>
+            </article>
+
+            <aside class="docs-toc">
+                <div class="docs-toc-title">On This Page</div>
+                <a href="#why-document">Why Documentation Matters</a>
+                <a href="#what-counts">What Counts as a Node?</a>
+                <a href="#minimum-info">Minimum Useful Information</a>
+                <a href="#privacy">Location and Privacy</a>
+                <a href="#template">Node Template</a>
+                <a href="#meshcore">MeshCore Notes</a>
+                <a href="#meshtastic">Meshtastic Notes</a>
+                <a href="#photos">Photos</a>
+                <a href="#maintenance">Maintenance Notes</a>
+                <a href="#sharing">Sharing Node Notes</a>
+                <a href="#good-first-goals">Good First Goals</a>
+            </aside>
+
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-title">
+            HAMPDEN COUNTY MESH NETWORK
+        </div>
+
+        <div class="footer-subtitle">
+            Community-Owned Communications Infrastructure
+        </div>
+
+        <div class="footer-subtitle">
+            Last Updated: <span id="last-updated">Loading...</span>
+        </div>
+    </div>
+</footer>
+
+<script src="../last-updated.js"></script>
+
+</body>
+</html>
