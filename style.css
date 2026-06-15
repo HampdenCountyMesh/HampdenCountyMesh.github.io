@@ -158,6 +158,30 @@ nav a:hover {
     color: var(--amber);
 }
 
+.discord-nav-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: 1px solid rgba(244, 232, 193, 0.28);
+    border-radius: 999px;
+    background: rgba(244, 232, 193, 0.08);
+}
+
+.discord-nav-button img {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+
+.discord-nav-button:hover,
+.discord-nav-button:focus {
+    background: #5865f2;
+    border-color: #5865f2;
+}
+
 /* =========================================================
    Hero
    ========================================================= */
