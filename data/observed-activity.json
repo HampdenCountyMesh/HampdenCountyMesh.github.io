@@ -4,6 +4,7 @@
   "project_name": "Hampden County Mesh Network",
   "public_live_data": false,
   "update_mode": "manual placeholder",
+  "map_scope_note": "The Hampden County outline should remain visible as the local reference area, even when observed activity outside the county is eventually shown.",
   "source_note": "Observed activity may eventually come from permitted public feeds, local observer logs, MQTT data, analyzers, or community reports.",
   "ownership_note": "Observed activity does not imply ownership, operation, endorsement, or control by Hampden County Mesh.",
   "privacy_note": "Exact private node locations should be omitted or generalized before publication.",
