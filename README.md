@@ -52,7 +52,8 @@ Hampden County Mesh currently maintains a small amount of site-maintained suppor
 
 Current public status:
 
-* Site-maintained systems: online
+* Site-maintained systems: manually documented
+* Public live data: not automated yet
 * Observed activity tools: in development
 * Local community: building
 * New participants: welcome
