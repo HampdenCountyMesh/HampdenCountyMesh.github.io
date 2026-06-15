@@ -913,12 +913,12 @@ footer {
         grid-template-columns: 1fr;
     }
 
-.docs-sidebar,
-.docs-toc {
-    position: static;
-    max-height: none;
-    overflow: visible;
-}
+    .docs-sidebar,
+    .docs-toc {
+        position: static;
+        max-height: none;
+        overflow: visible;
+    }
 
     #coverage-map,
     #hcmn-map,
