@@ -694,6 +694,25 @@ footer {
     border-radius: 12px;
     margin: 20px 0;
 }
+.docs-card-planned {
+    cursor: default;
+    opacity: 0.7;
+    border-color: rgba(157, 175, 136, 0.22);
+    background: rgba(157, 175, 136, 0.06);
+}
+
+.docs-card-planned:hover {
+    border-color: rgba(157, 175, 136, 0.22);
+}
+
+.docs-card-status {
+    display: inline-block;
+    margin-top: 12px;
+    color: rgba(157, 175, 136, 0.82);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.09em;
+}
 
 /* =========================================================
    Coverage Map
