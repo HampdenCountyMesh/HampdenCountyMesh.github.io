@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,265 +6,277 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Meshtastic Basics | Hampden County Mesh Network</title>
+    <title>MeshCore Basics | Hampden County Mesh Network</title>
 
     <meta
         name="description"
-        content="A plain-language introduction to Meshtastic and how it fits into local mesh networking, field testing, and radio experimentation in Hampden County."
+        content="A plain-language introduction to MeshCore concepts, devices, repeaters, observers, and local infrastructure for Hampden County Mesh."
     >
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="../style.css">
+
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E"
+    >
 </head>
 
 <body>
-    <div class="noise"></div>
 
-    <header>
-        <div class="container">
-            <a class="brand" href="../index.html">
-                <span class="brand-icon">📡</span>
-                <span>HAMPDEN COUNTY MESH NETWORK</span>
-            </a>
+<div class="noise"></div>
 
-            <nav>
-                <a href="../index.html">Home</a>
-                <a href="../about.html">About</a>
-                <a href="index.html">Guides</a>
-                <a href="../coverage.html">Coverage</a>
-            </nav>
-        </div>
-    </header>
+<header>
+    <div class="container">
+        <a class="brand" href="../index.html">
+            <span class="brand-icon">📡</span>
+            <span>HAMPDEN COUNTY MESH NETWORK</span>
+        </a>
 
-    <main class="docs-shell">
-        <div class="container">
-            <div class="docs-layout">
-                <aside class="docs-sidebar">
-                    <div class="docs-sidebar-title">Guide Library</div>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="index.html">Guides</a>
+            <a href="../coverage.html">Coverage</a>
+        </nav>
+    </div>
+</header>
 
-                    <div class="docs-nav-group">
-                        <div class="docs-nav-heading">Introduction</div>
-                        <a href="index.html">Guides Home</a>
-                        <a href="what-is-mesh.html">What Is Mesh?</a>
-                        <a href="getting-started.html">Getting Started</a>
-                        <span class="docs-planned">Glossary</span>
+<main class="docs-shell">
+    <div class="container">
+        <div class="docs-layout">
+
+            <aside class="docs-sidebar">
+                <div class="docs-sidebar-title">Guide Library</div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Introduction</div>
+                    <a href="index.html">Guides Home</a>
+                    <a href="what-is-mesh.html">What Is Mesh?</a>
+                    <a href="getting-started.html">Getting Started</a>
+                    <span class="docs-planned">Glossary</span>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Radio Basics</div>
+                    <a href="radio-reference.html">Radio Reference</a>
+                    <span class="docs-planned">FRS / GMRS / MURS / CB</span>
+                    <span class="docs-planned">Amateur Radio</span>
+                    <span class="docs-planned">Operating Aids</span>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Mesh Networking</div>
+                    <a class="active" href="meshcore-basics.html">MeshCore Basics</a>
+                    <a href="meshtastic-basics.html">Meshtastic Basics</a>
+                    <span class="docs-planned">Nodes, Repeaters, and Observers</span>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Field Work</div>
+                    <a href="coverage-testing.html">Coverage Testing</a>
+                    <span class="docs-planned">Reporting Coverage</span>
+                    <a href="documenting-a-node.html">Documenting a Node</a>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Community</div>
+                    <a href="discord.html">Discord</a>
+                    <a href="hosting-a-session.html">Hosting a Session</a>
+                    <span class="docs-planned">Contributing Notes</span>
+                </div>
+            </aside>
+
+            <article class="docs-content">
+                <div class="docs-article">
+                    <div class="docs-breadcrumb">
+                        Guides / Mesh Networking
                     </div>
 
-                    <div class="docs-nav-group">
-                        <div class="docs-nav-heading">Radio Basics</div>
-                        <a href="radio-reference.html">Radio Reference</a>
-                        <span class="docs-planned">FRS / GMRS / MURS / CB</span>
-                        <span class="docs-planned">Amateur Radio</span>
-                        <span class="docs-planned">Operating Aids</span>
-                    </div>
-
-                    <div class="docs-nav-group">
-                        <div class="docs-nav-heading">Mesh Networking</div>
-                        <a href="meshcore-basics.html">MeshCore Basics</a>
-                        <a class="active" href="meshtastic-basics.html">Meshtastic Basics</a>
-                        <span class="docs-planned">Nodes, Repeaters, and Observers</span>
-                    </div>
-
-                    <div class="docs-nav-group">
-                        <div class="docs-nav-heading">Field Work</div>
-                        <a href="coverage-testing.html">Coverage Testing</a>
-                        <span class="docs-planned">Reporting Coverage</span>
-                        <a href="documenting-a-node.html">Documenting a Node</a>
-                    </div>
-
-                    <div class="docs-nav-group">
-                        <div class="docs-nav-heading">Community</div>
-                        <a href="discord.html">Discord</a>
-                        <span class="docs-planned">Hosting a Session</span>
-                        <span class="docs-planned">Contributing Notes</span>
-                    </div>
-                </aside>
-
-                <article class="docs-article">
-                    <div class="docs-breadcrumb">Guides / Mesh Networking</div>
-
-                    <h1>Meshtastic Basics</h1>
+                    <h1>MeshCore Basics</h1>
 
                     <p class="docs-lede">
-                        Meshtastic is a popular LoRa mesh project used for off-grid messaging, portable field use, local experimentation, and learning how small radio devices behave in real places.
+                        MeshCore is one of the main tools Hampden County Mesh is using for local LoRa mesh experimentation, repeaters, observers, field testing, and shared community infrastructure.
                     </p>
 
                     <section class="docs-section" id="what-it-is">
-                        <h2>What Meshtastic Is</h2>
+                        <h2>What MeshCore Is</h2>
 
                         <p>
-                            Meshtastic uses LoRa radio devices to create a mesh network for short messages and related data. Devices can often connect to a phone or computer by Bluetooth, Wi-Fi, or USB.
+                            MeshCore is a LoRa-based mesh communication system. It is useful for short text-based communication, local radio experimentation, field testing, and off-grid style networking.
                         </p>
 
                         <p>
-                            It is commonly used for hiking, events, field testing, neighborhood experiments, preparedness, and other situations where people want a low-power communication option that does not depend on normal cell service.
+                            For Hampden County Mesh, MeshCore is useful because it supports different device roles. A small portable device, a fixed repeater, and an observer connected to logging tools do not all need to behave the same way.
                         </p>
 
                         <div class="docs-note">
-                            Meshtastic and MeshCore are related in spirit, but they are not the same system. A device generally needs to be configured for one project or the other.
+                            MeshCore is still radio. Terrain, antenna placement, power, device settings, and local testing all matter.
                         </div>
                     </section>
 
-                    <section class="docs-section" id="how-it-fits">
-                        <h2>How It Fits This Project</h2>
+                    <section class="docs-section" id="common-roles">
+                        <h2>Common MeshCore Roles</h2>
+
+                        <h3>Companion Device</h3>
 
                         <p>
-                            Hampden County Mesh is especially focused on MeshCore, but Meshtastic is still part of the wider local radio and mesh toolbox.
+                            A companion device is usually the device someone carries, keeps nearby, or uses directly. It can be used for messages, local testing, and checking what can be heard from different places.
+                        </p>
+
+                        <h3>Repeater</h3>
+
+                        <p>
+                            A repeater helps traffic move farther across the mesh. Repeaters benefit from height, good antenna placement, reliable power, weather protection, and careful documentation.
+                        </p>
+
+                        <h3>Observer</h3>
+
+                        <p>
+                            An observer listens for local activity and can feed logs, maps, analyzers, dashboards, and coverage tools. An observer does not automatically improve radio coverage by itself. Its job is to help the community understand what is being heard.
+                        </p>
+
+                        <h3>Backend or Support System</h3>
+
+                        <p>
+                            Some setups include a computer, logging service, MQTT bridge, dashboard, or other backend tool. These support the project and should be documented clearly so future operators understand what they do.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="local-use">
+                        <h2>How Hampden County Mesh Uses MeshCore</h2>
+
+                        <p>
+                            Hampden County Mesh uses MeshCore to test local coverage, build fixed infrastructure, learn radio behavior, document useful locations, and coordinate with nearby regional mesh communities.
                         </p>
 
                         <ul>
-                            <li>It is widely known and has a large user community.</li>
-                            <li>It is useful for learning LoRa basics.</li>
-                            <li>It can be good for portable testing and events.</li>
-                            <li>It helps people understand antennas, terrain, device placement, and line of sight.</li>
-                            <li>Some hardware platforms can support either Meshtastic or MeshCore, depending on firmware.</li>
+                            <li>Portable devices can be used for field testing and casual participation.</li>
+                            <li>Repeaters can improve local reach when placed well.</li>
+                            <li>Observers can help document what is heard over time.</li>
+                            <li>Logs and coverage notes can help identify useful locations and weak areas.</li>
+                            <li>Community documentation helps new operators avoid starting from zero.</li>
                         </ul>
-
-                        <p>
-                            The goal is not to make people pick a side before learning. Many practical skills carry across both systems.
-                        </p>
                     </section>
 
-                    <section class="docs-section" id="common-uses">
-                        <h2>Common Meshtastic Uses</h2>
-
-                        <h3>Portable messaging</h3>
+                    <section class="docs-section" id="coverage">
+                        <h2>Coverage Is Local</h2>
 
                         <p>
-                            People often use Meshtastic with a small device paired to a phone. This can be useful for short messages during hikes, events, testing, or local meetups.
-                        </p>
-
-                        <h3>Field testing</h3>
-
-                        <p>
-                            Meshtastic devices can help people learn what LoRa signals can and cannot do from different locations. Testing from parks, roads, hills, vehicles, and buildings can teach useful lessons.
-                        </p>
-
-                        <h3>Local experimentation</h3>
-
-                        <p>
-                            Meshtastic can be a good way to learn about antennas, power, range, public/private settings, and how local geography affects radio.
-                        </p>
-
-                        <h3>Events and groups</h3>
-
-                        <p>
-                            Some groups use Meshtastic for lightweight coordination where normal phone service is poor, overloaded, or unavailable.
-                        </p>
-                    </section>
-
-                    <section class="docs-section" id="limits">
-                        <h2>Limits to Understand</h2>
-
-                        <p>
-                            Meshtastic is useful, but it is not a guaranteed communication system. LoRa is low bandwidth, and range depends heavily on conditions.
-                        </p>
-
-                        <ul>
-                            <li>Hills, buildings, trees, and low antenna height can block or weaken signals.</li>
-                            <li>Small devices may have limited battery life.</li>
-                            <li>Messages are not instant in all situations.</li>
-                            <li>Busy channels and poor settings can reduce usefulness.</li>
-                            <li>Public maps and shared locations need privacy awareness.</li>
-                        </ul>
-
-                        <p>
-                            Treat Meshtastic as one practical tool, not a replacement for emergency services, cell phones, ham radio, GMRS, or other communication methods.
-                        </p>
-                    </section>
-
-                    <section class="docs-section" id="meshcore-comparison">
-                        <h2>Meshtastic and MeshCore</h2>
-
-                        <p>
-                            Meshtastic and MeshCore both use LoRa radio devices for mesh-style communication, but they are different projects with different design choices, apps, settings, firmware, and communities.
+                            MeshCore coverage depends heavily on local geography. In Hampden County, hills, valleys, old brick buildings, wooded areas, downtown streets, campuses, river corridors, and antenna height can all change what works.
                         </p>
 
                         <p>
-                            In practice, that means local operators should ask what network is being tested before buying, flashing, or configuring a device.
+                            A test that works from one park, window, vehicle, or hilltop may not work from another place nearby. That is why field notes and wardriving can be useful.
                         </p>
 
                         <div class="docs-card-grid">
-                            <a class="docs-card" href="meshcore-basics.html">
-                                <h3>MeshCore Basics</h3>
-                                <p>Learn how MeshCore fits into local repeaters, observers, companion devices, and infrastructure.</p>
+                            <a class="docs-card" href="coverage-testing.html">
+                                <h3>Coverage Testing</h3>
+                                <p>
+                                    Learn how to make field tests useful to the rest of the community.
+                                </p>
                             </a>
 
-                            <a class="docs-card" href="radio-reference.html">
-                                <h3>Radio Reference</h3>
-                                <p>Compare MeshCore, Meshtastic, GMRS, FRS, MURS, CB, and Amateur Radio.</p>
+                            <a class="docs-card" href="documenting-a-node.html">
+                                <h3>Documenting a Node</h3>
+                                <p>
+                                    Record device role, placement, antenna, power, firmware, and general location notes.
+                                </p>
                             </a>
                         </div>
+                    </section>
+
+                    <section class="docs-section" id="first-device">
+                        <h2>Thinking About a First MeshCore Device</h2>
+
+                        <p>
+                            Before buying hardware, ask what people nearby are currently using. The best first device depends on whether you want to carry something, test coverage, host a fixed node, or help with infrastructure.
+                        </p>
+
+                        <ul>
+                            <li>A portable device is usually the easiest way to start learning.</li>
+                            <li>A fixed node should have a stable location and power plan.</li>
+                            <li>A repeater should be placed carefully and documented well.</li>
+                            <li>An observer should be treated as infrastructure, not just a gadget.</li>
+                        </ul>
+
+                        <p>
+                            Start small. A useful local network is built through steady testing, good placement, and shared notes.
+                        </p>
                     </section>
 
                     <section class="docs-section" id="privacy">
-                        <h2>Privacy and Location</h2>
+                        <h2>Privacy and Public Notes</h2>
 
                         <p>
-                            Meshtastic can include location features depending on device settings and how people choose to use it. Be thoughtful before sharing precise locations publicly.
+                            Mesh activity may reveal metadata such as node names, timing, signal reports, paths, and sometimes location-related information depending on device settings and what is transmitted.
                         </p>
 
-                        <ul>
-                            <li>Use general locations for public field notes when possible.</li>
-                            <li>Avoid exposing private homes, workplaces, or sensitive locations.</li>
-                            <li>Check settings before joining public channels or maps.</li>
-                            <li>Do not publish someone else’s location without permission.</li>
-                        </ul>
+                        <p>
+                            Public project notes should usually describe general areas instead of private addresses. Use enough detail to help the community understand coverage without exposing more than needed.
+                        </p>
                     </section>
 
-                    <section class="docs-section" id="first-steps">
-                        <h2>Good First Steps</h2>
+                    <section class="docs-section" id="good-first-goals">
+                        <h2>Good First Goals</h2>
 
                         <ul>
-                            <li>Read the basic mesh overview.</li>
-                            <li>Ask the local community what people are currently using.</li>
-                            <li>Learn the difference between MeshCore and Meshtastic before flashing a device.</li>
-                            <li>Start with a simple field test from a public location.</li>
-                            <li>Write down the device, antenna, location area, settings, and what was heard.</li>
+                            <li>Learn the difference between a companion device, repeater, observer, and backend system.</li>
+                            <li>Ask what settings and devices are active locally.</li>
+                            <li>Read the coverage and documentation guides.</li>
+                            <li>Try one small field test from a public place.</li>
+                            <li>Write down what worked, what did not, and what should be tested next.</li>
                         </ul>
 
                         <p>
-                            Good notes make one person’s experiment useful to everyone else.
+                            MeshCore becomes more useful when people share practical local knowledge, not just screenshots or hardware lists.
                         </p>
-
-                        <div class="docs-card-grid">
-                            <a class="docs-card" href="what-is-mesh.html">
-                                <h3>What Is Mesh?</h3>
-                                <p>Start with the basic idea of local mesh networking.</p>
-                            </a>
-
-                            <a class="docs-card" href="coverage-testing.html">
-                                <h3>Coverage Testing</h3>
-                                <p>Learn how to make test results useful to the local community.</p>
-                            </a>
-                        </div>
                     </section>
-                </article>
+                </div>
+            </article>
 
-                <aside class="docs-toc">
-                    <div class="docs-toc-title">On This Page</div>
-                    <a href="#what-it-is">What Meshtastic Is</a>
-                    <a href="#how-it-fits">How It Fits</a>
-                    <a href="#common-uses">Common Uses</a>
-                    <a href="#limits">Limits</a>
-                    <a href="#meshcore-comparison">Meshtastic and MeshCore</a>
-                    <a href="#privacy">Privacy</a>
-                    <a href="#first-steps">Good First Steps</a>
-                </aside>
-            </div>
+            <aside class="docs-toc">
+                <div class="docs-toc-title">On This Page</div>
+                <a href="#what-it-is">What MeshCore Is</a>
+                <a href="#common-roles">Common Roles</a>
+                <a href="#local-use">Local Use</a>
+                <a href="#coverage">Coverage Is Local</a>
+                <a href="#first-device">First Device</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#good-first-goals">Good First Goals</a>
+            </aside>
+
         </div>
-    </main>
+    </div>
+</main>
 
-    <footer>
-        <div class="footer-title">HAMPDEN COUNTY MESH NETWORK</div>
-        <div class="footer-subtitle">Community-Owned Communications Infrastructure</div>
-        <div class="footer-subtitle">Last Updated: <span id="last-updated">Loading...</span></div>
-    </footer>
+<footer>
+    <div class="container">
+        <div class="footer-title">
+            HAMPDEN COUNTY MESH NETWORK
+        </div>
 
-    <script src="../last-updated.js"></script>
+        <div class="footer-subtitle">
+            Community-Owned Communications Infrastructure
+        </div>
+
+        <div class="footer-subtitle">
+            Last Updated: <span id="last-updated">Loading...</span>
+        </div>
+    </div>
+</footer>
+
+<script src="../last-updated.js"></script>
+
 </body>
 </html>
+```
