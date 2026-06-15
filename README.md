@@ -21,7 +21,9 @@ The community is focused on:
 * Node, repeater, and observer documentation when people want to share it
 * Community coordination through Discord, the website, and future local sessions
 
-The goal is not to claim ownership over every mesh node or radio user in the county. The goal is to make it easier for people to learn, participate, and build useful local communications knowledge together.
+The goal is not to claim ownership over every mesh node or radio user in the county.
+
+The goal is to make it easier for people to learn, participate, and build useful local communications knowledge together.
 
 ## You do not need to be an expert
 
@@ -40,7 +42,9 @@ Useful participation can be as simple as:
 * Helping someone else understand the basics
 * Suggesting a good place for a future meetup or learning session
 
-Documentation helps, but it is not a barrier to entry. Casual notes are welcome.
+Documentation helps, but it is not a barrier to entry.
+
+Casual notes are welcome.
 
 ## Current status
 
@@ -79,17 +83,20 @@ The Guides section includes:
 * What Is Mesh?
 * Getting Started
 * Radio Reference
+* MeshCore Basics
+* Meshtastic Basics
 * Coverage Testing
 * Documenting a Node
 * Discord
+* Hosting a Session
 
 Additional guides are planned, but unfinished guide topics are marked as planned instead of being linked as live pages.
 
 ## Coverage and field notes
 
-Coverage is being learned through real-world use.
+Coverage is being learned through real-world use. That does not need to be formal.
 
-That does not need to be formal. Most of the time it just means bringing a node or radio somewhere, seeing what it can hear, and sharing anything useful you notice.
+Most of the time it just means bringing a node or radio somewhere, seeing what it can hear, and sharing anything useful you notice.
 
 Helpful details, when you have them, include:
 
@@ -100,15 +107,17 @@ Helpful details, when you have them, include:
 * What did not connect or was not heard
 * Notes about terrain, buildings, trees, or weather
 
-You do not need to publish exact private locations. General areas, public landmarks, road corridors, parks, neighborhoods, and town-level notes are often enough.
+You do not need to publish exact private locations.
+
+General areas, public landmarks, road corridors, parks, neighborhoods, and town-level notes are often enough.
 
 ## Observed activity
 
 A future goal is to show useful observed mesh activity on the website.
 
-That should be framed carefully.
+That should be framed carefully. Observed activity may include data heard by site-maintained systems or other public sources where available.
 
-Observed activity may include data heard by site-maintained systems or other public sources where available. It should not imply that every node, observer, repeater, or device shown is owned, operated, endorsed, or managed by Hampden County Mesh.
+It should not imply that every node, observer, repeater, or device shown is owned, operated, endorsed, or managed by Hampden County Mesh.
 
 The purpose is to help people see that mesh activity exists nearby, understand what may be possible, and connect with others interested in local radio and mesh networking.
 
@@ -199,6 +208,4 @@ See `LICENSE` for repository license information.
 
 ## Contact
 
-Email:
-
-[HampdenCountyMesh@protonmail.com](mailto:HampdenCountyMesh@protonmail.com)
+Email: [HampdenCountyMesh@protonmail.com](mailto:HampdenCountyMesh@protonmail.com)
