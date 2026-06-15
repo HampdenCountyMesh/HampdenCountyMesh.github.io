@@ -1,74 +1,63 @@
 {
-  "schema_version": "2026-06-15-status-manual-v4",
+  "schema_version": "2026-06-15-status-manual-v5",
   "last_updated": "2026-06-15",
   "project_name": "Hampden County Mesh Network",
   "county": "Hampden County, Massachusetts",
   "network_status": "building",
   "core_infrastructure_status": "manually documented",
-  "observer_status": "manual status only",
-  "mqtt_status": "testing / not public live data",
+  "observer_status": "manual only",
+  "mqtt_status": "testing",
   "public_live_data": false,
   "public_live_data_status": "not automated",
-  "status_source": "manually maintained",
+  "status_source": "manual",
   "meshmapper_region": "BDL / Windsor Locks",
-  "regional_alignment": "Hampden County Mesh is locally focused while aligning with the existing BDL / Windsor Locks regional mapping area where appropriate.",
   "local_broker": {
     "status": "testing",
-    "notes": "Local MQTT broker infrastructure exists for testing and future observer, bridge, and analytics work. Public live reporting is not automated yet."
+    "public": false
   },
   "systems": [
     {
       "name": "Website",
-      "status": "online as a static website",
-      "public": true,
-      "notes": "GitHub Pages website is online. Site content is maintained manually."
+      "status": "online static site",
+      "public": true
     },
     {
       "name": "MeshCore-Hub",
       "status": "manually documented",
-      "public": false,
-      "notes": "Linux-based hub used for logging, local services, documentation, MQTT testing, and future automation. Public status is not automatically monitored."
+      "public": false
     },
     {
       "name": "Hampden Room Observer",
       "status": "manually documented",
-      "public": false,
-      "notes": "Heltec V3 observer used for MeshCore monitoring, logging, MQTT testing, and future public status reporting. Public status is not automatically monitored."
+      "public": false
     },
     {
       "name": "HampdenCountyTreeNode",
       "status": "manually documented",
-      "public": false,
-      "notes": "Outdoor solar repeater documented by the project. Public status is not automatically monitored."
+      "public": false
     },
     {
       "name": "Local MQTT Services",
       "status": "testing",
-      "public": false,
-      "notes": "Local MQTT infrastructure is being tested. It should not be treated as public live network status."
+      "public": false
     },
     {
       "name": "Public Live Data",
       "status": "not automated",
-      "public": true,
-      "notes": "Public live statistics are planned, but the website does not currently provide automated live node, observer, MQTT, or coverage status."
+      "public": true
     },
     {
       "name": "County Network",
       "status": "building",
-      "public": true,
-      "notes": "Additional nodes, observers, repeaters, coverage tests, and community-hosted infrastructure are still being developed."
+      "public": true
     }
   ],
   "active_projects": [
-    "Infrastructure monitoring and testing",
-    "MeshCore observer logging and review",
-    "Local MQTT and future bridge planning",
-    "Coverage expansion planning",
-    "Documentation development",
-    "Community growth and outreach",
-    "Future mapping and analytics tools"
+    "observer logging",
+    "local MQTT testing",
+    "coverage planning",
+    "documentation",
+    "community outreach"
   ],
-  "notes": "Hampden County Mesh has documented project infrastructure, but public live data, automated status reporting, and broader coverage views are still being built.",
-  "public_notice": "Status information is manually maintained for now. Public live statistics are planned but not yet automated. Do not treat this page as a real-time network monitor."
+  "public_notice": "Status is manual. Public live data is not automated."
 }
