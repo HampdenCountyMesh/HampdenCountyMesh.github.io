@@ -1,9 +1,8 @@
 {
-  "schema_version": "2026-06-15-status-manual-v3",
+  "schema_version": "2026-06-15-status-manual-v4",
   "last_updated": "2026-06-15",
   "project_name": "Hampden County Mesh Network",
   "county": "Hampden County, Massachusetts",
-
   "network_status": "building",
   "core_infrastructure_status": "manually documented",
   "observer_status": "manual status only",
@@ -12,14 +11,11 @@
   "public_live_data_status": "not automated",
   "status_source": "manually maintained",
   "meshmapper_region": "BDL / Windsor Locks",
-
   "regional_alignment": "Hampden County Mesh is locally focused while aligning with the existing BDL / Windsor Locks regional mapping area where appropriate.",
-
   "local_broker": {
     "status": "testing",
     "notes": "Local MQTT broker infrastructure exists for testing and future observer, bridge, and analytics work. Public live reporting is not automated yet."
   },
-
   "systems": [
     {
       "name": "Website",
@@ -64,7 +60,6 @@
       "notes": "Additional nodes, observers, repeaters, coverage tests, and community-hosted infrastructure are still being developed."
     }
   ],
-
   "active_projects": [
     "Infrastructure monitoring and testing",
     "MeshCore observer logging and review",
@@ -74,8 +69,6 @@
     "Community growth and outreach",
     "Future mapping and analytics tools"
   ],
-
   "notes": "Hampden County Mesh has documented project infrastructure, but public live data, automated status reporting, and broader coverage views are still being built.",
-
   "public_notice": "Status information is manually maintained for now. Public live statistics are planned but not yet automated. Do not treat this page as a real-time network monitor."
 }
