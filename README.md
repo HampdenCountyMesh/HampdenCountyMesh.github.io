@@ -68,8 +68,7 @@ Main sections:
 * Home
 * About
 * Guides
-* Coverage
-* Status
+* Coverage / Status
 
 The Guides section is the home for educational, technical, reference, and how-to material.
 
@@ -84,7 +83,7 @@ The Guides section includes:
 * Documenting a Node
 * Discord
 
-More guides may be added over time based on what is useful to the community.
+Additional guides are planned, but unfinished guide topics are marked as planned instead of being linked as live pages.
 
 ## Coverage and field notes
 
