@@ -572,6 +572,10 @@ footer {
     position: sticky;
     top: 96px;
     padding: 18px;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
 }
 
 .docs-sidebar-title,
@@ -909,10 +913,12 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .docs-sidebar,
-    .docs-toc {
-        position: static;
-    }
+.docs-sidebar,
+.docs-toc {
+    position: static;
+    max-height: none;
+    overflow: visible;
+}
 
     #coverage-map,
     #hcmn-map,
