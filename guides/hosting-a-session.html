@@ -1,0 +1,356 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hosting a Session | Hampden County Mesh Network</title>
+
+    <meta
+        name="description"
+        content="A practical guide for community members who want to host an informal mesh networking, radio basics, or field testing session in Hampden County."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E"
+    >
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+<header>
+    <div class="container">
+        <a class="brand" href="../index.html">
+            <span class="brand-icon">📡</span>
+            <span>HAMPDEN COUNTY MESH NETWORK</span>
+        </a>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="index.html">Guides</a>
+            <a href="../coverage.html">Coverage</a>
+        </nav>
+    </div>
+</header>
+
+<main class="docs-shell">
+    <div class="container">
+        <div class="docs-layout">
+
+            <aside class="docs-sidebar">
+                <div class="docs-sidebar-title">Guide Library</div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Introduction</div>
+                    <a href="index.html">Guides Home</a>
+                    <a href="what-is-mesh.html">What Is Mesh?</a>
+                    <a href="getting-started.html">Getting Started</a>
+                    <span class="docs-planned">Glossary</span>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Radio Basics</div>
+                    <a href="radio-reference.html">Radio Reference</a>
+                    <span class="docs-planned">FRS / GMRS / MURS / CB</span>
+                    <span class="docs-planned">Amateur Radio</span>
+                    <span class="docs-planned">Operating Aids</span>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Mesh Networking</div>
+                    <a href="meshcore-basics.html">MeshCore Basics</a>
+                    <a href="meshtastic-basics.html">Meshtastic Basics</a>
+                    <span class="docs-planned">Nodes, Repeaters, and Observers</span>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Field Work</div>
+                    <a href="coverage-testing.html">Coverage Testing</a>
+                    <span class="docs-planned">Reporting Coverage</span>
+                    <a href="documenting-a-node.html">Documenting a Node</a>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Community</div>
+                    <a href="discord.html">Discord</a>
+                    <a class="active" href="hosting-a-session.html">Hosting a Session</a>
+                    <span class="docs-planned">Contributing Notes</span>
+                </div>
+            </aside>
+
+            <article class="docs-content">
+                <div class="docs-article">
+                    <div class="docs-breadcrumb">
+                        Guides / Community
+                    </div>
+
+                    <h1>Hosting a Session</h1>
+
+                    <p class="docs-lede">
+                        This guide is for community members who want to host an informal mesh networking, radio basics, field testing, or build session at a local public or community space.
+                    </p>
+
+                    <div class="docs-note">
+                        Hampden County Mesh does not currently have a fixed seminar schedule. This page is a practical planning guide for future meetups, workshops, demonstrations, and local learning sessions.
+                    </div>
+
+                    <section class="docs-section" id="who-this-is-for">
+                        <h2>Who This Is For</h2>
+
+                        <p>
+                            This guide is for someone who wants to organize a small session at a place such as a library, club meeting room, makerspace, school, community center, ham radio club, or other public-friendly space.
+                        </p>
+
+                        <p>
+                            The host does not need to be an expert. A useful session can be simple: a few people, a table, a couple of devices, basic explanations, and time for questions.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="good-session-types">
+                        <h2>Good Session Types</h2>
+
+                        <h3>Intro to Mesh Networking</h3>
+
+                        <p>
+                            A beginner-friendly explanation of what mesh networking is, why local communications matter, and how projects like MeshCore and Meshtastic fit into the wider radio toolbox.
+                        </p>
+
+                        <h3>Radio Basics</h3>
+
+                        <p>
+                            A broad introduction to FRS, GMRS, MURS, CB, Amateur Radio, MeshCore, and Meshtastic. This is useful for people who are curious but do not know where to start.
+                        </p>
+
+                        <h3>Get Your Hands on a Node</h3>
+
+                        <p>
+                            A casual demonstration where people can see a device, ask questions, compare hardware, and understand what a portable node, repeater, or observer does.
+                        </p>
+
+                        <h3>Field Testing Meetup</h3>
+
+                        <p>
+                            A short outdoor or mixed indoor/outdoor session focused on testing what can be heard from a specific area and writing down useful notes.
+                        </p>
+
+                        <h3>Build or Configuration Session</h3>
+
+                        <p>
+                            A more technical session for people who already have devices and want help with firmware, basic configuration, antennas, documentation, or logging.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="before-you-plan">
+                        <h2>Before You Plan</h2>
+
+                        <p>
+                            Start small. A first session does not need a full presentation, a large audience, or a perfect equipment list.
+                        </p>
+
+                        <ul>
+                            <li>Pick one clear topic.</li>
+                            <li>Choose a public-friendly location.</li>
+                            <li>Decide whether the session is beginner, technical, or mixed.</li>
+                            <li>Know whether internet access, power outlets, or outdoor space are available.</li>
+                            <li>Bring only equipment you are comfortable explaining.</li>
+                            <li>Avoid promising coverage, emergency capability, or guaranteed results.</li>
+                        </ul>
+                    </section>
+
+                    <section class="docs-section" id="location">
+                        <h2>Choosing a Location</h2>
+
+                        <p>
+                            Good session locations are accessible, legal to use, and comfortable for people who are new to the topic.
+                        </p>
+
+                        <p>
+                            Libraries, club rooms, makerspaces, schools, community centers, and ham radio club meetings can all work. Outdoor public locations can also be useful for field testing, but they need more attention to weather, safety, parking, and visibility.
+                        </p>
+
+                        <p>
+                            If the session involves radios, antennas, laptops, or outdoor testing, make sure the location is appropriate before the event. Do not assume every space is okay with antennas, extension cords, tripods, soldering, or outdoor activity.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="basic-kit">
+                        <h2>Basic Host Kit</h2>
+
+                        <p>
+                            A simple session can be run with very little equipment. Bring what you have, and be honest about what is experimental.
+                        </p>
+
+                        <ul>
+                            <li>One or two mesh devices for demonstration.</li>
+                            <li>A phone or laptop used to show basic configuration or messages.</li>
+                            <li>Chargers, USB cables, and a small power strip if allowed.</li>
+                            <li>A notebook or printed sign-in/contact sheet if appropriate.</li>
+                            <li>Links to the website, Discord, GitHub, and guide pages.</li>
+                            <li>Optional: small antennas, mounts, cases, or example parts.</li>
+                            <li>Optional: printed one-page handout for beginners.</li>
+                        </ul>
+
+                        <div class="docs-note">
+                            Avoid making the session depend on one fragile setup. If a live demo fails, the session can still be useful as a discussion and learning event.
+                        </div>
+                    </section>
+
+                    <section class="docs-section" id="sample-flow">
+                        <h2>Simple Session Flow</h2>
+
+                        <p>
+                            A small meetup does not need to be formal. This structure works well for a first session.
+                        </p>
+
+                        <ol>
+                            <li>Welcome people and explain the purpose of the session.</li>
+                            <li>Give a plain-language overview of mesh networking.</li>
+                            <li>Show one or two real devices.</li>
+                            <li>Explain local goals for Hampden County Mesh.</li>
+                            <li>Discuss MeshCore, Meshtastic, and other radio options at a basic level.</li>
+                            <li>Answer questions.</li>
+                            <li>Invite people to continue through Discord, GitHub, or future field testing.</li>
+                        </ol>
+                    </section>
+
+                    <section class="docs-section" id="safety-and-privacy">
+                        <h2>Safety, Privacy, and Expectations</h2>
+
+                        <p>
+                            Keep expectations realistic. Mesh networking is useful for learning, experimentation, field testing, and local communications practice, but it is not a replacement for emergency services or normal safety planning.
+                        </p>
+
+                        <ul>
+                            <li>Do not publish private addresses or sensitive locations without permission.</li>
+                            <li>Do not pressure attendees to share their location, callsign, phone number, or personal details.</li>
+                            <li>Use general location descriptions in public notes when possible.</li>
+                            <li>Follow the rules of the space hosting the session.</li>
+                            <li>Follow applicable radio rules for the service or device being used.</li>
+                            <li>Do not represent experimental coverage as guaranteed coverage.</li>
+                        </ul>
+                    </section>
+
+                    <section class="docs-section" id="tone">
+                        <h2>Good Community Tone</h2>
+
+                        <p>
+                            A good session should be welcoming to beginners. People may arrive with very different backgrounds: radio hobbyists, IT people, preparedness-minded neighbors, hikers, makers, students, or people who are simply curious.
+                        </p>
+
+                        <p>
+                            Avoid gatekeeping. Explain terms plainly. Let people ask basic questions. Be clear when something is experimental or still being figured out.
+                        </p>
+
+                        <p>
+                            Hampden County Mesh should be useful to the community, not just impressive to people who already know the jargon.
+                        </p>
+                    </section>
+
+                    <section class="docs-section" id="after-session">
+                        <h2>After the Session</h2>
+
+                        <p>
+                            A short follow-up makes the session more useful.
+                        </p>
+
+                        <ul>
+                            <li>Write down what was covered.</li>
+                            <li>Note common questions people asked.</li>
+                            <li>Record any field testing results if testing was done.</li>
+                            <li>Share useful links with attendees.</li>
+                            <li>Identify what guide, handout, or demo would help next time.</li>
+                            <li>Invite interested people to continue in the community Discord.</li>
+                        </ul>
+                    </section>
+
+                    <section class="docs-section" id="related-guides">
+                        <h2>Related Guides</h2>
+
+                        <div class="docs-card-grid">
+                            <a class="docs-card" href="what-is-mesh.html">
+                                <h3>What Is Mesh?</h3>
+                                <p>
+                                    A beginner-friendly explanation of mesh networking and local communications.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="radio-reference.html">
+                                <h3>Radio Reference</h3>
+                                <p>
+                                    A quick comparison of MeshCore, Meshtastic, GMRS, FRS, MURS, CB, and Amateur Radio.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="coverage-testing.html">
+                                <h3>Coverage Testing</h3>
+                                <p>
+                                    How to test what can be heard and turn field notes into useful local knowledge.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="discord.html">
+                                <h3>Discord</h3>
+                                <p>
+                                    How the community server is used for coordination, questions, and project updates.
+                                </p>
+                            </a>
+                        </div>
+                    </section>
+                </div>
+            </article>
+
+            <aside class="docs-toc">
+                <div class="docs-toc-title">On This Page</div>
+                <a href="#who-this-is-for">Who This Is For</a>
+                <a href="#good-session-types">Session Types</a>
+                <a href="#before-you-plan">Before You Plan</a>
+                <a href="#location">Location</a>
+                <a href="#basic-kit">Basic Host Kit</a>
+                <a href="#sample-flow">Simple Flow</a>
+                <a href="#safety-and-privacy">Safety and Privacy</a>
+                <a href="#tone">Community Tone</a>
+                <a href="#after-session">After the Session</a>
+                <a href="#related-guides">Related Guides</a>
+            </aside>
+
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-title">
+            HAMPDEN COUNTY MESH NETWORK
+        </div>
+
+        <div class="footer-subtitle">
+            Community-Owned Communications Infrastructure
+        </div>
+
+        <div class="footer-subtitle">
+            Last Updated: <span id="last-updated">Loading...</span>
+        </div>
+    </div>
+</footer>
+
+<script src="../last-updated.js"></script>
+
+</body>
+</html>
+```
