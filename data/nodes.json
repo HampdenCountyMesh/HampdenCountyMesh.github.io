@@ -1,6 +1,6 @@
 {
-  "schema_version": "2026-06-13-activity-map-v1",
-  "last_updated": "2026-06-13",
+  "schema_version": "2026-06-15-activity-map-v2",
+  "last_updated": "2026-06-15",
   "map_title": "Mesh Activity & Coverage",
   "county": "Hampden County, Massachusetts",
   "region_alignment": "BDL / Windsor Locks MeshMapper region",
@@ -51,7 +51,7 @@
       "longitude": null,
       "show_on_public_map": false,
       "location_accuracy": "not_published",
-      "notes": "Outdoor solar repeater mounted approximately 20–30 feet up in a tree. Exact public location is not published."
+      "notes": "Outdoor solar repeater mounted approximately 20 to 30 feet up in a tree. Exact public location is not published."
     },
     {
       "id": "cassiopeia",
