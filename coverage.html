@@ -156,11 +156,11 @@
             <div id="coverage-map" aria-label="Early Hampden County Mesh coverage map"></div>
 
             <div class="coverage-map-note">
-                <strong>Early buildout map:</strong>
-                This local map is a planning and field-checking aid. It does not show live
-                network activity yet, does not show every local operator or node, and
-                should not be treated as a complete coverage map.
-            </div>
+    <strong>Early buildout map:</strong>
+    This local map is a planning and field-checking aid. It keeps Hampden County
+    visible as the project’s local reference area. It does not show automated live
+    activity yet and should not be treated as a complete coverage map.
+</div>
         </div>
     </div>
 </section>
@@ -453,7 +453,7 @@
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="last-updated.js"></script>
 
-<script>
+    <script>
     document.addEventListener("DOMContentLoaded", function () {
         const mapElement = document.getElementById("coverage-map");
 
@@ -470,79 +470,100 @@
             attribution: "&copy; OpenStreetMap contributors"
         }).addTo(map);
 
-const hampdenCountyUrl =
-    "https://services1.arcgis.com/hGdibHYSPO59RG1h/ArcGIS/rest/services/Massachusetts_Counties_with_Generalized_Coastline/FeatureServer/1/query?where=COUNTY%3D%27HAMPDEN%27&outFields=COUNTY,FIPS_STCO&outSR=4326&f=geojson";
+        const observedActivityLayer = L.layerGroup().addTo(map);
 
-fetch(hampdenCountyUrl)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (countyData) {
-        const countyOutline = L.geoJSON(countyData, {
-            style: {
-                color: "#ffb347",
-                weight: 3,
-                opacity: 0.95,
-                fillColor: "#9daf88",
-                fillOpacity: 0.08
-            }
+        const overlays = {
+            "Observed activity": observedActivityLayer
+        };
+
+        L.control.layers(null, overlays, {
+            collapsed: true
         }).addTo(map);
 
-        countyOutline.bindPopup(
-            "<strong>Hampden County</strong><br>" +
-            "General community focus area for local mesh and radio notes."
-        );
+        const hampdenCountyUrl =
+            "https://services1.arcgis.com/hGdibHYSPO59RG1h/ArcGIS/rest/services/Massachusetts_Counties_with_Generalized_Coastline/FeatureServer/1/query?where=COUNTY%3D%27HAMPDEN%27&outFields=COUNTY,FIPS_STCO&outSR=4326&f=geojson";
 
-        map.fitBounds(countyOutline.getBounds(), {
-            padding: [20, 20]
-        });
-    })
-    .catch(function () {
-        console.warn("Could not load Hampden County outline.");
-    });
+        fetch(hampdenCountyUrl)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (countyData) {
+                const countyOutline = L.geoJSON(countyData, {
+                    style: {
+                        color: "#ffb347",
+                        weight: 3,
+                        opacity: 0.95,
+                        fillColor: "#9daf88",
+                        fillOpacity: 0.08
+                    }
+                }).addTo(map);
 
-        const coverageMarkers = [
-            {
-                coords: [42.1015, -72.5898],
-                title: "Springfield area",
-                text: "General county population center and future coverage-note area. Not a node location."
-            },
-            {
-                coords: [42.1251, -72.7495],
-                title: "Westfield area",
-                text: "General western county signal-check area. Useful for comparing city, road, and hill/valley coverage."
-            },
-            {
-                coords: [42.2706, -72.6426],
-                title: "Mount Tom / ridge reference",
-                text: "High-ground reference area. Terrain around ridges can strongly affect radio coverage."
-            },
-            {
-                coords: [42.0645, -72.7704],
-                title: "Southwick / CT border area",
-                text: "General southern coverage-interest area near the state line. Notes welcome."
-            },
-            {
-                coords: [42.1487, -72.6079],
-                title: "Holyoke / river corridor area",
-                text: "General coverage-interest area shaped by hills, urban terrain, and the river corridor."
-            }
-        ];
-
-        coverageMarkers.forEach(function (point) {
-            L.marker(point.coords)
-                .addTo(map)
-                .bindPopup(
-                    "<strong>" + point.title + "</strong><br>" +
-                    point.text
+                countyOutline.bindPopup(
+                    "<strong>Hampden County</strong><br>" +
+                    "Local reference area for Hampden County Mesh."
                 );
-        });
+
+                map.fitBounds(countyOutline.getBounds(), {
+                    padding: [20, 20]
+                });
+            })
+            .catch(function () {
+                console.warn("Could not load Hampden County outline.");
+            });
+
+        fetch("data/observed-activity.json")
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error("Observed activity file not available.");
+                }
+
+                return response.json();
+            })
+            .then(function (observedData) {
+                if (!observedData || !Array.isArray(observedData.activity)) {
+                    return;
+                }
+
+                observedData.activity.forEach(function (item) {
+                    if (
+                        typeof item.latitude !== "number" ||
+                        typeof item.longitude !== "number"
+                    ) {
+                        return;
+                    }
+
+                    const name = item.name || "Observed activity";
+                    const type = item.type || "Mesh activity";
+                    const source = item.source || "Source not listed";
+                    const lastSeen = item.last_seen || "Last seen not listed";
+                    const note = item.note || "";
+
+                    L.circleMarker([item.latitude, item.longitude], {
+                        radius: 7,
+                        color: "#9daf88",
+                        weight: 2,
+                        fillColor: "#9daf88",
+                        fillOpacity: 0.35
+                    })
+                        .addTo(observedActivityLayer)
+                        .bindPopup(
+                            "<strong>" + name + "</strong><br>" +
+                            type + "<br>" +
+                            "Source: " + source + "<br>" +
+                            "Last seen: " + lastSeen +
+                            (note ? "<br>" + note : "")
+                        );
+                });
+            })
+            .catch(function () {
+                console.warn("Observed activity data is not available yet.");
+            });
 
         setTimeout(function () {
             map.invalidateSize();
         }, 250);
     });
 </script>
-
+    
 </body>
 </html>
