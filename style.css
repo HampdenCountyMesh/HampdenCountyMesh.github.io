@@ -827,6 +827,20 @@ footer {
 .online {
     color: var(--green);
 }
+.coverage-data-status {
+    margin-top: 12px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 179, 71, 0.35);
+    border-radius: 14px;
+    background: rgba(20, 24, 18, 0.72);
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.coverage-data-status strong {
+    color: var(--cream);
+}
 
 /* =========================================================
    Utility / Accessibility
