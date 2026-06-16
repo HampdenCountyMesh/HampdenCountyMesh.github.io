@@ -1,9 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
     const mapElement = document.getElementById("coverage-map");
+    const activityStatusText = document.getElementById("activity-data-status-text");
 
     if (!mapElement || typeof L === "undefined") {
         return;
     }
+
+    function setActivityStatus(message) {
+        if (activityStatusText) {
+            activityStatusText.textContent = message;
+        }
+    }
+
+    function escapeHtml(value) {
+        return String(value)
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
+    }
+
+    setActivityStatus("Checking observed activity data...");
 
     const map = L.map("coverage-map", {
         scrollWheelZoom: false
@@ -65,8 +83,20 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(function (observedData) {
             if (!observedData || !Array.isArray(observedData.activity)) {
+                setActivityStatus(
+                    "Observed activity data loaded, but no usable activity list was found."
+                );
                 return;
             }
+
+            if (observedData.activity.length === 0) {
+                setActivityStatus(
+                    "Observed activity layer is prepared. No public observed activity entries are available yet."
+                );
+                return;
+            }
+
+            let plottedEntries = 0;
 
             observedData.activity.forEach(function (item) {
                 if (
@@ -76,11 +106,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     return;
                 }
 
-                const name = item.name || "Observed activity";
-                const type = item.type || "Mesh activity";
-                const source = item.source || "Source not listed";
-                const lastSeen = item.last_seen || "Last seen not listed";
-                const note = item.note || "";
+                const name = escapeHtml(item.name || "Observed activity");
+                const type = escapeHtml(item.type || "Mesh activity");
+                const source = escapeHtml(item.source || "Source not listed");
+                const lastSeen = escapeHtml(item.last_seen || "Last seen not listed");
+                const note = item.note ? escapeHtml(item.note) : "";
 
                 L.circleMarker([item.latitude, item.longitude], {
                     radius: 7,
@@ -97,9 +127,30 @@ document.addEventListener("DOMContentLoaded", function () {
                         "Last seen: " + lastSeen +
                         (note ? "<br>" + note : "")
                     );
+
+                plottedEntries += 1;
             });
+
+            if (plottedEntries === 0) {
+                setActivityStatus(
+                    "Observed activity data loaded, but no entries had public map coordinates."
+                );
+                return;
+            }
+
+            setActivityStatus(
+                plottedEntries +
+                " observed activity entr" +
+                (plottedEntries === 1 ? "y" : "ies") +
+                " loaded. Last updated: " +
+                (observedData.last_updated || "not listed") +
+                "."
+            );
         })
         .catch(function () {
+            setActivityStatus(
+                "Observed activity data is not available yet. The map is still usable as a Hampden County reference map."
+            );
             console.warn("Observed activity data is not available yet.");
         });
 
