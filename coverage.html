@@ -44,15 +44,22 @@
             <span class="brand-icon">📡</span>
             <span>HAMPDEN COUNTY MESH NETWORK</span>
         </div>
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="guides/index.html">Guides</a>
-    <a href="coverage.html">Coverage</a>
-    <a class="discord-nav-button" href="https://discord.gg/QbzysstA" aria-label="Join the Hampden County Mesh Discord">
-        <img src="assets/icons/discord-symbol-white.svg" alt="">
-    </a>
-</nav>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="guides/index.html">Guides</a>
+            <a href="coverage.html">Coverage</a>
+            <a
+                class="discord-nav-button"
+                href="https://discord.gg/QbzysstA"
+                target="_blank"
+                rel="noopener"
+                aria-label="Join the Hampden County Mesh Discord"
+            >
+                <img src="assets/icons/discord-symbol-white.svg" alt="">
+            </a>
+        </nav>
     </div>
 </header>
 
@@ -84,9 +91,12 @@
         </div>
     </div>
 </section>
+
 <section id="regional-live-activity">
     <div class="container">
-        <div class="section-heading">Regional Live Activity</div>
+        <div class="section-heading">
+            Regional Live Activity
+        </div>
 
         <div class="community-panel">
             <h2>Nearby Mesh Activity</h2>
@@ -146,6 +156,7 @@
         </div>
     </div>
 </section>
+
 <section id="coverage-map-section">
     <div class="container">
         <div class="section-heading">
@@ -155,19 +166,19 @@
         <div class="coverage-map-panel">
             <div id="coverage-map" aria-label="Early Hampden County Mesh coverage map"></div>
 
-<div class="coverage-map-note">
-    <strong>Early buildout map:</strong>
-    This local map is a planning and field-checking aid. It keeps Hampden County
-    visible as the project’s local reference area. It does not show automated live
-    activity yet and should not be treated as a complete coverage map.
-</div>
+            <div class="coverage-map-note">
+                <strong>Early buildout map:</strong>
+                This local map is a planning and field-checking aid. It keeps Hampden County
+                visible as the project’s local reference area. It does not show automated live
+                activity yet and should not be treated as a complete coverage map.
+            </div>
 
-<div class="coverage-data-status">
-    <strong>Activity data status:</strong>
-    The observed activity layer is prepared, but automated local activity data is
-    not running yet. When public or permissioned activity data is available, it can
-    be shown here without removing the Hampden County outline.
-</div>
+            <div class="coverage-data-status" id="activity-data-status">
+                <strong>Activity data status:</strong>
+                <span id="activity-data-status-text">
+                    Checking observed activity data...
+                </span>
+            </div>
         </div>
     </div>
 </section>
@@ -184,25 +195,26 @@
             <div class="map-overlay">
                 <h2>LOCAL ACTIVITY AND COVERAGE NOTES</h2>
 
-<p>
-    This page helps people understand local terrain, share casual coverage notes,
-    and eventually view mesh activity where public data is available.
-</p>
+                <p>
+                    This page helps people understand local terrain, share casual coverage notes,
+                    and eventually view mesh activity where public data is available.
+                </p>
 
-<p>
-    The broader local mesh and radio community may include independent operators,
-    nearby groups, nodes, observers, and repeaters beyond the systems maintained
-    by this site.
-</p>
+                <p>
+                    The broader local mesh and radio community may include independent operators,
+                    nearby groups, nodes, observers, and repeaters beyond the systems maintained
+                    by this site.
+                </p>
 
-<p>
-    Future activity tools should be understood as a window into what can be heard
-    or shared from participating systems, not as a complete picture of everyone
-    using mesh in Hampden County.
-</p>
-<a class="btn secondary" href="#site-maintained-systems">
-    Site-maintained Systems
-</a>
+                <p>
+                    Future activity tools should be understood as a window into what can be heard
+                    or shared from participating systems, not as a complete picture of everyone
+                    using mesh in Hampden County.
+                </p>
+
+                <a class="btn secondary" href="#site-maintained-systems">
+                    Site-maintained Systems
+                </a>
             </div>
         </div>
     </div>
@@ -281,8 +293,13 @@
             </p>
 
             <div class="hero-actions">
-                <a class="btn primary" href="guides/coverage-testing.html#optional-format">Optional Note Format</a>
-                <a class="btn secondary" href="https://discord.gg/QbzysstA" target="_blank" rel="noopener">Share in Discord</a>
+                <a class="btn primary" href="guides/coverage-testing.html#optional-format">
+                    Optional Note Format
+                </a>
+
+                <a class="btn secondary" href="https://discord.gg/QbzysstA" target="_blank" rel="noopener">
+                    Share in Discord
+                </a>
             </div>
         </div>
     </div>
@@ -318,16 +335,16 @@
                 <span class="card-link">Document a node →</span>
             </a>
 
-<a class="resource-card action-card" href="#site-maintained-systems">
-    <h3>Site-maintained systems</h3>
+            <a class="resource-card action-card" href="#site-maintained-systems">
+                <h3>Site-maintained systems</h3>
 
-    <p>
-        See what this site currently maintains, what activity tools are still
-        being developed, and what information should be treated as incomplete.
-    </p>
+                <p>
+                    See what this site currently maintains, what activity tools are still
+                    being developed, and what information should be treated as incomplete.
+                </p>
 
-    <span class="card-link">View systems →</span>
-</a>
+                <span class="card-link">View systems →</span>
+            </a>
 
             <a class="resource-card action-card" href="https://discord.gg/QbzysstA" target="_blank" rel="noopener">
                 <h3>Compare notes</h3>
@@ -389,6 +406,7 @@
         </div>
     </div>
 </section>
+
 <section id="site-maintained-systems">
     <div class="container">
         <div class="section-heading">
@@ -409,11 +427,11 @@
                 happening in Hampden County.
             </p>
 
-<p>
-    Public activity tools are still in development. Future activity views should
-    help people see nearby mesh activity, understand what may be reachable, and
-    compare notes with others interested in local radio and mesh networking.
-</p>
+            <p>
+                Public activity tools are still in development. Future activity views should
+                help people see nearby mesh activity, understand what may be reachable, and
+                compare notes with others interested in local radio and mesh networking.
+            </p>
         </div>
     </div>
 </section>
@@ -456,9 +474,10 @@
         </div>
     </div>
 </footer>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="last-updated.js"></script>
 <script src="assets/js/coverage-map.js"></script>
-    
+
 </body>
 </html>
