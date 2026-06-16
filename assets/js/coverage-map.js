@@ -32,9 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
         attribution: "&copy; OpenStreetMap contributors"
     }).addTo(map);
 
+    const countyOutlineLayer = L.layerGroup().addTo(map);
     const observedActivityLayer = L.layerGroup().addTo(map);
 
     const overlays = {
+        "Hampden County outline": countyOutlineLayer,
         "Observed activity": observedActivityLayer
     };
 
@@ -58,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     fillColor: "#9daf88",
                     fillOpacity: 0.08
                 }
-            }).addTo(map);
+            }).addTo(countyOutlineLayer);
 
             countyOutline.bindPopup(
                 "<strong>Hampden County</strong><br>" +
