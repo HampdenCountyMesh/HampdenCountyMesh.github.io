@@ -40,15 +40,21 @@
             <span>HAMPDEN COUNTY MESH NETWORK</span>
         </div>
 
-<nav>
-    <a href="../index.html">Home</a>
-    <a href="../about.html">About</a>
-    <a href="index.html">Guides</a>
-    <a href="../coverage.html">Coverage</a>
-    <a class="discord-nav-button" href="https://discord.gg/QbzysstA" aria-label="Join the Hampden County Mesh Discord">
-        <img src="../assets/icons/discord-symbol-white.svg" alt="">
-    </a>
-</nav>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="index.html">Guides</a>
+            <a href="../coverage.html">Coverage</a>
+            <a
+                class="discord-nav-button"
+                href="https://discord.gg/QbzysstA"
+                target="_blank"
+                rel="noopener"
+                aria-label="Join the Hampden County Mesh Discord"
+            >
+                <img src="../assets/icons/discord-symbol-white.svg" alt="">
+            </a>
+        </nav>
     </div>
 </header>
 
@@ -61,7 +67,7 @@
 
                 <div class="docs-nav-group">
                     <div class="docs-nav-heading">Introduction</div>
-                    <a href="index.html">Guides Home</a>
+                    <a class="active" href="index.html">Guides Home</a>
                     <a href="what-is-mesh.html">What Is Mesh?</a>
                     <a href="getting-started.html">Getting Started</a>
                     <a href="glossary.html">Glossary</a>
@@ -84,16 +90,16 @@
 
                 <div class="docs-nav-group">
                     <div class="docs-nav-heading">Field Work</div>
-                    <a class="active" href="coverage-testing.html">Coverage Testing</a>
+                    <a href="coverage-testing.html">Coverage Testing</a>
                     <span class="docs-planned">Reporting Coverage</span>
                     <a href="documenting-a-node.html">Documenting a Node</a>
                 </div>
 
                 <div class="docs-nav-group">
                     <div class="docs-nav-heading">Community</div>
-<a href="discord.html">Discord</a>
-<a href="hosting-a-session.html">Hosting a Session</a>
-<span class="docs-planned">Contributing Notes</span>
+                    <a href="discord.html">Discord</a>
+                    <a href="hosting-a-session.html">Hosting a Session</a>
+                    <span class="docs-planned">Contributing Notes</span>
                 </div>
             </aside>
 
@@ -126,19 +132,30 @@
                         </p>
 
                         <div class="docs-card-grid">
-<a class="docs-card" href="what-is-mesh.html">
-    <h3>What Is Mesh?</h3>
-    <p>
-        A plain-language introduction to mesh networking and why
-        local communications can be useful.
-    </p>
-</a>
+                            <a class="docs-card" href="what-is-mesh.html">
+                                <h3>What Is Mesh?</h3>
+
+                                <p>
+                                    A plain-language introduction to mesh networking and why
+                                    local communications can be useful.
+                                </p>
+                            </a>
 
                             <a class="docs-card" href="getting-started.html">
                                 <h3>Getting Started</h3>
+
                                 <p>
                                     First steps for joining the project, asking questions,
                                     choosing a device path, or helping without hardware.
+                                </p>
+                            </a>
+
+                            <a class="docs-card" href="glossary.html">
+                                <h3>Glossary</h3>
+
+                                <p>
+                                    Plain-language definitions for common radio, mesh, MeshCore,
+                                    Meshtastic, GMRS, ham radio, CB, antenna, signal, and mapping terms.
                                 </p>
                             </a>
                         </div>
@@ -155,21 +172,47 @@
                         </p>
 
                         <div class="docs-card-grid">
-                           <span class="docs-card docs-card-planned">
+                            <a class="docs-card" href="radio-reference.html">
+                                <h3>Radio Reference</h3>
 
-<h3>Amateur Radio</h3>
+                                <p>
+                                    A practical overview of FRS, GMRS, MURS, CB, amateur radio,
+                                    MeshCore, Meshtastic, and other local communications tools.
+                                </p>
+                            </a>
 
-<p>
+                            <span class="docs-card docs-card-planned">
+                                <h3>FRS / GMRS / MURS / CB</h3>
 
-Notes for people interested in ham radio, licensing,
+                                <p>
+                                    A plain-language guide to common personal radio services,
+                                    what they are useful for, and how they differ.
+                                </p>
 
-repeaters, nets, experimentation, and emergency-minded use.
+                                <span class="docs-card-status">Planned guide</span>
+                            </span>
 
-</p>
+                            <span class="docs-card docs-card-planned">
+                                <h3>Amateur Radio</h3>
 
-<span class="docs-card-status">Planned guide</span>
+                                <p>
+                                    Notes for people interested in ham radio, licensing,
+                                    repeaters, nets, experimentation, and emergency-minded use.
+                                </p>
 
-</span>
+                                <span class="docs-card-status">Planned guide</span>
+                            </span>
+
+                            <span class="docs-card docs-card-planned">
+                                <h3>Operating Aids</h3>
+
+                                <p>
+                                    Quick references, checklists, plain-language reminders,
+                                    and practical field-use notes.
+                                </p>
+
+                                <span class="docs-card-status">Planned guide</span>
+                            </span>
                         </div>
                     </section>
 
@@ -182,36 +225,36 @@ repeaters, nets, experimentation, and emergency-minded use.
                             terrain, power, and placement all affect how the system behaves.
                         </p>
 
-<div class="docs-card-grid">
-    <a class="docs-card" href="meshcore-basics.html">
-        <h3>MeshCore Basics</h3>
+                        <div class="docs-card-grid">
+                            <a class="docs-card" href="meshcore-basics.html">
+                                <h3>MeshCore Basics</h3>
 
-        <p>
-            Notes on MeshCore concepts, devices, observers, repeaters,
-            and local project use.
-        </p>
-    </a>
+                                <p>
+                                    Notes on MeshCore concepts, devices, observers, repeaters,
+                                    and local project use.
+                                </p>
+                            </a>
 
-    <a class="docs-card" href="meshtastic-basics.html">
-        <h3>Meshtastic Basics</h3>
+                            <a class="docs-card" href="meshtastic-basics.html">
+                                <h3>Meshtastic Basics</h3>
 
-        <p>
-            A plain-language overview of Meshtastic and how it fits into
-            the wider local mesh and radio experimentation toolbox.
-        </p>
-    </a>
+                                <p>
+                                    A plain-language overview of Meshtastic and how it fits into
+                                    the wider local mesh and radio experimentation toolbox.
+                                </p>
+                            </a>
 
-    <span class="docs-card docs-card-planned">
-        <h3>Nodes, Repeaters, and Observers</h3>
+                            <span class="docs-card docs-card-planned">
+                                <h3>Nodes, Repeaters, and Observers</h3>
 
-        <p>
-            A practical explanation of common infrastructure roles
-            and how they support the local network.
-        </p>
+                                <p>
+                                    A practical explanation of common infrastructure roles
+                                    and how they support the local network.
+                                </p>
 
-        <span class="docs-card-status">Planned guide</span>
-    </span>
-</div>
+                                <span class="docs-card-status">Planned guide</span>
+                            </span>
+                        </div>
                     </section>
 
                     <section class="docs-section" id="field-work">
@@ -227,6 +270,7 @@ repeaters, nets, experimentation, and emergency-minded use.
                         <div class="docs-card-grid">
                             <a class="docs-card" href="coverage-testing.html">
                                 <h3>Coverage Testing</h3>
+
                                 <p>
                                     How to test what you can hear, what to write down,
                                     and how to make reports useful to others.
@@ -235,11 +279,23 @@ repeaters, nets, experimentation, and emergency-minded use.
 
                             <a class="docs-card" href="documenting-a-node.html">
                                 <h3>Documenting a Node</h3>
+
                                 <p>
                                     Suggested information to record for nodes, repeaters,
                                     observers, antennas, firmware, and placement.
                                 </p>
                             </a>
+
+                            <span class="docs-card docs-card-planned">
+                                <h3>Reporting Coverage</h3>
+
+                                <p>
+                                    A guide for turning field checks, wardriving notes,
+                                    dead spots, and heard traffic into useful community reports.
+                                </p>
+
+                                <span class="docs-card-status">Planned guide</span>
+                            </span>
                         </div>
                     </section>
 
@@ -255,20 +311,32 @@ repeaters, nets, experimentation, and emergency-minded use.
                         <div class="docs-card-grid">
                             <a class="docs-card" href="discord.html">
                                 <h3>Discord</h3>
+
                                 <p>
                                     How the community server is used for questions, coordination,
                                     field reports, and project updates.
                                 </p>
                             </a>
 
-<a class="docs-card" href="hosting-a-session.html">
-    <h3>Hosting a Session</h3>
+                            <a class="docs-card" href="hosting-a-session.html">
+                                <h3>Hosting a Session</h3>
 
-    <p>
-        A practical guide for community members who want to host an
-        informal mesh, radio basics, field testing, or build session.
-    </p>
-</a>
+                                <p>
+                                    A practical guide for community members who want to host an
+                                    informal mesh, radio basics, field testing, or build session.
+                                </p>
+                            </a>
+
+                            <span class="docs-card docs-card-planned">
+                                <h3>Contributing Notes</h3>
+
+                                <p>
+                                    How to suggest corrections, share documentation, improve guides,
+                                    and contribute useful project notes.
+                                </p>
+
+                                <span class="docs-card-status">Planned guide</span>
+                            </span>
                         </div>
                     </section>
                 </div>
