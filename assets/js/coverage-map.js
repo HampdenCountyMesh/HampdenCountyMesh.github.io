@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         maxZoom: 18,
-        attribution: "&copy; OpenStreetMap contributors"
+        attribution: "© OpenStreetMap contributors"
     }).addTo(map);
 
     const countyOutlineLayer = L.layerGroup().addTo(map);
@@ -44,11 +44,14 @@ document.addEventListener("DOMContentLoaded", function () {
         collapsed: true
     }).addTo(map);
 
-    const hampdenCountyUrl =
-        "https://services1.arcgis.com/hGdibHYSPO59RG1h/ArcGIS/rest/services/Massachusetts_Counties_with_Generalized_Coastline/FeatureServer/1/query?where=COUNTY%3D%27HAMPDEN%27&outFields=COUNTY,FIPS_STCO&outSR=4326&f=geojson";
+    const hampdenCountyUrl = "https://services1.arcgis.com/hGdibHYSPO59RG1h/ArcGIS/rest/services/Massachusetts_Counties_with_Generalized_Coastline/FeatureServer/1/query?where=COUNTY%3D%27HAMPDEN%27&outFields=COUNTY,FIPS_STCO&outSR=4326&f=geojson";
 
     fetch(hampdenCountyUrl)
         .then(function (response) {
+            if (!response.ok) {
+                throw new Error("Hampden County outline file not available.");
+            }
+
             return response.json();
         })
         .then(function (countyData) {
@@ -101,9 +104,18 @@ document.addEventListener("DOMContentLoaded", function () {
             let plottedEntries = 0;
 
             observedData.activity.forEach(function (item) {
+                const latitude = item.latitude;
+                const longitude = item.longitude;
+
                 if (
-                    typeof item.latitude !== "number" ||
-                    typeof item.longitude !== "number"
+                    typeof latitude !== "number" ||
+                    typeof longitude !== "number" ||
+                    !Number.isFinite(latitude) ||
+                    !Number.isFinite(longitude) ||
+                    latitude < -90 ||
+                    latitude > 90 ||
+                    longitude < -180 ||
+                    longitude > 180
                 ) {
                     return;
                 }
@@ -114,7 +126,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 const lastSeen = escapeHtml(item.last_seen || "Last seen not listed");
                 const note = item.note ? escapeHtml(item.note) : "";
 
-                L.circleMarker([item.latitude, item.longitude], {
+                const popupLines = [
+                    "<strong>" + name + "</strong>",
+                    type,
+                    "Source: " + source,
+                    "Last seen: " + lastSeen
+                ];
+
+                if (note) {
+                    popupLines.push(note);
+                }
+
+                L.circleMarker([latitude, longitude], {
                     radius: 7,
                     color: "#9daf88",
                     weight: 2,
@@ -122,13 +145,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     fillOpacity: 0.35
                 })
                     .addTo(observedActivityLayer)
-                    .bindPopup(
-                        "<strong>" + name + "</strong><br>" +
-                        type + "<br>" +
-                        "Source: " + source + "<br>" +
-                        "Last seen: " + lastSeen +
-                        (note ? "<br>" + note : "")
-                    );
+                    .bindPopup(popupLines.join("<br>"));
 
                 plottedEntries += 1;
             });
@@ -142,8 +159,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             setActivityStatus(
                 plottedEntries +
-                " observed activity entr" +
-                (plottedEntries === 1 ? "y" : "ies") +
+                " observed activity " +
+                (plottedEntries === 1 ? "entry" : "entries") +
                 " loaded. Last updated: " +
                 (observedData.last_updated || "not listed") +
                 "."
@@ -153,6 +170,7 @@ document.addEventListener("DOMContentLoaded", function () {
             setActivityStatus(
                 "Observed activity data is not available yet. The map is still usable as a Hampden County reference map."
             );
+
             console.warn("Observed activity data is not available yet.");
         });
 
