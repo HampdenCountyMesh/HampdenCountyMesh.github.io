@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Glossary | Hampden County Mesh Network</title>
+
+    <meta
+        name="description"
+        content="Plain-language radio, mesh, MeshCore, Meshtastic, GMRS, ham radio, CB, and general communications terms used by Hampden County Mesh."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="../style.css">
+
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E"
+    >
+</head>
+
+<body>
+
+<div class="noise"></div>
+
+<header>
+    <div class="container">
+        <a class="brand" href="../index.html">
+            <span class="brand-icon">📡</span>
+            <span>HAMPDEN COUNTY MESH NETWORK</span>
+        </a>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="../about.html">About</a>
+            <a href="index.html">Guides</a>
+            <a href="../coverage.html">Coverage</a>
+            <a
+                class="discord-nav-button"
+                href="https://discord.gg/QbzysstA"
+                target="_blank"
+                rel="noopener"
+                aria-label="Join the Hampden County Mesh Discord"
+            >
+                <img src="../assets/icons/discord-symbol-white.svg" alt="">
+            </a>
+        </nav>
+    </div>
+</header>
+
+<main class="docs-shell">
+    <div class="container">
+        <div class="docs-layout">
+
+            <aside class="docs-sidebar">
+                <div class="docs-sidebar-title">Guide Library</div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Introduction</div>
+                    <a href="index.html">Guides Home</a>
+                    <a href="what-is-mesh.html">What Is Mesh?</a>
+                    <a href="getting-started.html">Getting Started</a>
+                    <a class="active" href="glossary.html">Glossary</a>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Radio Basics</div>
+                    <a href="radio-reference.html">Radio Reference</a>
+                    <span class="docs-planned">FRS / GMRS / MURS / CB</span>
+                    <span class="docs-planned">Amateur Radio</span>
+                    <span class="docs-planned">Operating Aids</span>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Mesh Networking</div>
+                    <a href="meshcore-basics.html">MeshCore Basics</a>
+                    <a href="meshtastic-basics.html">Meshtastic Basics</a>
+                    <span class="docs-planned">Nodes, Repeaters, and Observers</span>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Field Work</div>
+                    <a href="coverage-testing.html">Coverage Testing</a>
+                    <span class="docs-planned">Reporting Coverage</span>
+                    <a href="documenting-a-node.html">Documenting a Node</a>
+                </div>
+
+                <div class="docs-nav-group">
+                    <div class="docs-nav-heading">Community</div>
+                    <a href="discord.html">Discord</a>
+                    <a href="hosting-a-session.html">Hosting a Session</a>
+                    <span class="docs-planned">Contributing Notes</span>
+                </div>
+            </aside>
+
+            <article class="docs-content">
+                <div class="docs-article">
+                    <div class="docs-breadcrumb">
+                        Guides / Glossary
+                    </div>
+
+                    <h1>Glossary</h1>
+
+                    <p>
+                        A plain-language reference for common radio, mesh networking, MeshCore,
+                        Meshtastic, GMRS, ham radio, CB, field testing, and communications terms.
+                    </p>
+
+                    <p>
+                        Terms marked as MeshCore-specific or Meshtastic-specific may behave differently
+                        depending on firmware, local settings, and community practice.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn secondary" href="#basic-radio-terms">Basic Radio Terms</a>
+                        <a class="btn secondary" href="#voice-radio-terms">Voice Radio Terms</a>
+                        <a class="btn secondary" href="#mesh-packet-terms">Mesh and Packet Terms</a>
+                        <a class="btn secondary" href="#lora-mesh-terms">LoRa / Mesh Terms</a>
+                        <a class="btn secondary" href="#antennas-rf">Antennas and RF</a>
+                        <a class="btn secondary" href="#signal-quality">Signal Quality</a>
+                        <a class="btn secondary" href="#bands-services">Bands and Services</a>
+                        <a class="btn secondary" href="#security-privacy">Security and Privacy</a>
+                        <a class="btn secondary" href="#field-testing-maps">Field Testing and Maps</a>
+                    </div>
+
+                    <section id="basic-radio-terms">
+                        <h2>Basic Radio Terms</h2>
+
+                        <h3>Frequency</h3>
+                        <p>
+                            The specific radio signal rate being used, measured in hertz. For this project,
+                            people may commonly see frequencies described in MHz, such as 868 MHz or 915 MHz.
+                        </p>
+
+                        <h3>Band</h3>
+                        <p>
+                            A range of frequencies grouped together. Examples include HF, VHF, UHF,
+                            868 MHz, 915 MHz, CB, GMRS, amateur radio bands, and Wi-Fi bands.
+                        </p>
+
+                        <h3>Bandwidth</h3>
+                        <p>
+                            The amount of radio spectrum used by a signal. In LoRa settings, bandwidth
+                            affects range, speed, airtime, and how well a signal may be received.
+                        </p>
+
+                        <h3>RX / Receive</h3>
+                        <p>
+                            RX means receive. It refers to hearing, detecting, or receiving a signal or packet.
+                        </p>
+
+                        <h3>TX / Transmit</h3>
+                        <p>
+                            TX means transmit. It refers to sending a signal or packet.
+                        </p>
+
+                        <h3>Channel</h3>
+                        <p>
+                            A channel may mean a frequency, a programmed radio channel, or a configured
+                            communication path. In Meshtastic, channels are configured message groups
+                            with names, keys, and settings.
+                        </p>
+
+                        <h3>Modulation</h3>
+                        <p>
+                            The way information is carried on a radio signal. AM, FM, SSB, digital voice,
+                            packet data, and LoRa all use different methods.
+                        </p>
+
+                        <h3>AM / Amplitude Modulation</h3>
+                        <p>
+                            AM means amplitude modulation. It carries information by changing the strength,
+                            or amplitude, of the radio wave.
+                        </p>
+
+                        <h3>FM / Frequency Modulation</h3>
+                        <p>
+                            FM means frequency modulation. It carries information by changing the frequency
+                            of the radio wave.
+                        </p>
+
+                        <h3>SSB / Single Sideband</h3>
+                        <p>
+                            SSB means single sideband. It is a voice mode commonly used on HF amateur radio
+                            and some CB radios. It is more efficient than regular AM, but requires radios
+                            on both ends to be tuned carefully.
+                        </p>
+
+                        <h3>Analog Transmission</h3>
+                        <p>
+                            A transmission where the signal varies continuously, such as traditional AM
+                            or FM voice. This is different from digital packet-based systems like MeshCore,
+                            Meshtastic, DMR, or FT8.
+                        </p>
+
+                        <h3>Dead Air</h3>
+                        <p>
+                            A period when nothing is being transmitted or heard on a channel.
+                        </p>
+                    </section>
+
+                    <section id="voice-radio-terms">
+                        <h2>Voice Radio Terms</h2>
+
+                        <h3>PTT / Push To Talk</h3>
+                        <p>
+                            PTT means push to talk. It is the button or control used to transmit on many
+                            voice radios.
+                        </p>
+
+                        <h3>Squelch</h3>
+                        <p>
+                            A radio control or setting that keeps the speaker quiet until a signal is
+                            strong enough or matches the expected tone/code.
+                        </p>
+
+                        <h3>CTCSS / Continuous Tone-Coded Squelch System</h3>
+                        <p>
+                            CTCSS uses a low audio tone to open squelch on radios set to the same tone.
+                            These are often marketed as privacy codes, but they do not make a channel private.
+                        </p>
+
+                        <h3>DCS / Digital-Coded Squelch</h3>
+                        <p>
+                            DCS is another squelch-control system that uses digital codes instead of
+                            analog tones. Like CTCSS, it does not encrypt or privatize the channel.
+                        </p>
+
+                        <h3>Simplex</h3>
+                        <p>
+                            Direct radio-to-radio communication on the same frequency, without a repeater.
+                        </p>
+
+                        <h3>Duplex</h3>
+                        <p>
+                            Communication that uses separate transmit and receive frequencies. Repeaters
+                            commonly use duplex operation.
+                        </p>
+
+                        <h3>Repeater Offset</h3>
+                        <p>
+                            The difference between the frequency a radio receives on and the frequency it
+                            transmits on when using a repeater.
+                        </p>
+
+                        <h3>DMR / Digital Mobile Radio</h3>
+                        <p>
+                            DMR means digital mobile radio. It is a digital voice radio standard used by
+                            commercial, public-service, and amateur radio operators. In amateur radio use,
+                            DMR often involves repeaters, talkgroups, time slots, and radio IDs.
+                        </p>
+
+                        <h3>CW / Morse Code</h3>
+                        <p>
+                            CW means continuous wave. In amateur radio, CW usually refers to Morse code
+                            sent by turning a carrier signal on and off.
+                        </p>
+
+                        <h3>FT8</h3>
+                        <p>
+                            A weak-signal digital mode used by amateur radio operators, usually with a
+                            computer handling timing and decoding.
+                        </p>
+                    </section>
+
+                    <section id="mesh-packet-terms">
+                        <h2>Mesh and Packet Terms</h2>
+
+                        <h3>Mesh</h3>
+                        <p>
+                            A network where devices can pass messages through other devices instead of
+                            relying on one central tower, router, or service.
+                        </p>
+
+                        <h3>Node</h3>
+                        <p>
+                            A device that participates in a mesh network. A node may be handheld, portable,
+                            vehicle-mounted, fixed indoors, fixed outdoors, battery-powered, or solar-powered.
+                        </p>
+
+                        <h3>Repeater</h3>
+                        <p>
+                            A node placed to help messages travel farther. Repeaters usually work best
+                            with height, reliable power, good antenna placement, and weather protection.
+                        </p>
+
+                        <h3>Observer</h3>
+                        <p>
+                            A device or system that listens for mesh activity and may feed logs, analyzers,
+                            status tools, or maps. An observer helps document activity, but does not
+                            necessarily improve coverage by itself.
+                        </p>
+
+                        <h3>Packet</h3>
+                        <p>
+                            A small unit of digital data sent across a network or radio link.
+                        </p>
+
+                        <h3>Hop</h3>
+                        <p>
+                            One forwarding step in a mesh network.
+                        </p>
+
+                        <h3>Hop Limit</h3>
+                        <p>
+                            A setting that controls how many times a message may be forwarded through the mesh.
+                            Higher hop limits can reach farther but can also create more network traffic.
+                        </p>
+
+                        <h3>TTL / Time To Live</h3>
+                        <p>
+                            TTL means time to live. In mesh networking, TTL usually limits how far or how
+                            many times a message may be forwarded before it is dropped.
+                        </p>
+
+                        <h3>ACK / Acknowledgement</h3>
+                        <p>
+                            ACK means acknowledgement. It is a confirmation that a message or packet was received.
+                        </p>
+
+                        <h3>Direct Message</h3>
+                        <p>
+                            A message intended for a specific person or node instead of a shared public
+                            channel or group.
+                        </p>
+
+                        <h3>Telemetry</h3>
+                        <p>
+                            Status data reported by a device, such as battery level, temperature, uptime,
+                            location, signal information, or other device health details.
+                        </p>
+
+                        <h3>Region</h3>
+                        <p>
+                            A defined area or grouping used to organize network behavior. In MeshCore,
+                            regions may matter for repeater configuration and traffic handling.
+                        </p>
+
+                        <h3>Scope</h3>
+                        <p>
+                            A setting or concept that controls how far a message or operation is meant
+                            to reach. In MeshCore contexts, scope may relate to how traffic is limited,
+                            forwarded, or handled.
+                        </p>
+                    </section>
+
+                    <section id="lora-mesh-terms">
+                        <h2>LoRa / MeshCore / Meshtastic Terms</h2>
+
+                        <h3>LoRa / Long Range</h3>
+                        <p>
+                            LoRa means long range. It is a low-power radio technology used for small data
+                            packets over longer distances than many short-range wireless systems.
+                        </p>
+
+                        <h3>MeshCore</h3>
+                        <p>
+                            A LoRa-based mesh communication system used by Hampden County Mesh for local
+                            experimentation, repeaters, observers, field testing, logging, and community
+                            infrastructure.
+                        </p>
+
+                        <h3>Meshtastic</h3>
+                        <p>
+                            A separate LoRa-based mesh communication project commonly used for off-grid
+                            text messaging, position sharing, telemetry, and hobby/community mesh networks.
+                        </p>
+
+                        <h3>LongFast</h3>
+                        <p>
+                            A Meshtastic preset/channel name associated with longer-range, lower-speed
+                            communication. Local practice can vary.
+                        </p>
+
+                        <h3>ShortFast</h3>
+                        <p>
+                            A Meshtastic preset associated with shorter-range, faster communication compared
+                            with longer-range presets.
+                        </p>
+
+                        <h3>Spread Factor / SF</h3>
+                        <p>
+                            Spread factor is a LoRa setting that affects range, speed, airtime, and how
+                            easily a signal can be decoded. Higher spread factors usually favor longer
+                            range but use more airtime.
+                        </p>
+
+                        <h3>868 MHz</h3>
+                        <p>
+                            A radio range commonly associated with LoRa and ISM-style operation in parts
+                            of Europe and other regions. Rules vary by country and region.
+                        </p>
+
+                        <h3>915 MHz</h3>
+                        <p>
+                            A radio range commonly associated with LoRa and ISM-style operation in the
+                            United States and some other regions. Rules vary by country and region.
+                        </p>
+
+                        <h3>Firmware</h3>
+                        <p>
+                            The software installed on a radio device or microcontroller.
+                        </p>
+
+                        <h3>Flashing</h3>
+                        <p>
+                            Installing or replacing firmware on a device.
+                        </p>
+
+                        <h3>OTA / Over The Air</h3>
+                        <p>
+                            OTA means over the air. It usually refers to sending updates or configuration
+                            wirelessly instead of using a USB cable.
+                        </p>
+
+                        <h3>BLE / Bluetooth Low Energy</h3>
+                        <p>
+                            BLE means Bluetooth Low Energy. It is a short-range wireless technology often
+                            used for phone-to-device connections, configuration, sensors, and accessories.
+                        </p>
+
+                        <h3>API / Application Programming Interface</h3>
+                        <p>
+                            API means application programming interface. It is a way for software tools
+                            to talk to each other.
+                        </p>
+                    </section>
+
+                    <section id="antennas-rf">
+                        <h2>Antennas and RF Measurements</h2>
+
+                        <h3>Antenna</h3>
+                        <p>
+                            The part of a radio system that sends or receives radio signals.
+                        </p>
+
+                        <h3>Rubber Duck Antenna</h3>
+                        <p>
+                            A short flexible antenna commonly used on handheld radios. It is convenient,
+                            but usually not the best-performing antenna.
+                        </p>
+
+                        <h3>Whip Antenna</h3>
+                        <p>
+                            A straight or flexible antenna often used on handheld, mobile, or portable
+                            radio equipment.
+                        </p>
+
+                        <h3>Dipole Antenna</h3>
+                        <p>
+                            A simple antenna made from two conductive elements. Dipoles are common in
+                            many parts of radio because they are simple, useful, and easy to understand.
+                        </p>
+
+                        <h3>Omnidirectional Antenna</h3>
+                        <p>
+                            An antenna designed to send or receive signal in all horizontal directions
+                            around the antenna.
+                        </p>
+
+                        <h3>Yagi Antenna</h3>
+                        <p>
+                            A directional antenna that focuses signal more strongly in one direction.
+                        </p>
+
+                        <h3>Coax / Feed Line</h3>
+                        <p>
+                            The cable that carries radio-frequency energy between a radio and antenna.
+                        </p>
+
+                        <h3>Connector</h3>
+                        <p>
+                            The physical plug or jack used to connect radios, antennas, adapters, and coax.
+                        </p>
+
+                        <h3>Ground Plane</h3>
+                        <p>
+                            A conductive surface or set of radials that helps some antennas work properly.
+                        </p>
+
+                        <h3>Polarization</h3>
+                        <p>
+                            The orientation of a radio wave or antenna, commonly vertical or horizontal.
+                            Matching polarization can improve signal performance.
+                        </p>
+
+                        <h3>Gain</h3>
+                        <p>
+                            A measure of how an antenna focuses signal in some directions compared with others.
+                        </p>
+
+                        <h3>dBi</h3>
+                        <p>
+                            dBi means decibels relative to an isotropic radiator. It describes antenna gain
+                            compared with a theoretical antenna that radiates equally in every direction.
+                        </p>
+
+                        <h3>dBd</h3>
+                        <p>
+                            dBd means decibels relative to a dipole antenna. It describes antenna gain
+                            compared with a standard half-wave dipole.
+                        </p>
+
+                        <h3>dBm</h3>
+                        <p>
+                            dBm means decibels relative to one milliwatt. It is commonly used to describe
+                            radio power levels and received signal strength.
+                        </p>
+
+                        <h3>SWR / Standing Wave Ratio</h3>
+                        <p>
+                            SWR means standing wave ratio. It describes how well an antenna system is
+                            matched to the radio and feed line. Very high SWR can reduce performance and
+                            may damage some transmitters.
+                        </p>
+                    </section>
+
+                    <section id="signal-quality">
+                        <h2>Signal Quality</h2>
+
+                        <h3>RSSI / Received Signal Strength Indicator</h3>
+                        <p>
+                            RSSI means received signal strength indicator. It is a measurement of how
+                            strong a received signal appears to the radio.
+                        </p>
+
+                        <h3>SNR / Signal-to-Noise Ratio</h3>
+                        <p>
+                            SNR means signal-to-noise ratio. It compares the desired signal against
+                            background noise. A better SNR usually means the signal is easier to decode.
+                        </p>
+
+                        <h3>Duty Cycle</h3>
+                        <p>
+                            The percentage of time a radio transmits over a period of time. Limiting
+                            airtime is good practice on shared radio channels.
+                        </p>
+
+                        <h3>Airtime</h3>
+                        <p>
+                            The amount of time a transmission occupies the channel. Long airtime can
+                            reduce how much room is available for other traffic.
+                        </p>
+
+                        <h3>Line of Sight</h3>
+                        <p>
+                            A mostly clear path between radio devices. Hills, buildings, trees, and terrain
+                            still matter even when devices are close together.
+                        </p>
+
+                        <h3>Terrain</h3>
+                        <p>
+                            The physical landscape around a radio path, including hills, valleys, buildings,
+                            trees, rivers, roads, and dense neighborhoods.
+                        </p>
+
+                        <h3>Coverage</h3>
+                        <p>
+                            The area where a device, repeater, observer, or network can be heard or used.
+                        </p>
+
+                        <h3>Dead Spot</h3>
+                        <p>
+                            An area where a device does not hear or reach expected traffic.
+                        </p>
+                    </section>
+
+                    <section id="bands-services">
+                        <h2>Bands and Services</h2>
+
+                        <h3>HF / High Frequency</h3>
+                        <p>
+                            HF means high frequency. It covers 3 to 30 MHz and can support long-distance
+                            communication under some conditions.
+                        </p>
+
+                        <h3>VHF / Very High Frequency</h3>
+                        <p>
+                            VHF means very high frequency. It covers 30 to 300 MHz and is commonly used
+                            for local and regional radio communication.
+                        </p>
+
+                        <h3>UHF / Ultra High Frequency</h3>
+                        <p>
+                            UHF means ultra high frequency. It covers 300 MHz to 3 GHz and is used by many
+                            handheld radios, repeaters, data links, and local communications systems.
+                        </p>
+
+                        <h3>FRS / Family Radio Service</h3>
+                        <p>
+                            FRS means family radio service. It is a short-range personal radio service
+                            commonly used by small handheld radios.
+                        </p>
+
+                        <h3>GMRS / General Mobile Radio Service</h3>
+                        <p>
+                            GMRS means general mobile radio service. It is used for personal and family
+                            communications and can include repeaters, depending on rules and licensing.
+                        </p>
+
+                        <h3>CB / Citizens Band</h3>
+                        <p>
+                            CB means citizens band. It is a personal radio service commonly associated
+                            with 27 MHz AM and SSB voice communication.
+                        </p>
+
+                        <h3>Amateur Radio / Ham Radio</h3>
+                        <p>
+                            Amateur radio is a licensed radio service for technical learning, experimentation,
+                            public service, and communication.
+                        </p>
+
+                        <h3>ISM Band</h3>
+                        <p>
+                            ISM means industrial, scientific, and medical. ISM bands are shared radio
+                            ranges used by many devices, including some LoRa systems.
+                        </p>
+
+                        <h3>Wi-Fi</h3>
+                        <p>
+                            Wi-Fi is a local wireless networking technology commonly used for internet
+                            access and local networks.
+                        </p>
+
+                        <h3>Satellite</h3>
+                        <p>
+                            A radio relay or payload in orbit. Some amateur radio satellites can repeat
+                            voice or digital signals between ground stations.
+                        </p>
+                    </section>
+
+                    <section id="security-privacy">
+                        <h2>Security, Keys, and Privacy</h2>
+
+                        <h3>End-to-End Encryption</h3>
+                        <p>
+                            A way of protecting messages so that only the intended endpoints should be
+                            able to read them.
+                        </p>
+
+                        <h3>AES-256 / Advanced Encryption Standard 256-bit</h3>
+                        <p>
+                            AES-256 means Advanced Encryption Standard using 256-bit keys. It is a widely
+                            used symmetric encryption method. Encryption strength also depends on how keys
+                            are generated, shared, stored, and protected.
+                        </p>
+
+                        <h3>Public Key</h3>
+                        <p>
+                            A cryptographic key that can be shared. Other devices or users may use a public
+                            key to identify a node or send encrypted information to it, depending on the system.
+                        </p>
+
+                        <h3>Private Key</h3>
+                        <p>
+                            A cryptographic key that should be kept secret. Do not post private keys publicly.
+                        </p>
+                    </section>
+
+                    <section id="field-testing-maps">
+                        <h2>Field Testing and Maps</h2>
+
+                        <h3>Coverage Test</h3>
+                        <p>
+                            A practical check to see what a device can hear or reach from a specific area.
+                        </p>
+
+                        <h3>Wardriving</h3>
+                        <p>
+                            Driving around with a device or logging setup to observe radio or mesh coverage
+                            over an area. It should be done safely, without interacting with devices while driving.
+                        </p>
+
+                        <h3>Field Note</h3>
+                        <p>
+                            A short observation from real use, such as what device was used, where it was
+                            tested, what was heard, what did not work, and what terrain or placement mattered.
+                        </p>
+
+                        <h3>Live Activity</h3>
+                        <p>
+                            Recently observed network activity shown on a map or dashboard. Live activity
+                            does not mean the map is complete or that every shown node is operated by
+                            Hampden County Mesh.
+                        </p>
+
+                        <h3>Observed Activity</h3>
+                        <p>
+                            Activity heard or reported by an observer, public feed, analyzer, log, or
+                            community report.
+                        </p>
+
+                        <h3>Site-Maintained System</h3>
+                        <p>
+                            A device, server, page, tool, or service maintained directly by Hampden County Mesh.
+                            Not every node, packet, or marker seen in the area is site-maintained.
+                        </p>
+                    </section>
+
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-title">
+            HAMPDEN COUNTY MESH NETWORK
+        </div>
+
+        <div class="footer-subtitle">
+            Community-Owned Communications Infrastructure
+        </div>
+
+        <div class="footer-subtitle">
+            Last Updated: <span id="last-updated">Loading...</span>
+        </div>
+    </div>
+</footer>
+
+<script src="../last-updated.js"></script>
+
+</body>
+</html>
