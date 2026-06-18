@@ -1,328 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hampden County Mesh Network</title>
+  <meta
+    name="description"
+    content="MeshCore, Meshtastic, and local radio learning for Hampden County and Western Massachusetts."
+  >
 
-    <title>Hampden County Mesh Network</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-    <meta
-        name="description"
-        content="A local community effort for mesh networking, radio experimentation, field notes, and practical communications knowledge throughout Hampden County."
-    >
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <link rel="stylesheet" href="style.css">
-
-    <link
-        rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E"
-    >
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/assets/icons/favicon.svg">
 </head>
 
 <body>
+  <div class="noise"></div>
 
-<div class="noise"></div>
-
-<header>
+  <header>
     <div class="container">
-        <div class="brand">
-            <span class="brand-icon">📡</span>
-            <span>HAMPDEN COUNTY MESH NETWORK</span>
-        </div>
+      <a class="brand" href="/" aria-label="Hampden County Mesh Network home">
+        <span class="brand-icon"></span>
+        <span>HAMPDEN COUNTY MESH NETWORK</span>
+      </a>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="guides/index.html">Guides</a>
-    <a href="coverage.html">Coverage</a>
-    <a class="discord-nav-button" href="https://discord.gg/QbzysstA" aria-label="Join the Hampden County Mesh Discord">
-        <img src="assets/icons/discord-symbol-white.svg" alt="">
-    </a>
-</nav>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/guides/">Guides</a>
+        <a href="/coverage.html">Coverage</a>
+        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
+          <img src="/assets/icons/discord-symbol-white.svg" alt="">
+        </a>
+      </nav>
     </div>
-</header>
+  </header>
 
-<section class="hero">
+  <section class="hero">
     <div class="hero-panel">
-        <div class="frequency-display">
-            WESTERN MASSACHUSETTS
+      <div class="frequency-display">
+        WESTERN MASSACHUSETTS
+      </div>
+
+      <div class="status-line">
+        <span class="status-dot"></span>
+        MESHCORE • MESHTASTIC • LOCAL RADIO
+      </div>
+
+      <h1>
+        HAMPDEN COUNTY<br>
+        MESH NETWORK
+      </h1>
+
+      <p class="hero-text">
+        A local community for MeshCore, Meshtastic, and practical radio learning
+        across Hampden County and nearby Western Massachusetts.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="/guides/">Start Here</a>
+        <a class="btn secondary" href="/join/home-bottom/">Join Discord</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="ticker-section">
+    <div class="ticker">
+      <div id="ticker-content">
+        MESHCORE •
+        MESHTASTIC •
+        LOCAL RADIO •
+        BEGINNERS WELCOME •
+        NODE SETUP •
+        COVERAGE TESTING •
+        SIGNAL CHECKS •
+        WESTERN MASSACHUSETTS •
+        HAMPDEN COUNTY •
+        AMATEUR RADIO •
+        GMRS •
+        FRS •
+        MURS •
+        CB •
+        LOCAL OPERATORS •
+      </div>
+    </div>
+  </section>
+
+  <section id="mesh">
+    <div class="container">
+      <div class="section-heading">
+        LOCAL MESH NETWORKING
+      </div>
+
+      <div class="map-panel">
+        <div class="map-grid"></div>
+
+        <div class="map-overlay">
+          <h2>MeshCore first, Meshtastic close behind.</h2>
+
+          <p>
+            Hampden County Mesh is centered on local MeshCore use: learning the
+            hardware, comparing node locations, understanding repeaters and
+            observers, and helping people get on the air.
+          </p>
+
+          <p>
+            Meshtastic is also part of the community. Many people come to mesh
+            radio through Meshtastic first, and the same local terrain, antenna,
+            battery, and placement lessons still matter.
+          </p>
+
+          <p>
+            Radio basics tie it together. FRS, GMRS, amateur radio, CB, and MURS
+            are not the main focus here, but they are useful background for
+            anyone learning how local communications work.
+          </p>
+
+          <a class="btn secondary" href="/guides/">
+            Open the Guides
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        HAMPDEN COUNTY TERRAIN MATTERS
+      </div>
+
+      <div class="image-feature">
+        <div class="image-frame">
+          <img
+            src="/assets/images/hero/mt-tom-towers-01.jpg"
+            alt="Radio towers on Mount Tom above Hampden County"
+          >
+
+          <div class="image-caption">
+            Mount Tom radio towers overlooking Hampden County.
+          </div>
         </div>
 
-        <div class="status-line">
-            <span class="status-dot"></span>
-      COMMUNITY BUILDOUT • LOCAL RADIO • MESH LEARNING
+        <div class="image-copy">
+          <h3>Local terrain makes radio interesting here.</h3>
+
+          <p>
+            Hills, valleys, buildings, tree cover, antenna height, and device
+            placement all affect what a node can hear. A setup that works well
+            in one part of Hampden County may behave very differently a few
+            towns away.
+          </p>
+
+          <p>
+            The point is not to make one official network map and call it done.
+            The useful part is learning what works locally, sharing what people
+            find, and making it easier for newcomers to choose a first setup.
+          </p>
+
+          <p>
+            Coverage testing still matters, but it belongs in the background:
+            a practical tool for learning and improving the local mesh, not the
+            whole identity of the site.
+          </p>
+
+          <a class="btn secondary" href="/coverage.html">
+            View Coverage
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        START HERE
+      </div>
+
+      <div class="resource-grid">
+        <a class="resource-card action-card" href="/guides/meshcore-basics.html">
+          <h3>MeshCore Basics</h3>
+          <p>
+            Learn what MeshCore is, what the common device roles mean, and how
+            people use it for local off-grid messaging.
+          </p>
+          <span class="card-link">Read MeshCore basics →</span>
+        </a>
+
+        <a class="resource-card action-card" href="/guides/meshtastic-basics.html">
+          <h3>Meshtastic Basics</h3>
+          <p>
+            Get a plain-language overview of Meshtastic, how it compares to
+            MeshCore, and why it is still useful locally.
+          </p>
+          <span class="card-link">Read Meshtastic basics →</span>
+        </a>
+
+        <a class="resource-card action-card" href="/guides/getting-started.html">
+          <h3>Getting Started</h3>
+          <p>
+            New to mesh radio? Start with the basic terms, device choices, and
+            first steps before buying or flashing hardware.
+          </p>
+          <span class="card-link">Start learning →</span>
+        </a>
+
+        <a class="resource-card action-card" href="/join/home-bottom/">
+          <h3>Ask Local Operators</h3>
+          <p>
+            Join the Discord to ask questions, compare setups, coordinate signal
+            checks, and see what other people nearby are trying.
+          </p>
+          <span class="card-link">Join Discord →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        OFFICIAL RESOURCES
+      </div>
+
+      <div class="resource-grid">
+        <a class="resource-card action-card" href="https://meshcore.io/" target="_blank" rel="noopener noreferrer">
+          <h3>MeshCore</h3>
+          <p>
+            The official MeshCore site, app, flasher, documentation, and upstream
+            project links.
+          </p>
+          <span class="card-link">Visit MeshCore →</span>
+        </a>
+
+        <a class="resource-card action-card" href="https://meshtastic.org/" target="_blank" rel="noopener noreferrer">
+          <h3>Meshtastic</h3>
+          <p>
+            The official Meshtastic site, documentation, apps, supported hardware,
+            and project information.
+          </p>
+          <span class="card-link">Visit Meshtastic →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="community">
+    <div class="container">
+      <div class="community-panel">
+        <div class="section-heading">
+          COMMUNITY DISCORD
         </div>
 
-        <h1>
-            HAMPDEN COUNTY<br>
-            MESH NETWORK
-        </h1>
-
-        <p class="hero-text">
-            A local community effort for mesh networking, radio experimentation,
-            field notes, and practical communications knowledge throughout Hampden County.
+        <p>
+          Join the local Discord to ask questions, compare hardware, talk about
+          MeshCore and Meshtastic, coordinate casual signal checks, and connect
+          with other people interested in local radio.
         </p>
 
-        <div class="hero-actions">
-            <a class="btn primary" href="guides/index.html">Get Started</a>
-            <a class="btn secondary" href="#observed-activity">View Observed Activity</a>
-        </div>
-    </div>
-</section>
+        <p>
+          Beginners are welcome. You do not need to own a node yet, and you do
+          not need to be a licensed amateur radio operator to learn about
+          MeshCore, Meshtastic, FRS, GMRS, MURS, or CB.
+        </p>
 
-<section class="ticker-section">
-    <div class="ticker">
-        <div id="ticker-content">
-            COMMUNITY BUILDOUT IN PROGRESS •
-            BEGINNERS WELCOME •
-            OBSERVED ACTIVITY TOOLS IN DEVELOPMENT •
-            LOCAL KNOWLEDGE •
-            SHARED FIELD NOTES •
-            SITE-MAINTAINED OBSERVER DOCUMENTED •
-            MESHCORE •
-            MESHTASTIC •
-            AMATEUR RADIO •
-            GMRS •
-            CB •
-            FRS •
-            MURS •
-            SIGNAL CHECKS •
-            COVERAGE NOTES WELCOME •
-            LOCAL OPERATORS WELCOME •
-        </div>
+        <a class="btn primary large" href="/join/home-bottom/">
+          Join Discord
+        </a>
+      </div>
     </div>
-</section>
+  </section>
 
-<section id="observed-activity">
+  <section id="contact">
     <div class="container">
+      <div class="community-panel">
         <div class="section-heading">
-            OBSERVED ACTIVITY
+          CONTACT
         </div>
 
-        <div class="map-panel">
-            <div class="map-grid"></div>
+        <p>
+          Questions, local radio notes, event ideas, possible meeting spaces,
+          or community partnerships?
+        </p>
 
-            <div class="map-overlay">
-                <h2>COMMUNITY BUILDOUT IN PROGRESS</h2>
+        <p>
+          HampdenCountyMesh@protonmail.com
+        </p>
 
-                <p>
-                    Hampden County Mesh is a community-organizing effort around local
-                    mesh networking, radio learning, field notes, and practical
-                    communications in Hampden County.
-                </p>
-
-                <p>
-This site currently maintains a small amount of supporting infrastructure,
-including a MeshCore Room Observer, a Linux-based MeshCore-Hub, and local
-tools for logging, checking, and understanding mesh activity.
-                </p>
-
-                <p>
-                    The broader local mesh ecosystem may include other operators, nodes,
-                    observers, and repeaters that are not operated by this site. Part of
-                    the goal is to connect with those people, share notes, and help build
-                    a clearer local communications community together.
-                </p>
-
-                <p>
-Future live activity tools should help people see nearby mesh activity,
-understand what may be reachable, and compare notes with others interested
-in local radio and mesh networking.
-                </p>
-
-<a class="btn secondary" href="coverage.html">
-    View Coverage
-</a>
-            </div>
-        </div>
+        <p>
+          Radio operators, mesh users, educators, makers, libraries, clubs, and
+          nearby communities are welcome to reach out.
+        </p>
+      </div>
     </div>
-</section>
+  </section>
 
-<section>
+  <footer>
     <div class="container">
-        <div class="section-heading">
-            LOCAL COMMUNICATIONS, SHARED KNOWLEDGE
-        </div>
+      <div class="footer-title">
+        HAMPDEN COUNTY MESH NETWORK
+      </div>
 
-        <div class="image-feature">
-            <div class="image-frame">
-                <img
-                    src="assets/images/hero/mt-tom-towers-01.jpg"
-                    alt="Radio towers on Mount Tom above Hampden County"
-                >
+      <div class="footer-subtitle">
+        MeshCore, Meshtastic, and local radio in Hampden County
+      </div>
 
-                <div class="image-caption">
-                    Mount Tom radio towers overlooking Hampden County.
-                </div>
-            </div>
-
-            <div class="image-copy">
-                <h3>A place for people to learn, compare notes, and connect locally.</h3>
-
-                <p>
-                    Hampden County Mesh is focused on practical communications knowledge
-                    for Western Massachusetts: local operators, local terrain, casual
-                    signal checks, and locally useful information.
-                </p>
-
-                <p>
-                    The observer, hub, website, and guides are contributions to the
-                    broader local mesh and radio ecosystem. They are not the whole
-                    network, and they are not meant to replace independent operators
-                    or neighboring communities.
-                </p>
-
-                <p>
-The goal is to help people learn what exists nearby, connect with
-other local operators, and build useful local communications knowledge
-together over time.
-                </p>
-
-                <a class="btn secondary" href="about.html">
-                    Learn About the Community
-                </a>
-            </div>
-        </div>
+      <div class="footer-subtitle">
+        Last Updated: <span id="last-updated">Loading...</span>
+      </div>
     </div>
-</section>
+  </footer>
 
-<section>
-    <div class="container">
-        <div class="section-heading">
-            WAYS TO GET INVOLVED
-        </div>
-
-        <div class="resource-grid">
-            <a class="resource-card action-card" href="guides/index.html#getting-started">
-                <h3>Start Here</h3>
-
-                <p>
-                    New to mesh networking or radio? Learn what Hampden County Mesh is,
-                    what equipment people use, and how to take a first step.
-                </p>
-
-                <span class="card-link">Open the guides →</span>
-            </a>
-
-            <a class="resource-card action-card" href="guides/getting-started.html">
-                <h3>Bring a Node Along</h3>
-
-                <p>
-                    Take a MeshCore or Meshtastic device with you, see what it hears,
-                    and learn how local terrain affects real-world communications.
-                </p>
-
-                <span class="card-link">Learn how to start →</span>
-            </a>
-
-            <a class="resource-card action-card" href="coverage.html">
-                <h3>Share Coverage Notes</h3>
-
-                <p>
-                    Share what you noticed while checking a node, taking a walk, driving
-                    around, visiting a park, or trying a setup from somewhere new.
-                </p>
-
-                <span class="card-link">View coverage →</span>
-            </a>
-
-            <a class="resource-card action-card" href="#community">
-                <h3>Connect With Local Operators</h3>
-
-                <p>
-                    Ask questions, compare setups, coordinate signal checks, and help
-                    build communications knowledge locally.
-                </p>
-
-                <span class="card-link">Join the community →</span>
-            </a>
-        </div>
-    </div>
-</section>
-
-<section id="community">
-    <div class="container">
-        <div class="community-panel">
-            <div class="section-heading">
-                COMMUNITY DISCORD
-            </div>
-
-            <p>
-                Join local operators, ask questions, compare setups, share coverage
-                notes, coordinate casual checks, and help build community-maintained
-                communications knowledge.
-            </p>
-
-            <p>
-Independent operators, beginners or experts, nearby communities,
-and people who are simply curious about radio or mesh networking
-are welcome.
-            </p>
-
-            <a
-                class="btn primary large"
-                href="https://discord.gg/TGsxp2q9v"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Join Discord
-            </a>
-        </div>
-    </div>
-</section>
-
-<section id="contact">
-    <div class="container">
-        <div class="community-panel">
-            <div class="section-heading">
-                CONTACT
-            </div>
-
-            <p>
-                Questions, collaboration opportunities, coverage notes, local
-                infrastructure ideas, or community partnerships?
-            </p>
-
-            <p>
-                HampdenCountyMesh@protonmail.com
-            </p>
-
-            <p>
-                We welcome radio operators, mesh users, observers, educators, makers,
-                libraries, clubs, and organizations interested in helping people learn
-                and connect around practical local communications.
-            </p>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <div class="container">
-        <div class="footer-title">
-            HAMPDEN COUNTY MESH NETWORK
-        </div>
-
-        <div class="footer-subtitle">
-            Community-Owned Communications Knowledge and Infrastructure
-        </div>
-
-        <div class="footer-subtitle">
-            Last Updated: <span id="last-updated">Loading...</span>
-        </div>
-    </div>
-</footer>
-
-<script src="last-updated.js"></script>
-
+  <script src="/last-updated.js"></script>
 </body>
 </html>
