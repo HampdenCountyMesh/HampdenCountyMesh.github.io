@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Operating Aids | Hampden County Mesh</title>
+  <meta
+    name="description"
+    content="Simple operating aids, checklists, and note templates for mesh radio testing, signal checks, wardriving, node notes, and sharing useful local results around Hampden County."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+  <div class="noise"></div>
+
+  <header>
+    <div class="container">
+      <a class="brand" href="/" aria-label="Hampden County Mesh home">
+        <span class="brand-icon" aria-hidden="true">📡</span>
+        <span>HAMPDEN COUNTY MESH</span>
+      </a>
+
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/guides/">Guides</a>
+        <a href="/coverage.html">Coverage</a>
+        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
+          <img src="/assets/icons/discord-symbol-white.svg" alt="">
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="docs-shell">
+    <div class="container">
+      <article class="docs-article">
+        <p class="docs-breadcrumb">
+          <a href="/guides/">Guides</a> / Operating Aids
+        </p>
+
+        <h1>Operating Aids</h1>
+
+        <p class="docs-lede">
+          These are simple checklists and templates for local mesh testing.
+          They are meant to make signal checks, field notes, device notes,
+          wardriving notes, and Discord reports easier to compare later.
+        </p>
+
+        <div class="docs-note">
+          Keep public notes useful but careful. Do not post private keys,
+          passwords, exact home locations, private coordinates, Wi-Fi details,
+          broker credentials, admin URLs, or anything someone did not agree to
+          share.
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn secondary" href="#quick-check">Quick Check</a>
+          <a class="btn secondary" href="#field-notes">Field Notes</a>
+          <a class="btn secondary" href="#discord-report">Discord Report</a>
+          <a class="btn secondary" href="#node-note">Node Note</a>
+          <a class="btn secondary" href="#wardriving-note">Wardriving</a>
+          <a class="btn secondary" href="#before-posting">Before Posting</a>
+        </div>
+
+        <section class="docs-section" id="how-to-use">
+          <h2>How to use this page</h2>
+
+          <p>
+            You do not need to fill out every line every time. Use the parts
+            that make the result easier for someone else to understand.
+          </p>
+
+          <p>
+            The main idea is simple: write down what you tested, where you tested
+            in general terms, what equipment you used, what changed, and what
+            happened.
+          </p>
+
+          <p>
+            These templates are especially useful when comparing notes in
+            Discord, GitHub issues, local documentation, or future public pages.
+          </p>
+        </section>
+
+        <section class="docs-section" id="quick-check">
+          <h2>Quick signal check</h2>
+
+          <p>
+            Use this when you just want to see whether another person or device
+            can hear you.
+          </p>
+
+          <ol>
+            <li>Charge the device or connect stable power.</li>
+            <li>Put the device in a reasonable spot, such as near a window or outside if safe.</li>
+            <li>Confirm the device name is recognizable and not too personal.</li>
+            <li>Confirm you are using the expected MeshCore or Meshtastic setup.</li>
+            <li>Ask someone nearby to listen for a test message.</li>
+            <li>Send a short test message.</li>
+            <li>Write down whether it was heard, not heard, weak, delayed, or unclear.</li>
+            <li>Change one thing and test again.</li>
+          </ol>
+
+          <pre><code>Quick signal check
+Date:
+Time:
+General area:
+System: MeshCore / Meshtastic / Other
+Device:
+Placement: window / indoors / outdoors / vehicle / elevated
+Message sent:
+Heard by:
+Result:
+What changed:
+Private details removed before sharing: yes / no
+Notes:</code></pre>
+        </section>
+
+        <section class="docs-section" id="field-notes">
+          <h2>Field notes template</h2>
+
+          <p>
+            Use this for park checks, hill checks, drive-around testing,
+            temporary outdoor tests, or comparing different parts of town.
+          </p>
+
+          <pre><code>Field notes
+Date:
+Time:
+General area:
+Weather:
+System: MeshCore / Meshtastic / Other
+Device:
+Role: Portable node / Fixed node / Repeater / Observer
+Antenna:
+Placement:
+Power:
+Firmware:
+What was heard:
+What was not heard:
+Who heard the test:
+Result:
+What changed during the test:
+Useful landmarks or terrain notes:
+Private details removed before sharing: yes / no
+Notes:</code></pre>
+
+          <p>
+            General area is usually enough for public notes. A town, public park,
+            road corridor, hill, or broad neighborhood is normally more
+            appropriate than an exact private address.
+          </p>
+        </section>
+
+        <section class="docs-section" id="discord-report">
+          <h2>Short Discord report</h2>
+
+          <p>
+            This is a shorter version that works well for Discord after a basic
+            signal check.
+          </p>
+
+          <pre><code>Signal check report
+Area:
+System:
+Device:
+Placement:
+Heard:
+Not heard:
+Best result:
+Anything changed:
+Private details removed: yes / no
+Notes:</code></pre>
+
+          <p>
+            Example:
+          </p>
+
+          <pre><code>Signal check report
+Area: West Springfield, Mittineague Park area
+System: MeshCore
+Device: portable node
+Placement: handheld outside
+Heard: nearby activity while walking
+Not heard: no confirmed reply from Westfield during this check
+Best result: better near open areas than near lower wooded spots
+Anything changed: moved between parking area and trail area
+Private details removed: yes
+Notes: useful short test, needs repeat check with another person listening</code></pre>
+        </section>
+
+        <section class="docs-section" id="node-note">
+          <h2>Node or setup note</h2>
+
+          <p>
+            Use this when describing a device, repeater, observer, room server,
+            hub, or temporary setup. This is useful for comparing what people are
+            running without exposing private details.
+          </p>
+
+          <pre><code>Node or setup note
+Name:
+System: MeshCore / Meshtastic / Other
+Role: Portable node / Fixed node / Repeater / Observer / Room server / Hub
+General area:
+Device model:
+Firmware:
+Antenna:
+Antenna placement:
+Power:
+Indoor / outdoor:
+Temporary / permanent:
+Maintainer or contact, if safe to share:
+Status: active / testing / offline / being built
+What it can hear:
+What can hear it:
+Public location safe to share: yes / no
+Private details removed before sharing: yes / no
+Notes:</code></pre>
+
+          <p>
+            If the node is at a private home, do not post exact coordinates or
+            photos that reveal the location unintentionally.
+          </p>
+        </section>
+
+        <section class="docs-section" id="wardriving-note">
+          <h2>Wardriving note</h2>
+
+          <p>
+            Use this for a drive-around check. Do not interact with devices while
+            driving. Have a passenger handle notes or equipment if possible.
+          </p>
+
+          <pre><code>Wardriving note
+Date:
+Route or general area:
+System:
+Device:
+Antenna:
+Device placement in vehicle:
+Logging method:
+Start time:
+End time:
+Areas with activity:
+Areas with no activity:
+Strongest result:
+Weak or unreliable areas:
+Repeat check needed:
+Private details removed before sharing: yes / no
+Notes:</code></pre>
+
+          <p>
+            A wardriving run is one snapshot. It can show clues, but repeated
+            checks are better for finding patterns.
+          </p>
+        </section>
+
+        <section class="docs-section" id="maintenance-note">
+          <h2>Maintenance note</h2>
+
+          <p>
+            Use this when checking a fixed node, repeater, observer, solar node,
+            hub, or other support system.
+          </p>
+
+          <pre><code>Maintenance note
+Node or system name:
+Date checked:
+Checked by:
+Status: active / weak / offline / unknown
+Power:
+Battery or solar status:
+Antenna:
+Mounting:
+Firmware or software:
+What was heard:
+What changed:
+Needs attention:
+Private details removed before sharing: yes / no
+Notes:</code></pre>
+
+          <p>
+            Maintenance notes help prevent confusion about what is still online,
+            what changed, and what needs to be checked again.
+          </p>
+        </section>
+
+        <section class="docs-section" id="before-changing">
+          <h2>Before changing settings</h2>
+
+          <p>
+            Changing settings can make testing confusing if you do not keep
+            notes. Before changing firmware, radio settings, antenna placement,
+            or power, write down the starting point.
+          </p>
+
+          <pre><code>Before changing settings
+Device:
+Current firmware:
+Current role:
+Current radio settings:
+Current antenna:
+Current placement:
+Current result:
+Change being made:
+Reason for change:
+Expected result:
+Actual result after change:
+Keep change or revert:
+Private details removed before sharing: yes / no
+Notes:</code></pre>
+
+          <p>
+            Change one thing at a time when possible. If you change the antenna,
+            location, firmware, and settings all at once, it becomes harder to
+            know what actually helped.
+          </p>
+        </section>
+
+        <section class="docs-section" id="message-tests">
+          <h2>Simple message tests</h2>
+
+          <p>
+            Test messages should be short and clear. Include enough information
+            to identify the test without posting private details.
+          </p>
+
+          <div class="docs-card-grid">
+            <div class="docs-card">
+              <h3>Basic test</h3>
+              <p>
+                “Test from Westfield area portable node. Please reply if heard.”
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Location comparison</h3>
+              <p>
+                “Window test from general Chicopee area. Moving outside next.”
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Signal check</h3>
+              <p>
+                “Signal check near Mount Tom area. Looking for nearby confirms.”
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>End of test</h3>
+              <p>
+                “Test complete. Thanks for replies.”
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="voice-radio-notes">
+          <h2>Voice radio notes</h2>
+
+          <p>
+            If a signal check involves voice radio instead of mesh messaging,
+            keep the note just as clear and limited.
+          </p>
+
+          <pre><code>Voice radio note
+Date:
+Time:
+General area:
+Service: FRS / GMRS / MURS / CB / Amateur / Other
+Radio:
+Antenna:
+Channel or frequency, if appropriate:
+Power setting, if known:
+Who was heard:
+Who heard you:
+Audio report:
+What changed:
+Private details removed before sharing: yes / no
+Notes:</code></pre>
+
+          <p>
+            Use plain language when possible. “Weak but readable” is often more
+            helpful for a beginner than a pile of shorthand.
+          </p>
+        </section>
+
+        <section class="docs-section" id="session-note">
+          <h2>Session note</h2>
+
+          <p>
+            Use this after a small meetup, demo, radio basics session, or signal
+            check.
+          </p>
+
+          <pre><code>Session note
+Date:
+Location type: library / club / makerspace / park / other
+Topic:
+Approximate attendance:
+Devices shown:
+Questions people asked:
+Signal checks done:
+Useful follow-up:
+Private details removed before sharing: yes / no
+Notes:</code></pre>
+        </section>
+
+        <section class="docs-section" id="good-habits">
+          <h2>Good operating habits</h2>
+
+          <ul>
+            <li>Use clear, short messages during tests.</li>
+            <li>Say when a test starts and when it ends.</li>
+            <li>Write down the general area and setup.</li>
+            <li>Change one thing at a time.</li>
+            <li>Do not assume a failed test means nothing works.</li>
+            <li>Do not assume a map point means direct radio coverage.</li>
+            <li>Keep private details out of public posts.</li>
+            <li>Ask before publishing someone else’s setup details.</li>
+            <li>Do not treat mesh radio as a replacement for 911.</li>
+            <li>Do not handle devices while driving.</li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="before-posting">
+          <h2>Before posting public notes</h2>
+
+          <p>
+            Before posting a test result, photo, map, screenshot, or setup note,
+            check it for private information.
+          </p>
+
+          <ul>
+            <li>Does it show an exact private home location?</li>
+            <li>Does it include private coordinates?</li>
+            <li>Does it show a password, key, broker credential, or Wi-Fi detail?</li>
+            <li>Does it reveal a private IP address, admin URL, or backend detail?</li>
+            <li>Does a photo reveal a private address, plate, mail, screen, or reflection?</li>
+            <li>Did everyone involved agree to have the details shared?</li>
+            <li>Would a town, park, or general area be enough instead?</li>
+          </ul>
+
+          <p>
+            Useful public notes do not need exact private details. Broad
+            descriptions are often enough.
+          </p>
+        </section>
+
+        <section class="docs-section" id="what-to-read-next">
+          <h2>What to read next</h2>
+
+          <div class="resource-grid">
+            <a class="resource-card action-card" href="/guides/coverage-and-signal-checks.html">
+              <h3>Coverage and Signal Checks</h3>
+              <p>
+                Learn how to compare what your device can hear with people
+                nearby.
+              </p>
+              <span class="card-link">Read signal check guide →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/contributing-notes.html">
+              <h3>Contributing Notes</h3>
+              <p>
+                Learn how to share useful local information without exposing
+                private details.
+              </p>
+              <span class="card-link">Read note guidelines →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/documenting-a-node.html">
+              <h3>Documenting a Node</h3>
+              <p>
+                Learn how to keep useful notes about devices, repeaters,
+                observers, antennas, and maintenance.
+              </p>
+              <span class="card-link">Read node documentation guide →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/nodes-repeaters-observers.html">
+              <h3>Nodes, Repeaters, and Observers</h3>
+              <p>
+                Learn the device roles and what each one does.
+              </p>
+              <span class="card-link">Learn device roles →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/hosting-a-session.html">
+              <h3>Hosting a Session</h3>
+              <p>
+                Plan a small mesh, radio basics, node demo, or signal check
+                session.
+              </p>
+              <span class="card-link">Read hosting guide →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/join/getting-started/">
+              <h3>Ask the Community</h3>
+              <p>
+                Join the Discord to ask questions, compare notes, and coordinate
+                signal checks.
+              </p>
+              <span class="card-link">Join Discord →</span>
+            </a>
+          </div>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-title">
+        HAMPDEN COUNTY MESH
+      </div>
+
+      <div class="footer-subtitle">
+        MeshCore, Meshtastic, and local radio in Hampden County
+      </div>
+
+      <div class="footer-subtitle">
+        Last Updated: <span id="last-updated">Loading...</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/last-updated.js"></script>
+</body>
+</html>

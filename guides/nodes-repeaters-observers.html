@@ -1,566 +1,619 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nodes, Repeaters, and Observers | Hampden County Mesh</title>
+  <meta
+    name="description"
+    content="Plain-language guide to mesh nodes, repeaters, observers, room servers, hubs, MQTT uplinks, bridges, and how device roles fit into local MeshCore and Meshtastic use."
+  >
 
-    <title>Nodes, Repeaters, and Observers | Hampden County Mesh Network</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-    <meta
-        name="description"
-        content="Plain-language guide to mesh nodes, repeaters, observers, room servers, MQTT uplinks, and regional MeshCore setup notes."
-    >
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet"
-    >
-
-    <link rel="stylesheet" href="../style.css">
-
-    <link
-        rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%A1%3C/text%3E%3C/svg%3E"
-    >
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
 </head>
 
 <body>
+  <div class="noise"></div>
 
-<div class="noise"></div>
-
-<header>
+  <header>
     <div class="container">
-        <a class="brand" href="../index.html">
-            <span class="brand-icon">📡</span>
-            <span>HAMPDEN COUNTY MESH NETWORK</span>
+      <a class="brand" href="/" aria-label="Hampden County Mesh home">
+        <span class="brand-icon" aria-hidden="true">📡</span>
+        <span>HAMPDEN COUNTY MESH</span>
+      </a>
+
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/guides/">Guides</a>
+        <a href="/coverage.html">Coverage</a>
+        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
+          <img src="/assets/icons/discord-symbol-white.svg" alt="">
         </a>
-
-        <nav>
-            <a href="../index.html">Home</a>
-            <a href="../about.html">About</a>
-            <a href="index.html">Guides</a>
-            <a href="../coverage.html">Coverage</a>
-            <a
-                class="discord-nav-button"
-                href="https://discord.gg/QbzysstA"
-                target="_blank"
-                rel="noopener"
-                aria-label="Join the Hampden County Mesh Discord"
-            >
-                <img src="../assets/icons/discord-symbol-white.svg" alt="">
-            </a>
-        </nav>
+      </nav>
     </div>
-</header>
+  </header>
 
-<main class="docs-shell">
+  <main class="docs-shell">
     <div class="container">
-        <div class="docs-layout">
-
-            <aside class="docs-sidebar">
-                <div class="docs-sidebar-title">Guide Library</div>
-
-                <div class="docs-nav-group">
-                    <div class="docs-nav-heading">Introduction</div>
-                    <a href="index.html">Guides Home</a>
-                    <a href="what-is-mesh.html">What Is Mesh?</a>
-                    <a href="getting-started.html">Getting Started</a>
-                    <a href="glossary.html">Glossary</a>
-                </div>
-
-                <div class="docs-nav-group">
-                    <div class="docs-nav-heading">Radio Basics</div>
-                    <a href="radio-reference.html">Radio Reference</a>
-                    <span class="docs-planned">FRS / GMRS / MURS / CB</span>
-                    <span class="docs-planned">Amateur Radio</span>
-                    <span class="docs-planned">Operating Aids</span>
-                </div>
-
-                <div class="docs-nav-group">
-                    <div class="docs-nav-heading">Mesh Networking</div>
-                    <a href="meshcore-basics.html">MeshCore Basics</a>
-                    <a href="meshtastic-basics.html">Meshtastic Basics</a>
-                    <a class="active" href="nodes-repeaters-observers.html">Nodes, Repeaters, and Observers</a>
-                </div>
-
-                <div class="docs-nav-group">
-                    <div class="docs-nav-heading">Field Work</div>
-                    <a href="coverage-testing.html">Coverage Testing</a>
-                    <span class="docs-planned">Reporting Coverage</span>
-                    <a href="documenting-a-node.html">Documenting a Node</a>
-                </div>
-
-                <div class="docs-nav-group">
-                    <div class="docs-nav-heading">Community</div>
-                    <a href="discord.html">Discord</a>
-                    <a href="hosting-a-session.html">Hosting a Session</a>
-                    <span class="docs-planned">Contributing Notes</span>
-                </div>
-            </aside>
-
-            <article class="docs-content">
-                <div class="docs-article">
-                    <div class="docs-breadcrumb">
-                        Guides / Mesh Networking
-                    </div>
-
-                    <h1>Nodes, Repeaters, and Observers</h1>
-
-                    <p class="docs-lede">
-                        Mesh networks are easier to understand when the different device roles
-                        are separated clearly. A handheld node, a fixed repeater, an observer,
-                        a room server, and an MQTT uplink may all support the same community,
-                        but they do not all do the same job.
-                    </p>
-
-                    <div class="docs-note">
-                        This page is a practical orientation guide. It is not a complete
-                        setup manual and it should not replace current MeshCore, Meshtastic,
-                        FCC, device, or regional community documentation.
-                    </div>
-
-                    <div class="hero-actions">
-                        <a class="btn secondary" href="#quick-summary">Quick Summary</a>
-                        <a class="btn secondary" href="#nodes">Nodes</a>
-                        <a class="btn secondary" href="#repeaters">Repeaters</a>
-                        <a class="btn secondary" href="#observers">Observers</a>
-                        <a class="btn secondary" href="#regional-settings">Regional Settings</a>
-                        <a class="btn secondary" href="#privacy">Privacy</a>
-                    </div>
-
-                    <section class="docs-section" id="quick-summary">
-                        <h2>Quick Summary</h2>
-
-                        <div class="docs-card-grid">
-                            <div class="docs-card">
-                                <h3>Node</h3>
-                                <p>
-                                    A device that participates in the mesh. It may be handheld,
-                                    portable, vehicle-based, fixed indoors, or fixed outdoors.
-                                </p>
-                            </div>
-
-                            <div class="docs-card">
-                                <h3>Repeater</h3>
-                                <p>
-                                    A fixed or semi-fixed device that forwards mesh traffic and
-                                    helps extend usable RF coverage.
-                                </p>
-                            </div>
-
-                            <div class="docs-card">
-                                <h3>Observer</h3>
-                                <p>
-                                    A device or system that listens and reports what it hears.
-                                    It helps with visibility, maps, logs, and analysis, but does
-                                    not automatically improve RF coverage.
-                                </p>
-                            </div>
-
-                            <div class="docs-card">
-                                <h3>MQTT Uplink</h3>
-                                <p>
-                                    A bridge from local observed mesh traffic into web tools,
-                                    dashboards, analyzers, or maps. It is for visibility, not
-                                    a substitute for better repeater placement.
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="docs-section" id="nodes">
-                        <h2>Nodes</h2>
-
-                        <p>
-                            A node is any device participating in a mesh network. In casual
-                            conversation, people may call almost any MeshCore or Meshtastic
-                            device a node, but the role matters.
-                        </p>
-
-                        <h3>Portable nodes</h3>
-
-                        <p>
-                            Portable nodes are carried, moved around, used during testing, or
-                            kept with a person. They are useful for learning, messaging, checking
-                            coverage, and finding out what can be heard from real places.
-                        </p>
-
-                        <p>
-                            Portable nodes are not usually the backbone of a regional network
-                            because they move, go offline, run out of battery, or sit indoors
-                            where RF performance may be poor.
-                        </p>
-
-                        <h3>Fixed nodes</h3>
-
-                        <p>
-                            Fixed nodes stay in one place. They may be indoors near a window,
-                            outdoors on a mast, mounted at a workplace, installed at a volunteer
-                            site, or placed temporarily for a field test.
-                        </p>
-
-                        <p>
-                            Fixed nodes are easier to document and compare over time. If a fixed
-                            node has good height, power, antenna placement, and reliability, it
-                            may become useful infrastructure.
-                        </p>
-                    </section>
-
-                    <section class="docs-section" id="repeaters">
-                        <h2>Repeaters</h2>
-
-                        <p>
-                            A repeater is a mesh device whose job is to forward traffic. In
-                            MeshCore, this distinction matters because normal clients do not
-                            repeat traffic. Repeaters and room servers with repeat enabled are
-                            the devices that forward traffic.
-                        </p>
-
-                        <p>
-                            A useful repeater is usually less about raw transmit power and more
-                            about placement. Height, antenna choice, coax loss, surrounding
-                            terrain, and stable power often matter more than simply turning
-                            power up.
-                        </p>
-
-                        <h3>Good repeater traits</h3>
-
-                        <ul>
-                            <li>High or clear placement</li>
-                            <li>Reliable power, ideally with battery backup or solar where appropriate</li>
-                            <li>Weather protection for outdoor installs</li>
-                            <li>Antenna matched to the intended coverage area</li>
-                            <li>Known firmware version and settings</li>
-                            <li>Documented general location without exposing private addresses</li>
-                            <li>Owner or maintainer who can update, reboot, or troubleshoot it</li>
-                        </ul>
-
-                        <h3>Repeater placement</h3>
-
-                        <p>
-                            Repeaters are most useful when they are placed where many other nodes
-                            can hear them. A repeater deep inside a building may work locally, but
-                            it may not help the wider area. A modest repeater on a good hill, ridge,
-                            tower, roofline, or clear window may outperform a more powerful device
-                            in a poor location.
-                        </p>
-
-                        <h3>Repeater path hash notes</h3>
-
-                        <p>
-                            MeshCore firmware 1.14 and newer supports 1-byte, 2-byte, and 3-byte
-                            path hashes. Longer path hashes help analyzers and mapping tools tell
-                            repeaters apart more reliably. This is especially useful when different
-                            repeaters would otherwise collide or look similar because only a short
-                            part of the public key is being shown.
-                        </p>
-
-                        <p>
-                            For repeaters running current firmware, using 2-byte or 3-byte adverts
-                            can be a good regional practice. The CLI setting is:
-                        </p>
-
-                        <pre><code>set path.hash.mode 1</code></pre>
-
-                        <p>
-                            That sets repeater adverts to 2-byte path hash mode. Using:
-                        </p>
-
-                        <pre><code>set path.hash.mode 2</code></pre>
-
-                        <p>
-                            sets repeater adverts to 3-byte path hash mode. This setting controls
-                            the repeater’s own advert path hash size. It does not decide which
-                            packets a firmware 1.14+ repeater forwards.
-                        </p>
-
-                        <div class="docs-note">
-                            Practical starting point: for a regional repeater, 2-byte adverts are
-                            a reasonable first choice when the device is on firmware 1.14 or newer.
-                            Moving companion messages away from 1-byte should be a regional decision,
-                            because older repeaters may silently drop larger-path packets.
-                        </div>
-                    </section>
-
-                    <section class="docs-section" id="observers">
-                        <h2>Observers</h2>
-
-                        <p>
-                            An observer listens for mesh traffic and reports or records what it can
-                            hear. Observers are useful for logs, analyzers, live maps, coverage notes,
-                            packet visibility, and understanding whether nearby activity exists.
-                        </p>
-
-                        <p>
-                            An observer does not automatically make the radio network stronger. If an
-                            observer only listens and reports data to a website, it improves visibility,
-                            not RF coverage.
-                        </p>
-
-                        <h3>What observers are good for</h3>
-
-                        <ul>
-                            <li>Showing recently observed activity</li>
-                            <li>Helping confirm whether a test message was heard</li>
-                            <li>Feeding analyzer or map tools</li>
-                            <li>Supporting coverage reports and field testing</li>
-                            <li>Documenting whether activity exists in a general area</li>
-                        </ul>
-
-                        <h3>What observers are not</h3>
-
-                        <ul>
-                            <li>They are not automatically repeaters</li>
-                            <li>They are not proof of complete coverage</li>
-                            <li>They do not show every private or independent node</li>
-                            <li>They should not be used to expose exact private locations</li>
-                        </ul>
-                    </section>
-
-                    <section class="docs-section" id="room-servers-mqtt">
-                        <h2>Room Servers, Hubs, and MQTT Uplinks</h2>
-
-                        <p>
-                            Some mesh systems can connect to supporting services. These services
-                            may provide logging, analyzer feeds, web maps, room-server behavior,
-                            dashboards, or other tools.
-                        </p>
-
-                        <h3>Room servers</h3>
-
-                        <p>
-                            A room server is a shared message or bulletin-board style service
-                            available to compatible MeshCore clients. Depending on configuration,
-                            room servers may also be able to repeat traffic.
-                        </p>
-
-                        <h3>Meshcore-Hub style systems</h3>
-
-                        <p>
-                            A local Linux system can be used as supporting infrastructure. It may
-                            store logs, run scripts, host local services, collect observer output,
-                            test MQTT, generate status files, or prepare data for the public website.
-                        </p>
-
-                        <h3>MQTT uplinks</h3>
-
-                        <p>
-                            MQTT uplinks are best understood as reporting paths into tools, not as
-                            magic coverage extenders. A fixed node or observer may report local
-                            traffic into a broker so that analyzers, maps, and dashboards can show
-                            what was heard.
-                        </p>
-
-                        <p>
-                            If the RF side of the network cannot hear an area, an MQTT dashboard may
-                            still show useful information from other places, but it does not replace
-                            the need for good repeater placement, antennas, and field testing.
-                        </p>
-                    </section>
-
-                    <section class="docs-section" id="regional-settings">
-                        <h2>Regional MeshCore Settings Notes</h2>
-
-                        <p>
-                            Regional settings should be verified before flashing or reconfiguring
-                            devices. MeshCore, nearby communities, and local practice can change
-                            over time.
-                        </p>
-
-                        <h3>Common nearby MeshCore settings</h3>
-
-                        <p>
-                            Nearby MeshCore communities commonly reference the USA/Canada recommended
-                            preset. Greater Boston Mesh currently lists:
-                        </p>
-
-                        <pre><code>Preset: USA/Canada (Recommended)
-Frequency: 910.525 MHz
-Bandwidth: 62.5 kHz
-Spreading Factor: 7
-Coding Rate: 5</code></pre>
-
-                        <p>
-                            These settings are useful regional context for Hampden County because
-                            local activity may overlap with the broader New England mesh environment.
-                            Still, verify current settings before changing a working node.
-                        </p>
-
-                        <h3>BDL / Windsor Locks regional context</h3>
-
-                        <p>
-                            Hampden County activity may be seen as part of the wider BDL / Windsor
-                            Locks regional environment, especially when using regional analyzers,
-                            MeshMapper-related tools, or nearby community infrastructure.
-                        </p>
-
-                        <p>
-                            This does not mean every observed node is operated by Hampden County Mesh.
-                            It means Hampden County is part of a wider regional RF and mapping picture.
-                        </p>
-
-                        <h3>Companion node caution</h3>
-
-                        <p>
-                            Companion nodes should generally stay on settings that match the regional
-                            mesh. If most regional repeaters are not confirmed to support newer
-                            path-hash behavior, avoid changing companion message path hash size just
-                            because a repeater advert setting was changed.
-                        </p>
-
-                        <h3>Useful external references</h3>
-
-                        <ul>
-                            <li>
-                                <a href="https://docs.meshcore.io/faq/" target="_blank" rel="noopener">
-                                    MeshCore FAQ
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://docs.meshcore.io/cli_commands/" target="_blank" rel="noopener">
-                                    MeshCore CLI Commands
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://bostonme.sh/meshcore/" target="_blank" rel="noopener">
-                                    Greater Boston MeshCore page
-                                </a>
-                            </li>
-                            <li>
-                                <a href="https://ctmesh.org/meshcore-resources" target="_blank" rel="noopener">
-                                    CT Mesh MeshCore Resources
-                                </a>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <section class="docs-section" id="coverage-vs-visibility">
-                        <h2>Coverage vs. Visibility</h2>
-
-                        <p>
-                            A repeater can improve RF coverage by forwarding traffic over the air.
-                            An observer or MQTT uplink can improve visibility by showing what was
-                            heard. These are both useful, but they are different jobs.
-                        </p>
-
-                        <div class="docs-card-grid">
-                            <div class="docs-card">
-                                <h3>Improves Coverage</h3>
-                                <p>
-                                    Good repeater placement, better antennas, height, clear paths,
-                                    and reliable power can help more nodes reach each other over RF.
-                                </p>
-                            </div>
-
-                            <div class="docs-card">
-                                <h3>Improves Visibility</h3>
-                                <p>
-                                    Observers, logs, analyzers, dashboards, MQTT uplinks, and maps
-                                    help people understand what was heard or reported.
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-
-                    <section class="docs-section" id="privacy">
-                        <h2>Privacy and Public Notes</h2>
-
-                        <p>
-                            Public infrastructure notes should be useful without exposing private
-                            homes, exact coordinates, credentials, private keys, Wi-Fi details, or
-                            information someone did not agree to share.
-                        </p>
-
-                        <h3>Safe public notes</h3>
-
-                        <ul>
-                            <li>Town or general area</li>
-                            <li>Public landmark or broad terrain description</li>
-                            <li>Device role, such as portable node, repeater, or observer</li>
-                            <li>General antenna type</li>
-                            <li>Firmware family or major version when useful</li>
-                            <li>Whether the node is fixed, mobile, temporary, or experimental</li>
-                        </ul>
-
-                        <h3>Avoid publishing</h3>
-
-                        <ul>
-                            <li>Exact home addresses</li>
-                            <li>Private node coordinates without permission</li>
-                            <li>Private keys</li>
-                            <li>Admin passwords or broker credentials</li>
-                            <li>Private IP addresses or Wi-Fi details</li>
-                            <li>Photos that reveal a private location unintentionally</li>
-                        </ul>
-                    </section>
-
-                    <section class="docs-section" id="describing-a-setup">
-                        <h2>How to Describe a Setup</h2>
-
-                        <p>
-                            A useful node or repeater note does not need to be complicated.
-                            The goal is to help others understand what role the device plays
-                            and what it may contribute to the area.
-                        </p>
-
-                        <pre><code>Role: Repeater / Observer / Portable node / Fixed node
+      <article class="docs-article">
+        <p class="docs-breadcrumb">
+          <a href="/guides/">Guides</a> / Nodes, Repeaters, and Observers
+        </p>
+
+        <h1>Nodes, Repeaters, and Observers</h1>
+
+        <p class="docs-lede">
+          Mesh devices are easier to understand when the roles are separated.
+          A portable node, a fixed node, a repeater, an observer, a room server,
+          a hub, and an MQTT uplink can all support local mesh use, but they do
+          not all do the same job.
+        </p>
+
+        <div class="docs-note">
+          This is a plain-language orientation guide. It is not a replacement
+          for current MeshCore, Meshtastic, device, safety, radio-service, or
+          local setup documentation.
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn secondary" href="#quick-summary">Quick Summary</a>
+          <a class="btn secondary" href="#nodes">Nodes</a>
+          <a class="btn secondary" href="#repeaters">Repeaters</a>
+          <a class="btn secondary" href="#observers">Observers</a>
+          <a class="btn secondary" href="#support-systems">Support Systems</a>
+          <a class="btn secondary" href="#visibility">Visibility</a>
+          <a class="btn secondary" href="#privacy">Privacy</a>
+        </div>
+
+        <section class="docs-section" id="quick-summary">
+          <h2>Quick summary</h2>
+
+          <div class="docs-card-grid">
+            <div class="docs-card">
+              <h3>Node</h3>
+              <p>
+                A mesh device that can send, receive, or participate in the mesh.
+                It may be handheld, portable, vehicle-based, fixed indoors, or
+                fixed outdoors.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Repeater</h3>
+              <p>
+                A device placed or configured to help other mesh devices hear
+                each other over radio. Placement matters more than raw power.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Observer</h3>
+              <p>
+                A device or system that listens and reports what it hears. It
+                helps with visibility, logs, maps, and local notes, but it does
+                not automatically improve radio coverage.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Room server</h3>
+              <p>
+                A MeshCore support role used for room-style messaging and, in
+                some setups, more permanent local support.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Hub</h3>
+              <p>
+                A computer or support system that may run scripts, logs, brokers,
+                dashboards, status files, or other local tools.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Uplink or bridge</h3>
+              <p>
+                A path that reports, forwards, or connects data to another tool,
+                such as MQTT, an analyzer, a dashboard, or Discord.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="how-roles-fit">
+          <h2>How the roles fit together</h2>
+
+          <p>
+            A local mesh can include several kinds of devices and tools at the
+            same time. Some help with radio traffic. Some help with observation.
+            Some help with documentation, maps, logs, or coordination.
+          </p>
+
+          <p>
+            The important question is not just “is there a device?” The useful
+            questions are: what role does it play, where is it generally located,
+            what can it hear, what can hear it, and who can maintain it?
+          </p>
+
+          <p>
+            A simple portable node can be useful for learning. A well-placed
+            repeater can help radio traffic. An observer can help show what was
+            heard. A hub or uplink can help organize the information. They are
+            all useful, but they answer different questions.
+          </p>
+        </section>
+
+        <section class="docs-section" id="nodes">
+          <h2>Nodes</h2>
+
+          <p>
+            A node is any device participating in a mesh. In casual conversation,
+            people may call almost any MeshCore or Meshtastic device a node, but
+            the role still matters.
+          </p>
+
+          <h3>Portable nodes</h3>
+
+          <p>
+            Portable nodes are carried, moved around, used during signal checks,
+            or kept with a person. They are useful for learning, messaging, and
+            finding out what can be heard from real places.
+          </p>
+
+          <p>
+            Portable nodes are not usually the backbone of local coverage because
+            they move, go offline, run out of battery, sit in bags, or spend time
+            indoors where radio performance may be poor.
+          </p>
+
+          <h3>Fixed nodes</h3>
+
+          <p>
+            Fixed nodes stay in one place. They may be indoors near a window,
+            outdoors on a mast, mounted at a workplace, installed at a volunteer
+            site, or placed temporarily for a signal check.
+          </p>
+
+          <p>
+            Fixed nodes are easier to compare over time. If a fixed node has a
+            good location, reliable power, reasonable antenna placement, and a
+            maintainer who can update or troubleshoot it, it may become useful
+            local infrastructure.
+          </p>
+
+          <h3>Client or companion devices</h3>
+
+          <p>
+            Many people start with a client or companion-style device. This is
+            usually the device you pair with a phone or computer so you can send
+            and receive messages through an app.
+          </p>
+
+          <p>
+            A client device is a good first step. It lets you learn the app,
+            check whether anyone nearby can hear you, and understand what your
+            location can hear before you spend time on a more permanent setup.
+          </p>
+        </section>
+
+        <section class="docs-section" id="repeaters">
+          <h2>Repeaters</h2>
+
+          <p>
+            A repeater is a mesh device whose job is to help traffic move farther
+            over radio. In normal terms, it listens for mesh traffic and forwards
+            it so other devices may be able to hear it.
+          </p>
+
+          <p>
+            A useful repeater is usually less about transmit power and more about
+            placement. Height, antenna location, nearby buildings, trees, hills,
+            weather protection, and stable power all matter.
+          </p>
+
+          <h3>Good repeater traits</h3>
+
+          <ul>
+            <li>High or clear placement.</li>
+            <li>Reliable power.</li>
+            <li>Weather protection for outdoor installs.</li>
+            <li>Antenna placement that fits the area it is meant to help.</li>
+            <li>Known firmware and settings.</li>
+            <li>A general public description that does not expose a private address.</li>
+            <li>Someone who can update, reboot, or troubleshoot it when needed.</li>
+          </ul>
+
+          <h3>Repeater placement</h3>
+
+          <p>
+            Repeaters are most useful when many other devices can hear them. A
+            repeater deep inside a building may work for that building, but may
+            not help much farther away. A modest device on a good hill, roofline,
+            tower, mast, or clear window may outperform a more powerful device
+            in a poor location.
+          </p>
+
+          <p>
+            Around Hampden County, terrain can change quickly. A repeater that
+            helps one side of town may not help another. That is why comparing
+            notes with people nearby matters.
+          </p>
+
+          <h3>What repeaters are not</h3>
+
+          <ul>
+            <li>They are not magic coverage fixes.</li>
+            <li>They do not guarantee county-wide coverage.</li>
+            <li>They do not replace good local testing.</li>
+            <li>They should not be installed somewhere without permission.</li>
+            <li>They still need safe power, mounting, weather protection, and maintenance.</li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="observers">
+          <h2>Observers</h2>
+
+          <p>
+            An observer listens for mesh activity and reports or records what it
+            can hear. Observers are useful for logs, analyzers, live maps, signal
+            checks, and understanding whether nearby activity exists.
+          </p>
+
+          <p>
+            An observer does not automatically make the radio side stronger. If
+            a device only listens and reports what it hears, it improves
+            visibility, not coverage.
+          </p>
+
+          <h3>What observers are good for</h3>
+
+          <ul>
+            <li>Showing recently observed activity.</li>
+            <li>Helping confirm whether a test message was heard.</li>
+            <li>Feeding analyzer or map tools.</li>
+            <li>Supporting local signal notes.</li>
+            <li>Showing whether activity exists in a general area.</li>
+            <li>Helping compare different placements over time.</li>
+          </ul>
+
+          <h3>What observers are not</h3>
+
+          <ul>
+            <li>They are not automatically repeaters.</li>
+            <li>They are not proof of complete coverage.</li>
+            <li>They do not hear every private or independent node.</li>
+            <li>They should not be used to expose exact private locations.</li>
+            <li>They do not mean one group owns every node or message shown on a map.</li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="support-systems">
+          <h2>Room servers, hubs, bridges, and MQTT uplinks</h2>
+
+          <p>
+            Some mesh setups use supporting services. These may provide
+            room-style messaging, logs, maps, analyzer feeds, dashboards, MQTT
+            reporting, Discord updates, or other tools.
+          </p>
+
+          <h3>Room servers</h3>
+
+          <p>
+            A room server supports shared room-style messaging for compatible
+            MeshCore clients. Depending on setup and firmware, it may also be
+            part of a more permanent local system.
+          </p>
+
+          <h3>Hub-style systems</h3>
+
+          <p>
+            A small computer or Linux system can support local mesh work. It may
+            collect logs, run scripts, host local services, test MQTT, generate
+            status files, or prepare information for a website or dashboard.
+          </p>
+
+          <h3>MQTT uplinks</h3>
+
+          <p>
+            MQTT uplinks are reporting paths into tools. A fixed node, observer,
+            or support system may report activity into a broker so maps,
+            analyzers, dashboards, or Discord integrations can show what was
+            heard.
+          </p>
+
+          <h3>Bridges and integrations</h3>
+
+          <p>
+            A bridge connects one system to another, such as mesh activity to a
+            dashboard, broker, log, or Discord channel. Bridges can be useful,
+            but they should be clear about what they are showing and should not
+            publish private information.
+          </p>
+
+          <p>
+            MQTT and bridges are useful, but they are not the same thing as
+            better radio coverage. If the radio side cannot hear an area, a
+            dashboard may still show useful information from elsewhere, but it
+            does not replace good repeater placement or local testing.
+          </p>
+        </section>
+
+        <section class="docs-section" id="visibility">
+          <h2>Coverage vs. visibility</h2>
+
+          <p>
+            This distinction matters. A repeater can improve radio coverage by
+            forwarding traffic over the air. An observer, log, analyzer, MQTT
+            uplink, bridge, or dashboard improves visibility by showing what was
+            heard or reported.
+          </p>
+
+          <div class="docs-card-grid">
+            <div class="docs-card">
+              <h3>Improves coverage</h3>
+              <p>
+                Good repeater placement, antenna height, clear paths, reliable
+                power, and useful locations can help more devices hear each
+                other over radio.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Improves visibility</h3>
+              <p>
+                Observers, logs, analyzers, dashboards, MQTT uplinks, bridges,
+                and maps help people understand what was heard, when it was
+                heard, and from what general area.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            Both are useful. They just answer different questions.
+          </p>
+        </section>
+
+        <section class="docs-section" id="direct-radio">
+          <h2>Direct radio vs. internet-connected paths</h2>
+
+          <p>
+            A device may be heard directly over LoRa radio, reported by an
+            observer, forwarded through MQTT, shown on an analyzer, or displayed
+            on a dashboard. Those are related, but they are not all the same
+            kind of result.
+          </p>
+
+          <p>
+            When sharing a note, it helps to say whether the result came from
+            direct radio, an observer, MQTT, a public map, a dashboard, or a
+            local log. That makes the note easier to understand later.
+          </p>
+
+          <pre><code>Result source:
+Direct radio:
+Observer:
+MQTT:
+Map or dashboard:
+Local log:
+Unknown:
+Notes:</code></pre>
+        </section>
+
+        <section class="docs-section" id="regional-notes">
+          <h2>Regional notes</h2>
+
+          <p>
+            Hampden County is part of a wider New England mesh picture. Nearby
+            communities, analyzers, public maps, and regional tools may show
+            activity from areas outside Hampden County or from systems that are
+            not operated by Hampden County Mesh.
+          </p>
+
+          <p>
+            That is normal. The important part is to be clear about what a page
+            or tool is showing: activity heard by a device, activity reported by
+            a broker, messages seen through an internet-connected path, or radio
+            traffic heard directly over the air.
+          </p>
+
+          <p>
+            Before changing settings on a working node, check current MeshCore
+            or Meshtastic documentation and ask people nearby what settings are
+            actually being used.
+          </p>
+        </section>
+
+        <section class="docs-section" id="maintenance">
+          <h2>Maintenance matters</h2>
+
+          <p>
+            A fixed node, repeater, observer, room server, hub, or bridge is only
+            useful if someone can keep it working. Documentation and maintenance
+            notes prevent confusion later.
+          </p>
+
+          <ul>
+            <li>Record the last time the device was checked.</li>
+            <li>Write down firmware or software changes.</li>
+            <li>Note antenna, power, mounting, and weather issues.</li>
+            <li>Keep private access details private.</li>
+            <li>Make sure someone knows how to reboot, update, or remove the device if needed.</li>
+            <li>Do not publish exact private maintenance details publicly.</li>
+          </ul>
+
+          <p>
+            For templates, use
+            <a href="/guides/documenting-a-node.html">Documenting a Node</a>
+            and <a href="/guides/operating-aids.html#maintenance-note">Operating Aids</a>.
+          </p>
+        </section>
+
+        <section class="docs-section" id="privacy">
+          <h2>Privacy and public notes</h2>
+
+          <p>
+            Public notes should be useful without exposing private homes, exact
+            coordinates, credentials, private keys, Wi-Fi details, admin URLs, or
+            information someone did not agree to share.
+          </p>
+
+          <h3>Usually safe to share</h3>
+
+          <ul>
+            <li>Town or general area.</li>
+            <li>Public landmark or broad terrain description.</li>
+            <li>Device role, such as portable node, fixed node, repeater, or observer.</li>
+            <li>General antenna type or placement.</li>
+            <li>Firmware family or major version when useful.</li>
+            <li>Whether the device is fixed, mobile, temporary, or experimental.</li>
+            <li>General notes about what was heard or not heard.</li>
+          </ul>
+
+          <h3>Avoid posting publicly</h3>
+
+          <ul>
+            <li>Exact home addresses.</li>
+            <li>Private node coordinates without permission.</li>
+            <li>Private keys.</li>
+            <li>Admin passwords or broker credentials.</li>
+            <li>Private IP addresses, admin URLs, or Wi-Fi details.</li>
+            <li>Photos that reveal a private location unintentionally.</li>
+            <li>Anything someone shared privately and did not agree to publish.</li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="describing-a-setup">
+          <h2>How to describe a setup</h2>
+
+          <p>
+            A useful node, repeater, observer, room server, hub, or uplink note
+            does not need to be complicated. The goal is to help others understand
+            what role the device plays and what it may contribute locally.
+          </p>
+
+          <pre><code>Role: Portable node / Fixed node / Repeater / Observer / Room server / Hub / Bridge
 System: MeshCore / Meshtastic / Other
 General area: Town, neighborhood, landmark, or broad region
-Frequency/preset: If known and safe to share
-Antenna: Type, placement, and approximate height
+Radio settings: If known and safe to share
+Antenna: General type, placement, and approximate height
 Power: USB, battery, solar, wall power, backup power
-Firmware: Version or approximate date, if known
-Status: Testing, active, temporary, offline, planned
-Notes: What it hears, what it reaches, or what it is meant to support</code></pre>
+Firmware or software: Version or approximate date, if known
+Status: Active, testing, temporary, offline, or being built
+Result source: Direct radio / observer / MQTT / map / dashboard / unknown
+Notes: What it hears, what it reaches, or what it is meant to support
+Private details removed before sharing: yes / no</code></pre>
 
-                        <p>
-                            For public reports, general descriptions are often enough. More exact
-                            details can be shared privately with trusted infrastructure maintainers
-                            when needed.
-                        </p>
-                    </section>
-                </div>
-            </article>
+          <p>
+            For public notes, broad descriptions are usually enough. More exact
+            details can be shared privately with trusted people when needed.
+          </p>
+        </section>
 
-            <aside class="docs-toc">
-                <div class="docs-toc-title">On This Page</div>
-                <a href="#quick-summary">Quick Summary</a>
-                <a href="#nodes">Nodes</a>
-                <a href="#repeaters">Repeaters</a>
-                <a href="#observers">Observers</a>
-                <a href="#room-servers-mqtt">Room Servers and MQTT</a>
-                <a href="#regional-settings">Regional Settings</a>
-                <a href="#coverage-vs-visibility">Coverage vs. Visibility</a>
-                <a href="#privacy">Privacy</a>
-                <a href="#describing-a-setup">Describe a Setup</a>
-            </aside>
+        <section class="docs-section" id="what-to-read-next">
+          <h2>What to read next</h2>
 
-        </div>
+          <div class="resource-grid">
+            <a class="resource-card action-card" href="/guides/meshcore-basics.html">
+              <h3>MeshCore Basics</h3>
+              <p>
+                Learn why MeshCore is the main focus here and what to understand
+                before buying or flashing hardware.
+              </p>
+              <span class="card-link">Read MeshCore basics →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/meshtastic-basics.html">
+              <h3>Meshtastic Basics</h3>
+              <p>
+                Learn how Meshtastic fits into local mesh use and what to know
+                before setting up a device.
+              </p>
+              <span class="card-link">Read Meshtastic basics →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/coverage-and-signal-checks.html">
+              <h3>Coverage and Signal Checks</h3>
+              <p>
+                Learn how to compare what your device can hear with people
+                nearby.
+              </p>
+              <span class="card-link">Read signal check guide →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/documenting-a-node.html">
+              <h3>Documenting a Node</h3>
+              <p>
+                Keep useful notes about devices, antennas, placement, power,
+                firmware, status, and maintenance.
+              </p>
+              <span class="card-link">Read node documentation guide →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/operating-aids.html">
+              <h3>Operating Aids</h3>
+              <p>
+                Use templates for signal checks, wardriving, setup notes, and
+                maintenance notes.
+              </p>
+              <span class="card-link">Open operating aids →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/contributing-notes.html">
+              <h3>Contributing Notes</h3>
+              <p>
+                Learn how to share useful local notes without exposing private
+                information.
+              </p>
+              <span class="card-link">Read note guidelines →</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="docs-section" id="ask">
+          <h2>Ask the community</h2>
+
+          <p>
+            If you are not sure whether your device is a node, repeater,
+            observer, room server, hub, bridge, or something else, ask. The terms
+            are useful, but you do not need to know all of them before
+            participating.
+          </p>
+
+          <p>
+            <a class="btn primary" href="/join/getting-started/">Join Discord</a>
+          </p>
+        </section>
+      </article>
     </div>
-</main>
+  </main>
 
-<footer>
+  <footer>
     <div class="container">
-        <div class="footer-title">
-            HAMPDEN COUNTY MESH NETWORK
-        </div>
+      <div class="footer-title">
+        HAMPDEN COUNTY MESH
+      </div>
 
-        <div class="footer-subtitle">
-            Community-Owned Communications Infrastructure
-        </div>
+      <div class="footer-subtitle">
+        MeshCore, Meshtastic, and local radio in Hampden County
+      </div>
 
-        <div class="footer-subtitle">
-            Last Updated: <span id="last-updated">Loading...</span>
-        </div>
+      <div class="footer-subtitle">
+        Last Updated: <span id="last-updated">Loading...</span>
+      </div>
     </div>
-</footer>
+  </footer>
 
-<script src="../last-updated.js"></script>
-
+  <script src="/last-updated.js"></script>
 </body>
 </html>

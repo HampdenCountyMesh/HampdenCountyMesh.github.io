@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Radio Basics | Hampden County Mesh</title>
+  <meta
+    name="description"
+    content="A beginner-friendly guide to FRS, GMRS, MURS, CB, amateur radio, scanners, antennas, signal checks, and how local radio knowledge relates to mesh users."
+  >
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+  <div class="noise"></div>
+
+  <header>
+    <div class="container">
+      <a class="brand" href="/" aria-label="Hampden County Mesh home">
+        <span class="brand-icon" aria-hidden="true">📡</span>
+        <span>HAMPDEN COUNTY MESH</span>
+      </a>
+
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/guides/">Guides</a>
+        <a href="/coverage.html">Coverage</a>
+        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
+          <img src="/assets/icons/discord-symbol-white.svg" alt="">
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="docs-shell">
+    <div class="container">
+      <article class="docs-article">
+        <p class="docs-breadcrumb">
+          <a href="/guides/">Guides</a> / Radio Basics
+        </p>
+
+        <h1>Radio Basics</h1>
+
+        <p class="docs-lede">
+          Mesh radio is the main focus here, but it sits inside a wider radio
+          world. FRS, GMRS, MURS, CB, amateur radio, and scanners all come up
+          when people talk about local communications, antennas, terrain, and
+          what works around Hampden County.
+        </p>
+
+        <div class="docs-note">
+          This page is a beginner overview, not legal advice. Radio rules can
+          change, and different services have different limits. Check current
+          FCC and eCFR references before transmitting.
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn secondary" href="#quick-summary">Quick Summary</a>
+          <a class="btn secondary" href="#services">Radio Services</a>
+          <a class="btn secondary" href="#mesh">Mesh Radio</a>
+          <a class="btn secondary" href="#antennas">Antennas</a>
+          <a class="btn secondary" href="#terrain">Terrain</a>
+          <a class="btn secondary" href="#habits">Good Habits</a>
+        </div>
+
+        <section class="docs-section" id="quick-summary">
+          <h2>Quick summary</h2>
+
+          <div class="docs-card-grid">
+            <div class="docs-card">
+              <h3>FRS</h3>
+              <p>
+                Common handheld walkie-talkie service. Good for simple local
+                voice use with off-the-shelf radios.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>GMRS</h3>
+              <p>
+                A personal radio service often used for family, neighborhood,
+                vehicle, repeater, and local group communications.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>MURS</h3>
+              <p>
+                A VHF personal radio service that can be useful for simple local
+                voice or data uses within its rules.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>CB</h3>
+              <p>
+                A long-running voice service often associated with vehicles,
+                road travel, local radio hobby use, and casual communication.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Amateur radio</h3>
+              <p>
+                A licensed radio service with broad technical flexibility for
+                learning, experimentation, repeaters, digital modes, and public
+                service use.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Scanners</h3>
+              <p>
+                Receivers used to listen to radio traffic. They do not transmit,
+                but they can help people learn what is active locally.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="why-radio-matters">
+          <h2>Why radio basics matter for mesh users</h2>
+
+          <p>
+            MeshCore and Meshtastic use small LoRa radios, but the same local
+            lessons show up across many kinds of radio. Height matters. Antenna
+            placement matters. Buildings, hills, trees, valleys, and distance
+            matter. A setup that works well in one place may work very
+            differently somewhere else.
+          </p>
+
+          <p>
+            People who use GMRS, amateur radio, scanners, CB, MURS, or FRS may
+            already understand useful local details: high spots, dead zones,
+            building problems, road corridors, repeaters, antennas, and how
+            terrain affects signals.
+          </p>
+
+          <p>
+            That local knowledge can help mesh users make better choices without
+            having to guess alone.
+          </p>
+        </section>
+
+        <section class="docs-section" id="services">
+          <h2>Common radio services</h2>
+
+          <h3>FRS</h3>
+
+          <p>
+            FRS stands for Family Radio Service. It is the service used by many
+            common walkie-talkies sold for family, hiking, neighborhood, event,
+            and short-range local use.
+          </p>
+
+          <p>
+            FRS radios are usually simple: fixed antennas, limited power, and no
+            complicated setup. They are useful for learning basic radio habits,
+            but they are not the same thing as mesh radio.
+          </p>
+
+          <h3>GMRS</h3>
+
+          <p>
+            GMRS stands for General Mobile Radio Service. It is often used with
+            handheld radios, mobile radios, base stations, and repeaters. It can
+            be useful for families, clubs, vehicle groups, neighborhoods, and
+            local coordination.
+          </p>
+
+          <p>
+            GMRS has its own FCC rules and licensing requirements. It does not
+            use the same licensing process as amateur radio, and it should not be
+            treated as the same service.
+          </p>
+
+          <h3>MURS</h3>
+
+          <p>
+            MURS stands for Multi-Use Radio Service. It is a VHF service used
+            for short-range communication. It can be useful in some local,
+            business, farm, event, or hobby contexts depending on the rules and
+            equipment used.
+          </p>
+
+          <p>
+            MURS is not the same as GMRS or FRS. Radios, antennas, power limits,
+            and allowed uses are different.
+          </p>
+
+          <h3>CB</h3>
+
+          <p>
+            CB stands for Citizens Band. It is an older and still-recognized
+            short-distance voice service. Many people associate it with vehicles,
+            road travel, trucking, local hobby radio, and casual voice use.
+          </p>
+
+          <p>
+            CB can behave differently from UHF, VHF, and LoRa systems because it
+            uses a very different frequency range. That means antennas, noise,
+            range, and local behavior can feel different too.
+          </p>
+
+          <h3>Amateur radio</h3>
+
+          <p>
+            Amateur radio, also called ham radio, is a licensed radio service
+            built around learning, experimentation, public service, and
+            non-commercial communication.
+          </p>
+
+          <p>
+            Amateur radio has more technical flexibility than the personal radio
+            services, but it also requires a license and has its own rules.
+            Local amateur radio users often have useful experience with antennas,
+            repeaters, digital modes, emergency communications practice, and
+            radio troubleshooting.
+          </p>
+
+          <h3>Scanners</h3>
+
+          <p>
+            A scanner is a receiver. It listens but does not transmit. Scanners
+            can help people learn what radio systems are active locally, what
+            bands are busy, and how radio traffic sounds in real life.
+          </p>
+
+          <p>
+            Scanner use can still have rules and limits depending on where and
+            how the receiver is used. Be thoughtful, especially around privacy,
+            rebroadcasting, sensitive information, vehicles, and public safety
+            traffic.
+          </p>
+        </section>
+
+        <section class="docs-section" id="mesh">
+          <h2>How mesh radio is different</h2>
+
+          <p>
+            FRS, GMRS, MURS, CB, and amateur voice repeaters are usually built
+            around people talking by voice. MeshCore and Meshtastic are built
+            around small radio devices passing short messages and data.
+          </p>
+
+          <p>
+            In a mesh, the device placement can matter as much as the person
+            holding it. A fixed node in a good location may help other people.
+            A portable node can help with testing. An observer can show what was
+            heard. A repeater can help messages move farther over radio.
+          </p>
+
+          <p>
+            Mesh radio also creates a different kind of local question. Instead
+            of only asking “can I talk to someone right now,” mesh users often
+            ask “what can my device hear from this place, and can another device
+            pass that message along?”
+          </p>
+        </section>
+
+        <section class="docs-section" id="voice-vs-data">
+          <h2>Voice radio vs. data radio</h2>
+
+          <p>
+            Voice radio is usually about hearing a person talk in real time.
+            Data radio is about sending information such as messages, packets,
+            telemetry, positions, or status reports.
+          </p>
+
+          <p>
+            MeshCore and Meshtastic are data-radio systems. They can be useful
+            even when nobody is actively holding a microphone, because devices
+            may send or receive messages, relay packets, report status, or show
+            observed activity.
+          </p>
+
+          <p>
+            Voice radio and mesh radio can complement each other. A voice radio
+            may be better for quick conversation. A mesh device may be better for
+            short text, logging, quiet monitoring, or testing what can be heard
+            from a location.
+          </p>
+        </section>
+
+        <section class="docs-section" id="simple-terms">
+          <h2>Simple terms worth knowing</h2>
+
+          <ul>
+            <li>
+              <strong>Frequency:</strong> where on the radio spectrum a signal
+              is operating.
+            </li>
+            <li>
+              <strong>Band:</strong> a range of frequencies, such as VHF, UHF,
+              or the 900 MHz area used by many LoRa devices in the United States.
+            </li>
+            <li>
+              <strong>Antenna:</strong> the part of the system that sends or
+              receives radio energy.
+            </li>
+            <li>
+              <strong>Line of sight:</strong> a mostly clear path between two
+              radio locations. It does not always have to be literally visible,
+              but obstacles matter.
+            </li>
+            <li>
+              <strong>Repeater:</strong> a station or device that receives and
+              retransmits traffic to help it go farther.
+            </li>
+            <li>
+              <strong>Simplex:</strong> direct radio-to-radio communication
+              without a repeater.
+            </li>
+            <li>
+              <strong>Digital mode:</strong> a way of sending data or encoded
+              information over radio instead of normal voice.
+            </li>
+            <li>
+              <strong>RX:</strong> receive.
+            </li>
+            <li>
+              <strong>TX:</strong> transmit.
+            </li>
+          </ul>
+
+          <p>
+            For more terms, use the <a href="/guides/glossary.html">Glossary</a>.
+          </p>
+        </section>
+
+        <section class="docs-section" id="antennas">
+          <h2>Antennas and placement</h2>
+
+          <p>
+            Antennas are one of the easiest things to misunderstand. A bigger
+            antenna is not automatically better, and more transmit power is not
+            always the best fix.
+          </p>
+
+          <p>
+            A small radio in a good spot may work better than a better radio in
+            a poor spot. A window may help. Height may help. Moving away from
+            metal, electronics, thick walls, or low ground may help.
+          </p>
+
+          <h3>Good beginner habits</h3>
+
+          <ul>
+            <li>Use an antenna meant for the band you are using.</li>
+            <li>Keep antennas away from heavy metal objects when practical.</li>
+            <li>Try a window before assuming the device does not work.</li>
+            <li>Try a higher location if you can do it safely.</li>
+            <li>Change one thing at a time and test again.</li>
+            <li>Do not transmit into random antennas or adapters without understanding the setup.</li>
+          </ul>
+
+          <p>
+            For mesh users, antenna and placement notes are often more useful
+            than brand arguments. “Near a second-floor window with a small
+            external antenna” tells people more than “this radio is good.”
+          </p>
+        </section>
+
+        <section class="docs-section" id="terrain">
+          <h2>Local terrain matters</h2>
+
+          <p>
+            Hampden County is not a flat test bench. It has river valleys,
+            wooded hills, old mill buildings, dense neighborhoods, open areas,
+            farms, parks, and high spots like Mount Tom. Radio can change
+            quickly across that terrain.
+          </p>
+
+          <p>
+            A signal that works from one side of town may not work from another.
+            A node that hears activity from a hill may hear nothing from lower
+            ground. A room that works on one side of a house may not work from
+            the other side.
+          </p>
+
+          <p>
+            That is why local signal checks and shared notes are useful.
+          </p>
+        </section>
+
+        <section class="docs-section" id="repeaters-and-observers">
+          <h2>Repeaters, observers, and maps</h2>
+
+          <p>
+            Repeaters, observers, maps, and dashboards can all be useful, but
+            they do different jobs.
+          </p>
+
+          <ul>
+            <li>
+              A repeater may improve radio reach by forwarding traffic over the
+              air.
+            </li>
+            <li>
+              An observer may improve visibility by showing what was heard from
+              one location.
+            </li>
+            <li>
+              A map or dashboard may show observed activity, but it does not
+              always prove direct radio coverage from where you are.
+            </li>
+            <li>
+              An internet-connected path may show useful activity, but it is not
+              the same thing as a direct radio path.
+            </li>
+          </ul>
+
+          <p>
+            For more detail, read
+            <a href="/guides/nodes-repeaters-observers.html">Nodes, Repeaters, and Observers</a>.
+          </p>
+        </section>
+
+        <section class="docs-section" id="habits">
+          <h2>Good radio habits</h2>
+
+          <ul>
+            <li>Know which radio service you are using.</li>
+            <li>Check the current rules before transmitting.</li>
+            <li>Use a clear name or call sign when required or appropriate.</li>
+            <li>Do not interfere with other users.</li>
+            <li>Do not transmit on services or frequencies you are not allowed to use.</li>
+            <li>Keep private keys, passwords, and sensitive setup details private.</li>
+            <li>Be careful with exact locations when sharing public notes.</li>
+            <li>Ask before sharing someone else’s setup details.</li>
+            <li>Do not treat hobby radio or mesh radio as a replacement for 911.</li>
+          </ul>
+
+          <p>
+            Good habits make local testing easier. They also make it easier for
+            beginners, licensed radio users, scanner listeners, and mesh users
+            to share the same space without confusion.
+          </p>
+        </section>
+
+        <section class="docs-section" id="official-links">
+          <h2>Official reference links</h2>
+
+          <p>
+            These pages are useful starting points for current United States
+            radio service information:
+          </p>
+
+          <ul>
+            <li>
+              <a href="https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-95" target="_blank" rel="noopener noreferrer">
+                eCFR: 47 CFR Part 95, Personal Radio Services
+              </a>
+            </li>
+            <li>
+              <a href="https://www.ecfr.gov/current/title-47/chapter-I/subchapter-D/part-97" target="_blank" rel="noopener noreferrer">
+                eCFR: 47 CFR Part 97, Amateur Radio Service
+              </a>
+            </li>
+            <li>
+              <a href="https://www.fcc.gov/wireless/bureau-divisions/mobility-division/family-radio-service-frs" target="_blank" rel="noopener noreferrer">
+                FCC: Family Radio Service
+              </a>
+            </li>
+            <li>
+              <a href="https://www.fcc.gov/wireless/bureau-divisions/mobility-division/general-mobile-radio-service-gmrs" target="_blank" rel="noopener noreferrer">
+                FCC: General Mobile Radio Service
+              </a>
+            </li>
+            <li>
+              <a href="https://www.fcc.gov/wireless/bureau-divisions/mobility-division/multi-use-radio-service-murs" target="_blank" rel="noopener noreferrer">
+                FCC: Multi-Use Radio Service
+              </a>
+            </li>
+            <li>
+              <a href="https://www.fcc.gov/wireless/bureau-divisions/mobility-division/citizens-band-radio-service-cbrs" target="_blank" rel="noopener noreferrer">
+                FCC: Citizens Band Radio Service
+              </a>
+            </li>
+            <li>
+              <a href="https://www.fcc.gov/wireless/bureau-divisions/mobility-division/amateur-radio-service" target="_blank" rel="noopener noreferrer">
+                FCC: Amateur Radio Service
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="what-to-read-next">
+          <h2>What to read next</h2>
+
+          <div class="resource-grid">
+            <a class="resource-card action-card" href="/guides/getting-started.html">
+              <h3>Getting Started</h3>
+              <p>
+                Start here if you are new to mesh radio and want the basic path.
+              </p>
+              <span class="card-link">Start here →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/glossary.html">
+              <h3>Glossary</h3>
+              <p>
+                Look up common radio, mesh, signal check, privacy, and mapping
+                terms.
+              </p>
+              <span class="card-link">Open glossary →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/coverage-and-signal-checks.html">
+              <h3>Coverage and Signal Checks</h3>
+              <p>
+                Learn how to test what your device can hear and compare notes
+                with people nearby.
+              </p>
+              <span class="card-link">Read signal check guide →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/radio-reference.html">
+              <h3>Radio Reference</h3>
+              <p>
+                Open the larger reference page for radio services, terms, and
+                official links.
+              </p>
+              <span class="card-link">Open radio reference →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/operating-aids.html">
+              <h3>Operating Aids</h3>
+              <p>
+                Simple checklists and habits for cleaner tests and better notes.
+              </p>
+              <span class="card-link">Open operating aids →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/join/getting-started/">
+              <h3>Ask the Community</h3>
+              <p>
+                Join the Discord to ask questions, compare notes, and coordinate
+                local signal checks.
+              </p>
+              <span class="card-link">Join Discord →</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="docs-section" id="ask">
+          <h2>Ask the community</h2>
+
+          <p>
+            If you are not sure what kind of radio you have, what service it
+            belongs to, or how it relates to mesh, ask in Discord. A lot of this
+            is easier to understand with local examples.
+          </p>
+
+          <p>
+            <a class="btn primary" href="/join/getting-started/">Join Discord</a>
+          </p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-title">
+        HAMPDEN COUNTY MESH
+      </div>
+
+      <div class="footer-subtitle">
+        MeshCore, Meshtastic, and local radio in Hampden County
+      </div>
+
+      <div class="footer-subtitle">
+        Last Updated: <span id="last-updated">Loading...</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/last-updated.js"></script>
+</body>
+</html>
