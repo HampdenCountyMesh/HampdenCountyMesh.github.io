@@ -1,92 +1,196 @@
 # Hampden County Mesh Discord
 
-The Hampden County Mesh Network Discord is the main community space for mesh networking discussion, field testing, troubleshooting, documentation work, mapping, and project coordination.
+The Hampden County Mesh Network Discord is the main discussion space for local mesh radio, MeshCore, Meshtastic, radio basics, field testing, setup help, documentation work, website updates, and local coordination.
 
-The server is for people interested in MeshCore, Meshtastic, local radio, resilient communications, community infrastructure, and coverage testing across Hampden County and Western Massachusetts.
+The server is for people interested in MeshCore, Meshtastic, local radio, off-grid messaging, signal checks, radio learning, and practical communications knowledge across Hampden County and nearby Western Massachusetts.
 
 ## Join the Discord
 
-Temporary Discord invite:
+Public join route:
 
-https://discord.gg/fC9ARr85
+https://hampdencountymesh.org/join/
 
-This invite may expire or reach its use limit during the initial soft-launch period. If the link does not work, ask a project maintainer for a current invite.
+Use the website join route instead of posting raw Discord invite links in public documentation. That makes invite tracking and future invite changes easier to manage.
 
-If the public invite is not active yet, ask a project maintainer for an invite.
+If the join route is not working, contact:
+
+[discord@hampdencountymesh.org](mailto:discord@hampdencountymesh.org)
 
 ## What the Discord is for
 
 The Discord is used for:
 
-* MeshCore and Meshtastic discussion
-* Node setup and troubleshooting
-* Coverage reports and field testing
-* Website and GitHub project work
-* Mapping and data planning
-* MQTT, observer, and logging discussions
-* Local radio discussion, including GMRS, FRS, MURS, CB, and amateur radio
-* Community coordination and announcements
+* MeshCore discussion
+* Meshtastic discussion
+* Device setup and troubleshooting
+* Signal checks and field notes
+* Website and GitHub work
+* Documentation updates
+* Mapping and observed activity planning
+* MQTT, observer, logging, and backend discussion
+* Local radio discussion, including GMRS, FRS, MURS, CB, scanners, and amateur radio
+* Announcements and coordination
+* Casual discussion related to the local radio and mesh community
 
 ## First steps after joining
 
-After joining, start here:
-
-1. Read `#rules`
-2. Check `#welcome`
-3. Choose roles and interests in `#choose-roles`
-4. Introduce yourself in `#introductions`
-5. Ask beginner questions in `#questions-help`
-6. Ask device questions in `#node-help`
-7. Share general coverage observations in `#coverage-reports`
-
 New members are not expected to know everything. Beginner questions are welcome.
 
-## Main channels
+After joining:
 
-### Start Here
+1. Read the server rules.
+2. Complete onboarding if prompted.
+3. Choose any relevant interests or region options offered by onboarding.
+4. Check the welcome or new member area.
+5. Ask beginner questions in the appropriate help channel.
+6. Ask device questions in the MeshCore, Meshtastic, or device-help area.
+7. Share signal checks or field notes only after removing private details.
 
-* `#welcome` — basic welcome and first steps
-* `#rules` — server rules and expectations
-* `#announcements` — official project announcements
-* `#server-guide` — server navigation and basic instructions
-* `#choose-roles` — role and interest selection
-* `#new-member-lobby` — landing area for new members
+Do not worry if you do not know the right terms yet. Ask plainly and include what you are trying to do.
 
-### Community
+## Channel structure
 
-* `#general` — general project and community discussion
-* `#introductions` — introduce yourself
-* `#questions-help` — beginner questions and general help
-* `#radio` — GMRS, FRS, MURS, CB, amateur radio, and related discussion
-* `#show-your-stuff` — radios, nodes, antennas, field kits, builds, and setups
+Exact channel names may change over time, but the server is generally organized around these uses.
 
-### Main
+### Welcome and rules
 
-* `#meshcore` — MeshCore discussion
-* `#meshtastic` — Meshtastic discussion
-* `#node-help` — device setup and troubleshooting
-* `#coverage-reports` — general coverage observations
-* `#field-testing` — planned field tests and test coordination
-* `#infrastructure` — fixed infrastructure, observers, repeaters, and hubs
+These channels are for new member entry, rules, onboarding, and basic server orientation.
 
-### Project Work
+Examples may include:
 
-* `#website-github` — website, GitHub, repo updates, and issue tracking
-* `#mapping-data` — maps, GeoJSON, coverage data, and public map planning
-* `#mqtt-and-logging` — MQTT, observer logs, backend services, and automation
-* `#documentation` — project notes, guides, and written documentation
+* Welcome
+* Rules
+* New member lobby
+* Server guide or first steps
 
-### Status
+### Announcements
 
-* `#network-status` — manually maintained project status
-* `#observer-updates` — observer and infrastructure updates
-* `#incident-reports` — infrastructure issues, safety concerns, and reports
+Announcement channels are for official updates and useful updates from elsewhere.
+
+Current announcement uses include:
+
+* Hampden County Mesh announcements
+  Official updates from Hampden County Mesh.
+
+* Elsewhere announcements
+  Useful announcements, links, or posts from neighboring mesh/radio groups, relevant servers, or other public sources.
+
+Announcement channels should stay focused. Normal discussion should happen in discussion channels.
+
+### General discussion
+
+General discussion channels are for normal conversation, beginner questions, and local coordination.
+
+Examples may include:
+
+* General
+* Questions or help
+* Off-topic
+* Photos or field media
+
+The off-topic area is for casual non-project talk, memes, and general discussion as long as server rules are followed.
+
+### MeshCore
+
+MeshCore channels are for:
+
+* MeshCore setup
+* Firmware questions
+* Device roles
+* Repeaters
+* Observers
+* Room servers
+* MeshCore apps
+* Signal checks
+* Nearby MeshCore activity
+
+### Meshtastic
+
+Meshtastic channels are for:
+
+* Meshtastic setup
+* Device questions
+* Channels and roles
+* MQTT questions
+* Maps
+* Signal checks
+* Local Meshtastic notes
+
+### Radio reference
+
+Radio reference channels are for radio topics that are not strictly MeshCore or Meshtastic.
+
+Topics may include:
+
+* FRS
+* GMRS
+* MURS
+* CB
+* Amateur radio
+* Scanners
+* Antennas
+* Repeaters
+* Local radio learning
+
+Members are responsible for following the rules of the radio service they use.
+
+### Field testing
+
+Field testing channels are for:
+
+* Signal checks
+* Wardriving notes
+* Public-location tests
+* General coverage observations
+* Device placement comparisons
+* Terrain notes
+* Test coordination
+
+Use general areas in public notes unless exact location sharing is clearly intentional and safe.
+
+### Project work
+
+Project work channels may be used for website, GitHub, documentation, mapping, backend, MQTT, observer, and logging work.
+
+Some project work channels may be private or role-limited to reduce noise and protect unfinished or sensitive details.
+
+### Status and infrastructure
+
+Status and infrastructure channels may be used for:
+
+* Site-maintained system status
+* Observer notes
+* Hub notes
+* GitHub webhook updates
+* Backend work
+* Logging updates
+* Outage or maintenance notes
+
+Do not post private credentials, private IPs, broker passwords, admin URLs, or sensitive access details in public channels.
+
+## GitHub integration
+
+The Discord has a GitHub integration/webhook for repository updates.
+
+The integration should be used for useful visibility into website and repo work, not as a replacement for documentation.
+
+Keep GitHub update channels focused so they remain readable.
+
+## Future relay and bot integrations
+
+Future integrations may include MeshCore, MQTT, observer, or Discord relay tools.
+
+Relay or bot output should have a clear purpose and a clear place before channels are created for it.
+
+Do not create broad relay channels before the actual integration is ready. When relay output is added, keep it separate from normal discussion so automated messages do not bury human conversation.
+
+Possible future relay categories or channels should be documented only after the integration plan is clear.
 
 ## Privacy and location safety
 
 Do not post exact private node locations without permission.
 
-General areas are fine for coverage reports. Exact home addresses, private infrastructure locations, personally identifying location details, and sensitive deployment information should not be posted publicly.
+General areas are usually enough for public signal reports and field notes.
 
 Good examples:
 
@@ -95,31 +199,90 @@ Good examples:
 * “near Holyoke / Chicopee”
 * “tested from a hilltop”
 * “mobile test along a general route”
+* “public park area”
+* “near a second-floor window”
 
 Avoid posting:
 
-* home addresses
-* exact GPS coordinates for private nodes
-* private repeater locations
-* private infrastructure locations
-* photos that reveal addresses or sensitive locations
-* someone else’s location without permission
+* Home addresses
+* Exact GPS coordinates for private nodes
+* Private repeater locations
+* Private infrastructure locations
+* Private IP addresses
+* Admin URLs
+* Photos that reveal addresses or sensitive locations
+* Someone else’s location without permission
 
 When in doubt, generalize the location.
 
 ## Credentials and infrastructure safety
 
-Do not post credentials, private keys, API tokens, webhook URLs, passwords, broker credentials, or anything that could compromise a device, account, server, node, broker, or service.
+Do not post:
 
-If you accidentally post sensitive information, delete it immediately and notify a moderator.
+* Private keys
+* Channel keys
+* API tokens
+* Webhook URLs
+* Passwords
+* Broker credentials
+* Wi-Fi details
+* Admin URLs
+* Private IP addresses
+* SSH details
+* Anything that could compromise a device, account, server, node, broker, or service
+
+If sensitive information is posted accidentally:
+
+1. Delete it immediately if possible.
+2. Notify a moderator.
+3. Rotate the exposed credential if needed.
+4. Do not quote or repost the exposed secret.
+
+## Screenshots and photos
+
+Before posting screenshots or photos, check for:
+
+* Private messages
+* Passwords
+* Keys
+* Admin pages
+* Private channels
+* Email addresses
+* Private node locations
+* Exact coordinates
+* License plates
+* Home addresses
+* Reflections
+* EXIF metadata
+* People who did not agree to be shown
+
+Crop, blur, redact, or choose a different image when needed.
 
 ## Radio and legal expectations
 
 Members are responsible for following applicable radio laws, service rules, and license requirements.
 
-Do not encourage illegal transmitting, jamming, interference, impersonation, unauthorized access, or misuse of emergency, public safety, aviation, railroad, utility, commercial, or government systems.
+Do not encourage:
 
-The project is for lawful experimentation, education, local communications, and community infrastructure.
+* Illegal transmitting
+* Jamming
+* Harmful interference
+* Impersonation
+* Unauthorized access
+* Misuse of emergency systems
+* Misuse of public safety, aviation, railroad, utility, commercial, or government systems
+
+The server is for lawful learning, experimentation, local communications, and shared radio knowledge.
+
+## Conduct expectations
+
+The Discord should stay useful, respectful, and beginner-friendly.
+
+Do not use the server for harassment, threats, hate speech, racism, xenophobia, homophobia, transphobia, bigotry, targeted abuse, or intimidation.
+
+Do not make beginners feel unwelcome for asking basic questions.
+
+Disagreements should stay focused on facts, safety, documentation, and practical results.
 
 ## Roles
 
@@ -129,13 +292,16 @@ Interest roles may include:
 
 * MeshCore
 * Meshtastic
-* GMRS / FRS / MURS
-* HAM
-* CB Radio
-* Linux / Servers
+* GMRS
+* FRS
+* MURS
+* CB
+* Amateur radio
+* Scanners
+* Linux or servers
 * Mapping
-* Website / Docs
-* Emergency Comms
+* Website or docs
+* Field testing
 
 General area roles may include:
 
@@ -144,30 +310,41 @@ General area roles may include:
 * Eastern Hampden County
 * Outside Hampden County
 
-Staff and infrastructure roles are assigned manually. They are not self-assigned through onboarding.
+Staff and infrastructure roles are assigned manually. They are not self-assigned.
 
 ## Getting help
 
-For general questions, use `#questions-help`.
+For general questions, use a beginner or help channel.
 
-For device problems, use `#node-help` and include as much useful detail as possible:
+For device problems, include useful details when you can:
 
-* device model
-* firmware version
-* role or mode
-* relevant settings
-* screenshots
-* logs
-* exact error messages
-* what you already tried
+* Device model
+* Firmware version
+* Mesh system: MeshCore, Meshtastic, or other
+* Role or mode
+* Relevant settings
+* What app or computer you are using
+* Screenshots with private details removed
+* Logs with private details removed
+* Exact error messages
+* What you already tried
+* General area if the question involves signal checks
 
-If you are not sure where to ask, use `#new-member-lobby` or `#questions-help`.
+If you are not sure where to ask, use the new member or general help area.
 
-## Related project links
+## Related links
 
 Website:
 
-https://hampdencountymesh.github.io/
+https://hampdencountymesh.org/
+
+Guide library:
+
+https://hampdencountymesh.org/guides/
+
+Discord join route:
+
+https://hampdencountymesh.org/join/
 
 GitHub repository:
 
@@ -175,6 +352,8 @@ https://github.com/HampdenCountyMesh/HampdenCountyMesh.github.io
 
 ## Project status
 
-Hampden County Mesh is still being built.
+Current public status is maintained on the website and through Discord updates where appropriate.
 
-Current project status is maintained in `#network-status` and on the website. Public live data, automated observer updates, MQTT integrations, and map improvements are planned as the infrastructure develops.
+Public live data automation, observer reporting, MQTT integrations, mapping improvements, and relay tools should be documented as they become real and maintainable.
+
+Do not describe future integrations as live until they are actually working.

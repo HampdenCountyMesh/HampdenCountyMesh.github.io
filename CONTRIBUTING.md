@@ -1,91 +1,258 @@
-# Contributing to the Hampden County Mesh Network
+# Contributing to Hampden County Mesh
 
-Thank you for your interest in contributing to the Hampden County Mesh Network (HCMN).
+Thank you for your interest in contributing to Hampden County Mesh.
 
-HCMN is a community-driven project focused on expanding and documenting mesh networking infrastructure throughout Hampden County and the surrounding region. Contributions of all sizes are welcome.
+Hampden County Mesh is a local effort focused on mesh radio, radio learning, field notes, public-safe documentation, and shared communications knowledge across Hampden County and nearby Western Massachusetts.
 
-## Ways to Contribute
+You do not need to write code or be a radio expert to contribute.
 
-You do not need to write code to contribute.
+## Ways to contribute
 
-Examples of valuable contributions include:
+Useful contributions include:
 
-- Documentation improvements
-- Website improvements
-- Node deployment proposals
-- Coverage reports
-- Infrastructure suggestions
-- Bug reports
-- Feature requests
-- Hardware testing and field reports
-- Mapping and network information
-- Community outreach and education
+* Documentation improvements
+* Website fixes
+* Guide improvements
+* Accessibility improvements
+* Typo and link fixes
+* Field notes
+* Signal check notes
+* Public-safe coverage observations
+* Node documentation templates
+* Radio reference improvements
+* Hardware testing notes
+* Mapping suggestions
+* Bug reports
+* Feature requests
+* Suggestions for future learning sessions
+* Helpful issue reports
 
-## Before You Start
+Small improvements are welcome.
 
-Please review the following documents before contributing:
+## Before you start
 
-- README.md
-- CODE_OF_CONDUCT.md
-- SECURITY.md
+Please review:
 
-If you are unsure whether a change belongs in the project, open an issue first to discuss it.
+* `README.md`
+* `CODE_OF_CONDUCT.md`
+* `SECURITY.md`
 
-## Reporting Issues
+For technical or supporting documentation, also check:
 
-Please use the appropriate GitHub Issue template when reporting:
+* `docs/README.md`
 
-- Bugs
-- Documentation issues
-- Feature requests
-- Community concerns
-- Node deployment proposals
+If you are unsure whether a change belongs in the repository, open an issue first or ask through the official contact channels.
 
-Provide as much information as possible so issues can be reproduced and evaluated.
+General contact:
 
-## Security Issues
+[contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)
 
-Please do not report security vulnerabilities through public GitHub issues.
+## Reporting issues
 
-Follow the process described in SECURITY.md.
+Use GitHub issues for public, non-sensitive reports such as:
 
-## Documentation Standards
+* Broken links
+* Typos
+* Website display problems
+* Documentation problems
+* Guide suggestions
+* Public-safe field notes
+* Public-safe signal check notes
+* Public-safe feature requests
+
+When reporting an issue, include enough detail for someone else to understand it.
+
+Helpful details may include:
+
+* Page or file affected
+* What you expected to happen
+* What actually happened
+* Browser or device, if relevant
+* Screenshot, if useful and public-safe
+* Suggested fix, if you have one
+
+Do not include private keys, passwords, private locations, credentials, private messages, or sensitive screenshots in public issues.
+
+## Security issues
+
+Do not report security vulnerabilities or exposed secrets through public GitHub issues.
+
+Security issues may include:
+
+* Exposed credentials
+* Private keys
+* API tokens
+* Broker credentials
+* Admin URLs
+* Private IP addresses
+* Unsafe public data exposure
+* Exact private node locations published by mistake
+* Website or repository vulnerabilities
+
+Report security concerns by email:
+
+[security@hampdencountymesh.org](mailto:security@hampdencountymesh.org)
+
+See `SECURITY.md` for more information.
+
+## Documentation standards
 
 When contributing documentation:
 
-- Keep information accurate and verifiable.
-- Use clear and concise language.
-- Avoid unnecessary jargon when possible.
-- Update related documentation when appropriate.
-- Verify links before submitting changes.
+* Keep language clear and practical.
+* Avoid unnecessary jargon.
+* Prefer beginner-friendly explanations.
+* Keep information accurate.
+* Update related pages when needed.
+* Verify links before submitting changes.
+* Do not describe future features as live.
+* Do not imply guaranteed coverage.
+* Do not imply ownership of independent nodes or nearby activity.
+* Use careful wording around observed activity, maps, dashboards, MQTT, and observers.
 
-## Node and Infrastructure Information
+Good wording:
 
-When submitting information about nodes or infrastructure:
+* observed activity
+* local signal notes
+* activity heard by site-maintained systems
+* public sources where available
+* field testing notes
 
-- Do not publish private information without permission.
-- Do not disclose credentials, keys, or sensitive configuration details.
-- Be mindful of site-owner privacy and operational security.
-- Use general location descriptions unless precise coordinates are intended for public release.
+Avoid wording like:
 
-## Pull Requests
+* guaranteed coverage
+* complete county-wide network
+* all nodes are online
+* Hampden County Mesh operates every visible node
+* emergency-ready coverage
+
+## Node, observer, and infrastructure information
+
+When submitting information about nodes, observers, repeaters, portable devices, support systems, or infrastructure:
+
+* Do not publish private information without permission.
+* Do not disclose credentials, keys, or sensitive configuration details.
+* Do not publish exact private coordinates unless intentionally public and safe.
+* Use general location descriptions when possible.
+* Be mindful of site-owner privacy.
+* Be careful with screenshots, logs, maps, and photos.
+* Remove private details before sharing.
+
+Useful public-safe location descriptions include:
+
+* Town
+* General area
+* Public landmark
+* Public park
+* Road corridor
+* Broad neighborhood
+* Western / central / eastern Hampden County
+
+Avoid posting:
+
+* Home addresses
+* Exact private node locations
+* Private observer locations
+* Private repeater locations
+* Private infrastructure locations
+* Admin URLs
+* Private IP addresses
+* Credentials or keys
+* Photos that reveal private locations unintentionally
+
+## Field notes and signal checks
+
+Field notes do not need to be formal.
+
+Helpful public-safe field notes may include:
+
+* General location
+* Device used
+* Antenna used
+* Indoor or outdoor placement
+* Approximate height or placement
+* What was heard
+* What was not heard
+* Whether the result came from direct radio, observer data, MQTT, a map, a dashboard, or a local log
+* Terrain notes
+* Weather or building notes, if relevant
+* Date or general time, if safe to share
+
+Do not include exact private locations or sensitive details unless sharing is intentional and safe.
+
+## Photos and media
+
+Before contributing photos, screenshots, or other media, check for:
+
+* EXIF metadata
+* GPS coordinates
+* License plates
+* Home addresses
+* Private node locations
+* Private messages
+* Passwords or keys
+* Admin pages
+* Private channels
+* Reflections
+* People who did not agree to be shown
+
+See `docs/ASSETS.md` for asset and media handling notes.
+
+## Pull requests
 
 When submitting a pull request:
 
-1. Clearly describe the purpose of the change.
-2. Keep changes focused on a specific topic.
-3. Reference any related issues.
-4. Verify that documentation remains accurate.
-5. Be prepared to discuss revisions if needed.
+1. Keep the change focused.
+2. Clearly describe what changed.
+3. Mention related issues, if any.
+4. Check spelling and links.
+5. Make sure public pages still load correctly.
+6. Remove private or sensitive details.
+7. Be prepared to discuss revisions if needed.
 
-## Community Expectations
+For larger changes, open an issue first so the direction can be discussed before a large edit is made.
 
-All contributors are expected to follow the project's Code of Conduct.
+## Public website changes
 
-Respectful technical discussion, collaboration, and knowledge sharing are encouraged.
+When changing public website pages, check for:
+
+* Working links
+* Mobile readability
+* Consistent navigation
+* Clear beginner-friendly wording
+* No raw temporary Discord invite links
+* No stale “planned” content shown as live
+* No private credentials or sensitive data
+* No overclaims about coverage or ownership
+
+Use the public join route for Discord:
+
+https://hampdencountymesh.org/join/
+
+Do not publish raw Discord invite links in website pages or documentation unless there is a specific reason.
+
+## Community expectations
+
+All contributors are expected to follow `CODE_OF_CONDUCT.md`.
+
+Keep discussion useful, respectful, and beginner-friendly.
+
+Harassment, threats, hate speech, racism, xenophobia, homophobia, transphobia, bigotry, targeted abuse, or intimidation are not acceptable.
+
+Disagreements should stay focused on facts, safety, documentation, and practical results.
 
 ## Questions
 
-If you have questions about contributing, open a GitHub issue or reach out through official HCMN community channels.
+For general questions about contributing, open a public GitHub issue if the question is not sensitive.
 
-Thank you for helping build and improve the Hampden County Mesh Network.
+For general contact:
+
+[contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)
+
+For Discord-related questions:
+
+[discord@hampdencountymesh.org](mailto:discord@hampdencountymesh.org)
+
+For security concerns:
+
+[security@hampdencountymesh.org](mailto:security@hampdencountymesh.org)
