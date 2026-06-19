@@ -1,0 +1,157 @@
+name: Node Deployment Proposal
+description: Propose a possible node, repeater, observer, field test point, or public-safe infrastructure location.
+title: "[NODE] "
+labels:
+
+* deployment
+
+body:
+
+* type: markdown
+  attributes:
+  value: |
+  Use this template for public-safe node, repeater, observer, or coverage improvement ideas.
+
+  ```
+  Please do not post exact private addresses, exact private coordinates, private access details, private property information, credentials, keys, photos with sensitive details, or anything that should not be public.
+
+  Use general locations such as town, neighborhood, public landmark, road corridor, hill, park, or general area.
+
+  For private location details, security concerns, or sensitive infrastructure details, do not open a public issue. Contact security@hampdencountymesh.org or contact@hampdencountymesh.org instead.
+  ```
+
+* type: dropdown
+  id: deployment_type
+  attributes:
+  label: Deployment type
+  description: What kind of deployment or idea is this?
+  options:
+  - Portable field test
+  - Temporary event node
+  - Fixed indoor node
+  - Fixed outdoor node
+  - Solar node
+  - Repeater
+  - Observer
+  - Gateway or support system
+  - Potential host location
+  - Other
+  validations:
+  required: true
+
+* type: input
+  id: general_location
+  attributes:
+  label: General location
+  description: Use a town, neighborhood, public landmark, hill, road corridor, park, or general area. Do not post exact private addresses or coordinates.
+  placeholder: "Example: Westfield, Mount Tom area, downtown Springfield, a public park, or western Hampden County"
+  validations:
+  required: true
+
+* type: dropdown
+  id: location_public
+  attributes:
+  label: Location type
+  description: What kind of place is being discussed?
+  options:
+  - Public place
+  - Private property with permission
+  - Private property without permission yet
+  - Business or organization site
+  - Library, school, club, or community venue
+  - Vehicle or portable/mobile use
+  - Not sure
+  validations:
+  required: true
+
+* type: textarea
+  id: proposal_details
+  attributes:
+  label: Proposal details
+  description: Describe the deployment idea and expected benefit in public-safe terms.
+  placeholder: |
+  What would this help with?
+  Is this for coverage, testing, observing, education, events, or redundancy?
+  Is it temporary, portable, or fixed?
+  validations:
+  required: true
+
+* type: textarea
+  id: equipment
+  attributes:
+  label: Proposed equipment
+  description: List equipment if known. Do not include private keys, credentials, admin URLs, passwords, or exact private setup details.
+  placeholder: |
+  Example:
+  - MeshCore node
+  - Solar node
+  - LoRa antenna
+  - Battery or solar power
+  - Weatherproof enclosure
+  - Mounting hardware
+  validations:
+  required: false
+
+* type: textarea
+  id: power_and_mounting
+  attributes:
+  label: Power and mounting notes
+  description: Optional. Include only public-safe details.
+  placeholder: |
+  Example:
+  - Solar preferred
+  - Indoor window placement
+  - Temporary tripod
+  - Existing permitted mast or mount
+  - Needs permission before any installation
+  validations:
+  required: false
+
+* type: textarea
+  id: coverage_goals
+  attributes:
+  label: Coverage or learning goals
+  description: What should this help test, observe, or improve?
+  placeholder: |
+  Example:
+  - Improve signal checks in a general area
+  - Test hilltop visibility
+  - Support a community demo
+  - Compare indoor vs outdoor placement
+  - Observe public-safe mesh activity
+  validations:
+  required: false
+
+* type: textarea
+  id: permission_status
+  attributes:
+  label: Permission status
+  description: Explain whether permission is already granted, needed, unknown, or not applicable. Do not post private contact details.
+  placeholder: "Example: Permission not requested yet; possible public venue; would need owner approval before installation."
+  validations:
+  required: false
+
+* type: dropdown
+  id: urgency
+  attributes:
+  label: Timing
+  description: When would this matter?
+  options:
+  - Field test idea
+  - Useful before launch
+  - Useful after launch
+  - Future possibility
+  - Event-specific
+  - Not sure
+  validations:
+  required: false
+
+* type: checkboxes
+  id: public_safety
+  attributes:
+  label: Public-safety and permission check
+  options:
+  - label: I have not included exact private addresses, exact private coordinates, credentials, keys, admin URLs, private messages, or sensitive screenshots.
+  required: true
+  - label: I understand that any fixed installation would need appropriate permission from the property owner or responsible organization.
+  required: true

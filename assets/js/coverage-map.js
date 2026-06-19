@@ -21,6 +21,19 @@ document.addEventListener("DOMContentLoaded", function () {
             .replaceAll("'", "&#039;");
     }
 
+    function isValidCoordinate(latitude, longitude) {
+        return (
+            typeof latitude === "number" &&
+            typeof longitude === "number" &&
+            Number.isFinite(latitude) &&
+            Number.isFinite(longitude) &&
+            latitude >= -90 &&
+            latitude <= 90 &&
+            longitude >= -180 &&
+            longitude <= 180
+        );
+    }
+
     setActivityStatus("Checking observed activity data...");
 
     const map = L.map("coverage-map", {
@@ -44,12 +57,13 @@ document.addEventListener("DOMContentLoaded", function () {
         collapsed: true
     }).addTo(map);
 
-    const hampdenCountyUrl = "https://services1.arcgis.com/hGdibHYSPO59RG1h/ArcGIS/rest/services/Massachusetts_Counties_with_Generalized_Coastline/FeatureServer/1/query?where=COUNTY%3D%27HAMPDEN%27&outFields=COUNTY,FIPS_STCO&outSR=4326&f=geojson";
+    const hampdenCountyUrl =
+        "https://services1.arcgis.com/hGdibHYSPO59RG1h/ArcGIS/rest/services/Massachusetts_Counties_with_Generalized_Coastline/FeatureServer/1/query?where=COUNTY%3D%27HAMPDEN%27&outFields=COUNTY,FIPS_STCO&outSR=4326&f=geojson";
 
     fetch(hampdenCountyUrl)
         .then(function (response) {
             if (!response.ok) {
-                throw new Error("Hampden County outline file not available.");
+                throw new Error("Hampden County outline data not available.");
             }
 
             return response.json();
@@ -70,18 +84,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Local reference area for Hampden County Mesh."
             );
 
-            map.fitBounds(countyOutline.getBounds(), {
-                padding: [20, 20]
-            });
+            const bounds = countyOutline.getBounds();
+
+            if (bounds.isValid()) {
+                map.fitBounds(bounds, {
+                    padding: [20, 20]
+                });
+            }
         })
         .catch(function () {
             console.warn("Could not load Hampden County outline.");
         });
 
-    fetch("data/observed-activity.json")
+    fetch("/data/observed-activity.json")
         .then(function (response) {
             if (!response.ok) {
-                throw new Error("Observed activity file not available.");
+                throw new Error("Observed activity data not available.");
             }
 
             return response.json();
@@ -92,6 +110,15 @@ document.addEventListener("DOMContentLoaded", function () {
                     "Observed activity data loaded, but no usable activity list was found."
                 );
                 return;
+            }
+
+            if (observedData.public_live_data === false || observedData.automation_status === "not_automated_yet") {
+                if (observedData.activity.length === 0) {
+                    setActivityStatus(
+                        "Observed activity data is prepared, but public live activity is not automated yet."
+                    );
+                    return;
+                }
             }
 
             if (observedData.activity.length === 0) {
@@ -107,30 +134,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 const latitude = item.latitude;
                 const longitude = item.longitude;
 
-                if (
-                    typeof latitude !== "number" ||
-                    typeof longitude !== "number" ||
-                    !Number.isFinite(latitude) ||
-                    !Number.isFinite(longitude) ||
-                    latitude < -90 ||
-                    latitude > 90 ||
-                    longitude < -180 ||
-                    longitude > 180
-                ) {
+                if (!isValidCoordinate(latitude, longitude)) {
+                    return;
+                }
+
+                if (item.public_safe === false || item.show_on_public_map === false) {
                     return;
                 }
 
                 const name = escapeHtml(item.name || "Observed activity");
-                const type = escapeHtml(item.type || "Mesh activity");
-                const source = escapeHtml(item.source || "Source not listed");
-                const lastSeen = escapeHtml(item.last_seen || "Last seen not listed");
+                const type = escapeHtml(item.type || item.source_type || "Mesh activity");
+                const source = escapeHtml(item.source || item.source_type || "Source not listed");
+                const lastSeen = escapeHtml(item.last_seen || item.last_updated || "Last seen not listed");
+                const locationPrecision = escapeHtml(item.location_precision || "not listed");
                 const note = item.note ? escapeHtml(item.note) : "";
 
                 const popupLines = [
                     "<strong>" + name + "</strong>",
                     type,
                     "Source: " + source,
-                    "Last seen: " + lastSeen
+                    "Last seen: " + lastSeen,
+                    "Location precision: " + locationPrecision
                 ];
 
                 if (note) {
@@ -152,14 +176,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (plottedEntries === 0) {
                 setActivityStatus(
-                    "Observed activity data loaded, but no entries had public map coordinates."
+                    "Observed activity data loaded, but no entries had public-safe map coordinates."
                 );
                 return;
             }
 
             setActivityStatus(
                 plottedEntries +
-                " observed activity " +
+                " public-safe observed activity " +
                 (plottedEntries === 1 ? "entry" : "entries") +
                 " loaded. Last updated: " +
                 (observedData.last_updated || "not listed") +

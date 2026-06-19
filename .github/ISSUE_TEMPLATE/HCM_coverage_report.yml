@@ -1,0 +1,149 @@
+name: Coverage / Field Test Report
+description: Share a public-safe signal check, coverage note, wardriving note, or observed activity report.
+title: "[FIELD] "
+labels:
+
+* field-testing
+
+body:
+
+* type: markdown
+  attributes:
+  value: |
+  Use this template for public-safe field reports, signal checks, coverage notes, wardriving notes, park checks, mobile tests, or observed activity reports.
+
+  ```
+  Please do not post exact private addresses, exact private coordinates, private node locations, private observer locations, credentials, private messages, or sensitive screenshots.
+
+  General areas are usually enough: town, neighborhood, road corridor, public park, public landmark, hill, or general area.
+
+  For private location details or sensitive system information, do not open a public issue. Contact contact@hampdencountymesh.org instead.
+  ```
+
+* type: dropdown
+  id: report_type
+  attributes:
+  label: Report type
+  description: What kind of field or coverage report is this?
+  options:
+  - Signal check
+  - Wardriving note
+  - Portable node test
+  - Fixed node observation
+  - Repeater or outdoor node check
+  - Observer note
+  - Public map or observed activity note
+  - Event or temporary setup
+  - Other
+  validations:
+  required: true
+
+* type: dropdown
+  id: mesh_system
+  attributes:
+  label: System
+  description: Which system was involved?
+  options:
+  - MeshCore
+  - Meshtastic
+  - Both MeshCore and Meshtastic
+  - FRS / GMRS / MURS / CB / amateur radio
+  - Scanner or receive-only listening
+  - Not sure
+  - Other
+  validations:
+  required: true
+
+* type: input
+  id: general_area
+  attributes:
+  label: General area
+  description: Use a town, neighborhood, public landmark, park, road corridor, hill, or general area. Do not post exact private addresses or coordinates.
+  placeholder: "Example: Mittineague Park, West Springfield; Mount Tom area; downtown Westfield; I-91 corridor; western Hampden County"
+  validations:
+  required: true
+
+* type: textarea
+  id: summary
+  attributes:
+  label: Summary
+  description: Briefly describe what you tested, heard, observed, or tried.
+  placeholder: "Example: Walked around a public park with a portable MeshCore node and checked whether any nodes or packets were heard."
+  validations:
+  required: true
+
+* type: textarea
+  id: setup
+  attributes:
+  label: Device and setup
+  description: Include public-safe setup details. Do not include private keys, passwords, admin URLs, exact private placement, or credentials.
+  placeholder: |
+  Example:
+  - Device: Wio Tracker / Heltec / other
+  - Antenna: stock / external / unknown
+  - Placement: handheld / vehicle / window / public overlook / temporary outdoor setup
+  - Power: battery / solar / USB / other
+  validations:
+  required: false
+
+* type: textarea
+  id: results
+  attributes:
+  label: Results
+  description: What worked, what did not work, or what was observed?
+  placeholder: |
+  Example:
+  - Heard packets from...
+  - Could not reach...
+  - Better results near...
+  - No activity heard during this check
+  - Signal changed with height, vehicle placement, or location
+  validations:
+  required: false
+
+* type: textarea
+  id: conditions
+  attributes:
+  label: Conditions or context
+  description: Optional. Include terrain, weather, foliage, building, vehicle, antenna, or time-of-day notes if useful.
+  placeholder: |
+  Example:
+  - Public park / hill / wooded area / low spot
+  - Indoors near window / outdoors / in vehicle
+  - Heavy tree cover / open field / dense buildings
+  - Clear weather / rain / snow / leaf-on conditions
+  validations:
+  required: false
+
+* type: textarea
+  id: map_notes
+  attributes:
+  label: Map or documentation notes
+  description: Optional. Should this become a public-safe map note, guide note, or future coverage reference?
+  placeholder: "Example: This may be useful as a general field note for West Springfield parks, but should not include exact coordinates."
+  validations:
+  required: false
+
+* type: dropdown
+  id: sharing_level
+  attributes:
+  label: Public sharing level
+  description: How should this report be treated?
+  options:
+  - Public-safe as written
+  - Public-safe if generalized
+  - Needs review before public use
+  - Private details intentionally omitted
+  - Not sure
+  validations:
+  required: true
+
+* type: checkboxes
+  id: public_safety
+  attributes:
+  label: Public-safety check
+  options:
+  - label: I have not included exact private addresses, exact private coordinates, private node locations, private observer locations, credentials, private keys, admin URLs, private messages, or sensitive screenshots.
+  required: true
+  - label: I understand this is a public GitHub issue and should only include information that is safe to publish.
+  required: true

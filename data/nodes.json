@@ -1,19 +1,22 @@
 {
-  "schema_version": "2026-06-15-activity-map-v3",
-  "last_updated": "2026-06-15",
-  "map_title": "Mesh Activity & Coverage",
+  "schema_version": "2026-06-19-activity-map-v4",
+  "last_updated": "2026-06-19",
+  "map_title": "Coverage and Observed Activity",
   "county": "Hampden County, Massachusetts",
   "region_alignment": "BDL / Windsor Locks",
+  "data_status": "manual_public_safe",
+  "automation_status": "not_automated_yet",
   "location_privacy_note": "Exact private node locations are not published.",
+  "ownership_note": "Listed systems are site-maintained or manually documented where stated. Observed activity should not be treated as ownership of all visible mesh activity.",
   "layers": {
     "infrastructure": {
-      "label": "Project Infrastructure"
+      "label": "Site-Maintained Systems"
     },
     "observed_traffic": {
-      "label": "Observed MeshCore Traffic"
+      "label": "Observed MeshCore Activity"
     },
     "coverage_tests": {
-      "label": "Field-Tested Coverage"
+      "label": "Signal Checks and Field Notes"
     }
   },
   "infrastructure": [
@@ -21,8 +24,10 @@
       "id": "hampden-room-observer",
       "name": "Hampden Room Observer",
       "device": "Heltec V3 ESP32-S3",
+      "system": "MeshCore",
       "role": "observer",
-      "status": "manually documented",
+      "status": "operational",
+      "documentation_status": "manually documented",
       "fixed": true,
       "public_id": "",
       "public_key": "",
@@ -31,14 +36,17 @@
       "longitude": null,
       "show_on_public_map": false,
       "location_accuracy": "not_published",
-      "notes": "Indoor observer. Exact location not published."
+      "public_safe": true,
+      "notes": "Indoor observer. Exact location not published. Used for observed activity context, not complete coverage claims."
     },
     {
       "id": "hampden-county-tree-node",
       "name": "HampdenCountyTreeNode",
-      "device": "SEEED SenseCAP Solar Node P1-Pro",
-      "role": "repeater",
-      "status": "manually documented",
+      "device": "Seeed SenseCAP Solar Node P1-Pro",
+      "system": "MeshCore",
+      "role": "outdoor fixed node",
+      "status": "active",
+      "documentation_status": "manually documented",
       "fixed": true,
       "public_id": "",
       "public_key": "",
@@ -47,14 +55,17 @@
       "longitude": null,
       "show_on_public_map": false,
       "location_accuracy": "not_published",
-      "notes": "Outdoor solar repeater. Exact location not published."
+      "public_safe": true,
+      "notes": "Outdoor solar node. Exact location not published. Used for long-term outdoor placement and local signal behavior learning."
     },
     {
       "id": "cassiopeia",
       "name": "Cassiopeia",
-      "device": "SEEED Wio Tracker L1 Pro",
-      "role": "companion",
-      "status": "manually documented",
+      "device": "Seeed Wio Tracker L1 Pro",
+      "system": "MeshCore",
+      "role": "portable field-testing node",
+      "status": "active",
+      "documentation_status": "manually documented",
       "fixed": false,
       "public_id": "",
       "public_key": "",
@@ -63,7 +74,8 @@
       "longitude": null,
       "show_on_public_map": false,
       "location_accuracy": "mobile_not_mapped",
-      "notes": "Portable companion node. Not mapped."
+      "public_safe": true,
+      "notes": "Portable companion node used for field testing and signal checks. Not mapped as a fixed location."
     }
   ],
   "observed_traffic": [],

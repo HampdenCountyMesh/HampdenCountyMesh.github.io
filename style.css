@@ -1,23 +1,35 @@
 /* =========================================================
-   Hampden County Mesh Network
+   Hampden County Mesh
    Main Stylesheet
+   ========================================================= */
+
+/* =========================================================
+   Theme Variables
    ========================================================= */
 
 :root {
     --bg: #080806;
     --bg-soft: #11100c;
+
     --panel: rgba(24, 22, 16, 0.92);
     --panel-strong: rgba(31, 28, 20, 0.96);
+
     --text: #e7d8b5;
+    --cream: #f4e8c1;
     --text-soft: rgba(231, 216, 181, 0.72);
     --muted: rgba(216, 200, 159, 0.58);
+
     --amber: #ffb347;
     --amber-soft: rgba(255, 179, 71, 0.18);
+
     --green: #9daf88;
     --green-soft: rgba(157, 175, 136, 0.14);
+
     --border: rgba(255, 179, 71, 0.22);
     --border-green: rgba(157, 175, 136, 0.28);
+
     --shadow: rgba(0, 0, 0, 0.45);
+
     --max-width: 1180px;
 }
 
@@ -133,6 +145,10 @@ header .container {
     letter-spacing: 0.06em;
     font-size: 0.95rem;
     white-space: nowrap;
+}
+
+.brand:hover {
+    color: var(--text);
 }
 
 .brand-icon {
@@ -258,7 +274,8 @@ h1 {
     font-size: clamp(1.05rem, 2vw, 1.25rem);
 }
 
-.hero-actions {
+.hero-actions,
+.button-row {
     display: flex;
     flex-wrap: wrap;
     gap: 14px;
@@ -304,6 +321,11 @@ h1 {
     background: rgba(255, 179, 71, 0.14);
 }
 
+.btn.large {
+    min-height: 50px;
+    padding: 13px 22px;
+}
+
 /* =========================================================
    Ticker
    ========================================================= */
@@ -347,6 +369,7 @@ h1 {
 .community-panel,
 .map-panel,
 .resource-card,
+.community-card,
 .dashboard-card,
 .image-frame,
 .image-copy {
@@ -362,6 +385,12 @@ h1 {
     padding: clamp(22px, 4vw, 38px);
 }
 
+.community-panel h2,
+.community-panel h3 {
+    margin-top: 0;
+    color: var(--text);
+}
+
 .community-panel p {
     color: var(--text-soft);
     margin: 0 0 16px;
@@ -373,19 +402,26 @@ h1 {
 
 .dashboard-grid,
 .resource-grid,
+.community-grid,
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 18px;
 }
 
+.community-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .dashboard-card,
-.resource-card {
+.resource-card,
+.community-card {
     padding: 22px;
 }
 
 .dashboard-card h3,
-.resource-card h3 {
+.resource-card h3,
+.community-card h3 {
     margin: 0 0 12px;
     color: var(--text);
     font-size: 1rem;
@@ -404,21 +440,25 @@ h1 {
     color: var(--green);
 }
 
-.resource-card {
+.resource-card,
+.community-card {
     display: block;
     color: var(--text);
 }
 
-.resource-card p {
+.resource-card p,
+.community-card p {
     color: var(--text-soft);
     margin: 0;
 }
 
-.action-card {
+.action-card,
+.community-card {
     transition: transform 0.16s ease, border-color 0.16s ease, background 0.16s ease;
 }
 
-.action-card:hover {
+.action-card:hover,
+.community-card:hover {
     transform: translateY(-3px);
     border-color: rgba(255, 179, 71, 0.52);
     background:
@@ -426,7 +466,8 @@ h1 {
         linear-gradient(180deg, rgba(34, 30, 21, 0.98), rgba(14, 13, 9, 0.98));
 }
 
-.card-link {
+.card-link,
+.community-card span {
     display: inline-block;
     margin-top: 16px;
     color: var(--amber);
@@ -722,6 +763,7 @@ footer {
     border-radius: 12px;
     margin: 20px 0;
 }
+
 .docs-card-planned {
     cursor: default;
     opacity: 0.7;
@@ -827,6 +869,7 @@ footer {
 .online {
     color: var(--green);
 }
+
 .coverage-data-status {
     margin-top: 12px;
     padding: 14px 16px;
@@ -862,6 +905,7 @@ footer {
 @media (max-width: 1050px) {
     .dashboard-grid,
     .resource-grid,
+    .community-grid,
     .stats-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -913,6 +957,7 @@ footer {
 
     .dashboard-grid,
     .resource-grid,
+    .community-grid,
     .stats-grid,
     .image-feature,
     .docs-card-grid {
@@ -951,7 +996,8 @@ footer {
         padding: 24px;
     }
 
-    .hero-actions {
+    .hero-actions,
+    .button-row {
         flex-direction: column;
     }
 
@@ -961,8 +1007,32 @@ footer {
 
     .dashboard-card,
     .resource-card,
+    .community-card,
     .community-panel,
     .docs-article {
         padding: 18px;
+    }
+}
+
+/* =========================================================
+   Reduced Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+    }
+
+    #ticker-content {
+        animation: none;
+        transform: none;
     }
 }

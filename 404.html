@@ -1,18 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Page Not Found | Hampden County Mesh Network</title>
+  <title>Page Not Found | Hampden County Mesh</title>
   <meta name="description" content="The page could not be found. Return to Hampden County Mesh or visit the guide library.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="/assets/icons/favicon.svg">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
 </head>
 
 <body>
@@ -20,21 +24,24 @@
 
   <header>
     <div class="container">
-      <a class="brand" href="/" aria-label="Hampden County Mesh Network home">
-        <span class="brand-icon"></span>
-        <span>HAMPDEN COUNTY MESH NETWORK</span>
+      <a class="brand" href="/" aria-label="Hampden County Mesh home">
+        <span class="brand-icon" aria-hidden="true">📡</span>
+        <span>HAMPDEN COUNTY MESH</span>
       </a>
 
-      <nav>
-        <a href="/">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/guides/">Guides</a>
-        <a href="/coverage.html">Coverage</a>
-        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
-          <img src="/assets/icons/discord-symbol-white.svg" alt="">
-        </a>
-      </nav>
-    </div>
+```
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about.html">About</a>
+    <a href="/guides/">Guides</a>
+    <a href="/coverage.html">Coverage</a>
+    <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
+      <img src="/assets/icons/discord-symbol-white.svg" alt="">
+    </a>
+  </nav>
+</div>
+```
+
   </header>
 
   <section class="hero">
@@ -43,29 +50,32 @@
         ERROR 404
       </div>
 
-      <div class="status-line">
-        <span class="status-dot"></span>
-        PAGE NOT FOUND
-      </div>
+```
+  <div class="status-line">
+    <span class="status-dot"></span>
+    PAGE NOT FOUND
+  </div>
 
-      <h1>
-        SIGNAL<br>
-        LOST
-      </h1>
+  <h1>
+    SIGNAL<br>
+    LOST
+  </h1>
 
-      <p class="hero-text">
-        That page is not here. The link may be old, mistyped, or moved.
-      </p>
+  <p class="hero-text">
+    That page is not here. The link may be old, mistyped, deleted, or moved.
+  </p>
 
-      <div class="button-row">
-        <a class="btn primary large" href="/">
-          Return Home
-        </a>
-        <a class="btn secondary large" href="/guides/">
-          Open Guides
-        </a>
-      </div>
-    </div>
+  <div class="button-row">
+    <a class="btn primary large" href="/">
+      Return Home
+    </a>
+    <a class="btn secondary large" href="/guides/">
+      Open Guides
+    </a>
+  </div>
+</div>
+```
+
   </section>
 
   <section>
@@ -74,44 +84,51 @@
         TRY ONE OF THESE
       </div>
 
-      <div class="community-grid">
-        <a class="community-card" href="/guides/">
-          <h3>Guide Library</h3>
-          <p>MeshCore, Meshtastic, radio basics, node setup, and coverage testing.</p>
-          <span>Open guides →</span>
-        </a>
+```
+  <div class="community-grid">
+    <a class="community-card" href="/guides/">
+      <h3>Guide Library</h3>
+      <p>MeshCore, Meshtastic, radio basics, node setup, and coverage and signal checks.</p>
+      <span>Open guides →</span>
+    </a>
 
-        <a class="community-card" href="/coverage.html">
-          <h3>Coverage</h3>
-          <p>Find local coverage notes and links to regional mesh activity tools.</p>
-          <span>View coverage →</span>
-        </a>
+    <a class="community-card" href="/coverage.html">
+      <h3>Coverage</h3>
+      <p>Find local coverage notes, site-maintained system notes, and links to regional mesh activity tools.</p>
+      <span>View coverage →</span>
+    </a>
 
-        <a class="community-card" href="/join/site-nav/">
-          <h3>Discord</h3>
-          <p>Ask questions, compare setups, and connect with local operators.</p>
-          <span>Join Discord →</span>
-        </a>
-      </div>
-    </div>
+    <a class="community-card" href="/join/site-nav/">
+      <h3>Discord</h3>
+      <p>Ask questions, compare setups, and connect with nearby mesh and radio users.</p>
+      <span>Join Discord →</span>
+    </a>
+  </div>
+</div>
+```
+
   </section>
 
   <footer>
     <div class="container">
       <div class="footer-title">
-        HAMPDEN COUNTY MESH NETWORK
+        HAMPDEN COUNTY MESH
       </div>
 
-      <div class="footer-subtitle">
-        MeshCore, Meshtastic, and local radio in Hampden County
-      </div>
+```
+  <div class="footer-subtitle">
+    MeshCore, Meshtastic, and local radio in Hampden County
+  </div>
 
-      <div class="footer-subtitle">
-        Last Updated: <span id="last-updated">Loading...</span>
-      </div>
-    </div>
+  <div class="footer-subtitle">
+    Last Updated: <span id="last-updated">Loading...</span>
+  </div>
+</div>
+```
+
   </footer>
 
   <script src="/last-updated.js"></script>
+
 </body>
 </html>
