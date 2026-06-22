@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 HampdenCountyMesh
+Copyright (c) 2026 Hampden County Mesh contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +19,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Additional media and asset notice:
+
+Unless otherwise noted, this MIT License applies to source code, website files, documentation, and other non-media repository files.
+
+Photographs, logos, social images, personal images, contributor-provided images, screenshots, and other media assets may have separate reuse limits. See `docs/ASSETS.md` for asset credits, permissions, privacy expectations, and media reuse guidance.

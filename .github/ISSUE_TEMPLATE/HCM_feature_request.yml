@@ -1,99 +1,96 @@
 name: Feature Request
 description: Suggest a new website feature, guide, data tool, integration, service, or improvement.
-title: "[FEATURE] "
+title: "[Feature]: "
 labels:
-
-* enhancement
+  - enhancement
 
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for new ideas, feature requests, site improvements, guide ideas, map or data improvements, Discord integrations, automation ideas, or public-facing tools.
 
-* type: markdown
-  attributes:
-  value: |
-  Use this template for new ideas, feature requests, site improvements, guide ideas, map/data improvements, Discord integrations, automation ideas, or public-facing tools.
+        Please do not include private node locations, private coordinates, credentials, private messages, or sensitive screenshots.
 
-  ```
-  Please do not include private node locations, private coordinates, credentials, private messages, or sensitive screenshots.
+        For security or privacy concerns, do not open a public issue. Please follow `SECURITY.md` or contact security@hampdencountymesh.org.
 
-  For security or privacy concerns, do not open a public issue. Please follow `SECURITY.md` or contact security@hampdencountymesh.org.
-  ```
+  - type: dropdown
+    id: category
+    attributes:
+      label: Feature category
+      description: What kind of improvement is this?
+      options:
+        - Website or page improvement
+        - Guide or documentation idea
+        - Coverage map or observed activity data
+        - Discord integration or automation
+        - MeshCore or Meshtastic support
+        - Radio reference or learning resource
+        - Community event or outreach support
+        - Repository or GitHub workflow
+        - Other
+    validations:
+      required: true
 
-* type: dropdown
-  id: category
-  attributes:
-  label: Feature category
-  description: What kind of improvement is this?
-  options:
-  - Website or page improvement
-  - Guide or documentation idea
-  - Coverage map or observed activity data
-  - Discord integration or automation
-  - MeshCore or Meshtastic support
-  - Radio reference or learning resource
-  - Community event or outreach support
-  - Repository or GitHub workflow
-  - Other
-  validations:
-  required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: Describe the feature or improvement.
+      placeholder: "Example: Add a public-safe local radio observation form that can be used after mobile checks, park use, or temporary node tests."
+    validations:
+      required: true
 
-* type: textarea
-  id: proposal
-  attributes:
-  label: Proposal
-  description: Describe the feature or improvement.
-  placeholder: "Example: Add a public-safe field testing note form that can be used after wardriving or park signal checks."
-  validations:
-  required: true
+  - type: textarea
+    id: benefit
+    attributes:
+      label: Benefit
+      description: How would this help Hampden County Mesh, newcomers, maintainers, or the local radio and mesh community?
+      placeholder: "Example: This would make it easier for people to share useful local radio notes without posting private locations."
+    validations:
+      required: false
 
-* type: textarea
-  id: benefit
-  attributes:
-  label: Benefit
-  description: How would this help Hampden County Mesh, newcomers, maintainers, or the local radio/mesh community?
-  placeholder: "Example: This would make it easier for people to share useful signal checks without posting private locations."
-  validations:
-  required: false
+  - type: textarea
+    id: details
+    attributes:
+      label: Useful details
+      description: Add any relevant public-safe context, links, examples, or constraints.
+      placeholder: |
+        Is this for the website, Discord, GitHub, maps, guides, or backend tools?
+        Does it need automation?
+        Does it depend on outside services?
+        Are there privacy concerns?
+    validations:
+      required: false
 
-* type: textarea
-  id: details
-  attributes:
-  label: Useful details
-  description: Add any relevant public-safe context, links, examples, or constraints.
-  placeholder: |
-  Is this for the website, Discord, GitHub, maps, guides, or backend tools?
-  Does it need automation?
-  Does it depend on outside services?
-  Are there privacy concerns?
-  validations:
-  required: false
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Optional. Are there simpler ways to solve the same problem?
+      placeholder: "Example: This could start as a static guide before becoming an automated tool."
+    validations:
+      required: false
 
-* type: textarea
-  id: alternatives
-  attributes:
-  label: Alternatives considered
-  description: Optional. Are there simpler ways to solve the same problem?
-  placeholder: "Example: This could start as a static guide before becoming an automated tool."
-  validations:
-  required: false
+  - type: dropdown
+    id: timing
+    attributes:
+      label: Timing
+      description: How urgent or near-term is this?
+      options:
+        - Useful before launch
+        - Useful soon after launch
+        - Nice to have later
+        - Long-term idea
+        - Not sure
+    validations:
+      required: false
 
-* type: dropdown
-  id: timing
-  attributes:
-  label: Timing
-  description: How urgent or near-term is this?
-  options:
-  - Useful before launch
-  - Useful soon after launch
-  - Nice to have later
-  - Long-term idea
-  - Not sure
-  validations:
-  required: false
-
-* type: checkboxes
-  id: public_safety
-  attributes:
-  label: Public-safety check
-  options:
-  - label: I have not included private node locations, private coordinates, credentials, private messages, or sensitive screenshots.
-  required: true
+  - type: checkboxes
+    id: privacy_check
+    attributes:
+      label: Privacy check
+      description: Confirm that this public issue does not include sensitive information.
+      options:
+        - label: I have not included private node locations, private coordinates, credentials, private messages, or sensitive screenshots.
+          required: true

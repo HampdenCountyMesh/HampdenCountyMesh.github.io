@@ -7,25 +7,27 @@
   <title>Meshtastic Basics | Hampden County Mesh</title>
   <meta
     name="description"
-    content="A beginner-friendly Meshtastic guide for Hampden County Mesh, covering what Meshtastic is, how it compares to MeshCore, local testing, maps, MQTT, device setup, and privacy basics."
+    content="A beginner-friendly Meshtastic guide covering what Meshtastic is, how it compares to MeshCore, device setup, maps, MQTT, local use, and privacy basics."
   >
-<!-- Social preview / Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Hampden County Mesh">
-<meta property="og:title" content="Hampden County Mesh">
-<meta property="og:description" content="A local community project for mesh networking, radio learning, field testing, and practical communications across Hampden County, Massachusetts.">
-<meta property="og:url" content="https://hampdencountymesh.org/">
-<meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
-<!-- Twitter / X preview -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hampden County Mesh">
-<meta name="twitter:description" content="A local community project for mesh networking, radio learning, field testing, and practical communications across Hampden County, Massachusetts.">
-<meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
-<meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+  <!-- Social preview / Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hampden County Mesh">
+  <meta property="og:title" content="Meshtastic Basics | Hampden County Mesh">
+  <meta property="og:description" content="A beginner-friendly Meshtastic guide covering what Meshtastic is, how it compares to MeshCore, device setup, maps, MQTT, local use, and privacy basics.">
+  <meta property="og:url" content="https://hampdencountymesh.org/guides/meshtastic-basics.html">
+  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
+  <!-- Twitter / X preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Meshtastic Basics | Hampden County Mesh">
+  <meta name="twitter:description" content="A beginner-friendly Meshtastic guide covering what Meshtastic is, how it compares to MeshCore, device setup, maps, MQTT, local use, and privacy basics.">
+  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -49,7 +51,6 @@
 
       <nav>
         <a href="/">Home</a>
-        <a href="/about.html">About</a>
         <a href="/guides/">Guides</a>
         <a href="/coverage.html">Coverage</a>
         <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
@@ -75,9 +76,9 @@
         </p>
 
         <div class="docs-note">
-          Meshtastic is useful for learning, local testing, and off-grid
-          messaging, but it is not an emergency service, not a replacement for
-          911, and not a guarantee of coverage.
+          Meshtastic is useful for learning, local communication practice, and
+          off-grid messaging, but it is not an emergency service, not a
+          replacement for 911, and not a guarantee of coverage.
         </div>
 
         <div class="hero-actions">
@@ -85,6 +86,7 @@
           <a class="btn secondary" href="#how-it-fits">How It Fits</a>
           <a class="btn secondary" href="#terms">Common Terms</a>
           <a class="btn secondary" href="#before-buying">Before Buying</a>
+          <a class="btn secondary" href="#using-your-node">Using Your Node</a>
           <a class="btn secondary" href="#maps-mqtt">Maps and MQTT</a>
           <a class="btn secondary" href="#privacy">Privacy</a>
         </div>
@@ -106,7 +108,7 @@
 
           <p>
             For current device support, apps, flashing instructions, and
-            documentation, use the official Meshtastic site:
+            documentation, use the official Meshtastic site.
           </p>
 
           <div class="resource-grid">
@@ -142,9 +144,10 @@
 
           <p>
             MeshCore is the main focus here because many surrounding mesh
-            communities are using it too. That makes it easier to compare notes,
-            learn from nearby groups, and follow what is already happening around
-            Western Massachusetts and neighboring areas.
+            communities are using it too. That makes it easier to understand
+            regional activity, follow useful examples, and build on what is
+            already happening around Western Massachusetts, Connecticut, and
+            nearby areas.
           </p>
 
           <p>
@@ -156,8 +159,8 @@
 
           <p>
             You do not need to choose one system before joining the Discord. If
-            you have a Meshtastic device, bring it. If you are deciding what to
-            buy, ask first so people nearby can tell you what they are using.
+            you have a Meshtastic device, ask about it. If you are deciding what
+            to buy, ask first so people nearby can tell you what they are using.
           </p>
         </section>
 
@@ -171,16 +174,15 @@
           </p>
 
           <p>
-            That said, many local lessons apply to both. A node still benefits
+            That said, many radio lessons apply to both. A node still benefits
             from good placement. Terrain still matters. Antennas still matter.
-            Maps and dashboards still need context. Local signal checks are still
-            more useful than guessing.
+            Maps and dashboards still need context.
           </p>
 
           <p>
-            If you are new and starting from scratch, MeshCore is the local focus.
-            If you already own Meshtastic hardware, it is still worth learning
-            from and comparing.
+            If you are new and starting from scratch, MeshCore is the local
+            focus. If you already own Meshtastic hardware, it is still worth
+            learning from.
           </p>
         </section>
 
@@ -234,7 +236,7 @@
               <h3>Map</h3>
               <p>
                 A display of nodes, locations, or observed activity. A map point
-                does not always prove direct radio coverage from where you are.
+                does not always prove direct radio range from where you are.
               </p>
             </div>
           </div>
@@ -257,8 +259,8 @@
           <p>
             Sometimes moving a device near a window helps. Sometimes height
             matters more than power. Sometimes a quiet location works better than
-            a busier one. What helps is comparing notes with people nearby
-            instead of guessing alone.
+            a busier one. Local radio behavior is shaped by the real terrain,
+            buildings, antennas, settings, and nearby activity.
           </p>
         </section>
 
@@ -294,7 +296,7 @@
 
           <p>
             A device that fits how you will actually use it is better than a
-            device that looks good on paper but never gets tested.
+            device that looks good on paper but never gets used.
           </p>
 
           <p>
@@ -307,7 +309,7 @@
 
           <p>
             Use the official Meshtastic documentation for exact setup steps. This
-            checklist is here to keep the first local test simple.
+            checklist is here to keep the first local use simple.
           </p>
 
           <ul>
@@ -317,33 +319,37 @@
             <li>Pick a clear node name that does not expose private information.</li>
             <li>Start with basic settings before changing advanced options.</li>
             <li>Place the device somewhere reasonable, such as near a window.</li>
-            <li>Ask people nearby if they can hear you or if you can hear them.</li>
-            <li>Write down the general area, device, antenna, placement, and result.</li>
-            <li>Change one thing at a time and test again.</li>
+            <li>Ask in Discord if you are unsure what you are seeing.</li>
+            <li>Change one thing at a time and try again.</li>
+            <li>Keep track of what changed and what happened.</li>
           </ul>
         </section>
 
-        <section class="docs-section" id="first-signal-check">
-          <h2>First signal check</h2>
+        <section class="docs-section" id="using-your-node">
+          <h2>Using your node</h2>
 
           <p>
-            After your device is running, try one simple check before changing a
-            lot of settings.
+            After your device is running, keep the first use simple.
           </p>
 
           <ol>
             <li>Put the node near a window or another reasonable location.</li>
             <li>Leave it powered long enough to hear normal activity.</li>
-            <li>Send a short test message if that makes sense for your setup.</li>
-            <li>Ask in Discord if anyone nearby can hear it.</li>
-            <li>Move the node once and compare the result.</li>
-            <li>Write down the general area, device, antenna, placement, and result.</li>
+            <li>Send a short message if that makes sense for your setup.</li>
+            <li>Ask in Discord if you are unsure what you are seeing.</li>
+            <li>Move the node once and see whether anything changes.</li>
+            <li>Keep location details general when talking publicly.</li>
           </ol>
 
           <p>
-            A failed test can still be useful if you describe what you tried.
-            Read <a href="/guides/coverage-and-signal-checks.html">Coverage and Signal Checks</a>
-            for more examples.
+            Do not assume silence means the device is broken. Quiet areas,
+            placement, timing, antenna issues, settings, and nearby activity can
+            all affect what you see.
+          </p>
+
+          <p>
+            Read <a href="/guides/using-your-node.html">Using Your Node</a>
+            for more practical examples.
           </p>
         </section>
 
@@ -359,13 +365,14 @@
           <p>
             Internet-connected systems, MQTT, delayed data, privacy settings,
             device roles, and configuration can all affect what you see. When
-            comparing local radio performance, be clear about whether something
-            was heard over LoRa radio or seen through an internet-connected path.
+            thinking about local radio performance, be clear about whether
+            something was heard over LoRa radio or seen through an internet-
+            connected path.
           </p>
 
           <p>
-            For local testing, the most useful question is usually simple: what
-            can your device hear from where it is right now, and can someone
+            For normal local use, the most useful question is usually simple:
+            what can your device hear from where it is right now, and can someone
             nearby hear you back?
           </p>
         </section>
@@ -390,8 +397,8 @@
           </ul>
 
           <p>
-            Read <a href="/guides/contributing-notes.html">Contributing Notes</a>
-            before posting public notes, screenshots, photos, or map results.
+            Read <a href="/guides/sharing-safely.html">Sharing Safely</a>
+            before posting public information, screenshots, photos, or map results.
           </p>
         </section>
 
@@ -402,10 +409,10 @@
             <li>Buying hardware before deciding how you want to use it.</li>
             <li>Changing advanced role, channel, or radio settings too quickly.</li>
             <li>Assuming no replies means the device is broken.</li>
-            <li>Assuming a map point proves direct radio coverage.</li>
+            <li>Assuming a map point proves direct radio range.</li>
             <li>Publishing exact private locations when a general area would be enough.</li>
             <li>Confusing MQTT or internet-connected activity with direct radio results.</li>
-            <li>Calling a local test complete after only one result.</li>
+            <li>Calling local use complete after only one result.</li>
           </ul>
         </section>
 
@@ -439,28 +446,28 @@
               <span class="card-link">Learn device roles →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/coverage-and-signal-checks.html">
-              <h3>Coverage and Signal Checks</h3>
+            <a class="resource-card action-card" href="/guides/using-your-node.html">
+              <h3>Using Your Node</h3>
               <p>
-                Learn how to compare what your device can hear with people nearby.
+                Practical first steps for using a node, improving placement, and
+                understanding what affects radio range.
               </p>
-              <span class="card-link">Read signal check guide →</span>
+              <span class="card-link">Read the guide →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/operating-aids.html">
-              <h3>Operating Aids</h3>
+            <a class="resource-card action-card" href="/guides/radio-aids.html">
+              <h3>Radio Aids</h3>
               <p>
-                Use templates for signal checks, field notes, wardriving, and
-                setup notes.
+                Simple references and checklists for practical radio use.
               </p>
-              <span class="card-link">Open operating aids →</span>
+              <span class="card-link">Open radio aids →</span>
             </a>
 
             <a class="resource-card action-card" href="/join/getting-started/">
               <h3>Ask the Community</h3>
               <p>
-                Join the Discord to ask questions, compare notes, and coordinate
-                local signal checks.
+                Join the Discord to ask questions, get help with setup, and meet
+                others interested in mesh radio.
               </p>
               <span class="card-link">Join Discord →</span>
             </a>
@@ -472,8 +479,8 @@
 
           <p>
             If you already have a Meshtastic device, or you are deciding whether
-            to buy one, the Discord is a good place to ask questions and compare
-            local notes.
+            to buy one, the Discord is a good place to ask questions and get help
+            from people nearby.
           </p>
 
           <p>
@@ -491,7 +498,11 @@
       </div>
 
       <div class="footer-subtitle">
-        MeshCore, Meshtastic, and local radio in Hampden County
+        MeshCore, Meshtastic, and radio education in Western Massachusetts
+      </div>
+
+      <div class="footer-subtitle">
+        Community education and hobby effort. Not an emergency service or a replacement for 911.
       </div>
 
       <div class="footer-subtitle">

@@ -1,6 +1,6 @@
 # Observed Activity Data
 
-This document describes how Hampden County Mesh should handle observed mesh activity data for the website, maps, dashboards, logs, status pages, and future integrations.
+This document describes how Hampden County Mesh should handle observed mesh activity data for the website, maps, dashboards, logs, public data files, and future integrations.
 
 Observed activity data should help people understand what has been heard, logged, reported, or shown by public-safe systems. It should not expose private locations, private systems, credentials, private messages, or sensitive setup details.
 
@@ -9,14 +9,14 @@ Observed activity data should help people understand what has been heard, logged
 Observed activity data may be used to support:
 
 * Coverage page notes
-* Status page summaries
 * Public activity indicators
 * Observer documentation
-* Signal check notes
-* Field testing notes
+* Local use notes
+* Local radio observations
 * MQTT-backed experiments
 * Future dashboards or maps
 * Future Discord summaries or relay output
+* Public-safe status indicators
 
 Observed activity is not the same thing as guaranteed coverage.
 
@@ -26,7 +26,7 @@ Observed activity should not imply that Hampden County Mesh owns, operates, endo
 
 The website may include support for observed activity data, but automated local activity publishing should only be described as live when it is actually working and maintainable.
 
-Current public data file:
+Current or planned public data file:
 
 ```text
 data/observed-activity.json
@@ -64,7 +64,7 @@ Possible sources include:
 * MQTT testing
 * Public analyzers
 * Public feeds
-* Manual field notes
+* Manual local notes
 * Community reports
 * Dashboards
 * Maps
@@ -95,7 +95,7 @@ Plain-language examples:
 * Observer: a site-maintained or public observer heard activity from its own location.
 * MQTT: activity was reported through an MQTT broker or MQTT-backed tool.
 * Map or dashboard: activity appeared in a public or local display.
-* Manual note: someone reported a field test or signal check.
+* Manual note: someone reported local use, device behavior, or a device check.
 * Unknown: the source was not confirmed.
 
 This distinction matters because a map result, MQTT result, or observer result does not always mean direct local radio coverage.
@@ -111,8 +111,8 @@ Good wording:
 * activity heard by site-maintained systems
 * activity reported by public sources
 * activity shown by public tools where available
-* local signal notes
-* field testing notes
+* local radio observations
+* local use notes
 * public-safe activity summaries
 
 Avoid wording that suggests ownership or guaranteed reach:
@@ -222,7 +222,7 @@ Definitions:
 * `map`: shown on a map.
 * `dashboard`: shown on a dashboard or status tool.
 * `local_log`: recorded in a local log.
-* `manual_note`: reported by a person from a signal check or field note.
+* `manual_note`: reported by a person from local use, a device check, or a public-safe observation.
 * `public_source`: taken from an existing public source.
 * `unknown`: source is unclear or not yet verified.
 
@@ -287,7 +287,7 @@ Before publishing observed activity data, check:
 ## Example public-safe note
 
 ```text
-Observed MeshCore activity was reported from the Westfield area during a recent signal check. This is a public-safe summary and does not include exact private locations.
+Observed MeshCore activity was reported from the Westfield area by a public-safe source. This summary does not include exact private locations.
 ```
 
 ## Example unsafe note
@@ -376,8 +376,11 @@ Do not post raw MQTT payloads publicly unless they have been reviewed for privac
 Related public pages:
 
 * https://hampdencountymesh.org/coverage.html
-* https://hampdencountymesh.org/status.html
-* https://hampdencountymesh.org/infrastructure.html
-* https://hampdencountymesh.org/guides/coverage-and-signal-checks.html
 * https://hampdencountymesh.org/guides/nodes-repeaters-observers.html
-* https://hampdencountymesh.org/guides/operating-aids.html
+* https://hampdencountymesh.org/guides/using-your-node.html
+* https://hampdencountymesh.org/guides/radio-aids.html
+* https://hampdencountymesh.org/guides/sharing-safely.html
+
+## Project disclaimer
+
+Hampden County Mesh is a community education and hobby effort. It is not an emergency service or a replacement for 911.

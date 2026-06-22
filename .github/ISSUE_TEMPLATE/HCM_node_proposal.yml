@@ -1,0 +1,154 @@
+name: Node / Site Proposal
+description: Propose a public-safe node, repeater, observer, temporary setup, or possible host location.
+title: "[Node]: "
+labels:
+  - deployment
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for public-safe node, repeater, observer, temporary setup, or coverage improvement ideas.
+
+        Please do not post exact private addresses, exact private coordinates, private access details, private property information, credentials, keys, photos with sensitive details, or anything that should not be public.
+
+        Use general locations such as town, neighborhood, public landmark, road corridor, hill, park, or general area.
+
+        For private location details, security concerns, or sensitive infrastructure details, do not open a public issue. Contact security@hampdencountymesh.org or contact@hampdencountymesh.org instead.
+
+  - type: dropdown
+    id: proposal_type
+    attributes:
+      label: Proposal type
+      description: What kind of node, site, or setup idea is this?
+      options:
+        - Portable or temporary test setup
+        - Temporary event node
+        - Fixed indoor node
+        - Fixed outdoor node
+        - Solar node
+        - Repeater
+        - Observer
+        - Gateway or support system
+        - Potential host location
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: general_location
+    attributes:
+      label: General location
+      description: Use a town, neighborhood, public landmark, hill, road corridor, park, or general area. Do not post exact private addresses or coordinates.
+      placeholder: "Example: Westfield, Mount Tom area, downtown Springfield, a public park, or western Hampden County"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: location_type
+    attributes:
+      label: Location type
+      description: What kind of place is being discussed?
+      options:
+        - Public place
+        - Private property with permission
+        - Private property without permission yet
+        - Business or organization site
+        - Library, school, club, or community venue
+        - Vehicle, portable, or mobile use
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal_details
+    attributes:
+      label: Proposal details
+      description: Describe the idea and expected benefit in public-safe terms.
+      placeholder: |
+        What would this help with?
+        Is this for coverage, observing, education, events, or redundancy?
+        Is it temporary, portable, or fixed?
+    validations:
+      required: true
+
+  - type: textarea
+    id: equipment
+    attributes:
+      label: Proposed equipment
+      description: List equipment if known. Do not include private keys, credentials, admin URLs, passwords, or exact private setup details.
+      placeholder: |
+        Example:
+        - MeshCore node
+        - Solar node
+        - LoRa antenna
+        - Battery or solar power
+        - Weatherproof enclosure
+        - Mounting hardware
+    validations:
+      required: false
+
+  - type: textarea
+    id: power_and_mounting
+    attributes:
+      label: Power and mounting notes
+      description: Optional. Include only public-safe details.
+      placeholder: |
+        Example:
+        - Solar preferred
+        - Indoor window placement
+        - Temporary tripod
+        - Existing permitted mast or mount
+        - Needs permission before any installation
+    validations:
+      required: false
+
+  - type: textarea
+    id: goals
+    attributes:
+      label: Coverage or learning goals
+      description: What should this help observe, test, teach, or improve?
+      placeholder: |
+        Example:
+        - Improve general coverage in an area
+        - Compare indoor vs outdoor placement
+        - Support a community demo
+        - Observe public-safe mesh activity
+        - Learn whether a general area is useful for future activity
+    validations:
+      required: false
+
+  - type: textarea
+    id: permission_status
+    attributes:
+      label: Permission status
+      description: Explain whether permission is already granted, needed, unknown, or not applicable. Do not post private contact details.
+      placeholder: "Example: Permission not requested yet; possible public venue; would need owner approval before installation."
+    validations:
+      required: false
+
+  - type: dropdown
+    id: timing
+    attributes:
+      label: Timing
+      description: When would this matter?
+      options:
+        - Temporary test idea
+        - Useful before launch
+        - Useful after launch
+        - Future possibility
+        - Event-specific
+        - Not sure
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: privacy_permission_check
+    attributes:
+      label: Privacy and permission check
+      description: Confirm that this public issue does not include sensitive information and does not imply permission that has not been granted.
+      options:
+        - label: I have not included exact private addresses, exact private coordinates, credentials, keys, admin URLs, private messages, private access details, or sensitive screenshots.
+          required: true
+        - label: I understand that any fixed installation would need appropriate permission from the property owner or responsible organization.
+          required: true

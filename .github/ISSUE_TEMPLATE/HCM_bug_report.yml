@@ -1,101 +1,98 @@
 name: Bug Report
 description: Report a problem with the website, guides, data files, map, repository, or public documentation.
-title: "[BUG] "
+title: "[Bug]: "
 labels:
-
-* bug
+  - bug
 
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem.
 
-* type: markdown
-  attributes:
-  value: |
-  Thanks for reporting a problem.
+        Please do not include passwords, private keys, private node locations, private coordinates, private messages, screenshots with sensitive details, or anything that should not be public.
 
-  ```
-  Please do not include passwords, private keys, private node locations, private coordinates, private messages, screenshots with sensitive details, or anything that should not be public.
+        For security or privacy issues, do not open a public issue. Please follow `SECURITY.md` or contact security@hampdencountymesh.org.
 
-  For security or privacy issues, do not open a public issue. Please follow `SECURITY.md` or contact security@hampdencountymesh.org.
-  ```
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      description: What part of Hampden County Mesh is affected?
+      options:
+        - Website
+        - Coverage map
+        - Data files
+        - Guides or documentation
+        - GitHub repository
+        - Discord documentation or join flow
+        - Site-maintained system status
+        - Observer or MQTT documentation
+        - Other
+    validations:
+      required: true
 
-* type: dropdown
-  id: area
-  attributes:
-  label: Affected area
-  description: What part of Hampden County Mesh is affected?
-  options:
-  - Website
-  - Coverage map
-  - Data files
-  - Guides or documentation
-  - GitHub repository
-  - Discord documentation or join flow
-  - Site-maintained systems status
-  - Observer or MQTT documentation
-  - Other
-  validations:
-  required: true
+  - type: input
+    id: page_or_file
+    attributes:
+      label: Page, file, or URL
+      description: Link the affected page or name the file if you know it.
+      placeholder: "Example: https://hampdencountymesh.org/coverage.html or guides/meshcore-basics.html"
 
-* type: input
-  id: page_or_file
-  attributes:
-  label: Page, file, or URL
-  description: Link the affected page or name the file if you know it.
-  placeholder: "Example: https://hampdencountymesh.org/coverage.html or guides/meshcore-basics.html"
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the problem clearly.
+      placeholder: "Example: The Coverage page loads, but the observed activity status never updates."
+    validations:
+      required: true
 
-* type: textarea
-  id: description
-  attributes:
-  label: What happened?
-  description: Describe the problem clearly.
-  placeholder: "Example: The Coverage page loads, but the observed activity status never updates."
-  validations:
-  required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: How can someone else see the same problem?
+      placeholder: |
+        1. Go to ...
+        2. Click ...
+        3. See ...
+    validations:
+      required: true
 
-* type: textarea
-  id: reproduce
-  attributes:
-  label: Steps to reproduce
-  description: How can someone else see the same problem?
-  placeholder: |
-  1. Go to ...
-  2. Click ...
-  3. See ...
-  validations:
-  required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect to happen instead?
+      placeholder: "Example: The page should show the Hampden County outline and the observed activity status message."
 
-* type: textarea
-  id: expected
-  attributes:
-  label: Expected behavior
-  description: What did you expect to happen instead?
-  placeholder: "Example: The page should show the Hampden County outline and the observed activity status message."
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: What actually happened?
+      placeholder: "Example: The map area is blank, or the link goes to a 404 page."
 
-* type: textarea
-  id: actual
-  attributes:
-  label: Actual behavior
-  description: What actually happened?
-  placeholder: "Example: The map area is blank, or the link goes to a 404 page."
+  - type: input
+    id: browser
+    attributes:
+      label: Browser and device
+      description: Include browser, operating system, and device if relevant.
+      placeholder: "Example: Firefox on Windows 11, Safari on iPhone, Chrome on Android"
 
-* type: input
-  id: browser
-  attributes:
-  label: Browser and device
-  description: Include browser, operating system, and device if relevant.
-  placeholder: "Example: Firefox on Windows 11, Safari on iPhone, Chrome on Android"
+  - type: textarea
+    id: logs_or_screenshots
+    attributes:
+      label: Logs, screenshots, or extra context
+      description: Add screenshots, browser console output, or extra details only if they do not contain private or sensitive information.
+      placeholder: "Paste public-safe details here."
 
-* type: textarea
-  id: logs_or_screenshots
-  attributes:
-  label: Logs, screenshots, or extra context
-  description: Add screenshots or console output only if they do not contain private or sensitive information.
-  placeholder: "Paste public-safe details here."
-
-* type: checkboxes
-  id: public_safety
-  attributes:
-  label: Public-safety check
-  options:
-  - label: I have not included passwords, private keys, private locations, private coordinates, private messages, or sensitive screenshots.
-  required: true
+  - type: checkboxes
+    id: privacy_check
+    attributes:
+      label: Privacy check
+      description: Confirm that this public issue does not include sensitive information.
+      options:
+        - label: I have not included passwords, private keys, private locations, private coordinates, private messages, or sensitive screenshots.
+          required: true

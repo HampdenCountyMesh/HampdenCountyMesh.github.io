@@ -7,25 +7,27 @@
   <title>Nodes, Repeaters, and Observers | Hampden County Mesh</title>
   <meta
     name="description"
-    content="Plain-language guide to mesh nodes, repeaters, observers, room servers, hubs, MQTT uplinks, bridges, and how device roles fit into local MeshCore and Meshtastic use."
+    content="Plain-language guide to mesh nodes, repeaters, observers, room servers, hubs, MQTT uplinks, bridges, and how device roles fit into MeshCore and Meshtastic use."
   >
-<!-- Social preview / Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Hampden County Mesh">
-<meta property="og:title" content="Hampden County Mesh">
-<meta property="og:description" content="A local community project for mesh networking, radio learning, field testing, and practical communications across Hampden County, Massachusetts.">
-<meta property="og:url" content="https://hampdencountymesh.org/">
-<meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
-<!-- Twitter / X preview -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hampden County Mesh">
-<meta name="twitter:description" content="A local community project for mesh networking, radio learning, field testing, and practical communications across Hampden County, Massachusetts.">
-<meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
-<meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+  <!-- Social preview / Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hampden County Mesh">
+  <meta property="og:title" content="Nodes, Repeaters, and Observers | Hampden County Mesh">
+  <meta property="og:description" content="Plain-language guide to mesh nodes, repeaters, observers, room servers, hubs, MQTT uplinks, bridges, and how device roles fit into MeshCore and Meshtastic use.">
+  <meta property="og:url" content="https://hampdencountymesh.org/guides/nodes-repeaters-observers.html">
+  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
+  <!-- Twitter / X preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nodes, Repeaters, and Observers | Hampden County Mesh">
+  <meta name="twitter:description" content="Plain-language guide to mesh nodes, repeaters, observers, room servers, hubs, MQTT uplinks, bridges, and how device roles fit into MeshCore and Meshtastic use.">
+  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -49,7 +51,6 @@
 
       <nav>
         <a href="/">Home</a>
-        <a href="/about.html">About</a>
         <a href="/guides/">Guides</a>
         <a href="/coverage.html">Coverage</a>
         <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
@@ -70,15 +71,15 @@
 
         <p class="docs-lede">
           Mesh devices are easier to understand when the roles are separated.
-          A portable node, a fixed node, a repeater, an observer, a room server,
-          a hub, and an MQTT uplink can all support local mesh use, but they do
-          not all do the same job.
+          A portable node, fixed node, repeater, observer, room server, hub, and
+          MQTT uplink can all support local mesh use, but they do not all do the
+          same job.
         </p>
 
         <div class="docs-note">
           This is a plain-language orientation guide. It is not a replacement
           for current MeshCore, Meshtastic, device, safety, radio-service, or
-          local setup documentation.
+          setup documentation.
         </div>
 
         <div class="hero-actions">
@@ -116,8 +117,8 @@
               <h3>Observer</h3>
               <p>
                 A device or system that listens and reports what it hears. It
-                helps with visibility, logs, maps, and local notes, but it does
-                not automatically improve radio coverage.
+                helps with visibility, logs, maps, and local awareness, but it
+                does not automatically improve radio coverage.
               </p>
             </div>
 
@@ -157,16 +158,16 @@
           </p>
 
           <p>
-            The important question is not just “is there a device?” The useful
-            questions are: what role does it play, where is it generally located,
-            what can it hear, what can hear it, and who can maintain it?
+            The useful questions are not just “is there a device?” They are:
+            what role does it play, where is it generally located, what can it
+            hear, what can hear it, and who can maintain it?
           </p>
 
           <p>
             A simple portable node can be useful for learning. A well-placed
             repeater can help radio traffic. An observer can help show what was
-            heard. A hub or uplink can help organize the information. They are
-            all useful, but they answer different questions.
+            heard. A hub or uplink can help organize information. They are all
+            useful, but they answer different questions.
           </p>
         </section>
 
@@ -182,9 +183,10 @@
           <h3>Portable nodes</h3>
 
           <p>
-            Portable nodes are carried, moved around, used during signal checks,
-            or kept with a person. They are useful for learning, messaging, and
-            finding out what can be heard from real places.
+            Portable nodes are carried, moved around, used from a vehicle, kept
+            in a bag, brought to a meetup, or used temporarily from different
+            places. They are useful for learning, messaging, and seeing how radio
+            behaves in real locations.
           </p>
 
           <p>
@@ -197,12 +199,12 @@
 
           <p>
             Fixed nodes stay in one place. They may be indoors near a window,
-            outdoors on a mast, mounted at a workplace, installed at a volunteer
-            site, or placed temporarily for a signal check.
+            outdoors on a mast, mounted at a volunteer site, installed at a
+            workplace, or placed temporarily for a specific event.
           </p>
 
           <p>
-            Fixed nodes are easier to compare over time. If a fixed node has a
+            Fixed nodes are easier to understand over time. If a fixed node has a
             good location, reliable power, reasonable antenna placement, and a
             maintainer who can update or troubleshoot it, it may become useful
             local infrastructure.
@@ -218,8 +220,8 @@
 
           <p>
             A client device is a good first step. It lets you learn the app,
-            check whether anyone nearby can hear you, and understand what your
-            location can hear before you spend time on a more permanent setup.
+            understand the basic settings, and see what your location can hear
+            before you spend time on a more permanent setup.
           </p>
         </section>
 
@@ -262,8 +264,8 @@
 
           <p>
             Around Hampden County, terrain can change quickly. A repeater that
-            helps one side of town may not help another. That is why comparing
-            notes with people nearby matters.
+            helps one side of town may not help another. Real placement matters
+            more than assumptions.
           </p>
 
           <h3>What repeaters are not</h3>
@@ -271,7 +273,7 @@
           <ul>
             <li>They are not magic coverage fixes.</li>
             <li>They do not guarantee county-wide coverage.</li>
-            <li>They do not replace good local testing.</li>
+            <li>They do not replace normal troubleshooting.</li>
             <li>They should not be installed somewhere without permission.</li>
             <li>They still need safe power, mounting, weather protection, and maintenance.</li>
           </ul>
@@ -282,8 +284,8 @@
 
           <p>
             An observer listens for mesh activity and reports or records what it
-            can hear. Observers are useful for logs, analyzers, live maps, signal
-            checks, and understanding whether nearby activity exists.
+            can hear. Observers are useful for logs, analyzers, live maps, local
+            visibility, and understanding whether nearby activity exists.
           </p>
 
           <p>
@@ -296,11 +298,11 @@
 
           <ul>
             <li>Showing recently observed activity.</li>
-            <li>Helping confirm whether a test message was heard.</li>
+            <li>Helping confirm whether a device was heard by that observer.</li>
             <li>Feeding analyzer or map tools.</li>
-            <li>Supporting local signal notes.</li>
             <li>Showing whether activity exists in a general area.</li>
             <li>Helping compare different placements over time.</li>
+            <li>Supporting public status pages or dashboards.</li>
           </ul>
 
           <h3>What observers are not</h3>
@@ -361,7 +363,7 @@
             MQTT and bridges are useful, but they are not the same thing as
             better radio coverage. If the radio side cannot hear an area, a
             dashboard may still show useful information from elsewhere, but it
-            does not replace good repeater placement or local testing.
+            does not replace good repeater placement or real local use.
           </p>
         </section>
 
@@ -411,12 +413,12 @@
           </p>
 
           <p>
-            When sharing a note, it helps to say whether the result came from
+            When talking about a result, it helps to say whether it came from
             direct radio, an observer, MQTT, a public map, a dashboard, or a
-            local log. That makes the note easier to understand later.
+            local log. That makes the result easier to understand later.
           </p>
 
-          <pre><code>Result source:
+          <pre><code>Result source
 Direct radio:
 Observer:
 MQTT:
@@ -470,18 +472,18 @@ Notes:</code></pre>
 
           <p>
             For templates, use
-            <a href="/guides/documenting-a-node.html">Documenting a Node</a>
-            and <a href="/guides/operating-aids.html#maintenance-note">Operating Aids</a>.
+            <a href="/guides/node-setups.html">Node Setups</a>
+            and <a href="/guides/radio-aids.html#maintenance-note">Radio Aids</a>.
           </p>
         </section>
 
         <section class="docs-section" id="privacy">
-          <h2>Privacy and public notes</h2>
+          <h2>Privacy and public information</h2>
 
           <p>
-            Public notes should be useful without exposing private homes, exact
-            coordinates, credentials, private keys, Wi-Fi details, admin URLs, or
-            information someone did not agree to share.
+            Public information should be useful without exposing private homes,
+            exact coordinates, credentials, private keys, Wi-Fi details, admin
+            URLs, or information someone did not agree to share.
           </p>
 
           <h3>Usually safe to share</h3>
@@ -493,7 +495,7 @@ Notes:</code></pre>
             <li>General antenna type or placement.</li>
             <li>Firmware family or major version when useful.</li>
             <li>Whether the device is fixed, mobile, temporary, or experimental.</li>
-            <li>General notes about what was heard or not heard.</li>
+            <li>General information about what was heard or not heard.</li>
           </ul>
 
           <h3>Avoid posting publicly</h3>
@@ -513,12 +515,14 @@ Notes:</code></pre>
           <h2>How to describe a setup</h2>
 
           <p>
-            A useful node, repeater, observer, room server, hub, or uplink note
-            does not need to be complicated. The goal is to help others understand
-            what role the device plays and what it may contribute locally.
+            A useful node, repeater, observer, room server, hub, or uplink
+            description does not need to be complicated. The goal is to help
+            others understand what role the device plays and what it may
+            contribute locally.
           </p>
 
-          <pre><code>Role: Portable node / Fixed node / Repeater / Observer / Room server / Hub / Bridge
+          <pre><code>Setup description
+Role: Portable node / Fixed node / Repeater / Observer / Room server / Hub / Bridge
 System: MeshCore / Meshtastic / Other
 General area: Town, neighborhood, landmark, or broad region
 Radio settings: If known and safe to share
@@ -531,8 +535,8 @@ Notes: What it hears, what it reaches, or what it is meant to support
 Private details removed before sharing: yes / no</code></pre>
 
           <p>
-            For public notes, broad descriptions are usually enough. More exact
-            details can be shared privately with trusted people when needed.
+            For public information, broad descriptions are usually enough. More
+            exact details can be shared privately with trusted people when needed.
           </p>
         </section>
 
@@ -558,40 +562,39 @@ Private details removed before sharing: yes / no</code></pre>
               <span class="card-link">Read Meshtastic basics →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/coverage-and-signal-checks.html">
-              <h3>Coverage and Signal Checks</h3>
+            <a class="resource-card action-card" href="/guides/using-your-node.html">
+              <h3>Using Your Node</h3>
               <p>
-                Learn how to compare what your device can hear with people
-                nearby.
+                Practical first steps for using a node, improving placement, and
+                understanding what affects radio range.
               </p>
-              <span class="card-link">Read signal check guide →</span>
+              <span class="card-link">Read the guide →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/documenting-a-node.html">
-              <h3>Documenting a Node</h3>
+            <a class="resource-card action-card" href="/guides/node-setups.html">
+              <h3>Node Setups</h3>
               <p>
-                Keep useful notes about devices, antennas, placement, power,
-                firmware, status, and maintenance.
+                Keep useful information about devices, antennas, placement,
+                power, firmware, status, and maintenance.
               </p>
-              <span class="card-link">Read node documentation guide →</span>
+              <span class="card-link">Read node setup guide →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/operating-aids.html">
-              <h3>Operating Aids</h3>
+            <a class="resource-card action-card" href="/guides/radio-aids.html">
+              <h3>Radio Aids</h3>
               <p>
-                Use templates for signal checks, wardriving, setup notes, and
-                maintenance notes.
+                Simple references and checklists for practical radio use.
               </p>
-              <span class="card-link">Open operating aids →</span>
+              <span class="card-link">Open radio aids →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/contributing-notes.html">
-              <h3>Contributing Notes</h3>
+            <a class="resource-card action-card" href="/guides/sharing-safely.html">
+              <h3>Sharing Safely</h3>
               <p>
-                Learn how to share useful local notes without exposing private
-                information.
+                Learn how to share useful information without exposing private
+                details.
               </p>
-              <span class="card-link">Read note guidelines →</span>
+              <span class="card-link">Read sharing guide →</span>
             </a>
           </div>
         </section>
@@ -602,8 +605,8 @@ Private details removed before sharing: yes / no</code></pre>
           <p>
             If you are not sure whether your device is a node, repeater,
             observer, room server, hub, bridge, or something else, ask. The terms
-            are useful, but you do not need to know all of them before
-            participating.
+            are useful, but you do not need to know all of them before joining
+            in.
           </p>
 
           <p>
@@ -621,7 +624,11 @@ Private details removed before sharing: yes / no</code></pre>
       </div>
 
       <div class="footer-subtitle">
-        MeshCore, Meshtastic, and local radio in Hampden County
+        MeshCore, Meshtastic, and radio education in Western Massachusetts
+      </div>
+
+      <div class="footer-subtitle">
+        Community education and hobby effort. Not an emergency service or a replacement for 911.
       </div>
 
       <div class="footer-subtitle">

@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to Hampden County Mesh.
 
-Hampden County Mesh is a local effort focused on mesh radio, radio learning, field notes, public-safe documentation, and shared communications knowledge across Hampden County and nearby Western Massachusetts.
+Hampden County Mesh is a local community effort focused on mesh radio, radio learning, public-safe documentation, setup help, and shared communications knowledge across Hampden County and nearby Western Massachusetts.
 
 You do not need to write code or be a radio expert to contribute.
 
@@ -15,9 +15,9 @@ Useful contributions include:
 * Guide improvements
 * Accessibility improvements
 * Typo and link fixes
-* Field notes
-* Signal check notes
-* Public-safe coverage observations
+* Public-safe local radio observations
+* Public-safe device notes
+* Public-safe map or coverage page suggestions
 * Node documentation templates
 * Radio reference improvements
 * Hardware testing notes
@@ -56,9 +56,9 @@ Use GitHub issues for public, non-sensitive reports such as:
 * Website display problems
 * Documentation problems
 * Guide suggestions
-* Public-safe field notes
-* Public-safe signal check notes
+* Public-safe local radio observations
 * Public-safe feature requests
+* Suggestions for beginner guides or learning materials
 
 When reporting an issue, include enough detail for someone else to understand it.
 
@@ -71,7 +71,7 @@ Helpful details may include:
 * Screenshot, if useful and public-safe
 * Suggested fix, if you have one
 
-Do not include private keys, passwords, private locations, credentials, private messages, or sensitive screenshots in public issues.
+Do not include private keys, passwords, private locations, credentials, private messages, exact private coordinates, or sensitive screenshots in public issues.
 
 ## Security issues
 
@@ -108,15 +108,17 @@ When contributing documentation:
 * Do not describe future features as live.
 * Do not imply guaranteed coverage.
 * Do not imply ownership of independent nodes or nearby activity.
-* Use careful wording around observed activity, maps, dashboards, MQTT, and observers.
+* Use careful wording around observed activity, maps, dashboards, MQTT, observers, and local radio observations.
 
 Good wording:
 
 * observed activity
-* local signal notes
+* local radio observations
+* local use notes
 * activity heard by site-maintained systems
+* activity reported by public sources
 * public sources where available
-* field testing notes
+* public-safe activity summaries
 
 Avoid wording like:
 
@@ -125,6 +127,7 @@ Avoid wording like:
 * all nodes are online
 * Hampden County Mesh operates every visible node
 * emergency-ready coverage
+* official public safety system
 
 ## Node, observer, and infrastructure information
 
@@ -160,11 +163,11 @@ Avoid posting:
 * Credentials or keys
 * Photos that reveal private locations unintentionally
 
-## Field notes and signal checks
+## Local radio observations
 
-Field notes do not need to be formal.
+Local radio observations do not need to be formal.
 
-Helpful public-safe field notes may include:
+Helpful public-safe notes may include:
 
 * General location
 * Device used
@@ -224,6 +227,7 @@ When changing public website pages, check for:
 * No stale “planned” content shown as live
 * No private credentials or sensitive data
 * No overclaims about coverage or ownership
+* No links to retired pages or old guide filenames
 
 Use the public join route for Discord:
 

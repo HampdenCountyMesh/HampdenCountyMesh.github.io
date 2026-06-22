@@ -7,25 +7,27 @@
   <title>MeshCore Basics | Hampden County Mesh</title>
   <meta
     name="description"
-    content="A beginner-friendly MeshCore guide for Hampden County Mesh, covering what MeshCore is, common device roles, local use, setup habits, signal checks, and privacy basics."
+    content="A beginner-friendly MeshCore guide covering what MeshCore is, common device roles, local use, setup habits, privacy basics, and practical radio learning."
   >
-<!-- Social preview / Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Hampden County Mesh">
-<meta property="og:title" content="Hampden County Mesh">
-<meta property="og:description" content="A local community project for mesh networking, radio learning, field testing, and practical communications across Hampden County, Massachusetts.">
-<meta property="og:url" content="https://hampdencountymesh.org/">
-<meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
-<!-- Twitter / X preview -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hampden County Mesh">
-<meta name="twitter:description" content="A local community project for mesh networking, radio learning, field testing, and practical communications across Hampden County, Massachusetts.">
-<meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
-<meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+  <!-- Social preview / Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hampden County Mesh">
+  <meta property="og:title" content="MeshCore Basics | Hampden County Mesh">
+  <meta property="og:description" content="A beginner-friendly MeshCore guide covering what MeshCore is, common device roles, local use, setup habits, privacy basics, and practical radio learning.">
+  <meta property="og:url" content="https://hampdencountymesh.org/guides/meshcore-basics.html">
+  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
+  <!-- Twitter / X preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MeshCore Basics | Hampden County Mesh">
+  <meta name="twitter:description" content="A beginner-friendly MeshCore guide covering what MeshCore is, common device roles, local use, setup habits, privacy basics, and practical radio learning.">
+  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -49,7 +51,6 @@
 
       <nav>
         <a href="/">Home</a>
-        <a href="/about.html">About</a>
         <a href="/guides/">Guides</a>
         <a href="/coverage.html">Coverage</a>
         <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
@@ -69,15 +70,16 @@
         <h1>MeshCore Basics</h1>
 
         <p class="docs-lede">
-          MeshCore is the main focus for Hampden County Mesh. This guide explains
-          what it is, why nearby communities are using it, what the common device
-          roles mean, and what to understand before buying or flashing hardware.
+          MeshCore is the main mesh focus for Hampden County Mesh. This guide
+          explains what it is, why nearby communities are using it, what the
+          common device roles mean, and what to understand before buying or
+          flashing hardware.
         </p>
 
         <div class="docs-note">
-          MeshCore is useful for learning, local testing, and off-grid messaging,
-          but it is not an emergency service, not a replacement for 911, and not
-          a guarantee of coverage.
+          MeshCore is useful for learning, local communication practice, and
+          off-grid messaging, but it is not an emergency service, not a
+          replacement for 911, and not a guarantee of coverage.
         </div>
 
         <div class="hero-actions">
@@ -86,6 +88,7 @@
           <a class="btn secondary" href="#roles">Device Roles</a>
           <a class="btn secondary" href="#before-flashing">Before Flashing</a>
           <a class="btn secondary" href="#first-setup">First Setup</a>
+          <a class="btn secondary" href="#using-your-node">Using Your Node</a>
           <a class="btn secondary" href="#privacy">Privacy</a>
         </div>
 
@@ -94,20 +97,20 @@
 
           <p>
             MeshCore is an off-grid messaging system for LoRa radio devices. In
-            normal terms, it lets small radios send short messages without relying
-            on cell service, Wi-Fi, or a normal internet connection.
+            normal terms, it lets small radios send short messages without
+            relying on cell service, Wi-Fi, or a normal internet connection.
           </p>
 
           <p>
             A MeshCore setup can be very simple: one person with a device and an
             app learning how it works. It can also grow into a local mesh where
             portable nodes, repeaters, observers, room servers, and support
-            systems help people understand what works nearby.
+            systems help people communicate and learn.
           </p>
 
           <p>
             For the most current project information, use the official MeshCore
-            site and flasher:
+            site and flasher.
           </p>
 
           <div class="resource-grid">
@@ -135,14 +138,15 @@
 
           <p>
             Hampden County Mesh leans toward MeshCore because many surrounding
-            mesh communities are using it too. That makes it easier to compare
-            settings, understand nearby activity, learn from other regions, and
-            connect local testing with what is already happening around us.
+            mesh communities are using it too. That makes it easier to understand
+            regional activity, follow useful examples, and build on what is
+            already happening around Western Massachusetts, Connecticut, and
+            nearby areas.
           </p>
 
           <p>
             This does not mean Meshtastic is ignored. Meshtastic is still active
-            and useful, and a lot of the same local lessons carry over: antenna
+            and useful, and a lot of the same radio lessons carry over: antenna
             placement, node height, terrain, batteries, firmware, maps, and what
             devices can hear from different places.
           </p>
@@ -206,10 +210,10 @@
             </div>
 
             <div class="docs-card">
-              <h3>Portable test setup</h3>
+              <h3>Portable setup</h3>
               <p>
-                A temporary setup used for signal checks, field testing,
-                wardriving, demos, or comparing locations.
+                A device used from a bag, car, window, park, hill, event, or
+                temporary location.
               </p>
             </div>
           </div>
@@ -239,8 +243,8 @@
           </p>
 
           <p>
-            Local signal checks are what connect observed activity with real
-            local use.
+            Treat maps and dashboards as tools, not as a complete picture of the
+            whole local mesh.
           </p>
         </section>
 
@@ -263,8 +267,7 @@
           </p>
 
           <p>
-            This is why comparing notes with people nearby matters. Local results
-            are more useful than guesses.
+            That local behavior is part of what makes radio interesting here.
           </p>
         </section>
 
@@ -272,8 +275,8 @@
           <h2>Before you flash or buy a device</h2>
 
           <p>
-            Do not rush into a complicated build first. Ask what people nearby
-            are using and what you want the device to do.
+            Do not rush into a complicated build first. Think about what you want
+            the device to do and ask in Discord if you are unsure.
           </p>
 
           <ul>
@@ -301,7 +304,7 @@
 
           <p>
             A simple first node that actually gets used is better than a complex
-            setup that never gets tested.
+            setup that never leaves the planning stage.
           </p>
         </section>
 
@@ -310,8 +313,8 @@
 
           <p>
             A first setup does not need to be perfect. The goal is to get a
-            device working, understand the app, and compare what you hear with
-            people nearby.
+            device working, understand the app, and learn what the device is
+            showing you.
           </p>
 
           <ul>
@@ -320,15 +323,15 @@
             <li>Use a clear node name that does not expose private details.</li>
             <li>Keep passwords, keys, and private setup details private.</li>
             <li>Place the node somewhere reasonable, such as near a window.</li>
-            <li>Ask others nearby if they can hear you or if you can hear them.</li>
-            <li>Write down the general area, device, antenna, placement, and result.</li>
-            <li>Change one thing at a time and test again.</li>
+            <li>Ask in Discord if you are unsure what you are seeing.</li>
+            <li>Change one thing at a time and try again.</li>
+            <li>Keep track of what changed and what happened.</li>
           </ul>
 
           <p>
             For exact flashing steps, use the official MeshCore documentation and
             flasher. Local guides are here to help with plain-language context,
-            local testing habits, and what to ask next.
+            local radio learning, and what to ask next.
           </p>
         </section>
 
@@ -352,26 +355,25 @@
           </p>
         </section>
 
-        <section class="docs-section" id="signal-checks">
-          <h2>First signal checks</h2>
+        <section class="docs-section" id="using-your-node">
+          <h2>Using your node</h2>
 
           <p>
-            Once the device is running, try one simple signal check before
-            changing a lot of settings.
+            Once the device is running, keep the first use simple.
           </p>
 
           <ol>
             <li>Put the node near a window or another reasonable location.</li>
             <li>Leave it powered long enough to hear normal activity.</li>
-            <li>Send a short test message if that makes sense for your setup.</li>
-            <li>Ask in Discord if anyone nearby can hear it.</li>
-            <li>Move the node once and compare the result.</li>
-            <li>Write down the general area, device, antenna, placement, and result.</li>
+            <li>Send a short message if that makes sense for your setup.</li>
+            <li>Ask in Discord if you are unsure what you are seeing.</li>
+            <li>Move the node once and see whether anything changes.</li>
+            <li>Keep location details general when talking publicly.</li>
           </ol>
 
           <p>
-            Read <a href="/guides/coverage-and-signal-checks.html">Coverage and Signal Checks</a>
-            for more examples.
+            Read <a href="/guides/using-your-node.html">Using Your Node</a>
+            for more practical examples.
           </p>
         </section>
 
@@ -379,8 +381,8 @@
           <h2>Privacy and safety basics</h2>
 
           <p>
-            MeshCore testing can create useful notes, maps, logs, and screenshots.
-            Check those before posting them publicly.
+            MeshCore can create useful notes, maps, logs, and screenshots. Check
+            those before posting them publicly.
           </p>
 
           <ul>
@@ -389,11 +391,11 @@
             <li>Do not share someone else’s setup details without permission.</li>
             <li>Check screenshots for private messages, names, keys, coordinates, or admin URLs.</li>
             <li>Check photos for addresses, license plates, screens, reflections, and EXIF metadata.</li>
-            <li>Use general areas for public notes unless exact location sharing is clearly safe.</li>
+            <li>Use general areas for public discussion unless exact location sharing is clearly safe.</li>
           </ul>
 
           <p>
-            Read <a href="/guides/contributing-notes.html">Contributing Notes</a>
+            Read <a href="/guides/sharing-safely.html">Sharing Safely</a>
             before posting public notes, logs, screenshots, or photos.
           </p>
         </section>
@@ -410,14 +412,14 @@
               Do not assume more transmit power fixes a poor location.
             </li>
             <li>
-              Do not assume a map point means the site owns that node.
+              Do not assume a map point means this site owns that node.
             </li>
             <li>
               Do not assume a public observer hears everything in the county.
             </li>
             <li>
               Do not assume internet-connected activity proves direct radio
-              coverage from your current location.
+              range from your current location.
             </li>
             <li>
               Do not use mesh radio as a replacement for 911 or official
@@ -447,28 +449,29 @@
               <span class="card-link">Learn device roles →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/coverage-and-signal-checks.html">
-              <h3>Coverage and Signal Checks</h3>
+            <a class="resource-card action-card" href="/guides/using-your-node.html">
+              <h3>Using Your Node</h3>
               <p>
-                Learn how to compare what your node can hear with people nearby.
+                Practical first steps for using a node, improving placement, and
+                understanding what affects radio range.
               </p>
-              <span class="card-link">Read signal check guide →</span>
+              <span class="card-link">Read the guide →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/documenting-a-node.html">
-              <h3>Documenting a Node</h3>
+            <a class="resource-card action-card" href="/guides/node-setups.html">
+              <h3>Node Setups</h3>
               <p>
-                Keep useful notes about a node, antenna, power setup, placement,
-                firmware, and maintenance.
+                Keep useful information about a node, antenna, power setup,
+                placement, firmware, and maintenance.
               </p>
-              <span class="card-link">Read node guide →</span>
+              <span class="card-link">Read node setup guide →</span>
             </a>
 
             <a class="resource-card action-card" href="/guides/meshtastic-basics.html">
               <h3>Meshtastic Basics</h3>
               <p>
-                Useful if you already have a Meshtastic device or want to compare
-                the two ecosystems.
+                Useful if you already have a Meshtastic device or want to
+                understand the two ecosystems.
               </p>
               <span class="card-link">Read Meshtastic basics →</span>
             </a>
@@ -476,8 +479,8 @@
             <a class="resource-card action-card" href="/join/getting-started/">
               <h3>Ask the Community</h3>
               <p>
-                Join the Discord to ask questions, compare notes, and coordinate
-                local signal checks.
+                Join the Discord to ask questions, get help with setup, and meet
+                others interested in mesh radio.
               </p>
               <span class="card-link">Join Discord →</span>
             </a>
@@ -508,7 +511,11 @@
       </div>
 
       <div class="footer-subtitle">
-        MeshCore, Meshtastic, and local radio in Hampden County
+        MeshCore, Meshtastic, and radio education in Western Massachusetts
+      </div>
+
+      <div class="footer-subtitle">
+        Community education and hobby effort. Not an emergency service or a replacement for 911.
       </div>
 
       <div class="footer-subtitle">

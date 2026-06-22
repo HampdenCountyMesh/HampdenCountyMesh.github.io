@@ -4,6 +4,12 @@ This directory contains supporting documentation for Hampden County Mesh.
 
 These files are meant to help with continuity, maintenance, troubleshooting, public site updates, and shared understanding of the systems behind the website.
 
+The `/docs/` folder is for supporting documentation. It is different from the public guide pages in `/guides/`.
+
+The `/guides/` folder contains public-facing educational pages for beginners and community members.
+
+The `/docs/` folder may include more technical notes, maintenance notes, implementation details, and background information for people helping maintain the site or related systems.
+
 ## Documentation index
 
 ### Community and coordination
@@ -31,15 +37,21 @@ These files are meant to help with continuity, maintenance, troubleshooting, pub
   Notes about MQTT, brokers, uplinks, logging, public activity feeds, and related backend work.
 
 * `observed-activity-data.md`
-  Notes about how observed activity data should be collected, described, published, and limited.
+  Notes about how observed activity data should be collected, described, published, limited, and explained.
 
 ## Purpose
 
-The `/docs/` folder is for supporting documentation. It is different from the public guide pages in `/guides/`.
+Documentation in this folder should help maintainers understand:
 
-The `/guides/` folder contains public-facing educational pages for beginners and community members.
+* What exists
+* What it is for
+* What is public
+* What is private
+* What still needs manual checking
+* What should not be overclaimed
+* Where related public pages live
 
-The `/docs/` folder may include more technical notes, maintenance notes, implementation details, and background information for people helping maintain the site or related systems.
+This folder should support the public site without turning beginner-facing guide pages into dense technical manuals.
 
 ## Privacy and safety
 
@@ -59,7 +71,7 @@ Do not include:
 * Photos that reveal private locations unintentionally
 * Details someone shared privately and did not agree to publish
 
-When public documentation needs to describe a location, use a general area, town, public landmark, or broad terrain description unless exact sharing is clearly intentional and safe.
+When documentation needs to describe a location, use a general area, town, public landmark, or broad terrain description unless exact sharing is clearly intentional and safe.
 
 ## Observed activity wording
 
@@ -72,10 +84,34 @@ Use wording like:
 * observed activity
 * activity heard by site-maintained systems
 * activity reported by public sources
-* local signal notes
 * public activity data where available
+* local radio observations
+* local use information
 
-Avoid wording that suggests complete coverage, ownership of all nodes, or guaranteed communication.
+Avoid wording that suggests:
+
+* complete coverage
+* guaranteed communication
+* ownership of all nodes
+* control of all nearby mesh activity
+* emergency service capability
+* replacement for 911 or official emergency services
+
+## Public wording
+
+Public-facing wording should describe Hampden County Mesh as a community, not as the owner or operator of every nearby device.
+
+Good wording:
+
+* Hampden County Mesh
+* local mesh radio community
+* radio education in Western Massachusetts
+* practical off-grid communications
+* site-maintained systems
+* public sources
+* observed activity
+
+Use care with wording like “network.” When used publicly, it should usually describe the people and community, not imply ownership of one official device network.
 
 ## Maintenance notes
 
@@ -83,15 +119,14 @@ Keep documentation practical and current.
 
 When something changes, update the relevant file instead of leaving stale assumptions in place. If a file becomes obsolete, remove it or replace it with a short current note.
 
-Good documentation should help someone understand:
+Good documentation should answer:
 
-* What exists
-* What it is for
-* What is public
-* What is private
-* What still needs manual checking
-* What should not be overclaimed
-* Where related public pages live
+* What changed?
+* Why does it matter?
+* Is it public or private?
+* What should be checked later?
+* Does the public site need to be updated too?
+* Does any related guide page need to be updated too?
 
 ## Related public pages
 
@@ -103,6 +138,10 @@ Guide library:
 
 https://hampdencountymesh.org/guides/
 
+Coverage:
+
+https://hampdencountymesh.org/coverage.html
+
 Radio Reference:
 
 https://hampdencountymesh.org/radio-reference.html
@@ -110,3 +149,7 @@ https://hampdencountymesh.org/radio-reference.html
 Discord join route:
 
 https://hampdencountymesh.org/join/
+
+## Project disclaimer
+
+Hampden County Mesh is a community education and hobby effort. It is not an emergency service or a replacement for 911.

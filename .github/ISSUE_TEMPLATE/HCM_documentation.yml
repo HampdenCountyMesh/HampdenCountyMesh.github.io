@@ -1,76 +1,79 @@
 name: Documentation Improvement
 description: Suggest improvements to guides, docs, public pages, examples, wording, or reference material.
-title: "[DOCS] "
+title: "[Docs]: "
 labels:
-
-* documentation
+  - documentation
 
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this template for documentation improvements, unclear wording, missing context, outdated links, broken references, typos, or guide suggestions.
 
-* type: markdown
-  attributes:
-  value: |
-  Use this template for documentation improvements, unclear wording, missing context, outdated links, broken references, typos, or guide suggestions.
+        Please do not include private node locations, private coordinates, credentials, private messages, or sensitive screenshots.
 
-  ```
-  Please do not include private node locations, private coordinates, credentials, private messages, or sensitive screenshots.
+        For security or privacy concerns, do not open a public issue. Please follow `SECURITY.md` or contact security@hampdencountymesh.org.
 
-  For security or privacy concerns, do not open a public issue. Please follow `SECURITY.md` or contact security@hampdencountymesh.org.
-  ```
+  - type: input
+    id: page
+    attributes:
+      label: Document, page, or file
+      description: Which page, guide, document, or file needs attention?
+      placeholder: "Example: guides/meshcore-basics.html, docs/observers.md, README.md, or https://hampdencountymesh.org/guides/"
+    validations:
+      required: false
 
-* type: input
-  id: page
-  attributes:
-  label: Document, page, or file
-  description: Which page, guide, document, or file needs attention?
-  placeholder: "Example: guides/meshcore-basics.html, docs/observers.md, README.md, or https://hampdencountymesh.org/guides/"
-  validations:
-  required: false
+  - type: dropdown
+    id: documentation_type
+    attributes:
+      label: Type of documentation issue
+      description: What kind of documentation improvement is this?
+      options:
+        - Typo or grammar
+        - Broken link
+        - Outdated information
+        - Unclear wording
+        - Missing beginner context
+        - Missing safety or privacy note
+        - Incorrect terminology
+        - Old page name or retired link
+        - Suggested new guide or section
+        - Other
+    validations:
+      required: true
 
-* type: dropdown
-  id: documentation_type
-  attributes:
-  label: Type of documentation issue
-  options:
-  - Typo or grammar
-  - Broken link
-  - Outdated information
-  - Unclear wording
-  - Missing beginner context
-  - Missing safety or privacy note
-  - Incorrect terminology
-  - Suggested new guide or section
-  - Other
-  validations:
-  required: true
+  - type: textarea
+    id: issue
+    attributes:
+      label: What needs improvement?
+      description: Describe what is unclear, outdated, missing, or incorrect.
+      placeholder: "Example: The guide mentions an old page path, or a beginner may not understand what an observer is."
+    validations:
+      required: true
 
-* type: textarea
-  id: issue
-  attributes:
-  label: What needs improvement?
-  description: Describe what is unclear, outdated, missing, or incorrect.
-  placeholder: "Example: The guide mentions an old page path, or a beginner may not understand what an observer is."
-  validations:
-  required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested change
+      description: Suggest replacement wording, a new section, or a correction if you have one.
+      placeholder: "Example: Replace the old link with /guides/using-your-node.html."
+    validations:
+      required: false
 
-* type: textarea
-  id: suggestion
-  attributes:
-  label: Suggested change
-  description: Suggest replacement wording, a new section, or a correction if you have one.
-  placeholder: "Example: Replace the old link with /coverage.html#site-maintained-systems."
+  - type: textarea
+    id: audience
+    attributes:
+      label: Who would this help?
+      description: Optional. Note whether this helps beginners, radio users, Discord members, maintainers, event hosts, or another group.
+      placeholder: "Example: This would help newcomers understand the difference between MeshCore and Meshtastic."
+    validations:
+      required: false
 
-* type: textarea
-  id: audience
-  attributes:
-  label: Who would this help?
-  description: Optional. Note whether this helps beginners, radio operators, Discord members, maintainers, event hosts, or another group.
-  placeholder: "Example: This would help newcomers understand the difference between MeshCore and Meshtastic."
-
-* type: checkboxes
-  id: public_safety
-  attributes:
-  label: Public-safety check
-  options:
-  - label: I have not included private node locations, private coordinates, credentials, private messages, or sensitive screenshots.
-  required: true
+  - type: checkboxes
+    id: privacy_check
+    attributes:
+      label: Privacy check
+      description: Confirm that this public issue does not include sensitive information.
+      options:
+        - label: I have not included private node locations, private coordinates, credentials, private messages, or sensitive screenshots.
+          required: true

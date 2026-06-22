@@ -11,7 +11,7 @@ This file is used to document:
 * Site-maintained nodes
 * Observers
 * Repeaters
-* Portable test devices
+* Portable devices
 * Outdoor infrastructure
 * General device roles
 * Public-safe maintenance notes
@@ -65,7 +65,7 @@ Status:
 Purpose:
 
 * Mesh activity observation
-* Signal awareness
+* Local radio visibility
 * Observer logging
 * Public activity context where appropriate
 * Future observed-activity data support
@@ -123,9 +123,9 @@ Status:
 Purpose:
 
 * Outdoor mesh infrastructure
-* Long-term placement testing
+* Long-term placement learning
 * Solar node testing
-* Local coverage and signal behavior learning
+* Local radio behavior learning
 
 General location:
 
@@ -151,14 +151,14 @@ Related documentation:
 * `docs/infrastructure.md`
 * `docs/observed-activity-data.md`
 * `docs/ASSETS.md`
-* `guides/documenting-a-node.html`
-* `guides/operating-aids.html`
+* `guides/node-setups.html`
+* `guides/radio-aids.html`
 
 ### Cassiopeia
 
 Role:
 
-* Portable field-testing device
+* Portable device
 * Companion/test node
 
 System:
@@ -175,20 +175,19 @@ Status:
 
 Purpose:
 
-* Portable signal checks
-* Field testing
-* Wardriving support
+* Portable local use
+* Mobile use
 * Local range and placement comparison
 * Beginner guide and photo documentation support
 
 General location:
 
-* Used for field testing around Hampden County and nearby areas
+* Used around Hampden County and nearby areas
 
 Public notes:
 
-* This device is useful for portable checks and field notes.
-* Public field reports should describe general areas, not exact private locations.
+* This device is useful for portable checks and learning how MeshCore behaves from different places.
+* Public notes should describe general areas, not exact private locations.
 * Photos of the device should be checked for EXIF data, screens, reflections, addresses, plates, and other private details before publishing.
 
 Do not publish:
@@ -203,9 +202,9 @@ Do not publish:
 Related documentation:
 
 * `docs/ASSETS.md`
-* `guides/coverage-and-signal-checks.html`
-* `guides/operating-aids.html`
-* `guides/documenting-a-node.html`
+* `guides/using-your-node.html`
+* `guides/radio-aids.html`
+* `guides/node-setups.html`
 
 ## Support systems
 
@@ -227,7 +226,7 @@ Status:
 Platform:
 
 * HP Stream laptop
-* Linux Mint
+* Linux-based system
 
 Purpose:
 
@@ -244,7 +243,7 @@ Notes:
 
 ## Node documentation template
 
-Use this template when documenting a new node, repeater, observer, or portable test device.
+Use this template when documenting a new node, repeater, observer, or portable device.
 
 ```text
 Node name:
@@ -260,8 +259,8 @@ Antenna placement:
 Indoor / outdoor:
 Temporary / long-term:
 Purpose:
-What it can hear:
-What can hear it:
+What it appears to hear:
+What appears to hear it:
 Result source: direct radio / observer / MQTT / map / dashboard / local log / unknown
 Maintainer or contact, if safe to share:
 Private details removed before sharing: yes / no
@@ -309,7 +308,6 @@ Battery or solar status:
 Antenna:
 Mounting:
 Firmware or software:
-What was heard:
 What changed:
 Needs attention:
 Private details removed before sharing: yes / no
@@ -373,7 +371,12 @@ When in doubt, generalize the note or keep the detail private.
 Related public pages:
 
 * https://hampdencountymesh.org/guides/nodes-repeaters-observers.html
-* https://hampdencountymesh.org/guides/documenting-a-node.html
-* https://hampdencountymesh.org/guides/operating-aids.html
+* https://hampdencountymesh.org/guides/node-setups.html
+* https://hampdencountymesh.org/guides/radio-aids.html
+* https://hampdencountymesh.org/guides/using-your-node.html
+* https://hampdencountymesh.org/guides/sharing-safely.html
 * https://hampdencountymesh.org/coverage.html
-* https://hampdencountymesh.org/infrastructure.html
+
+## Project disclaimer
+
+Hampden County Mesh is a community education and hobby effort. It is not an emergency service or a replacement for 911.
