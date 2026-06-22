@@ -6,7 +6,7 @@ It is intended for continuity, maintenance, and public-safe documentation. It sh
 
 ## Overview
 
-Hampden County Mesh maintains a small set of support systems used for local mesh learning, signal checks, observer work, logging, and future public activity views.
+Hampden County Mesh maintains a small set of support systems used for local mesh learning, observer work, logging, MQTT testing, documentation, and future public-safe activity views.
 
 These systems support the website and local documentation work. They should not be described as proof that Hampden County Mesh owns or operates every node, observer, repeater, packet, marker, or device visible in the broader mesh ecosystem.
 
@@ -14,12 +14,13 @@ Use careful wording:
 
 * site-maintained systems
 * observed activity
-* activity heard by project-operated systems
+* activity heard by site-maintained systems
+* activity reported by public sources
 * public sources where available
-* local signal notes
+* local radio observations
 * support infrastructure
 
-Avoid wording that suggests complete coverage, guaranteed communication, or ownership of all nearby mesh activity.
+Avoid wording that suggests complete coverage, guaranteed communication, emergency service capability, or ownership of all nearby mesh activity.
 
 ## Current site-maintained systems
 
@@ -28,7 +29,7 @@ Avoid wording that suggests complete coverage, guaranteed communication, or owne
 Purpose:
 
 * Mesh activity observation
-* Local signal awareness
+* Local radio visibility
 * Observer logging
 * Public activity context where appropriate
 * Future observed-activity data support
@@ -67,7 +68,7 @@ Status:
 Platform:
 
 * HP Stream laptop
-* Linux Mint
+* Linux-based system
 
 Services and tools may include:
 
@@ -90,8 +91,9 @@ Purpose:
 
 * Outdoor mesh infrastructure
 * Long-term deployment testing
-* Local coverage and placement learning
+* Local placement learning
 * Solar node testing
+* Local radio behavior learning
 
 Status:
 
@@ -116,11 +118,12 @@ Notes:
 
 Infrastructure-related public files may include:
 
-* `status.json`
-* `nodes.json`
+* `data/status.json`
+* `data/nodes.json`
+* `data/observed-activity.json`
 * coverage or map data
 * guide pages
-* public notes
+* public-safe notes
 * manually maintained status text
 
 These files should avoid private information.
@@ -148,7 +151,7 @@ Observed activity may come from:
 * MQTT testing
 * Public analyzers
 * Public feeds
-* Manual field notes
+* Manual local notes
 * Community reports
 * Future dashboards or integrations
 
@@ -168,7 +171,7 @@ Current MQTT-related documentation should be kept in:
 
 General rule:
 
-Public documentation may describe what MQTT is used for, but should not expose credentials, broker passwords, private hostnames, internal IPs, or admin details.
+Public documentation may describe what MQTT is used for, but should not expose credentials, broker passwords, private hostnames, internal IPs, admin details, or private system paths.
 
 ## Discord and GitHub integrations
 
@@ -248,11 +251,11 @@ Future infrastructure work may include:
 
 * Additional fixed nodes
 * Additional observers
-* Improved public status summaries
+* Improved public-safe status summaries
 * Better observed-activity data handling
-* Coverage and signal check documentation
 * MQTT logging improvements
 * Dashboard or map improvements
+* Coverage page observed-activity layers
 * Discord bot or relay integrations
 * More maintainable backend automation
 
@@ -269,9 +272,13 @@ Future work should be documented as future work until it is live.
 
 Related public pages:
 
-* https://hampdencountymesh.org/infrastructure.html
 * https://hampdencountymesh.org/coverage.html
-* https://hampdencountymesh.org/status.html
 * https://hampdencountymesh.org/guides/nodes-repeaters-observers.html
-* https://hampdencountymesh.org/guides/documenting-a-node.html
-* https://hampdencountymesh.org/guides/operating-aids.html
+* https://hampdencountymesh.org/guides/node-setups.html
+* https://hampdencountymesh.org/guides/radio-aids.html
+* https://hampdencountymesh.org/guides/using-your-node.html
+* https://hampdencountymesh.org/guides/sharing-safely.html
+
+## Project disclaimer
+
+Hampden County Mesh is a community education and hobby effort. It is not an emergency service or a replacement for 911.

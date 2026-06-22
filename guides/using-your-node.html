@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Using Your Node | Hampden County Mesh</title>
+  <meta
+    name="description"
+    content="A plain-language guide to using a MeshCore or Meshtastic node, improving placement, understanding radio range, using maps carefully, and sharing useful information safely."
+  >
+
+  <!-- Social preview / Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hampden County Mesh">
+  <meta property="og:title" content="Using Your Node | Hampden County Mesh">
+  <meta property="og:description" content="A plain-language guide to using a MeshCore or Meshtastic node, improving placement, understanding radio range, using maps carefully, and sharing useful information safely.">
+  <meta property="og:url" content="https://hampdencountymesh.org/guides/using-your-node.html">
+  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
+  <!-- Twitter / X preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Using Your Node | Hampden County Mesh">
+  <meta name="twitter:description" content="A plain-language guide to using a MeshCore or Meshtastic node, improving placement, understanding radio range, using maps carefully, and sharing useful information safely.">
+  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+</head>
+
+<body>
+  <div class="noise"></div>
+
+  <header>
+    <div class="container">
+      <a class="brand" href="/" aria-label="Hampden County Mesh home">
+        <span class="brand-icon" aria-hidden="true">📡</span>
+        <span>HAMPDEN COUNTY MESH</span>
+      </a>
+
+      <nav>
+        <a href="/">Home</a>
+        <a href="/guides/">Guides</a>
+        <a href="/coverage.html">Coverage</a>
+        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
+          <img src="/assets/icons/discord-symbol-white.svg" alt="">
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="docs-shell">
+    <div class="container">
+      <article class="docs-article">
+        <p class="docs-breadcrumb">
+          <a href="/guides/">Guides</a> / Using Your Node
+        </p>
+
+        <h1>Using Your Node</h1>
+
+        <p class="docs-lede">
+          Once a MeshCore or Meshtastic node is running, the next step is
+          learning what affects it: placement, antenna choice, power, terrain,
+          settings, maps, and nearby activity.
+        </p>
+
+        <div class="docs-note">
+          Mesh radio is useful for learning and local communication practice, but
+          it does not guarantee coverage, does not replace 911, and should not be
+          used to publish private locations, keys, passwords, or sensitive setup
+          details.
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn secondary" href="#first-use">First Use</a>
+          <a class="btn secondary" href="#placement">Placement</a>
+          <a class="btn secondary" href="#range">Range</a>
+          <a class="btn secondary" href="#maps">Maps</a>
+          <a class="btn secondary" href="#mobile-use">Mobile Use</a>
+          <a class="btn secondary" href="#privacy">Privacy</a>
+        </div>
+
+        <section class="docs-section" id="first-use">
+          <h2>First use</h2>
+
+          <p>
+            Start simple. The first goal is not to prove that the node works
+            everywhere. The first goal is to learn what the device shows you and
+            what changes when you move it.
+          </p>
+
+          <ol>
+            <li>
+              Put the node in a reasonable spot, such as near a window or
+              outside temporarily if it is safe.
+            </li>
+            <li>
+              Make sure the battery is charged or the device has stable power.
+            </li>
+            <li>
+              Confirm the device name is recognizable and does not expose private
+              details.
+            </li>
+            <li>
+              Confirm you are using the expected MeshCore or Meshtastic setup.
+            </li>
+            <li>
+              Leave the device powered long enough to see normal activity.
+            </li>
+            <li>
+              Send a short message if that makes sense for your setup.
+            </li>
+            <li>
+              Ask in Discord if you are unsure what you are seeing.
+            </li>
+            <li>
+              Change one thing, such as location or antenna placement, and try
+              again.
+            </li>
+          </ol>
+
+          <p>
+            Avoid changing many things at once. One careful comparison is more
+            useful than a pile of changes where nobody knows what actually
+            mattered.
+          </p>
+        </section>
+
+        <section class="docs-section" id="what-to-pay-attention-to">
+          <h2>What to pay attention to</h2>
+
+          <p>
+            A node does not just work or fail. Small details can change what it
+            hears and how useful it is.
+          </p>
+
+          <div class="docs-card-grid">
+            <div class="docs-card">
+              <h3>Location</h3>
+              <p>
+                A window, porch, hill, park, vehicle, upstairs room, or open area
+                may behave differently from a desk in the middle of a building.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Antenna</h3>
+              <p>
+                The antenna matters, but a better antenna in a bad place may
+                still perform poorly.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Power</h3>
+              <p>
+                Fixed nodes need stable power. Portable nodes need enough battery
+                life to stay useful.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Settings</h3>
+              <p>
+                Firmware, region, role, channels, and app settings can all affect
+                what you see.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Terrain</h3>
+              <p>
+                Hills, valleys, trees, buildings, and river corridors can shape
+                what a small radio can hear.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Nearby activity</h3>
+              <p>
+                Silence does not always mean failure. There may simply be nobody
+                nearby at that moment.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="placement">
+          <h2>Placement basics</h2>
+
+          <p>
+            Placement is often more important than power. Before buying more
+            hardware, try a few simple changes.
+          </p>
+
+          <ul>
+            <li>Move the node near a window.</li>
+            <li>Try a higher floor if available.</li>
+            <li>Try outside briefly if the device can be kept safe and dry.</li>
+            <li>Keep the antenna upright unless your setup calls for something else.</li>
+            <li>Move away from large metal objects, appliances, and dense walls.</li>
+            <li>Give the node time to listen before deciding nothing is happening.</li>
+            <li>Change one thing at a time.</li>
+          </ul>
+
+          <p>
+            In Hampden County, a small move can matter. A node in a valley, a
+            wooded area, or a dense building may behave very differently from a
+            node on a hill, near a window, or in a more open spot.
+          </p>
+        </section>
+
+        <section class="docs-section" id="range">
+          <h2>Understanding range</h2>
+
+          <p>
+            Range is not a single fixed number. The same device can act very
+            differently depending on terrain, antenna, height, buildings,
+            weather, settings, and other nearby nodes.
+          </p>
+
+          <ul>
+            <li>Height usually helps.</li>
+            <li>Clearer surroundings usually help.</li>
+            <li>Antenna placement can matter more than antenna price.</li>
+            <li>Indoor use can be very different from outdoor use.</li>
+            <li>A map point does not always mean direct radio range from you.</li>
+            <li>Internet-connected activity is not the same thing as local radio range.</li>
+            <li>More power is not usually the first fix for poor placement.</li>
+          </ul>
+
+          <p>
+            Treat range claims carefully. Local terrain and real use matter more
+            than a number printed on a product page.
+          </p>
+        </section>
+
+        <section class="docs-section" id="simple-note">
+          <h2>A simple note format</h2>
+
+          <p>
+            Notes do not need to be formal. The point is to remember what changed
+            and what happened without exposing private details.
+          </p>
+
+          <pre><code>Node use note
+Date:
+General area:
+System: MeshCore / Meshtastic / Other
+Device:
+Role: Portable node / Fixed node / Repeater / Observer
+Antenna:
+Placement: indoors / window / outdoors / vehicle / elevated
+Power: battery / USB / solar / wall power
+What I was trying to do:
+What happened:
+What changed:
+Private details removed before sharing: yes / no
+Notes:</code></pre>
+
+          <p>
+            General area is usually enough for public discussion. A town,
+            neighborhood, public park, hill, or road corridor is often more
+            appropriate than an exact private address or exact coordinates.
+          </p>
+        </section>
+
+        <section class="docs-section" id="things-to-try">
+          <h2>Things to try</h2>
+
+          <ul>
+            <li>Home window vs. middle of the room.</li>
+            <li>First floor vs. second floor.</li>
+            <li>Inside vs. outside.</li>
+            <li>Stock antenna vs. another antenna.</li>
+            <li>Handheld height vs. higher temporary placement.</li>
+            <li>Park, hill, parking lot, or open field use.</li>
+            <li>Vehicle use from different parts of town.</li>
+            <li>Trying again at a different time of day.</li>
+            <li>Trying again after firmware, antenna, or settings changes.</li>
+          </ul>
+
+          <p>
+            The goal is not to prove one device is perfect. The goal is to learn
+            what helps, what does not, and what your node is actually doing.
+          </p>
+        </section>
+
+        <section class="docs-section" id="mobile-use">
+          <h2>Mobile use</h2>
+
+          <p>
+            Using a node while moving around can be useful, but keep it safe and
+            simple.
+          </p>
+
+          <ul>
+            <li>Do not handle devices while driving.</li>
+            <li>Have a passenger handle notes or equipment if possible.</li>
+            <li>Keep the device mounted or stored safely.</li>
+            <li>Use broad public location notes instead of private addresses.</li>
+            <li>Record the device, antenna, and placement used.</li>
+            <li>Remember that one trip is only one snapshot, not a final map.</li>
+          </ul>
+
+          <pre><code>Mobile use note
+Date:
+Route or general area:
+System:
+Device:
+Antenna:
+Device placement in vehicle:
+Start time:
+End time:
+Where it seemed active:
+Where it seemed quiet:
+Repeat check needed:
+Private details removed before sharing: yes / no
+Notes:</code></pre>
+        </section>
+
+        <section class="docs-section" id="maps">
+          <h2>Maps and dashboards</h2>
+
+          <p>
+            Maps, analyzers, observers, MQTT feeds, logs, and dashboards can be
+            useful, but they can also be misunderstood. A map point or recently
+            observed device does not always mean you can reach that device
+            directly over radio from where you are.
+          </p>
+
+          <p>
+            Some information may come from an observer. Some may come through an
+            internet-connected path. Some may be delayed. Some may be incomplete.
+            Some devices may be private, temporary, mobile, or outside Hampden
+            County.
+          </p>
+
+          <p>
+            Use maps as clues, not guarantees. For normal local use, the useful
+            question is still simple: what can your device hear from where it is
+            right now, and can someone nearby hear you back?
+          </p>
+
+          <p>
+            <a class="btn secondary" href="/coverage.html">View Map</a>
+          </p>
+        </section>
+
+        <section class="docs-section" id="sharing">
+          <h2>Sharing useful information</h2>
+
+          <p>
+            Sharing what you tried can help other people, but it does not need
+            to be complicated or overly precise.
+          </p>
+
+          <h3>Useful public examples</h3>
+
+          <ul>
+            <li>“Portable MeshCore node seemed active near Mittineague Park.”</li>
+            <li>“Window placement worked better than desk placement in Westfield.”</li>
+            <li>“A higher spot worked better than lower ground.”</li>
+            <li>“Vehicle use showed activity along part of Route 20.”</li>
+            <li>“Outdoor antenna placement helped more than changing power.”</li>
+          </ul>
+
+          <h3>Less useful examples</h3>
+
+          <ul>
+            <li>“It does not work.”</li>
+            <li>“Coverage is bad everywhere.”</li>
+            <li>“This device is the best.”</li>
+            <li>“I saw a map point so I know it works.”</li>
+          </ul>
+
+          <p>
+            Specific, limited observations are more useful than broad claims.
+            Keep exact private locations out of public posts unless there is a
+            clear reason and permission to share them.
+          </p>
+        </section>
+
+        <section class="docs-section" id="privacy">
+          <h2>Privacy and safety</h2>
+
+          <p>
+            Local radio information can be useful without exposing private homes,
+            exact coordinates, private keys, passwords, Wi-Fi details, or
+            information someone did not agree to share.
+          </p>
+
+          <h3>Usually safe to share</h3>
+
+          <ul>
+            <li>Town or general area.</li>
+            <li>Public park, hill, road corridor, or landmark.</li>
+            <li>Device type or general role.</li>
+            <li>General antenna type and placement.</li>
+            <li>Whether the node was indoors, outdoors, mobile, or elevated.</li>
+            <li>General result, such as active, quiet, weak, or reliable.</li>
+          </ul>
+
+          <h3>Avoid posting publicly</h3>
+
+          <ul>
+            <li>Exact home addresses.</li>
+            <li>Exact private node coordinates without permission.</li>
+            <li>Private keys, passwords, or broker credentials.</li>
+            <li>Private IP addresses or Wi-Fi details.</li>
+            <li>Photos that reveal private locations unintentionally.</li>
+            <li>Names or details of people who did not agree to be included.</li>
+          </ul>
+
+          <p>
+            Do not trespass, climb unsafe structures, block traffic, or handle
+            devices while driving.
+          </p>
+
+          <p>
+            Read <a href="/guides/sharing-safely.html">Sharing Safely</a>
+            before posting public information, screenshots, photos, or location
+            details.
+          </p>
+        </section>
+
+        <section class="docs-section" id="common-mistakes">
+          <h2>Common mistakes</h2>
+
+          <ul>
+            <li>
+              Assuming no replies means the device is broken. There may simply
+              be no one nearby listening.
+            </li>
+            <li>
+              Trying from inside a poor location and assuming the whole area has
+              no activity.
+            </li>
+            <li>
+              Changing too many settings at once.
+            </li>
+            <li>
+              Treating a map or dashboard as proof of direct radio range.
+            </li>
+            <li>
+              Publishing exact private locations when a general area would be
+              enough.
+            </li>
+            <li>
+              Assuming more power is the first or best fix.
+            </li>
+            <li>
+              Forgetting to keep track of what changed between attempts.
+            </li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="what-to-read-next">
+          <h2>What to read next</h2>
+
+          <div class="resource-grid">
+            <a class="resource-card action-card" href="/guides/nodes-repeaters-observers.html">
+              <h3>Nodes, Repeaters, and Observers</h3>
+              <p>
+                Learn the common device roles and how they affect local mesh use.
+              </p>
+              <span class="card-link">Learn device roles →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/radio-aids.html">
+              <h3>Radio Aids</h3>
+              <p>
+                Simple references and checklists for practical radio use.
+              </p>
+              <span class="card-link">Open radio aids →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/sharing-safely.html">
+              <h3>Sharing Safely</h3>
+              <p>
+                Learn how to share useful information without exposing private
+                details.
+              </p>
+              <span class="card-link">Read sharing guide →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/coverage.html">
+              <h3>Coverage</h3>
+              <p>
+                View maps, terrain notes, regional activity links, and public
+                tools.
+              </p>
+              <span class="card-link">View map →</span>
+            </a>
+          </div>
+        </section>
+
+        <section class="docs-section" id="ask">
+          <h2>Ask the community</h2>
+
+          <p>
+            If you want help understanding what your node is doing, ask in
+            Discord. It is easier to troubleshoot settings, placement, and device
+            choices when people can see what you are trying to do.
+          </p>
+
+          <p>
+            <a class="btn primary" href="/join/getting-started/">Join Discord</a>
+          </p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-title">
+        HAMPDEN COUNTY MESH
+      </div>
+
+      <div class="footer-subtitle">
+        MeshCore, Meshtastic, and radio education in Western Massachusetts
+      </div>
+
+      <div class="footer-subtitle">
+        Community education and hobby effort. Not an emergency service or a replacement for 911.
+      </div>
+
+      <div class="footer-subtitle">
+        Last Updated: <span id="last-updated">Loading...</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/last-updated.js"></script>
+</body>
+</html>

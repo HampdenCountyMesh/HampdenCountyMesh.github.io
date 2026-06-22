@@ -4,7 +4,7 @@ This document explains how to report security issues affecting Hampden County Me
 
 Do not report sensitive security issues through public GitHub issues, public Discord channels, or public comments.
 
-## Reporting a vulnerability
+## Reporting a vulnerability or sensitive exposure
 
 If you discover a security issue, exposed secret, unsafe public data exposure, or vulnerability affecting Hampden County Mesh, contact:
 
@@ -17,9 +17,11 @@ Please include, when safe and relevant:
 * Steps to reproduce the issue
 * Potential impact
 * Screenshots, logs, or examples with private details removed where possible
-* Whether any credentials, private locations, keys, or private data may have been exposed
+* Whether any credentials, private locations, keys, private messages, or private data may have been exposed
 
 Do not include live passwords, private keys, API tokens, or sensitive credentials in plain text unless there is no safer way to explain the issue.
+
+If the report involves exposed credentials, private keys, exact private node locations, private infrastructure details, or other sensitive information, keep the report private and use the security email address.
 
 ## Scope
 
@@ -29,7 +31,7 @@ This policy applies to security issues involving:
 * Hampden County Mesh GitHub repositories
 * Public website data files
 * GitHub Pages configuration
-* Discord-related project integrations
+* Discord-related integrations
 * Webhooks
 * Site-maintained observer documentation
 * Site-maintained MQTT or logging documentation
@@ -53,6 +55,7 @@ This policy also applies to accidental publication of:
 * Private home addresses
 * Sensitive screenshots
 * Raw logs containing sensitive data
+* Private messages or private identifiers that should not be public
 
 ## Out of scope
 
@@ -60,7 +63,7 @@ Hampden County Mesh does not own or operate every node, observer, repeater, map 
 
 Issues involving independent nodes, third-party services, neighboring communities, public analyzers, device vendors, radio services, or unrelated infrastructure may need to be reported to those maintainers instead.
 
-If the issue affects Hampden County Mesh documentation, public data, website wording, or site-maintained systems, it is in scope.
+If the issue affects Hampden County Mesh documentation, public data, website wording, GitHub repository content, Discord-related integrations, or site-maintained systems, it is in scope.
 
 ## What not to post publicly
 
@@ -79,7 +82,7 @@ Do not open a public issue or post publicly if the report includes:
 * Sensitive screenshots
 * Information that could help someone compromise a device, account, server, broker, or service
 
-Use `security@hampdencountymesh.org` instead.
+Use [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org) instead.
 
 ## Response expectations
 
@@ -92,7 +95,23 @@ Hampden County Mesh is a small community effort, so response times may vary. A r
 * Remove or reduce exposed sensitive information
 * Rotate exposed credentials where applicable
 * Update affected documentation or data files
+* Reduce repeat exposure where practical
 * Credit good-faith reporters when appropriate and desired
+
+## After a report is received
+
+Depending on the issue, maintainers may:
+
+* Remove exposed content from the public site or repository
+* Rotate exposed credentials or keys
+* Redact or generalize private location information
+* Update affected documentation
+* Update public data files
+* Disable a webhook, token, integration, or automation
+* Review related files for similar exposure
+* Add a note to prevent the same problem from happening again
+
+Some remediation may take longer if the issue involves Git history, screenshots, third-party caches, Discord messages, or data copied outside the repository.
 
 ## Responsible disclosure
 
@@ -126,3 +145,5 @@ For immediate danger or emergencies, contact the appropriate emergency services 
 * `docs/observed-activity-data.md`
 * `docs/mqtt.md`
 * `docs/observers.md`
+* `docs/infrastructure.md`
+* `docs/nodes.md`

@@ -4,31 +4,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Glossary | Hampden County Mesh</title>
+  <title>Nodes, Repeaters, and Observers | Hampden County Mesh</title>
   <meta
     name="description"
-    content="Plain-language radio, mesh, MeshCore, Meshtastic, LoRa, LoRaWAN, GMRS, amateur radio, CB, scanner, signal check, privacy, and local communications terms."
+    content="Plain-language guide to mesh nodes, repeaters, observers, room servers, hubs, MQTT uplinks, bridges, and how device roles fit into MeshCore and Meshtastic use."
   >
-<!-- Social preview / Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Hampden County Mesh">
-<meta property="og:title" content="Hampden County Mesh">
-<meta property="og:description" content="A local community project for mesh networking, radio learning, field testing, and practical communications across Hampden County, Massachusetts.">
-<meta property="og:url" content="https://hampdencountymesh.org/">
-<meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
-<!-- Twitter / X preview -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hampden County Mesh">
-<meta name="twitter:description" content="A local community project for mesh networking, radio learning, field testing, and practical communications across Hampden County, Massachusetts.">
-<meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
-<meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+  <!-- Social preview / Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hampden County Mesh">
+  <meta property="og:title" content="Nodes, Repeaters, and Observers | Hampden County Mesh">
+  <meta property="og:description" content="Plain-language guide to mesh nodes, repeaters, observers, room servers, hubs, MQTT uplinks, bridges, and how device roles fit into MeshCore and Meshtastic use.">
+  <meta property="og:url" content="https://hampdencountymesh.org/guides/nodes-repeaters-observers.html">
+  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
+  <!-- Twitter / X preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nodes, Repeaters, and Observers | Hampden County Mesh">
+  <meta name="twitter:description" content="Plain-language guide to mesh nodes, repeaters, observers, room servers, hubs, MQTT uplinks, bridges, and how device roles fit into MeshCore and Meshtastic use.">
+  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link
     href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet"
@@ -50,7 +51,6 @@
 
       <nav>
         <a href="/">Home</a>
-        <a href="/about.html">About</a>
         <a href="/guides/">Guides</a>
         <a href="/coverage.html">Coverage</a>
         <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
@@ -64,810 +64,479 @@
     <div class="container">
       <article class="docs-article">
         <p class="docs-breadcrumb">
-          <a href="/guides/">Guides</a> / Glossary
+          <a href="/guides/">Guides</a> / Nodes, Repeaters, and Observers
         </p>
 
-        <h1>Glossary</h1>
+        <h1>Nodes, Repeaters, and Observers</h1>
 
         <p class="docs-lede">
-          A plain-language reference for common radio, mesh, MeshCore,
-          Meshtastic, LoRa, signal check, mapping, privacy, and local
-          communications terms.
+          Mesh devices are easier to understand when the roles are separated.
+          A portable node, fixed node, repeater, observer, room server, hub, and
+          MQTT uplink can all support local mesh use, but they do not all do the
+          same job.
         </p>
 
         <div class="docs-note">
-          This glossary is meant for beginners. Some terms may be used
-          differently depending on firmware, device settings, radio service,
-          local habits, or official rules.
+          This is a plain-language orientation guide. It is not a replacement
+          for current MeshCore, Meshtastic, device, safety, radio-service, or
+          setup documentation.
         </div>
 
         <div class="hero-actions">
-          <a class="btn secondary" href="#basic-radio">Basic Radio</a>
-          <a class="btn secondary" href="#voice-radio">Voice Radio</a>
-          <a class="btn secondary" href="#mesh-packet">Mesh and Packets</a>
-          <a class="btn secondary" href="#lora">LoRa Mesh</a>
-          <a class="btn secondary" href="#antennas">Antennas</a>
-          <a class="btn secondary" href="#signal">Signal Quality</a>
-          <a class="btn secondary" href="#services">Services</a>
+          <a class="btn secondary" href="#quick-summary">Quick Summary</a>
+          <a class="btn secondary" href="#nodes">Nodes</a>
+          <a class="btn secondary" href="#repeaters">Repeaters</a>
+          <a class="btn secondary" href="#observers">Observers</a>
+          <a class="btn secondary" href="#support-systems">Support Systems</a>
+          <a class="btn secondary" href="#visibility">Visibility</a>
           <a class="btn secondary" href="#privacy">Privacy</a>
-          <a class="btn secondary" href="#field-work">Field Work</a>
         </div>
 
-        <section class="docs-section" id="basic-radio">
-          <h2>Basic radio terms</h2>
+        <section class="docs-section" id="quick-summary">
+          <h2>Quick summary</h2>
 
-          <h3>Frequency</h3>
+          <div class="docs-card-grid">
+            <div class="docs-card">
+              <h3>Node</h3>
+              <p>
+                A mesh device that can send, receive, or participate in the mesh.
+                It may be handheld, portable, vehicle-based, fixed indoors, or
+                fixed outdoors.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Repeater</h3>
+              <p>
+                A device placed or configured to help other mesh devices hear
+                each other over radio. Placement matters more than raw power.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Observer</h3>
+              <p>
+                A device or system that listens and reports what it hears. It
+                helps with visibility, logs, maps, and local awareness, but it
+                does not automatically improve radio coverage.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Room server</h3>
+              <p>
+                A MeshCore support role used for room-style messaging and, in
+                some setups, more permanent local support.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Hub</h3>
+              <p>
+                A computer or support system that may run scripts, logs, brokers,
+                dashboards, status files, or other local tools.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Uplink or bridge</h3>
+              <p>
+                A path that reports, forwards, or connects data to another tool,
+                such as MQTT, an analyzer, a dashboard, or Discord.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="docs-section" id="how-roles-fit">
+          <h2>How the roles fit together</h2>
+
           <p>
-            The specific radio signal rate being used, usually measured in hertz.
-            Radio users often talk in kilohertz, megahertz, or gigahertz.
+            A local mesh can include several kinds of devices and tools at the
+            same time. Some help with radio traffic. Some help with observation.
+            Some help with documentation, maps, logs, or coordination.
           </p>
 
-          <h3>Band</h3>
           <p>
-            A range of frequencies grouped together. Examples include HF, VHF,
-            UHF, CB, GMRS, amateur radio bands, Wi-Fi bands, and the 900 MHz
-            area used by many LoRa devices in the United States.
+            The useful questions are not just “is there a device?” They are:
+            what role does it play, where is it generally located, what can it
+            hear, what can hear it, and who can maintain it?
           </p>
 
-          <h3>Bandwidth</h3>
           <p>
-            The amount of radio spectrum used by a signal. In LoRa systems,
-            bandwidth affects speed, range, airtime, and how easily a signal can
-            be received.
-          </p>
-
-          <h3>RX / receive</h3>
-          <p>
-            RX means receive. It refers to hearing, detecting, or receiving a
-            signal, packet, message, or transmission.
-          </p>
-
-          <h3>TX / transmit</h3>
-          <p>
-            TX means transmit. It refers to sending a signal, packet, message, or
-            transmission.
-          </p>
-
-          <h3>Channel</h3>
-          <p>
-            A channel may mean a frequency, a programmed radio memory, or a
-            configured communication path. In Meshtastic, a channel can also mean
-            a configured message group with a name, key, and settings.
-          </p>
-
-          <h3>Modulation</h3>
-          <p>
-            The way information is carried on a radio signal. AM, FM, SSB,
-            digital voice, packet data, and LoRa all use different methods.
-          </p>
-
-          <h3>AM</h3>
-          <p>
-            AM means amplitude modulation. It carries information by changing the
-            strength of the radio wave.
-          </p>
-
-          <h3>FM</h3>
-          <p>
-            FM means frequency modulation. It carries information by changing the
-            frequency of the radio wave.
-          </p>
-
-          <h3>SSB</h3>
-          <p>
-            SSB means single sideband. It is a voice mode used on HF amateur
-            radio and some CB radios. It is more efficient than regular AM, but
-            both sides need to be tuned carefully.
-          </p>
-
-          <h3>Analog</h3>
-          <p>
-            A signal that varies continuously, such as traditional AM or FM
-            voice.
-          </p>
-
-          <h3>Digital</h3>
-          <p>
-            A signal or mode that carries information as data. MeshCore,
-            Meshtastic, DMR, packet radio, and FT8 are examples of digital radio
-            uses.
-          </p>
-
-          <h3>Dead air</h3>
-          <p>
-            A period when nothing is being transmitted or heard on a channel.
+            A simple portable node can be useful for learning. A well-placed
+            repeater can help radio traffic. An observer can help show what was
+            heard. A hub or uplink can help organize information. They are all
+            useful, but they answer different questions.
           </p>
         </section>
 
-        <section class="docs-section" id="voice-radio">
-          <h2>Voice radio terms</h2>
+        <section class="docs-section" id="nodes">
+          <h2>Nodes</h2>
 
-          <h3>PTT / push to talk</h3>
           <p>
-            The button or control used to transmit on many voice radios.
+            A node is any device participating in a mesh. In casual conversation,
+            people may call almost any MeshCore or Meshtastic device a node, but
+            the role still matters.
           </p>
 
-          <h3>Squelch</h3>
+          <h3>Portable nodes</h3>
+
           <p>
-            A setting that keeps a radio speaker quiet until a signal is strong
-            enough or matches the expected tone or code.
+            Portable nodes are carried, moved around, used from a vehicle, kept
+            in a bag, brought to a meetup, or used temporarily from different
+            places. They are useful for learning, messaging, and seeing how radio
+            behaves in real locations.
           </p>
 
-          <h3>CTCSS</h3>
           <p>
-            CTCSS means Continuous Tone-Coded Squelch System. It uses a low
-            audio tone to open squelch on radios set to the same tone. These are
-            sometimes marketed as privacy codes, but they do not make the channel
-            private.
+            Portable nodes are not usually the backbone of local coverage because
+            they move, go offline, run out of battery, sit in bags, or spend time
+            indoors where radio performance may be poor.
           </p>
 
-          <h3>DCS</h3>
+          <h3>Fixed nodes</h3>
+
           <p>
-            DCS means Digital-Coded Squelch. It works like a digital squelch
-            code. Like CTCSS, it does not encrypt the channel.
+            Fixed nodes stay in one place. They may be indoors near a window,
+            outdoors on a mast, mounted at a volunteer site, installed at a
+            workplace, or placed temporarily for a specific event.
           </p>
 
-          <h3>Simplex</h3>
           <p>
-            Direct radio-to-radio communication without a repeater.
+            Fixed nodes are easier to understand over time. If a fixed node has a
+            good location, reliable power, reasonable antenna placement, and a
+            maintainer who can update or troubleshoot it, it may become useful
+            local infrastructure.
           </p>
 
-          <h3>Duplex</h3>
+          <h3>Client or companion devices</h3>
+
           <p>
-            Communication that uses separate transmit and receive frequencies.
-            Repeaters commonly use duplex operation.
+            Many people start with a client or companion-style device. This is
+            usually the device you pair with a phone or computer so you can send
+            and receive messages through an app.
           </p>
 
-          <h3>Voice repeater</h3>
           <p>
-            A radio system that receives a voice transmission and retransmits it,
-            usually from a better location or higher site. This is different from
-            a mesh repeater, even though both can help extend communication.
-          </p>
-
-          <h3>Repeater offset</h3>
-          <p>
-            The difference between the frequency a radio receives on and the
-            frequency it transmits on when using a repeater.
-          </p>
-
-          <h3>DMR</h3>
-          <p>
-            DMR means Digital Mobile Radio. It is a digital voice radio standard
-            used in commercial, public-service, and amateur radio contexts. In
-            amateur radio, DMR often involves repeaters, talkgroups, time slots,
-            and radio IDs.
-          </p>
-
-          <h3>CW / Morse code</h3>
-          <p>
-            CW means continuous wave. In amateur radio, CW usually refers to
-            Morse code sent by turning a carrier signal on and off.
-          </p>
-
-          <h3>FT8</h3>
-          <p>
-            A weak-signal digital mode used by amateur radio operators, usually
-            with a computer handling timing and decoding.
-          </p>
-
-          <h3>Net</h3>
-          <p>
-            A scheduled or organized radio gathering where stations check in and
-            exchange information.
-          </p>
-
-          <h3>Net control</h3>
-          <p>
-            The person or station helping organize a radio net. Net control may
-            call for check-ins, keep the net moving, and help traffic stay clear.
-          </p>
-
-          <h3>Call sign</h3>
-          <p>
-            An official or assigned station identifier. Amateur radio operators
-            use FCC-issued call signs in the United States.
+            A client device is a good first step. It lets you learn the app,
+            understand the basic settings, and see what your location can hear
+            before you spend time on a more permanent setup.
           </p>
         </section>
 
-        <section class="docs-section" id="mesh-packet">
-          <h2>Mesh and packet terms</h2>
+        <section class="docs-section" id="repeaters">
+          <h2>Repeaters</h2>
 
-          <h3>Mesh</h3>
           <p>
-            A network where devices can communicate with each other and may pass
-            messages through other devices instead of relying on one central
-            tower, router, or service.
+            A repeater is a mesh device whose job is to help traffic move farther
+            over radio. In normal terms, it listens for mesh traffic and forwards
+            it so other devices may be able to hear it.
           </p>
 
-          <h3>Node</h3>
           <p>
-            A device that participates in a mesh. It may be handheld, portable,
-            vehicle-mounted, fixed indoors, fixed outdoors, battery-powered, or
-            solar-powered.
+            A useful repeater is usually less about transmit power and more about
+            placement. Height, antenna location, nearby buildings, trees, hills,
+            weather protection, and stable power all matter.
           </p>
 
-          <h3>Node ID</h3>
+          <h3>Good repeater traits</h3>
+
+          <ul>
+            <li>High or clear placement.</li>
+            <li>Reliable power.</li>
+            <li>Weather protection for outdoor installs.</li>
+            <li>Antenna placement that fits the area it is meant to help.</li>
+            <li>Known firmware and settings.</li>
+            <li>A general public description that does not expose a private address.</li>
+            <li>Someone who can update, reboot, or troubleshoot it when needed.</li>
+          </ul>
+
+          <h3>Repeater placement</h3>
+
           <p>
-            A unique identifier used by a device or system to tell one node from
-            another. A node ID may be different from the friendly name people see
-            in an app or on a map.
+            Repeaters are most useful when many other devices can hear them. A
+            repeater deep inside a building may work for that building, but may
+            not help much farther away. A modest device on a good hill, roofline,
+            tower, mast, or clear window may outperform a more powerful device
+            in a poor location.
           </p>
 
-          <h3>Portable node</h3>
           <p>
-            A node that moves around with a person, vehicle, bag, or temporary
-            test setup.
+            Around Hampden County, terrain can change quickly. A repeater that
+            helps one side of town may not help another. Real placement matters
+            more than assumptions.
           </p>
 
-          <h3>Fixed node</h3>
+          <h3>What repeaters are not</h3>
+
+          <ul>
+            <li>They are not magic coverage fixes.</li>
+            <li>They do not guarantee county-wide coverage.</li>
+            <li>They do not replace normal troubleshooting.</li>
+            <li>They should not be installed somewhere without permission.</li>
+            <li>They still need safe power, mounting, weather protection, and maintenance.</li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="observers">
+          <h2>Observers</h2>
+
           <p>
-            A node that usually stays in one place, such as a window, shelf,
-            rooftop, garage, club space, or other regular location.
+            An observer listens for mesh activity and reports or records what it
+            can hear. Observers are useful for logs, analyzers, live maps, local
+            visibility, and understanding whether nearby activity exists.
           </p>
 
-          <h3>Repeater</h3>
           <p>
-            A node placed or configured to help messages travel farther.
-            Repeaters usually benefit from height, good antenna placement,
-            reliable power, and weather protection.
+            An observer does not automatically make the radio side stronger. If
+            a device only listens and reports what it hears, it improves
+            visibility, not coverage.
           </p>
 
-          <h3>Store-and-forward</h3>
+          <h3>What observers are good for</h3>
+
+          <ul>
+            <li>Showing recently observed activity.</li>
+            <li>Helping confirm whether a device was heard by that observer.</li>
+            <li>Feeding analyzer or map tools.</li>
+            <li>Showing whether activity exists in a general area.</li>
+            <li>Helping compare different placements over time.</li>
+            <li>Supporting public status pages or dashboards.</li>
+          </ul>
+
+          <h3>What observers are not</h3>
+
+          <ul>
+            <li>They are not automatically repeaters.</li>
+            <li>They are not proof of complete coverage.</li>
+            <li>They do not hear every private or independent node.</li>
+            <li>They should not be used to expose exact private locations.</li>
+            <li>They do not mean one group owns every node or message shown on a map.</li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="support-systems">
+          <h2>Room servers, hubs, bridges, and MQTT uplinks</h2>
+
           <p>
-            A method where a system receives a message, keeps it for some period
-            of time, and forwards or delivers it later. The exact behavior
-            depends on the software or network.
+            Some mesh setups use supporting services. These may provide
+            room-style messaging, logs, maps, analyzer feeds, dashboards, MQTT
+            reporting, Discord updates, or other tools.
           </p>
 
-          <h3>Observer</h3>
+          <h3>Room servers</h3>
+
           <p>
-            A device or system that listens for mesh activity and may feed logs,
-            analyzers, dashboards, maps, or status tools. An observer improves
-            visibility, but does not necessarily improve radio coverage by
-            itself.
+            A room server supports shared room-style messaging for compatible
+            MeshCore clients. Depending on setup and firmware, it may also be
+            part of a more permanent local system.
           </p>
 
-          <h3>Room server</h3>
+          <h3>Hub-style systems</h3>
+
           <p>
-            A MeshCore support role used for room-style messaging and, in some
-            setups, more permanent local support.
+            A small computer or Linux system can support local mesh work. It may
+            collect logs, run scripts, host local services, test MQTT, generate
+            status files, or prepare information for a website or dashboard.
           </p>
 
-          <h3>Gateway or bridge</h3>
+          <h3>MQTT uplinks</h3>
+
           <p>
-            A system that connects one network or tool to another, such as a
-            radio mesh to an internet dashboard, logger, broker, or chat tool.
+            MQTT uplinks are reporting paths into tools. A fixed node, observer,
+            or support system may report activity into a broker so maps,
+            analyzers, dashboards, or Discord integrations can show what was
+            heard.
           </p>
 
-          <h3>Uplink</h3>
+          <h3>Bridges and integrations</h3>
+
           <p>
-            A path that sends local data up to another system, such as an
-            analyzer, broker, dashboard, or other public feed. An uplink does not
-            automatically mean every nearby device is operated by the same group.
+            A bridge connects one system to another, such as mesh activity to a
+            dashboard, broker, log, or Discord channel. Bridges can be useful,
+            but they should be clear about what they are showing and should not
+            publish private information.
           </p>
 
-          <h3>Packet</h3>
           <p>
-            A small unit of digital data sent across a network or radio link.
-          </p>
-
-          <h3>Hop</h3>
-          <p>
-            One forwarding step in a mesh network.
-          </p>
-
-          <h3>Hop limit</h3>
-          <p>
-            A setting that controls how many times a message may be forwarded.
-            Higher hop limits may reach farther, but can also create more radio
-            traffic.
-          </p>
-
-          <h3>TTL / time to live</h3>
-          <p>
-            A limit on how far or how long a message can travel before it is
-            dropped.
-          </p>
-
-          <h3>ACK / acknowledgement</h3>
-          <p>
-            A confirmation that a message or packet was received.
-          </p>
-
-          <h3>Direct message</h3>
-          <p>
-            A message intended for a specific person or node instead of a shared
-            public channel or group.
-          </p>
-
-          <h3>Telemetry</h3>
-          <p>
-            Status data reported by a device, such as battery level, temperature,
-            uptime, location, signal information, or other device health details.
-          </p>
-
-          <h3>MQTT</h3>
-          <p>
-            A lightweight messaging protocol often used to move status, sensor,
-            or mesh-related data between systems. MQTT can be useful for logs,
-            dashboards, analyzers, and bridge tools.
-          </p>
-
-          <h3>Broker</h3>
-          <p>
-            A server that receives and distributes MQTT messages.
-          </p>
-
-          <h3>Region</h3>
-          <p>
-            A defined area or grouping used to organize network behavior,
-            mapping, routing, or reporting.
-          </p>
-
-          <h3>Scope</h3>
-          <p>
-            A setting or concept that controls how far a message or operation is
-            intended to reach.
+            MQTT and bridges are useful, but they are not the same thing as
+            better radio coverage. If the radio side cannot hear an area, a
+            dashboard may still show useful information from elsewhere, but it
+            does not replace good repeater placement or real local use.
           </p>
         </section>
 
-        <section class="docs-section" id="lora">
-          <h2>LoRa, MeshCore, and Meshtastic terms</h2>
+        <section class="docs-section" id="visibility">
+          <h2>Coverage vs. visibility</h2>
 
-          <h3>LoRa</h3>
           <p>
-            LoRa means long range. It is a low-power radio technology used for
-            sending small data packets over longer distances than many
-            short-range wireless systems.
+            This distinction matters. A repeater can improve radio coverage by
+            forwarding traffic over the air. An observer, log, analyzer, MQTT
+            uplink, bridge, or dashboard improves visibility by showing what was
+            heard or reported.
           </p>
 
-          <h3>LoRaWAN</h3>
-          <p>
-            LoRaWAN is a network system built on LoRa radio technology. It is
-            commonly used for sensor networks and internet-connected gateways.
-            MeshCore and Meshtastic use LoRa radios, but they are not the same
-            thing as LoRaWAN.
-          </p>
+          <div class="docs-card-grid">
+            <div class="docs-card">
+              <h3>Improves coverage</h3>
+              <p>
+                Good repeater placement, antenna height, clear paths, reliable
+                power, and useful locations can help more devices hear each
+                other over radio.
+              </p>
+            </div>
 
-          <h3>MeshCore</h3>
-          <p>
-            A LoRa-based mesh communication system used here for local
-            experimentation, repeaters, observers, room servers, signal checks,
-            and learning what works around Hampden County.
-          </p>
+            <div class="docs-card">
+              <h3>Improves visibility</h3>
+              <p>
+                Observers, logs, analyzers, dashboards, MQTT uplinks, bridges,
+                and maps help people understand what was heard, when it was
+                heard, and from what general area.
+              </p>
+            </div>
+          </div>
 
-          <h3>Meshtastic</h3>
           <p>
-            A separate LoRa-based mesh communication project commonly used for
-            off-grid text messaging, position sharing, telemetry, and hobby or
-            community mesh networks.
-          </p>
-
-          <h3>LongFast</h3>
-          <p>
-            A common Meshtastic preset/channel name associated with longer-range,
-            lower-speed communication. Local practice can vary.
-          </p>
-
-          <h3>ShortFast</h3>
-          <p>
-            A Meshtastic preset associated with shorter-range, faster
-            communication compared with longer-range presets.
-          </p>
-
-          <h3>Spread factor / SF</h3>
-          <p>
-            A LoRa setting that affects range, speed, airtime, and how easily a
-            signal can be decoded. Higher spread factors usually favor longer
-            range but use more airtime.
-          </p>
-
-          <h3>915 MHz</h3>
-          <p>
-            A radio range commonly associated with LoRa and ISM-style operation
-            in the United States and some other regions. Rules vary by country
-            and use.
-          </p>
-
-          <h3>868 MHz</h3>
-          <p>
-            A radio range commonly associated with LoRa and ISM-style operation
-            in parts of Europe and other regions. Rules vary by country and use.
-          </p>
-
-          <h3>Firmware</h3>
-          <p>
-            The software installed on a radio device or microcontroller.
-          </p>
-
-          <h3>Flashing</h3>
-          <p>
-            Installing or replacing firmware on a device.
-          </p>
-
-          <h3>OTA / over the air</h3>
-          <p>
-            Sending updates or configuration wirelessly instead of using a USB
-            cable. The exact meaning depends on the device or system.
-          </p>
-
-          <h3>BLE / Bluetooth Low Energy</h3>
-          <p>
-            A short-range wireless technology often used for phone-to-device
-            connections, configuration, sensors, and accessories.
-          </p>
-
-          <h3>API</h3>
-          <p>
-            API means application programming interface. It is a way for software
-            tools to talk to each other.
+            Both are useful. They just answer different questions.
           </p>
         </section>
 
-        <section class="docs-section" id="antennas">
-          <h2>Antennas and RF measurements</h2>
+        <section class="docs-section" id="direct-radio">
+          <h2>Direct radio vs. internet-connected paths</h2>
 
-          <h3>Antenna</h3>
           <p>
-            The part of a radio system that sends or receives radio signals.
+            A device may be heard directly over LoRa radio, reported by an
+            observer, forwarded through MQTT, shown on an analyzer, or displayed
+            on a dashboard. Those are related, but they are not all the same
+            kind of result.
           </p>
 
-          <h3>Rubber duck antenna</h3>
           <p>
-            A short flexible antenna commonly used on handheld radios. It is
-            convenient, but usually not the best-performing antenna.
+            When talking about a result, it helps to say whether it came from
+            direct radio, an observer, MQTT, a public map, a dashboard, or a
+            local log. That makes the result easier to understand later.
           </p>
 
-          <h3>Whip antenna</h3>
+          <pre><code>Result source
+Direct radio:
+Observer:
+MQTT:
+Map or dashboard:
+Local log:
+Unknown:
+Notes:</code></pre>
+        </section>
+
+        <section class="docs-section" id="regional-notes">
+          <h2>Regional notes</h2>
+
           <p>
-            A straight or flexible antenna often used on handheld, mobile, or
-            portable equipment.
+            Hampden County is part of a wider New England mesh picture. Nearby
+            communities, analyzers, public maps, and regional tools may show
+            activity from areas outside Hampden County or from systems that are
+            not operated by Hampden County Mesh.
           </p>
 
-          <h3>Dipole antenna</h3>
           <p>
-            A simple antenna made from two conductive elements. Dipoles are
-            common because they are useful, simple, and easy to understand.
+            That is normal. The important part is to be clear about what a page
+            or tool is showing: activity heard by a device, activity reported by
+            a broker, messages seen through an internet-connected path, or radio
+            traffic heard directly over the air.
           </p>
 
-          <h3>Omnidirectional antenna</h3>
           <p>
-            An antenna designed to send or receive signal in all horizontal
-            directions around the antenna.
-          </p>
-
-          <h3>Yagi antenna</h3>
-          <p>
-            A directional antenna that focuses signal more strongly in one
-            direction.
-          </p>
-
-          <h3>Coax / feed line</h3>
-          <p>
-            The cable that carries radio-frequency energy between a radio and an
-            antenna.
-          </p>
-
-          <h3>Connector</h3>
-          <p>
-            The physical plug or jack used to connect radios, antennas, adapters,
-            and coax.
-          </p>
-
-          <h3>Ground plane</h3>
-          <p>
-            A conductive surface or set of radials that helps some antennas work
-            properly.
-          </p>
-
-          <h3>Polarization</h3>
-          <p>
-            The orientation of a radio wave or antenna, commonly vertical or
-            horizontal. Matching polarization can improve signal performance.
-          </p>
-
-          <h3>Gain</h3>
-          <p>
-            A measure of how an antenna focuses signal in some directions
-            compared with others.
-          </p>
-
-          <h3>dBi</h3>
-          <p>
-            Decibels relative to an isotropic radiator. It describes antenna
-            gain compared with a theoretical antenna that radiates equally in
-            every direction.
-          </p>
-
-          <h3>dBd</h3>
-          <p>
-            Decibels relative to a dipole antenna. It describes antenna gain
-            compared with a standard half-wave dipole.
-          </p>
-
-          <h3>dBm</h3>
-          <p>
-            Decibels relative to one milliwatt. It is often used to describe
-            radio power levels and received signal strength.
-          </p>
-
-          <h3>SWR</h3>
-          <p>
-            Standing wave ratio. It describes how well an antenna system is
-            matched to the radio and feed line. Very high SWR can reduce
-            performance and may damage some transmitters.
+            Before changing settings on a working node, check current MeshCore
+            or Meshtastic documentation and ask people nearby what settings are
+            actually being used.
           </p>
         </section>
 
-        <section class="docs-section" id="signal">
-          <h2>Signal quality and range</h2>
+        <section class="docs-section" id="maintenance">
+          <h2>Maintenance matters</h2>
 
-          <h3>RSSI</h3>
           <p>
-            Received Signal Strength Indicator. It is a measurement of how strong
-            a received signal appears to the radio.
+            A fixed node, repeater, observer, room server, hub, or bridge is only
+            useful if someone can keep it working. Documentation and maintenance
+            notes prevent confusion later.
           </p>
 
-          <h3>SNR</h3>
-          <p>
-            Signal-to-noise ratio. It compares the desired signal against
-            background noise. A better SNR usually means the signal is easier to
-            decode.
-          </p>
+          <ul>
+            <li>Record the last time the device was checked.</li>
+            <li>Write down firmware or software changes.</li>
+            <li>Note antenna, power, mounting, and weather issues.</li>
+            <li>Keep private access details private.</li>
+            <li>Make sure someone knows how to reboot, update, or remove the device if needed.</li>
+            <li>Do not publish exact private maintenance details publicly.</li>
+          </ul>
 
-          <h3>Noise floor</h3>
           <p>
-            The background radio noise level. A weak signal can be hard to use if
-            it is too close to the noise floor.
-          </p>
-
-          <h3>Duty cycle</h3>
-          <p>
-            The percentage of time a radio transmits over a period of time.
-            Limiting airtime is good practice on shared radio channels.
-          </p>
-
-          <h3>Airtime</h3>
-          <p>
-            The amount of time a transmission occupies the channel. Long airtime
-            can reduce how much room is available for other traffic.
-          </p>
-
-          <h3>Line of sight</h3>
-          <p>
-            A mostly clear path between radio devices. Hills, buildings, trees,
-            and terrain still matter even when devices are close together.
-          </p>
-
-          <h3>Terrain</h3>
-          <p>
-            The physical landscape around a radio path, including hills, valleys,
-            buildings, trees, rivers, roads, and dense neighborhoods.
-          </p>
-
-          <h3>Coverage</h3>
-          <p>
-            The area where a device, repeater, observer, or system may be heard
-            or used. Coverage is often incomplete and can change with placement,
-            terrain, antenna, power, and time.
-          </p>
-
-          <h3>Dead spot</h3>
-          <p>
-            An area where a device does not hear or reach expected traffic.
-          </p>
-        </section>
-
-        <section class="docs-section" id="services">
-          <h2>Bands and services</h2>
-
-          <h3>HF</h3>
-          <p>
-            High frequency. HF covers 3 to 30 MHz and can support long-distance
-            communication under some conditions.
-          </p>
-
-          <h3>VHF</h3>
-          <p>
-            Very high frequency. VHF covers 30 to 300 MHz and is commonly used
-            for local and regional radio communication.
-          </p>
-
-          <h3>UHF</h3>
-          <p>
-            Ultra high frequency. UHF covers 300 MHz to 3 GHz and is used by
-            many handheld radios, repeaters, data links, and local systems.
-          </p>
-
-          <h3>FRS</h3>
-          <p>
-            Family Radio Service. A short-range personal radio service commonly
-            used by small handheld radios.
-          </p>
-
-          <h3>GMRS</h3>
-          <p>
-            General Mobile Radio Service. A personal radio service often used
-            for handhelds, mobile radios, base stations, family communication,
-            and repeaters.
-          </p>
-
-          <h3>MURS</h3>
-          <p>
-            Multi-Use Radio Service. A VHF personal radio service with a small
-            channel set.
-          </p>
-
-          <h3>CB</h3>
-          <p>
-            Citizens Band. A personal radio service commonly associated with
-            27 MHz AM and SSB voice communication.
-          </p>
-
-          <h3>Amateur radio / ham radio</h3>
-          <p>
-            A licensed radio service for technical learning, experimentation,
-            public service, and communication.
-          </p>
-
-          <h3>Scanner</h3>
-          <p>
-            A receiver used to listen to radio traffic. A scanner does not
-            transmit.
-          </p>
-
-          <h3>ISM band</h3>
-          <p>
-            Industrial, scientific, and medical band. ISM bands are shared radio
-            ranges used by many devices, including some LoRa systems.
-          </p>
-
-          <h3>Wi-Fi</h3>
-          <p>
-            A local wireless networking technology commonly used for internet
-            access and local networks.
-          </p>
-
-          <h3>Satellite</h3>
-          <p>
-            A radio relay or payload in orbit. Some amateur radio satellites can
-            repeat voice or digital signals between ground stations.
+            For templates, use
+            <a href="/guides/node-setups.html">Node Setups</a>
+            and <a href="/guides/radio-aids.html#maintenance-note">Radio Aids</a>.
           </p>
         </section>
 
         <section class="docs-section" id="privacy">
-          <h2>Security, keys, and privacy</h2>
+          <h2>Privacy and public information</h2>
 
-          <h3>End-to-end encryption</h3>
           <p>
-            A way of protecting messages so only the intended endpoints should be
-            able to read them.
+            Public information should be useful without exposing private homes,
+            exact coordinates, credentials, private keys, Wi-Fi details, admin
+            URLs, or information someone did not agree to share.
           </p>
 
-          <h3>AES-256</h3>
-          <p>
-            Advanced Encryption Standard using 256-bit keys. Encryption strength
-            also depends on how keys are generated, shared, stored, and
-            protected.
-          </p>
+          <h3>Usually safe to share</h3>
 
-          <h3>Public key</h3>
-          <p>
-            A cryptographic key that can be shared. Other devices or users may
-            use it to identify a node or send encrypted information to it,
-            depending on the system.
-          </p>
+          <ul>
+            <li>Town or general area.</li>
+            <li>Public landmark or broad terrain description.</li>
+            <li>Device role, such as portable node, fixed node, repeater, or observer.</li>
+            <li>General antenna type or placement.</li>
+            <li>Firmware family or major version when useful.</li>
+            <li>Whether the device is fixed, mobile, temporary, or experimental.</li>
+            <li>General information about what was heard or not heard.</li>
+          </ul>
 
-          <h3>Private key</h3>
-          <p>
-            A cryptographic key that should be kept secret. Do not post private
-            keys publicly.
-          </p>
+          <h3>Avoid posting publicly</h3>
 
-          <h3>Channel key</h3>
-          <p>
-            A key used by some systems to control who can read or participate in
-            a channel. Treat channel keys as private unless they are meant to be
-            public.
-          </p>
-
-          <h3>Broker credentials</h3>
-          <p>
-            Usernames, passwords, or tokens used to connect to an MQTT broker or
-            other backend system. Do not post broker credentials publicly.
-          </p>
-
-          <h3>Admin URL</h3>
-          <p>
-            A private web address or local address used to manage a device,
-            server, router, dashboard, or backend tool. Do not post admin URLs
-            publicly unless they are intentionally public.
-          </p>
-
-          <h3>Metadata</h3>
-          <p>
-            Information about a message, device, file, or photo. Metadata may
-            include timestamps, location, device names, or other details even
-            when the main content looks harmless.
-          </p>
-
-          <h3>EXIF data</h3>
-          <p>
-            Metadata stored inside some photos. EXIF data can include camera
-            details and sometimes location information. Remove it before sharing
-            sensitive photos publicly.
-          </p>
+          <ul>
+            <li>Exact home addresses.</li>
+            <li>Private node coordinates without permission.</li>
+            <li>Private keys.</li>
+            <li>Admin passwords or broker credentials.</li>
+            <li>Private IP addresses, admin URLs, or Wi-Fi details.</li>
+            <li>Photos that reveal a private location unintentionally.</li>
+            <li>Anything someone shared privately and did not agree to publish.</li>
+          </ul>
         </section>
 
-        <section class="docs-section" id="field-work">
-          <h2>Field testing and maps</h2>
+        <section class="docs-section" id="describing-a-setup">
+          <h2>How to describe a setup</h2>
 
-          <h3>Signal check</h3>
           <p>
-            A practical check to see what a device can hear or reach from a
-            specific general area.
+            A useful node, repeater, observer, room server, hub, or uplink
+            description does not need to be complicated. The goal is to help
+            others understand what role the device plays and what it may
+            contribute locally.
           </p>
 
-          <h3>Coverage test</h3>
-          <p>
-            A broader check of where a device, repeater, observer, or system may
-            be heard or used. On this site, “signal check” is often the plainer
-            term because most local tests are snapshots, not complete coverage
-            maps.
-          </p>
+          <pre><code>Setup description
+Role: Portable node / Fixed node / Repeater / Observer / Room server / Hub / Bridge
+System: MeshCore / Meshtastic / Other
+General area: Town, neighborhood, landmark, or broad region
+Radio settings: If known and safe to share
+Antenna: General type, placement, and approximate height
+Power: USB, battery, solar, wall power, backup power
+Firmware or software: Version or approximate date, if known
+Status: Active, testing, temporary, offline, or being built
+Result source: Direct radio / observer / MQTT / map / dashboard / unknown
+Notes: What it hears, what it reaches, or what it is meant to support
+Private details removed before sharing: yes / no</code></pre>
 
-          <h3>Wardriving</h3>
           <p>
-            Driving around with a device or logging setup to observe radio or
-            mesh activity over an area. It should be done safely, without
-            interacting with devices while driving.
-          </p>
-
-          <h3>Field note</h3>
-          <p>
-            A short observation from real use, such as what device was used,
-            where it was tested in general terms, what was heard, what did not
-            work, and what terrain or placement mattered.
-          </p>
-
-          <h3>Map</h3>
-          <p>
-            A visual tool for showing places, nodes, routes, observed activity,
-            or signal check notes. A map point does not always prove direct radio
-            reachability.
-          </p>
-
-          <h3>Dashboard</h3>
-          <p>
-            A web page or tool that summarizes status, activity, logs, nodes, or
-            other data.
-          </p>
-
-          <h3>Live activity</h3>
-          <p>
-            Recently observed activity shown on a map, analyzer, dashboard, or
-            status page. Live activity does not mean the map is complete.
-          </p>
-
-          <h3>Observed activity</h3>
-          <p>
-            Activity heard or reported by an observer, public feed, analyzer,
-            log, or community report.
-          </p>
-
-          <h3>Site-maintained system</h3>
-          <p>
-            A device, server, page, tool, or service maintained directly by the
-            people running this site. Not every node, packet, or marker seen in
-            the area is site-maintained.
-          </p>
-
-          <h3>Public note</h3>
-          <p>
-            A note meant to be shared publicly. It should be useful while
-            avoiding private addresses, exact private coordinates, keys,
-            passwords, and other sensitive details.
+            For public information, broad descriptions are usually enough. More
+            exact details can be shared privately with trusted people when needed.
           </p>
         </section>
 
@@ -875,41 +544,74 @@
           <h2>What to read next</h2>
 
           <div class="resource-grid">
-            <a class="resource-card action-card" href="/guides/what-is-mesh.html">
-              <h3>What Is Mesh?</h3>
+            <a class="resource-card action-card" href="/guides/meshcore-basics.html">
+              <h3>MeshCore Basics</h3>
               <p>
-                A beginner explanation of mesh radio and why local testing
-                matters.
+                Learn why MeshCore is the main focus here and what to understand
+                before buying or flashing hardware.
               </p>
-              <span class="card-link">Read the overview →</span>
+              <span class="card-link">Read MeshCore basics →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/radio-basics.html">
-              <h3>Radio Basics</h3>
+            <a class="resource-card action-card" href="/guides/meshtastic-basics.html">
+              <h3>Meshtastic Basics</h3>
               <p>
-                A shorter beginner guide to radio services and how they relate
-                to mesh users.
+                Learn how Meshtastic fits into local mesh use and what to know
+                before setting up a device.
               </p>
-              <span class="card-link">Read radio basics →</span>
+              <span class="card-link">Read Meshtastic basics →</span>
             </a>
 
-            <a class="resource-card action-card" href="/radio-reference.html">
-              <h3>Radio Reference</h3>
+            <a class="resource-card action-card" href="/guides/using-your-node.html">
+              <h3>Using Your Node</h3>
               <p>
-                A larger reference page for radio services and official links.
+                Practical first steps for using a node, improving placement, and
+                understanding what affects radio range.
               </p>
-              <span class="card-link">Open radio reference →</span>
+              <span class="card-link">Read the guide →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/coverage-and-signal-checks.html">
-              <h3>Coverage and Signal Checks</h3>
+            <a class="resource-card action-card" href="/guides/node-setups.html">
+              <h3>Node Setups</h3>
               <p>
-                Learn how to test what your device can hear and share useful
-                notes.
+                Keep useful information about devices, antennas, placement,
+                power, firmware, status, and maintenance.
               </p>
-              <span class="card-link">Read signal check guide →</span>
+              <span class="card-link">Read node setup guide →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/radio-aids.html">
+              <h3>Radio Aids</h3>
+              <p>
+                Simple references and checklists for practical radio use.
+              </p>
+              <span class="card-link">Open radio aids →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/sharing-safely.html">
+              <h3>Sharing Safely</h3>
+              <p>
+                Learn how to share useful information without exposing private
+                details.
+              </p>
+              <span class="card-link">Read sharing guide →</span>
             </a>
           </div>
+        </section>
+
+        <section class="docs-section" id="ask">
+          <h2>Ask the community</h2>
+
+          <p>
+            If you are not sure whether your device is a node, repeater,
+            observer, room server, hub, bridge, or something else, ask. The terms
+            are useful, but you do not need to know all of them before joining
+            in.
+          </p>
+
+          <p>
+            <a class="btn primary" href="/join/getting-started/">Join Discord</a>
+          </p>
         </section>
       </article>
     </div>
@@ -922,7 +624,11 @@
       </div>
 
       <div class="footer-subtitle">
-        MeshCore, Meshtastic, and local radio in Hampden County
+        MeshCore, Meshtastic, and radio education in Western Massachusetts
+      </div>
+
+      <div class="footer-subtitle">
+        Community education and hobby effort. Not an emergency service or a replacement for 911.
       </div>
 
       <div class="footer-subtitle">

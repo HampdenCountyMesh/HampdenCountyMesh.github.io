@@ -20,7 +20,7 @@ Use careful wording:
 * public activity data where available
 * site-maintained systems
 
-Avoid wording that suggests complete coverage, guaranteed communication, or control of all nearby mesh activity.
+Avoid wording that suggests complete coverage, guaranteed communication, emergency service capability, or control of all nearby mesh activity.
 
 ## Current broker
 
@@ -54,6 +54,7 @@ Current or near-current MQTT uses may include:
 * Broker testing
 * Backend development
 * Testing possible status or activity summaries
+* Testing possible observed-activity data workflows
 
 MQTT-related work should be documented as testing unless it is live, public, and maintainable.
 
@@ -61,10 +62,10 @@ MQTT-related work should be documented as testing unless it is live, public, and
 
 Possible future MQTT-related work may include:
 
-* Public status summaries
+* Public-safe status summaries
 * Observed activity summaries
 * Dashboard support
-* Map or coverage-page support
+* Coverage page observed-activity support
 * Discord bot or relay integrations
 * Observer health checks
 * Infrastructure alerts
@@ -75,7 +76,7 @@ Do not describe these as live until they are actually working and maintainable.
 
 ## MQTT and observed activity
 
-MQTT can help move data between systems. For example, an observer or support system may report activity into a broker, and another tool may read that data to produce a dashboard, status file, log, map, or Discord update.
+MQTT can help move data between systems. For example, an observer or support system may report activity into a broker, and another tool may read that data to produce a dashboard, public data file, log, map layer, or Discord update.
 
 That does not always mean the activity came from direct radio at the viewer’s location.
 
@@ -115,6 +116,10 @@ All nodes are online.
 
 ```text
 Hampden County Mesh operates these nodes.
+```
+
+```text
+This is an emergency-ready network.
 ```
 
 ## Data safety
@@ -278,8 +283,12 @@ Do not include live credentials or private access details in maintenance notes.
 
 Related public pages:
 
-* https://hampdencountymesh.org/status.html
 * https://hampdencountymesh.org/coverage.html
-* https://hampdencountymesh.org/infrastructure.html
 * https://hampdencountymesh.org/guides/nodes-repeaters-observers.html
-* https://hampdencountymesh.org/guides/coverage-and-signal-checks.html
+* https://hampdencountymesh.org/guides/using-your-node.html
+* https://hampdencountymesh.org/guides/radio-aids.html
+* https://hampdencountymesh.org/guides/sharing-safely.html
+
+## Project disclaimer
+
+Hampden County Mesh is a community education and hobby effort. It is not an emergency service or a replacement for 911.

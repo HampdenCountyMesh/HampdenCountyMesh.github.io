@@ -8,8 +8,26 @@
 
   <meta
     name="description"
-    content="A plain-language radio reference for MeshCore, Meshtastic, FRS, GMRS, MURS, CB, amateur radio, scanners, and local radio learning."
+    content="A plain-language radio reference for MeshCore, Meshtastic, FRS, GMRS, MURS, CB, amateur radio, scanners, and practical radio learning."
   >
+
+  <!-- Social preview / Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hampden County Mesh">
+  <meta property="og:title" content="Radio Reference | Hampden County Mesh">
+  <meta property="og:description" content="A plain-language radio reference for MeshCore, Meshtastic, FRS, GMRS, MURS, CB, amateur radio, scanners, and practical radio learning.">
+  <meta property="og:url" content="https://hampdencountymesh.org/radio-reference.html">
+  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
+  <!-- Twitter / X preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Radio Reference | Hampden County Mesh">
+  <meta name="twitter:description" content="A plain-language radio reference for MeshCore, Meshtastic, FRS, GMRS, MURS, CB, amateur radio, scanners, and practical radio learning.">
+  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,23 +35,7 @@
     href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet"
   >
-<!-- Social preview / Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Hampden County Mesh">
-<meta property="og:title" content="Hampden County Mesh">
-<meta property="og:description" content="A local community project for mesh networking, radio learning, field testing, and practical communications across Hampden County, Massachusetts.">
-<meta property="og:url" content="https://hampdencountymesh.org/">
-<meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
-<!-- Twitter / X preview -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hampden County Mesh">
-<meta name="twitter:description" content="A local community project for mesh networking, radio learning, field testing, and practical communications across Hampden County, Massachusetts.">
-<meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
-<meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
   <link rel="stylesheet" href="/style.css">
   <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
 </head>
@@ -50,7 +52,6 @@
 
       <nav>
         <a href="/">Home</a>
-        <a href="/about.html">About</a>
         <a href="/guides/">Guides</a>
         <a href="/coverage.html">Coverage</a>
         <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
@@ -78,7 +79,7 @@
 
       <p class="hero-text">
         A plain-language starting point for common radio services, mesh systems,
-        scanners, and local radio learning around Hampden County.
+        scanners, and practical radio learning.
       </p>
 
       <div class="hero-actions">
@@ -105,7 +106,7 @@
         <p>
           This page is not legal advice and does not replace FCC rules,
           manufacturer documentation, or current official guidance. Rules can
-          change, and members are responsible for using the correct equipment
+          change, and people are responsible for using the correct equipment
           and following the rules for the service they use.
         </p>
 
@@ -144,8 +145,8 @@
             same local learning goals.
           </p>
           <p>
-            Useful for portable nodes, field testing, mapping experiments, and
-            comparing mesh behavior.
+            Useful for portable nodes, app-supported devices, mapping tools,
+            telemetry, and learning how LoRa mesh behaves in real places.
           </p>
         </div>
 
@@ -249,7 +250,7 @@
         </a>
 
         <a class="resource-card action-card" href="/guides/nodes-repeaters-observers.html">
-          <h3>Nodes, repeaters, and observers</h3>
+          <h3>Nodes, Repeaters, and Observers</h3>
           <p>
             Learn the difference between portable nodes, fixed nodes, repeaters,
             observers, and support systems.
@@ -257,11 +258,11 @@
           <span class="card-link">Read the guide →</span>
         </a>
 
-        <a class="resource-card action-card" href="/guides/coverage-and-signal-checks.html">
-          <h3>Coverage and signal checks</h3>
+        <a class="resource-card action-card" href="/guides/using-your-node.html">
+          <h3>Using Your Node</h3>
           <p>
-            Learn how to test what a node can hear without overclaiming coverage
-            or publishing private details.
+            Learn practical ways to try a node, improve placement, and understand
+            what affects radio range.
           </p>
           <span class="card-link">Read the guide →</span>
         </a>
@@ -405,12 +406,12 @@
           </p>
 
           <p>
-            The best way to learn is to try real places, compare notes, and
-            keep public notes general enough to protect privacy.
+            The best way to learn is to try real places, keep privacy in mind,
+            and ask questions when something does not work the way you expected.
           </p>
 
           <a class="btn secondary" href="/coverage.html">
-            View Coverage Notes
+            View Map
           </a>
         </div>
       </div>
@@ -577,7 +578,11 @@
       </div>
 
       <div class="footer-subtitle">
-        MeshCore, Meshtastic, and local radio in Hampden County
+        MeshCore, Meshtastic, and radio education in Western Massachusetts
+      </div>
+
+      <div class="footer-subtitle">
+        Community education and hobby effort. Not an emergency service or a replacement for 911.
       </div>
 
       <div class="footer-subtitle">

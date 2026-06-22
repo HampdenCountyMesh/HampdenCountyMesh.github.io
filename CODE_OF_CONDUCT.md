@@ -2,7 +2,7 @@
 
 ## Our pledge
 
-Hampden County Mesh is intended to be a useful, respectful, beginner-friendly space for local mesh radio, radio learning, field notes, documentation, and related technical discussion.
+Hampden County Mesh is intended to be a useful, respectful, beginner-friendly space for local mesh radio, radio learning, documentation, setup help, public-safe local radio observations, and related technical discussion.
 
 We pledge to make participation in this community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socioeconomic status, nationality, personal appearance, race, religion, sexual identity, sexual orientation, or technical background.
 
@@ -47,7 +47,7 @@ Examples of unacceptable behavior include:
 
 Hampden County Mesh includes people with different experience levels.
 
-Members should not be mocked, dismissed, or pushed out for asking basic questions, using beginner language, owning inexpensive equipment, not having a license for a particular radio service, or not understanding a technical concept yet.
+Members should not be mocked, dismissed, or pushed out for asking basic questions, using beginner language, owning inexpensive equipment, not having a license for a radio service they are only learning about, or not understanding a technical concept yet.
 
 Correct information when needed, but do it in a way that helps people learn.
 
@@ -69,7 +69,7 @@ This includes:
 * Credentials, keys, passwords, tokens, or access URLs
 * Photos that reveal private locations or personal details unintentionally
 
-When discussing field notes, signal checks, maps, observers, MQTT, dashboards, or activity data, use general locations unless exact sharing is clearly intentional and safe.
+When discussing maps, observers, MQTT, dashboards, logs, local radio observations, or observed activity data, use general locations unless exact sharing is clearly intentional and safe.
 
 ## Radio and technical safety
 
@@ -99,7 +99,7 @@ This Code of Conduct applies in all Hampden County Mesh community spaces, includ
 * Website-related discussions
 * Documentation work
 * Public events or learning sessions
-* Other official or community-recognized project spaces
+* Other official or community-recognized Hampden County Mesh spaces
 
 It also applies when someone is representing Hampden County Mesh in public, including through an official email address, official account, public event, partner discussion, or similar role.
 
@@ -175,7 +175,7 @@ Hampden County Mesh encourages:
 
 * Technical collaboration
 * Respectful disagreement
-* Practical testing
+* Practical learning
 * Public-safe documentation
 * Knowledge sharing
 * Mentorship of beginners

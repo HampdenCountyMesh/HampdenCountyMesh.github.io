@@ -11,13 +11,13 @@ An observer improves visibility. It does not automatically improve radio coverag
 Observer systems may support:
 
 * Mesh activity observation
-* Signal awareness
+* Local radio visibility
 * Local logging
 * MQTT reporting
 * Public-safe activity summaries
 * Future map or dashboard work
 * Troubleshooting
-* Field testing comparisons
+* Local use comparisons
 * General understanding of local mesh behavior
 
 Observed activity should be described carefully. It may show what a specific observer heard, what a public source reported, or what appeared in a log, dashboard, MQTT feed, or map.
@@ -50,10 +50,10 @@ Status:
 Purpose:
 
 * Observe nearby MeshCore activity
-* Support local signal awareness
+* Support local radio visibility
 * Support future observed-activity summaries
 * Support future mapping, dashboard, or status work where appropriate
-* Help distinguish between direct field tests and activity heard by a fixed observer
+* Help distinguish between direct local radio use and activity heard by a fixed observer
 
 Public notes:
 
@@ -88,14 +88,14 @@ An observer can help answer questions like:
 
 * Is any mesh activity being heard from this general area?
 * Was a node or packet observed recently?
-* Did a field test show up in logs?
+* Did a local use attempt show up in logs?
 * Did a device appear through a public tool, observer, MQTT feed, or local log?
 * Are there changes in observed activity over time?
 * Is an observer still reporting?
 
-An observer may be useful for comparing field notes against fixed-location logs.
+An observer may be useful for comparing local radio observations against fixed-location logs.
 
-For example, someone may test from a park, hill, road corridor, window, or parking lot, then compare their notes with what a fixed observer heard around the same time.
+For example, someone may use a node from a park, hill, road corridor, window, or parking lot, then compare what they saw with what a fixed observer heard around the same time.
 
 ## What an observer cannot prove by itself
 
@@ -119,7 +119,7 @@ When documenting observer-related activity, try to identify the source type.
 
 Useful source types:
 
-```text id="c2wm36"
+```text
 direct_radio
 observer
 mqtt
@@ -133,11 +133,14 @@ unknown
 
 Examples:
 
+* `direct_radio` means the result was heard directly over radio by a device.
 * `observer` means a known observer heard or reported the activity.
 * `mqtt` means the activity came through an MQTT-backed path.
 * `map` means the activity appeared on a public or local map.
+* `dashboard` means the activity appeared through a dashboard or analyzer-style tool.
 * `local_log` means the activity was seen in a local log.
-* `manual_note` means a person reported it from a field test or signal check.
+* `manual_note` means a person reported it from local use or a device check.
+* `public_source` means the activity came from a public feed or public tool.
 * `unknown` means the source is not clear enough to describe confidently.
 
 ## Public wording
@@ -153,6 +156,7 @@ Good wording:
 * public-safe activity summary
 * recently observed activity
 * activity shown where available
+* local radio observations
 
 Avoid wording like:
 
@@ -162,6 +166,7 @@ Avoid wording like:
 * guaranteed communication
 * Hampden County Mesh operates all shown nodes
 * complete activity map
+* emergency-ready network
 
 ## Privacy and location handling
 
@@ -234,7 +239,7 @@ Public notes should describe what the data represents, not expose how to access 
 
 Useful public-safe observer maintenance fields:
 
-```text id="ohku4m"
+```text
 Observer name:
 Role:
 Hardware:
@@ -276,13 +281,12 @@ Do not publish exact private observer locations unless sharing is clearly intent
 Future observer-related integrations may include:
 
 * Public activity summaries
-* Status page updates
 * Coverage page layers
 * MQTT-backed dashboards
 * Discord status summaries
 * Observer health checks
 * Maintenance alerts
-* Field testing comparisons
+* Local radio comparison notes
 
 Do not describe these as live until they are actually working and maintainable.
 
@@ -299,9 +303,12 @@ Automated observer output should be reviewed for usefulness and privacy before i
 
 Related public pages:
 
-* https://hampdencountymesh.org/infrastructure.html
-* https://hampdencountymesh.org/status.html
 * https://hampdencountymesh.org/coverage.html
 * https://hampdencountymesh.org/guides/nodes-repeaters-observers.html
-* https://hampdencountymesh.org/guides/coverage-and-signal-checks.html
-* https://hampdencountymesh.org/guides/operating-aids.html
+* https://hampdencountymesh.org/guides/using-your-node.html
+* https://hampdencountymesh.org/guides/radio-aids.html
+* https://hampdencountymesh.org/guides/sharing-safely.html
+
+## Project disclaimer
+
+Hampden County Mesh is a community education and hobby effort. It is not an emergency service or a replacement for 911.

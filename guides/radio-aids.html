@@ -4,28 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Operating Aids | Hampden County Mesh</title>
+  <title>Radio Aids | Hampden County Mesh</title>
   <meta
     name="description"
-    content="Simple operating aids, checklists, and note templates for mesh radio testing, signal checks, wardriving, node notes, and sharing useful local results around Hampden County."
+    content="Simple radio aids, checklists, and templates for MeshCore, Meshtastic, device setup, local radio use, mobile use, voice radio notes, and safer sharing."
   >
-<!-- Social preview / Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Hampden County Mesh">
-<meta property="og:title" content="Hampden County Mesh">
-<meta property="og:description" content="A local community project for mesh networking, radio learning, field testing, and practical communications across Hampden County, Massachusetts.">
-<meta property="og:url" content="https://hampdencountymesh.org/">
-<meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
-<!-- Twitter / X preview -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hampden County Mesh">
-<meta name="twitter:description" content="A local community project for mesh networking, radio learning, field testing, and practical communications across Hampden County, Massachusetts.">
-<meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
-<meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+  <!-- Social preview / Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hampden County Mesh">
+  <meta property="og:title" content="Radio Aids | Hampden County Mesh">
+  <meta property="og:description" content="Simple radio aids, checklists, and templates for MeshCore, Meshtastic, device setup, local radio use, mobile use, voice radio notes, and safer sharing.">
+  <meta property="og:url" content="https://hampdencountymesh.org/guides/radio-aids.html">
+  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
+  <!-- Twitter / X preview -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Radio Aids | Hampden County Mesh">
+  <meta name="twitter:description" content="Simple radio aids, checklists, and templates for MeshCore, Meshtastic, device setup, local radio use, mobile use, voice radio notes, and safer sharing.">
+  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -49,7 +51,6 @@
 
       <nav>
         <a href="/">Home</a>
-        <a href="/about.html">About</a>
         <a href="/guides/">Guides</a>
         <a href="/coverage.html">Coverage</a>
         <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
@@ -63,30 +64,30 @@
     <div class="container">
       <article class="docs-article">
         <p class="docs-breadcrumb">
-          <a href="/guides/">Guides</a> / Operating Aids
+          <a href="/guides/">Guides</a> / Radio Aids
         </p>
 
-        <h1>Operating Aids</h1>
+        <h1>Radio Aids</h1>
 
         <p class="docs-lede">
-          These are simple checklists and templates for local mesh testing.
-          They are meant to make signal checks, field notes, device notes,
-          wardriving notes, and Discord reports easier to compare later.
+          These are simple checklists and templates for practical radio use.
+          They are meant to help with MeshCore, Meshtastic, device setup, local
+          radio notes, mobile use, voice radio, and safer sharing.
         </p>
 
         <div class="docs-note">
-          Keep public notes useful but careful. Do not post private keys,
+          Keep public information useful but careful. Do not post private keys,
           passwords, exact home locations, private coordinates, Wi-Fi details,
           broker credentials, admin URLs, or anything someone did not agree to
           share.
         </div>
 
         <div class="hero-actions">
-          <a class="btn secondary" href="#quick-check">Quick Check</a>
-          <a class="btn secondary" href="#field-notes">Field Notes</a>
-          <a class="btn secondary" href="#discord-report">Discord Report</a>
-          <a class="btn secondary" href="#node-note">Node Note</a>
-          <a class="btn secondary" href="#wardriving-note">Wardriving</a>
+          <a class="btn secondary" href="#quick-node-check">Quick Node Check</a>
+          <a class="btn secondary" href="#device-help">Device Help</a>
+          <a class="btn secondary" href="#local-use-note">Local Use</a>
+          <a class="btn secondary" href="#mobile-use">Mobile Use</a>
+          <a class="btn secondary" href="#voice-radio">Voice Radio</a>
           <a class="btn secondary" href="#before-posting">Before Posting</a>
         </div>
 
@@ -95,27 +96,27 @@
 
           <p>
             You do not need to fill out every line every time. Use the parts
-            that make the result easier for someone else to understand.
+            that make the situation easier for someone else to understand.
           </p>
 
           <p>
-            The main idea is simple: write down what you tested, where you tested
-            in general terms, what equipment you used, what changed, and what
-            happened.
+            The main idea is simple: write down what you were trying to do, what
+            equipment you used, where you were in general terms, what changed,
+            and what happened.
           </p>
 
           <p>
-            These templates are especially useful when comparing notes in
-            Discord, GitHub issues, local documentation, or future public pages.
+            These templates are especially useful in Discord, GitHub issues,
+            local documentation, or personal notes.
           </p>
         </section>
 
-        <section class="docs-section" id="quick-check">
-          <h2>Quick signal check</h2>
+        <section class="docs-section" id="quick-node-check">
+          <h2>Quick node check</h2>
 
           <p>
-            Use this when you just want to see whether another person or device
-            can hear you.
+            Use this when you want a simple first look at whether a MeshCore or
+            Meshtastic node appears to be working as expected.
           </p>
 
           <ol>
@@ -123,98 +124,84 @@
             <li>Put the device in a reasonable spot, such as near a window or outside if safe.</li>
             <li>Confirm the device name is recognizable and not too personal.</li>
             <li>Confirm you are using the expected MeshCore or Meshtastic setup.</li>
-            <li>Ask someone nearby to listen for a test message.</li>
-            <li>Send a short test message.</li>
-            <li>Write down whether it was heard, not heard, weak, delayed, or unclear.</li>
-            <li>Change one thing and test again.</li>
+            <li>Leave the device powered long enough to see normal activity.</li>
+            <li>Send a short message if that makes sense for your setup.</li>
+            <li>Ask in Discord if you are unsure what you are seeing.</li>
+            <li>Change one thing and try again.</li>
           </ol>
 
-          <pre><code>Quick signal check
+          <pre><code>Quick node check
 Date:
-Time:
 General area:
 System: MeshCore / Meshtastic / Other
 Device:
 Placement: window / indoors / outdoors / vehicle / elevated
-Message sent:
-Heard by:
-Result:
+Message sent, if any:
+What appeared in the app:
 What changed:
 Private details removed before sharing: yes / no
 Notes:</code></pre>
         </section>
 
-        <section class="docs-section" id="field-notes">
-          <h2>Field notes template</h2>
+        <section class="docs-section" id="device-help">
+          <h2>Device help request</h2>
 
           <p>
-            Use this for park checks, hill checks, drive-around testing,
-            temporary outdoor tests, or comparing different parts of town.
+            Use this when asking for help with a node, app, firmware, antenna,
+            power setup, or radio problem.
           </p>
 
-          <pre><code>Field notes
+          <pre><code>Device help request
+System: MeshCore / Meshtastic / Other
+Device model:
+Phone or computer:
+App version, if known:
+Firmware version, if known:
+What I am trying to do:
+What already works:
+What is not working:
+Error message or log, if safe to share:
+Antenna:
+Power:
+General area, if relevant:
+Private details removed before sharing: yes / no</code></pre>
+
+          <p>
+            Screenshots can help, but crop them first. Do not post passwords,
+            private keys, broker credentials, Wi-Fi details, private addresses,
+            private messages, or screens with personal information.
+          </p>
+        </section>
+
+        <section class="docs-section" id="local-use-note">
+          <h2>Local use note</h2>
+
+          <p>
+            Use this when describing how a node behaved from a general area,
+            public place, home window, vehicle, hill, park, or temporary setup.
+          </p>
+
+          <pre><code>Local use note
 Date:
-Time:
 General area:
-Weather:
 System: MeshCore / Meshtastic / Other
 Device:
 Role: Portable node / Fixed node / Repeater / Observer
 Antenna:
-Placement:
-Power:
-Firmware:
-What was heard:
-What was not heard:
-Who heard the test:
-Result:
-What changed during the test:
-Useful landmarks or terrain notes:
+Placement: indoors / window / outdoors / vehicle / elevated
+Power: battery / USB / solar / wall power
+What I was trying to do:
+What happened:
+What changed:
+Useful terrain or placement notes:
 Private details removed before sharing: yes / no
 Notes:</code></pre>
 
           <p>
-            General area is usually enough for public notes. A town, public park,
-            road corridor, hill, or broad neighborhood is normally more
+            General area is usually enough for public discussion. A town, public
+            park, road corridor, hill, or broad neighborhood is normally more
             appropriate than an exact private address.
           </p>
-        </section>
-
-        <section class="docs-section" id="discord-report">
-          <h2>Short Discord report</h2>
-
-          <p>
-            This is a shorter version that works well for Discord after a basic
-            signal check.
-          </p>
-
-          <pre><code>Signal check report
-Area:
-System:
-Device:
-Placement:
-Heard:
-Not heard:
-Best result:
-Anything changed:
-Private details removed: yes / no
-Notes:</code></pre>
-
-          <p>
-            Example:
-          </p>
-
-          <pre><code>Signal check report
-Area: West Springfield, Mittineague Park area
-System: MeshCore
-Device: portable node
-Placement: handheld outside
-Heard: nearby activity while walking
-Not heard: no confirmed reply from Westfield during this check
-Best result: better near open areas than near lower wooded spots
-Anything changed: moved between parking area and trail area
-Private details removed: yes
-Notes: useful short test, needs repeat check with another person listening</code></pre>
         </section>
 
         <section class="docs-section" id="node-note">
@@ -222,7 +209,7 @@ Notes: useful short test, needs repeat check with another person listening</code
 
           <p>
             Use this when describing a device, repeater, observer, room server,
-            hub, or temporary setup. This is useful for comparing what people are
+            hub, or temporary setup. This can help compare what people are
             running without exposing private details.
           </p>
 
@@ -240,8 +227,6 @@ Indoor / outdoor:
 Temporary / permanent:
 Maintainer or contact, if safe to share:
 Status: active / testing / offline / being built
-What it can hear:
-What can hear it:
 Public location safe to share: yes / no
 Private details removed before sharing: yes / no
 Notes:</code></pre>
@@ -252,35 +237,33 @@ Notes:</code></pre>
           </p>
         </section>
 
-        <section class="docs-section" id="wardriving-note">
-          <h2>Wardriving note</h2>
+        <section class="docs-section" id="mobile-use">
+          <h2>Mobile use note</h2>
 
           <p>
-            Use this for a drive-around check. Do not interact with devices while
-            driving. Have a passenger handle notes or equipment if possible.
+            Use this for notes from a drive, walk, bike ride, event, park visit,
+            or other temporary mobile use. Do not handle devices while driving.
           </p>
 
-          <pre><code>Wardriving note
+          <pre><code>Mobile use note
 Date:
 Route or general area:
 System:
 Device:
 Antenna:
-Device placement in vehicle:
-Logging method:
+Device placement:
 Start time:
 End time:
-Areas with activity:
-Areas with no activity:
-Strongest result:
-Weak or unreliable areas:
-Repeat check needed:
+Where it seemed active:
+Where it seemed quiet:
+What changed:
+Repeat needed: yes / no
 Private details removed before sharing: yes / no
 Notes:</code></pre>
 
           <p>
-            A wardriving run is one snapshot. It can show clues, but repeated
-            checks are better for finding patterns.
+            One trip is only one snapshot. Repeated attempts from different
+            places and times are more useful than treating one result as final.
           </p>
         </section>
 
@@ -302,7 +285,6 @@ Battery or solar status:
 Antenna:
 Mounting:
 Firmware or software:
-What was heard:
 What changed:
 Needs attention:
 Private details removed before sharing: yes / no
@@ -318,9 +300,9 @@ Notes:</code></pre>
           <h2>Before changing settings</h2>
 
           <p>
-            Changing settings can make testing confusing if you do not keep
-            notes. Before changing firmware, radio settings, antenna placement,
-            or power, write down the starting point.
+            Changing settings can make troubleshooting confusing if you do not
+            keep notes. Before changing firmware, radio settings, antenna
+            placement, or power, write down the starting point.
           </p>
 
           <pre><code>Before changing settings
@@ -347,7 +329,7 @@ Notes:</code></pre>
         </section>
 
         <section class="docs-section" id="message-tests">
-          <h2>Simple message tests</h2>
+          <h2>Simple message text</h2>
 
           <p>
             Test messages should be short and clear. Include enough information
@@ -370,9 +352,9 @@ Notes:</code></pre>
             </div>
 
             <div class="docs-card">
-              <h3>Signal check</h3>
+              <h3>Area check</h3>
               <p>
-                “Signal check near Mount Tom area. Looking for nearby confirms.”
+                “Trying a node near Mount Tom area. Looking for nearby replies.”
               </p>
             </div>
 
@@ -385,17 +367,16 @@ Notes:</code></pre>
           </div>
         </section>
 
-        <section class="docs-section" id="voice-radio-notes">
-          <h2>Voice radio notes</h2>
+        <section class="docs-section" id="voice-radio">
+          <h2>Voice radio note</h2>
 
           <p>
-            If a signal check involves voice radio instead of mesh messaging,
-            keep the note just as clear and limited.
+            Use this when the note involves FRS, GMRS, MURS, CB, amateur radio,
+            or another voice radio service.
           </p>
 
           <pre><code>Voice radio note
 Date:
-Time:
 General area:
 Service: FRS / GMRS / MURS / CB / Amateur / Other
 Radio:
@@ -415,37 +396,36 @@ Notes:</code></pre>
           </p>
         </section>
 
-        <section class="docs-section" id="session-note">
-          <h2>Session note</h2>
+        <section class="docs-section" id="meetup-note">
+          <h2>Meetup note</h2>
 
           <p>
-            Use this after a small meetup, demo, radio basics session, or signal
-            check.
+            Use this after a small meetup, demo, radio basics session, device
+            show-and-tell, or beginner help session.
           </p>
 
-          <pre><code>Session note
+          <pre><code>Meetup note
 Date:
 Location type: library / club / makerspace / park / other
 Topic:
 Approximate attendance:
 Devices shown:
 Questions people asked:
-Signal checks done:
 Useful follow-up:
 Private details removed before sharing: yes / no
 Notes:</code></pre>
         </section>
 
         <section class="docs-section" id="good-habits">
-          <h2>Good operating habits</h2>
+          <h2>Good radio habits</h2>
 
           <ul>
             <li>Use clear, short messages during tests.</li>
             <li>Say when a test starts and when it ends.</li>
             <li>Write down the general area and setup.</li>
             <li>Change one thing at a time.</li>
-            <li>Do not assume a failed test means nothing works.</li>
-            <li>Do not assume a map point means direct radio coverage.</li>
+            <li>Do not assume a quiet result means the device is broken.</li>
+            <li>Do not assume a map point means direct radio range.</li>
             <li>Keep private details out of public posts.</li>
             <li>Ask before publishing someone else’s setup details.</li>
             <li>Do not treat mesh radio as a replacement for 911.</li>
@@ -454,11 +434,11 @@ Notes:</code></pre>
         </section>
 
         <section class="docs-section" id="before-posting">
-          <h2>Before posting public notes</h2>
+          <h2>Before posting public information</h2>
 
           <p>
-            Before posting a test result, photo, map, screenshot, or setup note,
-            check it for private information.
+            Before posting a result, photo, map, screenshot, or setup note, check
+            it for private information.
           </p>
 
           <ul>
@@ -472,7 +452,7 @@ Notes:</code></pre>
           </ul>
 
           <p>
-            Useful public notes do not need exact private details. Broad
+            Useful public information does not need exact private details. Broad
             descriptions are often enough.
           </p>
         </section>
@@ -481,31 +461,31 @@ Notes:</code></pre>
           <h2>What to read next</h2>
 
           <div class="resource-grid">
-            <a class="resource-card action-card" href="/guides/coverage-and-signal-checks.html">
-              <h3>Coverage and Signal Checks</h3>
+            <a class="resource-card action-card" href="/guides/using-your-node.html">
+              <h3>Using Your Node</h3>
               <p>
-                Learn how to compare what your device can hear with people
-                nearby.
+                Practical first steps for using a node, improving placement, and
+                understanding what affects radio range.
               </p>
-              <span class="card-link">Read signal check guide →</span>
+              <span class="card-link">Read the guide →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/contributing-notes.html">
-              <h3>Contributing Notes</h3>
+            <a class="resource-card action-card" href="/guides/sharing-safely.html">
+              <h3>Sharing Safely</h3>
               <p>
-                Learn how to share useful local information without exposing
-                private details.
+                Learn how to share useful information without exposing private
+                details.
               </p>
-              <span class="card-link">Read note guidelines →</span>
+              <span class="card-link">Read sharing guide →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/documenting-a-node.html">
-              <h3>Documenting a Node</h3>
+            <a class="resource-card action-card" href="/guides/node-setups.html">
+              <h3>Node Setups</h3>
               <p>
-                Learn how to keep useful notes about devices, repeaters,
-                observers, antennas, and maintenance.
+                Keep useful information about devices, repeaters, observers,
+                antennas, and maintenance.
               </p>
-              <span class="card-link">Read node documentation guide →</span>
+              <span class="card-link">Read node setup guide →</span>
             </a>
 
             <a class="resource-card action-card" href="/guides/nodes-repeaters-observers.html">
@@ -516,11 +496,11 @@ Notes:</code></pre>
               <span class="card-link">Learn device roles →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/hosting-a-session.html">
-              <h3>Hosting a Session</h3>
+            <a class="resource-card action-card" href="/guides/hosting-a-meetup.html">
+              <h3>Hosting a Meetup</h3>
               <p>
-                Plan a small mesh, radio basics, node demo, or signal check
-                session.
+                Plan a small mesh, radio basics, show-and-tell, or node demo
+                meetup.
               </p>
               <span class="card-link">Read hosting guide →</span>
             </a>
@@ -528,8 +508,8 @@ Notes:</code></pre>
             <a class="resource-card action-card" href="/join/getting-started/">
               <h3>Ask the Community</h3>
               <p>
-                Join the Discord to ask questions, compare notes, and coordinate
-                signal checks.
+                Join the Discord to ask questions, get help with setup, and meet
+                others interested in mesh radio.
               </p>
               <span class="card-link">Join Discord →</span>
             </a>
@@ -546,7 +526,11 @@ Notes:</code></pre>
       </div>
 
       <div class="footer-subtitle">
-        MeshCore, Meshtastic, and local radio in Hampden County
+        MeshCore, Meshtastic, and radio education in Western Massachusetts
+      </div>
+
+      <div class="footer-subtitle">
+        Community education and hobby effort. Not an emergency service or a replacement for 911.
       </div>
 
       <div class="footer-subtitle">
