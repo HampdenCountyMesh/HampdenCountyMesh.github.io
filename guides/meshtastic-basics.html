@@ -1,66 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Meshtastic Basics | Hampden County Mesh</title>
-  <meta
-    name="description"
-    content="A beginner-friendly Meshtastic guide covering what Meshtastic is, how it compares to MeshCore, device setup, maps, MQTT, local use, and privacy basics."
-  >
+  <meta name="description" content="A short beginner guide to Meshtastic, how it fits with Hampden County Mesh, what settings to start with, and where to find official Meshtastic resources.">
 
-  <!-- Social preview / Open Graph -->
-  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hampdencountymesh.org/guides/meshtastic-basics.html">
+
+  <meta property="og:type" content="article">
   <meta property="og:site_name" content="Hampden County Mesh">
   <meta property="og:title" content="Meshtastic Basics | Hampden County Mesh">
-  <meta property="og:description" content="A beginner-friendly Meshtastic guide covering what Meshtastic is, how it compares to MeshCore, device setup, maps, MQTT, local use, and privacy basics.">
+  <meta property="og:description" content="A short beginner guide to Meshtastic, how it fits with Hampden County Mesh, what settings to start with, and where to find official Meshtastic resources.">
   <meta property="og:url" content="https://hampdencountymesh.org/guides/meshtastic-basics.html">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
-  <!-- Twitter / X preview -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Meshtastic Basics | Hampden County Mesh">
-  <meta name="twitter:description" content="A beginner-friendly Meshtastic guide covering what Meshtastic is, how it compares to MeshCore, device setup, maps, MQTT, local use, and privacy basics.">
+  <meta name="twitter:description" content="A short beginner guide to Meshtastic, how it fits with Hampden County Mesh, what settings to start with, and where to find official Meshtastic resources.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
   <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
+  <link rel="icon" href="/assets/images/social/hcm-logo-900.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+
+  <style>
+    .discord-nav-button svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .basics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 22px 0;
+    }
+
+    .basics-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(157, 175, 136, 0.08), transparent 35%),
+        linear-gradient(180deg, rgba(24, 22, 16, 0.96), rgba(13, 12, 9, 0.96));
+    }
+
+    .basics-card h3 {
+      margin-top: 0;
+    }
+
+    .basics-card .label {
+      display: inline-flex;
+      margin-bottom: 10px;
+      color: var(--green);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .basics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="noise"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="noise" aria-hidden="true"></div>
 
   <header>
     <div class="container">
       <a class="brand" href="/" aria-label="Hampden County Mesh home">
-        <span class="brand-icon" aria-hidden="true">📡</span>
+        <span class="brand-icon" aria-hidden="true">⌁</span>
         <span>HAMPDEN COUNTY MESH</span>
       </a>
 
-      <nav>
+      <nav aria-label="Primary navigation">
         <a href="/">Home</a>
-        <a href="/guides/">Guides</a>
+        <a href="/guides/" aria-current="page">Guides</a>
         <a href="/coverage.html">Coverage</a>
-        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
-          <img src="/assets/icons/discord-symbol-white.svg" alt="">
+        <a class="discord-nav-button" href="/join/" aria-label="Join the Discord" data-join-source="nav">
+          <svg viewBox="0 0 127.14 96.36" aria-hidden="true" focusable="false">
+            <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21A105.73,105.73,0,0,0,32.71,96.36a77.7,77.7,0,0,0,6.89-11.11,68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.35,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.4,2.67,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.2C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+          </svg>
         </a>
       </nav>
     </div>
   </header>
 
-  <main class="docs-shell">
+  <main id="main" class="docs-shell">
     <div class="container">
       <article class="docs-article">
         <p class="docs-breadcrumb">
@@ -70,24 +109,15 @@
         <h1>Meshtastic Basics</h1>
 
         <p class="docs-lede">
-          Meshtastic is a popular way to get started with LoRa mesh messaging.
-          Hampden County Mesh leans toward MeshCore, but Meshtastic is still
-          active, useful, and worth understanding.
+          Meshtastic is a popular way to learn LoRa mesh messaging. HCM’s main direction is MeshCore, but Meshtastic is still useful, welcome, and worth understanding if you already have a device or want to compare both systems.
         </p>
-
-        <div class="docs-note">
-          Meshtastic is useful for learning, local communication practice, and
-          off-grid messaging, but it is not an emergency service, not a
-          replacement for 911, and not a guarantee of coverage.
-        </div>
 
         <div class="hero-actions">
           <a class="btn secondary" href="#what-meshtastic-is">What It Is</a>
           <a class="btn secondary" href="#how-it-fits">How It Fits</a>
-          <a class="btn secondary" href="#terms">Common Terms</a>
-          <a class="btn secondary" href="#before-buying">Before Buying</a>
-          <a class="btn secondary" href="#using-your-node">Using Your Node</a>
-          <a class="btn secondary" href="#maps-mqtt">Maps and MQTT</a>
+          <a class="btn secondary" href="#starting">Starting</a>
+          <a class="btn secondary" href="#settings">Settings</a>
+          <a class="btn secondary" href="#mqtt">MQTT</a>
           <a class="btn secondary" href="#privacy">Privacy</a>
         </div>
 
@@ -95,28 +125,18 @@
           <h2>What Meshtastic is</h2>
 
           <p>
-            Meshtastic is open-source firmware and software for small LoRa radio
-            devices. It lets supported devices send text messages and basic data
-            over radio without relying on cell service or normal internet.
+            Meshtastic is open-source firmware and software for small LoRa radio devices. It lets supported devices send text messages and basic data over radio without relying on cell service or normal internet.
           </p>
 
           <p>
-            Many people first learn about mesh radio through Meshtastic because
-            the apps are familiar, many devices are available, and there are
-            active users in many places.
-          </p>
-
-          <p>
-            For current device support, apps, flashing instructions, and
-            documentation, use the official Meshtastic site.
+            Many people first learn about mesh radio through Meshtastic because the apps are familiar, the device ecosystem is large, and there are active users in many places.
           </p>
 
           <div class="resource-grid">
             <a class="resource-card action-card" href="https://meshtastic.org/" target="_blank" rel="noopener noreferrer">
               <h3>Meshtastic</h3>
               <p>
-                Official Meshtastic site, documentation, apps, and hardware
-                information.
+                Official Meshtastic site, documentation, apps, and project information.
               </p>
               <span class="card-link">Visit Meshtastic →</span>
             </a>
@@ -124,265 +144,157 @@
             <a class="resource-card action-card" href="https://meshtastic.org/docs/getting-started/" target="_blank" rel="noopener noreferrer">
               <h3>Getting Started Docs</h3>
               <p>
-                Official Meshtastic getting-started documentation.
+                Official setup path for new Meshtastic users.
               </p>
               <span class="card-link">Open docs →</span>
             </a>
 
-            <a class="resource-card action-card" href="https://meshtastic.org/docs/hardware/" target="_blank" rel="noopener noreferrer">
-              <h3>Hardware Docs</h3>
+            <a class="resource-card action-card" href="https://meshtastic.org/docs/hardware/devices/" target="_blank" rel="noopener noreferrer">
+              <h3>Supported Devices</h3>
               <p>
-                Official hardware information for supported Meshtastic devices.
+                Official supported hardware overview.
               </p>
-              <span class="card-link">View hardware →</span>
+              <span class="card-link">View devices →</span>
             </a>
           </div>
         </section>
 
         <section class="docs-section" id="how-it-fits">
-          <h2>How it fits with Hampden County Mesh</h2>
+          <h2>How it fits with HCM</h2>
 
           <p>
-            MeshCore is the main focus here because many surrounding mesh
-            communities are using it too. That makes it easier to understand
-            regional activity, follow useful examples, and build on what is
-            already happening around Western Massachusetts, Connecticut, and
-            nearby areas.
+            Hampden County Mesh leans toward MeshCore because that is the direction we are building around locally: regional settings, fixed sites, observers, maps, and nearby MeshCore activity.
           </p>
 
           <p>
-            Meshtastic is still active and useful. If you already have a
-            Meshtastic device, it can still teach you a lot about LoRa range,
-            antennas, node placement, battery life, firmware, maps, telemetry,
-            and what your location can hear.
+            Meshtastic still has value here. It is useful for learning how LoRa behaves, testing antennas and placement, comparing devices, and understanding how maps and node visibility can be misunderstood.
           </p>
 
           <p>
-            You do not need to choose one system before joining the Discord. If
-            you have a Meshtastic device, ask about it. If you are deciding what
-            to buy, ask first so people nearby can tell you what they are using.
+            You do not need to pick a side before joining the Discord. If you have Meshtastic hardware, ask about it. If you are starting from scratch and want to follow the HCM direction, start with MeshCore.
+          </p>
+        </section>
+
+        <section class="docs-section" id="starting">
+          <h2>How to start</h2>
+
+          <p>
+            Start with one normal Meshtastic node. Avoid building complicated infrastructure before you know what your location can hear.
+          </p>
+
+          <ol>
+            <li>Use supported hardware.</li>
+            <li>Follow the official Meshtastic getting-started docs.</li>
+            <li>Use the HCM recommended Meshtastic starting settings.</li>
+            <li>Use a clear node name that does not expose private information.</li>
+            <li>Place the device somewhere reasonable, such as near a window.</li>
+            <li>Ask in Discord if you are unsure what you are seeing.</li>
+          </ol>
+
+          <p>
+            For antennas, placement, mobile use, wardriving, maps, and practical setup choices, use <a href="/guides/node-setups.html">Node Setups</a>.
+          </p>
+        </section>
+
+        <section class="docs-section" id="settings">
+          <h2>Use simple starting settings</h2>
+
+          <p>
+            For HCM, Meshtastic should stay simple at first: United States region, LongFast/default channel behavior, normal public defaults, and the <code>CLIENT</code> role for most users.
+          </p>
+
+          <p>
+            Do not begin with router roles, repeater roles, custom channel plans, or MQTT unless you know why you are using them.
+          </p>
+
+          <p>
+            The current local starting point is kept here:
+          </p>
+
+          <p>
+            <a class="btn primary" href="/guides/recommended-settings.html#meshtastic">Meshtastic Recommended Settings</a>
           </p>
         </section>
 
         <section class="docs-section" id="meshcore-comparison">
-          <h2>Meshtastic and MeshCore</h2>
+          <h2>Meshtastic and MeshCore are different</h2>
 
           <p>
-            Meshtastic and MeshCore both use LoRa radios, but they are not the
-            same system. They have different apps, firmware, settings, device
-            roles, and network behavior.
+            Meshtastic and MeshCore both use LoRa radios, but they are not the same system. They have different apps, firmware, settings, roles, and network behavior.
           </p>
 
           <p>
-            That said, many radio lessons apply to both. A node still benefits
-            from good placement. Terrain still matters. Antennas still matter.
-            Maps and dashboards still need context.
-          </p>
-
-          <p>
-            If you are new and starting from scratch, MeshCore is the local
-            focus. If you already own Meshtastic hardware, it is still worth
-            learning from.
+            The radio lessons carry over. Height matters, placement matters, terrain matters, antennas matter, and a map point does not automatically prove direct radio range from where you are.
           </p>
         </section>
 
-        <section class="docs-section" id="terms">
-          <h2>Common Meshtastic terms</h2>
-
-          <div class="docs-card-grid">
-            <div class="docs-card">
-              <h3>Node</h3>
-              <p>
-                A Meshtastic device on the mesh. It may be portable, fixed,
-                carried in a bag, used in a vehicle, or left running at home.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>Channel</h3>
-              <p>
-                A set of settings that lets devices talk to each other.
-                Meshtastic has default channels, and people can also create
-                shared or private channels.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>Role</h3>
-              <p>
-                A device behavior setting. Some roles are meant for normal use,
-                while others may be used for relaying, routing, tracking, or
-                special setups.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>MQTT</h3>
-              <p>
-                An internet-connected message system that Meshtastic can use in
-                some setups. MQTT is not the same thing as direct radio mesh.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>Telemetry</h3>
-              <p>
-                Status information from a device, such as battery, location,
-                environment data, or other device reports.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>Map</h3>
-              <p>
-                A display of nodes, locations, or observed activity. A map point
-                does not always prove direct radio range from where you are.
-              </p>
-            </div>
-          </div>
+        <section class="docs-section" id="mqtt">
+          <h2>Maps and MQTT</h2>
 
           <p>
-            For more terms, use the <a href="/guides/glossary.html">Glossary</a>.
-          </p>
-        </section>
-
-        <section class="docs-section" id="local-matters">
-          <h2>What matters locally</h2>
-
-          <p>
-            Hampden County terrain can make radio behave differently from place
-            to place. Dense neighborhoods, wooded hills, old buildings, river
-            corridors, farms, parks, and high spots like Mount Tom all affect
-            what a small LoRa radio can hear.
+            Meshtastic maps and MQTT can be useful, but they are easy to misread. A device appearing on a map does not always mean it is reachable by direct local radio from your location.
           </p>
 
           <p>
-            Sometimes moving a device near a window helps. Sometimes height
-            matters more than power. Sometimes a quiet location works better than
-            a busier one. Local radio behavior is shaped by the real terrain,
-            buildings, antennas, settings, and nearby activity.
+            Internet-connected systems, MQTT, privacy settings, delayed data, and device roles can all affect what you see. For normal beginner use, leave MQTT off and focus on local radio first.
+          </p>
+
+          <p>
+            For LoRa configuration details, use the official Meshtastic LoRa configuration documentation.
+          </p>
+
+          <p>
+            <a class="btn secondary" href="https://meshtastic.org/docs/configuration/radio/lora/" target="_blank" rel="noopener noreferrer">Open LoRa Config Docs</a>
           </p>
         </section>
 
         <section class="docs-section" id="before-buying">
-          <h2>Before buying a Meshtastic device</h2>
+          <h2>Before buying hardware</h2>
 
           <p>
-            Meshtastic supports many devices, but not every device is equally
-            good for every use. Think about how you want to use it before buying.
+            A device that fits how you will actually use it is better than a device that looks good on paper but never gets used.
           </p>
 
-          <ul>
-            <li>
-              For learning at home, a simple supported board may be enough.
-            </li>
-            <li>
-              For carrying around, think about battery life, screen, case,
-              antenna, Bluetooth/app support, and how you will charge it.
-            </li>
-            <li>
-              For a fixed node, think about power, safe placement, heat, antenna
-              location, and whether it can stay running.
-            </li>
-            <li>
-              For outdoor use, think about weatherproofing, mounting, power,
-              access, permission, and maintenance.
-            </li>
-            <li>
-              For map or MQTT use, think carefully about privacy and whether
-              location sharing is appropriate.
-            </li>
-          </ul>
+          <div class="basics-grid">
+            <div class="basics-card">
+              <span class="label">Home use</span>
+              <h3>Learning at a desk or window</h3>
+              <p>
+                A simple supported device may be enough if you mainly want to learn the app and see what is nearby.
+              </p>
+            </div>
 
-          <p>
-            A device that fits how you will actually use it is better than a
-            device that looks good on paper but never gets used.
-          </p>
+            <div class="basics-card">
+              <span class="label">Portable use</span>
+              <h3>Carrying it around</h3>
+              <p>
+                Think about battery life, case, antenna, screen, Bluetooth/app support, and charging.
+              </p>
+            </div>
 
-          <p>
-            <a class="btn primary" href="/join/getting-started/">Ask Before Buying</a>
-          </p>
-        </section>
+            <div class="basics-card">
+              <span class="label">Fixed use</span>
+              <h3>Leaving it running</h3>
+              <p>
+                Think about power, heat, safe placement, antenna location, and whether it can stay on reliably.
+              </p>
+            </div>
 
-        <section class="docs-section" id="first-setup">
-          <h2>First setup checklist</h2>
-
-          <p>
-            Use the official Meshtastic documentation for exact setup steps. This
-            checklist is here to keep the first local use simple.
-          </p>
-
-          <ul>
-            <li>Use hardware that is documented and supported for Meshtastic.</li>
-            <li>Use the official Meshtastic getting-started docs.</li>
-            <li>Make sure your device is appropriate for your country or region.</li>
-            <li>Pick a clear node name that does not expose private information.</li>
-            <li>Start with basic settings before changing advanced options.</li>
-            <li>Place the device somewhere reasonable, such as near a window.</li>
-            <li>Ask in Discord if you are unsure what you are seeing.</li>
-            <li>Change one thing at a time and try again.</li>
-            <li>Keep track of what changed and what happened.</li>
-          </ul>
-        </section>
-
-        <section class="docs-section" id="using-your-node">
-          <h2>Using your node</h2>
-
-          <p>
-            After your device is running, keep the first use simple.
-          </p>
-
-          <ol>
-            <li>Put the node near a window or another reasonable location.</li>
-            <li>Leave it powered long enough to hear normal activity.</li>
-            <li>Send a short message if that makes sense for your setup.</li>
-            <li>Ask in Discord if you are unsure what you are seeing.</li>
-            <li>Move the node once and see whether anything changes.</li>
-            <li>Keep location details general when talking publicly.</li>
-          </ol>
-
-          <p>
-            Do not assume silence means the device is broken. Quiet areas,
-            placement, timing, antenna issues, settings, and nearby activity can
-            all affect what you see.
-          </p>
-
-          <p>
-            Read <a href="/guides/using-your-node.html">Using Your Node</a>
-            for more practical examples.
-          </p>
-        </section>
-
-        <section class="docs-section" id="maps-mqtt">
-          <h2>Meshtastic maps and MQTT</h2>
-
-          <p>
-            Meshtastic maps can be useful, but they can also be misunderstood.
-            A device appearing on a map does not always mean it is reachable by
-            local radio from where you are.
-          </p>
-
-          <p>
-            Internet-connected systems, MQTT, delayed data, privacy settings,
-            device roles, and configuration can all affect what you see. When
-            thinking about local radio performance, be clear about whether
-            something was heard over LoRa radio or seen through an internet-
-            connected path.
-          </p>
-
-          <p>
-            For normal local use, the most useful question is usually simple:
-            what can your device hear from where it is right now, and can someone
-            nearby hear you back?
-          </p>
+            <div class="basics-card">
+              <span class="label">Advanced use</span>
+              <h3>Outdoor, router, MQTT, or map use</h3>
+              <p>
+                Ask first. Site quality, privacy, and configuration matter more than just owning the hardware.
+              </p>
+            </div>
+          </div>
         </section>
 
         <section class="docs-section" id="privacy">
-          <h2>Privacy and safety habits</h2>
+          <h2>Privacy basics</h2>
 
           <p>
-            Mesh radio can be useful to experiment with, but you should still
-            think before posting or broadcasting personal details.
+            Meshtastic can expose more than people expect through node names, map settings, screenshots, telemetry, position sharing, and MQTT.
           </p>
 
           <ul>
@@ -391,85 +303,48 @@
             <li>Be careful with exact home node locations on public maps.</li>
             <li>Do not share someone else’s setup details without permission.</li>
             <li>Check screenshots for coordinates, private messages, names, or channel details.</li>
-            <li>Check photos for addresses, license plates, screens, reflections, and EXIF metadata.</li>
-            <li>Do not assume every message or map point is managed by one group.</li>
-            <li>Do not treat mesh radio as an emergency service or replacement for 911.</li>
+            <li>Confusing MQTT or internet-connected activity with direct radio results is a common mistake.</li>
           </ul>
 
           <p>
-            Read <a href="/guides/sharing-safely.html">Sharing Safely</a>
-            before posting public information, screenshots, photos, or map results.
+            Read <a href="/guides/sharing-safely.html">Sharing Safely</a> before posting screenshots, photos, map results, or setup details.
           </p>
-        </section>
-
-        <section class="docs-section" id="common-mistakes">
-          <h2>Common mistakes</h2>
-
-          <ul>
-            <li>Buying hardware before deciding how you want to use it.</li>
-            <li>Changing advanced role, channel, or radio settings too quickly.</li>
-            <li>Assuming no replies means the device is broken.</li>
-            <li>Assuming a map point proves direct radio range.</li>
-            <li>Publishing exact private locations when a general area would be enough.</li>
-            <li>Confusing MQTT or internet-connected activity with direct radio results.</li>
-            <li>Calling local use complete after only one result.</li>
-          </ul>
         </section>
 
         <section class="docs-section" id="what-to-read-next">
           <h2>What to read next</h2>
 
           <div class="resource-grid">
-            <a class="resource-card action-card" href="/guides/getting-started.html">
-              <h3>Getting Started</h3>
+            <a class="resource-card action-card" href="/guides/recommended-settings.html">
+              <h3>Recommended Settings</h3>
               <p>
-                Start here if you are new to MeshCore, Meshtastic, or local mesh
-                radio.
+                Check the current HCM Meshtastic starting settings before troubleshooting.
               </p>
-              <span class="card-link">Start here →</span>
+              <span class="card-link">View settings →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/node-setups.html">
+              <h3>Node Setups</h3>
+              <p>
+                Learn about personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, placement, maps, and wardriving.
+              </p>
+              <span class="card-link">Read node setups →</span>
             </a>
 
             <a class="resource-card action-card" href="/guides/meshcore-basics.html">
               <h3>MeshCore Basics</h3>
               <p>
-                Learn why Hampden County Mesh leans toward MeshCore and what the
-                common MeshCore device roles mean.
+                Learn why HCM leans toward MeshCore and how it differs from Meshtastic.
               </p>
               <span class="card-link">Read MeshCore basics →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/nodes-repeaters-observers.html">
-              <h3>Nodes, Repeaters, and Observers</h3>
+            <a class="resource-card action-card" href="/guides/discord.html">
+              <h3>Discord</h3>
               <p>
-                Learn common device roles and how they apply across local mesh use.
+                Learn how the Discord is used for setup help, questions, local testing, and community coordination.
               </p>
-              <span class="card-link">Learn device roles →</span>
-            </a>
-
-            <a class="resource-card action-card" href="/guides/using-your-node.html">
-              <h3>Using Your Node</h3>
-              <p>
-                Practical first steps for using a node, improving placement, and
-                understanding what affects radio range.
-              </p>
-              <span class="card-link">Read the guide →</span>
-            </a>
-
-            <a class="resource-card action-card" href="/guides/radio-aids.html">
-              <h3>Radio Aids</h3>
-              <p>
-                Simple references and checklists for practical radio use.
-              </p>
-              <span class="card-link">Open radio aids →</span>
-            </a>
-
-            <a class="resource-card action-card" href="/join/getting-started/">
-              <h3>Ask the Community</h3>
-              <p>
-                Join the Discord to ask questions, get help with setup, and meet
-                others interested in mesh radio.
-              </p>
-              <span class="card-link">Join Discord →</span>
+              <span class="card-link">Read Discord guide →</span>
             </a>
           </div>
         </section>
@@ -478,13 +353,11 @@
           <h2>Ask the community</h2>
 
           <p>
-            If you already have a Meshtastic device, or you are deciding whether
-            to buy one, the Discord is a good place to ask questions and get help
-            from people nearby.
+            If you already have a Meshtastic device, or you are deciding whether to buy one, the Discord is a good place to ask questions and get help from people nearby.
           </p>
 
           <p>
-            <a class="btn primary" href="/join/getting-started/">Join Discord</a>
+            <a class="btn primary" href="/join/" data-join-source="meshtastic-basics-bottom">Join Discord</a>
           </p>
         </section>
       </article>
@@ -493,21 +366,10 @@
 
   <footer>
     <div class="container">
-      <div class="footer-title">
-        HAMPDEN COUNTY MESH
-      </div>
-
-      <div class="footer-subtitle">
-        MeshCore, Meshtastic, and radio education in Western Massachusetts
-      </div>
-
-      <div class="footer-subtitle">
-        Community education and hobby effort. Not an emergency service or a replacement for 911.
-      </div>
-
-      <div class="footer-subtitle">
-        Last Updated: <span id="last-updated">Loading...</span>
-      </div>
+      <div class="footer-title">HAMPDEN COUNTY MESH</div>
+      <div class="footer-subtitle">MeshCore, Meshtastic, maps, setup help, and local mesh networking in Western Massachusetts.</div>
+      <div class="footer-subtitle">Responsible use, privacy, and practical limits are covered in the guide library.</div>
+      <div class="footer-subtitle">Last Updated: <span id="last-updated">Loading...</span></div>
     </div>
   </footer>
 

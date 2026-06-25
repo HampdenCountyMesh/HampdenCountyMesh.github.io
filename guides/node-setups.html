@@ -1,354 +1,483 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Node Setups | Hampden County Mesh</title>
+  <meta name="description" content="A practical guide to MeshCore and Meshtastic node setups, including personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, power, placement, wardriving, maps, and troubleshooting.">
 
-  <title>Documenting a Node | Hampden County Mesh</title>
-  <meta
-    name="description"
-    content="A practical guide for documenting mesh nodes, repeaters, observers, antennas, firmware, placement, maintenance, signal checks, and local notes for Hampden County Mesh."
-  >
-<!-- Social preview / Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Hampden County Mesh">
-<meta property="og:title" content="Hampden County Mesh">
-<meta property="og:description" content="A local community project for mesh networking, radio learning, field testing, and practical communications across Hampden County, Massachusetts.">
-<meta property="og:url" content="https://hampdencountymesh.org/">
-<meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+  <link rel="canonical" href="https://hampdencountymesh.org/guides/node-setups.html">
 
-<!-- Twitter / X preview -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hampden County Mesh">
-<meta name="twitter:description" content="A local community project for mesh networking, radio learning, field testing, and practical communications across Hampden County, Massachusetts.">
-<meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
-<meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Hampden County Mesh">
+  <meta property="og:title" content="Node Setups | Hampden County Mesh">
+  <meta property="og:description" content="A practical guide to MeshCore and Meshtastic node setups, including personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, power, placement, wardriving, maps, and troubleshooting.">
+  <meta property="og:url" content="https://hampdencountymesh.org/guides/node-setups.html">
+  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Node Setups | Hampden County Mesh">
+  <meta name="twitter:description" content="A practical guide to MeshCore and Meshtastic node setups, including personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, power, placement, wardriving, maps, and troubleshooting.">
+  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
+  <link rel="icon" href="/assets/images/social/hcm-logo-900.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+
+  <style>
+    .discord-nav-button svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 22px 0;
+    }
+
+    .setup-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(157, 175, 136, 0.08), transparent 35%),
+        linear-gradient(180deg, rgba(24, 22, 16, 0.96), rgba(13, 12, 9, 0.96));
+    }
+
+    .setup-card h3 {
+      margin-top: 0;
+    }
+
+    .setup-card .label {
+      display: inline-flex;
+      margin-bottom: 10px;
+      color: var(--green);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .simple-checklist {
+      border: 1px solid rgba(255, 179, 71, 0.14);
+      border-radius: 16px;
+      padding: 18px;
+      background: rgba(0, 0, 0, 0.16);
+      margin: 20px 0;
+    }
+
+    .simple-checklist h3 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 900px) {
+      .setup-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="noise"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="noise" aria-hidden="true"></div>
 
   <header>
     <div class="container">
       <a class="brand" href="/" aria-label="Hampden County Mesh home">
-        <span class="brand-icon" aria-hidden="true">📡</span>
+        <span class="brand-icon" aria-hidden="true">⌁</span>
         <span>HAMPDEN COUNTY MESH</span>
       </a>
 
-      <nav>
+      <nav aria-label="Primary navigation">
         <a href="/">Home</a>
-        <a href="/about.html">About</a>
-        <a href="/guides/">Guides</a>
+        <a href="/guides/" aria-current="page">Guides</a>
         <a href="/coverage.html">Coverage</a>
-        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
-          <img src="/assets/icons/discord-symbol-white.svg" alt="">
+        <a class="discord-nav-button" href="/join/" aria-label="Join the Discord" data-join-source="nav">
+          <svg viewBox="0 0 127.14 96.36" aria-hidden="true" focusable="false">
+            <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21A105.73,105.73,0,0,0,32.71,96.36a77.7,77.7,0,0,0,6.89-11.11,68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.35,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.4,2.67,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.2C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+          </svg>
         </a>
       </nav>
     </div>
   </header>
 
-  <main class="docs-shell">
+  <main id="main" class="docs-shell">
     <div class="container">
       <article class="docs-article">
         <p class="docs-breadcrumb">
-          <a href="/guides/">Guides</a> / Documenting a Node
+          <a href="/guides/">Guides</a> / Node Setups
         </p>
 
-        <h1>Documenting a Node</h1>
+        <h1>Node Setups</h1>
 
         <p class="docs-lede">
-          A node is more useful when people understand what it is, what role it
-          plays, how it is powered, where it generally operates, and what it can
-          hear. Good notes turn one device into useful local knowledge.
+          This is the practical node guide for HCM. It covers the common ways people use MeshCore and Meshtastic nodes: personal use, fixed locations, mobile use, repeaters, observers, placement, antennas, wardriving, maps, and basic troubleshooting.
         </p>
 
-        <div class="docs-note">
-          Do not publish private addresses, exact private coordinates, keys,
-          passwords, broker credentials, Wi-Fi details, private admin URLs, or
-          sensitive locations. For public notes, a general area is usually enough.
-        </div>
-
         <div class="hero-actions">
-          <a class="btn secondary" href="#why-document">Why Document</a>
-          <a class="btn secondary" href="#what-counts">What Counts</a>
-          <a class="btn secondary" href="#template">Template</a>
-          <a class="btn secondary" href="#public-private">Public vs. Private</a>
-          <a class="btn secondary" href="#maintenance">Maintenance</a>
-          <a class="btn secondary" href="#changes">Changes</a>
+          <a class="btn secondary" href="#start-simple">Start Simple</a>
+          <a class="btn secondary" href="#setup-types">Setup Types</a>
+          <a class="btn secondary" href="#placement">Placement</a>
+          <a class="btn secondary" href="#wardriving">Wardriving</a>
+          <a class="btn secondary" href="#maps">Maps</a>
+          <a class="btn secondary" href="#troubleshooting">Troubleshooting</a>
         </div>
 
-        <section class="docs-section" id="why-document">
-          <h2>Why documentation matters</h2>
+        <section class="docs-section" id="start-simple">
+          <h2>Start with one normal node</h2>
 
           <p>
-            Mesh radio is not just hardware. It is also notes, testing,
-            maintenance, local knowledge, and people who understand how the
-            pieces fit together.
+            A beginner setup should be boring. One device, correct firmware, a working antenna, reasonable power, and the recommended settings are enough to start learning.
           </p>
 
           <p>
-            If a node works well, documentation helps others learn from it. If a
-            node fails, documentation helps people troubleshoot it. If a node
-            moves, changes firmware, changes antenna, or goes offline, notes help
-            explain what changed.
+            Do not begin with a repeater, router role, MQTT, outdoor solar box, custom channel plan, or multiple devices unless you already know what problem you are solving.
           </p>
 
           <p>
-            This is especially useful for fixed nodes, repeaters, observers,
-            solar nodes, community-hosted equipment, and temporary setups used
-            during signal checks.
+            Use <a href="/guides/recommended-settings.html">Recommended Settings</a> before changing advanced behavior.
           </p>
         </section>
 
-        <section class="docs-section" id="what-counts">
-          <h2>What counts as a node?</h2>
+        <section class="docs-section" id="setup-types">
+          <h2>Common setup types</h2>
 
           <p>
-            For documentation, “node” can mean a few different things. The exact
-            label matters less than clearly explaining the role.
+            The exact names vary between MeshCore and Meshtastic, but these are the practical setup types that matter for HCM.
           </p>
 
-          <div class="docs-card-grid">
-            <div class="docs-card">
-              <h3>Portable node</h3>
+          <div class="setup-grid">
+            <div class="setup-card">
+              <span class="label">Beginner</span>
+              <h3>Personal node</h3>
               <p>
-                A handheld, pocket, vehicle, or temporary device used for field
-                testing, messaging, or moving around the county.
+                A normal device you use at home, carry with you, place near a window, bring in a vehicle, or use while testing. This is where most people should start.
               </p>
+              <ul>
+                <li>Good for learning.</li>
+                <li>Good for first messages and tests.</li>
+                <li>Does not need special infrastructure settings.</li>
+              </ul>
             </div>
 
-            <div class="docs-card">
+            <div class="setup-card">
+              <span class="label">Stable location</span>
               <h3>Fixed node</h3>
               <p>
-                A device that usually stays in one place, such as a window,
-                workplace, club, library, garage, or other regular location.
+                A node that usually stays in one place, such as a home, office, garage, workshop, club space, library, or other stable location.
               </p>
+              <ul>
+                <li>Good for consistent local presence.</li>
+                <li>Benefits from good placement and stable power.</li>
+                <li>Should avoid exposing exact private locations publicly.</li>
+              </ul>
             </div>
 
-            <div class="docs-card">
-              <h3>Repeater</h3>
+            <div class="setup-card">
+              <span class="label">Testing</span>
+              <h3>Mobile or field node</h3>
               <p>
-                A device placed or configured to help traffic move farther over
-                radio. Repeaters depend heavily on placement and reliability.
+                A node used from a vehicle, bag, park, hill, sidewalk, event table, or temporary test location.
               </p>
+              <ul>
+                <li>Good for coverage checks.</li>
+                <li>Useful for MeshMapper-style wardriving.</li>
+                <li>Helps show what works from real places.</li>
+              </ul>
             </div>
 
-            <div class="docs-card">
-              <h3>Observer</h3>
+            <div class="setup-card">
+              <span class="label">Infrastructure</span>
+              <h3>Repeater or relay-style node</h3>
               <p>
-                A device that listens for activity and helps document what can
-                be heard from a location. An observer improves visibility, not
-                necessarily radio coverage.
+                A fixed node intended to help other nodes reach farther. This only helps when the location, antenna, power, and settings are suitable.
               </p>
+              <ul>
+                <li>Needs a useful site.</li>
+                <li>Needs stable power.</li>
+                <li>Should not be used casually from poor locations.</li>
+              </ul>
             </div>
 
-            <div class="docs-card">
-              <h3>Room server</h3>
+            <div class="setup-card">
+              <span class="label">Map support</span>
+              <h3>Observer or gateway</h3>
               <p>
-                A MeshCore support role used for room-style messaging and, in
-                some setups, more permanent local infrastructure.
+                A node or support system used to hear activity and contribute to maps or analysis. Future HCM MQTT access should be uplink-only for this kind of use.
               </p>
+              <ul>
+                <li>Helps show observed activity.</li>
+                <li>Does not automatically improve RF coverage.</li>
+                <li>Should be stable and well placed before contributing data.</li>
+              </ul>
             </div>
 
-            <div class="docs-card">
-              <h3>Hub or support system</h3>
+            <div class="setup-card">
+              <span class="label">Backend</span>
+              <h3>Map, broker, or support system</h3>
               <p>
-                A computer, script, logger, broker, dashboard, or other backend
-                system that supports local mesh work.
+                A computer, script, broker, logger, dashboard, or website tool that supports mesh visibility. These are tools around the mesh, not ordinary user node roles.
               </p>
+              <ul>
+                <li>Useful for infrastructure work.</li>
+                <li>Not required for normal users.</li>
+                <li>Should stay separate from beginner setup.</li>
+              </ul>
             </div>
           </div>
         </section>
 
-        <section class="docs-section" id="minimum-info">
-          <h2>Minimum useful information</h2>
-
-          <p>
-            A basic node note does not need to be fancy. Start with the details
-            someone else would need to understand what the device is doing.
-          </p>
-
-          <ul>
-            <li>Node name.</li>
-            <li>Device model.</li>
-            <li>System: MeshCore, Meshtastic, or other.</li>
-            <li>Role: portable node, fixed node, repeater, observer, room server, or hub.</li>
-            <li>General area or type of location.</li>
-            <li>Antenna type and placement.</li>
-            <li>Power source.</li>
-            <li>Firmware or software version, if known.</li>
-            <li>Whether it is indoor, outdoor, mobile, fixed, temporary, or experimental.</li>
-            <li>What it can hear or reach.</li>
-            <li>Known problems or maintenance needs.</li>
-            <li>Last time it was checked.</li>
-          </ul>
-
-          <p>
-            If you do not know every detail, write down what you do know. Partial
-            notes are better than no notes.
-          </p>
-        </section>
-
-        <section class="docs-section" id="template">
-          <h2>Node documentation template</h2>
-
-          <p>
-            Use this as a starting point for Discord posts, GitHub notes, local
-            files, or public documentation.
-          </p>
-
-          <pre><code>Node name:
-System: MeshCore / Meshtastic / Other
-Device model:
-Role: Portable node / Fixed node / Repeater / Observer / Room server / Hub
-Firmware or software:
-General area:
-Placement:
-Antenna:
-Power source:
-Indoor / outdoor:
-Temporary / permanent:
-Maintainer or contact, if safe to share:
-Public ID or callsign, if appropriate:
-What it can hear:
-What can hear it:
-Known issues:
-Last checked:
-Public location safe to share: yes / no
-Private details removed before sharing: yes / no
-Notes:</code></pre>
-
-          <p>
-            Public notes should usually use broad location descriptions. More
-            exact details can be kept privately for trusted maintainers when
-            needed.
-          </p>
-        </section>
-
-        <section class="docs-section" id="public-private">
-          <h2>Public notes vs. private notes</h2>
-
-          <p>
-            Not every useful detail belongs on a public website, public GitHub
-            issue, public Discord channel, or public map. It is fine to keep two
-            versions of a note: a public summary and a private maintenance note.
-          </p>
-
-          <h3>Good public summary</h3>
-
-          <pre><code>Public summary
-Node name:
-General area:
-System:
-Role:
-Device:
-Antenna:
-Power:
-Status:
-What it generally helps with:
-Last checked:
-Notes:</code></pre>
-
-          <h3>Private maintenance note</h3>
-
-          <pre><code>Private maintenance note
-Exact location:
-Access notes:
-Private contact:
-Admin URL:
-Credentials location:
-Broker details:
-Mounting details:
-Repair notes:
-Replacement parts:
-Private details not for public posting:</code></pre>
-
-          <p>
-            The public version helps people learn. The private version helps
-            maintainers keep the device working.
-          </p>
-        </section>
-
         <section class="docs-section" id="meshcore">
-          <h2>MeshCore notes</h2>
+          <h2>MeshCore setup notes</h2>
 
           <p>
-            For MeshCore devices, it is useful to record the role clearly. A
-            companion device, repeater, observer, and room server do not all do
-            the same thing.
+            MeshCore setups can behave differently depending on the role. A companion node, repeater, observer, and room/server-style support setup do not all do the same job.
           </p>
 
           <ul>
-            <li>Device name used on the mesh.</li>
-            <li>Device model, such as a Heltec, Wio Tracker, or SenseCAP device.</li>
-            <li>Role, such as companion, repeater, observer, or room server.</li>
-            <li>Firmware build or version, if known.</li>
-            <li>General radio settings or preset, if useful and safe to share.</li>
-            <li>General area where it is used or heard.</li>
-            <li>Observed activity, reachable nodes, or signal check notes.</li>
-            <li>Whether a result came from direct radio, an observer, MQTT, or a dashboard.</li>
+            <li>Use the local MeshCore settings from <a href="/guides/recommended-settings.html#meshcore">Recommended Settings</a>.</li>
+            <li>Start with a normal personal or companion-style setup before thinking about repeaters.</li>
+            <li>Fixed repeaters should use suitable sites, reliable power, and documented settings.</li>
+            <li>Observers and gateways should be treated as map/activity infrastructure, not normal beginner setup.</li>
           </ul>
-
-          <p>
-            For public-facing notes, avoid going too deep into backend details.
-            Most people need to know what the node does, where it generally
-            helps, and whether it is active or being tested.
-          </p>
         </section>
 
         <section class="docs-section" id="meshtastic">
-          <h2>Meshtastic notes</h2>
+          <h2>Meshtastic setup notes</h2>
 
           <p>
-            For Meshtastic devices, useful notes may include the device model,
-            firmware, region, channel context, antenna, placement, role, and
-            whether it is portable or fixed.
+            Meshtastic is easiest to start with when normal users stay on common defaults. For HCM purposes, most Meshtastic users should use LongFast/default and the CLIENT role.
           </p>
 
           <ul>
-            <li>Device model and firmware version.</li>
-            <li>Region and channel context, if appropriate to share.</li>
-            <li>Role or intended use.</li>
-            <li>Antenna and power setup.</li>
-            <li>General operating area.</li>
-            <li>Known nodes heard or reached.</li>
-            <li>Whether maps, MQTT, or internet-connected paths were involved.</li>
+            <li>Use the local Meshtastic settings from <a href="/guides/recommended-settings.html#meshtastic">Recommended Settings</a>.</li>
+            <li>Use <code>CLIENT</code> for normal handheld, desk, vehicle, or backpack use.</li>
+            <li>Do not use router or repeater roles unless the site is unusually useful and you understand the tradeoffs.</li>
+            <li>Think carefully before publishing exact home locations.</li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="repeaters">
+          <h2>Repeaters and relay-style nodes</h2>
+
+          <p>
+            A repeater is not automatically helpful. A poorly placed repeater can add noise, confusion, or traffic without improving useful coverage.
+          </p>
+
+          <p>
+            A good repeater or relay-style node usually has:
+          </p>
+
+          <ul>
+            <li>A useful location with better-than-average height or line of sight.</li>
+            <li>Stable power.</li>
+            <li>A suitable antenna and feedline setup.</li>
+            <li>Weather protection if installed outdoors.</li>
+            <li>Permission to be installed where it is installed.</li>
+            <li>Documented firmware and settings.</li>
+            <li>Someone responsible for checking it later.</li>
           </ul>
 
           <p>
-            Be thoughtful about privacy settings and public maps. Not every
-            device needs to expose its exact location.
+            For MeshCore repeaters, use the regional radio settings and follow the path-hash note in <a href="/guides/recommended-settings.html#meshcore-notes">Recommended Settings</a>.
           </p>
         </section>
 
-        <section class="docs-section" id="location-privacy">
+        <section class="docs-section" id="observers">
+          <h2>Observers, gateways, and future map contributors</h2>
+
+          <p>
+            An observer or gateway helps show what can be heard from a location. It may feed maps, logs, dashboards, or other activity tools. It does not automatically make the RF mesh stronger.
+          </p>
+
+          <p>
+            HCM plans to follow an uplink-only model for future MQTT and map infrastructure. That means stable observers and gateway nodes may eventually send observed activity to HCM systems, but normal users should not need MQTT to participate.
+          </p>
+
+          <ul>
+            <li>Good observers should be stable and well placed.</li>
+            <li>Observer data should be described as observed activity, not ownership of the whole network.</li>
+            <li>Credentials and broker details should not be posted publicly.</li>
+            <li>Normal users should focus on local settings and real RF testing first.</li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="placement">
+          <h2>Antenna, power, and placement</h2>
+
+          <p>
+            The node itself is only part of the setup. Antenna, power, and placement often decide whether a setup is useful.
+          </p>
+
+          <h3>Antenna</h3>
+          <ul>
+            <li>Use an antenna intended for the correct band.</li>
+            <li>Attach the antenna before transmitting.</li>
+            <li>Keep tiny stock antennas in perspective. They are convenient, not magic.</li>
+            <li>A better antenna helps only when it is matched, mounted, and placed well.</li>
+          </ul>
+
+          <h3>Power</h3>
+          <ul>
+            <li>Battery nodes are useful for testing and portable use.</li>
+            <li>Fixed nodes should have stable power and reasonable cable management.</li>
+            <li>Outdoor or solar nodes need more planning than a desk node.</li>
+            <li>Power problems can look like radio problems.</li>
+          </ul>
+
+          <h3>Placement</h3>
+          <ul>
+            <li>Height usually helps.</li>
+            <li>A window can be better than the middle of a room.</li>
+            <li>Outside can be better than inside, if the setup is safe.</li>
+            <li>Dense buildings, hills, valleys, trees, and terrain all matter.</li>
+            <li>Move away from large metal objects, appliances, and dense walls when practical.</li>
+            <li>Change one thing at a time so the result means something.</li>
+          </ul>
+        </section>
+
+        <section class="docs-section" id="field-testing">
+          <h2>Field testing</h2>
+
+          <p>
+            Field testing means trying a node from real places and seeing what changes. A useful test can be as simple as trying a window, porch, park, hill, parking lot, vehicle, or different part of town.
+          </p>
+
+          <div class="simple-checklist">
+            <h3>Simple field test</h3>
+            <ol>
+              <li>Use the recommended settings.</li>
+              <li>Use a known device and antenna setup.</li>
+              <li>Try a real location with better placement or clearer surroundings.</li>
+              <li>Leave the node running long enough to observe activity.</li>
+              <li>Try one change, such as higher placement or a different antenna.</li>
+              <li>Compare what changed.</li>
+            </ol>
+          </div>
+
+          <p>
+            A quiet result can still be useful. It may mean the location, antenna, settings, timing, or nearby activity were not favorable.
+          </p>
+        </section>
+
+        <section class="docs-section" id="wardriving">
+          <h2>Wardriving</h2>
+
+          <p>
+            Wardriving is useful for mesh testing because it lets you move through an area and compare where activity is heard, where it is quiet, and how terrain or buildings affect reception.
+          </p>
+
+          <p>
+            Use a mapping tool when possible. MeshMapper is the most relevant example for MeshCore coverage mapping and wardriving. The app handles the actual collection; do not try to manually write down results while driving.
+          </p>
+
+          <div class="resource-grid">
+            <a class="resource-card action-card" href="https://wiki.meshmapper.net/" target="_blank" rel="noopener noreferrer">
+              <h3>MeshMapper Wiki</h3>
+              <p>
+                Setup guides, usage details, and documentation for MeshMapper.
+              </p>
+              <span class="card-link">Open wiki →</span>
+            </a>
+
+            <a class="resource-card action-card" href="https://apps.apple.com/us/app/meshmapper/id6758073991" target="_blank" rel="noopener noreferrer">
+              <h3>MeshMapper for iOS</h3>
+              <p>
+                Install MeshMapper from the Apple App Store.
+              </p>
+              <span class="card-link">Open iOS app →</span>
+            </a>
+
+            <a class="resource-card action-card" href="https://play.google.com/store/apps/details?id=net.meshmapper.app" target="_blank" rel="noopener noreferrer">
+              <h3>MeshMapper for Android</h3>
+              <p>
+                Install MeshMapper from Google Play.
+              </p>
+              <span class="card-link">Open Android app →</span>
+            </a>
+          </div>
+
+          <p>
+            Keep it safe. Do not handle devices while driving. Have a passenger manage equipment when possible, keep devices mounted or stored safely, and avoid posting private addresses or exact private locations.
+          </p>
+        </section>
+
+        <section class="docs-section" id="maps">
+          <h2>Maps and observed activity</h2>
+
+          <p>
+            Maps, analyzers, observers, MQTT feeds, logs, and dashboards can be useful, but they can also be misunderstood. A map point or recently observed device does not always mean you can reach that device directly over radio from where you are.
+          </p>
+
+          <p>
+            Some information may come from an observer. Some may come through an internet-connected path. Some may be delayed, incomplete, temporary, mobile, or outside Hampden County.
+          </p>
+
+          <p>
+            Use maps as clues, not guarantees. For normal local use, the useful question is still simple: what can your device hear from where it is right now, and can someone nearby hear you back?
+          </p>
+
+          <p>
+            <a class="btn secondary" href="/coverage.html">Open Coverage</a>
+          </p>
+        </section>
+
+        <section class="docs-section" id="sharing">
+          <h2>Sharing useful results</h2>
+
+          <p>
+            Sharing what worked can help other people, but it does not need to become a formal report. A short Discord post is usually enough.
+          </p>
+
+          <h3>Useful public examples</h3>
+
+          <ul>
+            <li>“MeshMapper showed activity along part of Route 20.”</li>
+            <li>“Window placement worked better than desk placement in Westfield.”</li>
+            <li>“A higher spot worked better than lower ground.”</li>
+            <li>“Outdoor antenna placement helped more than changing power.”</li>
+            <li>“A mobile test was quiet in one area but active closer to higher ground.”</li>
+          </ul>
+
+          <h3>Less useful examples</h3>
+
+          <ul>
+            <li>“It does not work.”</li>
+            <li>“Coverage is bad everywhere.”</li>
+            <li>“This device is the best.”</li>
+            <li>“I saw a map point so I know I can reach it.”</li>
+          </ul>
+
+          <p>
+            Specific, limited observations are more useful than broad claims. Keep exact private locations out of public posts unless there is a clear reason and permission to share them.
+          </p>
+        </section>
+
+        <section class="docs-section" id="privacy">
           <h2>Location and privacy</h2>
 
           <p>
-            Useful documentation does not require exposing private addresses.
-            For most public notes, use a general location description.
+            Useful mesh information does not require exposing private addresses. For most public posts, use a general location description.
           </p>
 
-          <h3>Usually okay for public notes</h3>
+          <h3>Usually okay for public posts</h3>
 
           <ul>
             <li>Town or general area.</li>
             <li>Public landmark area.</li>
-            <li>“Near Mount Tom,” “downtown Westfield,” or “Springfield riverfront.”</li>
-            <li>“Residential window,” “tree-mounted,” “vehicle roof,” or “library parking lot.”</li>
             <li>General terrain notes, such as hill, valley, wooded area, or dense buildings.</li>
+            <li>General placement, such as window, vehicle roof, tree-mounted, or portable test.</li>
+            <li>General result, such as worked, did not work, weak, quiet, active, or reliable.</li>
           </ul>
 
           <h3>Avoid posting publicly</h3>
@@ -364,8 +493,7 @@ Private details not for public posting:</code></pre>
           </ul>
 
           <p>
-            The goal is to understand local coverage and device roles without
-            making people uncomfortable or exposing more than necessary.
+            Read <a href="/guides/sharing-safely.html">Sharing Safely</a> before posting public setup photos, logs, screenshots, or map observations.
           </p>
         </section>
 
@@ -373,22 +501,8 @@ Private details not for public posting:</code></pre>
           <h2>Photos</h2>
 
           <p>
-            Photos can help with antennas, mounting, field checks, and hardware
-            setups. They also need a little care.
+            Photos can help with antennas, mounting, field checks, and hardware setups. They also need a little care.
           </p>
-
-          <h3>Useful photos</h3>
-
-          <ul>
-            <li>Device on a workbench.</li>
-            <li>Antenna setup.</li>
-            <li>Solar or battery setup.</li>
-            <li>General public field check location.</li>
-            <li>Public hilltop, park, or terrain view.</li>
-            <li>Safe example of a clean installation.</li>
-          </ul>
-
-          <h3>Before posting photos</h3>
 
           <ul>
             <li>Check that the photo does not reveal a private address.</li>
@@ -398,159 +512,73 @@ Private details not for public posting:</code></pre>
             <li>Do not include people unless they agreed to be included.</li>
             <li>Use a general caption that explains why the photo matters.</li>
           </ul>
-
-          <p>
-            A good photo should help someone understand the setup, not expose
-            more information than intended.
-          </p>
         </section>
 
-        <section class="docs-section" id="maintenance">
-          <h2>Maintenance notes</h2>
+        <section class="docs-section" id="troubleshooting">
+          <h2>Troubleshooting</h2>
 
           <p>
-            Fixed nodes, repeaters, observers, and support systems need
-            occasional checking. A node that worked last month may not still be
-            working now.
+            If nothing seems to work, check the simple things before assuming the node is broken.
           </p>
 
           <ul>
-            <li>Last date checked.</li>
-            <li>Battery or power status.</li>
-            <li>Weather damage or mounting issues.</li>
-            <li>Firmware changes.</li>
-            <li>Antenna changes.</li>
-            <li>Observed traffic or lack of traffic.</li>
-            <li>Anything that needs repair, replacement, or retesting.</li>
+            <li>Confirm the antenna is attached.</li>
+            <li>Confirm the battery or power source is stable.</li>
+            <li>Confirm the recommended settings match the system you are using.</li>
+            <li>Try a window or outdoor location.</li>
+            <li>Leave the node running long enough to hear normal activity.</li>
+            <li>Restart the app or device if the connection is acting strange.</li>
+            <li>Ask in Discord with device model, system, settings, antenna, and general area.</li>
           </ul>
-
-          <pre><code>Maintenance note
-Node name:
-Date checked:
-Checked by:
-Status: active / weak / offline / unknown
-Power:
-Antenna:
-Firmware:
-What was heard:
-What changed:
-Needs attention:
-Private details removed before sharing: yes / no
-Notes:</code></pre>
-
-          <p>
-            Maintenance notes help prevent “mystery infrastructure” where nobody
-            knows what is still online, who maintains it, or what changed.
-          </p>
         </section>
 
-        <section class="docs-section" id="changes">
-          <h2>Change log</h2>
-
-          <p>
-            A simple change log makes troubleshooting easier. If a node worked
-            before and stopped working later, the change log may explain why.
-          </p>
-
-          <pre><code>Node change log
-Date:
-Node name:
-Changed by:
-What changed:
-Reason for change:
-Before result:
-After result:
-Keep change or revert:
-Follow-up needed:
-Private details removed before sharing: yes / no
-Notes:</code></pre>
-
-          <p>
-            Useful changes to record include firmware updates, antenna swaps,
-            moving the device, changing power, weather damage, replacing cables,
-            changing settings, or moving between indoor and outdoor placement.
-          </p>
-        </section>
-
-        <section class="docs-section" id="sharing">
-          <h2>Sharing node notes</h2>
-
-          <p>
-            Node notes can be shared in Discord, kept in GitHub documentation,
-            saved locally, or summarized on public coverage pages.
-          </p>
-
-          <p>
-            Keep public notes readable. Deep technical logs can be useful, but
-            most visitors need a plain summary first: what the node is, what role
-            it plays, and whether it helps local mesh use.
-          </p>
+        <section class="docs-section" id="what-to-read-next">
+          <h2>What to read next</h2>
 
           <div class="resource-grid">
-            <a class="resource-card action-card" href="/guides/nodes-repeaters-observers.html">
-              <h3>Nodes, Repeaters, and Observers</h3>
+            <a class="resource-card action-card" href="/guides/recommended-settings.html">
+              <h3>Recommended Settings</h3>
               <p>
-                Learn the common device roles and how they fit together.
+                Check MeshCore and Meshtastic starting settings before troubleshooting.
               </p>
-              <span class="card-link">Learn device roles →</span>
+              <span class="card-link">View settings →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/coverage-and-signal-checks.html">
-              <h3>Coverage and Signal Checks</h3>
+            <a class="resource-card action-card" href="/guides/meshcore-basics.html">
+              <h3>MeshCore Basics</h3>
               <p>
-                Learn how to turn local testing into useful notes.
+                Learn how MeshCore fits into HCM and nearby regional mesh work.
               </p>
-              <span class="card-link">Read signal check guide →</span>
+              <span class="card-link">Read MeshCore basics →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/operating-aids.html">
-              <h3>Operating Aids</h3>
+            <a class="resource-card action-card" href="/guides/sharing-safely.html">
+              <h3>Sharing Safely</h3>
               <p>
-                Use templates for field notes, signal checks, wardriving, and
-                setup notes.
+                Learn how to share useful observations without exposing private details.
               </p>
-              <span class="card-link">Open operating aids →</span>
+              <span class="card-link">Read sharing guide →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/contributing-notes.html">
-              <h3>Contributing Notes</h3>
+            <a class="resource-card action-card" href="/coverage.html">
+              <h3>Coverage</h3>
               <p>
-                Learn what is useful to share and what should stay private.
+                Open the Hampden County map, observed-activity status, and coverage notes.
               </p>
-              <span class="card-link">Read note guidelines →</span>
+              <span class="card-link">Open coverage →</span>
             </a>
           </div>
-        </section>
-
-        <section class="docs-section" id="good-first-goals">
-          <h2>Good first goals</h2>
-
-          <ul>
-            <li>Write a short note for one device you already use.</li>
-            <li>Add the model, role, antenna, power, and general location.</li>
-            <li>Record the last time it was checked.</li>
-            <li>Share one useful signal result.</li>
-            <li>Take one safe, non-private photo of the setup.</li>
-            <li>Update the note when the device moves, changes antenna, or changes firmware.</li>
-          </ul>
-
-          <p>
-            Start with simple notes. Documentation can get more detailed as the
-            local community learns what is useful.
-          </p>
         </section>
 
         <section class="docs-section" id="ask">
           <h2>Ask the community</h2>
 
           <p>
-            If you are unsure what details are useful, ask in Discord. A rough
-            note can be cleaned up later, and it is better to ask before posting
-            private information.
+            If you are unsure what setup makes sense, ask in Discord before buying more hardware, changing advanced settings, or installing a fixed node.
           </p>
 
           <p>
-            <a class="btn primary" href="/join/getting-started/">Join Discord</a>
+            <a class="btn primary" href="/join/" data-join-source="node-setups-bottom">Join Discord</a>
           </p>
         </section>
       </article>
@@ -559,17 +587,10 @@ Notes:</code></pre>
 
   <footer>
     <div class="container">
-      <div class="footer-title">
-        HAMPDEN COUNTY MESH
-      </div>
-
-      <div class="footer-subtitle">
-        MeshCore, Meshtastic, and local radio in Hampden County
-      </div>
-
-      <div class="footer-subtitle">
-        Last Updated: <span id="last-updated">Loading...</span>
-      </div>
+      <div class="footer-title">HAMPDEN COUNTY MESH</div>
+      <div class="footer-subtitle">MeshCore, Meshtastic, maps, setup help, and local mesh networking in Western Massachusetts.</div>
+      <div class="footer-subtitle">Responsible use, privacy, and practical limits are covered in the guide library.</div>
+      <div class="footer-subtitle">Last Updated: <span id="last-updated">Loading...</span></div>
     </div>
   </footer>
 

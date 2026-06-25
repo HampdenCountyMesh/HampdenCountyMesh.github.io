@@ -1,361 +1,405 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guides | Hampden County Mesh</title>
-  <meta
-    name="description"
-    content="Plain-language guides for getting started with MeshCore, Meshtastic, radio basics, and practical off-grid communications in Western Massachusetts."
-  >
+  <meta name="description" content="Focused MeshCore and Meshtastic guides for getting started, recommended settings, node setup, maps, wardriving, and local mesh testing in Hampden County and Western Massachusetts.">
 
-  <!-- Social preview / Open Graph -->
+  <link rel="canonical" href="https://hampdencountymesh.org/guides/">
+
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hampden County Mesh">
   <meta property="og:title" content="Guides | Hampden County Mesh">
-  <meta property="og:description" content="Plain-language guides for getting started with MeshCore, Meshtastic, radio basics, and practical off-grid communications in Western Massachusetts.">
+  <meta property="og:description" content="Focused MeshCore and Meshtastic guides for getting started, recommended settings, node setup, maps, wardriving, and local mesh testing in Hampden County and Western Massachusetts.">
   <meta property="og:url" content="https://hampdencountymesh.org/guides/">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
-  <!-- Twitter / X preview -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Guides | Hampden County Mesh">
-  <meta name="twitter:description" content="Plain-language guides for getting started with MeshCore, Meshtastic, radio basics, and practical off-grid communications in Western Massachusetts.">
+  <meta name="twitter:description" content="Focused MeshCore and Meshtastic guides for getting started, recommended settings, node setup, maps, wardriving, and local mesh testing in Hampden County and Western Massachusetts.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
   <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
+  <link rel="icon" href="/assets/images/social/hcm-logo-900.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+
+  <style>
+    .centered {
+      text-align: center;
+    }
+
+    .narrow {
+      max-width: 980px;
+    }
+
+    .portal-title {
+      max-width: 780px;
+      margin: 0 auto 14px;
+      color: var(--text);
+      font-family: "Special Elite", serif;
+      font-size: clamp(1.9rem, 4vw, 3.25rem);
+      line-height: 1.08;
+    }
+
+    .section-lede {
+      max-width: 740px;
+      margin: 0 auto 28px;
+      color: var(--text-soft);
+      font-size: 1.05rem;
+    }
+
+    .guide-grid {
+      text-align: left;
+    }
+
+    .guide-card.kicker-card {
+      border-color: rgba(255, 179, 71, 0.28);
+      background:
+        radial-gradient(circle at 18% 10%, rgba(255, 179, 71, 0.08), transparent 38%),
+        linear-gradient(180deg, rgba(24, 22, 16, 0.98), rgba(13, 12, 9, 0.98));
+    }
+
+    .guide-card .guide-label {
+      display: inline-flex;
+      margin-bottom: 12px;
+      color: var(--green);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .quick-path {
+      max-width: 880px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 18% 10%, rgba(157, 175, 136, 0.1), transparent 35%),
+        linear-gradient(180deg, rgba(24, 22, 16, 0.96), rgba(13, 12, 9, 0.96));
+      border-radius: 20px;
+      padding: clamp(24px, 5vw, 42px);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+      text-align: center;
+    }
+
+    .quick-path h2 {
+      margin: 0 0 14px;
+      font-family: "Special Elite", serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.1;
+    }
+
+    .quick-path p {
+      max-width: 720px;
+      margin: 0 auto 18px;
+      color: var(--text-soft);
+    }
+
+    .path-steps {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin: 28px 0 0;
+      text-align: left;
+    }
+
+    .path-step {
+      border: 1px solid rgba(255, 179, 71, 0.14);
+      border-radius: 16px;
+      padding: 18px;
+      background: rgba(0, 0, 0, 0.16);
+    }
+
+    .path-step strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .path-step span {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .discord-nav-button svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    @media (max-width: 1000px) {
+      .path-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 800px) {
+      .path-steps {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="noise"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="noise" aria-hidden="true"></div>
 
   <header>
     <div class="container">
       <a class="brand" href="/" aria-label="Hampden County Mesh home">
-        <span class="brand-icon" aria-hidden="true">📡</span>
+        <span class="brand-icon" aria-hidden="true">⌁</span>
         <span>HAMPDEN COUNTY MESH</span>
       </a>
 
-      <nav>
+      <nav aria-label="Primary navigation">
         <a href="/">Home</a>
-        <a href="/guides/">Guides</a>
+        <a href="/guides/" aria-current="page">Guides</a>
         <a href="/coverage.html">Coverage</a>
-        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
-          <img src="/assets/icons/discord-symbol-white.svg" alt="">
+        <a class="discord-nav-button" href="/join/" aria-label="Join the Discord" data-join-source="nav">
+          <svg viewBox="0 0 127.14 96.36" aria-hidden="true" focusable="false">
+            <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21A105.73,105.73,0,0,0,32.71,96.36a77.7,77.7,0,0,0,6.89-11.11,68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.35,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.4,2.67,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.2C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+          </svg>
         </a>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="hero-panel">
-      <div class="frequency-display">
-        GUIDES
-      </div>
+  <main id="main">
+    <section class="hero">
+      <div class="hero-panel">
+        <div class="frequency-display">GUIDES</div>
 
-      <div class="status-line">
-        <span class="status-dot"></span>
-        GET STARTED • MESHCORE • MESHTASTIC • RADIO BASICS
-      </div>
+        <div class="status-line">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>GET STARTED • SETTINGS • MESHCORE • MESHTASTIC</span>
+        </div>
 
-      <h1>
-        GUIDES
-      </h1>
+        <h1>GUIDES</h1>
 
-      <p class="hero-text">
-        Plain-language guides for getting started with MeshCore, Meshtastic,
-        radio basics, and practical off-grid communications.
-      </p>
-
-      <div class="hero-actions">
-        <a class="btn primary" href="/guides/getting-started.html">Get Started</a>
-        <a class="btn secondary" href="/join/getting-started/">Join Discord</a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="section-heading">
-        START HERE
-      </div>
-
-      <div class="resource-grid">
-        <a class="resource-card action-card" href="/guides/what-is-mesh.html">
-          <h3>What Is Mesh?</h3>
-          <p>
-            A plain-language explanation of mesh radio, nodes, repeaters,
-            observers, and how mesh networks work.
-          </p>
-          <span class="card-link">Read the overview →</span>
-        </a>
-
-        <a class="resource-card action-card" href="/guides/getting-started.html">
-          <h3>Getting Started</h3>
-          <p>
-            New to mesh radio? Start with the basic terms, common device roles,
-            and first steps before buying or flashing hardware.
-          </p>
-          <span class="card-link">Start here →</span>
-        </a>
-
-        <a class="resource-card action-card" href="/guides/meshcore-basics.html">
-          <h3>MeshCore Basics</h3>
-          <p>
-            Learn what MeshCore is, how people use it, and what the common
-            MeshCore device roles mean.
-          </p>
-          <span class="card-link">Read MeshCore basics →</span>
-        </a>
-
-        <a class="resource-card action-card" href="/guides/meshtastic-basics.html">
-          <h3>Meshtastic Basics</h3>
-          <p>
-            Learn what Meshtastic is, how it compares to MeshCore, and why it
-            remains useful for local radio users.
-          </p>
-          <span class="card-link">Read Meshtastic basics →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="section-heading">
-        SETUP AND USE
-      </div>
-
-      <div class="resource-grid">
-        <a class="resource-card action-card" href="/guides/nodes-repeaters-observers.html">
-          <h3>Nodes, Repeaters, and Observers</h3>
-          <p>
-            Understand the common roles mesh devices can play and how they fit
-            into MeshCore and Meshtastic networks.
-          </p>
-          <span class="card-link">Learn device roles →</span>
-        </a>
-
-        <a class="resource-card action-card" href="/guides/using-your-node.html">
-          <h3>Using Your Node</h3>
-          <p>
-            Learn practical ways to try a node, improve placement, and understand
-            what affects radio range.
-          </p>
-          <span class="card-link">Read the guide →</span>
-        </a>
-
-        <a class="resource-card action-card" href="/guides/node-setups.html">
-          <h3>Node Setups</h3>
-          <p>
-            Keep useful information about a node, repeater, observer, antenna,
-            power setup, firmware, placement, and maintenance status.
-          </p>
-          <span class="card-link">View node setup guide →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="section-heading">
-        RADIO BASICS
-      </div>
-
-      <div class="resource-grid">
-        <a class="resource-card action-card" href="/guides/radio-basics.html">
-          <h3>Radio Basics</h3>
-          <p>
-            A beginner-friendly overview of FRS, GMRS, MURS, CB, amateur radio,
-            scanners, and how they relate to mesh users.
-          </p>
-          <span class="card-link">Read radio basics →</span>
-        </a>
-
-        <a class="resource-card action-card" href="/radio-reference.html">
-          <h3>Radio Reference</h3>
-          <p>
-            A larger reference page for radio services, licensing notes, official
-            links, and useful terms.
-          </p>
-          <span class="card-link">Open radio reference →</span>
-        </a>
-
-        <a class="resource-card action-card" href="/guides/radio-aids.html">
-          <h3>Radio Aids</h3>
-          <p>
-            Simple checklists and practical references for using radios, avoiding
-            confusion, and keeping useful information organized.
-          </p>
-          <span class="card-link">Open radio aids →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="section-heading">
-        COMMUNITY
-      </div>
-
-      <div class="resource-grid">
-        <a class="resource-card action-card" href="/guides/discord.html">
-          <h3>Discord</h3>
-          <p>
-            Learn how the Discord is used for questions, setup help,
-            announcements, and community coordination.
-          </p>
-          <span class="card-link">Read Discord guide →</span>
-        </a>
-
-        <a class="resource-card action-card" href="/guides/sharing-safely.html">
-          <h3>Sharing Safely</h3>
-          <p>
-            How to share helpful information without posting private details,
-            exact home locations, keys, passwords, or sensitive setup info.
-          </p>
-          <span class="card-link">Read sharing guide →</span>
-        </a>
-
-        <a class="resource-card action-card" href="/guides/hosting-a-meetup.html">
-          <h3>Hosting a Meetup</h3>
-          <p>
-            A practical guide for informal mesh, radio basics, show-and-tell,
-            device setup, or node demo sessions.
-          </p>
-          <span class="card-link">Read hosting guide →</span>
-        </a>
-
-        <a class="resource-card action-card" href="/join/getting-started/">
-          <h3>Ask the Community</h3>
-          <p>
-            Join the Discord to ask questions, get help with setup, talk about
-            devices, and meet others interested in mesh radio.
-          </p>
-          <span class="card-link">Join Discord →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="section-heading">
-        MAPS AND ACTIVITY
-      </div>
-
-      <div class="resource-grid">
-        <a class="resource-card action-card" href="/coverage.html">
-          <h3>Coverage</h3>
-          <p>
-            View the local map, regional activity links, and terrain notes for
-            Hampden County and Western Massachusetts.
-          </p>
-          <span class="card-link">View coverage →</span>
-        </a>
-
-        <a class="resource-card action-card" href="/guides/radio-aids.html">
-          <h3>Radio Aids</h3>
-          <p>
-            Use simple references and checklists for practical radio use,
-            including notes for mobile or drive-around use.
-          </p>
-          <span class="card-link">Open radio aids →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="section-heading">
-        OFFICIAL SITES
-      </div>
-
-      <div class="resource-grid">
-        <a class="resource-card action-card" href="https://meshcore.io/" target="_blank" rel="noopener noreferrer">
-          <h3>MeshCore</h3>
-          <p>
-            Official MeshCore apps, flasher, documentation, and upstream links.
-          </p>
-          <span class="card-link">Visit MeshCore →</span>
-        </a>
-
-        <a class="resource-card action-card" href="https://meshtastic.org/" target="_blank" rel="noopener noreferrer">
-          <h3>Meshtastic</h3>
-          <p>
-            Official Meshtastic documentation, apps, supported hardware, and
-            project information.
-          </p>
-          <span class="card-link">Visit Meshtastic →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="section-heading">
-        WHAT TO READ FIRST
-      </div>
-
-      <div class="community-panel">
-        <p>
-          If you are brand new, start with What Is Mesh? and Getting Started.
-          Then read MeshCore Basics. If you already have a Meshtastic device,
-          read Meshtastic Basics too.
-        </p>
-
-        <p>
-          If you are coming from GMRS, amateur radio, CB, scanners, or another
-          radio background, start with Radio Basics and the Radio Reference.
-        </p>
-
-        <p>
-          You do not need to know everything before joining the Discord. It is
-          fine to show up with basic questions.
+        <p class="hero-text">
+          Focused MeshCore and Meshtastic guides for setup, recommended settings, node use, maps, wardriving, and local mesh activity in Western Massachusetts.
         </p>
 
         <div class="hero-actions">
           <a class="btn primary" href="/guides/getting-started.html">Get Started</a>
-          <a class="btn secondary" href="/join/getting-started/">Join Discord</a>
+          <a class="btn secondary" href="/guides/recommended-settings.html">Recommended Settings</a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section>
+      <div class="container narrow centered">
+        <div class="section-heading">Read first</div>
+        <h2 class="portal-title">Start with the basics, then use the local settings.</h2>
+        <p class="section-lede">
+          Most people should start with one normal node, the recommended local settings, and a few real-world tests from home, a window, a vehicle, a public park, or a nearby high spot.
+        </p>
+
+        <div class="resource-grid guide-grid">
+          <a class="resource-card action-card guide-card kicker-card" href="/guides/getting-started.html">
+            <span class="guide-label">First stop</span>
+            <h3>Getting Started</h3>
+            <p>
+              Choose MeshCore or Meshtastic, understand what you need, and avoid overcomplicating your first setup.
+            </p>
+            <span class="card-link">Start here →</span>
+          </a>
+
+          <a class="resource-card action-card guide-card kicker-card" href="/guides/recommended-settings.html">
+            <span class="guide-label">Settings</span>
+            <h3>Recommended Settings</h3>
+            <p>
+              The canonical HCM quick reference for MeshCore and Meshtastic starting settings in Western Massachusetts.
+            </p>
+            <span class="card-link">View settings →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container narrow centered">
+        <div class="section-heading">Mesh systems</div>
+        <h2 class="portal-title">MeshCore is the main focus. Meshtastic is welcome.</h2>
+        <p class="section-lede">
+          HCM should stay useful to both communities without turning the site into a general radio manual.
+        </p>
+
+        <div class="resource-grid guide-grid">
+          <a class="resource-card action-card guide-card kicker-card" href="/guides/meshcore-basics.html">
+            <span class="guide-label">Primary focus</span>
+            <h3>MeshCore Basics</h3>
+            <p>
+              A short guide to MeshCore, why HCM leans toward it, how to start, and where to find local settings.
+            </p>
+            <span class="card-link">Read MeshCore basics →</span>
+          </a>
+
+          <a class="resource-card action-card guide-card" href="/guides/meshtastic-basics.html">
+            <span class="guide-label">Also supported</span>
+            <h3>Meshtastic Basics</h3>
+            <p>
+              A short guide to Meshtastic, how it fits with HCM, simple starting settings, MQTT cautions, and official resources.
+            </p>
+            <span class="card-link">Read Meshtastic basics →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container narrow centered">
+        <div class="section-heading">Setup, testing, and maps</div>
+        <h2 class="portal-title">Get a node working, then learn what it can hear.</h2>
+        <p class="section-lede">
+          These pages are for practical use: choosing a setup, placing a node well, checking observed activity, and using map tools carefully.
+        </p>
+
+        <div class="resource-grid guide-grid">
+          <a class="resource-card action-card guide-card kicker-card" href="/guides/node-setups.html">
+            <span class="guide-label">Practical setup</span>
+            <h3>Node Setups</h3>
+            <p>
+              Personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, power, placement, wardriving, maps, and troubleshooting.
+            </p>
+            <span class="card-link">Read node setups →</span>
+          </a>
+
+          <a class="resource-card action-card guide-card" href="/coverage.html">
+            <span class="guide-label">Map</span>
+            <h3>Coverage</h3>
+            <p>
+              Open the Hampden County map, observed-activity status, regional links, and coverage notes.
+            </p>
+            <span class="card-link">Open coverage →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container narrow centered">
+        <div class="section-heading">Community</div>
+        <h2 class="portal-title">Ask questions, share useful results, and keep private details private.</h2>
+        <p class="section-lede">
+          The community side should support setup help, local testing, maps, safe screenshots, and practical coordination.
+        </p>
+
+        <div class="resource-grid guide-grid">
+          <a class="resource-card action-card guide-card" href="/guides/discord.html">
+            <span class="guide-label">Discord</span>
+            <h3>Discord Guide</h3>
+            <p>
+              How the Discord is used for setup help, announcements, local testing, maps, and community coordination.
+            </p>
+            <span class="card-link">Read Discord guide →</span>
+          </a>
+
+          <a class="resource-card action-card guide-card" href="/guides/sharing-safely.html">
+            <span class="guide-label">Privacy</span>
+            <h3>Sharing Safely</h3>
+            <p>
+              Share useful mesh observations, screenshots, photos, and map results without exposing private details.
+            </p>
+            <span class="card-link">Read sharing guide →</span>
+          </a>
+
+          <a class="resource-card action-card guide-card" href="/join/" data-join-source="guides-community-card">
+            <span class="guide-label">Help</span>
+            <h3>Ask the Community</h3>
+            <p>
+              Join the Discord to ask setup questions, compare devices, talk through settings, and coordinate local testing.
+            </p>
+            <span class="card-link">Join Discord →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container narrow centered">
+        <div class="section-heading">Official resources</div>
+        <h2 class="portal-title">Use HCM for local context. Use upstream docs for the source of truth.</h2>
+        <p class="section-lede">
+          HCM can help with local settings, maps, setup choices, and community support. Official project documentation is still the best place for firmware, apps, supported hardware, and upstream changes.
+        </p>
+
+        <div class="resource-grid guide-grid">
+          <a class="resource-card action-card guide-card" href="https://meshcore.co.uk/" target="_blank" rel="noopener noreferrer">
+            <span class="guide-label">Official</span>
+            <h3>MeshCore</h3>
+            <p>
+              Official MeshCore site, documentation, apps, firmware, and upstream project links.
+            </p>
+            <span class="card-link">Visit MeshCore →</span>
+          </a>
+
+          <a class="resource-card action-card guide-card" href="https://meshtastic.org/" target="_blank" rel="noopener noreferrer">
+            <span class="guide-label">Official</span>
+            <h3>Meshtastic</h3>
+            <p>
+              Official Meshtastic documentation, apps, supported hardware, firmware, and project information.
+            </p>
+            <span class="card-link">Visit Meshtastic →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="quick-path">
+          <div class="section-heading">Suggested path</div>
+          <h2>Not sure what to read?</h2>
+          <p>
+            This is the shortest route through the site for someone who wants to understand the basics, configure a node, and start testing locally.
+          </p>
+
+          <div class="path-steps">
+            <div class="path-step">
+              <strong>1. Getting Started</strong>
+              <span>Learn what mesh is, choose MeshCore or Meshtastic, and understand what you need for a first node.</span>
+            </div>
+
+            <div class="path-step">
+              <strong>2. Recommended Settings</strong>
+              <span>Use the local starting settings before changing anything advanced.</span>
+            </div>
+
+            <div class="path-step">
+              <strong>3. Node Setups</strong>
+              <span>Learn about placement, antennas, repeaters, observers, maps, wardriving, and troubleshooting.</span>
+            </div>
+
+            <div class="path-step">
+              <strong>4. Discord or Coverage</strong>
+              <span>Ask questions, compare results, or check the map for observed activity and local context.</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="/guides/getting-started.html">Get Started</a>
+            <a class="btn secondary" href="/guides/recommended-settings.html">Recommended Settings</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="container">
-      <div class="footer-title">
-        HAMPDEN COUNTY MESH
-      </div>
-
-      <div class="footer-subtitle">
-        MeshCore, Meshtastic, and radio education in Western Massachusetts
-      </div>
-
-      <div class="footer-subtitle">
-        Community education and hobby effort. Not an emergency service or a replacement for 911.
-      </div>
-
-      <div class="footer-subtitle">
-        Last Updated: <span id="last-updated">Loading...</span>
-      </div>
+      <div class="footer-title">HAMPDEN COUNTY MESH</div>
+      <div class="footer-subtitle">MeshCore, Meshtastic, maps, setup help, and local mesh networking in Western Massachusetts.</div>
+      <div class="footer-subtitle">Responsible use, privacy, and practical limits are covered in the guide library.</div>
+      <div class="footer-subtitle">Last Updated: <span id="last-updated">Loading...</span></div>
     </div>
   </footer>
 

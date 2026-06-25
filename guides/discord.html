@@ -1,66 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Discord | Hampden County Mesh</title>
-  <meta
-    name="description"
-    content="How the Hampden County Mesh Discord is used for questions, setup help, radio discussion, announcements, and community coordination."
-  >
+  <meta name="description" content="How the Hampden County Mesh Discord is used for MeshCore, Meshtastic, setup help, local testing, maps, announcements, and community coordination.">
 
-  <!-- Social preview / Open Graph -->
-  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hampdencountymesh.org/guides/discord.html">
+
+  <meta property="og:type" content="article">
   <meta property="og:site_name" content="Hampden County Mesh">
   <meta property="og:title" content="Discord | Hampden County Mesh">
-  <meta property="og:description" content="How the Hampden County Mesh Discord is used for questions, setup help, radio discussion, announcements, and community coordination.">
+  <meta property="og:description" content="How the Hampden County Mesh Discord is used for MeshCore, Meshtastic, setup help, local testing, maps, announcements, and community coordination.">
   <meta property="og:url" content="https://hampdencountymesh.org/guides/discord.html">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
-  <!-- Twitter / X preview -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Discord | Hampden County Mesh">
-  <meta name="twitter:description" content="How the Hampden County Mesh Discord is used for questions, setup help, radio discussion, announcements, and community coordination.">
+  <meta name="twitter:description" content="How the Hampden County Mesh Discord is used for MeshCore, Meshtastic, setup help, local testing, maps, announcements, and community coordination.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
   <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
+  <link rel="icon" href="/assets/images/social/hcm-logo-900.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+
+  <style>
+    .discord-nav-button svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .docs-action-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin: 22px 0;
+    }
+
+    .docs-action-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(157, 175, 136, 0.08), transparent 35%),
+        linear-gradient(180deg, rgba(24, 22, 16, 0.96), rgba(13, 12, 9, 0.96));
+    }
+
+    .docs-action-card h3 {
+      margin-top: 0;
+    }
+
+    @media (max-width: 900px) {
+      .docs-action-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="noise"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="noise" aria-hidden="true"></div>
 
   <header>
     <div class="container">
       <a class="brand" href="/" aria-label="Hampden County Mesh home">
-        <span class="brand-icon" aria-hidden="true">📡</span>
+        <span class="brand-icon" aria-hidden="true">⌁</span>
         <span>HAMPDEN COUNTY MESH</span>
       </a>
 
-      <nav>
+      <nav aria-label="Primary navigation">
         <a href="/">Home</a>
-        <a href="/guides/">Guides</a>
+        <a href="/guides/" aria-current="page">Guides</a>
         <a href="/coverage.html">Coverage</a>
-        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
-          <img src="/assets/icons/discord-symbol-white.svg" alt="">
+        <a class="discord-nav-button" href="/join/" aria-label="Join the Discord" data-join-source="nav">
+          <svg viewBox="0 0 127.14 96.36" aria-hidden="true" focusable="false">
+            <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21A105.73,105.73,0,0,0,32.71,96.36a77.7,77.7,0,0,0,6.89-11.11,68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.35,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.4,2.67,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.2C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+          </svg>
         </a>
       </nav>
     </div>
   </header>
 
-  <main class="docs-shell">
+  <main id="main" class="docs-shell">
     <div class="container">
       <article class="docs-article">
         <p class="docs-breadcrumb">
@@ -70,21 +99,14 @@
         <h1>Discord</h1>
 
         <p class="docs-lede">
-          The Discord is the people side of Hampden County Mesh. It is where
-          people ask questions, get setup help, talk about devices, discuss local
-          radio, and keep up with community updates.
+          The Discord is the community side of Hampden County Mesh. It is where people ask questions, get setup help, compare devices, talk through local settings, share safe screenshots or results, and keep up with project updates.
         </p>
 
-        <div class="docs-note">
-          The Discord is not an emergency dispatch channel, not a replacement
-          for 911, and not a guaranteed monitored service. It is a community
-          space for learning, practical radio discussion, and local coordination.
-        </div>
-
         <div class="hero-actions">
-          <a class="btn primary" href="/join/">Join Discord</a>
+          <a class="btn primary" href="/join/" data-join-source="discord-guide-top">Join Discord</a>
           <a class="btn secondary" href="#first-post">First Post</a>
-          <a class="btn secondary" href="#asking-for-help">Device Help</a>
+          <a class="btn secondary" href="#asking-for-help">Setup Help</a>
+          <a class="btn secondary" href="#channels">Channels</a>
           <a class="btn secondary" href="#privacy">Privacy</a>
           <a class="btn secondary" href="#conduct">Conduct</a>
         </div>
@@ -93,24 +115,20 @@
           <h2>What the Discord is for</h2>
 
           <p>
-            Hampden County Mesh is about both sides of the network: the radio
-            devices themselves and the people using, learning, and improving
-            them. Discord is where the people side happens.
+            Hampden County Mesh is focused on MeshCore, Meshtastic, local setup help, maps, testing, and practical mesh activity in Western Massachusetts. Discord is where the back-and-forth happens.
           </p>
 
           <p>
-            You do not need to be an expert, own a node, or know the exact
-            terminology before joining. Beginner questions are welcome.
+            You do not need to be an expert, own a node, or know the exact terminology before joining. Beginner questions are welcome.
           </p>
 
           <ul>
-            <li>Ask beginner questions.</li>
-            <li>Get help with MeshCore and Meshtastic devices.</li>
-            <li>Talk about antennas, placement, batteries, firmware, and cases.</li>
-            <li>Discuss what works from general areas without posting private locations.</li>
-            <li>Talk about FRS, GMRS, MURS, CB, amateur radio, and scanners.</li>
-            <li>Suggest places for radio basics, show-and-tell, or mesh learning meetups.</li>
-            <li>Follow website, GitHub, and community updates.</li>
+            <li>Ask beginner questions about MeshCore or Meshtastic.</li>
+            <li>Get help choosing, flashing, or configuring a device.</li>
+            <li>Talk about recommended settings, antennas, placement, batteries, firmware, and cases.</li>
+            <li>Share general-area results without posting private locations.</li>
+            <li>Discuss coverage, observed activity, MeshMapper-style wardriving, maps, and future HCM infrastructure.</li>
+            <li>Follow website, GitHub, Discord, map, and community updates.</li>
           </ul>
         </section>
 
@@ -122,13 +140,11 @@
           </p>
 
           <pre><code>Hi, I’m new here. I’m in the general Hampden County / Western Mass area.
-I’m interested in MeshCore, Meshtastic, radio basics, or getting a device set up.
+I’m interested in MeshCore, Meshtastic, or getting a node set up.
 I do / do not have hardware yet.</code></pre>
 
           <p>
-            Sharing your general area can help people give better advice. You do
-            not need to share a private address. A town, nearby area, or broad
-            region is enough.
+            A town, nearby area, or broad region can help people give better advice. You do not need to share a private address or exact node location.
           </p>
         </section>
 
@@ -136,151 +152,164 @@ I do / do not have hardware yet.</code></pre>
           <h2>How the server is used</h2>
 
           <p>
-            Channel names may change as the server gets adjusted, but the basic
-            use should stay simple.
+            Channel names may change as the server gets adjusted, but the basic use should stay simple.
           </p>
 
           <div class="docs-card-grid">
             <div class="docs-card">
-              <h3>Welcome and rules</h3>
+              <h3>Start here</h3>
               <p>
-                Start here. These channels explain what the server is, what is
-                expected, and how to get oriented.
+                Rules, orientation, onboarding, and first steps for new members.
               </p>
             </div>
 
             <div class="docs-card">
               <h3>Announcements</h3>
               <p>
-                Public updates, website notes, GitHub changes, community updates,
-                and useful announcements from nearby groups or sources.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>MeshCore</h3>
-              <p>
-                MeshCore setup, device roles, flashing questions, observers,
-                repeaters, room servers, brokers, and practical use.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>Meshtastic</h3>
-              <p>
-                Meshtastic devices, app questions, maps, channels, antennas,
-                placement, and how it compares with MeshCore.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>Radio reference</h3>
-              <p>
-                FRS, GMRS, MURS, CB, amateur radio, scanners, licensing
-                questions, operating habits, and local radio knowledge.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>Photos and setups</h3>
-              <p>
-                Useful photos, public setup examples, antenna ideas, device
-                builds, and non-private examples.
+                Public updates, website notes, GitHub changes, community updates, and useful announcements from nearby mesh groups or sources.
               </p>
             </div>
 
             <div class="docs-card">
               <h3>Questions</h3>
               <p>
-                A place for new users to ask what to buy, how to start, what a
-                term means, or why something is not working.
+                A place for new users to ask what to buy, how to start, what a term means, or why something is not working.
               </p>
             </div>
 
             <div class="docs-card">
-              <h3>General discussion</h3>
+              <h3>MeshCore</h3>
               <p>
-                Casual discussion, off-topic chat, and community conversation
-                that still follows the server rules.
+                MeshCore setup, settings, channels, device behavior, observers, repeaters, brokers, and practical use.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Meshtastic</h3>
+              <p>
+                Meshtastic devices, app questions, LongFast/default use, antennas, placement, maps, and comparisons with MeshCore.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Field testing</h3>
+              <p>
+                General-area results, MeshMapper or wardriving discussion, coverage checks, and observations from real locations.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Photos and setups</h3>
+              <p>
+                Safe photos, public setup examples, antenna ideas, device builds, and non-private examples.
+              </p>
+            </div>
+
+            <div class="docs-card">
+              <h3>Infrastructure</h3>
+              <p>
+                Website, GitHub, map planning, observer infrastructure, uplink-only MQTT planning, and future relay integrations.
               </p>
             </div>
           </div>
         </section>
 
         <section class="docs-section" id="asking-for-help">
-          <h2>Asking for device help</h2>
+          <h2>Asking for setup help</h2>
 
           <p>
-            When asking for help with a node or radio, include enough information
-            that someone else can understand the setup.
+            When asking for help with a node, include the basics so people do not have to guess.
           </p>
 
-          <pre><code>Device help request
-System: MeshCore / Meshtastic / Other
+          <pre><code>Setup help request
+System: MeshCore / Meshtastic / Not sure
 Device model:
 Phone or computer:
 Firmware or app version:
 What I am trying to do:
 What already works:
 What is failing:
-Error message or log, if safe to share:
+Error message or screenshot, if safe to share:
 Antenna:
 Power:
 General area, if relevant:
 Private details removed: yes / no</code></pre>
 
           <p>
-            Photos can help, but check them first. Do not post passwords, private
-            keys, broker credentials, Wi-Fi details, private addresses, private
-            messages, or screens with personal information.
+            Photos and screenshots can help, but check them first. Do not post passwords, private keys, broker credentials, Wi-Fi details, private addresses, private messages, or screens with personal information.
           </p>
+
+          <div class="docs-action-grid">
+            <div class="docs-action-card">
+              <h3>Settings issue?</h3>
+              <p>
+                Compare your setup against the HCM recommended settings before changing advanced options.
+              </p>
+              <p>
+                <a class="btn secondary" href="/guides/recommended-settings.html">Recommended Settings</a>
+              </p>
+            </div>
+
+            <div class="docs-action-card">
+              <h3>New device?</h3>
+              <p>
+                Start with the basic path before buying more hardware or changing roles.
+              </p>
+              <p>
+                <a class="btn secondary" href="/guides/getting-started.html">Getting Started</a>
+              </p>
+            </div>
+
+            <div class="docs-action-card">
+              <h3>Range issue?</h3>
+              <p>
+                Check placement, antenna, power, and terrain before assuming the device is broken.
+              </p>
+              <p>
+                <a class="btn secondary" href="/guides/node-setups.html">Node Setups</a>
+              </p>
+            </div>
+          </div>
         </section>
 
         <section class="docs-section" id="local-use">
           <h2>Talking about local use</h2>
 
           <p>
-            It is fine to talk about where a device worked, where it did not
-            work, what antenna you used, or what you changed. Keep public details
-            general unless there is a clear reason to be more specific.
+            It is fine to talk about where a device worked, where it did not work, what antenna you used, or what changed. Keep public details general unless there is a clear reason to be more specific.
           </p>
 
           <p>
-            A useful post can be short:
+            Useful examples are usually short:
           </p>
 
-          <pre><code>General area:
-System: MeshCore / Meshtastic / Other
-Device:
-Antenna:
-Placement:
-What I was trying to do:
-What happened:
-What changed:
-Private details removed: yes / no</code></pre>
+          <ul>
+            <li>“MeshMapper showed activity along part of Route 20.”</li>
+            <li>“Window placement worked better than desk placement in Westfield.”</li>
+            <li>“A higher spot worked better than lower ground.”</li>
+            <li>“Outdoor antenna placement helped more than changing power.”</li>
+            <li>“My device was quiet in one area but active closer to higher ground.”</li>
+          </ul>
 
           <p>
-            A quiet result can still be useful. If nothing worked from one place,
-            that may just mean the location, antenna, settings, timing, or nearby
-            activity were not favorable.
+            A quiet result can still be useful. If nothing worked from one place, that may just mean the location, antenna, settings, timing, or nearby activity were not favorable.
           </p>
 
           <div class="resource-grid">
-            <a class="resource-card action-card" href="/guides/using-your-node.html">
-              <h3>Using Your Node</h3>
+            <a class="resource-card action-card" href="/guides/node-setups.html">
+              <h3>Node Setups</h3>
               <p>
-                Practical first steps for using a node, improving placement, and
-                understanding what affects radio range.
+                Practical guidance for node types, placement, antennas, wardriving, maps, and troubleshooting.
               </p>
-              <span class="card-link">Read the guide →</span>
+              <span class="card-link">Read node setups →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/radio-aids.html">
-              <h3>Radio Aids</h3>
+            <a class="resource-card action-card" href="/coverage.html">
+              <h3>Coverage</h3>
               <p>
-                Simple references and checklists for practical radio use.
+                Open the Hampden County map, observed-activity status, and coverage notes.
               </p>
-              <span class="card-link">Open radio aids →</span>
+              <span class="card-link">Open coverage →</span>
             </a>
           </div>
         </section>
@@ -289,15 +318,11 @@ Private details removed: yes / no</code></pre>
           <h2>Roles and onboarding</h2>
 
           <p>
-            The server may use onboarding questions and roles to help people find
-            the right channels. Roles can show general interests such as MeshCore,
-            Meshtastic, GMRS, FRS, MURS, CB, amateur radio, scanners, or nearby
-            region.
+            The server may use onboarding questions and roles to help people find the right channels. Roles can show general interests such as MeshCore, Meshtastic, mapping, field testing, or a broad region.
           </p>
 
           <p>
-            Region roles are meant to help local discussion. They are not a
-            request for exact locations. A broad area is enough.
+            Region roles are meant to help local discussion. They are not a request for exact locations. A broad area is enough.
           </p>
 
           <ul>
@@ -308,8 +333,7 @@ Private details removed: yes / no</code></pre>
           </ul>
 
           <p>
-            Pick what is useful. You can still participate without turning your
-            profile into a detailed personal map.
+            Pick what is useful. You can still participate without turning your profile into a detailed personal map.
           </p>
         </section>
 
@@ -317,9 +341,7 @@ Private details removed: yes / no</code></pre>
           <h2>Privacy and safety</h2>
 
           <p>
-            Useful information should not come at the cost of privacy. Keep
-            public posts general when private locations or sensitive setup details
-            are involved.
+            Useful information should not come at the cost of privacy. Keep public posts general when private locations or sensitive setup details are involved.
           </p>
 
           <h3>Usually safe to share</h3>
@@ -327,9 +349,10 @@ Private details removed: yes / no</code></pre>
           <ul>
             <li>Town or general area.</li>
             <li>Public park, hill, road corridor, or landmark.</li>
-            <li>Device role, such as portable node, fixed node, repeater, or observer.</li>
+            <li>System used, such as MeshCore or Meshtastic.</li>
+            <li>General device role, such as personal node, fixed node, repeater, or observer.</li>
             <li>General antenna type or placement.</li>
-            <li>General result, such as worked, did not work, weak, or reliable.</li>
+            <li>General result, such as worked, did not work, weak, quiet, active, or reliable.</li>
             <li>Questions about public docs, public links, or non-sensitive setup issues.</li>
           </ul>
 
@@ -349,12 +372,15 @@ Private details removed: yes / no</code></pre>
           </ul>
 
           <p>
-            Sensitive security issues should not be posted in a public channel.
-            Use the security contact instead:
+            Sensitive security issues should not be posted in a public channel. Use the security contact instead:
           </p>
 
           <p>
             <a href="mailto:security@hampdencountymesh.org">security@hampdencountymesh.org</a>
+          </p>
+
+          <p>
+            Read <a href="/guides/sharing-safely.html">Sharing Safely</a> before posting public photos, screenshots, map results, or setup details.
           </p>
         </section>
 
@@ -362,8 +388,7 @@ Private details removed: yes / no</code></pre>
           <h2>Expected conduct</h2>
 
           <p>
-            The server should be useful for beginners and experienced users.
-            That means keeping the tone practical, patient, and clear.
+            The server should be useful for beginners and experienced users. That means keeping the tone practical, patient, and clear.
           </p>
 
           <ul>
@@ -373,13 +398,11 @@ Private details removed: yes / no</code></pre>
             <li>No harassment, threats, spam, or personal attacks.</li>
             <li>No hate speech, racism, xenophobia, homophobia, transphobia, or bigotry.</li>
             <li>Respect privacy, licensing rules, and local law.</li>
-            <li>Keep emergency claims realistic.</li>
             <li>Do not present Hampden County Mesh as an official public safety service.</li>
           </ul>
 
           <p>
-            The goal is a useful local space where people can ask questions,
-            get help, and learn without being pushed away.
+            The goal is a useful local space where people can ask questions, get help, and learn without being pushed away.
           </p>
         </section>
 
@@ -387,14 +410,11 @@ Private details removed: yes / no</code></pre>
           <h2>Announcements and updates</h2>
 
           <p>
-            Discord may be used for public updates, website notes, GitHub change
-            notifications, community meetup ideas, and useful announcements from
-            nearby groups or other sources.
+            Discord may be used for public updates, website notes, GitHub change notifications, map progress, local testing, and useful announcements from nearby mesh groups or other sources.
           </p>
 
           <p>
-            Some announcement channels may be restricted so updates stay clear.
-            Normal discussion can continue in the regular channels.
+            Some announcement channels may be restricted so updates stay clear. Normal discussion can continue in the regular channels.
           </p>
         </section>
 
@@ -402,21 +422,15 @@ Private details removed: yes / no</code></pre>
           <h2>Integrations</h2>
 
           <p>
-            Discord is not the mesh itself. It is a coordination space around
-            the mesh.
+            Discord is not the mesh itself. It is a coordination space around the mesh.
           </p>
 
           <p>
-            Some integrations may be added over time, such as GitHub updates,
-            status messages, map or dashboard updates, or relay channels. Those
-            should be added carefully so the server stays readable and does not
-            turn into a wall of automated messages.
+            Some integrations may be added over time, such as GitHub updates, status messages, map updates, observer summaries, or relay channels. Those should be added carefully so the server stays readable and does not turn into a wall of automated messages.
           </p>
 
           <p>
-            Relay or bot output should have a clear purpose and a clear place.
-            It is better to add those channels when the supporting system is
-            actually ready than to create empty channels too early.
+            Relay or bot output should have a clear purpose and a clear place. It is better to add those channels when the supporting system is actually ready than to create empty channels too early.
           </p>
         </section>
 
@@ -424,13 +438,11 @@ Private details removed: yes / no</code></pre>
           <h2>Joining</h2>
 
           <p>
-            Use the current Discord join link from this site. Invite links may
-            change over time, so site links should use the local join route
-            instead of posting a raw Discord invite everywhere.
+            Use the current Discord join link from this site. Invite links may change over time, so site links should use the local join route instead of posting a raw Discord invite everywhere.
           </p>
 
           <p>
-            <a class="btn primary" href="/join/">Join Discord</a>
+            <a class="btn primary" href="/join/" data-join-source="discord-guide-bottom">Join Discord</a>
           </p>
 
           <p>
@@ -446,52 +458,33 @@ Private details removed: yes / no</code></pre>
             <a class="resource-card action-card" href="/guides/getting-started.html">
               <h3>Getting Started</h3>
               <p>
-                Start here if you are new to MeshCore, Meshtastic, or local mesh radio.
+                Start here if you are new to MeshCore, Meshtastic, or local mesh networking.
               </p>
               <span class="card-link">Start here →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/using-your-node.html">
-              <h3>Using Your Node</h3>
+            <a class="resource-card action-card" href="/guides/recommended-settings.html">
+              <h3>Recommended Settings</h3>
               <p>
-                Practical first steps for using a node, improving placement, and
-                understanding what affects radio range.
+                Use the HCM quick reference for MeshCore and Meshtastic starting settings.
               </p>
-              <span class="card-link">Read the guide →</span>
+              <span class="card-link">View settings →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/guides/node-setups.html">
+              <h3>Node Setups</h3>
+              <p>
+                Learn about node types, antennas, placement, maps, wardriving, and troubleshooting.
+              </p>
+              <span class="card-link">Read node setups →</span>
             </a>
 
             <a class="resource-card action-card" href="/guides/sharing-safely.html">
               <h3>Sharing Safely</h3>
               <p>
-                Learn how to share useful information without exposing private details.
+                Learn how to share useful mesh observations without exposing private details.
               </p>
               <span class="card-link">Read sharing guide →</span>
-            </a>
-
-            <a class="resource-card action-card" href="/guides/hosting-a-meetup.html">
-              <h3>Hosting a Meetup</h3>
-              <p>
-                Plan a small mesh, radio basics, show-and-tell, or node demo meetup.
-              </p>
-              <span class="card-link">Read hosting guide →</span>
-            </a>
-
-            <a class="resource-card action-card" href="/guides/radio-basics.html">
-              <h3>Radio Basics</h3>
-              <p>
-                Learn how FRS, GMRS, MURS, CB, amateur radio, and scanners relate
-                to mesh users.
-              </p>
-              <span class="card-link">Read radio basics →</span>
-            </a>
-
-            <a class="resource-card action-card" href="/join/getting-started/">
-              <h3>Ask the Community</h3>
-              <p>
-                Join the Discord to ask questions, get help with setup, and meet
-                others interested in mesh radio.
-              </p>
-              <span class="card-link">Join Discord →</span>
             </a>
           </div>
         </section>
@@ -501,21 +494,10 @@ Private details removed: yes / no</code></pre>
 
   <footer>
     <div class="container">
-      <div class="footer-title">
-        HAMPDEN COUNTY MESH
-      </div>
-
-      <div class="footer-subtitle">
-        MeshCore, Meshtastic, and radio education in Western Massachusetts
-      </div>
-
-      <div class="footer-subtitle">
-        Community education and hobby effort. Not an emergency service or a replacement for 911.
-      </div>
-
-      <div class="footer-subtitle">
-        Last Updated: <span id="last-updated">Loading...</span>
-      </div>
+      <div class="footer-title">HAMPDEN COUNTY MESH</div>
+      <div class="footer-subtitle">MeshCore, Meshtastic, maps, setup help, and local mesh networking in Western Massachusetts.</div>
+      <div class="footer-subtitle">Responsible use, privacy, and practical limits are covered in the guide library.</div>
+      <div class="footer-subtitle">Last Updated: <span id="last-updated">Loading...</span></div>
     </div>
   </footer>
 
