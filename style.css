@@ -224,14 +224,21 @@ nav a[aria-current="page"] {
     background: rgba(244, 232, 193, 0.08);
 }
 
-.discord-nav-button img {
+.discord-nav-button img,
+.discord-nav-button svg {
     width: 18px;
     height: 18px;
     display: block;
 }
 
+.discord-nav-button svg {
+    fill: currentColor;
+}
+
 .discord-nav-button:hover,
-.discord-nav-button:focus {
+.discord-nav-button:focus,
+.discord-nav-button:focus-visible {
+    color: #ffffff;
     background: var(--discord);
     border-color: var(--discord);
 }
@@ -513,6 +520,13 @@ h1 {
     background:
         radial-gradient(circle at 18% 10%, rgba(157, 175, 136, 0.15), transparent 35%),
         linear-gradient(180deg, rgba(34, 30, 21, 0.98), rgba(14, 13, 9, 0.98));
+}
+
+.action-card:focus-visible,
+.community-card:focus-visible,
+.next-card:focus-visible {
+    transform: translateY(-3px);
+    border-color: rgba(255, 179, 71, 0.52);
 }
 
 .card-link,

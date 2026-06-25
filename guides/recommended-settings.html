@@ -1,0 +1,534 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recommended Settings | Hampden County Mesh</title>
+  <meta name="description" content="Recommended MeshCore and Meshtastic starting settings for Hampden County Mesh users in Western Massachusetts.">
+
+  <link rel="canonical" href="https://hampdencountymesh.org/guides/recommended-settings.html">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Hampden County Mesh">
+  <meta property="og:title" content="Recommended Settings | Hampden County Mesh">
+  <meta property="og:description" content="Recommended MeshCore and Meshtastic starting settings for Hampden County Mesh users in Western Massachusetts.">
+  <meta property="og:url" content="https://hampdencountymesh.org/guides/recommended-settings.html">
+  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Recommended Settings | Hampden County Mesh">
+  <meta name="twitter:description" content="Recommended MeshCore and Meshtastic starting settings for Hampden County Mesh users in Western Massachusetts.">
+  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
+  <link rel="icon" href="/assets/images/social/hcm-logo-900.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+
+  <style>
+    .centered {
+      text-align: center;
+    }
+
+    .narrow {
+      max-width: 980px;
+    }
+
+    .portal-title {
+      max-width: 780px;
+      margin: 0 auto 14px;
+      color: var(--text);
+      font-family: "Special Elite", serif;
+      font-size: clamp(1.9rem, 4vw, 3.25rem);
+      line-height: 1.08;
+    }
+
+    .section-lede {
+      max-width: 740px;
+      margin: 0 auto 28px;
+      color: var(--text-soft);
+      font-size: 1.05rem;
+    }
+
+    .settings-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      text-align: left;
+    }
+
+    .settings-card {
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 18% 10%, rgba(157, 175, 136, 0.1), transparent 35%),
+        linear-gradient(180deg, rgba(24, 22, 16, 0.96), rgba(13, 12, 9, 0.96));
+      border-radius: 20px;
+      padding: clamp(22px, 4vw, 34px);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+    }
+
+    .settings-card h2,
+    .settings-card h3 {
+      margin: 0 0 10px;
+      font-family: "Special Elite", serif;
+      color: var(--text);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+    }
+
+    .settings-intro {
+      margin: 0 0 18px;
+      color: var(--text-soft);
+    }
+
+    .settings-list {
+      margin: 0 0 22px;
+    }
+
+    .settings-list div {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 12px;
+      padding: 10px 0;
+      border-top: 1px solid rgba(255, 179, 71, 0.14);
+    }
+
+    .settings-list dt {
+      color: var(--green);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 0.78rem;
+    }
+
+    .settings-list dd {
+      margin: 0;
+      color: var(--text-soft);
+    }
+
+    .guide-panel {
+      max-width: 900px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 18% 10%, rgba(157, 175, 136, 0.1), transparent 35%),
+        linear-gradient(180deg, rgba(24, 22, 16, 0.96), rgba(13, 12, 9, 0.96));
+      border-radius: 20px;
+      padding: clamp(24px, 5vw, 42px);
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+    }
+
+    .guide-panel h2 {
+      margin: 0 0 14px;
+      font-family: "Special Elite", serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.1;
+    }
+
+    .guide-panel h3 {
+      margin: 28px 0 10px;
+      color: var(--text);
+      font-size: 1.25rem;
+    }
+
+    .guide-panel p,
+    .guide-panel li {
+      color: var(--text-soft);
+    }
+
+    .guide-panel ul {
+      margin: 12px 0 0;
+      padding-left: 1.2rem;
+    }
+
+    .guide-panel li {
+      margin: 8px 0;
+    }
+
+    .code-line {
+      display: inline-block;
+      max-width: 100%;
+      overflow-wrap: anywhere;
+    }
+
+    .next-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      text-align: left;
+    }
+
+    .next-card {
+      border: 1px solid rgba(255, 179, 71, 0.14);
+      border-radius: 16px;
+      padding: 18px;
+      background: rgba(0, 0, 0, 0.16);
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .next-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .next-card span {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .discord-nav-button svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    @media (max-width: 900px) {
+      .next-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 800px) {
+      .settings-grid,
+      .next-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .settings-list div {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header>
+    <div class="container">
+      <a class="brand" href="/" aria-label="Hampden County Mesh home">
+        <span class="brand-icon" aria-hidden="true">⌁</span>
+        <span>HAMPDEN COUNTY MESH</span>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/guides/" aria-current="page">Guides</a>
+        <a href="/coverage.html">Coverage</a>
+        <a class="discord-nav-button" href="/join/" aria-label="Join the Discord" data-join-source="nav">
+          <svg viewBox="0 0 127.14 96.36" aria-hidden="true" focusable="false">
+            <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21A105.73,105.73,0,0,0,32.71,96.36a77.7,77.7,0,0,0,6.89-11.11,68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.35,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.4,2.67,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.2C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+          </svg>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="hero-panel">
+        <div class="frequency-display">RECOMMENDED SETTINGS</div>
+
+        <div class="status-line">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>MESHCORE • MESHTASTIC • LOCAL STARTING POINT</span>
+        </div>
+
+        <h1>RECOMMENDED<br>SETTINGS</h1>
+
+        <p class="hero-text">
+          Start here when configuring a MeshCore or Meshtastic node for normal use around Hampden County and nearby Western Massachusetts.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#meshcore">MeshCore</a>
+          <a class="btn secondary" href="#meshtastic">Meshtastic</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container narrow centered">
+        <div class="section-heading">Short version</div>
+        <h2 class="portal-title">Use the common regional settings first.</h2>
+        <p class="section-lede">
+          Do not start by changing channels, roles, MQTT, power, or advanced routing behavior. Get one normal node working first, then adjust only when you have a reason.
+        </p>
+
+        <div class="settings-grid">
+          <div class="settings-card" id="meshcore">
+            <h2>MeshCore</h2>
+            <p class="settings-intro">
+              Recommended starting point for nearby Massachusetts MeshCore activity.
+            </p>
+
+            <dl class="settings-list">
+              <div>
+                <dt>Region / preset</dt>
+                <dd>US / USA-Canada recommended preset</dd>
+              </div>
+              <div>
+                <dt>Frequency</dt>
+                <dd><code>910.525 MHz</code></dd>
+              </div>
+              <div>
+                <dt>Bandwidth</dt>
+                <dd><code>62.5 kHz</code></dd>
+              </div>
+              <div>
+                <dt>Spreading factor</dt>
+                <dd><code>SF7</code></dd>
+              </div>
+              <div>
+                <dt>Coding rate</dt>
+                <dd><code>CR5</code></dd>
+              </div>
+              <div>
+                <dt>Zero-hop advert</dt>
+                <dd><code>12 hours</code>, if exposed by your firmware or app</dd>
+              </div>
+              <div>
+                <dt>Flood advert</dt>
+                <dd><code>48 hours</code>, if exposed by your firmware or app</dd>
+              </div>
+            </dl>
+
+            <a class="btn secondary" href="/guides/meshcore-basics.html">MeshCore basics</a>
+          </div>
+
+          <div class="settings-card" id="meshtastic">
+            <h2>Meshtastic</h2>
+            <p class="settings-intro">
+              Recommended starting point for normal local Meshtastic use.
+            </p>
+
+            <dl class="settings-list">
+              <div>
+                <dt>Region</dt>
+                <dd>United States</dd>
+              </div>
+              <div>
+                <dt>LoRa preset</dt>
+                <dd>LongFast / Long Range Fast</dd>
+              </div>
+              <div>
+                <dt>Primary channel</dt>
+                <dd><code>LongFast</code> or blank/default</dd>
+              </div>
+              <div>
+                <dt>Primary key</dt>
+                <dd><code>AQ==</code></dd>
+              </div>
+              <div>
+                <dt>Device role</dt>
+                <dd><code>CLIENT</code> for most users</dd>
+              </div>
+              <div>
+                <dt>MQTT</dt>
+                <dd>Off for normal beginner use</dd>
+              </div>
+              <div>
+                <dt>Infrastructure roles</dt>
+                <dd>Ask first before using router or repeater roles</dd>
+              </div>
+            </dl>
+
+            <a class="btn secondary" href="/guides/meshtastic-basics.html">Meshtastic basics</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="meshcore-notes">
+      <div class="container narrow">
+        <div class="guide-panel">
+          <div class="section-heading">MeshCore notes</div>
+          <h2>MeshCore settings must match exactly.</h2>
+
+          <p>
+            MeshCore nodes need matching radio parameters to hear each other. A small mismatch in frequency, bandwidth, spreading factor, coding rate, or region can make a node appear silent even when nearby activity exists.
+          </p>
+
+          <h3>Channels</h3>
+          <p>
+            New users can start in <code>Public</code>. For regional Massachusetts chat, look for <code>#ma-mesh</code>. For testing, use <code>#test</code> when available. HCM-specific channel conventions should be confirmed in Discord before being treated as final.
+          </p>
+
+          <h3>Personal nodes</h3>
+          <p>
+            Most people should begin with a normal personal node or companion-style setup. Get basic send, receive, and placement working before changing advanced behavior.
+          </p>
+
+          <h3>Repeaters and path hashes</h3>
+          <p>
+            Fixed relay-style MeshCore nodes should use the same local radio settings. Repeater deployments in nearby Massachusetts MeshCore examples use 2-byte path hashes.
+          </p>
+
+          <p>
+            If you are intentionally configuring a MeshCore repeater and your firmware/app exposes the CLI, the command is:
+          </p>
+
+          <p>
+            <code class="code-line">set path.hash.mode 1</code>
+          </p>
+
+          <p>
+            Do not start with repeater behavior just because the option exists. A poorly placed repeater can add noise without improving useful coverage.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="meshtastic-notes">
+      <div class="container narrow">
+        <div class="guide-panel">
+          <div class="section-heading">Meshtastic notes</div>
+          <h2>Most Meshtastic users should stay on LongFast and CLIENT.</h2>
+
+          <p>
+            Meshtastic is easiest to start with when you leave the common defaults alone. In this area, normal users should generally use the United States region, the LongFast / Long Range Fast preset, the default LongFast primary channel, and the default key.
+          </p>
+
+          <h3>Do not start by changing roles</h3>
+          <p>
+            For most users, <code>CLIENT</code> is the correct role. Infrastructure roles such as <code>ROUTER</code>, <code>REPEATER</code>, <code>ROUTER_CLIENT</code>, or <code>ROUTER_LATE</code> should be reserved for unusual fixed sites with good height, power, antenna placement, and a clear reason.
+          </p>
+
+          <h3>Location settings</h3>
+          <p>
+            Location sharing is useful for maps and testing, but exact home locations do not need to be public. Use approximate location settings when appropriate, especially for a home node.
+          </p>
+
+          <h3>MQTT</h3>
+          <p>
+            Normal users do not need MQTT to participate. MQTT should be treated as map and observer infrastructure, not as a beginner setup step.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="mqtt">
+      <div class="container narrow">
+        <div class="guide-panel">
+          <div class="section-heading">Future HCM map infrastructure</div>
+          <h2>Future HCM MQTT should be uplink-only observer infrastructure.</h2>
+
+          <p>
+            HCM expects any future MQTT or map infrastructure to follow an uplink-only model. The point of a future HCM broker would be to let stable observer or gateway nodes report local traffic into HCM maps and activity tools.
+          </p>
+
+          <p>
+            The point would not be to bridge gaps, replace RF coverage, or require normal users to connect to an HCM broker. A normal user with a normal node should be able to participate without touching MQTT.
+          </p>
+
+          <h3>Future access model</h3>
+          <ul>
+            <li>Stable fixed observers or gateway nodes only.</li>
+            <li>Uplink-only behavior.</li>
+            <li>Used for HCM maps, observed activity, and analysis.</li>
+            <li>Not required for ordinary MeshCore or Meshtastic users.</li>
+            <li>Credentials and setup instructions should be handled separately once the infrastructure exists.</li>
+          </ul>
+
+          <p>
+            Until HCM’s own broker and map are ready, do not publish HCM MQTT connection settings here.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="dont-change">
+      <div class="container narrow">
+        <div class="guide-panel">
+          <div class="section-heading">What not to change first</div>
+          <h2>A working simple node is better than a complicated broken one.</h2>
+
+          <ul>
+            <li>Do not change frequency, bandwidth, spreading factor, coding rate, or region unless you know exactly why.</li>
+            <li>Do not use Meshtastic router or repeater roles for a normal handheld, desk, car, or backpack node.</li>
+            <li>Do not enable MQTT just because the setting exists.</li>
+            <li>Do not publish exact home locations when approximate location is enough.</li>
+            <li>Do not assume maximum transmit power is always better.</li>
+            <li>Do not judge coverage from one indoor test. Try a window, porch, yard, vehicle, park, hill, or other real location.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="troubleshooting">
+      <div class="container narrow">
+        <div class="guide-panel">
+          <div class="section-heading">Quick troubleshooting</div>
+          <h2>If you hear nothing, check the simple things first.</h2>
+
+          <ul>
+            <li>Confirm you are using the correct region.</li>
+            <li>Confirm all MeshCore radio parameters match exactly.</li>
+            <li>For Meshtastic, confirm LongFast/default and <code>AQ==</code>.</li>
+            <li>Make sure the antenna is attached before transmitting.</li>
+            <li>Try a better location, especially near a window or outside.</li>
+            <li>Charge the device and restart the app if the device connection is acting strange.</li>
+            <li>Ask in Discord and include your device model, firmware, rough town/area, antenna, and what settings you used.</li>
+          </ul>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="/join/" data-join-source="settings-troubleshooting">Ask in Discord</a>
+            <a class="btn secondary" href="/coverage.html">Check coverage</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="next">
+      <div class="container narrow centered">
+        <div class="section-heading">Next steps</div>
+        <h2 class="portal-title">After settings, learn the system you are using.</h2>
+        <p class="section-lede">
+          This page is intentionally short. Use the system-specific guides for more context.
+        </p>
+
+        <div class="next-grid">
+          <a class="next-card" href="/guides/getting-started.html">
+            <strong>Getting Started</strong>
+            <span>Choose a path and get your first node working.</span>
+          </a>
+
+          <a class="next-card" href="/guides/meshcore-basics.html">
+            <strong>MeshCore Basics</strong>
+            <span>Learn MeshCore concepts, channels, and local use.</span>
+          </a>
+
+          <a class="next-card" href="/guides/meshtastic-basics.html">
+            <strong>Meshtastic Basics</strong>
+            <span>Learn LongFast/default use and beginner settings.</span>
+          </a>
+
+          <a class="next-card" href="/guides/node-setups.html">
+            <strong>Node Setups</strong>
+            <span>Learn placement, antennas, repeaters, observers, maps, wardriving, and troubleshooting.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-title">HAMPDEN COUNTY MESH</div>
+      <div class="footer-subtitle">MeshCore, Meshtastic, maps, setup help, and local mesh networking in Western Massachusetts.</div>
+      <div class="footer-subtitle">Responsible use, privacy, and practical limits are covered in the guide library.</div>
+      <div class="footer-subtitle">Last Updated: <span id="last-updated">Loading...</span></div>
+    </div>
+  </footer>
+
+  <script src="/last-updated.js"></script>
+</body>
+</html>

@@ -1,66 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MeshCore Basics | Hampden County Mesh</title>
-  <meta
-    name="description"
-    content="A beginner-friendly MeshCore guide covering what MeshCore is, common device roles, local use, setup habits, privacy basics, and practical radio learning."
-  >
+  <meta name="description" content="A short beginner guide to MeshCore, why Hampden County Mesh focuses on it, how to start, and where to find local settings and setup guidance.">
 
-  <!-- Social preview / Open Graph -->
-  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hampdencountymesh.org/guides/meshcore-basics.html">
+
+  <meta property="og:type" content="article">
   <meta property="og:site_name" content="Hampden County Mesh">
   <meta property="og:title" content="MeshCore Basics | Hampden County Mesh">
-  <meta property="og:description" content="A beginner-friendly MeshCore guide covering what MeshCore is, common device roles, local use, setup habits, privacy basics, and practical radio learning.">
+  <meta property="og:description" content="A short beginner guide to MeshCore, why Hampden County Mesh focuses on it, how to start, and where to find local settings and setup guidance.">
   <meta property="og:url" content="https://hampdencountymesh.org/guides/meshcore-basics.html">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
-  <!-- Twitter / X preview -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="MeshCore Basics | Hampden County Mesh">
-  <meta name="twitter:description" content="A beginner-friendly MeshCore guide covering what MeshCore is, common device roles, local use, setup habits, privacy basics, and practical radio learning.">
+  <meta name="twitter:description" content="A short beginner guide to MeshCore, why Hampden County Mesh focuses on it, how to start, and where to find local settings and setup guidance.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
   <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
+  <link rel="icon" href="/assets/images/social/hcm-logo-900.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+
+  <style>
+    .discord-nav-button svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .basics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 22px 0;
+    }
+
+    .basics-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(157, 175, 136, 0.08), transparent 35%),
+        linear-gradient(180deg, rgba(24, 22, 16, 0.96), rgba(13, 12, 9, 0.96));
+    }
+
+    .basics-card h3 {
+      margin-top: 0;
+    }
+
+    .basics-card .label {
+      display: inline-flex;
+      margin-bottom: 10px;
+      color: var(--green);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .basics-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="noise"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="noise" aria-hidden="true"></div>
 
   <header>
     <div class="container">
       <a class="brand" href="/" aria-label="Hampden County Mesh home">
-        <span class="brand-icon" aria-hidden="true">📡</span>
+        <span class="brand-icon" aria-hidden="true">⌁</span>
         <span>HAMPDEN COUNTY MESH</span>
       </a>
 
-      <nav>
+      <nav aria-label="Primary navigation">
         <a href="/">Home</a>
-        <a href="/guides/">Guides</a>
+        <a href="/guides/" aria-current="page">Guides</a>
         <a href="/coverage.html">Coverage</a>
-        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
-          <img src="/assets/icons/discord-symbol-white.svg" alt="">
+        <a class="discord-nav-button" href="/join/" aria-label="Join the Discord" data-join-source="nav">
+          <svg viewBox="0 0 127.14 96.36" aria-hidden="true" focusable="false">
+            <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21A105.73,105.73,0,0,0,32.71,96.36a77.7,77.7,0,0,0,6.89-11.11,68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.35,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.4,2.67,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.2C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+          </svg>
         </a>
       </nav>
     </div>
   </header>
 
-  <main class="docs-shell">
+  <main id="main" class="docs-shell">
     <div class="container">
       <article class="docs-article">
         <p class="docs-breadcrumb">
@@ -70,63 +109,42 @@
         <h1>MeshCore Basics</h1>
 
         <p class="docs-lede">
-          MeshCore is the main mesh focus for Hampden County Mesh. This guide
-          explains what it is, why nearby communities are using it, what the
-          common device roles mean, and what to understand before buying or
-          flashing hardware.
+          MeshCore is the main mesh focus for Hampden County Mesh. This page explains what it is, why HCM leans toward it, and where to go next for settings, flashing, node setup, and local help.
         </p>
-
-        <div class="docs-note">
-          MeshCore is useful for learning, local communication practice, and
-          off-grid messaging, but it is not an emergency service, not a
-          replacement for 911, and not a guarantee of coverage.
-        </div>
 
         <div class="hero-actions">
           <a class="btn secondary" href="#what-meshcore-is">What It Is</a>
           <a class="btn secondary" href="#why-focus">Why MeshCore</a>
-          <a class="btn secondary" href="#roles">Device Roles</a>
-          <a class="btn secondary" href="#before-flashing">Before Flashing</a>
-          <a class="btn secondary" href="#first-setup">First Setup</a>
-          <a class="btn secondary" href="#using-your-node">Using Your Node</a>
-          <a class="btn secondary" href="#privacy">Privacy</a>
+          <a class="btn secondary" href="#starting">Starting</a>
+          <a class="btn secondary" href="#settings">Settings</a>
+          <a class="btn secondary" href="#roles">Roles</a>
+          <a class="btn secondary" href="#maps">Maps</a>
         </div>
 
         <section class="docs-section" id="what-meshcore-is">
           <h2>What MeshCore is</h2>
 
           <p>
-            MeshCore is an off-grid messaging system for LoRa radio devices. In
-            normal terms, it lets small radios send short messages without
-            relying on cell service, Wi-Fi, or a normal internet connection.
+            MeshCore is an off-grid messaging system for LoRa radio devices. In plain terms, it lets small radios send short messages without relying on cell service, Wi-Fi, or a normal internet connection.
           </p>
 
           <p>
-            A MeshCore setup can be very simple: one person with a device and an
-            app learning how it works. It can also grow into a local mesh where
-            portable nodes, repeaters, observers, room servers, and support
-            systems help people communicate and learn.
-          </p>
-
-          <p>
-            For the most current project information, use the official MeshCore
-            site and flasher.
+            A basic MeshCore setup can be simple: one supported device, the right firmware, a phone or computer app, a working antenna, and compatible local radio settings.
           </p>
 
           <div class="resource-grid">
-            <a class="resource-card action-card" href="https://meshcore.io/" target="_blank" rel="noopener noreferrer">
+            <a class="resource-card action-card" href="https://meshcore.co.uk/" target="_blank" rel="noopener noreferrer">
               <h3>MeshCore</h3>
               <p>
-                Official MeshCore site, apps, documentation, and project links.
+                Official MeshCore site, project information, apps, hardware links, and documentation.
               </p>
               <span class="card-link">Visit MeshCore →</span>
             </a>
 
-            <a class="resource-card action-card" href="https://flasher.meshcore.io/" target="_blank" rel="noopener noreferrer">
+            <a class="resource-card action-card" href="https://flasher.meshcore.co.uk/" target="_blank" rel="noopener noreferrer">
               <h3>MeshCore Flasher</h3>
               <p>
-                Official MeshCore flashing tool for supported devices and current
-                firmware choices.
+                Web flasher for installing MeshCore firmware on supported devices.
               </p>
               <span class="card-link">Open flasher →</span>
             </a>
@@ -134,255 +152,156 @@
         </section>
 
         <section class="docs-section" id="why-focus">
-          <h2>Why MeshCore is the main focus here</h2>
+          <h2>Why HCM focuses on MeshCore</h2>
 
           <p>
-            Hampden County Mesh leans toward MeshCore because many surrounding
-            mesh communities are using it too. That makes it easier to understand
-            regional activity, follow useful examples, and build on what is
-            already happening around Western Massachusetts, Connecticut, and
-            nearby areas.
+            Hampden County Mesh leans toward MeshCore because it fits the direction we are building around: local channels, fixed sites, repeaters, observers, maps, and regional mesh activity across Western Massachusetts and nearby areas.
           </p>
 
           <p>
-            This does not mean Meshtastic is ignored. Meshtastic is still active
-            and useful, and a lot of the same radio lessons carry over: antenna
-            placement, node height, terrain, batteries, firmware, maps, and what
-            devices can hear from different places.
+            This does not mean Meshtastic is ignored. Meshtastic is still useful and welcome. A lot of the practical radio lessons carry over: antenna placement, node height, terrain, batteries, firmware, maps, and what devices can hear from different places.
           </p>
 
           <p>
-            If you already have Meshtastic hardware, it may still be useful. If
-            you are starting from scratch and want to follow the local direction,
-            MeshCore is a good place to begin.
+            If you are starting from scratch and want to follow the local HCM direction, start with MeshCore. If you already have Meshtastic hardware, use it and ask how it fits in.
+          </p>
+        </section>
+
+        <section class="docs-section" id="starting">
+          <h2>How to start</h2>
+
+          <p>
+            Do not start with a complicated build. Start with one normal device and learn what it can hear.
+          </p>
+
+          <ol>
+            <li>Pick a supported MeshCore device.</li>
+            <li>Flash the correct firmware for your device and intended role.</li>
+            <li>Use the HCM recommended MeshCore settings.</li>
+            <li>Pair the device with the MeshCore app or client you are using.</li>
+            <li>Place the node somewhere reasonable, such as near a window.</li>
+            <li>Ask in Discord if you are unsure what you are seeing.</li>
+          </ol>
+
+          <p>
+            For device roles, antennas, power, placement, repeaters, observers, maps, and wardriving, use <a href="/guides/node-setups.html">Node Setups</a>.
+          </p>
+        </section>
+
+        <section class="docs-section" id="settings">
+          <h2>Use the local settings</h2>
+
+          <p>
+            MeshCore settings need to match the mesh you are trying to reach. If the frequency, bandwidth, spreading factor, or other radio settings do not match, your device may be working but listening in the wrong place.
+          </p>
+
+          <p>
+            HCM keeps the current local starting point on the recommended settings page:
+          </p>
+
+          <p>
+            <a class="btn primary" href="/guides/recommended-settings.html#meshcore">MeshCore Recommended Settings</a>
+          </p>
+
+          <p>
+            Start there before changing advanced behavior.
           </p>
         </section>
 
         <section class="docs-section" id="roles">
-          <h2>Common MeshCore device roles</h2>
+          <h2>Basic MeshCore roles</h2>
 
           <p>
-            You will see a few words come up often. The exact firmware and app
-            behavior can change over time, but these basic roles are useful to
-            understand.
+            MeshCore roles matter because not every device is meant to do the same job. Keep the first setup simple, then move into infrastructure roles only when the site and purpose make sense.
           </p>
 
-          <div class="docs-card-grid">
-            <div class="docs-card">
-              <h3>Companion or client node</h3>
+          <div class="basics-grid">
+            <div class="basics-card">
+              <span class="label">Start here</span>
+              <h3>Companion or personal node</h3>
               <p>
-                A device many people start with. It pairs with a phone or
-                computer and lets you send and receive messages through the
-                MeshCore app.
+                A normal device paired with your phone or computer for basic use, testing, and learning.
               </p>
             </div>
 
-            <div class="docs-card">
+            <div class="basics-card">
+              <span class="label">Infrastructure</span>
               <h3>Repeater</h3>
               <p>
-                A device usually left running in a useful location so it can help
-                other devices hear each other.
+                A device placed in a useful location to help other devices reach farther over radio.
               </p>
             </div>
 
-            <div class="docs-card">
+            <div class="basics-card">
+              <span class="label">Room-style use</span>
               <h3>Room server</h3>
               <p>
-                A support role used for room-style messaging and, in some setups,
-                more permanent local infrastructure.
+                A support role used for room-style messaging and more persistent community spaces.
               </p>
             </div>
 
-            <div class="docs-card">
-              <h3>Observer</h3>
+            <div class="basics-card">
+              <span class="label">Map support</span>
+              <h3>Observer or gateway</h3>
               <p>
-                A device that listens for activity and helps show what can be
-                heard from a location.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>Hub or support system</h3>
-              <p>
-                A computer, script, logger, broker, dashboard, or other backend
-                tool that supports local mesh work.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>Portable setup</h3>
-              <p>
-                A device used from a bag, car, window, park, hill, event, or
-                temporary location.
+                A device or support system used to hear activity and contribute to maps, logs, or analysis.
               </p>
             </div>
           </div>
 
           <p>
-            For a deeper explanation, read
-            <a href="/guides/nodes-repeaters-observers.html">Nodes, Repeaters, and Observers</a>.
-          </p>
-        </section>
-
-        <section class="docs-section" id="observer-note">
-          <h2>Observer and map notes</h2>
-
-          <p>
-            Observers, analyzers, dashboards, logs, and public feeds are useful,
-            but they can be misunderstood. An observer can show that something
-            was heard by a system somewhere. It does not always prove that your
-            portable node can directly reach that device from your current
-            location.
-          </p>
-
-          <p>
-            A map point or observed activity note also does not mean Hampden
-            County Mesh owns or operates every device shown. Some devices may be
-            independent, temporary, mobile, outside the county, or reported
-            through another path.
-          </p>
-
-          <p>
-            Treat maps and dashboards as tools, not as a complete picture of the
-            whole local mesh.
+            For practical setup advice, read <a href="/guides/node-setups.html">Node Setups</a>.
           </p>
         </section>
 
         <section class="docs-section" id="local-matters">
-          <h2>What matters locally</h2>
+          <h2>Local terrain matters</h2>
 
           <p>
-            Hampden County terrain is not flat or simple. Hills, valleys, wooded
-            areas, dense neighborhoods, old buildings, river corridors, farms,
-            and high spots like Mount Tom can all change what a small LoRa radio
-            can hear.
+            Hampden County is not flat or simple. Hills, valleys, wooded areas, dense neighborhoods, old buildings, river corridors, farms, and high spots can all change what a small LoRa radio can hear.
           </p>
 
           <p>
-            Small changes can matter. A node near a window may hear more than the
-            same node in the middle of a room. A modest antenna in a better spot
-            may work better than a more powerful setup in a poor location. A node
-            that works well in one neighborhood may act differently a few towns
-            away, or even down the street.
-          </p>
-
-          <p>
-            That local behavior is part of what makes radio interesting here.
+            Small changes can matter. A node near a window may hear more than the same node in the middle of a room. A modest antenna in a better spot may work better than a more powerful setup in a poor location.
           </p>
         </section>
 
-        <section class="docs-section" id="before-flashing">
-          <h2>Before you flash or buy a device</h2>
+        <section class="docs-section" id="maps">
+          <h2>Maps and observed activity</h2>
 
           <p>
-            Do not rush into a complicated build first. Think about what you want
-            the device to do and ask in Discord if you are unsure.
+            Observers, analyzers, dashboards, logs, and public feeds are useful, but they can be misunderstood. A map point or observed activity does not always prove that your portable node can directly reach that device from your current location.
+          </p>
+
+          <p>
+            Treat maps as clues, not guarantees. For normal local use, the useful question is still simple: what can your device hear from where it is right now?
+          </p>
+
+          <p>
+            <a class="btn secondary" href="/coverage.html">Open Coverage</a>
+          </p>
+        </section>
+
+        <section class="docs-section" id="before-buying">
+          <h2>Before buying hardware</h2>
+
+          <p>
+            A simple first node that actually gets used is better than a complicated setup that never leaves the planning stage.
           </p>
 
           <ul>
-            <li>
-              If you want to learn the app and send messages, start with a
-              companion or client-style device.
-            </li>
-            <li>
-              If you want something portable, think about battery life, case,
-              antenna, screen, and how you will carry it.
-            </li>
-            <li>
-              If you want a fixed node, think about power, safe mounting, heat,
-              antenna placement, and whether you can leave it running.
-            </li>
-            <li>
-              If you want an outdoor or high-location node, think about permission,
-              access, weatherproofing, power, mounting, and maintenance.
-            </li>
-            <li>
-              If you want to support maps, dashboards, observers, or brokers,
-              make sure you understand the privacy and maintenance side too.
-            </li>
+            <li>If you want to learn the app and send messages, start with a companion or personal node.</li>
+            <li>If you want something portable, think about battery life, case, antenna, screen, and how you will carry it.</li>
+            <li>If you want a fixed node, think about power, safe mounting, heat, antenna placement, and whether you can leave it running.</li>
+            <li>If you want a repeater, observer, or outdoor node, ask first. Site quality matters more than just owning the hardware.</li>
           </ul>
-
-          <p>
-            A simple first node that actually gets used is better than a complex
-            setup that never leaves the planning stage.
-          </p>
-        </section>
-
-        <section class="docs-section" id="first-setup">
-          <h2>First setup checklist</h2>
-
-          <p>
-            A first setup does not need to be perfect. The goal is to get a
-            device working, understand the app, and learn what the device is
-            showing you.
-          </p>
-
-          <ul>
-            <li>Use the official MeshCore flasher for current firmware choices.</li>
-            <li>Pick the correct firmware for your device and role.</li>
-            <li>Use a clear node name that does not expose private details.</li>
-            <li>Keep passwords, keys, and private setup details private.</li>
-            <li>Place the node somewhere reasonable, such as near a window.</li>
-            <li>Ask in Discord if you are unsure what you are seeing.</li>
-            <li>Change one thing at a time and try again.</li>
-            <li>Keep track of what changed and what happened.</li>
-          </ul>
-
-          <p>
-            For exact flashing steps, use the official MeshCore documentation and
-            flasher. Local guides are here to help with plain-language context,
-            local radio learning, and what to ask next.
-          </p>
-        </section>
-
-        <section class="docs-section" id="naming">
-          <h2>Good naming habits</h2>
-
-          <p>
-            A good node name helps other people understand what they are seeing.
-            Keep it short, recognizable, and not overly personal.
-          </p>
-
-          <p>
-            For public or semi-public nodes, avoid putting an exact home address,
-            private location, phone number, or other personal information in the
-            name. A town, area, hill, park, or general landmark may be enough.
-          </p>
-
-          <p>
-            A good name should help people coordinate without turning the node
-            name into a private location marker.
-          </p>
-        </section>
-
-        <section class="docs-section" id="using-your-node">
-          <h2>Using your node</h2>
-
-          <p>
-            Once the device is running, keep the first use simple.
-          </p>
-
-          <ol>
-            <li>Put the node near a window or another reasonable location.</li>
-            <li>Leave it powered long enough to hear normal activity.</li>
-            <li>Send a short message if that makes sense for your setup.</li>
-            <li>Ask in Discord if you are unsure what you are seeing.</li>
-            <li>Move the node once and see whether anything changes.</li>
-            <li>Keep location details general when talking publicly.</li>
-          </ol>
-
-          <p>
-            Read <a href="/guides/using-your-node.html">Using Your Node</a>
-            for more practical examples.
-          </p>
         </section>
 
         <section class="docs-section" id="privacy">
-          <h2>Privacy and safety basics</h2>
+          <h2>Privacy basics</h2>
 
           <p>
-            MeshCore can create useful notes, maps, logs, and screenshots. Check
-            those before posting them publicly.
+            MeshCore can create useful screenshots, map results, logs, and public activity. Check those before posting them publicly.
           </p>
 
           <ul>
@@ -390,99 +309,48 @@
             <li>Do not post exact private node coordinates without permission.</li>
             <li>Do not share someone else’s setup details without permission.</li>
             <li>Check screenshots for private messages, names, keys, coordinates, or admin URLs.</li>
-            <li>Check photos for addresses, license plates, screens, reflections, and EXIF metadata.</li>
             <li>Use general areas for public discussion unless exact location sharing is clearly safe.</li>
           </ul>
 
           <p>
-            Read <a href="/guides/sharing-safely.html">Sharing Safely</a>
-            before posting public notes, logs, screenshots, or photos.
+            Read <a href="/guides/sharing-safely.html">Sharing Safely</a> before posting screenshots, photos, map results, or setup details.
           </p>
-        </section>
-
-        <section class="docs-section" id="what-not-to-assume">
-          <h2>What not to assume</h2>
-
-          <ul>
-            <li>
-              Do not assume silence means your device is broken. There may simply
-              be no one nearby to hear.
-            </li>
-            <li>
-              Do not assume more transmit power fixes a poor location.
-            </li>
-            <li>
-              Do not assume a map point means this site owns that node.
-            </li>
-            <li>
-              Do not assume a public observer hears everything in the county.
-            </li>
-            <li>
-              Do not assume internet-connected activity proves direct radio
-              range from your current location.
-            </li>
-            <li>
-              Do not use mesh radio as a replacement for 911 or official
-              emergency communications.
-            </li>
-          </ul>
         </section>
 
         <section class="docs-section" id="what-to-read-next">
           <h2>What to read next</h2>
 
           <div class="resource-grid">
-            <a class="resource-card action-card" href="/guides/getting-started.html">
-              <h3>Getting Started</h3>
+            <a class="resource-card action-card" href="/guides/recommended-settings.html">
+              <h3>Recommended Settings</h3>
               <p>
-                Start here if you are new to MeshCore, Meshtastic, or local mesh
-                radio.
+                Check the current HCM MeshCore settings before troubleshooting.
               </p>
-              <span class="card-link">Start here →</span>
-            </a>
-
-            <a class="resource-card action-card" href="/guides/nodes-repeaters-observers.html">
-              <h3>Nodes, Repeaters, and Observers</h3>
-              <p>
-                Learn the common device roles and how they fit into local use.
-              </p>
-              <span class="card-link">Learn device roles →</span>
-            </a>
-
-            <a class="resource-card action-card" href="/guides/using-your-node.html">
-              <h3>Using Your Node</h3>
-              <p>
-                Practical first steps for using a node, improving placement, and
-                understanding what affects radio range.
-              </p>
-              <span class="card-link">Read the guide →</span>
+              <span class="card-link">View settings →</span>
             </a>
 
             <a class="resource-card action-card" href="/guides/node-setups.html">
               <h3>Node Setups</h3>
               <p>
-                Keep useful information about a node, antenna, power setup,
-                placement, firmware, and maintenance.
+                Learn about personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, placement, maps, and wardriving.
               </p>
-              <span class="card-link">Read node setup guide →</span>
+              <span class="card-link">Read node setups →</span>
             </a>
 
             <a class="resource-card action-card" href="/guides/meshtastic-basics.html">
               <h3>Meshtastic Basics</h3>
               <p>
-                Useful if you already have a Meshtastic device or want to
-                understand the two ecosystems.
+                Useful if you already have a Meshtastic device or want to compare the two ecosystems.
               </p>
               <span class="card-link">Read Meshtastic basics →</span>
             </a>
 
-            <a class="resource-card action-card" href="/join/getting-started/">
-              <h3>Ask the Community</h3>
+            <a class="resource-card action-card" href="/guides/discord.html">
+              <h3>Discord</h3>
               <p>
-                Join the Discord to ask questions, get help with setup, and meet
-                others interested in mesh radio.
+                Learn how the Discord is used for setup help, questions, local testing, and community coordination.
               </p>
-              <span class="card-link">Join Discord →</span>
+              <span class="card-link">Read Discord guide →</span>
             </a>
           </div>
         </section>
@@ -491,13 +359,11 @@
           <h2>Ask the community</h2>
 
           <p>
-            If you are unsure what to buy, how to flash a device, or whether your
-            node is working, ask in Discord. You do not need to know the perfect
-            terminology before asking.
+            If you are unsure what to buy, how to flash a device, or whether your node is working, ask in Discord. You do not need perfect terminology before asking.
           </p>
 
           <p>
-            <a class="btn primary" href="/join/getting-started/">Join Discord</a>
+            <a class="btn primary" href="/join/" data-join-source="meshcore-basics-bottom">Join Discord</a>
           </p>
         </section>
       </article>
@@ -506,21 +372,10 @@
 
   <footer>
     <div class="container">
-      <div class="footer-title">
-        HAMPDEN COUNTY MESH
-      </div>
-
-      <div class="footer-subtitle">
-        MeshCore, Meshtastic, and radio education in Western Massachusetts
-      </div>
-
-      <div class="footer-subtitle">
-        Community education and hobby effort. Not an emergency service or a replacement for 911.
-      </div>
-
-      <div class="footer-subtitle">
-        Last Updated: <span id="last-updated">Loading...</span>
-      </div>
+      <div class="footer-title">HAMPDEN COUNTY MESH</div>
+      <div class="footer-subtitle">MeshCore, Meshtastic, maps, setup help, and local mesh networking in Western Massachusetts.</div>
+      <div class="footer-subtitle">Responsible use, privacy, and practical limits are covered in the guide library.</div>
+      <div class="footer-subtitle">Last Updated: <span id="last-updated">Loading...</span></div>
     </div>
   </footer>
 

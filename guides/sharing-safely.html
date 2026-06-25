@@ -1,66 +1,105 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sharing Safely | Hampden County Mesh</title>
-  <meta
-    name="description"
-    content="How to share useful Hampden County Mesh information, photos, screenshots, setup details, and local radio observations without exposing private or sensitive details."
-  >
+  <meta name="description" content="How to share useful Hampden County Mesh information, photos, screenshots, setup details, maps, and local mesh observations without exposing private or sensitive details.">
 
-  <!-- Social preview / Open Graph -->
-  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://hampdencountymesh.org/guides/sharing-safely.html">
+
+  <meta property="og:type" content="article">
   <meta property="og:site_name" content="Hampden County Mesh">
   <meta property="og:title" content="Sharing Safely | Hampden County Mesh">
-  <meta property="og:description" content="How to share useful Hampden County Mesh information, photos, screenshots, setup details, and local radio observations without exposing private or sensitive details.">
+  <meta property="og:description" content="How to share useful Hampden County Mesh information, photos, screenshots, setup details, maps, and local mesh observations without exposing private or sensitive details.">
   <meta property="og:url" content="https://hampdencountymesh.org/guides/sharing-safely.html">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
-  <!-- Twitter / X preview -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Sharing Safely | Hampden County Mesh">
-  <meta name="twitter:description" content="How to share useful Hampden County Mesh information, photos, screenshots, setup details, and local radio observations without exposing private or sensitive details.">
+  <meta name="twitter:description" content="How to share useful Hampden County Mesh information, photos, screenshots, setup details, maps, and local mesh observations without exposing private or sensitive details.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
   <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
+  <link rel="icon" href="/assets/images/social/hcm-logo-900.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Special+Elite&family=Inter:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
-  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+
+  <style>
+    .discord-nav-button svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .safe-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin: 22px 0;
+    }
+
+    .safe-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      background:
+        radial-gradient(circle at 18% 10%, rgba(157, 175, 136, 0.08), transparent 35%),
+        linear-gradient(180deg, rgba(24, 22, 16, 0.96), rgba(13, 12, 9, 0.96));
+    }
+
+    .safe-card h3 {
+      margin-top: 0;
+    }
+
+    .safe-card .label {
+      display: inline-flex;
+      margin-bottom: 10px;
+      color: var(--green);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 900px) {
+      .safe-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="noise"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="noise" aria-hidden="true"></div>
 
   <header>
     <div class="container">
       <a class="brand" href="/" aria-label="Hampden County Mesh home">
-        <span class="brand-icon" aria-hidden="true">📡</span>
+        <span class="brand-icon" aria-hidden="true">⌁</span>
         <span>HAMPDEN COUNTY MESH</span>
       </a>
 
-      <nav>
+      <nav aria-label="Primary navigation">
         <a href="/">Home</a>
-        <a href="/guides/">Guides</a>
+        <a href="/guides/" aria-current="page">Guides</a>
         <a href="/coverage.html">Coverage</a>
-        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord">
-          <img src="/assets/icons/discord-symbol-white.svg" alt="">
+        <a class="discord-nav-button" href="/join/" aria-label="Join the Discord" data-join-source="nav">
+          <svg viewBox="0 0 127.14 96.36" aria-hidden="true" focusable="false">
+            <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21A105.73,105.73,0,0,0,32.71,96.36a77.7,77.7,0,0,0,6.89-11.11,68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.35,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.4,2.67,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.2C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
+          </svg>
         </a>
       </nav>
     </div>
   </header>
 
-  <main class="docs-shell">
+  <main id="main" class="docs-shell">
     <div class="container">
       <article class="docs-article">
         <p class="docs-breadcrumb">
@@ -70,94 +109,63 @@
         <h1>Sharing Safely</h1>
 
         <p class="docs-lede">
-          Sharing what you learn can help other people get started, choose
-          hardware, understand local radio behavior, and avoid common mistakes.
-          The important part is sharing useful information without exposing
-          private or sensitive details.
+          Mesh is easier to learn when people share useful results, photos, screenshots, maps, and setup examples. The main rule is simple: share enough to help others, but do not expose private locations, credentials, or someone else’s details.
         </p>
 
         <div class="docs-note">
-          Do not post private keys, passwords, broker credentials, Wi-Fi details,
-          exact private node locations, private messages, or information someone
-          else did not agree to share.
+          Do not post private keys, passwords, broker credentials, Wi-Fi details, exact private node locations, private messages, or information someone else did not agree to share.
         </div>
 
         <div class="hero-actions">
-          <a class="btn secondary" href="#what-is-useful">Useful Info</a>
           <a class="btn secondary" href="#safe-to-share">Safe to Share</a>
           <a class="btn secondary" href="#do-not-share">Do Not Share</a>
+          <a class="btn secondary" href="#locations">Locations</a>
           <a class="btn secondary" href="#photos">Photos</a>
           <a class="btn secondary" href="#screenshots">Screenshots</a>
+          <a class="btn secondary" href="#maps">Maps</a>
           <a class="btn secondary" href="#security">Security</a>
         </div>
-
-        <section class="docs-section" id="what-is-useful">
-          <h2>What is useful to share</h2>
-
-          <p>
-            Useful information does not need to be formal. A short, clear
-            description of what you tried, what device you used, and what happened
-            can be enough.
-          </p>
-
-          <div class="docs-card-grid">
-            <div class="docs-card">
-              <h3>Device experience</h3>
-              <p>
-                What device you used, what worked, what was confusing, and what
-                you would do differently next time.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>Setup details</h3>
-              <p>
-                General information about firmware, antenna type, power, case,
-                mounting, or app setup.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>General location context</h3>
-              <p>
-                A town, public place, hill, road corridor, or broad area can help
-                without exposing a private address.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>Photos</h3>
-              <p>
-                Public-safe photos of devices, antennas, event tables, scenery,
-                or non-sensitive setup examples.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>Guide corrections</h3>
-              <p>
-                Broken links, confusing wording, outdated information, typos, or
-                missing beginner context.
-              </p>
-            </div>
-
-            <div class="docs-card">
-              <h3>Event ideas</h3>
-              <p>
-                Suggestions for meetups, demos, radio basics sessions, or places
-                where people could learn together.
-              </p>
-            </div>
-          </div>
-        </section>
 
         <section class="docs-section" id="safe-to-share">
           <h2>Usually safe to share</h2>
 
           <p>
-            These details are usually fine in public channels or public website
-            material, as long as they do not reveal something private by context.
+            These details are usually fine in public channels, public website material, or GitHub issues, as long as they do not reveal something private by context.
           </p>
+
+          <div class="safe-grid">
+            <div class="safe-card">
+              <span class="label">General area</span>
+              <h3>Broad location context</h3>
+              <p>
+                A town, public place, hill, road corridor, or broad area can help people understand local results without exposing a private address.
+              </p>
+            </div>
+
+            <div class="safe-card">
+              <span class="label">Device</span>
+              <h3>Hardware and setup basics</h3>
+              <p>
+                Device model, system, firmware version, antenna type, power type, and general placement are usually useful.
+              </p>
+            </div>
+
+            <div class="safe-card">
+              <span class="label">Testing</span>
+              <h3>Limited observations</h3>
+              <p>
+                Short reports like “active near a public park” or “window placement worked better” are more useful than broad claims about coverage.
+              </p>
+            </div>
+
+            <div class="safe-card">
+              <span class="label">Public material</span>
+              <h3>Docs and corrections</h3>
+              <p>
+                Broken links, outdated guide information, confusing wording, and public tool corrections are good GitHub or Discord items.
+              </p>
+            </div>
+          </div>
 
           <ul>
             <li>Town, broad area, or public landmark.</li>
@@ -168,7 +176,6 @@
             <li>Battery, USB, wall power, or solar as a general power type.</li>
             <li>Non-sensitive app or firmware version information.</li>
             <li>Questions about public documentation, public tools, or general setup problems.</li>
-            <li>Photos that do not show private addresses, plates, screens, badges, or people without permission.</li>
           </ul>
         </section>
 
@@ -176,8 +183,7 @@
           <h2>Do not share publicly</h2>
 
           <p>
-            Some information can create privacy or security problems if it is
-            posted in a public channel, issue, screenshot, photo, or map.
+            Some information can create privacy or security problems if it is posted in a public channel, issue, screenshot, photo, or map.
           </p>
 
           <ul>
@@ -195,12 +201,11 @@
           </ul>
         </section>
 
-        <section class="docs-section" id="location">
+        <section class="docs-section" id="locations">
           <h2>Location sharing</h2>
 
           <p>
-            Location detail should match the situation. A public meetup at a
-            library can be specific. A private home node usually should not be.
+            Location detail should match the situation. A public meetup at a library can be specific. A private home node usually should not be.
           </p>
 
           <h3>Better public examples</h3>
@@ -225,8 +230,7 @@
           </ul>
 
           <p>
-            Public places, event locations, and permission-based installs are
-            different from private homes. When in doubt, use a broader area.
+            Public places, event locations, and permission-based installs are different from private homes. When in doubt, use a broader area.
           </p>
         </section>
 
@@ -234,8 +238,7 @@
           <h2>Photos</h2>
 
           <p>
-            Photos can make the site and Discord more useful, but they should be
-            checked before posting.
+            Photos can make the site and Discord more useful, but they should be checked before posting.
           </p>
 
           <h3>Before sharing a photo</h3>
@@ -252,8 +255,8 @@
           <h3>Usually useful photos</h3>
 
           <ul>
-            <li>A node on a table at a meetup.</li>
             <li>A close-up of a device, antenna, case, or battery setup.</li>
+            <li>A node on a table at a public meetup or demo.</li>
             <li>A public-safe photo of a park, hill, trail, or general terrain.</li>
             <li>A wiring or mounting example with private details removed.</li>
             <li>A photo that helps explain a guide or beginner question.</li>
@@ -264,8 +267,7 @@
           <h2>Screenshots</h2>
 
           <p>
-            Screenshots often reveal more than expected. Check the whole image
-            before posting it.
+            Screenshots often reveal more than expected. Check the whole image before posting it.
           </p>
 
           <ul>
@@ -278,8 +280,7 @@
           </ul>
 
           <p>
-            A cropped screenshot of the specific error is usually better than a
-            full-screen image.
+            A cropped screenshot of the specific issue is usually better than a full-screen image.
           </p>
         </section>
 
@@ -287,22 +288,15 @@
           <h2>Maps and observed activity</h2>
 
           <p>
-            Maps, dashboards, observers, MQTT feeds, logs, and analyzers can be
-            useful, but they need context. A point on a map does not always mean
-            your device can directly reach that point over radio.
+            Maps, dashboards, observers, MQTT feeds, logs, and analyzers can be useful, but they need context. A point on a map does not always mean your device can directly reach that point over radio.
           </p>
 
           <p>
-            Some map information may come from an observer, an internet-connected
-            path, delayed data, a public feed, a mobile device, or another region.
-            Do not assume one group owns or controls every marker, packet, node,
-            or message shown on a public tool.
+            Some map information may come from an observer, an internet-connected path, delayed data, a public feed, a mobile device, or another region. Do not assume one group owns or controls every marker, packet, node, or message shown on a public tool.
           </p>
 
           <p>
-            Be careful before reposting map screenshots with extra location
-            details. A public marker does not automatically mean it is safe to
-            add more information about that device or person.
+            Be careful before reposting map screenshots with extra location details. A public marker does not automatically mean it is safe to add more information about that device or person.
           </p>
         </section>
 
@@ -310,11 +304,8 @@
           <h2>Node names</h2>
 
           <p>
-            A good node name helps people understand what they are seeing without
-            revealing too much.
+            A good node name helps people understand what they are seeing without revealing too much.
           </p>
-
-          <h3>Better node naming habits</h3>
 
           <ul>
             <li>Use a short, recognizable name.</li>
@@ -324,93 +315,47 @@
           </ul>
 
           <p>
-            For public or semi-public devices, a general name is usually better
-            than a name that points directly to a private home.
+            For public or semi-public devices, a general name is usually better than a name that points directly to a private home.
           </p>
         </section>
 
-        <section class="docs-section" id="templates">
-          <h2>Simple sharing templates</h2>
-
-          <p>
-            These templates are optional. Use only what helps.
-          </p>
-
-          <h3>Device setup</h3>
-
-          <pre><code>Device setup
-System: MeshCore / Meshtastic / Other
-Device:
-Role:
-Antenna:
-Power:
-Placement:
-What I am trying to do:
-What works:
-What is confusing:
-Private details removed: yes / no</code></pre>
-
-          <h3>Local use</h3>
-
-          <pre><code>Local use note
-General area:
-System:
-Device:
-Antenna:
-Placement:
-What I was trying to do:
-What happened:
-What changed:
-Private details removed: yes / no</code></pre>
-
-          <h3>Photo or screenshot</h3>
-
-          <pre><code>Before posting
-Private address removed: yes / no
-Coordinates removed if needed: yes / no
-Keys/passwords removed: yes / no
-Screens checked: yes / no
-People gave permission: yes / no / not shown
-Photo metadata checked: yes / no</code></pre>
-        </section>
-
-        <section class="docs-section" id="ways-to-share">
-          <h2>Ways to share</h2>
+        <section class="docs-section" id="where-to-share">
+          <h2>Where to share</h2>
 
           <p>
             Use the place that fits the information.
           </p>
 
-          <div class="docs-card-grid">
-            <div class="docs-card">
-              <h3>Discord</h3>
+          <div class="safe-grid">
+            <div class="safe-card">
+              <span class="label">Discord</span>
+              <h3>Questions and quick discussion</h3>
               <p>
-                Best for questions, setup help, photos, quick discussion, and
-                informal local radio talk.
+                Best for setup help, device choices, local testing, safe photos, screenshots with private details removed, and informal discussion.
               </p>
             </div>
 
-            <div class="docs-card">
-              <h3>GitHub</h3>
+            <div class="safe-card">
+              <span class="label">GitHub</span>
+              <h3>Website and documentation</h3>
               <p>
-                Best for website fixes, broken links, guide corrections, and
-                public documentation changes.
+                Best for broken links, guide corrections, public documentation changes, and issues related to the website or repository.
               </p>
             </div>
 
-            <div class="docs-card">
-              <h3>Email</h3>
+            <div class="safe-card">
+              <span class="label">Email</span>
+              <h3>Sensitive or direct contact</h3>
               <p>
-                Best for contact questions, sensitive issues, event ideas, or
-                anything that should not start in a public channel.
+                Best for security issues, contact questions, event ideas, or anything that should not start in a public channel.
               </p>
             </div>
 
-            <div class="docs-card">
-              <h3>Meetups</h3>
+            <div class="safe-card">
+              <span class="label">Maps</span>
+              <h3>Observed activity tools</h3>
               <p>
-                Best for hands-on device examples, beginner questions, and
-                showing people how hardware works in person.
+                Best for coverage and activity context, but use maps carefully and avoid adding extra private detail to public map screenshots.
               </p>
             </div>
           </div>
@@ -420,14 +365,11 @@ Photo metadata checked: yes / no</code></pre>
           <h2>Security issues</h2>
 
           <p>
-            Do not post sensitive security issues in a public Discord channel,
-            public GitHub issue, public screenshot, or public social post.
+            Do not post sensitive security issues in a public Discord channel, public GitHub issue, public screenshot, or public social post.
           </p>
 
           <p>
-            Use the security contact for anything involving exposed credentials,
-            private keys, access tokens, private infrastructure details, or
-            anything that could help someone access or disrupt a system.
+            Use the security contact for anything involving exposed credentials, private keys, access tokens, private infrastructure details, or anything that could help someone access or disrupt a system.
           </p>
 
           <p>
@@ -460,26 +402,15 @@ Photo metadata checked: yes / no</code></pre>
             <a class="resource-card action-card" href="/guides/getting-started.html">
               <h3>Getting Started</h3>
               <p>
-                Start here if you are new to MeshCore, Meshtastic, or local mesh
-                radio.
+                Start here if you are new to MeshCore, Meshtastic, or local mesh networking.
               </p>
               <span class="card-link">Start here →</span>
-            </a>
-
-            <a class="resource-card action-card" href="/guides/using-your-node.html">
-              <h3>Using Your Node</h3>
-              <p>
-                Practical first steps for using a node, improving placement, and
-                understanding what affects radio range.
-              </p>
-              <span class="card-link">Read the guide →</span>
             </a>
 
             <a class="resource-card action-card" href="/guides/node-setups.html">
               <h3>Node Setups</h3>
               <p>
-                Keep useful information about a node, antenna, power setup,
-                placement, firmware, and maintenance.
+                Learn about personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, placement, maps, and wardriving.
               </p>
               <span class="card-link">Read node setup guide →</span>
             </a>
@@ -487,10 +418,17 @@ Photo metadata checked: yes / no</code></pre>
             <a class="resource-card action-card" href="/guides/discord.html">
               <h3>Discord</h3>
               <p>
-                Learn how the Discord is used for questions, setup help, and
-                community coordination.
+                Learn how the Discord is used for setup help, questions, local testing, and community coordination.
               </p>
               <span class="card-link">Read Discord guide →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/coverage.html">
+              <h3>Coverage</h3>
+              <p>
+                Open the Hampden County map, observed-activity status, and coverage notes.
+              </p>
+              <span class="card-link">Open coverage →</span>
             </a>
           </div>
         </section>
@@ -499,13 +437,11 @@ Photo metadata checked: yes / no</code></pre>
           <h2>Ask before posting sensitive details</h2>
 
           <p>
-            If you are unsure whether something is safe to post, ask in general
-            terms first. Do not paste credentials, exact private locations, or
-            sensitive screenshots just to ask whether they are sensitive.
+            If you are unsure whether something is safe to post, ask in general terms first. Do not paste credentials, exact private locations, or sensitive screenshots just to ask whether they are sensitive.
           </p>
 
           <p>
-            <a class="btn primary" href="/join/getting-started/">Join Discord</a>
+            <a class="btn primary" href="/join/" data-join-source="sharing-safely-bottom">Join Discord</a>
           </p>
         </section>
       </article>
@@ -514,21 +450,10 @@ Photo metadata checked: yes / no</code></pre>
 
   <footer>
     <div class="container">
-      <div class="footer-title">
-        HAMPDEN COUNTY MESH
-      </div>
-
-      <div class="footer-subtitle">
-        MeshCore, Meshtastic, and radio education in Western Massachusetts
-      </div>
-
-      <div class="footer-subtitle">
-        Community education and hobby effort. Not an emergency service or a replacement for 911.
-      </div>
-
-      <div class="footer-subtitle">
-        Last Updated: <span id="last-updated">Loading...</span>
-      </div>
+      <div class="footer-title">HAMPDEN COUNTY MESH</div>
+      <div class="footer-subtitle">MeshCore, Meshtastic, maps, setup help, and local mesh networking in Western Massachusetts.</div>
+      <div class="footer-subtitle">Responsible use, privacy, and practical limits are covered in the guide library.</div>
+      <div class="footer-subtitle">Last Updated: <span id="last-updated">Loading...</span></div>
     </div>
   </footer>
 

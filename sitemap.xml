@@ -1,87 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hampdencountymesh.org/</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-25</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/guides/</loc>
-    <lastmod>2026-06-22</lastmod>
-  </url>
-
-  <url>
-    <loc>https://hampdencountymesh.org/guides/what-is-mesh.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-25</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/guides/getting-started.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-25</lastmod>
+  </url>
+
+  <url>
+    <loc>https://hampdencountymesh.org/guides/recommended-settings.html</loc>
+    <lastmod>2026-06-25</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/guides/meshcore-basics.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-25</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/guides/meshtastic-basics.html</loc>
-    <lastmod>2026-06-22</lastmod>
-  </url>
-
-  <url>
-    <loc>https://hampdencountymesh.org/guides/nodes-repeaters-observers.html</loc>
-    <lastmod>2026-06-22</lastmod>
-  </url>
-
-  <url>
-    <loc>https://hampdencountymesh.org/guides/using-your-node.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-25</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/guides/node-setups.html</loc>
-    <lastmod>2026-06-22</lastmod>
-  </url>
-
-  <url>
-    <loc>https://hampdencountymesh.org/guides/radio-aids.html</loc>
-    <lastmod>2026-06-22</lastmod>
-  </url>
-
-  <url>
-    <loc>https://hampdencountymesh.org/guides/radio-basics.html</loc>
-    <lastmod>2026-06-22</lastmod>
-  </url>
-
-  <url>
-    <loc>https://hampdencountymesh.org/guides/glossary.html</loc>
-    <lastmod>2026-06-22</lastmod>
-  </url>
-
-  <url>
-    <loc>https://hampdencountymesh.org/guides/discord.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-25</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/guides/sharing-safely.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-25</lastmod>
   </url>
 
   <url>
-    <loc>https://hampdencountymesh.org/guides/hosting-a-meetup.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <loc>https://hampdencountymesh.org/guides/discord.html</loc>
+    <lastmod>2026-06-25</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/coverage.html</loc>
-    <lastmod>2026-06-22</lastmod>
-  </url>
-
-  <url>
-    <loc>https://hampdencountymesh.org/radio-reference.html</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-25</lastmod>
   </url>
 </urlset>

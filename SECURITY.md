@@ -17,7 +17,7 @@ Please include, when safe and relevant:
 * Steps to reproduce the issue
 * Potential impact
 * Screenshots, logs, or examples with private details removed where possible
-* Whether any credentials, private locations, keys, private messages, or private data may have been exposed
+* Whether credentials, private locations, keys, private messages, or private data may have been exposed
 
 Do not include live passwords, private keys, API tokens, or sensitive credentials in plain text unless there is no safer way to explain the issue.
 
@@ -141,9 +141,6 @@ For immediate danger or emergencies, contact the appropriate emergency services 
 * `README.md`
 * `CONTRIBUTING.md`
 * `CODE_OF_CONDUCT.md`
-* `docs/README.md`
+* `SUPPORT.md`
+* `docs/discord.md`
 * `docs/observed-activity-data.md`
-* `docs/mqtt.md`
-* `docs/observers.md`
-* `docs/infrastructure.md`
-* `docs/nodes.md`
