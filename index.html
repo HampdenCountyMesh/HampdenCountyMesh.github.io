@@ -29,11 +29,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/style.css?v=20260626b">
+  <link rel="stylesheet" href="/style.css?v=20260626g">
 
   <style>
-    /* Homepage-only cleanup.
-       This keeps the existing site style while removing the old card-heavy homepage. */
+    /* Homepage-specific layout. Uses the existing site theme from style.css. */
 
     .brand-icon {
       width: 26px;
@@ -41,36 +40,58 @@
       flex: 0 0 auto;
     }
 
-    .hero {
-      padding: clamp(56px, 9vw, 96px) 0 clamp(48px, 8vw, 80px);
+    .discord-nav-button img {
+      opacity: 0.95;
     }
 
-    .hero-panel {
+    .hero-banner {
+      position: relative;
+      min-height: clamp(560px, 76vh, 780px);
+      display: flex;
+      align-items: center;
+      padding: clamp(64px, 9vw, 110px) 0;
+      border-bottom: 1px solid rgba(255, 179, 71, 0.18);
+      background:
+        linear-gradient(
+          180deg,
+          rgba(8, 8, 6, 0.28) 0%,
+          rgba(8, 8, 6, 0.52) 42%,
+          rgba(8, 8, 6, 0.94) 100%
+        ),
+        url("/assets/images/hero/bannertom.png");
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-banner .hero-panel {
       max-width: 980px;
+      background:
+        radial-gradient(circle at 20% 12%, rgba(157, 175, 136, 0.12), transparent 34%),
+        linear-gradient(180deg, rgba(24, 22, 16, 0.78), rgba(9, 8, 6, 0.88));
+      backdrop-filter: blur(2px);
     }
 
-    .hero h1 {
+    .hero-banner h1 {
       text-transform: uppercase;
     }
 
     .home-section {
-      padding: clamp(44px, 8vw, 86px) 0;
+      padding: clamp(52px, 8vw, 96px) 0;
       text-align: center;
     }
 
     .home-section-tight {
-      padding: clamp(24px, 5vw, 48px) 0;
+      padding: clamp(34px, 5vw, 64px) 0;
     }
 
     .home-copy {
-      max-width: 820px;
+      max-width: 860px;
       margin: 0 auto;
+      text-align: center;
     }
 
     .home-copy h2,
-    .home-copy h3,
-    .home-card h2,
-    .home-card h3 {
+    .home-card h2 {
       margin: 0 0 18px;
       color: var(--text);
       font-family: "Special Elite", serif;
@@ -81,7 +102,7 @@
 
     .home-copy p,
     .home-card p {
-      max-width: 740px;
+      max-width: 720px;
       margin: 0 auto;
       color: var(--text-soft);
       font-size: clamp(1.05rem, 2vw, 1.22rem);
@@ -104,26 +125,29 @@
       margin-bottom: 16px;
     }
 
-    .home-image-copy {
-      text-align: center;
+    .project-buttons {
+      margin-top: 24px;
     }
 
-    .home-image-copy h3 {
-      font-size: clamp(2.4rem, 6vw, 4.6rem);
+    .icon-btn {
+      gap: 10px;
     }
 
-    .home-image-copy p {
-      max-width: 620px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .home-image-copy .button-row {
-      justify-content: center;
+    .project-icon {
+      width: 24px;
+      height: 24px;
+      display: block;
+      flex: 0 0 auto;
     }
 
     .home-contact {
       padding-bottom: clamp(56px, 9vw, 100px);
+    }
+
+    .footer-updated {
+      margin: 6px 0 0;
+      color: var(--muted);
+      font-size: 0.82rem;
     }
 
     footer .footer-subtitle {
@@ -131,14 +155,17 @@
     }
 
     @media (max-width: 800px) {
-      .hero-panel {
+      .hero-banner {
+        min-height: 560px;
+        background-position: center top;
+      }
+
+      .hero-banner .hero-panel {
         width: min(100% - 22px, 960px);
       }
 
       .home-copy h2,
-      .home-copy h3,
-      .home-card h2,
-      .home-card h3 {
+      .home-card h2 {
         font-size: clamp(2.5rem, 13vw, 4.6rem);
       }
     }
@@ -160,13 +187,16 @@
         <a href="/" aria-current="page">Home</a>
         <a href="/guides/">Guides</a>
         <a href="/coverage.html">Coverage</a>
-        <a href="/join/">Discord</a>
+
+        <a class="discord-nav-button" href="/join/" aria-label="Join the Hampden County Mesh Discord">
+          <img src="/assets/icons/discord-symbol-white.svg" alt="" aria-hidden="true">
+        </a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero">
+    <section class="hero hero-banner">
       <div class="hero-panel">
         <div class="frequency-display">Western Massachusetts</div>
 
@@ -206,61 +236,21 @@
     <section class="home-section home-section-tight">
       <div class="container">
         <div class="home-copy">
-          <h2>Start here</h2>
+          <div class="section-heading">Original project sites</div>
 
           <p>
-            Get a node, use the local settings, and start testing.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-section">
-      <div class="container">
-        <div class="image-feature">
-          <div class="image-frame">
-            <img
-              src="/assets/images/hero/mt-tom-towers-01.jpg"
-              alt="Mt. Tom towers seen from Hampden County"
-            >
-          </div>
-
-          <div class="image-copy home-image-copy">
-            <h3>Coverage changes from place to place.</h3>
-
-            <p>
-              Hills, valleys, buildings, trees, and antenna height all affect what a
-              node can hear. The map is useful, but real testing is what tells us what
-              works.
-            </p>
-
-            <div class="button-row">
-              <a class="btn secondary" href="/coverage.html">
-                View Map
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="home-section">
-      <div class="container">
-        <div class="home-copy">
-          <h2>Project links</h2>
-
-          <p>
-            MeshCore and Meshtastic have their own sites for downloads,
-            documentation, and project information.
+            Here are the original project sites.
           </p>
 
-          <div class="button-row">
-            <a class="btn secondary" href="https://meshcore.co.uk/" target="_blank" rel="noopener">
-              MeshCore
+          <div class="button-row project-buttons">
+            <a class="btn secondary icon-btn" href="https://meshcore.co.uk/" target="_blank" rel="noopener">
+              <img class="project-icon" src="/assets/icons/meshcore.svg" alt="" aria-hidden="true">
+              <span>MeshCore</span>
             </a>
 
-            <a class="btn secondary" href="https://meshtastic.org/" target="_blank" rel="noopener">
-              Meshtastic
+            <a class="btn secondary icon-btn" href="https://meshtastic.org/" target="_blank" rel="noopener">
+              <img class="project-icon" src="/assets/icons/meshtastic.svg" alt="" aria-hidden="true">
+              <span>Meshtastic</span>
             </a>
           </div>
         </div>
@@ -313,7 +303,10 @@
   <footer>
     <div class="container">
       <p class="footer-subtitle">Community-based radio communications in Western Massachusetts.</p>
+      <p class="footer-updated">Last updated: <span id="last-updated">Loading...</span></p>
     </div>
   </footer>
+
+  <script src="/last-updated.js" defer></script>
 </body>
 </html>
