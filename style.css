@@ -1158,3 +1158,52 @@ footer {
         transform: none;
     }
 }
+/* =========================================================
+   Simple Homepage Refresh
+   ========================================================= */
+
+.brand-icon {
+    width: 24px;
+    height: 24px;
+    flex: 0 0 auto;
+}
+
+.home-center {
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.home-center h2,
+.home-center h3 {
+    margin: 0 0 16px;
+    font-family: "Special Elite", serif;
+    color: var(--text);
+    font-size: clamp(2.2rem, 6vw, 4.8rem);
+    line-height: 1;
+}
+
+.home-center p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--text-soft);
+    font-size: 1.08rem;
+}
+
+.home-center .button-row {
+    justify-content: center;
+}
+
+.image-feature .home-center {
+    max-width: none;
+}
+
+.image-feature .button-row {
+    justify-content: center;
+}
+
+footer .footer-subtitle {
+    margin: 0;
+}
