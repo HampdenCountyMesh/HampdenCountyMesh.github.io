@@ -1207,3 +1207,73 @@ footer {
 footer .footer-subtitle {
     margin: 0;
 }
+/* =========================================================
+   Homepage Refresh Fix
+   Keeps the homepage simple without making it plain
+   ========================================================= */
+
+.home-panel {
+    max-width: 920px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.home-panel h2,
+.home-panel h3 {
+    margin: 0 0 18px;
+    font-family: "Special Elite", serif;
+    color: var(--text);
+    font-size: clamp(2.8rem, 7vw, 5.4rem);
+    line-height: 0.95;
+    letter-spacing: 0.01em;
+}
+
+.home-panel p {
+    max-width: 720px;
+    margin: 0 auto;
+    color: var(--text-soft);
+    font-size: clamp(1.05rem, 2vw, 1.22rem);
+    line-height: 1.65;
+}
+
+.home-panel .button-row {
+    justify-content: center;
+}
+
+.home-simple {
+    padding: clamp(42px, 7vw, 76px) 0;
+}
+
+.home-simple .community-panel {
+    padding: clamp(28px, 5vw, 56px);
+}
+
+.home-compact {
+    padding: clamp(24px, 5vw, 48px) 0;
+}
+
+.home-compact .community-panel {
+    padding: clamp(24px, 4vw, 42px);
+}
+
+.home-image-copy {
+    text-align: center;
+}
+
+.home-image-copy h3 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+.home-image-copy p {
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.home-image-copy .button-row {
+    justify-content: center;
+}
+
+footer .footer-subtitle {
+    margin: 0;
+}
