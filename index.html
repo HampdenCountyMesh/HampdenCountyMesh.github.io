@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>Hampden County Mesh</title>
   <meta name="description" content="A local community for people interested in MeshCore, Meshtastic, and practical radio projects in Western Massachusetts.">
 
@@ -20,7 +19,7 @@
   <meta name="twitter:description" content="A local community for people interested in MeshCore, Meshtastic, and practical radio projects in Western Massachusetts.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
 
-  <meta name="theme-color" content="#070806">
+  <meta name="theme-color" content="#080806">
 
   <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
   <link rel="shortcut icon" href="/assets/icons/favicon.svg">
@@ -30,459 +29,166 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --bg: #070806;
-      --panel: #12130d;
-      --text: #eee2c0;
-      --muted: #a99f85;
-      --gold: #ffbd59;
-      --line: rgba(255, 189, 89, 0.26);
-      --shadow: rgba(0, 0, 0, 0.35);
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      color: var(--text);
-      background:
-        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
-        radial-gradient(circle at top, rgba(255, 189, 89, 0.08), transparent 34rem),
-        var(--bg);
-      background-size: 48px 48px, 48px 48px, auto, auto;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      font-weight: 700;
-      line-height: 1.5;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    h1,
-    h2 {
-      font-family: "Special Elite", Georgia, serif;
-      font-weight: 400;
-      text-wrap: balance;
-    }
-
-    h1 {
-      margin: 0 0 1.35rem;
-      font-size: clamp(4.5rem, 14vw, 10rem);
-      line-height: 0.82;
-      letter-spacing: 0.015em;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      margin: 0 0 1rem;
-      font-size: clamp(2.8rem, 7vw, 5.5rem);
-      line-height: 0.95;
-    }
-
-    p {
-      color: var(--muted);
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      border-bottom: 1px solid var(--line);
-      background: rgba(7, 8, 6, 0.88);
-      backdrop-filter: blur(12px);
-    }
-
-    .nav {
-      width: min(100% - 2rem, 1120px);
-      min-height: 4.25rem;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-family: "Special Elite", Georgia, serif;
-      font-size: 1.05rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .brand-icon {
-      width: 2.35rem;
-      height: 2.35rem;
-      border-radius: 50%;
-      border: 1px solid var(--line);
-      background: rgba(255, 189, 89, 0.08);
-      padding: 0.25rem;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 1.1rem;
-      color: var(--muted);
-      font-size: 0.86rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus {
-      color: var(--text);
-    }
-
-    main {
-      overflow: hidden;
-    }
-
-    .section-inner {
-      width: min(100% - 2rem, 1100px);
-      margin: 0 auto;
-    }
-
-    .section-narrow {
-      max-width: 760px;
-      text-align: center;
-    }
-
-    .home-section {
-      padding: clamp(3.5rem, 8vw, 6rem) 0;
-      text-align: center;
-    }
-
-    .hero {
-      padding: clamp(4.5rem, 11vw, 8rem) 0 clamp(3rem, 7vw, 5rem);
-      text-align: center;
-    }
-
-    .hero-inner {
-      max-width: 920px;
-    }
-
-    .hero-subtitle {
-      max-width: 760px;
-      margin: 0 auto 2rem;
-      font-size: clamp(1.05rem, 2vw, 1.35rem);
-      line-height: 1.6;
-    }
-
-    .home-section p {
-      max-width: 680px;
-      margin: 0 auto 1.35rem;
-      font-size: 1.08rem;
-      line-height: 1.65;
-    }
-
-    .section-kicker {
-      margin: 0 0 1rem;
-      color: var(--gold);
-      font-family: "Special Elite", Georgia, serif;
-      font-size: 0.9rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .button-row {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 3rem;
-      padding: 0.8rem 1.45rem;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      font-size: 0.88rem;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
-    }
-
-    .button:hover,
-    .button:focus {
-      transform: translateY(-1px);
-      border-color: var(--gold);
-    }
-
-    .button.primary {
-      color: #171004;
-      background: var(--gold);
-      border-color: var(--gold);
-    }
-
-    .button.secondary {
-      color: var(--text);
-      background: rgba(255, 189, 89, 0.06);
-    }
-
-    .mesh-intro {
-      padding-bottom: 3rem;
-    }
-
-    .start-here {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-    }
-
-    .start-here h2 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
-    }
-
-    .start-here p {
-      margin-bottom: 0;
-    }
-
-    .coverage-preview {
-      padding-top: clamp(3rem, 7vw, 5rem);
-    }
-
-    .coverage-card {
-      display: grid;
-      grid-template-columns: minmax(220px, 360px) minmax(0, 1fr);
-      gap: clamp(2rem, 5vw, 4rem);
-      align-items: center;
-      padding: clamp(1.25rem, 3vw, 2rem);
-      border: 1px solid var(--line);
-      border-radius: 1.25rem;
-      background: rgba(255, 255, 255, 0.025);
-      box-shadow: 0 1.5rem 4rem var(--shadow);
-    }
-
-    .coverage-card img {
-      width: 100%;
-      border-radius: 0.75rem;
-      border: 1px solid rgba(255, 189, 89, 0.18);
-    }
-
-    .coverage-copy {
-      text-align: center;
-    }
-
-    .coverage-copy p {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .callout-box {
-      padding: clamp(2rem, 5vw, 4rem);
-      border: 1px solid var(--line);
-      border-radius: 1.25rem;
-      background: rgba(255, 255, 255, 0.025);
-      box-shadow: 0 1.5rem 4rem var(--shadow);
-    }
-
-    .site-footer {
-      padding: 2rem 1rem;
-      border-top: 1px solid var(--line);
-      text-align: center;
-    }
-
-    .site-footer p {
-      margin: 0;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 760px) {
-      .nav {
-        min-height: auto;
-        padding: 1rem 0;
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        width: 100%;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 0.85rem;
-      }
-
-      h1 {
-        font-size: clamp(3.6rem, 19vw, 6.5rem);
-      }
-
-      .coverage-card {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-  <header class="site-header">
-    <nav class="nav" aria-label="Main navigation">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header>
+    <div class="container">
       <a class="brand" href="/" aria-label="Hampden County Mesh home">
-        <img class="brand-icon" src="/assets/icons/favicon.svg" alt="" aria-hidden="true">
+        <img class="brand-icon" src="/assets/icons/favicon.svg" alt="" width="24" height="24" aria-hidden="true">
         <span>Hampden County Mesh</span>
       </a>
 
-      <div class="nav-links">
+      <nav aria-label="Main navigation">
         <a href="/" aria-current="page">Home</a>
         <a href="/guides/">Guides</a>
         <a href="/coverage.html">Coverage</a>
-        <a href="/join/">Discord</a>
-      </div>
-    </nav>
+        <a class="discord-nav-button" href="/join/" aria-label="Join the Hampden County Mesh Discord">
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero">
-      <div class="section-inner hero-inner">
-        <h1>Hampden County Mesh</h1>
+      <div class="hero-panel">
+        <div class="frequency-display">Western Massachusetts</div>
 
-        <p class="hero-subtitle">
+        <h1>Hampden County<br>Mesh</h1>
+
+        <p class="hero-text">
           A local community for people interested in MeshCore, Meshtastic,
           and practical radio projects in Western Massachusetts.
         </p>
 
-        <div class="button-row">
-          <a class="button primary" href="/guides/recommended-settings.html">
-            Recommended Settings
-          </a>
-
-          <a class="button secondary" href="/join/">
-            Join Discord
-          </a>
+        <div class="hero-actions">
+          <a class="btn primary large" href="/guides/recommended-settings.html">Recommended Settings</a>
+          <a class="btn secondary large" href="/join/">Join Discord</a>
         </div>
       </div>
     </section>
 
-    <section class="home-section mesh-intro">
-      <div class="section-inner section-narrow">
-        <h2>What is mesh?</h2>
-
-        <p>
-          Mesh radios pass short messages through nearby radios. A message can move
-          from one node to another, helping people communicate across an area without
-          relying on cell service or Wi-Fi.
-        </p>
-      </div>
-    </section>
-
-    <section class="home-section start-here">
-      <div class="section-inner section-narrow">
-        <h2>Start here</h2>
-
-        <p>
-          Get a node, use the local settings, and start testing.
-        </p>
-      </div>
-    </section>
-
-    <section class="home-section coverage-preview">
-      <div class="section-inner coverage-card">
-        <img
-          src="/assets/images/hero/mt-tom-towers-01.jpg"
-          alt="Mt. Tom towers seen from Hampden County"
-        >
-
-        <div class="coverage-copy">
-          <h2>Coverage changes from place to place.</h2>
+    <section>
+      <div class="container">
+        <div class="community-panel home-center">
+          <h2>What is mesh?</h2>
 
           <p>
-            Hills, valleys, buildings, trees, and antenna height all affect what a
-            node can hear. The map is useful, but real testing is what tells us what
-            works.
+            Mesh radios pass short messages through nearby radios. A message can move
+            from one node to another, helping people communicate across an area without
+            relying on cell service or Wi-Fi.
           </p>
+        </div>
+      </div>
+    </section>
 
-          <div class="button-row">
-            <a class="button secondary" href="/coverage.html">
-              View Map
-            </a>
+    <section>
+      <div class="container">
+        <div class="community-panel home-center">
+          <h2>Start here</h2>
+
+          <p>
+            Get a node, use the local settings, and start testing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="image-feature">
+          <div class="image-frame">
+            <img
+              src="/assets/images/hero/mt-tom-towers-01.jpg"
+              alt="Mt. Tom towers seen from Hampden County"
+            >
+          </div>
+
+          <div class="image-copy home-center">
+            <h3>Coverage changes from place to place.</h3>
+
+            <p>
+              Hills, valleys, buildings, trees, and antenna height all affect what a
+              node can hear. The map is useful, but real testing is what tells us what
+              works.
+            </p>
+
+            <div class="button-row">
+              <a class="btn secondary" href="/coverage.html">View Map</a>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="home-section project-links">
-      <div class="section-inner section-narrow">
-        <h2>Project links</h2>
+    <section>
+      <div class="container">
+        <div class="community-panel home-center">
+          <h2>Project links</h2>
 
-        <p>
-          MeshCore and Meshtastic have their own sites for downloads,
-          documentation, and project information.
-        </p>
+          <p>
+            MeshCore and Meshtastic have their own sites for downloads,
+            documentation, and project information.
+          </p>
 
-        <div class="button-row">
-          <a class="button secondary" href="https://meshcore.co.uk/" target="_blank" rel="noopener">
-            MeshCore
-          </a>
-
-          <a class="button secondary" href="https://meshtastic.org/" target="_blank" rel="noopener">
-            Meshtastic
-          </a>
+          <div class="button-row">
+            <a class="btn secondary" href="https://meshcore.co.uk/" target="_blank" rel="noopener">MeshCore</a>
+            <a class="btn secondary" href="https://meshtastic.org/" target="_blank" rel="noopener">Meshtastic</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="home-section discord-callout">
-      <div class="section-inner section-narrow callout-box">
-        <p class="section-kicker">Community Discord</p>
+    <section>
+      <div class="container">
+        <div class="community-panel home-center">
+          <div class="section-heading">Community Discord</div>
 
-        <h2>Ask questions, compare devices, and get setup help.</h2>
+          <h2>Ask questions, compare devices, and get setup help.</h2>
 
-        <p>
-          Join the Discord for local setup help, testing notes, device discussion,
-          and community updates.
-        </p>
+          <p>
+            Join the Discord for local setup help, testing notes, device discussion,
+            and community updates.
+          </p>
 
-        <div class="button-row">
-          <a class="button primary" href="/join/">
-            Join Discord
-          </a>
+          <div class="button-row">
+            <a class="btn primary large" href="/join/">Join Discord</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="home-section contact-section">
-      <div class="section-inner section-narrow">
-        <p class="section-kicker">Contact</p>
+    <section>
+      <div class="container">
+        <div class="community-panel home-center">
+          <div class="section-heading">Contact</div>
 
-        <h2>Questions, events, or local mesh help?</h2>
+          <h2>Questions, events, or local mesh help?</h2>
 
-        <p>
-          Email us about setup questions, local testing, event ideas, or possible
-          places to host a mesh demo, workshop, or meetup.
-        </p>
+          <p>
+            Email us about setup questions, local testing, event ideas, or possible
+            places to host a mesh demo, workshop, or meetup.
+          </p>
 
-        <div class="button-row">
-          <a class="button secondary" href="mailto:contact@hampdencountymesh.org">
-            contact@hampdencountymesh.org
-          </a>
+          <div class="button-row">
+            <a class="btn secondary" href="mailto:contact@hampdencountymesh.org">
+              contact@hampdencountymesh.org
+            </a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <p>Community-based communications in Western Massachusetts.</p>
+  <footer>
+    <div class="container">
+      <p class="footer-subtitle">Community-based communications in Western Massachusetts.</p>
+    </div>
   </footer>
 </body>
 </html>
