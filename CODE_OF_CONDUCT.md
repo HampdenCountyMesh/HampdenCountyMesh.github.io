@@ -1,6 +1,6 @@
 # Code of Conduct
 
-## Our pledge
+## Our Pledge
 
 Hampden County Mesh is intended to be a useful, respectful, beginner-friendly space for local mesh radio, radio learning, documentation, setup help, public-safe local radio observations, and related technical discussion.
 
@@ -8,7 +8,7 @@ We pledge to make participation in this community a harassment-free experience f
 
 We pledge to act and interact in ways that support an open, welcoming, inclusive, and healthy community.
 
-## Our standards
+## Our Standards
 
 Examples of behavior that contributes to a positive community include:
 
@@ -25,25 +25,18 @@ Examples of behavior that contributes to a positive community include:
 Examples of unacceptable behavior include:
 
 * Harassment, threats, intimidation, or targeted abuse
-* Hate speech or slurs
-* Racism
-* Xenophobia
-* Homophobia
-* Transphobia
-* Sexism
-* Ableism
-* Bigotry or demeaning comments toward protected or marginalized groups
+* Hate speech, slurs, racism, xenophobia, homophobia, transphobia, sexism, ableism, or other bigotry
+* Demeaning comments toward protected or marginalized groups
 * Trolling, insults, personal attacks, or repeated bad-faith arguments
 * Sexualized language, imagery, attention, or advances
 * Publishing private information without explicit permission
 * Doxxing or encouraging others to identify private locations
-* Sharing private addresses, private node locations, private coordinates, or private infrastructure details without permission
-* Sharing credentials, private keys, passwords, tokens, webhook URLs, broker credentials, or admin URLs
+* Sharing private addresses, private node locations, private coordinates, private infrastructure details, private messages, credentials, keys, passwords, tokens, webhook URLs, broker credentials, or admin URLs
 * Encouraging illegal transmitting, jamming, interference, impersonation, unauthorized access, or misuse of emergency, public safety, aviation, railroad, utility, commercial, or government systems
 * Spamming, flooding, or intentionally disrupting community spaces
 * Other conduct that community moderators reasonably determine to be inappropriate, unsafe, threatening, or harmful
 
-## Beginner-friendly expectations
+## Beginner-Friendly Expectations
 
 Hampden County Mesh includes people with different experience levels.
 
@@ -51,7 +44,7 @@ Members should not be mocked, dismissed, or pushed out for asking basic question
 
 Correct information when needed, but do it in a way that helps people learn.
 
-## Privacy and safety expectations
+## Privacy and Safety Expectations
 
 Do not post someone else’s private information without permission.
 
@@ -71,7 +64,7 @@ This includes:
 
 When discussing maps, observers, MQTT, dashboards, logs, local radio observations, or observed activity data, use general locations unless exact sharing is clearly intentional and safe.
 
-## Radio and technical safety
+## Radio and Technical Safety
 
 Members are responsible for following applicable radio laws, service rules, and license requirements.
 
@@ -79,7 +72,7 @@ Do not use Hampden County Mesh spaces to encourage or coordinate unlawful transm
 
 Hampden County Mesh is not an emergency service, not a replacement for 911, and not an official public safety system.
 
-## Enforcement responsibilities
+## Enforcement Responsibilities
 
 Community leaders and moderators are responsible for clarifying and enforcing standards of acceptable behavior.
 
@@ -121,9 +114,9 @@ Do not open a public GitHub issue for private safety reports, exposed credential
 
 Reports will be reviewed as promptly and fairly as practical.
 
-Community leaders should respect the privacy and safety of the reporter and affected people.
+Community leaders should respect the privacy and safety of reporters and affected people.
 
-## Enforcement guidelines
+## Enforcement Guidelines
 
 Community leaders may use the following guidelines when determining consequences for behavior that violates this Code of Conduct.
 
@@ -147,7 +140,7 @@ Possible consequence:
 
 A warning with clear expectations for future behavior. The person may be asked to avoid certain topics, channels, people, or types of interaction for a specified period of time.
 
-### 3. Temporary restriction or ban
+### 3. Temporary Restriction or Ban
 
 Community impact:
 
@@ -159,7 +152,7 @@ Temporary restriction from some or all community spaces. During this period, the
 
 Violating the terms of a temporary restriction may lead to a longer restriction or permanent ban.
 
-### 4. Permanent ban
+### 4. Permanent Ban
 
 Community impact:
 
@@ -169,7 +162,7 @@ Possible consequence:
 
 Permanent removal from community spaces.
 
-## Additional expectations
+## Additional Expectations
 
 Hampden County Mesh encourages:
 

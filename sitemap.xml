@@ -1,52 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hampdencountymesh.org/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-06-29</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/guides/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-06-29</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/guides/getting-started.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-06-29</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/guides/recommended-settings.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-06-29</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/guides/meshcore-basics.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-06-29</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/guides/meshtastic-basics.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-06-29</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/guides/node-setups.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-06-29</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/guides/sharing-safely.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-06-29</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/guides/discord.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-06-29</lastmod>
   </url>
 
   <url>
     <loc>https://hampdencountymesh.org/coverage.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-06-29</lastmod>
   </url>
 </urlset>

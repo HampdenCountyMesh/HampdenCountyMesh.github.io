@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
   <meta property="og:title" content="Guides | Hampden County Mesh">
   <meta property="og:description" content="Focused MeshCore and Meshtastic guides for getting started, recommended settings, node setup, maps, wardriving, and local mesh testing in Hampden County and Western Massachusetts.">
   <meta property="og:url" content="https://hampdencountymesh.org/guides/">
-  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
@@ -21,14 +22,16 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Guides | Hampden County Mesh">
   <meta name="twitter:description" content="Focused MeshCore and Meshtastic guides for getting started, recommended settings, node setup, maps, wardriving, and local mesh testing in Hampden County and Western Massachusetts.">
-  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
-  <link rel="icon" href="/assets/images/social/hcm-logo-900.png">
+  <meta name="theme-color" content="#101820">
+
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=20260629a">
 
   <style>
     .centered {
@@ -43,8 +46,9 @@
       max-width: 780px;
       margin: 0 auto 14px;
       color: var(--text);
-      font-family: "Special Elite", serif;
+      font-family: var(--font-display);
       font-size: clamp(1.9rem, 4vw, 3.25rem);
+      font-weight: 800;
       line-height: 1.08;
     }
 
@@ -60,16 +64,16 @@
     }
 
     .guide-card.kicker-card {
-      border-color: rgba(255, 179, 71, 0.28);
+      border-color: var(--border-blue);
       background:
-        radial-gradient(circle at 18% 10%, rgba(255, 179, 71, 0.08), transparent 38%),
-        linear-gradient(180deg, rgba(24, 22, 16, 0.98), rgba(13, 12, 9, 0.98));
+        radial-gradient(circle at 18% 10%, var(--blue-soft), transparent 38%),
+        linear-gradient(180deg, var(--panel-strong), var(--panel));
     }
 
     .guide-card .guide-label {
       display: inline-flex;
       margin-bottom: 12px;
-      color: var(--green);
+      color: var(--blue-light);
       font-size: 0.76rem;
       font-weight: 800;
       letter-spacing: 0.08em;
@@ -81,18 +85,19 @@
       margin: 0 auto;
       border: 1px solid var(--border);
       background:
-        radial-gradient(circle at 18% 10%, rgba(157, 175, 136, 0.1), transparent 35%),
-        linear-gradient(180deg, rgba(24, 22, 16, 0.96), rgba(13, 12, 9, 0.96));
+        radial-gradient(circle at 18% 10%, var(--green-soft), transparent 35%),
+        linear-gradient(180deg, var(--panel-strong), var(--panel));
       border-radius: 20px;
       padding: clamp(24px, 5vw, 42px);
-      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+      box-shadow: 0 18px 48px var(--shadow);
       text-align: center;
     }
 
     .quick-path h2 {
       margin: 0 0 14px;
-      font-family: "Special Elite", serif;
+      font-family: var(--font-display);
       font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
       line-height: 1.1;
     }
 
@@ -111,7 +116,7 @@
     }
 
     .path-step {
-      border: 1px solid rgba(255, 179, 71, 0.14);
+      border: 1px solid var(--border-green);
       border-radius: 16px;
       padding: 18px;
       background: rgba(0, 0, 0, 0.16);
@@ -126,12 +131,6 @@
     .path-step span {
       color: var(--text-soft);
       font-size: 0.95rem;
-    }
-
-    .discord-nav-button svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
     }
 
     @media (max-width: 1000px) {
@@ -155,18 +154,16 @@
   <header>
     <div class="container">
       <a class="brand" href="/" aria-label="Hampden County Mesh home">
-        <span class="brand-icon" aria-hidden="true">⌁</span>
-        <span>HAMPDEN COUNTY MESH</span>
+        <img class="brand-icon" src="/assets/icons/favicon.svg" alt="" width="26" height="26" aria-hidden="true">
+        <span>Hampden County Mesh</span>
       </a>
 
-      <nav aria-label="Primary navigation">
+      <nav aria-label="Main navigation">
         <a href="/">Home</a>
         <a href="/guides/" aria-current="page">Guides</a>
         <a href="/coverage.html">Coverage</a>
-        <a class="discord-nav-button" href="/join/" aria-label="Join the Discord" data-join-source="nav">
-          <svg viewBox="0 0 127.14 96.36" aria-hidden="true" focusable="false">
-            <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21A105.73,105.73,0,0,0,32.71,96.36a77.7,77.7,0,0,0,6.89-11.11,68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.35,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.4,2.67,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.2C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
-          </svg>
+        <a class="discord-nav-button" href="/join/" aria-label="Join the Hampden County Mesh Discord" data-join-source="nav">
+          <img src="/assets/icons/discord-symbol-white.svg" alt="" aria-hidden="true">
         </a>
       </nav>
     </div>
@@ -175,14 +172,14 @@
   <main id="main">
     <section class="hero">
       <div class="hero-panel">
-        <div class="frequency-display">GUIDES</div>
+        <div class="frequency-display">Guides</div>
 
         <div class="status-line">
           <span class="status-dot" aria-hidden="true"></span>
-          <span>GET STARTED • SETTINGS • MESHCORE • MESHTASTIC</span>
+          <span>Get started • Settings • MeshCore • Meshtastic</span>
         </div>
 
-        <h1>GUIDES</h1>
+        <h1>Guides</h1>
 
         <p class="hero-text">
           Focused MeshCore and Meshtastic guides for setup, recommended settings, node use, maps, wardriving, and local mesh activity in Western Massachusetts.
@@ -217,7 +214,7 @@
             <span class="guide-label">Settings</span>
             <h3>Recommended Settings</h3>
             <p>
-              The canonical HCM quick reference for MeshCore and Meshtastic starting settings in Western Massachusetts.
+              The local quick reference for MeshCore and Meshtastic starting settings in Western Massachusetts.
             </p>
             <span class="card-link">View settings →</span>
           </a>
@@ -230,7 +227,7 @@
         <div class="section-heading">Mesh systems</div>
         <h2 class="portal-title">MeshCore is the main focus. Meshtastic is welcome.</h2>
         <p class="section-lede">
-          HCM should stay useful to both communities without turning the site into a general radio manual.
+          These guides are meant to support both communities without turning the site into a general radio manual.
         </p>
 
         <div class="resource-grid guide-grid">
@@ -238,7 +235,7 @@
             <span class="guide-label">Primary focus</span>
             <h3>MeshCore Basics</h3>
             <p>
-              A short guide to MeshCore, why HCM leans toward it, how to start, and where to find local settings.
+              A short guide to MeshCore, why Hampden County Mesh leans toward it, how to start, and where to find local settings.
             </p>
             <span class="card-link">Read MeshCore basics →</span>
           </a>
@@ -247,7 +244,7 @@
             <span class="guide-label">Also supported</span>
             <h3>Meshtastic Basics</h3>
             <p>
-              A short guide to Meshtastic, how it fits with HCM, simple starting settings, MQTT cautions, and official resources.
+              A short guide to Meshtastic, how it fits here, simple starting settings, MQTT cautions, and official resources.
             </p>
             <span class="card-link">Read Meshtastic basics →</span>
           </a>
@@ -290,7 +287,7 @@
         <div class="section-heading">Community</div>
         <h2 class="portal-title">Ask questions, share useful results, and keep private details private.</h2>
         <p class="section-lede">
-          The community side should support setup help, local testing, maps, safe screenshots, and practical coordination.
+          The community side supports setup help, local testing, maps, safe screenshots, and practical coordination.
         </p>
 
         <div class="resource-grid guide-grid">
@@ -327,9 +324,9 @@
     <section>
       <div class="container narrow centered">
         <div class="section-heading">Official resources</div>
-        <h2 class="portal-title">Use HCM for local context. Use upstream docs for the source of truth.</h2>
+        <h2 class="portal-title">Use Hampden County Mesh for local context. Use upstream docs for the source of truth.</h2>
         <p class="section-lede">
-          HCM can help with local settings, maps, setup choices, and community support. Official project documentation is still the best place for firmware, apps, supported hardware, and upstream changes.
+          Hampden County Mesh can help with local settings, maps, setup choices, and community support. Official project documentation is still the best place for firmware, apps, supported hardware, and upstream changes.
         </p>
 
         <div class="resource-grid guide-grid">
@@ -396,13 +393,12 @@
 
   <footer>
     <div class="container">
-      <div class="footer-title">HAMPDEN COUNTY MESH</div>
-      <div class="footer-subtitle">MeshCore, Meshtastic, maps, setup help, and local mesh networking in Western Massachusetts.</div>
-      <div class="footer-subtitle">Responsible use, privacy, and practical limits are covered in the guide library.</div>
-      <div class="footer-subtitle">Last Updated: <span id="last-updated">Loading...</span></div>
+      <p class="footer-subtitle">Community-based radio communications in Western Massachusetts.</p>
+      <p class="footer-updated">Last updated: <span id="last-updated">Loading...</span></p>
     </div>
   </footer>
 
-  <script src="/last-updated.js"></script>
+  <script src="/last-updated.js" defer></script>
 </body>
 </html>
+```

@@ -12,27 +12,25 @@
   <meta property="og:title" content="Hampden County Mesh">
   <meta property="og:description" content="A local community for people interested in MeshCore, Meshtastic, and practical radio projects in Western Massachusetts.">
   <meta property="og:url" content="https://hampdencountymesh.org/">
-  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hampden County Mesh">
   <meta name="twitter:description" content="A local community for people interested in MeshCore, Meshtastic, and practical radio projects in Western Massachusetts.">
-  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
 
-  <meta name="theme-color" content="#080806">
+  <meta name="theme-color" content="#101820">
 
-  <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg">
-  <link rel="shortcut icon" href="/assets/icons/favicon.svg">
-  <link rel="apple-touch-icon" href="/assets/icons/favicon.svg">
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/style.css?v=20260626g">
+  <link rel="stylesheet" href="/style.css?v=20260629a">
 
   <style>
-    /* Homepage-specific layout. Uses the existing site theme from style.css. */
+    /* Homepage-specific layout. Uses the shared site theme from style.css. */
 
     .brand-icon {
       width: 26px;
@@ -50,13 +48,13 @@
       display: flex;
       align-items: center;
       padding: clamp(64px, 9vw, 110px) 0;
-      border-bottom: 1px solid rgba(255, 179, 71, 0.18);
+      border-bottom: 1px solid rgba(73, 102, 132, 0.30);
       background:
         linear-gradient(
           180deg,
-          rgba(8, 8, 6, 0.28) 0%,
-          rgba(8, 8, 6, 0.52) 42%,
-          rgba(8, 8, 6, 0.94) 100%
+          rgba(8, 10, 9, 0.24) 0%,
+          rgba(8, 10, 9, 0.54) 42%,
+          rgba(8, 10, 9, 0.95) 100%
         ),
         url("/assets/images/hero/bannertom.png");
       background-size: cover;
@@ -66,8 +64,9 @@
     .hero-banner .hero-panel {
       max-width: 980px;
       background:
-        radial-gradient(circle at 20% 12%, rgba(157, 175, 136, 0.12), transparent 34%),
-        linear-gradient(180deg, rgba(24, 22, 16, 0.78), rgba(9, 8, 6, 0.88));
+        radial-gradient(circle at 20% 12%, rgba(95, 127, 104, 0.14), transparent 34%),
+        radial-gradient(circle at 85% 0%, rgba(73, 102, 132, 0.18), transparent 32%),
+        linear-gradient(180deg, rgba(17, 24, 25, 0.78), rgba(7, 9, 8, 0.90));
       backdrop-filter: blur(2px);
     }
 
@@ -94,7 +93,7 @@
     .home-card h2 {
       margin: 0 0 18px;
       color: var(--text);
-      font-family: "Special Elite", serif;
+      font-family: var(--font-display);
       font-size: clamp(3rem, 8vw, 6rem);
       line-height: 0.95;
       letter-spacing: 0.01em;
@@ -236,10 +235,11 @@
     <section class="home-section home-section-tight">
       <div class="container">
         <div class="home-copy">
-          <div class="section-heading">Original project sites</div>
+          <div class="section-heading">Official project sites</div>
 
           <p>
-            Here are the original project sites.
+            MeshCore and Meshtastic are separate open-source radio projects. These links
+            go to their official sites.
           </p>
 
           <div class="button-row project-buttons">
@@ -262,7 +262,7 @@
         <div class="community-panel home-card">
           <div class="section-heading">Community Discord</div>
 
-          <h2>Ask questions, compare devices, and get setup help.</h2>
+          <h2>Ask questions, talk devices, and get setup help.</h2>
 
           <p>
             Join the Discord for local setup help, testing notes, device discussion,

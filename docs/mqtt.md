@@ -19,10 +19,11 @@ Use careful wording:
 * observed activity
 * public activity data where available
 * site-maintained systems
+* support infrastructure
 
 Avoid wording that suggests complete coverage, guaranteed communication, emergency service capability, or control of all nearby mesh activity.
 
-## Current broker
+## Current Local Broker
 
 Current local broker:
 
@@ -44,7 +45,7 @@ Notes:
 * Do not publish private hostnames, private IP addresses, admin URLs, or internal network details.
 * Do not describe the broker as a public service unless it is intentionally configured, documented, and maintained as one.
 
-## Current uses
+## Current Uses
 
 Current or near-current MQTT uses may include:
 
@@ -58,7 +59,7 @@ Current or near-current MQTT uses may include:
 
 MQTT-related work should be documented as testing unless it is live, public, and maintainable.
 
-## Possible future uses
+## Possible Future Uses
 
 Possible future MQTT-related work may include:
 
@@ -74,7 +75,7 @@ Possible future MQTT-related work may include:
 
 Do not describe these as live until they are actually working and maintainable.
 
-## MQTT and observed activity
+## MQTT and Observed Activity
 
 MQTT can help move data between systems. For example, an observer or support system may report activity into a broker, and another tool may read that data to produce a dashboard, public data file, log, map layer, or Discord update.
 
@@ -122,7 +123,7 @@ Hampden County Mesh operates these nodes.
 This is an emergency-ready network.
 ```
 
-## Data safety
+## Data Safety
 
 MQTT messages, logs, and payloads may contain more information than expected.
 
@@ -144,7 +145,7 @@ Before publishing MQTT-derived data, check for:
 
 Public data should be generalized when exact detail is not needed.
 
-## Credential handling
+## Credential Handling
 
 Never commit MQTT credentials to the repository.
 
@@ -176,7 +177,7 @@ MQTT_USERNAME=example-user
 MQTT_PASSWORD=do-not-commit-real-passwords
 ```
 
-## Public examples
+## Public Examples
 
 Public examples should use fake values.
 
@@ -193,7 +194,7 @@ Public access: no
 
 Avoid example values that look real or reveal internal setup details.
 
-## Topic and payload notes
+## Topic and Payload Notes
 
 MQTT topics and payloads should be reviewed before being made public.
 
@@ -217,7 +218,7 @@ hcm/status/example-node
 hcm/observer/example
 ```
 
-## Discord integrations
+## Discord Integrations
 
 MQTT-to-Discord or observer-to-Discord integrations may be useful later, but they should have a clear purpose and a clear channel before being enabled.
 
@@ -233,7 +234,7 @@ Possible future Discord output may include:
 
 Do not post raw MQTT payloads publicly unless they have been reviewed for privacy and usefulness.
 
-## Dashboard and website integrations
+## Dashboard and Website Integrations
 
 Future website or dashboard integrations may use MQTT-derived data.
 
@@ -253,7 +254,7 @@ Good public framing:
 Observed activity from site-maintained systems and public sources where available.
 ```
 
-## Maintenance notes
+## Maintenance Notes
 
 Useful public-safe MQTT maintenance fields:
 
@@ -273,7 +274,7 @@ Notes:
 
 Do not include live credentials or private access details in maintenance notes.
 
-## Related documentation
+## Related Documentation
 
 * `docs/infrastructure.md`
 * `docs/observers.md`
@@ -284,11 +285,13 @@ Do not include live credentials or private access details in maintenance notes.
 Related public pages:
 
 * https://hampdencountymesh.org/coverage.html
-* https://hampdencountymesh.org/guides/nodes-repeaters-observers.html
+* https://hampdencountymesh.org/guides/node-setups.html
 * https://hampdencountymesh.org/guides/using-your-node.html
 * https://hampdencountymesh.org/guides/radio-aids.html
 * https://hampdencountymesh.org/guides/sharing-safely.html
 
-## Project disclaimer
+Only link to public pages that currently exist. If a guide is planned but not live, keep it out of public navigation until it is ready.
+
+## Emergency and Safety Note
 
 Hampden County Mesh is a community education and hobby effort. It is not an emergency service or a replacement for 911.

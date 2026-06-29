@@ -6,7 +6,7 @@ Hampden County Mesh is a local community effort focused on mesh radio, radio lea
 
 You do not need to write code or be a radio expert to contribute.
 
-## Ways to contribute
+## Ways to Contribute
 
 Useful contributions include:
 
@@ -17,7 +17,7 @@ Useful contributions include:
 * Typo and link fixes
 * Public-safe local radio observations
 * Public-safe device notes
-* Public-safe map or coverage page suggestions
+* Public-safe map or coverage suggestions
 * Node documentation templates
 * Radio reference improvements
 * Hardware testing notes
@@ -29,7 +29,7 @@ Useful contributions include:
 
 Small improvements are welcome.
 
-## Before you start
+## Before You Start
 
 Please review:
 
@@ -47,7 +47,7 @@ General contact:
 
 [contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)
 
-## Reporting issues
+## Reporting Issues
 
 Use GitHub issues for public, non-sensitive reports such as:
 
@@ -73,7 +73,7 @@ Helpful details may include:
 
 Do not include private keys, passwords, private locations, credentials, private messages, exact private coordinates, or sensitive screenshots in public issues.
 
-## Security issues
+## Security Issues
 
 Do not report security vulnerabilities or exposed secrets through public GitHub issues.
 
@@ -95,7 +95,7 @@ Report security concerns by email:
 
 See `SECURITY.md` for more information.
 
-## Documentation standards
+## Documentation Standards
 
 When contributing documentation:
 
@@ -110,7 +110,7 @@ When contributing documentation:
 * Do not imply ownership of independent nodes or nearby activity.
 * Use careful wording around observed activity, maps, dashboards, MQTT, observers, and local radio observations.
 
-Good wording:
+Good wording includes:
 
 * observed activity
 * local radio observations
@@ -129,7 +129,7 @@ Avoid wording like:
 * emergency-ready coverage
 * official public safety system
 
-## Node, observer, and infrastructure information
+## Node, Observer, and Infrastructure Information
 
 When submitting information about nodes, observers, repeaters, portable devices, support systems, or infrastructure:
 
@@ -149,7 +149,7 @@ Useful public-safe location descriptions include:
 * Public park
 * Road corridor
 * Broad neighborhood
-* Western / central / eastern Hampden County
+* Western, central, or eastern Hampden County
 
 Avoid posting:
 
@@ -163,7 +163,7 @@ Avoid posting:
 * Credentials or keys
 * Photos that reveal private locations unintentionally
 
-## Local radio observations
+## Local Radio Observations
 
 Local radio observations do not need to be formal.
 
@@ -183,7 +183,7 @@ Helpful public-safe notes may include:
 
 Do not include exact private locations or sensitive details unless sharing is intentional and safe.
 
-## Photos and media
+## Photos and Media
 
 Before contributing photos, screenshots, or other media, check for:
 
@@ -201,7 +201,7 @@ Before contributing photos, screenshots, or other media, check for:
 
 See `docs/ASSETS.md` for asset and media handling notes.
 
-## Pull requests
+## Pull Requests
 
 When submitting a pull request:
 
@@ -215,7 +215,7 @@ When submitting a pull request:
 
 For larger changes, open an issue first so the direction can be discussed before a large edit is made.
 
-## Public website changes
+## Public Website Changes
 
 When changing public website pages, check for:
 
@@ -223,8 +223,9 @@ When changing public website pages, check for:
 * Mobile readability
 * Consistent navigation
 * Clear beginner-friendly wording
+* Current favicon, font, metadata, and stylesheet references
 * No raw temporary Discord invite links
-* No stale “planned” content shown as live
+* No stale planned content shown as live
 * No private credentials or sensitive data
 * No overclaims about coverage or ownership
 * No links to retired pages or old guide filenames
@@ -235,7 +236,7 @@ https://hampdencountymesh.org/join/
 
 Do not publish raw Discord invite links in website pages or documentation unless there is a specific reason.
 
-## Community expectations
+## Community Expectations
 
 All contributors are expected to follow `CODE_OF_CONDUCT.md`.
 
@@ -249,14 +250,14 @@ Disagreements should stay focused on facts, safety, documentation, and practical
 
 For general questions about contributing, open a public GitHub issue if the question is not sensitive.
 
-For general contact:
+General contact:
 
 [contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)
 
-For Discord-related questions:
+Discord-related contact:
 
 [discord@hampdencountymesh.org](mailto:discord@hampdencountymesh.org)
 
-For security concerns:
+Security contact:
 
 [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org)

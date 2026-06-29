@@ -1,5 +1,7 @@
 # Support
 
+This document explains where to ask questions, report website problems, suggest documentation changes, raise community ideas, or report security and privacy issues for Hampden County Mesh.
+
 ## General Questions
 
 For general questions, setup help, guide corrections, local radio discussion, or community support:
@@ -8,7 +10,9 @@ For general questions, setup help, guide corrections, local radio discussion, or
 * Open a GitHub Issue if the question is directly related to the website, documentation, map, data files, or repository content
 * Use the general contact email for questions that do not fit Discord or GitHub
 
-Hampden County Mesh is a community education and hobby effort. It is not an emergency service, public safety system, or replacement for 911.
+General contact:
+
+[contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)
 
 ## Website or Documentation Problems
 
@@ -33,7 +37,7 @@ Include enough detail for someone else to understand the problem, such as:
 * Screenshots, if useful and public-safe
 * Browser or device details, if the issue appears layout-related
 
-Do not include credentials, private locations, private messages, sensitive screenshots, private system details, or exact private node or observer locations.
+Do not include credentials, private locations, private messages, sensitive screenshots, private system details, exact private node locations, or exact private observer locations.
 
 ## Documentation Suggestions
 
@@ -50,15 +54,26 @@ Helpful details include:
 
 For community resources, event ideas, outreach ideas, local learning sessions, venue suggestions, or public-facing community notes, use the Community issue template when available.
 
-Please keep public issues general. Do not post private contact information, private addresses, private messages, or sensitive screenshots.
+Please keep public issues general. Do not post private contact information, private addresses, private messages, exact private node locations, or sensitive screenshots.
 
 ## Security or Privacy Issues
 
-Please do not open a public issue for security reports, exposed credentials, private locations, private node details, private observer details, private access information, or sensitive screenshots.
+Do not open a public issue for security reports, exposed credentials, private locations, private node details, private observer details, private access information, or sensitive screenshots.
 
 Follow the process described in `SECURITY.md`, or contact:
 
 [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org)
+
+Use the security contact for issues involving:
+
+* Exposed credentials
+* Private keys
+* Tokens
+* Webhook URLs
+* Private infrastructure details
+* Private node or observer locations
+* Sensitive screenshots
+* Anything that could help someone access, disrupt, or identify a private system
 
 ## Discord Support
 
@@ -71,3 +86,7 @@ For Discord-related questions, invite problems, onboarding problems, moderation 
 For general contact:
 
 [contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)
+
+## Emergency and Safety Note
+
+Hampden County Mesh is a community education and hobby effort. It is not an emergency service, public safety system, or replacement for 911.

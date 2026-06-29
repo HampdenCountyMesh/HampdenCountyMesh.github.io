@@ -2,13 +2,15 @@
 
 Hampden County Mesh is a local community effort for MeshCore, Meshtastic, maps, setup help, and local mesh networking across Hampden County and nearby Western Massachusetts.
 
-The goal is to help people learn, ask questions, try devices, understand local terrain, and participate in the broader local mesh community.
-
 This repository contains the public website and supporting documentation for Hampden County Mesh.
 
-## What Hampden County Mesh is for
+Website: https://hampdencountymesh.org/
 
-Hampden County Mesh exists to help local people learn about mesh radio, nearby mesh activity, practical device use, and related communications tools.
+Discord join route: https://hampdencountymesh.org/join/
+
+## Purpose
+
+Hampden County Mesh exists to help local people learn about mesh radio, nearby mesh activity, practical device use, local terrain, and related communications tools.
 
 The site and community focus on:
 
@@ -27,11 +29,9 @@ Hampden County Mesh does not claim ownership over every mesh node, observer, rep
 
 The goal is to make it easier for people to learn, participate, and share useful local information.
 
-## You do not need to be an expert
+## Beginners Are Welcome
 
-Beginners are welcome.
-
-You do not need to know every radio service, own expensive equipment, understand every technical detail, run infrastructure, or write formal reports to participate.
+You do not need to be an expert, own expensive equipment, run infrastructure, or understand every technical detail to participate.
 
 Useful participation can be as simple as:
 
@@ -39,10 +39,8 @@ Useful participation can be as simple as:
 * Getting one node working
 * Bringing a node along while you are out
 * Seeing what your device can hear from a park, street, hill, window, vehicle, or parking lot
-* Using a tool like MeshMapper when appropriate
 * Sharing that something worked or did not work
-* Talking with other people nearby who are learning similar things
-* Taking a useful public-safe photo of a device, setup, or local terrain example
+* Taking a public-safe photo of a device, setup, or local terrain example
 * Helping someone else understand the basics
 * Suggesting a good place for a future meetup or learning session
 
@@ -50,9 +48,7 @@ Documentation helps, but it is not a barrier to entry.
 
 Short, public-safe results are welcome.
 
-## Current status
-
-Hampden County Mesh currently maintains the public website, guide library, Discord, and a small amount of site-maintained support infrastructure.
+## Current Status
 
 Current public status:
 
@@ -68,46 +64,30 @@ The broader local mesh ecosystem may include independent nodes, observers, repea
 
 Any future public activity views should be understood as observed mesh activity where available, not as a claim that every visible node belongs to Hampden County Mesh.
 
-## Website
+## Website Sections
 
-Public website:
-
-https://hampdencountymesh.org/
-
-Main sections:
+Main public sections:
 
 * Home
 * Guides
 * Coverage
 * Discord join route
 
-The Guides section is the main home for public setup, settings, safety, and how-to material.
-
-## Guides
-
-The guide library is here:
+The Guides section is the main home for public setup, settings, safety, and how-to material:
 
 https://hampdencountymesh.org/guides/
 
-Current public guides:
+The Coverage page includes the Hampden County map, observed-activity status, regional links, and coverage notes:
 
-* Getting Started
-* Recommended Settings
-* MeshCore Basics
-* Meshtastic Basics
-* Node Setups
-* Sharing Safely
-* Discord Guide
+https://hampdencountymesh.org/coverage.html
 
-The guide library is intentionally focused. Older or overlapping pages may be merged, redirected, or removed as the site gets simpler.
-
-## Coverage and local use
+## Coverage and Local Use
 
 Coverage is learned through real-world use. That does not need to be formal.
 
-Most of the time it means bringing a node somewhere, seeing what it can hear, and sharing anything useful in a public-safe way.
+Most of the time, it means bringing a node somewhere, seeing what it can hear, and sharing anything useful in a public-safe way.
 
-Helpful details, when you have them, include:
+Helpful details, when available, include:
 
 * General location or public landmark
 * Device used
@@ -117,15 +97,9 @@ Helpful details, when you have them, include:
 * Whether the result came from direct radio, an observer, MQTT, a map, a dashboard, or a local log
 * General terrain, building, tree, weather, or placement context
 
-You do not need to publish exact private locations.
+You do not need to publish exact private locations. General areas, public landmarks, road corridors, parks, neighborhoods, and town-level results are often enough.
 
-General areas, public landmarks, road corridors, parks, neighborhoods, and town-level results are often enough.
-
-Coverage page:
-
-https://hampdencountymesh.org/coverage.html
-
-## Observed activity
+## Observed Activity
 
 A goal of the site is to make useful observed mesh activity easier to understand.
 
@@ -135,45 +109,9 @@ Observed activity should not imply that every node, observer, repeater, marker, 
 
 The purpose is to help people see that mesh activity exists nearby, understand what may be possible, and connect with others interested in local mesh networking.
 
-## Community
+## Repository Contents
 
-Hampden County Mesh is open to:
-
-* Beginners
-* Experienced radio users
-* Mesh networking users
-* Makers and electronics tinkerers
-* Educators
-* Libraries
-* Clubs
-* Community spaces
-* Nearby mesh and radio communities
-* People simply curious about local communications
-
-The Discord is used for questions, updates, device help, local testing, setup discussion, maps, and community coordination.
-
-Join route:
-
-https://hampdencountymesh.org/join/
-
-## Important limits
-
-Hampden County Mesh is not:
-
-* An emergency service
-* A replacement for 911
-* A guarantee of coverage during an outage
-* An official public safety system
-* A claim of ownership over all mesh activity in Hampden County
-* A finished county-wide network
-
-The community becomes more useful as more people learn, ask questions, try devices, host nodes where appropriate, share public-safe results, and help others get started.
-
-## Repository purpose
-
-This repository contains the public website and supporting documentation for Hampden County Mesh.
-
-It may include:
+This repository may include:
 
 * Website pages
 * Public guides
@@ -186,19 +124,17 @@ It may include:
 
 Backend credentials, private keys, API tokens, passwords, private node locations, private infrastructure details, and sensitive access information should not be committed here.
 
-## Documentation
+## Documentation Folders
 
-The `/docs/` folder contains supporting documentation for repo maintainers and contributors.
+The `/guides/` folder contains public-facing website guide pages.
 
-Examples may include:
+The `/docs/` folder contains supporting documentation for repo maintainers and contributors. Examples may include:
 
 * Discord notes
 * Observed activity data notes
 * Asset and media handling notes
 * Website or repository support notes
 * Future infrastructure notes when they are ready to be public
-
-The `/guides/` folder contains public-facing website guide pages.
 
 ## Contributing
 
@@ -219,7 +155,7 @@ Larger changes should be discussed first so the public site stays accurate, begi
 
 See `CONTRIBUTING.md` for more information.
 
-## Safety and privacy
+## Safety and Privacy
 
 Do not publish:
 
@@ -235,8 +171,6 @@ Do not publish:
 * Unverified emergency claims
 
 When in doubt, use general areas and plain summaries.
-
-See `SECURITY.md` for sensitive security issues.
 
 ## Security
 
@@ -265,6 +199,19 @@ Security contact:
 Discord join route:
 
 https://hampdencountymesh.org/join/
+
+## Important Limits
+
+Hampden County Mesh is not:
+
+* An emergency service
+* A replacement for 911
+* A guarantee of coverage during an outage
+* An official public safety system
+* A claim of ownership over all mesh activity in Hampden County
+* A finished county-wide network
+
+The community becomes more useful as more people learn, ask questions, try devices, host nodes where appropriate, share public-safe results, and help others get started.
 
 ## License
 

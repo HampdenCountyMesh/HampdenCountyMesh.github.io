@@ -13,24 +13,27 @@
   <meta property="og:title" content="Coverage | Hampden County Mesh">
   <meta property="og:description" content="Maps, terrain, observed activity links, and public resources for understanding MeshCore and Meshtastic activity around Hampden County and Western Massachusetts.">
   <meta property="og:url" content="https://hampdencountymesh.org/coverage.html">
-  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
+  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+  <meta property="og:image:alt" content="Hampden County Mesh branding over a view of Mount Tom radio towers.">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Coverage | Hampden County Mesh">
   <meta name="twitter:description" content="Maps, terrain, observed activity links, and public resources for understanding MeshCore and Meshtastic activity around Hampden County and Western Massachusetts.">
-  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-social-card.jpg">
-  <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
+  <meta name="twitter:image:alt" content="Hampden County Mesh branding over a view of Mount Tom radio towers.">
 
-  <link rel="icon" href="/assets/images/social/hcm-logo-900.png">
+  <meta name="theme-color" content="#101820">
+
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/style.css?v=20260629a">
 </head>
 
 <body>
@@ -40,18 +43,17 @@
   <header>
     <div class="container">
       <a class="brand" href="/" aria-label="Hampden County Mesh home">
-        <span class="brand-icon" aria-hidden="true">⌁</span>
-        <span>HAMPDEN COUNTY MESH</span>
+        <img class="brand-icon" src="/assets/icons/favicon.svg" alt="" width="26" height="26" aria-hidden="true">
+        <span>Hampden County Mesh</span>
       </a>
 
-      <nav aria-label="Primary navigation">
+      <nav aria-label="Main navigation">
         <a href="/">Home</a>
         <a href="/guides/">Guides</a>
         <a href="/coverage.html" aria-current="page">Coverage</a>
-        <a class="discord-nav-button" href="/join/" aria-label="Join the Discord" data-join-source="nav">
-          <svg viewBox="0 0 127.14 96.36" aria-hidden="true" focusable="false">
-            <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21A105.73,105.73,0,0,0,32.71,96.36a77.7,77.7,0,0,0,6.89-11.11,68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.35,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.4,2.67,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.2C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/>
-          </svg>
+
+        <a class="discord-nav-button" href="/join/" aria-label="Join the Hampden County Mesh Discord" data-join-source="nav">
+          <img src="/assets/icons/discord-symbol-white.svg" alt="" aria-hidden="true">
         </a>
       </nav>
     </div>
@@ -60,17 +62,18 @@
   <main id="main">
     <section class="hero">
       <div class="hero-panel">
-        <div class="frequency-display">COVERAGE</div>
+        <div class="frequency-display">Coverage</div>
 
         <div class="status-line">
           <span class="status-dot" aria-hidden="true"></span>
-          <span>MAPS • TERRAIN • OBSERVED ACTIVITY</span>
+          <span>Maps • Terrain • Observed Activity</span>
         </div>
 
-        <h1>COVERAGE</h1>
+        <h1>Coverage</h1>
 
         <p class="hero-text">
-          Maps, terrain, observed activity links, and public resources for understanding MeshCore and Meshtastic activity around Hampden County and Western Massachusetts.
+          Maps, terrain, observed activity links, and public resources for understanding
+          MeshCore and Meshtastic activity around Hampden County and Western Massachusetts.
         </p>
 
         <div class="hero-actions">
@@ -83,14 +86,15 @@
 
     <section id="coverage-map-section">
       <div class="container">
-        <div class="section-heading">LOCAL MAP</div>
+        <div class="section-heading">Local Map</div>
 
         <div class="coverage-map-panel">
           <div id="coverage-map" aria-label="Hampden County Mesh coverage map"></div>
 
           <div class="coverage-map-note">
             <strong>Map note:</strong>
-            This map keeps Hampden County visible as the site’s local reference area. It is not a complete coverage map and does not show every mesh device in the region.
+            This map keeps Hampden County visible as the site’s local reference area.
+            It is not a complete coverage map and does not show every mesh device in the region.
           </div>
 
           <div class="coverage-data-status" id="activity-data-status">
@@ -103,17 +107,21 @@
 
     <section id="regional-live-activity">
       <div class="container">
-        <div class="section-heading">REGIONAL ACTIVITY</div>
+        <div class="section-heading">Regional Activity</div>
 
         <div class="community-panel">
           <h2>Nearby mesh tools</h2>
 
           <p>
-            Hampden County is part of a wider regional mesh ecosystem. Nearby MeshCore activity may appear through public maps and analyzers maintained by neighboring mesh communities.
+            Hampden County is part of a wider regional mesh ecosystem. Nearby MeshCore
+            activity may appear through public maps and analyzers maintained by neighboring
+            mesh communities.
           </p>
 
           <p>
-            Nodes shown on those maps are not necessarily operated by Hampden County Mesh. They may belong to independent users, nearby groups, mobile devices, fixed sites, or neighboring mesh communities.
+            Nodes shown on those maps are not necessarily operated by Hampden County Mesh.
+            They may belong to independent users, nearby groups, mobile devices, fixed sites,
+            or neighboring mesh communities.
           </p>
 
           <div class="resource-grid">
@@ -155,7 +163,7 @@
 
     <section>
       <div class="container">
-        <div class="section-heading">WHAT THIS PAGE MEANS</div>
+        <div class="section-heading">What This Page Means</div>
 
         <div class="map-panel">
           <div class="map-grid" aria-hidden="true"></div>
@@ -164,15 +172,18 @@
             <h2>A local reference, not a complete picture</h2>
 
             <p>
-              This page is a starting point for understanding terrain, public map links, and nearby mesh activity around Hampden County.
+              This page is a starting point for understanding terrain, public map links,
+              and nearby mesh activity around Hampden County.
             </p>
 
             <p>
-              Mesh networks are made of many independent people, devices, nodes, observers, repeaters, public tools, and local groups. No single map or website shows everything.
+              Mesh networks are made of many independent people, devices, nodes, observers,
+              repeaters, public tools, and local groups. No single map or website shows everything.
             </p>
 
             <p>
-              Future tools on this site may show public-safe activity from participating systems, but they should still be treated as partial views of a larger regional mesh ecosystem.
+              Future tools on this site may show public-safe activity from participating systems,
+              but they should still be treated as partial views of a larger regional mesh ecosystem.
             </p>
 
             <a class="btn secondary" href="#site-maintained-systems">Site-maintained Systems</a>
@@ -183,7 +194,7 @@
 
     <section>
       <div class="container">
-        <div class="section-heading">LOCAL TERRAIN</div>
+        <div class="section-heading">Local Terrain</div>
 
         <div class="image-feature">
           <div class="image-frame">
@@ -198,11 +209,14 @@
             <h3>Radio behaves differently from place to place.</h3>
 
             <p>
-              Hampden County has hills, valleys, wooded areas, dense neighborhoods, old brick buildings, river corridors, highways, campuses, hospitals, parks, and rural edges. All of that affects small radios.
+              Hampden County has hills, valleys, wooded areas, dense neighborhoods, old brick buildings,
+              river corridors, highways, campuses, hospitals, parks, and rural edges. All of that affects
+              small radios.
             </p>
 
             <p>
-              A device near a window may behave differently than the same device deeper inside a building or vehicle. A little more height, a better antenna, or a different location can make a real difference.
+              A device near a window may behave differently than the same device deeper inside a building
+              or vehicle. A little more height, a better antenna, or a different location can make a real difference.
             </p>
 
             <a class="btn secondary" href="/guides/getting-started.html">Get Started</a>
@@ -213,13 +227,14 @@
 
     <section>
       <div class="container">
-        <div class="section-heading">USEFUL FIRST STEPS</div>
+        <div class="section-heading">Useful First Steps</div>
 
         <div class="resource-grid">
           <a class="resource-card action-card" href="/guides/getting-started.html">
             <h3>Get started</h3>
             <p>
-              Start with a MeshCore or Meshtastic device and learn the basic setup steps before changing too many settings.
+              Start with a MeshCore or Meshtastic device and learn the basic setup steps
+              before changing too many settings.
             </p>
             <span class="card-link">Read Getting Started →</span>
           </a>
@@ -227,7 +242,8 @@
           <a class="resource-card action-card" href="/guides/recommended-settings.html">
             <h3>Use local settings</h3>
             <p>
-              Check the current MeshCore and Meshtastic starting settings for Hampden County and nearby Western Massachusetts.
+              Check the current MeshCore and Meshtastic starting settings for Hampden County
+              and nearby Western Massachusetts.
             </p>
             <span class="card-link">View Recommended Settings →</span>
           </a>
@@ -235,7 +251,8 @@
           <a class="resource-card action-card" href="/guides/node-setups.html">
             <h3>Test a real setup</h3>
             <p>
-              Learn about placement, antennas, mobile use, repeaters, observers, maps, wardriving, and troubleshooting.
+              Learn about placement, antennas, mobile use, repeaters, observers, maps,
+              wardriving, and troubleshooting.
             </p>
             <span class="card-link">Read Node Setups →</span>
           </a>
@@ -243,7 +260,8 @@
           <a class="resource-card action-card" href="/join/" data-join-source="coverage-first-steps">
             <h3>Ask the community</h3>
             <p>
-              Join the Discord to ask questions, talk about devices, compare results, and coordinate local testing.
+              Join the Discord to ask questions, talk about devices, compare results,
+              and coordinate local testing.
             </p>
             <span class="card-link">Join Discord →</span>
           </a>
@@ -253,19 +271,23 @@
 
     <section id="site-maintained-systems">
       <div class="container">
-        <div class="section-heading">SITE-MAINTAINED SYSTEMS</div>
+        <div class="section-heading">Site-maintained Systems</div>
 
         <div class="community-panel">
           <p>
-            This site currently maintains a small amount of supporting infrastructure for learning, logging, checking, and understanding observed mesh activity.
+            This site currently maintains a small amount of supporting infrastructure
+            for learning, logging, checking, and understanding observed mesh activity.
           </p>
 
           <p>
-            These systems are one contribution to the broader local mesh community. They are useful for learning and future public tools, but they are not a complete picture of everything happening in Hampden County.
+            These systems are one contribution to the broader local mesh community.
+            They are useful for learning and future public tools, but they are not a complete
+            picture of everything happening in Hampden County.
           </p>
 
           <p>
-            Public activity tools are still in development. Normal users do not need site-maintained infrastructure to get started with a node.
+            Public activity tools are still in development. Normal users do not need
+            site-maintained infrastructure to get started with a node.
           </p>
         </div>
       </div>
@@ -274,7 +296,7 @@
     <section id="contact">
       <div class="container">
         <div class="community-panel">
-          <div class="section-heading">CONTACT</div>
+          <div class="section-heading">Contact</div>
 
           <p>
             Questions, corrections, public map links, or ideas for improving this page?
@@ -296,15 +318,13 @@
 
   <footer>
     <div class="container">
-      <div class="footer-title">HAMPDEN COUNTY MESH</div>
-      <div class="footer-subtitle">MeshCore, Meshtastic, maps, setup help, and local mesh networking in Western Massachusetts.</div>
-      <div class="footer-subtitle">Responsible use, privacy, and practical limits are covered in the guide library.</div>
-      <div class="footer-subtitle">Last Updated: <span id="last-updated">Loading...</span></div>
+      <p class="footer-subtitle">Community-based radio communications in Western Massachusetts.</p>
+      <p class="footer-updated">Last updated: <span id="last-updated">Loading...</span></p>
     </div>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="/last-updated.js"></script>
-  <script src="/assets/js/coverage-map.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+  <script src="/last-updated.js" defer></script>
+  <script src="/assets/js/coverage-map.js" defer></script>
 </body>
 </html>

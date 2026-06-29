@@ -7,6 +7,8 @@
 
   const cacheKey = "hcm-last-updated";
   const cacheMaxAgeMs = 6 * 60 * 60 * 1000; // 6 hours
+  const requestTimeoutMs = 5000;
+
   const githubCommitsUrl =
     "https://api.github.com/repos/HampdenCountyMesh/HampdenCountyMesh.github.io/commits?sha=main&per_page=1";
 
@@ -40,13 +42,11 @@
         return null;
       }
 
-      const cacheAge = Date.now() - cached.savedAt;
-
-      if (cacheAge > cacheMaxAgeMs) {
-        return null;
-      }
-
-      return cached.date;
+      return {
+        date: cached.date,
+        savedAt: cached.savedAt,
+        isFresh: Date.now() - cached.savedAt <= cacheMaxAgeMs
+      };
     } catch {
       return null;
     }
@@ -66,24 +66,30 @@
     }
   }
 
-  const cachedDate = readCachedDate();
+  const cached = readCachedDate();
 
-  if (cachedDate) {
+  if (cached && cached.isFresh) {
     try {
-      setLastUpdated(cachedDate);
+      setLastUpdated(cached.date);
       return;
     } catch {
       // If cached data is bad, continue to fetch.
     }
   }
 
-  const controller = new AbortController();
-  const timeout = window.setTimeout(function () {
-    controller.abort();
-  }, 5000);
+  let controller = null;
+  let timeout = null;
+
+  if ("AbortController" in window) {
+    controller = new AbortController();
+
+    timeout = window.setTimeout(function () {
+      controller.abort();
+    }, requestTimeoutMs);
+  }
 
   fetch(githubCommitsUrl, {
-    signal: controller.signal,
+    signal: controller ? controller.signal : undefined,
     headers: {
       Accept: "application/vnd.github+json"
     }
@@ -96,7 +102,9 @@
       return response.json();
     })
     .then(function (data) {
-      const dateString = data?.[0]?.commit?.committer?.date;
+      const dateString =
+        data?.[0]?.commit?.committer?.date ||
+        data?.[0]?.commit?.author?.date;
 
       if (!dateString) {
         throw new Error("Unexpected GitHub API response");
@@ -106,9 +114,20 @@
       writeCachedDate(dateString);
     })
     .catch(function () {
+      if (cached && cached.date) {
+        try {
+          setLastUpdated(cached.date);
+          return;
+        } catch {
+          // Fall through to unavailable message.
+        }
+      }
+
       lastUpdatedElement.textContent = "Not available";
     })
     .finally(function () {
-      window.clearTimeout(timeout);
+      if (timeout) {
+        window.clearTimeout(timeout);
+      }
     });
 })();

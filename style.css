@@ -8,31 +8,39 @@
    ========================================================= */
 
 :root {
-    --bg: #080806;
-    --bg-soft: #11100c;
+    --bg: #080a09;
+    --bg-soft: #101820;
 
-    --panel: rgba(24, 22, 16, 0.92);
-    --panel-strong: rgba(31, 28, 20, 0.96);
+    --panel: rgba(17, 24, 25, 0.93);
+    --panel-strong: rgba(20, 31, 34, 0.96);
 
     --text: #e7d8b5;
     --cream: #f4e8c1;
-    --text-soft: rgba(231, 216, 181, 0.72);
+    --text-soft: rgba(231, 216, 181, 0.74);
     --muted: rgba(216, 200, 159, 0.58);
 
-    --amber: #ffb347;
-    --amber-soft: rgba(255, 179, 71, 0.18);
+    --amber: #e7d8b5;
+    --amber-soft: rgba(231, 216, 181, 0.14);
 
-    --green: #9daf88;
-    --green-soft: rgba(157, 175, 136, 0.14);
+    --green: #5f7f68;
+    --green-soft: rgba(95, 127, 104, 0.16);
 
-    --border: rgba(255, 179, 71, 0.22);
-    --border-green: rgba(157, 175, 136, 0.28);
+    --blue: #496684;
+    --blue-light: #a9bdd1;
+    --blue-soft: rgba(73, 102, 132, 0.20);
+
+    --border: rgba(231, 216, 181, 0.22);
+    --border-green: rgba(95, 127, 104, 0.30);
+    --border-blue: rgba(73, 102, 132, 0.42);
 
     --discord: #5865f2;
 
     --shadow: rgba(0, 0, 0, 0.45);
 
     --max-width: 1180px;
+
+    --font-display: "Rokkitt", Georgia, serif;
+    --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
 /* =========================================================
@@ -51,11 +59,11 @@ body {
     margin: 0;
     min-height: 100vh;
     color: var(--text);
-    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family: var(--font-body);
     background:
-        radial-gradient(circle at 15% 10%, rgba(111, 143, 95, 0.16), transparent 30%),
-        radial-gradient(circle at 85% 0%, rgba(255, 179, 71, 0.12), transparent 28%),
-        linear-gradient(180deg, #0e0d09 0%, #080806 45%, #060604 100%);
+        radial-gradient(circle at 15% 10%, rgba(95, 127, 104, 0.18), transparent 30%),
+        radial-gradient(circle at 85% 0%, rgba(73, 102, 132, 0.22), transparent 28%),
+        linear-gradient(180deg, #101820 0%, #080a09 48%, #050605 100%);
     line-height: 1.6;
 }
 
@@ -86,12 +94,12 @@ body::before {
 }
 
 a {
-    color: var(--amber);
+    color: var(--blue-light);
     text-decoration: none;
 }
 
 a:hover {
-    color: #ffd08a;
+    color: var(--cream);
 }
 
 img {
@@ -113,7 +121,7 @@ section {
 }
 
 .section-heading {
-    font-family: "Special Elite", serif;
+    font-family: var(--font-display);
     color: var(--amber);
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -133,8 +141,8 @@ section {
     transform: translateY(-140%);
     padding: 10px 14px;
     border-radius: 999px;
-    color: #12100a;
-    background: var(--amber);
+    color: #071013;
+    background: var(--cream);
     font-weight: 800;
     letter-spacing: 0.04em;
 }
@@ -144,12 +152,12 @@ section {
 }
 
 :focus-visible {
-    outline: 2px solid var(--amber);
+    outline: 2px solid var(--blue-light);
     outline-offset: 3px;
 }
 
 ::selection {
-    background: rgba(255, 179, 71, 0.28);
+    background: rgba(73, 102, 132, 0.36);
 }
 
 /* =========================================================
@@ -160,8 +168,8 @@ header {
     position: sticky;
     top: 0;
     z-index: 50;
-    border-bottom: 1px solid rgba(255, 179, 71, 0.18);
-    background: rgba(8, 8, 6, 0.86);
+    border-bottom: 1px solid rgba(73, 102, 132, 0.30);
+    background: rgba(8, 10, 9, 0.86);
     backdrop-filter: blur(12px);
 }
 
@@ -177,7 +185,7 @@ header .container {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-family: "Special Elite", serif;
+    font-family: var(--font-display);
     color: var(--text);
     letter-spacing: 0.06em;
     font-size: 0.95rem;
@@ -209,7 +217,7 @@ nav a {
 
 nav a:hover,
 nav a[aria-current="page"] {
-    color: var(--amber);
+    color: var(--cream);
 }
 
 .discord-nav-button {
@@ -219,9 +227,9 @@ nav a[aria-current="page"] {
     width: 34px;
     height: 34px;
     padding: 0;
-    border: 1px solid rgba(244, 232, 193, 0.28);
+    border: 1px solid rgba(73, 102, 132, 0.46);
     border-radius: 999px;
-    background: rgba(244, 232, 193, 0.08);
+    background: rgba(73, 102, 132, 0.16);
 }
 
 .discord-nav-button img,
@@ -256,8 +264,8 @@ nav a[aria-current="page"] {
     margin: 0 auto;
     border: 1px solid var(--border);
     background:
-        radial-gradient(circle at 20% 12%, rgba(157, 175, 136, 0.18), transparent 34%),
-        linear-gradient(180deg, rgba(29, 26, 18, 0.96), rgba(12, 11, 8, 0.96));
+        radial-gradient(circle at 20% 12%, rgba(95, 127, 104, 0.18), transparent 34%),
+        linear-gradient(180deg, rgba(20, 31, 34, 0.96), rgba(8, 10, 9, 0.96));
     border-radius: 26px;
     padding: clamp(28px, 6vw, 64px);
     box-shadow: 0 28px 80px var(--shadow);
@@ -271,12 +279,12 @@ nav a[aria-current="page"] {
     position: absolute;
     inset: auto 0 0 0;
     height: 4px;
-    background: linear-gradient(90deg, transparent, var(--amber), var(--green), transparent);
-    opacity: 0.8;
+    background: linear-gradient(90deg, transparent, var(--green), var(--blue), var(--cream), transparent);
+    opacity: 0.82;
 }
 
 .frequency-display {
-    font-family: "Special Elite", serif;
+    font-family: var(--font-display);
     color: var(--green);
     letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -310,7 +318,7 @@ nav a[aria-current="page"] {
 
 h1 {
     margin: 0;
-    font-family: "Special Elite", serif;
+    font-family: var(--font-display);
     color: var(--text);
     font-size: clamp(2.7rem, 8vw, 6.2rem);
     line-height: 0.95;
@@ -362,19 +370,19 @@ h1 {
 }
 
 .btn.primary {
-    color: #12100a;
-    background: linear-gradient(135deg, var(--amber), #f3d18b);
+    color: #071013;
+    background: linear-gradient(135deg, var(--cream), #d8e4df);
 }
 
 .btn.secondary {
     color: var(--text);
-    border-color: var(--border);
-    background: rgba(255, 179, 71, 0.08);
+    border-color: var(--border-blue);
+    background: var(--blue-soft);
 }
 
 .btn.secondary:hover {
-    border-color: rgba(255, 179, 71, 0.55);
-    background: rgba(255, 179, 71, 0.14);
+    border-color: rgba(73, 102, 132, 0.72);
+    background: rgba(73, 102, 132, 0.28);
 }
 
 .btn.large {
@@ -388,8 +396,8 @@ h1 {
 
 .ticker-section {
     padding: 0;
-    border-block: 1px solid rgba(255, 179, 71, 0.16);
-    background: rgba(17, 16, 12, 0.84);
+    border-block: 1px solid rgba(73, 102, 132, 0.24);
+    background: rgba(16, 24, 32, 0.84);
     overflow: hidden;
 }
 
@@ -402,7 +410,7 @@ h1 {
     display: inline-block;
     padding: 14px 0;
     color: var(--amber);
-    font-family: "Special Elite", serif;
+    font-family: var(--font-display);
     letter-spacing: 0.08em;
     text-transform: uppercase;
     animation: ticker-scroll 48s linear infinite;
@@ -431,8 +439,8 @@ h1 {
 .image-copy {
     border: 1px solid var(--border);
     background:
-        radial-gradient(circle at 18% 10%, rgba(157, 175, 136, 0.1), transparent 35%),
-        linear-gradient(180deg, rgba(24, 22, 16, 0.96), rgba(13, 12, 9, 0.96));
+        radial-gradient(circle at 18% 10%, rgba(95, 127, 104, 0.12), transparent 35%),
+        linear-gradient(180deg, rgba(17, 24, 25, 0.96), rgba(8, 10, 9, 0.96));
     border-radius: 20px;
     box-shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
 }
@@ -487,7 +495,7 @@ h1 {
 
 .dashboard-card .value {
     color: var(--amber);
-    font-family: "Special Elite", serif;
+    font-family: var(--font-display);
     font-size: clamp(1.6rem, 3vw, 2.25rem);
     letter-spacing: 0.06em;
 }
@@ -516,17 +524,17 @@ h1 {
 .action-card:hover,
 .community-card:hover {
     transform: translateY(-3px);
-    border-color: rgba(255, 179, 71, 0.52);
+    border-color: rgba(73, 102, 132, 0.58);
     background:
-        radial-gradient(circle at 18% 10%, rgba(157, 175, 136, 0.15), transparent 35%),
-        linear-gradient(180deg, rgba(34, 30, 21, 0.98), rgba(14, 13, 9, 0.98));
+        radial-gradient(circle at 18% 10%, rgba(95, 127, 104, 0.18), transparent 35%),
+        linear-gradient(180deg, rgba(22, 34, 38, 0.98), rgba(8, 11, 10, 0.98));
 }
 
 .action-card:focus-visible,
 .community-card:focus-visible,
 .next-card:focus-visible {
     transform: translateY(-3px);
-    border-color: rgba(255, 179, 71, 0.52);
+    border-color: rgba(73, 102, 132, 0.58);
 }
 
 .card-link,
@@ -554,8 +562,8 @@ h1 {
     inset: 0;
     opacity: 0.35;
     background:
-        linear-gradient(rgba(157, 175, 136, 0.1) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(157, 175, 136, 0.1) 1px, transparent 1px);
+        linear-gradient(rgba(95, 127, 104, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(95, 127, 104, 0.12) 1px, transparent 1px);
     background-size: 36px 36px;
 }
 
@@ -567,7 +575,7 @@ h1 {
 
 .map-overlay h2 {
     margin: 0 0 16px;
-    font-family: "Special Elite", serif;
+    font-family: var(--font-display);
     font-size: clamp(1.9rem, 4vw, 3.2rem);
     color: var(--text);
 }
@@ -603,8 +611,8 @@ h1 {
     padding: 12px 16px;
     color: var(--muted);
     font-size: 0.88rem;
-    border-top: 1px solid rgba(255, 179, 71, 0.16);
-    background: rgba(8, 8, 6, 0.7);
+    border-top: 1px solid rgba(73, 102, 132, 0.24);
+    background: rgba(8, 10, 9, 0.72);
 }
 
 .image-copy {
@@ -614,7 +622,7 @@ h1 {
 .image-copy h3 {
     margin: 0 0 16px;
     color: var(--text);
-    font-family: "Special Elite", serif;
+    font-family: var(--font-display);
     font-size: clamp(1.7rem, 3vw, 2.7rem);
     line-height: 1.08;
 }
@@ -630,13 +638,13 @@ h1 {
 
 footer {
     padding: 48px 0;
-    border-top: 1px solid rgba(255, 179, 71, 0.16);
-    background: rgba(8, 8, 6, 0.85);
+    border-top: 1px solid rgba(73, 102, 132, 0.24);
+    background: rgba(8, 10, 9, 0.86);
     text-align: center;
 }
 
 .footer-title {
-    font-family: "Special Elite", serif;
+    font-family: var(--font-display);
     color: var(--text);
     letter-spacing: 0.1em;
     margin-bottom: 8px;
@@ -667,7 +675,7 @@ footer {
 .docs-toc,
 .docs-article {
     border: 1px solid var(--border);
-    background: rgba(17, 16, 12, 0.92);
+    background: rgba(16, 24, 32, 0.92);
     border-radius: 18px;
 }
 
@@ -685,7 +693,7 @@ footer {
 .docs-sidebar-title,
 .docs-toc-title {
     color: var(--amber);
-    font-family: "Special Elite", serif;
+    font-family: var(--font-display);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     font-size: 0.9rem;
@@ -720,7 +728,7 @@ footer {
 .docs-toc a.active,
 .docs-toc a[aria-current="page"] {
     color: var(--text);
-    background: rgba(255, 179, 71, 0.1);
+    background: rgba(73, 102, 132, 0.18);
 }
 
 .docs-planned {
@@ -735,7 +743,7 @@ footer {
 
 .docs-planned::after {
     content: "  · planned";
-    color: rgba(157, 175, 136, 0.72);
+    color: rgba(95, 127, 104, 0.78);
     font-size: 0.78rem;
 }
 
@@ -776,7 +784,7 @@ footer {
 
 .docs-section {
     padding: 30px 0;
-    border-top: 1px solid rgba(255, 179, 71, 0.14);
+    border-top: 1px solid rgba(73, 102, 132, 0.22);
 }
 
 .docs-section:first-of-type {
@@ -786,7 +794,7 @@ footer {
 .docs-section h2 {
     margin: 0 0 14px;
     color: var(--amber);
-    font-family: "Special Elite", serif;
+    font-family: var(--font-display);
     font-size: clamp(1.5rem, 3vw, 2.2rem);
 }
 
@@ -824,9 +832,9 @@ footer {
 .docs-article pre {
     overflow-x: auto;
     padding: 16px;
-    border: 1px solid rgba(255, 179, 71, 0.18);
+    border: 1px solid rgba(73, 102, 132, 0.28);
     border-radius: 14px;
-    background: rgba(6, 6, 4, 0.72);
+    background: rgba(5, 8, 8, 0.76);
     color: var(--text);
 }
 
@@ -848,14 +856,14 @@ footer {
 .docs-article th,
 .docs-article td {
     padding: 10px 12px;
-    border: 1px solid rgba(255, 179, 71, 0.16);
+    border: 1px solid rgba(73, 102, 132, 0.24);
     text-align: left;
     vertical-align: top;
 }
 
 .docs-article th {
     color: var(--cream);
-    background: rgba(255, 179, 71, 0.08);
+    background: rgba(73, 102, 132, 0.14);
 }
 
 .docs-card-grid {
@@ -867,15 +875,15 @@ footer {
 
 .docs-card {
     display: block;
-    border: 1px solid rgba(255, 179, 71, 0.18);
-    background: rgba(255, 179, 71, 0.06);
+    border: 1px solid rgba(73, 102, 132, 0.28);
+    background: rgba(73, 102, 132, 0.10);
     border-radius: 14px;
     padding: 18px;
     color: var(--text);
 }
 
 .docs-card:hover {
-    border-color: rgba(255, 179, 71, 0.45);
+    border-color: rgba(73, 102, 132, 0.58);
 }
 
 .docs-card h3 {
@@ -900,18 +908,18 @@ footer {
 .docs-card-planned {
     cursor: default;
     opacity: 0.7;
-    border-color: rgba(157, 175, 136, 0.22);
-    background: rgba(157, 175, 136, 0.06);
+    border-color: rgba(95, 127, 104, 0.28);
+    background: rgba(95, 127, 104, 0.09);
 }
 
 .docs-card-planned:hover {
-    border-color: rgba(157, 175, 136, 0.22);
+    border-color: rgba(95, 127, 104, 0.28);
 }
 
 .docs-card-status {
     display: inline-block;
     margin-top: 12px;
-    color: rgba(157, 175, 136, 0.82);
+    color: rgba(95, 127, 104, 0.86);
     font-size: 0.78rem;
     text-transform: uppercase;
     letter-spacing: 0.09em;
@@ -922,10 +930,10 @@ footer {
    ========================================================= */
 
 .coverage-map-panel {
-    border: 1px solid rgba(255, 179, 71, 0.24);
+    border: 1px solid rgba(73, 102, 132, 0.42);
     background:
         radial-gradient(circle at 15% 10%, rgba(111, 143, 95, 0.18), transparent 34%),
-        linear-gradient(180deg, rgba(28, 25, 18, 0.96), rgba(10, 9, 7, 0.96));
+        linear-gradient(180deg, rgba(17, 24, 25, 0.96), rgba(7, 9, 8, 0.96));
     border-radius: 20px;
     padding: 18px;
     box-shadow: 0 0 35px rgba(0, 0, 0, 0.34);
@@ -937,8 +945,8 @@ footer {
     width: 100%;
     height: 500px;
     border-radius: 14px;
-    border: 1px solid rgba(157, 175, 136, 0.36);
-    background: #17261b;
+    border: 1px solid rgba(95, 127, 104, 0.38);
+    background: #132125;
     z-index: 1;
 }
 
@@ -949,7 +957,7 @@ footer {
     margin-top: 14px;
     padding: 14px 16px;
     border-left: 4px solid var(--green);
-    background: rgba(157, 175, 136, 0.1);
+    background: rgba(95, 127, 104, 0.12);
     border-radius: 12px;
 }
 
@@ -958,12 +966,12 @@ footer {
 }
 
 .leaflet-container {
-    font-family: "Inter", sans-serif;
+    font-family: var(--font-body);
 }
 
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-    background: #11100c;
+    background: #101820;
     color: #e7d8b5;
 }
 
@@ -1005,9 +1013,9 @@ footer {
 .coverage-data-status {
     margin-top: 12px;
     padding: 14px 16px;
-    border: 1px solid rgba(255, 179, 71, 0.35);
+    border: 1px solid rgba(73, 102, 132, 0.46);
     border-radius: 14px;
-    background: rgba(20, 24, 18, 0.72);
+    background: rgba(16, 24, 32, 0.72);
     color: var(--muted);
     font-size: 0.92rem;
     line-height: 1.55;
@@ -1158,6 +1166,7 @@ footer {
         transform: none;
     }
 }
+
 /* =========================================================
    Simple Homepage Refresh
    ========================================================= */
@@ -1178,7 +1187,7 @@ footer {
 .home-center h2,
 .home-center h3 {
     margin: 0 0 16px;
-    font-family: "Special Elite", serif;
+    font-family: var(--font-display);
     color: var(--text);
     font-size: clamp(2.2rem, 6vw, 4.8rem);
     line-height: 1;
@@ -1207,6 +1216,7 @@ footer {
 footer .footer-subtitle {
     margin: 0;
 }
+
 /* =========================================================
    Homepage Refresh Fix
    Keeps the homepage simple without making it plain
@@ -1221,7 +1231,7 @@ footer .footer-subtitle {
 .home-panel h2,
 .home-panel h3 {
     margin: 0 0 18px;
-    font-family: "Special Elite", serif;
+    font-family: var(--font-display);
     color: var(--text);
     font-size: clamp(2.8rem, 7vw, 5.4rem);
     line-height: 0.95;
