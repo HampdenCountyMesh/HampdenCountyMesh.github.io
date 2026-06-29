@@ -1,13 +1,10 @@
-Hampden County Mesh Discord
+# Hampden County Mesh Discord
 
 The Hampden County Mesh Discord is the main discussion space for local mesh radio, MeshCore, Meshtastic, radio basics, setup help, documentation work, website updates, and local coordination.
 
-
-
-
 The server is for people interested in MeshCore, Meshtastic, local radio, off-grid messaging, radio learning, and practical communications knowledge across Hampden County and nearby Western Massachusetts.
 
-Join the Discord
+## Join the Discord
 
 Public join route:
 
@@ -17,173 +14,175 @@ Use the website join route instead of posting raw Discord invite links in public
 
 If the join route is not working, contact:
 
-discord@hampdencountymesh.org
+[discord@hampdencountymesh.org](mailto:discord@hampdencountymesh.org)
 
-What the Discord is for
+## What the Discord Is For
 
 The Discord is used for:
 
-MeshCore discussion
-Meshtastic discussion
-Device setup and troubleshooting
-Beginner radio questions
-Local radio discussion
-Photos and public-safe device examples
-Website and GitHub work
-Documentation updates
-Mapping and observed activity planning
-MQTT, observer, logging, and backend discussion
-Announcements and coordination
-Casual discussion related to the local radio and mesh community
-First steps after joining
+* MeshCore discussion
+* Meshtastic discussion
+* Device setup and troubleshooting
+* Beginner radio questions
+* Local radio discussion
+* Photos and public-safe device examples
+* Website and GitHub work
+* Documentation updates
+* Mapping and observed activity planning
+* MQTT, observer, logging, and backend discussion
+* Announcements and coordination
+* Casual discussion related to the local radio and mesh community
+
+## First Steps After Joining
 
 New members are not expected to know everything. Beginner questions are welcome.
 
 After joining:
 
-Read the server rules.
-Complete onboarding if prompted.
-Choose any relevant interests or region options offered by onboarding.
-Check the welcome or new member area.
-Ask beginner questions in the appropriate help channel.
-Ask device questions in the MeshCore, Meshtastic, or device-help area.
-Remove private details before sharing photos, screenshots, logs, maps, or setup information.
+1. Read the server rules.
+2. Complete onboarding if prompted.
+3. Choose any relevant interests or region options offered by onboarding.
+4. Check the welcome or new member area.
+5. Ask beginner questions in the appropriate help channel.
+6. Ask device questions in the MeshCore, Meshtastic, or device-help area.
+7. Remove private details before sharing photos, screenshots, logs, maps, or setup information.
 
 Do not worry if you do not know the right terms yet. Ask plainly and include what you are trying to do.
 
-Channel structure
+## Channel Structure
 
 Exact channel names may change over time, but the server is generally organized around these uses.
 
-Welcome and rules
+### Welcome and Rules
 
 These channels are for new member entry, rules, onboarding, and basic server orientation.
 
 Examples may include:
 
-Welcome
-Rules
-New member lobby
-Server guide or first steps
-Announcements
+* Welcome
+* Rules
+* New member lobby
+* Server guide or first steps
+
+### Announcements
 
 Announcement channels are for official updates and useful updates from elsewhere.
 
 Current announcement uses include:
 
-Hampden County Mesh announcements
-Official updates from Hampden County Mesh.
-Elsewhere announcements
-Useful announcements, links, or posts from neighboring mesh/radio groups, relevant servers, or other public sources.
+* **Hampden County Mesh announcements** — official updates from Hampden County Mesh.
+* **Elsewhere announcements** — useful announcements, links, or posts from neighboring mesh/radio groups, relevant servers, or other public sources.
 
 Announcement channels should stay focused. Normal discussion should happen in discussion channels.
 
-General discussion
+### General Discussion
 
 General discussion channels are for normal conversation, beginner questions, and local coordination.
 
 Examples may include:
 
-General
-Questions or help
-Off-topic
-Photos or public-safe media
+* General
+* Questions or help
+* Off-topic
+* Photos or public-safe media
 
 The off-topic area is for casual conversation, memes, and general discussion as long as server rules are followed.
 
-MeshCore
+### MeshCore
 
 MeshCore channels are for:
 
-MeshCore setup
-Firmware questions
-Device roles
-Repeaters
-Observers
-Room servers
-MeshCore apps
-Local MeshCore activity
-Practical use questions
-Meshtastic
+* MeshCore setup
+* Firmware questions
+* Device roles
+* Repeaters
+* Observers
+* Room servers
+* MeshCore apps
+* Local MeshCore activity
+* Practical use questions
+
+### Meshtastic
 
 Meshtastic channels are for:
 
-Meshtastic setup
-Device questions
-Channels and roles
-MQTT questions
-Maps
-Local Meshtastic activity
-Practical use questions
-Radio reference
+* Meshtastic setup
+* Device questions
+* Channels and roles
+* MQTT questions
+* Maps
+* Local Meshtastic activity
+* Practical use questions
+
+### Radio Reference
 
 Radio reference channels are for radio topics that are not strictly MeshCore or Meshtastic.
 
 Topics may include:
 
-FRS
-GMRS
-MURS
-CB
-Amateur radio
-Scanners
-Antennas
-Repeaters
-Local radio learning
+* FRS
+* GMRS
+* MURS
+* CB
+* Amateur radio
+* Scanners
+* Antennas
+* Repeaters
+* Local radio learning
 
 Members are responsible for following the rules of the radio service they use.
 
-Local use and photos
+### Local Use and Photos
 
 Local use or photo channels may be used for:
 
-Public-safe device photos
-General placement examples
-Terrain discussion
-Public-location observations
-Device comparison questions
-Local radio behavior notes
-Setup examples with private details removed
+* Public-safe device photos
+* General placement examples
+* Terrain discussion
+* Public-location observations
+* Device comparison questions
+* Local radio behavior notes
+* Setup examples with private details removed
 
 Use general areas in public notes unless exact location sharing is clearly intentional and safe.
 
-Website and documentation work
+### Website and Documentation Work
 
 Website and documentation channels may be used for:
 
-Website updates
-GitHub work
-Guide edits
-Broken links
-Documentation planning
-Map and coverage page improvements
-Public wording cleanup
+* Website updates
+* GitHub work
+* Guide edits
+* Broken links
+* Documentation planning
+* Map and coverage page improvements
+* Public wording cleanup
 
 Some work channels may be private or role-limited to reduce noise and protect unfinished or sensitive details.
 
-Status and infrastructure
+### Status and Infrastructure
 
 Status and infrastructure channels may be used for:
 
-Site-maintained system status
-Observer notes
-Hub notes
-GitHub webhook updates
-Backend work
-Logging updates
-Outage or maintenance notes
+* Site-maintained system status
+* Observer notes
+* Hub notes
+* GitHub webhook updates
+* Backend work
+* Logging updates
+* Outage or maintenance notes
 
-Do not post private credentials, private IPs, broker passwords, admin URLs, or sensitive access details in public channels.
+Do not post private credentials, private IP addresses, broker passwords, admin URLs, or sensitive access details in public channels.
 
-GitHub integration
+## GitHub Integration
 
 The Discord has a GitHub integration or webhook for repository updates.
 
-The integration should be used for useful visibility into website and repo work, not as a replacement for documentation.
+The integration should be used for useful visibility into website and repository work, not as a replacement for documentation.
 
 Keep GitHub update channels focused so they remain readable.
 
-Future relay and bot integrations
+## Future Relay and Bot Integrations
 
 Future integrations may include MeshCore, MQTT, observer, or Discord relay tools.
 
@@ -193,7 +192,7 @@ Do not create broad relay channels before the actual integration is ready. When 
 
 Possible future relay categories or channels should be documented only after the integration plan is clear.
 
-Privacy and location safety
+## Privacy and Location Safety
 
 Do not post exact private node locations without permission.
 
@@ -201,86 +200,87 @@ General areas are usually enough for public discussion.
 
 Good examples:
 
-“Westfield area”
-“western Hampden County”
-“near Holyoke / Chicopee”
-“tested from a hilltop”
-“mobile use along a general route”
-“public park area”
-“near a second-floor window”
+* “Westfield area”
+* “Western Hampden County”
+* “Near Holyoke / Chicopee”
+* “Tested from a hilltop”
+* “Mobile use along a general route”
+* “Public park area”
+* “Near a second-floor window”
 
 Avoid posting:
 
-Home addresses
-Exact GPS coordinates for private nodes
-Private repeater locations
-Private infrastructure locations
-Private IP addresses
-Admin URLs
-Photos that reveal addresses or sensitive locations
-Someone else’s location without permission
+* Home addresses
+* Exact GPS coordinates for private nodes
+* Private repeater locations
+* Private infrastructure locations
+* Private IP addresses
+* Admin URLs
+* Photos that reveal addresses or sensitive locations
+* Someone else’s location without permission
 
 When in doubt, generalize the location.
 
-Credentials and infrastructure safety
+## Credentials and Infrastructure Safety
 
 Do not post:
 
-Private keys
-Channel keys
-API tokens
-Webhook URLs
-Passwords
-Broker credentials
-Wi-Fi details
-Admin URLs
-Private IP addresses
-SSH details
-Anything that could compromise a device, account, server, node, broker, or service
+* Private keys
+* Channel keys
+* API tokens
+* Webhook URLs
+* Passwords
+* Broker credentials
+* Wi-Fi details
+* Admin URLs
+* Private IP addresses
+* SSH details
+* Anything that could compromise a device, account, server, node, broker, or service
 
 If sensitive information is posted accidentally:
 
-Delete it immediately if possible.
-Notify a moderator.
-Rotate the exposed credential if needed.
-Do not quote or repost the exposed secret.
-Screenshots and photos
+1. Delete it immediately if possible.
+2. Notify a moderator.
+3. Rotate the exposed credential if needed.
+4. Do not quote or repost the exposed secret.
+
+## Screenshots and Photos
 
 Before posting screenshots or photos, check for:
 
-Private messages
-Passwords
-Keys
-Admin pages
-Private channels
-Email addresses
-Private node locations
-Exact coordinates
-License plates
-Home addresses
-Reflections
-EXIF metadata
-People who did not agree to be shown
+* Private messages
+* Passwords
+* Keys
+* Admin pages
+* Private channels
+* Email addresses
+* Private node locations
+* Exact coordinates
+* License plates
+* Home addresses
+* Reflections
+* EXIF metadata
+* People who did not agree to be shown
 
 Crop, blur, redact, or choose a different image when needed.
 
-Radio and legal expectations
+## Radio and Legal Expectations
 
 Members are responsible for following applicable radio laws, service rules, and license requirements.
 
 Do not encourage:
 
-Illegal transmitting
-Jamming
-Harmful interference
-Impersonation
-Unauthorized access
-Misuse of emergency systems
-Misuse of public safety, aviation, railroad, utility, commercial, or government systems
+* Illegal transmitting
+* Jamming
+* Harmful interference
+* Impersonation
+* Unauthorized access
+* Misuse of emergency systems
+* Misuse of public safety, aviation, railroad, utility, commercial, or government systems
 
 The server is for lawful learning, experimentation, local communications, and shared radio knowledge.
 
-Conduct expectations
+## Conduct Expectations
 
 The Discord should stay useful, respectful, and beginner-friendly.
 
@@ -290,53 +290,53 @@ Do not make beginners feel unwelcome for asking basic questions.
 
 Disagreements should stay focused on facts, safety, documentation, and practical results.
 
-Roles
+## Roles
 
 The server uses roles to help members find relevant channels and topics.
 
 Interest roles may include:
 
-MeshCore
-Meshtastic
-GMRS
-FRS
-MURS
-CB
-Amateur radio
-Scanners
-Mapping
-Website or docs
+* MeshCore
+* Meshtastic
+* GMRS
+* FRS
+* MURS
+* CB
+* Amateur radio
+* Scanners
+* Mapping
+* Website or docs
 
 General area roles may include:
 
-Western Hampden County
-Central Hampden County
-Eastern Hampden County
-Outside Hampden County
+* Western Hampden County
+* Central Hampden County
+* Eastern Hampden County
+* Outside Hampden County
 
 Staff and infrastructure roles are assigned manually. They are not self-assigned.
 
-Getting help
+## Getting Help
 
 For general questions, use a beginner or help channel.
 
 For device problems, include useful details when you can:
 
-Device model
-Firmware version
-Mesh system: MeshCore, Meshtastic, or other
-Role or mode
-Relevant settings
-What app or computer you are using
-Screenshots with private details removed
-Logs with private details removed
-Exact error messages
-What you already tried
-General area if the question depends on location or terrain
+* Device model
+* Firmware version
+* Mesh system: MeshCore, Meshtastic, or other
+* Role or mode
+* Relevant settings
+* What app or computer you are using
+* Screenshots with private details removed
+* Logs with private details removed
+* Exact error messages
+* What you already tried
+* General area if the question depends on location or terrain
 
 If you are not sure where to ask, use the new member or general help area.
 
-Related links
+## Related Links
 
 Website:
 
@@ -354,7 +354,7 @@ GitHub repository:
 
 https://github.com/HampdenCountyMesh/HampdenCountyMesh.github.io
 
-Project status
+## Public Status
 
 Current public status is maintained on the website and through Discord updates where appropriate.
 
@@ -362,6 +362,6 @@ Public live data automation, observer reporting, MQTT integrations, mapping impr
 
 Do not describe future integrations as live until they are actually working.
 
-Project disclaimer
+## Emergency and Safety Note
 
 Hampden County Mesh is a community education and hobby effort. It is not an emergency service or a replacement for 911.

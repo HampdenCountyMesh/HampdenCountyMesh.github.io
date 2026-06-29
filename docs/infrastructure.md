@@ -6,7 +6,7 @@ It is intended for continuity, maintenance, and public-safe documentation. It sh
 
 ## Overview
 
-Hampden County Mesh maintains a small set of support systems used for local mesh learning, observer work, logging, MQTT testing, documentation, and future public-safe activity views.
+Hampden County Mesh maintains a small set of support systems used for local mesh learning, observer work, logging, MQTT testing, documentation, field testing, and future public-safe activity views.
 
 These systems support the website and local documentation work. They should not be described as proof that Hampden County Mesh owns or operates every node, observer, repeater, packet, marker, or device visible in the broader mesh ecosystem.
 
@@ -19,10 +19,12 @@ Use careful wording:
 * public sources where available
 * local radio observations
 * support infrastructure
+* field testing
+* wardriving results
 
 Avoid wording that suggests complete coverage, guaranteed communication, emergency service capability, or ownership of all nearby mesh activity.
 
-## Current site-maintained systems
+## Current Site-Maintained Systems
 
 ### Hampden Room Observer
 
@@ -114,17 +116,58 @@ Notes:
 * Public notes should describe the node by general area, purpose, role, and observed behavior.
 * Maintenance notes should be kept current enough that the node can be checked, updated, or removed if needed.
 
-## Supporting files and data
+### Cassiopeia
+
+Purpose:
+
+* Portable field testing
+* Mobile or temporary mesh testing
+* Wardriving support
+* Local placement comparison
+* Device and antenna testing
+
+Status:
+
+* Active
+* Manually documented
+
+Hardware:
+
+* Seeed Wio Tracker L1 Pro
+
+Location:
+
+* Portable / mobile
+
+Notes:
+
+* Cassiopeia should not be mapped as a fixed location.
+* Public notes should describe field testing in general areas unless exact sharing is clearly safe.
+* Wardriving or field-testing results should be treated as observations, not guaranteed coverage.
+* Do not publish exact private routes, private addresses, or sensitive screenshots.
+
+## Supporting Files and Data
 
 Infrastructure-related public files may include:
 
-* `data/status.json`
-* `data/nodes.json`
-* `data/observed-activity.json`
+* status data
+* node or system data
+* observed-activity data
 * coverage or map data
 * guide pages
 * public-safe notes
 * manually maintained status text
+
+Possible repository paths may include:
+
+* `assets/data/status.json`
+* `assets/data/nodes.json`
+* `assets/data/observed-activity.json`
+* `assets/data/activity-map.json`
+* `assets/data/hampden-county-towns.geojson`
+* `assets/data/hampden-county-outline.geojson`
+
+Use the actual current repository path when linking from website code.
 
 These files should avoid private information.
 
@@ -142,7 +185,7 @@ Do not commit:
 * Sensitive logs
 * Screenshots showing credentials or private messages
 
-## Observed activity
+## Observed Activity
 
 Observed activity may come from:
 
@@ -153,13 +196,15 @@ Observed activity may come from:
 * Public feeds
 * Manual local notes
 * Community reports
+* Wardriving
+* Field testing
 * Future dashboards or integrations
 
 Observed activity should be described carefully.
 
-It may show that something was heard, logged, reported, or displayed by a system. It does not necessarily prove direct radio reachability from a user’s location, and it does not imply that Hampden County Mesh owns every device shown.
+It may show that something was heard, logged, reported, mapped, or displayed by a system. It does not necessarily prove direct radio reachability from a user’s location, and it does not imply that Hampden County Mesh owns every device shown.
 
-## MQTT and backend notes
+## MQTT and Backend Notes
 
 MQTT and backend services are useful for development, logging, observer work, dashboards, and future integrations.
 
@@ -171,9 +216,11 @@ Current MQTT-related documentation should be kept in:
 
 General rule:
 
-Public documentation may describe what MQTT is used for, but should not expose credentials, broker passwords, private hostnames, internal IPs, admin details, or private system paths.
+Public documentation may describe what MQTT is used for, but should not expose credentials, broker passwords, private hostnames, internal IP addresses, admin details, private system paths, or access instructions for private systems.
 
-## Discord and GitHub integrations
+Local MQTT testing should not be described as a public broker unless a public broker actually exists and is intended to be supported.
+
+## Discord and GitHub Integrations
 
 Current public-facing integrations may include:
 
@@ -192,9 +239,9 @@ Future integrations may include:
 
 Do not describe a future integration as live until it is actually working and maintainable.
 
-Automated relay output should have a clear purpose and a clear channel before it is enabled.
+Automated relay output should have a clear purpose and a clear channel before it is enabled. It should stay separate from normal discussion so automated messages do not bury human conversation.
 
-## Maintenance expectations
+## Maintenance Expectations
 
 For each site-maintained system, keep enough public-safe information to answer:
 
@@ -222,7 +269,7 @@ Public notes:
 Private details removed before sharing: yes / no
 ```
 
-## Public status language
+## Public Status Language
 
 Use:
 
@@ -245,7 +292,7 @@ Avoid overclaiming with language like:
 * all nodes
 * all traffic
 
-## Future work
+## Future Work
 
 Future infrastructure work may include:
 
@@ -261,7 +308,7 @@ Future infrastructure work may include:
 
 Future work should be documented as future work until it is live.
 
-## Related documentation
+## Related Documentation
 
 * `docs/nodes.md`
 * `docs/observers.md`
@@ -273,12 +320,13 @@ Future work should be documented as future work until it is live.
 Related public pages:
 
 * https://hampdencountymesh.org/coverage.html
-* https://hampdencountymesh.org/guides/nodes-repeaters-observers.html
 * https://hampdencountymesh.org/guides/node-setups.html
 * https://hampdencountymesh.org/guides/radio-aids.html
 * https://hampdencountymesh.org/guides/using-your-node.html
 * https://hampdencountymesh.org/guides/sharing-safely.html
 
-## Project disclaimer
+Only link to public pages that currently exist. If a guide is planned but not live, keep it out of public navigation until it is ready.
+
+## Emergency and Safety Note
 
 Hampden County Mesh is a community education and hobby effort. It is not an emergency service or a replacement for 911.
