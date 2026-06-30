@@ -4,19 +4,19 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hampden County Mesh</title>
-  <meta name="description" content="A local community for people interested in MeshCore, Meshtastic, and practical radio projects in Western Massachusetts.">
+  <meta name="description" content="Hampden County Mesh is a Western Massachusetts community for learning about and using MeshCore, Meshtastic, and other practical radio communications.">
 
   <link rel="canonical" href="https://hampdencountymesh.org/">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Hampden County Mesh">
-  <meta property="og:description" content="A local community for people interested in MeshCore, Meshtastic, and practical radio projects in Western Massachusetts.">
+  <meta property="og:description" content="Hampden County Mesh is a Western Massachusetts community for learning about and using MeshCore, Meshtastic, and other practical radio communications.">
   <meta property="og:url" content="https://hampdencountymesh.org/">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hampden County Mesh">
-  <meta name="twitter:description" content="A local community for people interested in MeshCore, Meshtastic, and practical radio projects in Western Massachusetts.">
+  <meta name="twitter:description" content="Hampden County Mesh is a Western Massachusetts community for learning about and using MeshCore, Meshtastic, and other practical radio communications.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
 
   <meta name="theme-color" content="#101820">
@@ -64,9 +64,9 @@
     .hero-banner .hero-panel {
       max-width: 980px;
       background:
-        radial-gradient(circle at 20% 12%, rgba(95, 127, 104, 0.14), transparent 34%),
-        radial-gradient(circle at 85% 0%, rgba(73, 102, 132, 0.18), transparent 32%),
-        linear-gradient(180deg, rgba(17, 24, 25, 0.78), rgba(7, 9, 8, 0.90));
+        radial-gradient(circle at 20% 12%, rgba(95, 127, 104, 0.12), transparent 34%),
+        radial-gradient(circle at 85% 0%, rgba(73, 102, 132, 0.15), transparent 32%),
+        linear-gradient(180deg, rgba(17, 24, 25, 0.68), rgba(7, 9, 8, 0.82));
       backdrop-filter: blur(2px);
     }
 
@@ -108,6 +108,10 @@
       line-height: 1.65;
     }
 
+    .home-copy p + p {
+      margin-top: 18px;
+    }
+
     .home-copy .button-row,
     .home-card .button-row {
       justify-content: center;
@@ -129,12 +133,12 @@
     }
 
     .icon-btn {
-      gap: 10px;
+      gap: 14px;
     }
 
     .project-icon {
-      width: 24px;
-      height: 24px;
+      width: 48px;
+      height: 48px;
       display: block;
       flex: 0 0 auto;
     }
@@ -166,6 +170,11 @@
       .home-copy h2,
       .home-card h2 {
         font-size: clamp(2.5rem, 13vw, 4.6rem);
+      }
+
+      .project-icon {
+        width: 42px;
+        height: 42px;
       }
     }
   </style>
@@ -202,8 +211,8 @@
         <h1>Hampden County<br>Mesh</h1>
 
         <p class="hero-text">
-          A local community for people interested in MeshCore, Meshtastic,
-          and practical radio projects in Western Massachusetts.
+          A Western Massachusetts community for learning about and using MeshCore,
+          Meshtastic, and other practical radio communications.
         </p>
 
         <div class="hero-actions">
@@ -221,12 +230,19 @@
     <section class="home-section">
       <div class="container">
         <div class="home-copy">
-          <h2>What is mesh?</h2>
+          <h2>Why mesh communications?</h2>
 
           <p>
-            Mesh radios pass short messages through nearby radios. A message can move
-            from one node to another, helping people communicate across an area without
-            relying on cell service or Wi-Fi.
+            Mesh communications let small radios pass short messages from one nearby
+            node to another. A message can move across an area without depending on
+            cell service, Wi-Fi, or internet access.
+          </p>
+
+          <p>
+            Platforms like MeshCore and Meshtastic make this easier to explore with
+            affordable hardware, phone apps, and low-power radio. They give local
+            people a practical way to learn, test coverage, share messages, and build
+            more resilient communications from the ground up.
           </p>
         </div>
       </div>
@@ -243,7 +259,7 @@
           </p>
 
           <div class="button-row project-buttons">
-            <a class="btn secondary icon-btn" href="https://meshcore.co.uk/" target="_blank" rel="noopener">
+            <a class="btn secondary icon-btn" href="https://meshcore.io/" target="_blank" rel="noopener">
               <img class="project-icon" src="/assets/icons/meshcore.svg" alt="" aria-hidden="true">
               <span>MeshCore</span>
             </a>
@@ -302,7 +318,7 @@
 
   <footer>
     <div class="container">
-      <p class="footer-subtitle">Community-based radio communications in Western Massachusetts.</p>
+      <p class="footer-subtitle">Community-based mesh and radio communications in Western Massachusetts.</p>
       <p class="footer-updated">Last updated: <span id="last-updated">Loading...</span></p>
     </div>
   </footer>
