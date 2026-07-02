@@ -1,4 +1,3 @@
-```html id="da9wig"
 <!doctype html>
 <html lang="en">
 <head>
@@ -31,181 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=20260629a">
-
-  <style>
-    .centered {
-      text-align: center;
-    }
-
-    .narrow {
-      max-width: 980px;
-    }
-
-    .portal-title {
-      max-width: 780px;
-      margin: 0 auto 14px;
-      color: var(--text);
-      font-family: var(--font-display);
-      font-size: clamp(1.9rem, 4vw, 3.25rem);
-      font-weight: 800;
-      line-height: 1.08;
-    }
-
-    .section-lede {
-      max-width: 740px;
-      margin: 0 auto 28px;
-      color: var(--text-soft);
-      font-size: 1.05rem;
-    }
-
-    .settings-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      text-align: left;
-    }
-
-    .settings-card {
-      border: 1px solid var(--border);
-      background:
-        radial-gradient(circle at 18% 10%, var(--green-soft), transparent 35%),
-        linear-gradient(180deg, var(--panel-strong), var(--panel));
-      border-radius: 20px;
-      padding: clamp(22px, 4vw, 34px);
-      box-shadow: 0 18px 48px var(--shadow);
-    }
-
-    .settings-card h2,
-    .settings-card h3 {
-      margin: 0 0 10px;
-      font-family: var(--font-display);
-      color: var(--text);
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
-      font-weight: 800;
-    }
-
-    .settings-intro {
-      margin: 0 0 18px;
-      color: var(--text-soft);
-    }
-
-    .settings-list {
-      margin: 0 0 22px;
-    }
-
-    .settings-list div {
-      display: grid;
-      grid-template-columns: 160px minmax(0, 1fr);
-      gap: 12px;
-      padding: 10px 0;
-      border-top: 1px solid var(--border-green);
-    }
-
-    .settings-list dt {
-      color: var(--blue-light);
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      font-size: 0.78rem;
-    }
-
-    .settings-list dd {
-      margin: 0;
-      color: var(--text-soft);
-    }
-
-    .guide-panel {
-      max-width: 900px;
-      margin: 0 auto;
-      border: 1px solid var(--border);
-      background:
-        radial-gradient(circle at 18% 10%, var(--green-soft), transparent 35%),
-        linear-gradient(180deg, var(--panel-strong), var(--panel));
-      border-radius: 20px;
-      padding: clamp(24px, 5vw, 42px);
-      box-shadow: 0 18px 48px var(--shadow);
-    }
-
-    .guide-panel h2 {
-      margin: 0 0 14px;
-      font-family: var(--font-display);
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 800;
-      line-height: 1.1;
-    }
-
-    .guide-panel h3 {
-      margin: 28px 0 10px;
-      color: var(--text);
-      font-size: 1.25rem;
-    }
-
-    .guide-panel p,
-    .guide-panel li {
-      color: var(--text-soft);
-    }
-
-    .guide-panel ul {
-      margin: 12px 0 0;
-      padding-left: 1.2rem;
-    }
-
-    .guide-panel li {
-      margin: 8px 0;
-    }
-
-    .code-line {
-      display: inline-block;
-      max-width: 100%;
-      overflow-wrap: anywhere;
-    }
-
-    .next-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 14px;
-      text-align: left;
-    }
-
-    .next-card {
-      border: 1px solid var(--border-green);
-      border-radius: 16px;
-      padding: 18px;
-      background: rgba(0, 0, 0, 0.16);
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .next-card strong {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--text);
-    }
-
-    .next-card span {
-      color: var(--text-soft);
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 900px) {
-      .next-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 800px) {
-      .settings-grid,
-      .next-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .settings-list div {
-        grid-template-columns: 1fr;
-        gap: 4px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/style.css?v=20260701e">
 </head>
 
 <body>
@@ -258,11 +83,13 @@
         <div class="section-heading">Short version</div>
         <h2 class="portal-title">Use the common regional settings first.</h2>
         <p class="section-lede">
-          Do not start by changing channels, roles, MQTT, power, or advanced routing behavior. Get one normal node working first, then adjust only when you have a reason.
+          Hampden County Mesh recommends MeshCore for new users who want dependable local messaging. Meshtastic users are welcome, but both systems should start simple: get one normal node working before changing roles, MQTT, power, or advanced behavior.
         </p>
 
         <div class="settings-grid">
           <div class="settings-card" id="meshcore">
+            <img class="project-card-icon" src="/assets/icons/meshcore.svg" alt="" aria-hidden="true">
+
             <h2>MeshCore</h2>
             <p class="settings-intro">
               Recommended starting point for nearby Massachusetts MeshCore activity.
@@ -299,10 +126,14 @@
               </div>
             </dl>
 
-            <a class="btn secondary" href="/guides/meshcore-basics.html">MeshCore Basics</a>
+            <div class="button-row">
+              <a class="btn secondary" href="/guides/meshcore-basics.html">MeshCore Basics</a>
+            </div>
           </div>
 
           <div class="settings-card" id="meshtastic">
+            <img class="project-card-icon" src="/assets/icons/meshtastic.svg" alt="" aria-hidden="true">
+
             <h2>Meshtastic</h2>
             <p class="settings-intro">
               Recommended starting point for normal local Meshtastic use.
@@ -339,7 +170,9 @@
               </div>
             </dl>
 
-            <a class="btn secondary" href="/guides/meshtastic-basics.html">Meshtastic Basics</a>
+            <div class="button-row">
+              <a class="btn secondary" href="/guides/meshtastic-basics.html">Meshtastic Basics</a>
+            </div>
           </div>
         </div>
       </div>
@@ -511,7 +344,7 @@
 
           <a class="next-card" href="/guides/node-setups.html">
             <strong>Node Setups</strong>
-            <span>Learn placement, antennas, repeaters, observers, maps, wardriving, and troubleshooting.</span>
+            <span>Learn placement, antennas, repeaters, observers, maps, MeshMapper for MeshCore, and troubleshooting.</span>
           </a>
         </div>
       </div>
@@ -520,7 +353,7 @@
 
   <footer>
     <div class="container">
-      <p class="footer-subtitle">Community-based radio communications in Western Massachusetts.</p>
+      <p class="footer-subtitle">Community-based mesh and radio communications in Western Massachusetts.</p>
       <p class="footer-updated">Last updated: <span id="last-updated">Loading...</span></p>
     </div>
   </footer>
@@ -528,4 +361,3 @@
   <script src="/last-updated.js" defer></script>
 </body>
 </html>
-```

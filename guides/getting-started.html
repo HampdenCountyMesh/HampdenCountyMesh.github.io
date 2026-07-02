@@ -1,18 +1,17 @@
-```html id="evv1t0"
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Getting Started | Hampden County Mesh</title>
-  <meta name="description" content="A short beginner guide for getting started with MeshCore, Meshtastic, recommended settings, node setup, and local mesh testing in Western Massachusetts.">
+  <meta name="description" content="A short beginner guide for getting started with MeshCore, Meshtastic, recommended settings, node setup, MeshMapper, and local mesh testing in Western Massachusetts.">
 
   <link rel="canonical" href="https://hampdencountymesh.org/guides/getting-started.html">
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Hampden County Mesh">
   <meta property="og:title" content="Getting Started | Hampden County Mesh">
-  <meta property="og:description" content="A short beginner guide for getting started with MeshCore, Meshtastic, recommended settings, node setup, and local mesh testing in Western Massachusetts.">
+  <meta property="og:description" content="A short beginner guide for getting started with MeshCore, Meshtastic, recommended settings, node setup, MeshMapper, and local mesh testing in Western Massachusetts.">
   <meta property="og:url" content="https://hampdencountymesh.org/guides/getting-started.html">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta property="og:image:width" content="1200">
@@ -21,7 +20,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Getting Started | Hampden County Mesh">
-  <meta name="twitter:description" content="A short beginner guide for getting started with MeshCore, Meshtastic, recommended settings, node setup, and local mesh testing in Western Massachusetts.">
+  <meta name="twitter:description" content="A short beginner guide for getting started with MeshCore, Meshtastic, recommended settings, node setup, MeshMapper, and local mesh testing in Western Massachusetts.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
@@ -31,58 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=20260629a">
-
-  <style>
-    .docs-action-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin: 22px 0;
-    }
-
-    .docs-action-card {
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 20px;
-      background:
-        radial-gradient(circle at 18% 10%, var(--green-soft), transparent 35%),
-        linear-gradient(180deg, var(--panel-strong), var(--panel));
-    }
-
-    .docs-action-card h3 {
-      margin-top: 0;
-    }
-
-    .settings-mini {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin: 22px 0;
-    }
-
-    .settings-mini-card {
-      border: 1px solid var(--border-green);
-      border-radius: 16px;
-      padding: 18px;
-      background: rgba(0, 0, 0, 0.16);
-    }
-
-    .settings-mini-card h3 {
-      margin-top: 0;
-    }
-
-    .settings-mini-card ul {
-      margin-bottom: 0;
-    }
-
-    @media (max-width: 900px) {
-      .docs-action-grid,
-      .settings-mini {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/style.css?v=20260701b">
 </head>
 
 <body>
@@ -138,10 +86,10 @@
 
           <ol>
             <li>Read the short explanation on this page.</li>
-            <li>Choose MeshCore or Meshtastic as your first path.</li>
+            <li>Start with MeshCore if you are buying or setting up a new device.</li>
             <li>Use the <a href="/guides/recommended-settings.html">Recommended Settings</a>.</li>
             <li>Place the node near a window or take it somewhere with a clearer view.</li>
-            <li>Use <a href="/guides/node-setups.html">Node Setups</a> for placement, antennas, maps, wardriving, and troubleshooting.</li>
+            <li>Use <a href="/guides/node-setups.html">Node Setups</a> for placement, antennas, maps, MeshMapper, and troubleshooting.</li>
             <li>Check <a href="/coverage.html">Coverage</a> and ask in Discord if you are unsure what you are seeing.</li>
           </ol>
 
@@ -170,7 +118,7 @@
           <h2>Choose a first path</h2>
 
           <p>
-            Hampden County Mesh supports both MeshCore and Meshtastic, but they are different systems. They use different firmware, apps, behavior, and community conventions.
+            Hampden County Mesh supports both MeshCore and Meshtastic, but we recommend MeshCore for new users who want dependable local messaging. Meshtastic users are welcome, especially people who already have devices or want to compare both systems.
           </p>
 
           <div class="docs-action-grid">
@@ -179,19 +127,21 @@
               <p>
                 Choose MeshCore if you are starting from scratch and want to follow the main direction Hampden County Mesh is focusing on for local channels, repeaters, observers, and regional mesh work.
               </p>
-              <p>
+
+              <div class="button-row">
                 <a class="btn secondary" href="/guides/meshcore-basics.html">MeshCore Basics</a>
-              </p>
+              </div>
             </div>
 
             <div class="docs-action-card">
-              <h3>Start with Meshtastic</h3>
+              <h3>Already using Meshtastic?</h3>
               <p>
-                Choose Meshtastic if you already have a Meshtastic device, want a common beginner-friendly ecosystem, or want to compare both systems.
+                Meshtastic is welcome here. It is useful for mapping, telemetry, outdoor use, beaconing, casual participation, and learning.
               </p>
-              <p>
+
+              <div class="button-row">
                 <a class="btn secondary" href="/guides/meshtastic-basics.html">Meshtastic Basics</a>
-              </p>
+              </div>
             </div>
 
             <div class="docs-action-card">
@@ -199,9 +149,10 @@
               <p>
                 Ask before buying. A short question in Discord can save you from buying hardware that does not fit what you actually want to do.
               </p>
-              <p>
+
+              <div class="button-row">
                 <a class="btn secondary" href="/join/" data-join-source="getting-started-choose">Join Discord</a>
-              </p>
+              </div>
             </div>
           </div>
         </section>
@@ -264,7 +215,7 @@
           </div>
 
           <p>
-            Read <a href="/guides/node-setups.html">Node Setups</a> for practical details about node types, antennas, placement, mobile use, repeaters, observers, maps, and wardriving.
+            Read <a href="/guides/node-setups.html">Node Setups</a> for practical details about node types, antennas, placement, mobile use, repeaters, observers, maps, MeshMapper, and troubleshooting.
           </p>
         </section>
 
@@ -318,23 +269,25 @@
             <li>Attach the antenna before transmitting.</li>
             <li>Place the device near a window or outside temporarily if safe.</li>
             <li>Make one change at a time when troubleshooting.</li>
-            <li>Use maps, app screens, or tools like MeshMapper where appropriate instead of trying to manually track everything.</li>
+            <li>Use maps, app screens, or tools like <a href="https://meshmapper.net/" target="_blank" rel="noopener noreferrer">MeshMapper</a> where appropriate instead of trying to manually track everything.</li>
           </ul>
 
           <p>
             Use official project documentation for exact firmware, app, and device-specific steps. Hampden County Mesh guides are here for local context, starting settings, practical choices, and community help.
           </p>
 
-          <div class="resource-grid">
-            <a class="resource-card action-card" href="https://meshcore.co.uk/" target="_blank" rel="noopener noreferrer">
+          <div class="resource-grid docs-resource-grid">
+            <a class="resource-card action-card project-resource-card" href="https://meshcore.io/" target="_blank" rel="noopener noreferrer">
+              <img class="project-card-icon" src="/assets/icons/meshcore.svg" alt="" aria-hidden="true">
               <h3>MeshCore</h3>
               <p>
-                Official MeshCore site, documentation, apps, firmware, and upstream project links.
+                Official MeshCore site, documentation, apps, firmware, and project links.
               </p>
               <span class="card-link">Visit MeshCore →</span>
             </a>
 
-            <a class="resource-card action-card" href="https://meshtastic.org/" target="_blank" rel="noopener noreferrer">
+            <a class="resource-card action-card project-resource-card" href="https://meshtastic.org/" target="_blank" rel="noopener noreferrer">
+              <img class="project-card-icon" src="/assets/icons/meshtastic.svg" alt="" aria-hidden="true">
               <h3>Meshtastic</h3>
               <p>
                 Official Meshtastic documentation, apps, supported hardware, firmware, and project information.
@@ -361,7 +314,7 @@
           </ol>
 
           <p>
-            For placement, range, mobile use, maps, and wardriving, read <a href="/guides/node-setups.html">Node Setups</a>.
+            For placement, range, mobile use, maps, and wardriving, use <a href="https://meshmapper.net/" target="_blank" rel="noopener noreferrer">MeshMapper</a> and read <a href="/guides/node-setups.html">Node Setups</a>.
           </p>
         </section>
 
@@ -424,7 +377,7 @@
         <section class="docs-section" id="what-to-read-next">
           <h2>What to read next</h2>
 
-          <div class="resource-grid">
+          <div class="resource-grid docs-resource-grid">
             <a class="resource-card action-card" href="/guides/recommended-settings.html">
               <h3>Recommended Settings</h3>
               <p>
@@ -452,7 +405,7 @@
             <a class="resource-card action-card" href="/guides/node-setups.html">
               <h3>Node Setups</h3>
               <p>
-                Practical guidance for node types, placement, antennas, wardriving, maps, and troubleshooting.
+                Practical guidance for node types, placement, antennas, MeshMapper, maps, and troubleshooting.
               </p>
               <span class="card-link">Read node setups →</span>
             </a>
@@ -470,9 +423,9 @@
             You do not need to own a node yet, and you do not need to know the right terms before asking.
           </p>
 
-          <p>
+          <div class="button-row">
             <a class="btn primary" href="/join/" data-join-source="getting-started-bottom">Join Discord</a>
-          </p>
+          </div>
         </section>
       </article>
     </div>
@@ -480,7 +433,7 @@
 
   <footer>
     <div class="container">
-      <p class="footer-subtitle">Community-based radio communications in Western Massachusetts.</p>
+      <p class="footer-subtitle">Community-based mesh and radio communications in Western Massachusetts.</p>
       <p class="footer-updated">Last updated: <span id="last-updated">Loading...</span></p>
     </div>
   </footer>
@@ -488,4 +441,3 @@
   <script src="/last-updated.js" defer></script>
 </body>
 </html>
-```
