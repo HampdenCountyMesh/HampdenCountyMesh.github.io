@@ -1,4 +1,3 @@
-```html id="8x8s5g"
 <!doctype html>
 <html lang="en">
 <head>
@@ -31,35 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=20260629a">
-
-  <style>
-    .docs-action-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin: 22px 0;
-    }
-
-    .docs-action-card {
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 20px;
-      background:
-        radial-gradient(circle at 18% 10%, var(--green-soft), transparent 35%),
-        linear-gradient(180deg, var(--panel-strong), var(--panel));
-    }
-
-    .docs-action-card h3 {
-      margin-top: 0;
-    }
-
-    @media (max-width: 900px) {
-      .docs-action-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/style.css?v=20260701g">
 </head>
 
 <body>
@@ -122,7 +93,7 @@
             <li>Get help choosing, flashing, or configuring a device.</li>
             <li>Talk about recommended settings, antennas, placement, batteries, firmware, and cases.</li>
             <li>Share general-area results without posting private locations.</li>
-            <li>Discuss coverage, observed activity, MeshMapper-style wardriving, maps, and future site-maintained infrastructure.</li>
+            <li>Discuss coverage, observed activity, MeshCore MeshMapper results, maps, and future site-maintained infrastructure.</li>
             <li>Follow website, GitHub, Discord, map, and community updates.</li>
           </ul>
         </section>
@@ -189,7 +160,7 @@ I do / do not have hardware yet.</code></pre>
             <div class="docs-card">
               <h3>Field testing</h3>
               <p>
-                General-area results, MeshMapper or wardriving discussion, coverage checks, and observations from real locations.
+                General-area results, MeshCore MeshMapper checks, coverage checks, and observations from real locations.
               </p>
             </div>
 
@@ -240,9 +211,10 @@ Private details removed: yes / no</code></pre>
               <p>
                 Compare your setup against the local recommended settings before changing advanced options.
               </p>
-              <p>
+
+              <div class="button-row">
                 <a class="btn secondary" href="/guides/recommended-settings.html">Recommended Settings</a>
-              </p>
+              </div>
             </div>
 
             <div class="docs-action-card">
@@ -250,9 +222,10 @@ Private details removed: yes / no</code></pre>
               <p>
                 Start with the basic path before buying more hardware or changing roles.
               </p>
-              <p>
+
+              <div class="button-row">
                 <a class="btn secondary" href="/guides/getting-started.html">Getting Started</a>
-              </p>
+              </div>
             </div>
 
             <div class="docs-action-card">
@@ -260,9 +233,10 @@ Private details removed: yes / no</code></pre>
               <p>
                 Check placement, antenna, power, and terrain before assuming the device is broken.
               </p>
-              <p>
+
+              <div class="button-row">
                 <a class="btn secondary" href="/guides/node-setups.html">Node Setups</a>
-              </p>
+              </div>
             </div>
           </div>
         </section>
@@ -279,7 +253,7 @@ Private details removed: yes / no</code></pre>
           </p>
 
           <ul>
-            <li>“MeshMapper showed activity along part of Route 20.”</li>
+            <li>“MeshMapper showed MeshCore activity along part of Route 20.”</li>
             <li>“Window placement worked better than desk placement in Westfield.”</li>
             <li>“A higher spot worked better than lower ground.”</li>
             <li>“Outdoor antenna placement helped more than changing power.”</li>
@@ -290,11 +264,11 @@ Private details removed: yes / no</code></pre>
             A quiet result can still be useful. If nothing worked from one place, that may just mean the location, antenna, settings, timing, or nearby activity were not favorable.
           </p>
 
-          <div class="resource-grid">
+          <div class="resource-grid docs-resource-grid">
             <a class="resource-card action-card" href="/guides/node-setups.html">
               <h3>Node Setups</h3>
               <p>
-                Practical guidance for node types, placement, antennas, wardriving, maps, and troubleshooting.
+                Practical guidance for node types, placement, antennas, maps, MeshMapper for MeshCore, and troubleshooting.
               </p>
               <span class="card-link">Read node setups →</span>
             </a>
@@ -370,9 +344,9 @@ Private details removed: yes / no</code></pre>
             Sensitive security issues should not be posted in a public channel. Use the security contact instead:
           </p>
 
-          <p>
-            <a href="mailto:security@hampdencountymesh.org">security@hampdencountymesh.org</a>
-          </p>
+          <div class="button-row">
+            <a class="btn secondary" href="mailto:security@hampdencountymesh.org">security@hampdencountymesh.org</a>
+          </div>
 
           <p>
             Read <a href="/guides/sharing-safely.html">Sharing Safely</a> before posting public photos, screenshots, map results, or setup details.
@@ -436,9 +410,9 @@ Private details removed: yes / no</code></pre>
             Use the current Discord join link from this site. Invite links may change over time, so site links should use the local join route instead of posting a raw Discord invite everywhere.
           </p>
 
-          <p>
+          <div class="button-row">
             <a class="btn primary" href="/join/" data-join-source="discord-guide-bottom">Join Discord</a>
-          </p>
+          </div>
 
           <p>
             For Discord-specific questions, use:
@@ -449,7 +423,7 @@ Private details removed: yes / no</code></pre>
         <section class="docs-section" id="what-to-read-next">
           <h2>What to read next</h2>
 
-          <div class="resource-grid">
+          <div class="resource-grid docs-resource-grid">
             <a class="resource-card action-card" href="/guides/getting-started.html">
               <h3>Getting Started</h3>
               <p>
@@ -469,7 +443,7 @@ Private details removed: yes / no</code></pre>
             <a class="resource-card action-card" href="/guides/node-setups.html">
               <h3>Node Setups</h3>
               <p>
-                Learn about node types, antennas, placement, maps, wardriving, and troubleshooting.
+                Learn about node types, antennas, placement, maps, MeshMapper for MeshCore, and troubleshooting.
               </p>
               <span class="card-link">Read node setups →</span>
             </a>
@@ -489,7 +463,7 @@ Private details removed: yes / no</code></pre>
 
   <footer>
     <div class="container">
-      <p class="footer-subtitle">Community-based radio communications in Western Massachusetts.</p>
+      <p class="footer-subtitle">Community-based mesh and radio communications in Western Massachusetts.</p>
       <p class="footer-updated">Last updated: <span id="last-updated">Loading...</span></p>
     </div>
   </footer>
@@ -497,4 +471,3 @@ Private details removed: yes / no</code></pre>
   <script src="/last-updated.js" defer></script>
 </body>
 </html>
-```

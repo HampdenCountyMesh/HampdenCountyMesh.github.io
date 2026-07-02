@@ -1,4 +1,3 @@
-```html id="kq7pvn"
 <!doctype html>
 <html lang="en">
 <head>
@@ -31,45 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=20260629a">
-
-  <style>
-    .safe-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin: 22px 0;
-    }
-
-    .safe-card {
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 20px;
-      background:
-        radial-gradient(circle at 18% 10%, var(--green-soft), transparent 35%),
-        linear-gradient(180deg, var(--panel-strong), var(--panel));
-    }
-
-    .safe-card h3 {
-      margin-top: 0;
-    }
-
-    .safe-card .label {
-      display: inline-flex;
-      margin-bottom: 10px;
-      color: var(--blue-light);
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    @media (max-width: 900px) {
-      .safe-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/style.css?v=20260701f">
 </head>
 
 <body>
@@ -104,7 +65,7 @@
         <h1>Sharing Safely</h1>
 
         <p class="docs-lede">
-          Mesh is easier to learn when people share useful results, photos, screenshots, maps, and setup examples. The main rule is simple: share enough to help others, but do not expose private locations, credentials, or someone else’s details.
+          Mesh communications are easier to learn when people share useful results, photos, screenshots, maps, and setup examples. The main rule is simple: share enough to help others, but do not expose private locations, credentials, or someone else’s details.
         </p>
 
         <div class="docs-note">
@@ -206,9 +167,9 @@
           <h3>Better public examples</h3>
 
           <ul>
-            <li>“Westfield area.”</li>
-            <li>“Near downtown Westfield.”</li>
-            <li>“Mittineague Park.”</li>
+            <li>“Monson area.”</li>
+            <li>“Near downtown Springfield.”</li>
+            <li>“Fountain Park.”</li>
             <li>“Near Mount Tom.”</li>
             <li>“Southwick area.”</li>
             <li>“Along part of Route 20.”</li>
@@ -367,9 +328,9 @@
             Use the security contact for anything involving exposed credentials, private keys, access tokens, private infrastructure details, or anything that could help someone access or disrupt a system.
           </p>
 
-          <p>
-            <a href="mailto:security@hampdencountymesh.org">security@hampdencountymesh.org</a>
-          </p>
+          <div class="button-row">
+            <a class="btn secondary" href="mailto:security@hampdencountymesh.org">security@hampdencountymesh.org</a>
+          </div>
         </section>
 
         <section class="docs-section" id="before-sharing">
@@ -393,7 +354,7 @@
         <section class="docs-section" id="what-to-read-next">
           <h2>What to read next</h2>
 
-          <div class="resource-grid">
+          <div class="resource-grid docs-resource-grid">
             <a class="resource-card action-card" href="/guides/getting-started.html">
               <h3>Getting Started</h3>
               <p>
@@ -405,7 +366,7 @@
             <a class="resource-card action-card" href="/guides/node-setups.html">
               <h3>Node Setups</h3>
               <p>
-                Learn about personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, placement, maps, and wardriving.
+                Learn about personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, placement, maps, MeshMapper for MeshCore, and troubleshooting.
               </p>
               <span class="card-link">Read node setup guide →</span>
             </a>
@@ -435,9 +396,9 @@
             If you are unsure whether something is safe to post, ask in general terms first. Do not paste credentials, exact private locations, or sensitive screenshots just to ask whether they are sensitive.
           </p>
 
-          <p>
+          <div class="button-row">
             <a class="btn primary" href="/join/" data-join-source="sharing-safely-bottom">Join Discord</a>
-          </p>
+          </div>
         </section>
       </article>
     </div>
@@ -445,7 +406,7 @@
 
   <footer>
     <div class="container">
-      <p class="footer-subtitle">Community-based radio communications in Western Massachusetts.</p>
+      <p class="footer-subtitle">Community-based mesh and radio communications in Western Massachusetts.</p>
       <p class="footer-updated">Last updated: <span id="last-updated">Loading...</span></p>
     </div>
   </footer>
@@ -453,4 +414,3 @@
   <script src="/last-updated.js" defer></script>
 </body>
 </html>
-```

@@ -1,18 +1,17 @@
-```html id="9mg4e9"
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Node Setups | Hampden County Mesh</title>
-  <meta name="description" content="A practical guide to MeshCore and Meshtastic node setups, including personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, power, placement, wardriving, maps, and troubleshooting.">
+  <meta name="description" content="A practical guide to MeshCore and Meshtastic node setups, including personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, power, placement, maps, MeshMapper for MeshCore coverage checks, and troubleshooting.">
 
   <link rel="canonical" href="https://hampdencountymesh.org/guides/node-setups.html">
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Hampden County Mesh">
   <meta property="og:title" content="Node Setups | Hampden County Mesh">
-  <meta property="og:description" content="A practical guide to MeshCore and Meshtastic node setups, including personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, power, placement, wardriving, maps, and troubleshooting.">
+  <meta property="og:description" content="A practical guide to MeshCore and Meshtastic node setups, including personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, power, placement, maps, MeshMapper for MeshCore coverage checks, and troubleshooting.">
   <meta property="og:url" content="https://hampdencountymesh.org/guides/node-setups.html">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta property="og:image:width" content="1200">
@@ -21,7 +20,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Node Setups | Hampden County Mesh">
-  <meta name="twitter:description" content="A practical guide to MeshCore and Meshtastic node setups, including personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, power, placement, wardriving, maps, and troubleshooting.">
+  <meta name="twitter:description" content="A practical guide to MeshCore and Meshtastic node setups, including personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, power, placement, maps, MeshMapper for MeshCore coverage checks, and troubleshooting.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
@@ -31,57 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=20260629a">
-
-  <style>
-    .setup-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-      margin: 22px 0;
-    }
-
-    .setup-card {
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 20px;
-      background:
-        radial-gradient(circle at 18% 10%, var(--green-soft), transparent 35%),
-        linear-gradient(180deg, var(--panel-strong), var(--panel));
-    }
-
-    .setup-card h3 {
-      margin-top: 0;
-    }
-
-    .setup-card .label {
-      display: inline-flex;
-      margin-bottom: 10px;
-      color: var(--blue-light);
-      font-size: 0.76rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    .simple-checklist {
-      border: 1px solid var(--border-green);
-      border-radius: 16px;
-      padding: 18px;
-      background: rgba(0, 0, 0, 0.16);
-      margin: 20px 0;
-    }
-
-    .simple-checklist h3 {
-      margin-top: 0;
-    }
-
-    @media (max-width: 900px) {
-      .setup-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/style.css?v=20260701d">
 </head>
 
 <body>
@@ -116,14 +65,14 @@
         <h1>Node Setups</h1>
 
         <p class="docs-lede">
-          This is the practical node guide for Hampden County Mesh. It covers the common ways people use MeshCore and Meshtastic nodes: personal use, fixed locations, mobile use, repeaters, observers, placement, antennas, wardriving, maps, and basic troubleshooting.
+          This is the practical node guide for Hampden County Mesh. It covers common MeshCore and Meshtastic setups: personal use, fixed locations, mobile use, repeaters, observers, placement, antennas, maps, MeshMapper for MeshCore coverage checks, and basic troubleshooting.
         </p>
 
         <div class="hero-actions">
           <a class="btn secondary" href="#start-simple">Start Simple</a>
           <a class="btn secondary" href="#setup-types">Setup Types</a>
           <a class="btn secondary" href="#placement">Placement</a>
-          <a class="btn secondary" href="#wardriving">Wardriving</a>
+          <a class="btn secondary" href="#meshmapper">MeshMapper</a>
           <a class="btn secondary" href="#maps">Maps</a>
           <a class="btn secondary" href="#troubleshooting">Troubleshooting</a>
         </div>
@@ -186,8 +135,8 @@
               </p>
               <ul>
                 <li>Good for coverage checks.</li>
-                <li>Useful for MeshMapper-style wardriving.</li>
                 <li>Helps show what works from real places.</li>
+                <li>Can be useful before planning fixed installs.</li>
               </ul>
             </div>
 
@@ -244,6 +193,7 @@
             <li>Start with a normal personal or companion-style setup before thinking about repeaters.</li>
             <li>Fixed repeaters should use suitable sites, reliable power, and documented settings.</li>
             <li>Observers and gateways should be treated as map/activity infrastructure, not normal beginner setup.</li>
+            <li>For MeshCore coverage checks, use <a href="https://meshmapper.net/" target="_blank" rel="noopener noreferrer">MeshMapper</a>.</li>
           </ul>
         </section>
 
@@ -365,46 +315,20 @@
           </p>
         </section>
 
-        <section class="docs-section" id="wardriving">
-          <h2>Wardriving</h2>
+        <section class="docs-section" id="meshmapper">
+          <h2>MeshMapper for MeshCore coverage checks</h2>
 
           <p>
-            Wardriving is useful for mesh testing because it lets you move through an area and compare where activity is heard, where it is quiet, and how terrain or buildings affect reception.
+            For MeshCore field testing and coverage mapping, use <a href="https://meshmapper.net/" target="_blank" rel="noopener noreferrer">MeshMapper</a>. It is the main tool we point people toward for collecting and viewing MeshCore reception data.
           </p>
-
-          <p>
-            Use a mapping tool when possible. MeshMapper is the most relevant example for MeshCore coverage mapping and wardriving. The app handles the actual collection; do not try to manually write down results while driving.
-          </p>
-
-          <div class="resource-grid">
-            <a class="resource-card action-card" href="https://wiki.meshmapper.net/" target="_blank" rel="noopener noreferrer">
-              <h3>MeshMapper Wiki</h3>
-              <p>
-                Setup guides, usage details, and documentation for MeshMapper.
-              </p>
-              <span class="card-link">Open wiki →</span>
-            </a>
-
-            <a class="resource-card action-card" href="https://apps.apple.com/us/app/meshmapper/id6758073991" target="_blank" rel="noopener noreferrer">
-              <h3>MeshMapper for iOS</h3>
-              <p>
-                Install MeshMapper from the Apple App Store.
-              </p>
-              <span class="card-link">Open iOS app →</span>
-            </a>
-
-            <a class="resource-card action-card" href="https://play.google.com/store/apps/details?id=net.meshmapper.app" target="_blank" rel="noopener noreferrer">
-              <h3>MeshMapper for Android</h3>
-              <p>
-                Install MeshMapper from Google Play.
-              </p>
-              <span class="card-link">Open Android app →</span>
-            </a>
-          </div>
 
           <p>
             Keep it safe. Do not handle devices while driving. Have a passenger manage equipment when possible, keep devices mounted or stored safely, and avoid posting private addresses or exact private locations.
           </p>
+
+          <div class="button-row">
+            <a class="btn secondary" href="https://meshmapper.net/" target="_blank" rel="noopener noreferrer">Open MeshMapper</a>
+          </div>
         </section>
 
         <section class="docs-section" id="maps">
@@ -422,9 +346,9 @@
             Use maps as clues, not guarantees. For normal local use, the useful question is still simple: what can your device hear from where it is right now, and can someone nearby hear you back?
           </p>
 
-          <p>
+          <div class="button-row">
             <a class="btn secondary" href="/coverage.html">Open Coverage</a>
-          </p>
+          </div>
         </section>
 
         <section class="docs-section" id="sharing">
@@ -437,7 +361,7 @@
           <h3>Useful public examples</h3>
 
           <ul>
-            <li>“MeshMapper showed activity along part of Route 20.”</li>
+            <li>“MeshMapper showed MeshCore activity along part of Route 20.”</li>
             <li>“Window placement worked better than desk placement in Westfield.”</li>
             <li>“A higher spot worked better than lower ground.”</li>
             <li>“Outdoor antenna placement helped more than changing power.”</li>
@@ -530,7 +454,7 @@
         <section class="docs-section" id="what-to-read-next">
           <h2>What to read next</h2>
 
-          <div class="resource-grid">
+          <div class="resource-grid docs-resource-grid">
             <a class="resource-card action-card" href="/guides/recommended-settings.html">
               <h3>Recommended Settings</h3>
               <p>
@@ -572,9 +496,9 @@
             If you are unsure what setup makes sense, ask in Discord before buying more hardware, changing advanced settings, or installing a fixed node.
           </p>
 
-          <p>
+          <div class="button-row">
             <a class="btn primary" href="/join/" data-join-source="node-setups-bottom">Join Discord</a>
-          </p>
+          </div>
         </section>
       </article>
     </div>
@@ -582,7 +506,7 @@
 
   <footer>
     <div class="container">
-      <p class="footer-subtitle">Community-based radio communications in Western Massachusetts.</p>
+      <p class="footer-subtitle">Community-based mesh and radio communications in Western Massachusetts.</p>
       <p class="footer-updated">Last updated: <span id="last-updated">Loading...</span></p>
     </div>
   </footer>
@@ -590,4 +514,3 @@
   <script src="/last-updated.js" defer></script>
 </body>
 </html>
-```
