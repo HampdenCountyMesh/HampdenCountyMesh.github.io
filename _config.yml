@@ -1,0 +1,14 @@
+title: Hampden County Mesh
+url: "https://hampdencountymesh.org"
+
+collections:
+  updates:
+    output: true
+    permalink: /updates/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "updates"
+    values:
+      layout: update
