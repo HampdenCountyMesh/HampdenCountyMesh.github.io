@@ -1,3 +1,6 @@
+---
+nav: guides
+---
 <!doctype html>
 <html lang="en">
 <head>
@@ -37,24 +40,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="noise" aria-hidden="true"></div>
 
-  <header>
-    <div class="container">
-      <a class="brand" href="/" aria-label="Hampden County Mesh home">
-        <img class="brand-icon" src="/assets/icons/favicon.svg" alt="" width="26" height="26" aria-hidden="true">
-        <span>Hampden County Mesh</span>
-      </a>
-
-      <nav aria-label="Main navigation">
-        <a href="/">Home</a>
-        <a href="/guides/" aria-current="page">Guides</a>
-        <a href="/coverage.html">Coverage</a>
-        <a href="/updates/">Updates</a>
-        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord" data-join-source="site-nav">
-          <img src="/assets/icons/discord-symbol-white.svg" alt="" aria-hidden="true">
-        </a>
-      </nav>
-    </div>
-  </header>
+  {% include header.html active="guides" %}
 
   <main id="main">
     <section class="hero">
@@ -82,32 +68,15 @@
 
     <section>
       <div class="container narrow centered">
-        <div class="section-heading">Read first</div>
+        <div class="section-heading">Guide library</div>
         <h2 class="portal-title">Start with the basics, then use the local settings.</h2>
+
         <p class="section-lede">
           Most people should start with one normal node, the recommended local settings,
           and a few real-world tests from home, a window, a vehicle, a public park, or a nearby high spot.
         </p>
 
-        <div class="resource-grid guide-grid">
-          <a class="resource-card action-card guide-card kicker-card" href="/guides/getting-started.html">
-            <span class="guide-label">First stop</span>
-            <h3>Getting Started</h3>
-            <p>
-              Choose MeshCore or Meshtastic, understand what you need, and avoid overcomplicating your first setup.
-            </p>
-            <span class="card-link">Start here →</span>
-          </a>
-
-          <a class="resource-card action-card guide-card kicker-card" href="/guides/recommended-settings.html">
-            <span class="guide-label">Settings</span>
-            <h3>Recommended Settings</h3>
-            <p>
-              The local quick reference for MeshCore and Meshtastic starting settings in Western Massachusetts.
-            </p>
-            <span class="card-link">View settings →</span>
-          </a>
-        </div>
+        {% include guide-card-grid.html %}
       </div>
     </section>
 
@@ -123,26 +92,6 @@
         <p class="section-lede section-lede-secondary">
           Meshtastic is still useful for learning LoRa basics, testing antennas and placement, telemetry, portable use, outdoor experiments, and casual participation.
         </p>
-
-        <div class="resource-grid guide-grid">
-          <a class="resource-card action-card guide-card kicker-card" href="/guides/meshcore-basics.html">
-            <span class="guide-label">Recommended start</span>
-            <h3>MeshCore Basics</h3>
-            <p>
-              What MeshCore is, why this site focuses on it, and how to start with a simple local setup.
-            </p>
-            <span class="card-link">Read MeshCore basics →</span>
-          </a>
-
-          <a class="resource-card action-card guide-card" href="/guides/meshtastic-basics.html">
-            <span class="guide-label">Also supported</span>
-            <h3>Meshtastic Basics</h3>
-            <p>
-              How Meshtastic fits here, what to keep simple at first, and where to find official Meshtastic resources.
-            </p>
-            <span class="card-link">Read Meshtastic basics →</span>
-          </a>
-        </div>
       </div>
     </section>
 
@@ -150,29 +99,15 @@
       <div class="container narrow centered">
         <div class="section-heading">Setup, testing, and maps</div>
         <h2 class="portal-title">Get a node working, then learn what it can hear.</h2>
+
         <p class="section-lede">
-          These pages are for practical use: understanding node roles, placing a node well,
-          checking observed activity, and using map tools carefully.
+          Use the node roles guide to understand personal nodes, fixed nodes, repeaters,
+          observers, gateways, antennas, placement, maps, and troubleshooting.
         </p>
 
-        <div class="resource-grid guide-grid">
-          <a class="resource-card action-card guide-card kicker-card" href="/guides/nodes-repeaters-observers.html">
-            <span class="guide-label">Node roles</span>
-            <h3>Nodes, Repeaters, and Observers</h3>
-            <p>
-              Personal nodes, fixed nodes, repeaters, observers, gateways, map-support systems, coverage, visibility, and MeshMapper for MeshCore checks.
-            </p>
-            <span class="card-link">Read node roles →</span>
-          </a>
-
-          <a class="resource-card action-card guide-card" href="/coverage.html">
-            <span class="guide-label">Map</span>
-            <h3>Coverage</h3>
-            <p>
-              Open the Hampden County map, observed-activity status, nearby public tools, and terrain notes.
-            </p>
-            <span class="card-link">Open coverage →</span>
-          </a>
+        <div class="hero-actions">
+          <a class="btn primary" href="/guides/nodes-repeaters-observers.html">Read Node Roles</a>
+          <a class="btn secondary" href="/coverage.html">Open Coverage</a>
         </div>
 
         <p class="section-note">
@@ -185,29 +120,13 @@
       <div class="container narrow centered">
         <div class="section-heading">Community</div>
         <h2 class="portal-title">Ask questions, share useful results, and keep private details private.</h2>
+
         <p class="section-lede">
-          These pages cover the community side: Discord, safe sharing, public updates, and how to ask for help.
+          The Discord is the best place for setup help, local testing, guide questions, and community discussion.
+          Use the sharing guide before posting screenshots, photos, map results, or setup details publicly.
         </p>
 
         <div class="resource-grid guide-grid">
-          <a class="resource-card action-card guide-card" href="/guides/discord.html">
-            <span class="guide-label">Discord</span>
-            <h3>Discord Guide</h3>
-            <p>
-              How the Discord is used for setup help, announcements, local testing, maps, and community coordination.
-            </p>
-            <span class="card-link">Read Discord guide →</span>
-          </a>
-
-          <a class="resource-card action-card guide-card" href="/guides/sharing-safely.html">
-            <span class="guide-label">Privacy</span>
-            <h3>Sharing Safely</h3>
-            <p>
-              Share useful mesh observations, screenshots, photos, and map results without exposing private details.
-            </p>
-            <span class="card-link">Read sharing guide →</span>
-          </a>
-
           <a class="resource-card action-card guide-card" href="/updates/">
             <span class="guide-label">Updates</span>
             <h3>Community Updates</h3>
@@ -233,8 +152,10 @@
       <div class="container narrow centered">
         <div class="section-heading">Official resources</div>
         <h2 class="portal-title">Use this site for local guidance. Use project docs for official details.</h2>
+
         <p class="section-lede">
-          Hampden County Mesh can help with local settings, maps, setup choices, testing, and community support. For firmware, apps, supported hardware, and project-specific changes, use the official MeshCore and Meshtastic sites.
+          Hampden County Mesh can help with local settings, maps, setup choices, testing, and community support.
+          For firmware, apps, supported hardware, and project-specific changes, use the official MeshCore and Meshtastic sites.
         </p>
 
         <div class="resource-grid guide-grid">
@@ -266,8 +187,10 @@
         <div class="quick-path">
           <div class="section-heading">Suggested path</div>
           <h2>Not sure what to read?</h2>
+
           <p>
-            This is the shortest route through the site for someone who wants to understand the basics, configure a node, and start testing locally.
+            This is the shortest route through the site for someone who wants to understand the basics,
+            configure a node, and start testing locally.
           </p>
 
           <div class="path-steps">
@@ -301,13 +224,6 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container">
-      <p class="footer-subtitle">Community-based mesh and radio communications in Western Massachusetts.</p>
-      <p class="footer-updated">Site updated: <span id="last-updated">Loading...</span></p>
-    </div>
-  </footer>
-
-  <script src="/last-updated.js" defer></script>
+  {% include footer.html %}
 </body>
 </html>
