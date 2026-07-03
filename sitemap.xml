@@ -1,58 +1,70 @@
+---
+---
 <?xml version="1.0" encoding="UTF-8"?>
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% assign build_date = site.time | date: "%Y-%m-%d" %}
+
   <url>
-    <loc>https://hampdencountymesh.org/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>{{ "/" | absolute_url }}</loc>
+    <lastmod>{{ build_date }}</lastmod>
   </url>
 
   <url>
-    <loc>https://hampdencountymesh.org/guides/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>{{ "/guides/" | absolute_url }}</loc>
+    <lastmod>{{ build_date }}</lastmod>
   </url>
 
   <url>
-    <loc>https://hampdencountymesh.org/guides/getting-started.html</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>{{ "/guides/getting-started.html" | absolute_url }}</loc>
+    <lastmod>{{ build_date }}</lastmod>
   </url>
 
   <url>
-    <loc>https://hampdencountymesh.org/guides/recommended-settings.html</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>{{ "/guides/recommended-settings.html" | absolute_url }}</loc>
+    <lastmod>{{ build_date }}</lastmod>
   </url>
 
   <url>
-    <loc>https://hampdencountymesh.org/guides/meshcore-basics.html</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>{{ "/guides/meshcore-basics.html" | absolute_url }}</loc>
+    <lastmod>{{ build_date }}</lastmod>
   </url>
 
   <url>
-    <loc>https://hampdencountymesh.org/guides/meshtastic-basics.html</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>{{ "/guides/meshtastic-basics.html" | absolute_url }}</loc>
+    <lastmod>{{ build_date }}</lastmod>
   </url>
 
   <url>
-    <loc>https://hampdencountymesh.org/guides/nodes-repeaters-observers.html</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>{{ "/guides/nodes-repeaters-observers.html" | absolute_url }}</loc>
+    <lastmod>{{ build_date }}</lastmod>
   </url>
 
   <url>
-    <loc>https://hampdencountymesh.org/guides/sharing-safely.html</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>{{ "/guides/sharing-safely.html" | absolute_url }}</loc>
+    <lastmod>{{ build_date }}</lastmod>
   </url>
 
   <url>
-    <loc>https://hampdencountymesh.org/guides/discord.html</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>{{ "/guides/discord.html" | absolute_url }}</loc>
+    <lastmod>{{ build_date }}</lastmod>
   </url>
 
   <url>
-    <loc>https://hampdencountymesh.org/coverage.html</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>{{ "/coverage.html" | absolute_url }}</loc>
+    <lastmod>{{ build_date }}</lastmod>
   </url>
 
   <url>
-    <loc>https://hampdencountymesh.org/updates/</loc>
-    <lastmod>2026-07-03</lastmod>
+    <loc>{{ "/updates/" | absolute_url }}</loc>
+    <lastmod>{{ build_date }}</lastmod>
   </url>
+
+  {% assign sorted_updates = site.updates | sort: "date" | reverse %}
+  {% for update in sorted_updates %}
+  <url>
+    <loc>{{ update.url | absolute_url }}</loc>
+    <lastmod>{{ update.date | date: "%Y-%m-%d" }}</lastmod>
+  </url>
+  {% endfor %}
 </urlset>
