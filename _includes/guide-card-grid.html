@@ -1,22 +1,25 @@
 <div class="resource-grid guide-grid">
   {% assign sorted_guides = site.data.guides | sort: "order" %}
+  {% assign guide_group = include.group | default: "" %}
   {% assign exclude_url = include.exclude_url | default: "" %}
 
   {% for guide in sorted_guides %}
-    {% unless guide.url == exclude_url %}
-      <a class="resource-card action-card guide-card {% if guide.order <= 2 %}kicker-card{% endif %}" href="{{ guide.url }}">
-        {% if guide.label %}
-          <span class="guide-label">{{ guide.label | escape }}</span>
-        {% endif %}
+    {% if guide_group == "" or guide.group == guide_group %}
+      {% unless guide.url == exclude_url %}
+        <a class="resource-card action-card guide-card {% if guide.featured %}kicker-card{% endif %}" href="{{ guide.url }}">
+          {% if guide.label %}
+            <span class="guide-label">{{ guide.label | escape }}</span>
+          {% endif %}
 
-        <h3>{{ guide.title | escape }}</h3>
+          <h3>{{ guide.title | escape }}</h3>
 
-        <p>
-          {{ guide.summary | escape }}
-        </p>
+          <p>
+            {{ guide.summary | escape }}
+          </p>
 
-        <span class="card-link">{{ guide.link_text | escape }}</span>
-      </a>
-    {% endunless %}
+          <span class="card-link">{{ guide.link_text | escape }}</span>
+        </a>
+      {% endunless %}
+    {% endif %}
   {% endfor %}
 </div>
