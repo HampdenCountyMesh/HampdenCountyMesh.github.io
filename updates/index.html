@@ -1,26 +1,26 @@
+---
+---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Updates | Hampden County Mesh</title>
-  <meta name="description" content="Occasional Hampden County Mesh updates, local mesh and radio events, seminars, site changes, and observed activity notes.">
+  <meta name="description" content="Occasional updates from Hampden County Mesh about site changes, guides, local events, seminars, and observed activity work.">
 
   <link rel="canonical" href="https://hampdencountymesh.org/updates/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hampden County Mesh">
   <meta property="og:title" content="Updates | Hampden County Mesh">
-  <meta property="og:description" content="Occasional Hampden County Mesh updates, local mesh and radio events, seminars, site changes, and observed activity notes.">
+  <meta property="og:description" content="Occasional updates from Hampden County Mesh about site changes, guides, local events, seminars, and observed activity work.">
   <meta property="og:url" content="https://hampdencountymesh.org/updates/">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Updates | Hampden County Mesh">
-  <meta name="twitter:description" content="Occasional Hampden County Mesh updates, local mesh and radio events, seminars, site changes, and observed activity notes.">
+  <meta name="twitter:description" content="Occasional updates from Hampden County Mesh about site changes, guides, local events, seminars, and observed activity work.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
@@ -59,85 +59,59 @@
   <main id="main" class="docs-shell">
     <div class="container">
       <article class="docs-article">
+        <p class="docs-breadcrumb">
+          Hampden County Mesh / Updates
+        </p>
+
         <h1>Updates</h1>
 
         <p class="docs-lede">
-          Occasional notes about Hampden County Mesh, local mesh and radio events, seminars, site changes, and observed activity work.
+          Occasional notes about site changes, guide updates, local events, seminars, and observed activity work.
         </p>
 
-        <section class="docs-section" id="about-updates">
-          <h2>What this page is for</h2>
+        <div class="update-list">
+          {% assign sorted_updates = site.updates | sort: "date" | reverse %}
+
+          {% for update in sorted_updates %}
+            <article class="update-card">
+              <span class="update-meta">{{ update.date | date: "%B %-d, %Y" }}</span>
+
+              <h2>
+                <a href="{{ update.url }}">{{ update.title | escape }}</a>
+              </h2>
+
+              {% if update.summary %}
+                <p>{{ update.summary | escape }}</p>
+              {% else %}
+                <p>{{ update.excerpt | strip_html | normalize_whitespace | truncate: 220 }}</p>
+              {% endif %}
+
+              {% if update.tags %}
+                <p class="update-tags">
+                  {% for tag in update.tags %}
+                    <span>{{ tag }}</span>
+                  {% endfor %}
+                </p>
+              {% endif %}
+
+              <a class="card-link" href="{{ update.url }}">Read more →</a>
+            </article>
+          {% else %}
+            <div class="update-empty">
+              No community updates have been posted yet.
+            </div>
+          {% endfor %}
+        </div>
+
+        <section class="docs-section">
+          <h2>Have a question?</h2>
 
           <p>
-            This is not meant to be a regular blog. Updates will be posted when there is something useful to share: a site cleanup, a new guide, a local seminar, a radio event, a map or automation change, or a short recap after something happens.
-          </p>
-
-          <p>
-            Day-to-day discussion still belongs in Discord. This page is for items worth keeping around.
-          </p>
-        </section>
-
-        <section class="docs-section" id="latest">
-          <h2>Latest updates</h2>
-
-          <div class="resource-grid docs-resource-grid">
-            <div class="resource-card">
-              <h3>No updates posted yet</h3>
-              <p>
-                The first update will likely go here after the current site cleanup is finished. Future posts may cover observed activity automation, local seminars, and nearby mesh or radio events.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="docs-section" id="future-topics">
-          <h2>What may show up here</h2>
-
-          <div class="basics-grid">
-            <div class="basics-card">
-              <span class="label">Site</span>
-              <h3>Website and guide changes</h3>
-              <p>
-                Notes when the public site, guides, coverage page, or Discord information gets a meaningful update.
-              </p>
-            </div>
-
-            <div class="basics-card">
-              <span class="label">Events</span>
-              <h3>Seminars and meetups</h3>
-              <p>
-                Local sessions, intro talks, build days, radio club visits, and similar events when they are ready to share.
-              </p>
-            </div>
-
-            <div class="basics-card">
-              <span class="label">Radio</span>
-              <h3>Local radio happenings</h3>
-              <p>
-                Hamfests, nearby mesh events, and other local radio items that may be useful to people in Western Massachusetts.
-              </p>
-            </div>
-
-            <div class="basics-card">
-              <span class="label">Maps</span>
-              <h3>Observed activity work</h3>
-              <p>
-                Notes about live or near-live observed activity, map improvements, and automation once there is something local to show.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section class="docs-section" id="share">
-          <h2>Have something relevant?</h2>
-
-          <p>
-            If there is a local mesh, radio, or community communications event that should be listed here, bring it to the Discord or send it through the contact address. Official event links are preferred so people can check details before attending.
+            The Discord is the best place for setup help, local testing, guide questions, and community discussion.
           </p>
 
           <div class="button-row">
             <a class="btn primary" href="/join/updates/" data-join-source="updates">Join Discord</a>
-            <a class="btn secondary" href="mailto:contact@hampdencountymesh.org">Email contact</a>
           </div>
         </section>
       </article>
