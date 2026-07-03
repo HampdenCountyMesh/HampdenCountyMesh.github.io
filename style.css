@@ -1348,7 +1348,15 @@ footer {
     color: var(--text-soft);
     font-size: 0.95rem;
 }
-
+.resource-card .guide-label {
+    display: inline-flex;
+    margin-bottom: 12px;
+    color: var(--blue-light);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
 /* =========================================================
    Getting Started / Mini Settings
    ========================================================= */
@@ -1376,7 +1384,7 @@ footer {
 }
 
 /* =========================================================
-   Basics / Setup / Sharing Guide Cards
+   Basics / Setup / Sharing s
    ========================================================= */
 
 .basics-grid,
