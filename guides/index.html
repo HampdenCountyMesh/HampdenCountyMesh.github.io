@@ -68,7 +68,7 @@ nav: guides
 
     <section>
       <div class="container narrow centered">
-        <div class="section-heading">Guide library</div>
+        <div class="section-heading">Read first</div>
         <h2 class="portal-title">Start with the basics, then use the local settings.</h2>
 
         <p class="section-lede">
@@ -76,7 +76,7 @@ nav: guides
           and a few real-world tests from home, a window, a vehicle, a public park, or a nearby high spot.
         </p>
 
-        {% include guide-card-grid.html %}
+        {% include guide-card-grid.html group="read_first" %}
       </div>
     </section>
 
@@ -92,6 +92,8 @@ nav: guides
         <p class="section-lede section-lede-secondary">
           Meshtastic is still useful for learning LoRa basics, testing antennas and placement, telemetry, portable use, outdoor experiments, and casual participation.
         </p>
+
+        {% include guide-card-grid.html group="mesh_systems" %}
       </div>
     </section>
 
@@ -101,12 +103,13 @@ nav: guides
         <h2 class="portal-title">Get a node working, then learn what it can hear.</h2>
 
         <p class="section-lede">
-          Use the node roles guide to understand personal nodes, fixed nodes, repeaters,
-          observers, gateways, antennas, placement, maps, and troubleshooting.
+          These pages are for practical use: understanding node roles, placing a node well,
+          checking observed activity, and using map tools carefully.
         </p>
 
+        {% include guide-card-grid.html group="setup_maps" %}
+
         <div class="hero-actions">
-          <a class="btn primary" href="/guides/nodes-repeaters-observers.html">Read Node Roles</a>
           <a class="btn secondary" href="/coverage.html">Open Coverage</a>
         </div>
 
@@ -122,9 +125,10 @@ nav: guides
         <h2 class="portal-title">Ask questions, share useful results, and keep private details private.</h2>
 
         <p class="section-lede">
-          The Discord is the best place for setup help, local testing, guide questions, and community discussion.
-          Use the sharing guide before posting screenshots, photos, map results, or setup details publicly.
+          These pages cover the community side: Discord, safe sharing, public updates, and how to ask for help.
         </p>
+
+        {% include guide-card-grid.html group="community" %}
 
         <div class="resource-grid guide-grid">
           <a class="resource-card action-card guide-card" href="/updates/">
