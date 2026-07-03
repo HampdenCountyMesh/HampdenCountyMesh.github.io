@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Page Not Found | Hampden County Mesh</title>
-  <meta name="description" content="The page could not be found. Return to Hampden County Mesh, open the guides, check coverage, or join the Discord.">
+  <meta name="description" content="The page could not be found. Return to Hampden County Mesh, open the guides, check coverage, read updates, or join the Discord.">
   <meta name="robots" content="noindex">
 
   <link rel="canonical" href="https://hampdencountymesh.org/404.html">
@@ -12,18 +12,18 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hampden County Mesh">
   <meta property="og:title" content="Page Not Found | Hampden County Mesh">
-  <meta property="og:description" content="The page could not be found. Return to Hampden County Mesh, open the guides, check coverage, or join the Discord.">
+  <meta property="og:description" content="The page could not be found. Return to Hampden County Mesh, open the guides, check coverage, read updates, or join the Discord.">
   <meta property="og:url" content="https://hampdencountymesh.org/404.html">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Hampden County Mesh branding over a view of Mount Tom radio towers.">
+  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Page Not Found | Hampden County Mesh">
-  <meta name="twitter:description" content="The page could not be found. Return to Hampden County Mesh, open the guides, check coverage, or join the Discord.">
+  <meta name="twitter:description" content="The page could not be found. Return to Hampden County Mesh, open the guides, check coverage, read updates, or join the Discord.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
-  <meta name="twitter:image:alt" content="Hampden County Mesh branding over a view of Mount Tom radio towers.">
+  <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
   <meta name="theme-color" content="#101820">
 
@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/style.css?v=20260629a">
+  <link rel="stylesheet" href="/style.css?v=20260701h">
 </head>
 
 <body>
@@ -51,8 +51,8 @@
         <a href="/">Home</a>
         <a href="/guides/">Guides</a>
         <a href="/coverage.html">Coverage</a>
-
-        <a class="discord-nav-button" href="/join/" aria-label="Join the Hampden County Mesh Discord" data-join-source="nav">
+        <a href="/updates/">Updates</a>
+        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord" data-join-source="site-nav">
           <img src="/assets/icons/discord-symbol-white.svg" alt="" aria-hidden="true">
         </a>
       </nav>
@@ -99,7 +99,7 @@
             <h3>Guides</h3>
             <p>
               Open the guide library for getting started, recommended settings, MeshCore,
-              Meshtastic, node setups, and safe sharing.
+              Meshtastic, node roles, and safe sharing.
             </p>
             <span class="card-link">Open guides →</span>
           </a>
@@ -107,7 +107,7 @@
           <a class="resource-card action-card" href="/guides/getting-started.html">
             <h3>Getting Started</h3>
             <p>
-              Start here if you are new to MeshCore, Meshtastic, or local mesh networking.
+              Start here if you are new to MeshCore, Meshtastic, or local mesh communications.
             </p>
             <span class="card-link">Start here →</span>
           </a>
@@ -120,23 +120,31 @@
             <span class="card-link">View settings →</span>
           </a>
 
-          <a class="resource-card action-card" href="/guides/node-setups.html">
-            <h3>Node Setups</h3>
+          <a class="resource-card action-card" href="/guides/nodes-repeaters-observers.html">
+            <h3>Nodes, Repeaters, and Observers</h3>
             <p>
-              Learn about node types, antennas, placement, maps, wardriving, and troubleshooting.
+              Learn about personal nodes, fixed nodes, repeaters, observers, gateways, and map-support systems.
             </p>
-            <span class="card-link">Read node setups →</span>
+            <span class="card-link">Read node roles →</span>
           </a>
 
           <a class="resource-card action-card" href="/coverage.html">
             <h3>Coverage</h3>
             <p>
-              Open the Hampden County map, observed-activity status, regional links, and coverage notes.
+              Open the Hampden County map, observed-activity status, and coverage notes.
             </p>
             <span class="card-link">Open coverage →</span>
           </a>
 
-          <a class="resource-card action-card" href="/join/" data-join-source="404-card">
+          <a class="resource-card action-card" href="/updates/">
+            <h3>Updates</h3>
+            <p>
+              Read occasional notes about site changes, local events, seminars, and observed activity work.
+            </p>
+            <span class="card-link">Read updates →</span>
+          </a>
+
+          <a class="resource-card action-card" href="/join/404/" data-join-source="404">
             <h3>Discord</h3>
             <p>
               Join the community to ask questions, get setup help, compare devices,
@@ -151,8 +159,8 @@
 
   <footer>
     <div class="container">
-      <p class="footer-subtitle">Community-based radio communications in Western Massachusetts.</p>
-      <p class="footer-updated">Last updated: <span id="last-updated">Loading...</span></p>
+      <p class="footer-subtitle">Community-based mesh and radio communications in Western Massachusetts.</p>
+      <p class="footer-updated">Site updated: <span id="last-updated">Loading...</span></p>
     </div>
   </footer>
 

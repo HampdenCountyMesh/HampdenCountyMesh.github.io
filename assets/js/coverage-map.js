@@ -76,8 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
         return {
             publicLiveData: data.public_live_data,
             automationStatus: data.automation_status,
+            dataStatus: data.data_status,
             lastUpdated: data.last_updated,
-            note: data.note || data.description || ""
+            note: data.status_note || data.source_note || data.note || data.description || ""
         };
     }
 
@@ -106,6 +107,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const hampdenCountyUrl =
         "https://services1.arcgis.com/hGdibHYSPO59RG1h/ArcGIS/rest/services/Massachusetts_Counties_with_Generalized_Coastline/FeatureServer/1/query?where=COUNTY%3D%27HAMPDEN%27&outFields=COUNTY,FIPS_STCO&outSR=4326&f=geojson";
+
+    const observedActivityUrl = "/data/observed-activity.json";
 
     fetch(hampdenCountyUrl)
         .then(function (response) {
@@ -143,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.warn("Could not load Hampden County outline.");
         });
 
-    fetch("/data/observed-activity.json")
+    fetch(observedActivityUrl)
         .then(function (response) {
             if (!response.ok) {
                 throw new Error("Observed activity data not available.");

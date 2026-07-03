@@ -4,7 +4,7 @@
 
 Hampden County Mesh is intended to be a useful, respectful, beginner-friendly space for local mesh radio, radio learning, documentation, setup help, public-safe local radio observations, and related technical discussion.
 
-We pledge to make participation in this community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socioeconomic status, nationality, personal appearance, race, religion, sexual identity, sexual orientation, or technical background.
+We pledge to make participation in this community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socioeconomic status, nationality, personal appearance, race, religion, sexual orientation, or technical background.
 
 We pledge to act and interact in ways that support an open, welcoming, inclusive, and healthy community.
 
@@ -53,6 +53,7 @@ This includes:
 * Home addresses
 * Exact private node locations
 * Exact private observer locations
+* Exact private gateway locations
 * Exact private repeater locations
 * Private coordinates
 * Private messages
@@ -62,7 +63,7 @@ This includes:
 * Credentials, keys, passwords, tokens, or access URLs
 * Photos that reveal private locations or personal details unintentionally
 
-When discussing maps, observers, MQTT, dashboards, logs, local radio observations, or observed activity data, use general locations unless exact sharing is clearly intentional and safe.
+When discussing maps, observers, gateways, MQTT, dashboards, logs, local radio observations, or observed activity data, use general locations unless exact sharing is clearly intentional and safe.
 
 ## Radio and Technical Safety
 

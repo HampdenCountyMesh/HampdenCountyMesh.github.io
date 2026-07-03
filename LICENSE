@@ -22,6 +22,11 @@ SOFTWARE.
 
 Additional media and asset notice:
 
-Unless otherwise noted, this MIT License applies to source code, website files, documentation, and other non-media repository files.
+Unless otherwise noted, this MIT License applies to source code, website files,
+documentation, and other non-media repository files.
 
-Photographs, logos, social images, personal images, contributor-provided images, screenshots, and other media assets may have separate reuse limits. See `docs/ASSETS.md` for asset credits, permissions, privacy expectations, and media reuse guidance.
+Photographs, logos, social images, personal images, contributor-provided images,
+screenshots, icons, and other media assets may have separate reuse limits.
+
+See `docs/ASSETS.md` for asset credits, permissions, privacy expectations, and
+media reuse guidance.

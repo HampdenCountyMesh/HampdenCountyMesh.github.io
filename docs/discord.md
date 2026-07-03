@@ -28,7 +28,8 @@ The Discord is used for:
 * Photos and public-safe device examples
 * Website and GitHub work
 * Documentation updates
-* Mapping and observed activity planning
+* MeshCore coverage-check planning
+* Mapping and observed-activity planning
 * MQTT, observer, logging, and backend discussion
 * Announcements and coordination
 * Casual discussion related to the local radio and mesh community
@@ -44,7 +45,7 @@ After joining:
 3. Choose any relevant interests or region options offered by onboarding.
 4. Check the welcome or new member area.
 5. Ask beginner questions in the appropriate help channel.
-6. Ask device questions in the MeshCore, Meshtastic, or device-help area.
+6. Ask device questions in the MeshCore, Meshtastic, or node-help area.
 7. Remove private details before sharing photos, screenshots, logs, maps, or setup information.
 
 Do not worry if you do not know the right terms yet. Ask plainly and include what you are trying to do.
@@ -53,16 +54,18 @@ Do not worry if you do not know the right terms yet. Ask plainly and include wha
 
 Exact channel names may change over time, but the server is generally organized around these uses.
 
-### Welcome and Rules
+### Start Here
 
-These channels are for new member entry, rules, onboarding, and basic server orientation.
+These channels are for new member entry, rules, announcements, onboarding, and basic server orientation.
 
-Examples may include:
+Current or expected channels include:
 
-* Welcome
-* Rules
-* New member lobby
-* Server guide or first steps
+* `welcome`
+* `rules`
+* `hampden-county-mesh-announcements`
+* `elsewhere-announcements`
+* `server-guide`
+* `new-member-lobby`
 
 ### Announcements
 
@@ -75,104 +78,66 @@ Current announcement uses include:
 
 Announcement channels should stay focused. Normal discussion should happen in discussion channels.
 
-### General Discussion
+### Community
 
-General discussion channels are for normal conversation, beginner questions, and local coordination.
+Community channels are for normal conversation, introductions, beginner questions, and casual discussion.
 
-Examples may include:
+Current or expected channels include:
 
-* General
-* Questions or help
-* Off-topic
-* Photos or public-safe media
+* `general`
+* `introductions`
+* `questions-help`
+* `radio`
+* `show-your-stuff`
+* `off-topic`
 
 The off-topic area is for casual conversation, memes, and general discussion as long as server rules are followed.
 
-### MeshCore
+### Main Mesh Discussion
 
-MeshCore channels are for:
+Main mesh channels are for MeshCore, Meshtastic, node help, coverage checks, and infrastructure discussion.
 
-* MeshCore setup
-* Firmware questions
-* Device roles
-* Repeaters
-* Observers
-* Room servers
-* MeshCore apps
-* Local MeshCore activity
-* Practical use questions
+Current or expected channels include:
 
-### Meshtastic
+* `meshcore`
+* `meshtastic`
+* `node-help`
+* `wardriving`
+* `infrastructure`
 
-Meshtastic channels are for:
+Use `meshcore` for MeshCore setup, firmware questions, device roles, repeaters, observers, room servers, MeshCore apps, and local MeshCore activity.
 
-* Meshtastic setup
-* Device questions
-* Channels and roles
-* MQTT questions
-* Maps
-* Local Meshtastic activity
-* Practical use questions
+Use `meshtastic` for Meshtastic setup, device questions, channels, roles, MQTT questions, local Meshtastic activity, and practical use questions.
 
-### Radio Reference
+Use `node-help` for hardware, antennas, power, placement, troubleshooting, and beginner device questions that do not fit neatly in one system channel.
 
-Radio reference channels are for radio topics that are not strictly MeshCore or Meshtastic.
+Use `wardriving` for MeshCore coverage checks and related MeshMapper discussion. MeshMapper is for MeshCore coverage checks, not Meshtastic.
 
-Topics may include:
+Use `infrastructure` for site-maintained systems, observer notes, hub notes, MQTT testing, logging, backend work, and future automation planning.
 
-* FRS
-* GMRS
-* MURS
-* CB
-* Amateur radio
-* Scanners
-* Antennas
-* Repeaters
-* Local radio learning
+### Project Work
 
-Members are responsible for following the rules of the radio service they use.
+Project work channels may be private or role-limited to reduce noise and protect unfinished or sensitive details.
 
-### Local Use and Photos
-
-Local use or photo channels may be used for:
-
-* Public-safe device photos
-* General placement examples
-* Terrain discussion
-* Public-location observations
-* Device comparison questions
-* Local radio behavior notes
-* Setup examples with private details removed
-
-Use general areas in public notes unless exact location sharing is clearly intentional and safe.
-
-### Website and Documentation Work
-
-Website and documentation channels may be used for:
+These channels may be used for:
 
 * Website updates
 * GitHub work
 * Guide edits
 * Broken links
 * Documentation planning
-* Map and coverage page improvements
+* Coverage page improvements
 * Public wording cleanup
+* Infrastructure planning
+* Bot or relay planning before anything goes live
 
-Some work channels may be private or role-limited to reduce noise and protect unfinished or sensitive details.
+Do not post private credentials, private IP addresses, broker passwords, admin URLs, or sensitive access details in project channels.
 
-### Status and Infrastructure
+### Voice
 
-Status and infrastructure channels may be used for:
+Voice channels may be used for live help, workshops, informal calls, or project discussion.
 
-* Site-maintained system status
-* Observer notes
-* Hub notes
-* GitHub webhook updates
-* Backend work
-* Logging updates
-* Outage or maintenance notes
-
-Do not post private credentials, private IP addresses, broker passwords, admin URLs, or sensitive access details in public channels.
+`Workshop/Help Desk` is a voice channel. It is separate from text help channels like `questions-help` and `node-help`.
 
 ## GitHub Integration
 
@@ -212,6 +177,8 @@ Avoid posting:
 
 * Home addresses
 * Exact GPS coordinates for private nodes
+* Private observer locations
+* Private gateway locations
 * Private repeater locations
 * Private infrastructure locations
 * Private IP addresses
@@ -294,6 +261,13 @@ Disagreements should stay focused on facts, safety, documentation, and practical
 
 The server uses roles to help members find relevant channels and topics.
 
+Responsibility roles may include:
+
+* Admin
+* Moderator
+* Community Member
+* Infra Ops
+
 Interest roles may include:
 
 * MeshCore
@@ -302,10 +276,8 @@ Interest roles may include:
 * FRS
 * MURS
 * CB
-* Amateur radio
-* Scanners
+* Amateur
 * Mapping
-* Website or docs
 
 General area roles may include:
 
@@ -318,7 +290,7 @@ Staff and infrastructure roles are assigned manually. They are not self-assigned
 
 ## Getting Help
 
-For general questions, use a beginner or help channel.
+For general questions, use `questions-help` or the new member area.
 
 For device problems, include useful details when you can:
 
@@ -334,7 +306,7 @@ For device problems, include useful details when you can:
 * What you already tried
 * General area if the question depends on location or terrain
 
-If you are not sure where to ask, use the new member or general help area.
+If you are not sure where to ask, use the new member area, `questions-help`, or `general`.
 
 ## Related Links
 
@@ -345,6 +317,18 @@ https://hampdencountymesh.org/
 Guide library:
 
 https://hampdencountymesh.org/guides/
+
+Coverage:
+
+https://hampdencountymesh.org/coverage.html
+
+Updates:
+
+https://hampdencountymesh.org/updates/
+
+Discord guide:
+
+https://hampdencountymesh.org/guides/discord.html
 
 Discord join route:
 

@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to Hampden County Mesh.
 
-Hampden County Mesh is a local community effort focused on mesh radio, radio learning, public-safe documentation, setup help, and shared communications knowledge across Hampden County and nearby Western Massachusetts.
+Hampden County Mesh is a local community effort focused on mesh radio, radio learning, public-safe documentation, setup help, maps, and shared communications knowledge across Hampden County and nearby Western Massachusetts.
 
 You do not need to write code or be a radio expert to contribute.
 
@@ -18,8 +18,7 @@ Useful contributions include:
 * Public-safe local radio observations
 * Public-safe device notes
 * Public-safe map or coverage suggestions
-* Node documentation templates
-* Radio reference improvements
+* Public-safe setup examples
 * Hardware testing notes
 * Mapping suggestions
 * Bug reports
@@ -108,7 +107,7 @@ When contributing documentation:
 * Do not describe future features as live.
 * Do not imply guaranteed coverage.
 * Do not imply ownership of independent nodes or nearby activity.
-* Use careful wording around observed activity, maps, dashboards, MQTT, observers, and local radio observations.
+* Use careful wording around observed activity, maps, dashboards, MQTT, observers, gateways, and local radio observations.
 
 Good wording includes:
 
@@ -131,7 +130,7 @@ Avoid wording like:
 
 ## Node, Observer, and Infrastructure Information
 
-When submitting information about nodes, observers, repeaters, portable devices, support systems, or infrastructure:
+When submitting information about nodes, observers, gateways, repeaters, portable devices, support systems, or infrastructure:
 
 * Do not publish private information without permission.
 * Do not disclose credentials, keys, or sensitive configuration details.
@@ -230,9 +229,15 @@ When changing public website pages, check for:
 * No overclaims about coverage or ownership
 * No links to retired pages or old guide filenames
 
-Use the public join route for Discord:
+Use local join routes for Discord links, such as:
 
-https://hampdencountymesh.org/join/
+* `/join/`
+* `/join/site-nav/`
+* `/join/coverage/`
+* `/join/getting-started/`
+* `/join/home-bottom/`
+* `/join/card/`
+* `/join/flier/`
 
 Do not publish raw Discord invite links in website pages or documentation unless there is a specific reason.
 

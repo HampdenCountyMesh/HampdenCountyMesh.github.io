@@ -6,9 +6,9 @@ It is intended for continuity, maintenance, and public-safe documentation. It sh
 
 ## Overview
 
-Hampden County Mesh maintains a small set of support systems used for local mesh learning, observer work, logging, MQTT testing, documentation, field testing, and future public-safe activity views.
+Hampden County Mesh maintains a small set of support systems used for local mesh learning, observer work, logging, MQTT testing, documentation, field testing, MeshCore coverage checks, and future public-safe activity views.
 
-These systems support the website and local documentation work. They should not be described as proof that Hampden County Mesh owns or operates every node, observer, repeater, packet, marker, or device visible in the broader mesh ecosystem.
+These systems support the website and local documentation work. They should not be described as proof that Hampden County Mesh owns or operates every node, observer, gateway, repeater, packet, marker, or device visible in the broader mesh ecosystem.
 
 Use careful wording:
 
@@ -20,7 +20,8 @@ Use careful wording:
 * local radio observations
 * support infrastructure
 * field testing
-* wardriving results
+* MeshCore coverage-check results
+* MeshMapper results, when specifically referring to MeshCore coverage checks
 
 Avoid wording that suggests complete coverage, guaranteed communication, emergency service capability, or ownership of all nearby mesh activity.
 
@@ -122,7 +123,7 @@ Purpose:
 
 * Portable field testing
 * Mobile or temporary mesh testing
-* Wardriving support
+* MeshCore coverage-check support
 * Local placement comparison
 * Device and antenna testing
 
@@ -143,7 +144,7 @@ Notes:
 
 * Cassiopeia should not be mapped as a fixed location.
 * Public notes should describe field testing in general areas unless exact sharing is clearly safe.
-* Wardriving or field-testing results should be treated as observations, not guaranteed coverage.
+* MeshMapper, MeshCore coverage-check, and field-testing results should be treated as observations, not guaranteed coverage.
 * Do not publish exact private routes, private addresses, or sensitive screenshots.
 
 ## Supporting Files and Data
@@ -174,6 +175,9 @@ These files should avoid private information.
 Do not commit:
 
 * Private node coordinates
+* Private observer coordinates
+* Private gateway coordinates
+* Private repeater coordinates
 * Private home addresses
 * Private keys
 * Broker passwords
@@ -196,13 +200,17 @@ Observed activity may come from:
 * Public feeds
 * Manual local notes
 * Community reports
-* Wardriving
+* MeshMapper, for MeshCore coverage checks
 * Field testing
 * Future dashboards or integrations
 
 Observed activity should be described carefully.
 
 It may show that something was heard, logged, reported, mapped, or displayed by a system. It does not necessarily prove direct radio reachability from a user’s location, and it does not imply that Hampden County Mesh owns every device shown.
+
+For MeshCore coverage checks, Hampden County Mesh points people toward MeshMapper:
+
+https://meshmapper.net/
 
 ## MQTT and Backend Notes
 
@@ -320,10 +328,14 @@ Future work should be documented as future work until it is live.
 Related public pages:
 
 * https://hampdencountymesh.org/coverage.html
-* https://hampdencountymesh.org/guides/node-setups.html
-* https://hampdencountymesh.org/guides/radio-aids.html
-* https://hampdencountymesh.org/guides/using-your-node.html
+* https://hampdencountymesh.org/guides/getting-started.html
+* https://hampdencountymesh.org/guides/recommended-settings.html
+* https://hampdencountymesh.org/guides/meshcore-basics.html
+* https://hampdencountymesh.org/guides/meshtastic-basics.html
+* https://hampdencountymesh.org/guides/nodes-repeaters-observers.html
 * https://hampdencountymesh.org/guides/sharing-safely.html
+* https://hampdencountymesh.org/guides/discord.html
+* https://hampdencountymesh.org/updates/
 
 Only link to public pages that currently exist. If a guide is planned but not live, keep it out of public navigation until it is ready.
 

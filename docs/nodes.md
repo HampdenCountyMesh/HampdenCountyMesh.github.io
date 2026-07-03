@@ -10,6 +10,7 @@ This file is used to document:
 
 * Site-maintained nodes
 * Observers
+* Gateways
 * Repeaters
 * Portable devices
 * Outdoor infrastructure
@@ -152,8 +153,8 @@ Related documentation:
 * `docs/infrastructure.md`
 * `docs/observed-activity-data.md`
 * `docs/ASSETS.md`
-* `guides/node-setups.html`
-* `guides/radio-aids.html`
+* `guides/nodes-repeaters-observers.html`
+* `guides/sharing-safely.html`
 
 ### Cassiopeia
 
@@ -181,7 +182,7 @@ Purpose:
 * Portable local use
 * Mobile use
 * Local range and placement comparison
-* Wardriving support
+* MeshCore coverage-check support
 * Beginner guide and photo documentation support
 
 General location:
@@ -194,7 +195,7 @@ Public notes:
 * This device is useful for portable checks and learning how MeshCore behaves from different places.
 * Cassiopeia should not be mapped as a fixed location.
 * Public notes should describe general areas, not exact private locations.
-* Field-testing and wardriving results should be treated as observations, not guaranteed coverage.
+* Field-testing, MeshMapper, and MeshCore coverage-check results should be treated as observations, not guaranteed coverage.
 * Photos of the device should be checked for EXIF data, screens, reflections, addresses, plates, and other private details before publishing.
 
 Do not publish:
@@ -210,9 +211,9 @@ Do not publish:
 Related documentation:
 
 * `docs/ASSETS.md`
-* `guides/using-your-node.html`
-* `guides/radio-aids.html`
-* `guides/node-setups.html`
+* `docs/observed-activity-data.md`
+* `guides/nodes-repeaters-observers.html`
+* `guides/sharing-safely.html`
 
 ## Support Systems
 
@@ -251,11 +252,11 @@ Notes:
 
 ## Node Documentation Template
 
-Use this template when documenting a new node, repeater, observer, or portable device.
+Use this template when documenting a new node, repeater, observer, gateway, or portable device.
 
 ```text
 Node name:
-Role: Portable node / Fixed node / Repeater / Observer / Room server / Hub / Bridge
+Role: Portable node / Fixed node / Repeater / Observer / Gateway / Room server / Hub / Bridge
 System: MeshCore / Meshtastic / Other
 Hardware:
 Firmware or software:
@@ -269,127 +270,7 @@ Temporary / long-term:
 Purpose:
 What it appears to hear:
 What appears to hear it:
-Result source: direct radio / observer / MQTT / map / dashboard / local log / wardriving / field test / unknown
+Result source: direct_radio / observer / mqtt / map / dashboard / local_log / meshmapper / meshcore_coverage_check / field_test / manual_note / public_source / unknown
 Maintainer or contact, if safe to share:
 Private details removed before sharing: yes / no
 Notes:
-```
-
-## Public Location Guidance
-
-For public notes, use general areas unless exact sharing is clearly intentional and safe.
-
-Usually safe:
-
-* Town
-* Public park
-* Public landmark
-* General hill or valley area
-* Road corridor
-* Broad neighborhood
-* Western Hampden County
-* Near Mount Tom
-* Westfield area
-
-Avoid posting publicly:
-
-* Exact home addresses
-* Exact private coordinates
-* Private deployment locations
-* Private repeater locations
-* Private infrastructure locations
-* Photos that reveal private locations
-* Someone else’s location without permission
-
-## Maintenance Notes
-
-Use this template when checking a site-maintained device.
-
-```text
-Maintenance note
-Node or system name:
-Date checked:
-Checked by:
-Status:
-Power:
-Battery or solar status:
-Antenna:
-Mounting:
-Firmware or software:
-What changed:
-Needs attention:
-Private details removed before sharing: yes / no
-Notes:
-```
-
-Maintenance notes should help future maintainers understand whether something is still active, what changed, and what needs to be checked again.
-
-Do not include private access details in public maintenance notes.
-
-## Observed Activity Notes
-
-When a node appears on a map, analyzer, dashboard, MQTT feed, or observer log, describe it carefully.
-
-Observed activity may mean something was:
-
-* Heard directly over radio
-* Heard by an observer
-* Reported through MQTT
-* Shown on a public map
-* Logged by a local system
-* Shared by a community member
-* Seen through an internet-connected path
-* Captured during wardriving
-* Captured during field testing
-
-It does not always mean:
-
-* The node is directly reachable from your location
-* Hampden County Mesh owns the node
-* The node is fixed
-* The node is still online
-* Coverage is complete
-* The data is current
-
-## Privacy and Safety
-
-Do not commit:
-
-* Private keys
-* Owner keys
-* Passwords
-* Broker credentials
-* API tokens
-* Admin URLs
-* Private IP addresses
-* Wi-Fi details
-* SSH details
-* Exact private node coordinates
-* Private home addresses
-* Sensitive logs
-* Screenshots with private details
-* Photos that reveal private locations unintentionally
-
-When in doubt, generalize the note or keep the detail private.
-
-## Related Documentation
-
-* `docs/infrastructure.md`
-* `docs/observers.md`
-* `docs/mqtt.md`
-* `docs/observed-activity-data.md`
-* `docs/ASSETS.md`
-
-Related public pages:
-
-* https://hampdencountymesh.org/guides/node-setups.html
-* https://hampdencountymesh.org/guides/radio-aids.html
-* https://hampdencountymesh.org/guides/using-your-node.html
-* https://hampdencountymesh.org/guides/sharing-safely.html
-* https://hampdencountymesh.org/coverage.html
-
-Only link to public pages that currently exist. If a guide is planned but not live, keep it out of public navigation until it is ready.
-
-## Emergency and Safety Note
-
-Hampden County Mesh is a community education and hobby effort. It is not an emergency service or a replacement for 911.

@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=20260701e">
+  <link rel="stylesheet" href="/style.css?v=20260701h">
 </head>
 
 <body>
@@ -48,7 +48,8 @@
         <a href="/">Home</a>
         <a href="/guides/" aria-current="page">Guides</a>
         <a href="/coverage.html">Coverage</a>
-        <a class="discord-nav-button" href="/join/" aria-label="Join the Hampden County Mesh Discord" data-join-source="nav">
+        <a href="/updates/">Updates</a>
+        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord" data-join-source="site-nav">
           <img src="/assets/icons/discord-symbol-white.svg" alt="" aria-hidden="true">
         </a>
       </nav>
@@ -83,7 +84,7 @@
         <div class="section-heading">Short version</div>
         <h2 class="portal-title">Use the common regional settings first.</h2>
         <p class="section-lede">
-          Hampden County Mesh recommends MeshCore for new users who want dependable local messaging. Meshtastic users are welcome, but both systems should start simple: get one normal node working before changing roles, MQTT, power, or advanced behavior.
+          Hampden County Mesh recommends MeshCore for new users who want dependable local messaging. Meshtastic users are welcome too, but both systems should start simple: get one normal node working before changing roles, MQTT, power, or advanced behavior.
         </p>
 
         <div class="settings-grid">
@@ -204,7 +205,7 @@
           </p>
 
           <p>
-            If you are intentionally configuring a MeshCore repeater and your firmware/app exposes the CLI, the command is:
+            If you are intentionally configuring a MeshCore repeater and your firmware or app exposes the CLI, the command is:
           </p>
 
           <p>
@@ -249,24 +250,24 @@
     <section id="mqtt">
       <div class="container narrow">
         <div class="guide-panel">
-          <div class="section-heading">Future map infrastructure</div>
-          <h2>Future Hampden County Mesh MQTT should be uplink-only observer infrastructure.</h2>
+          <div class="section-heading">Future observed activity</div>
+          <h2>Future map infrastructure should stay separate from beginner setup.</h2>
 
           <p>
-            Hampden County Mesh expects any future MQTT or map infrastructure to follow an uplink-only model. The point of a future broker would be to let stable observer or gateway nodes report local traffic into site-maintained maps and activity tools.
+            Hampden County Mesh may eventually use MQTT or similar tooling for public-safe observed activity, maps, and analysis. That would be infrastructure work for stable observer or gateway nodes, not something normal users need in order to participate.
           </p>
 
           <p>
-            The point would not be to bridge gaps, replace RF coverage, or require normal users to connect to a Hampden County Mesh broker. A normal user with a normal node should be able to participate without touching MQTT.
+            The goal would not be to bridge gaps, replace RF coverage, or require ordinary users to connect to a Hampden County Mesh broker. A normal node with the right settings should be enough to begin testing locally.
           </p>
 
           <h3>Future access model</h3>
           <ul>
             <li>Stable fixed observers or gateway nodes only.</li>
-            <li>Uplink-only behavior.</li>
+            <li>Uplink-only behavior where appropriate.</li>
             <li>Used for maps, observed activity, and analysis.</li>
             <li>Not required for ordinary MeshCore or Meshtastic users.</li>
-            <li>Credentials and setup instructions should be handled separately once the infrastructure exists.</li>
+            <li>Credentials and setup instructions handled separately if the infrastructure exists.</li>
           </ul>
 
           <p>
@@ -307,11 +308,11 @@
             <li>Make sure the antenna is attached before transmitting.</li>
             <li>Try a better location, especially near a window or outside.</li>
             <li>Charge the device and restart the app if the device connection is acting strange.</li>
-            <li>Ask in Discord and include your device model, firmware, rough town/area, antenna, and what settings you used.</li>
+            <li>Ask in Discord and include your device model, firmware, rough town or area, antenna, and what settings you used.</li>
           </ul>
 
           <div class="hero-actions">
-            <a class="btn primary" href="/join/" data-join-source="settings-troubleshooting">Ask in Discord</a>
+            <a class="btn primary" href="/join/guides/" data-join-source="guides">Ask in Discord</a>
             <a class="btn secondary" href="/coverage.html">Check Coverage</a>
           </div>
         </div>
@@ -342,9 +343,14 @@
             <span>Learn LongFast/default use and beginner settings.</span>
           </a>
 
-          <a class="next-card" href="/guides/node-setups.html">
-            <strong>Node Setups</strong>
-            <span>Learn placement, antennas, repeaters, observers, maps, MeshMapper for MeshCore, and troubleshooting.</span>
+          <a class="next-card" href="/guides/nodes-repeaters-observers.html">
+            <strong>Nodes, Repeaters, and Observers</strong>
+            <span>Learn node roles, placement, antennas, repeaters, observers, maps, MeshMapper for MeshCore, and troubleshooting.</span>
+          </a>
+
+          <a class="next-card" href="/updates/">
+            <strong>Updates</strong>
+            <span>Read occasional notes about site changes, local events, seminars, and observed activity work.</span>
           </a>
         </div>
       </div>
@@ -354,7 +360,7 @@
   <footer>
     <div class="container">
       <p class="footer-subtitle">Community-based mesh and radio communications in Western Massachusetts.</p>
-      <p class="footer-updated">Last updated: <span id="last-updated">Loading...</span></p>
+      <p class="footer-updated">Site updated: <span id="last-updated">Loading...</span></p>
     </div>
   </footer>
 
