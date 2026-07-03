@@ -1,10 +1,10 @@
-<div class="resource-grid docs-resource-grid">
+<div class="resource-grid guide-grid">
   {% assign sorted_guides = site.data.guides | sort: "order" %}
   {% assign exclude_url = include.exclude_url | default: "" %}
 
   {% for guide in sorted_guides %}
     {% unless guide.url == exclude_url %}
-      <a class="resource-card action-card" href="{{ guide.url }}">
+      <a class="resource-card action-card guide-card {% if guide.order <= 2 %}kicker-card{% endif %}" href="{{ guide.url }}">
         {% if guide.label %}
           <span class="guide-label">{{ guide.label | escape }}</span>
         {% endif %}
