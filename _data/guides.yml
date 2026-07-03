@@ -1,48 +1,59 @@
 - order: 1
+  group: read_first
   title: Getting Started
   url: /guides/getting-started.html
-  label: Start Here
-  summary: Start here if you are new to MeshCore, Meshtastic, or local mesh radio.
+  label: First stop
+  summary: Choose MeshCore or Meshtastic, understand what you need, and avoid overcomplicating your first setup.
   link_text: Start here →
+  featured: true
 
 - order: 2
+  group: read_first
   title: Recommended Settings
   url: /guides/recommended-settings.html
   label: Settings
-  summary: Basic settings for safer and more useful MeshCore and Meshtastic use.
-  link_text: Read settings →
+  summary: The local quick reference for MeshCore and Meshtastic starting settings in Western Massachusetts.
+  link_text: View settings →
+  featured: true
 
 - order: 3
+  group: mesh_systems
   title: MeshCore Basics
   url: /guides/meshcore-basics.html
-  label: MeshCore
-  summary: Learn what MeshCore is, how it works, and how it fits local coverage checks.
+  label: Recommended start
+  summary: What MeshCore is, why this site focuses on it, and how to start with a simple local setup.
   link_text: Read MeshCore basics →
+  featured: true
 
 - order: 4
+  group: mesh_systems
   title: Meshtastic Basics
   url: /guides/meshtastic-basics.html
-  label: Meshtastic
-  summary: Learn what Meshtastic is and how it differs from MeshCore.
+  label: Also supported
+  summary: How Meshtastic fits here, what to keep simple at first, and where to find official Meshtastic resources.
   link_text: Read Meshtastic basics →
 
 - order: 5
+  group: setup_maps
   title: Nodes, Repeaters, and Observers
   url: /guides/nodes-repeaters-observers.html
-  label: Node Roles
-  summary: Learn about personal nodes, fixed nodes, repeaters, observers, antennas, placement, maps, MeshMapper for MeshCore, and troubleshooting.
+  label: Node roles
+  summary: Personal nodes, fixed nodes, repeaters, observers, gateways, map-support systems, coverage, visibility, and MeshMapper for MeshCore checks.
   link_text: Read node roles →
+  featured: true
 
 - order: 6
-  title: Sharing Safely
-  url: /guides/sharing-safely.html
-  label: Safety
-  summary: Learn how to share photos, screenshots, maps, and setup details without exposing private information.
-  link_text: Read safety guide →
+  group: community
+  title: Discord Guide
+  url: /guides/discord.html
+  label: Discord
+  summary: How the Discord is used for setup help, announcements, local testing, maps, and community coordination.
+  link_text: Read Discord guide →
 
 - order: 7
-  title: Discord
-  url: /guides/discord.html
-  label: Community
-  summary: Learn how the Discord is used for setup help, questions, local testing, and community coordination.
-  link_text: Read Discord guide →
+  group: community
+  title: Sharing Safely
+  url: /guides/sharing-safely.html
+  label: Privacy
+  summary: Share useful mesh observations, screenshots, photos, and map results without exposing private details.
+  link_text: Read sharing guide →
