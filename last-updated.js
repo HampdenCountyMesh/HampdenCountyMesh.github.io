@@ -119,11 +119,11 @@
           setLastUpdated(cached.date);
           return;
         } catch {
-          // Fall through to unavailable message.
+          // Fall through to fallback message.
         }
       }
 
-      lastUpdatedElement.textContent = "Not available";
+      lastUpdatedElement.textContent = "Recently updated";
     })
     .finally(function () {
       if (timeout) {

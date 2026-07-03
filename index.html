@@ -1,23 +1,28 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hampden County Mesh</title>
-  <meta name="description" content="Hampden County Mesh is a Western Massachusetts community for learning about and using MeshCore, Meshtastic, and other practical radio communications.">
+  <meta name="description" content="Hampden County Mesh is a Western Massachusetts community for learning about MeshCore, Meshtastic, and practical radio communications.">
 
   <link rel="canonical" href="https://hampdencountymesh.org/">
 
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hampden County Mesh">
   <meta property="og:title" content="Hampden County Mesh">
-  <meta property="og:description" content="Hampden County Mesh is a Western Massachusetts community for learning about and using MeshCore, Meshtastic, and other practical radio communications.">
+  <meta property="og:description" content="Hampden County Mesh is a Western Massachusetts community for learning about MeshCore, Meshtastic, and practical radio communications.">
   <meta property="og:url" content="https://hampdencountymesh.org/">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Hampden County Mesh">
-  <meta name="twitter:description" content="Hampden County Mesh is a Western Massachusetts community for learning about and using MeshCore, Meshtastic, and other practical radio communications.">
+  <meta name="twitter:description" content="Hampden County Mesh is a Western Massachusetts community for learning about MeshCore, Meshtastic, and practical radio communications.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
+  <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
   <meta name="theme-color" content="#101820">
 
@@ -27,7 +32,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="/style.css?v=20260629a">
+  <link rel="stylesheet" href="/style.css?v=20260701h">
 </head>
 
 <body>
@@ -45,8 +50,8 @@
         <a href="/" aria-current="page">Home</a>
         <a href="/guides/">Guides</a>
         <a href="/coverage.html">Coverage</a>
-
-        <a class="discord-nav-button" href="/join/" aria-label="Join the Hampden County Mesh Discord">
+        <a href="/updates/">Updates</a>
+        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord" data-join-source="site-nav">
           <img src="/assets/icons/discord-symbol-white.svg" alt="" aria-hidden="true">
         </a>
       </nav>
@@ -61,8 +66,8 @@
         <h1>Hampden County<br>Mesh</h1>
 
         <p class="hero-text">
-          A Western Massachusetts community for learning about and using MeshCore,
-          Meshtastic, and other practical radio communications.
+          A Western Massachusetts community for learning about MeshCore,
+          Meshtastic, and practical radio communications.
         </p>
 
         <div class="hero-actions">
@@ -70,7 +75,7 @@
             Recommended Settings
           </a>
 
-          <a class="btn secondary large" href="/join/">
+          <a class="btn secondary large" href="/join/home-hero/" data-join-source="home-hero">
             Join Discord
           </a>
         </div>
@@ -85,14 +90,14 @@
           <p>
             Mesh communications let small radios pass short messages from one nearby
             node to another. A message can move across an area without depending on
-            cell service, Wi-Fi, or internet access.
+            cell service, Wi-Fi, or normal internet access.
           </p>
 
           <p>
-            Platforms like MeshCore and Meshtastic make this easier to explore with
-            affordable hardware, phone apps, and low-power radio. They give local
-            people a practical way to learn, test coverage, share messages, and build
-            more resilient communications from the ground up.
+            MeshCore and Meshtastic make this easier to explore with affordable
+            hardware, phone apps, and low-power radio. For people in Hampden County
+            and nearby communities, it is a practical way to learn, test coverage,
+            send messages, and understand what local radio can do.
           </p>
         </div>
       </div>
@@ -104,17 +109,17 @@
           <div class="section-heading">Official project sites</div>
 
           <p>
-            MeshCore and Meshtastic are separate open-source radio projects. These links
-            go to their official sites.
+            MeshCore and Meshtastic are separate open-source radio projects. These
+            links go to their official sites.
           </p>
 
           <div class="button-row project-buttons">
-            <a class="btn secondary icon-btn" href="https://meshcore.io/" target="_blank" rel="noopener">
+            <a class="btn secondary icon-btn" href="https://meshcore.io/" target="_blank" rel="noopener noreferrer">
               <img class="project-icon" src="/assets/icons/meshcore.svg" alt="" aria-hidden="true">
               <span>MeshCore</span>
             </a>
 
-            <a class="btn secondary icon-btn" href="https://meshtastic.org/" target="_blank" rel="noopener">
+            <a class="btn secondary icon-btn" href="https://meshtastic.org/" target="_blank" rel="noopener noreferrer">
               <img class="project-icon" src="/assets/icons/meshtastic.svg" alt="" aria-hidden="true">
               <span>Meshtastic</span>
             </a>
@@ -131,12 +136,12 @@
           <h2>Ask questions, talk devices, and get setup help.</h2>
 
           <p>
-            Join the Discord for local setup help, testing notes, device discussion,
-            and community updates.
+            Join the Discord for local setup help, device discussion, testing notes,
+            event ideas, and community updates.
           </p>
 
           <div class="button-row">
-            <a class="btn primary large" href="/join/">
+            <a class="btn primary large" href="/join/home-bottom/" data-join-source="home-bottom">
               Join Discord
             </a>
           </div>
@@ -169,7 +174,7 @@
   <footer>
     <div class="container">
       <p class="footer-subtitle">Community-based mesh and radio communications in Western Massachusetts.</p>
-      <p class="footer-updated">Last updated: <span id="last-updated">Loading...</span></p>
+      <p class="footer-updated">Site updated: <span id="last-updated">Loading...</span></p>
     </div>
   </footer>
 

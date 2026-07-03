@@ -1,6 +1,6 @@
 # Hampden County Mesh
 
-Hampden County Mesh is a local community effort for MeshCore, Meshtastic, maps, setup help, and local mesh networking across Hampden County and nearby Western Massachusetts.
+Hampden County Mesh is a local community effort for MeshCore, Meshtastic, maps, setup help, and local mesh radio across Hampden County and nearby Western Massachusetts.
 
 This repository contains the public website and supporting documentation for Hampden County Mesh.
 
@@ -14,16 +14,16 @@ Hampden County Mesh exists to help local people learn about mesh radio, nearby m
 
 The site and community focus on:
 
-* MeshCore and LoRa mesh experimentation
+* MeshCore and LoRa mesh use
 * Meshtastic and related mesh tools
 * Recommended local starting settings
-* Practical node setup and placement
+* Node roles, placement, antennas, and practical setup choices
 * Local terrain and radio behavior
-* Coverage testing and wardriving
+* MeshCore coverage checks with MeshMapper
 * Maps and observed mesh activity
 * Beginner-friendly guides
 * Safe sharing of photos, screenshots, setup details, and map results
-* Community coordination through Discord, the website, and future local learning sessions
+* Community coordination through Discord, the website, updates, and future local learning sessions
 
 Hampden County Mesh does not claim ownership over every mesh node, observer, repeater, radio user, packet, map marker, or public feed in the county.
 
@@ -42,7 +42,7 @@ Useful participation can be as simple as:
 * Sharing that something worked or did not work
 * Taking a public-safe photo of a device, setup, or local terrain example
 * Helping someone else understand the basics
-* Suggesting a good place for a future meetup or learning session
+* Suggesting a good place for a future meetup, demo, or learning session
 
 Documentation helps, but it is not a barrier to entry.
 
@@ -56,6 +56,7 @@ Current public status:
 * Guide library: active
 * Discord: active
 * Coverage page: active
+* Updates page: active
 * Site-maintained systems: manually documented
 * Public live data automation: not enabled yet
 * New participants: welcome
@@ -71,15 +72,20 @@ Main public sections:
 * Home
 * Guides
 * Coverage
+* Updates
 * Discord join route
 
 The Guides section is the main home for public setup, settings, safety, and how-to material:
 
 https://hampdencountymesh.org/guides/
 
-The Coverage page includes the Hampden County map, observed-activity status, regional links, and coverage notes:
+The Coverage page includes the Hampden County map, observed-activity status, nearby public tools, and coverage notes:
 
 https://hampdencountymesh.org/coverage.html
+
+The Updates page is for occasional notes about site changes, local events, seminars, and observed activity work:
+
+https://hampdencountymesh.org/updates/
 
 ## Coverage and Local Use
 
@@ -99,6 +105,10 @@ Helpful details, when available, include:
 
 You do not need to publish exact private locations. General areas, public landmarks, road corridors, parks, neighborhoods, and town-level results are often enough.
 
+For MeshCore coverage checks, Hampden County Mesh points people toward MeshMapper:
+
+https://meshmapper.net/
+
 ## Observed Activity
 
 A goal of the site is to make useful observed mesh activity easier to understand.
@@ -107,7 +117,7 @@ Observed activity may include data heard by site-maintained systems, public sour
 
 Observed activity should not imply that every node, observer, repeater, marker, packet, or device shown is owned, operated, endorsed, or managed by Hampden County Mesh.
 
-The purpose is to help people see that mesh activity exists nearby, understand what may be possible, and connect with others interested in local mesh networking.
+The purpose is to help people see that mesh activity exists nearby, understand what may be possible, and connect with others interested in local mesh radio.
 
 ## Repository Contents
 
@@ -171,6 +181,8 @@ Do not publish:
 * Unverified emergency claims
 
 When in doubt, use general areas and plain summaries.
+
+See `SECURITY.md` for sensitive security issues.
 
 ## Security
 

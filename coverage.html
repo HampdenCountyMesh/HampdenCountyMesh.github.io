@@ -4,25 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Coverage | Hampden County Mesh</title>
-  <meta name="description" content="Maps, terrain, observed activity links, and public resources for understanding MeshCore and Meshtastic activity around Hampden County and Western Massachusetts.">
+  <meta name="description" content="Maps, terrain notes, observed activity links, and public tools for understanding MeshCore and Meshtastic activity around Hampden County and Western Massachusetts.">
 
   <link rel="canonical" href="https://hampdencountymesh.org/coverage.html">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hampden County Mesh">
   <meta property="og:title" content="Coverage | Hampden County Mesh">
-  <meta property="og:description" content="Maps, terrain, observed activity links, and public resources for understanding MeshCore and Meshtastic activity around Hampden County and Western Massachusetts.">
+  <meta property="og:description" content="Maps, terrain notes, observed activity links, and public tools for understanding MeshCore and Meshtastic activity around Hampden County and Western Massachusetts.">
   <meta property="og:url" content="https://hampdencountymesh.org/coverage.html">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Hampden County Mesh branding over a view of Mount Tom radio towers.">
+  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Coverage | Hampden County Mesh">
-  <meta name="twitter:description" content="Maps, terrain, observed activity links, and public resources for understanding MeshCore and Meshtastic activity around Hampden County and Western Massachusetts.">
+  <meta name="twitter:description" content="Maps, terrain notes, observed activity links, and public tools for understanding MeshCore and Meshtastic activity around Hampden County and Western Massachusetts.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
-  <meta name="twitter:image:alt" content="Hampden County Mesh branding over a view of Mount Tom radio towers.">
+  <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
   <meta name="theme-color" content="#101820">
 
@@ -33,7 +33,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="/style.css?v=20260629a">
+  <link rel="stylesheet" href="/style.css?v=20260701h">
 </head>
 
 <body>
@@ -51,8 +51,8 @@
         <a href="/">Home</a>
         <a href="/guides/">Guides</a>
         <a href="/coverage.html" aria-current="page">Coverage</a>
-
-        <a class="discord-nav-button" href="/join/" aria-label="Join the Hampden County Mesh Discord" data-join-source="nav">
+        <a href="/updates/">Updates</a>
+        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord" data-join-source="site-nav">
           <img src="/assets/icons/discord-symbol-white.svg" alt="" aria-hidden="true">
         </a>
       </nav>
@@ -72,14 +72,14 @@
         <h1>Coverage</h1>
 
         <p class="hero-text">
-          Maps, terrain, observed activity links, and public resources for understanding
-          MeshCore and Meshtastic activity around Hampden County and Western Massachusetts.
+          Maps, terrain notes, observed activity links, and public tools for understanding
+          mesh activity around Hampden County and Western Massachusetts.
         </p>
 
         <div class="hero-actions">
           <a class="btn primary" href="#coverage-map-section">View Map</a>
-          <a class="btn secondary" href="/guides/node-setups.html">Node Setups</a>
-          <a class="btn secondary" href="/join/" data-join-source="coverage-hero">Join Discord</a>
+          <a class="btn secondary" href="/guides/nodes-repeaters-observers.html">Node Roles</a>
+          <a class="btn secondary" href="/join/coverage/" data-join-source="coverage">Join Discord</a>
         </div>
       </div>
     </section>
@@ -105,23 +105,21 @@
       </div>
     </section>
 
-    <section id="regional-live-activity">
+    <section id="nearby-public-tools">
       <div class="container">
-        <div class="section-heading">Regional Activity</div>
+        <div class="section-heading">Nearby Public Tools</div>
 
         <div class="community-panel">
-          <h2>Nearby mesh tools</h2>
+          <h2>Regional maps and analyzers</h2>
 
           <p>
-            Hampden County is part of a wider regional mesh ecosystem. Nearby MeshCore
-            activity may appear through public maps and analyzers maintained by neighboring
-            mesh communities.
+            Hampden County sits near a wider mesh ecosystem. These public tools can help
+            show nearby MeshCore activity, packet paths, observers, and regional testing.
           </p>
 
           <p>
-            Nodes shown on those maps are not necessarily operated by Hampden County Mesh.
-            They may belong to independent users, nearby groups, mobile devices, fixed sites,
-            or neighboring mesh communities.
+            They are maintained by neighboring communities, not Hampden County Mesh.
+            Treat them as useful partial views, not a complete list of local devices.
           </p>
 
           <div class="resource-grid">
@@ -150,9 +148,9 @@
             </a>
 
             <a class="resource-card action-card" href="/guides/meshcore-basics.html">
-              <h3>What Am I Looking At?</h3>
+              <h3>What am I looking at?</h3>
               <p>
-                New to MeshCore? Start with the basics before interpreting public packet maps.
+                New to MeshCore? Start with the basics before trying to interpret public packet maps.
               </p>
               <span class="card-link">Read MeshCore Basics →</span>
             </a>
@@ -173,20 +171,20 @@
 
             <p>
               This page is a starting point for understanding terrain, public map links,
-              and nearby mesh activity around Hampden County.
+              and nearby observed activity around Hampden County.
             </p>
 
             <p>
-              Mesh networks are made of many independent people, devices, nodes, observers,
+              Mesh activity comes from many independent people, devices, observers,
               repeaters, public tools, and local groups. No single map or website shows everything.
             </p>
 
             <p>
-              Future tools on this site may show public-safe activity from participating systems,
-              but they should still be treated as partial views of a larger regional mesh ecosystem.
+              Future tools on this site may show public-safe activity from participating systems.
+              Those tools should still be treated as partial views.
             </p>
 
-            <a class="btn secondary" href="#site-maintained-systems">Site-maintained Systems</a>
+            <a class="btn secondary" href="#site-maintained-systems">Observed Activity Work</a>
           </div>
         </div>
       </div>
@@ -248,16 +246,16 @@
             <span class="card-link">View Recommended Settings →</span>
           </a>
 
-          <a class="resource-card action-card" href="/guides/node-setups.html">
-            <h3>Test a real setup</h3>
+          <a class="resource-card action-card" href="/guides/nodes-repeaters-observers.html">
+            <h3>Understand node roles</h3>
             <p>
-              Learn about placement, antennas, mobile use, repeaters, observers, maps,
-              wardriving, and troubleshooting.
+              Learn the difference between personal nodes, fixed nodes, repeaters,
+              observers, gateways, and map-support systems.
             </p>
-            <span class="card-link">Read Node Setups →</span>
+            <span class="card-link">Read node roles →</span>
           </a>
 
-          <a class="resource-card action-card" href="/join/" data-join-source="coverage-first-steps">
+          <a class="resource-card action-card" href="/join/coverage/" data-join-source="coverage">
             <h3>Ask the community</h3>
             <p>
               Join the Discord to ask questions, talk about devices, compare results,
@@ -271,24 +269,23 @@
 
     <section id="site-maintained-systems">
       <div class="container">
-        <div class="section-heading">Site-maintained Systems</div>
+        <div class="section-heading">Observed Activity Work</div>
 
         <div class="community-panel">
           <p>
-            This site currently maintains a small amount of supporting infrastructure
-            for learning, logging, checking, and understanding observed mesh activity.
+            Public activity tools for this site are still in development. The goal is to
+            eventually show useful, public-safe observed activity without turning the map
+            into a claim that every visible node belongs to Hampden County Mesh.
           </p>
 
           <p>
-            These systems are one contribution to the broader local mesh community.
-            They are useful for learning and future public tools, but they are not a complete
-            picture of everything happening in Hampden County.
+            Normal users do not need site-maintained infrastructure to get started. A basic
+            node, the right settings, and a reasonable location are enough to begin testing.
           </p>
 
-          <p>
-            Public activity tools are still in development. Normal users do not need
-            site-maintained infrastructure to get started with a node.
-          </p>
+          <div class="button-row">
+            <a class="btn secondary" href="/updates/">Read Updates</a>
+          </div>
         </div>
       </div>
     </section>
@@ -310,7 +307,7 @@
             You can also join the community Discord.
           </p>
 
-          <a class="btn primary large" href="/join/" data-join-source="coverage-contact">Join Discord</a>
+          <a class="btn primary large" href="/join/coverage/" data-join-source="coverage">Join Discord</a>
         </div>
       </div>
     </section>
@@ -318,8 +315,8 @@
 
   <footer>
     <div class="container">
-      <p class="footer-subtitle">Community-based radio communications in Western Massachusetts.</p>
-      <p class="footer-updated">Last updated: <span id="last-updated">Loading...</span></p>
+      <p class="footer-subtitle">Community-based mesh and radio communications in Western Massachusetts.</p>
+      <p class="footer-updated">Site updated: <span id="last-updated">Loading...</span></p>
     </div>
   </footer>
 

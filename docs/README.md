@@ -66,6 +66,9 @@ Do not include:
 * Admin URLs
 * Private IP addresses
 * Exact private node locations
+* Exact private observer locations
+* Exact private gateway locations
+* Exact private repeater locations
 * Private home addresses
 * Sensitive screenshots
 * Photos that reveal private locations unintentionally
@@ -77,7 +80,7 @@ When documentation needs to describe a location, use a general area, town, publi
 
 When documenting maps, dashboards, observers, logs, MQTT feeds, or public activity data, use careful wording.
 
-Observed activity means something was heard, logged, reported, mapped, or shown by a system or public source. It does not mean Hampden County Mesh owns or operates every node, marker, packet, observer, repeater, or device shown.
+Observed activity means something was heard, logged, reported, mapped, or shown by a system or public source. It does not mean Hampden County Mesh owns or operates every node, marker, packet, observer, repeater, gateway, or device shown.
 
 Use wording like:
 
@@ -87,7 +90,7 @@ Use wording like:
 * public activity data where available
 * local radio observations
 * local use information
-* wardriving observations
+* MeshCore coverage checks
 * field-testing results
 
 Avoid wording that suggests:
@@ -144,17 +147,37 @@ Coverage:
 
 https://hampdencountymesh.org/coverage.html
 
-Node setups:
+Updates:
 
-https://hampdencountymesh.org/guides/node-setups.html
+https://hampdencountymesh.org/updates/
 
-Radio aids:
+Getting Started:
 
-https://hampdencountymesh.org/guides/radio-aids.html
+https://hampdencountymesh.org/guides/getting-started.html
 
-Sharing safely:
+Recommended Settings:
+
+https://hampdencountymesh.org/guides/recommended-settings.html
+
+MeshCore Basics:
+
+https://hampdencountymesh.org/guides/meshcore-basics.html
+
+Meshtastic Basics:
+
+https://hampdencountymesh.org/guides/meshtastic-basics.html
+
+Nodes, Repeaters, and Observers:
+
+https://hampdencountymesh.org/guides/nodes-repeaters-observers.html
+
+Sharing Safely:
 
 https://hampdencountymesh.org/guides/sharing-safely.html
+
+Discord guide:
+
+https://hampdencountymesh.org/guides/discord.html
 
 Discord join route:
 

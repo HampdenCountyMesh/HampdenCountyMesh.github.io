@@ -19,12 +19,12 @@ Observer systems may support:
 * Troubleshooting
 * Local use comparisons
 * Field-testing comparisons
-* Wardriving comparisons
+* MeshCore coverage checks
 * General understanding of local mesh behavior
 
 Observed activity should be described carefully. It may show what a specific observer heard, what a public source reported, or what appeared in a log, dashboard, MQTT feed, or map.
 
-It should not imply that Hampden County Mesh owns, operates, endorses, or manages every visible node, packet, marker, observer, repeater, or device.
+It should not imply that Hampden County Mesh owns, operates, endorses, or manages every visible node, packet, marker, observer, repeater, gateway, or device.
 
 ## Current Observer
 
@@ -94,7 +94,7 @@ An observer can help answer questions like:
 * Did a device appear through a public tool, observer, MQTT feed, or local log?
 * Are there changes in observed activity over time?
 * Is an observer still reporting?
-* How do field-testing or wardriving results compare with a fixed observer?
+* How do field-testing or MeshCore coverage-check results compare with a fixed observer?
 
 An observer may be useful for comparing local radio observations against fixed-location logs.
 
@@ -129,201 +129,9 @@ mqtt
 map
 dashboard
 local_log
-wardriving
+meshmapper
+meshcore_coverage_check
 field_test
 manual_note
 public_source
 unknown
-```
-
-Examples:
-
-* `direct_radio` means the result was heard directly over radio by a device.
-* `observer` means a known observer heard or reported the activity.
-* `mqtt` means the activity came through an MQTT-backed path.
-* `map` means the activity appeared on a public or local map.
-* `dashboard` means the activity appeared through a dashboard or analyzer-style tool.
-* `local_log` means the activity was seen in a local log.
-* `wardriving` means the activity was captured during mobile coverage testing.
-* `field_test` means the activity was captured during a deliberate test from a real place.
-* `manual_note` means a person reported it from local use or a device check.
-* `public_source` means the activity came from a public feed or public tool.
-* `unknown` means the source is not clear enough to describe confidently.
-
-## Public Wording
-
-Use careful wording when describing observer data.
-
-Good wording:
-
-* observed activity
-* activity heard by a site-maintained observer
-* activity reported by public sources
-* observer logs
-* public-safe activity summary
-* recently observed activity
-* activity shown where available
-* local radio observations
-* field-testing observations
-* wardriving observations
-
-Avoid wording like:
-
-* this proves coverage
-* all nodes are online
-* county-wide network coverage
-* guaranteed communication
-* Hampden County Mesh operates all shown nodes
-* complete activity map
-* emergency-ready network
-
-## Privacy and Location Handling
-
-Observer data may contain location or identity clues. Treat it carefully.
-
-Public notes should usually use:
-
-* General area
-* Town
-* Public landmark
-* Broad terrain description
-* Public park or road corridor
-* Western Hampden County
-* Central Hampden County
-* Eastern Hampden County
-
-Avoid publishing:
-
-* Exact private coordinates
-* Home addresses
-* Private node locations
-* Private observer locations
-* Private repeater locations
-* Private infrastructure locations
-* Raw logs with sensitive details
-* Private messages
-* Keys, passwords, or credentials
-* Device details someone did not intend to publish
-* Exact private routes or routines
-
-If exact data is not necessary, generalize it.
-
-## Logs
-
-Observer logs can be useful for troubleshooting and future activity summaries, but raw logs should be reviewed before being shared publicly.
-
-Before publishing log excerpts, check for:
-
-* Private messages
-* Coordinates
-* Private node names
-* Keys
-* Credentials
-* Broker details
-* Private IP addresses
-* Admin URLs
-* Usernames
-* Internal paths
-* Sensitive timestamps or routines
-
-Use short, public-safe summaries when possible instead of raw logs.
-
-## MQTT Reporting
-
-Observers may report activity through MQTT or another backend path.
-
-MQTT-backed observer data should be documented in:
-
-* `docs/mqtt.md`
-* `docs/observed-activity-data.md`
-
-Do not publish:
-
-* Broker usernames
-* Broker passwords
-* Private broker hostnames
-* Private IP addresses
-* Admin URLs
-* Full raw payloads that have not been reviewed
-
-Public notes should describe what the data represents, not expose how to access private systems.
-
-## Maintenance Notes
-
-Useful public-safe observer maintenance fields:
-
-```text
-Observer name:
-Role:
-Hardware:
-Firmware or software:
-Status:
-General area:
-Power:
-Network path:
-Last checked:
-What it appears to hear:
-Known issues:
-Public output enabled: yes / no
-Private details removed before sharing: yes / no
-Notes:
-```
-
-Do not include live credentials or sensitive access details in maintenance notes.
-
-## Future Observers
-
-Additional observers may be useful later, especially if placed in different general areas or terrain conditions.
-
-Future observer notes should include:
-
-* General area
-* Purpose
-* Hardware
-* Firmware or software
-* Whether it is temporary or long-term
-* Whether public output is enabled
-* What kind of data it reports
-* What privacy limits apply
-* How stale data is handled
-
-Do not publish exact private observer locations unless sharing is clearly intentional and safe.
-
-## Future Integrations
-
-Future observer-related integrations may include:
-
-* Public activity summaries
-* Coverage page layers
-* MQTT-backed dashboards
-* Discord status summaries
-* Observer health checks
-* Maintenance alerts
-* Local radio comparison notes
-
-Do not describe these as live until they are actually working and maintainable.
-
-Automated observer output should be reviewed for usefulness and privacy before it is published to the website, Discord, or public data files.
-
-## Related Documentation
-
-* `docs/infrastructure.md`
-* `docs/nodes.md`
-* `docs/mqtt.md`
-* `docs/observed-activity-data.md`
-* `docs/discord.md`
-* `docs/ASSETS.md`
-
-Related public pages:
-
-* https://hampdencountymesh.org/coverage.html
-* https://hampdencountymesh.org/guides/node-setups.html
-* https://hampdencountymesh.org/guides/using-your-node.html
-* https://hampdencountymesh.org/guides/radio-aids.html
-* https://hampdencountymesh.org/guides/sharing-safely.html
-
-Only link to public pages that currently exist. If a guide is planned but not live, keep it out of public navigation until it is ready.
-
-## Emergency and Safety Note
-
-Hampden County Mesh is a community education and hobby effort. It is not an emergency service or a replacement for 911.

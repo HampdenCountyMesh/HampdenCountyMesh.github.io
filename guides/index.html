@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Guides | Hampden County Mesh</title>
-  <meta name="description" content="Focused MeshCore and Meshtastic guides for getting started, recommended settings, node setup, maps, MeshCore coverage checks with MeshMapper, and local mesh testing in Hampden County and Western Massachusetts.">
+  <meta name="description" content="Local MeshCore and Meshtastic guides for getting started, recommended settings, node roles, maps, safe sharing, and local mesh testing in Hampden County and Western Massachusetts.">
 
   <link rel="canonical" href="https://hampdencountymesh.org/guides/">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hampden County Mesh">
   <meta property="og:title" content="Guides | Hampden County Mesh">
-  <meta property="og:description" content="Focused MeshCore and Meshtastic guides for getting started, recommended settings, node setup, maps, MeshCore coverage checks with MeshMapper, and local mesh testing in Hampden County and Western Massachusetts.">
+  <meta property="og:description" content="Local MeshCore and Meshtastic guides for getting started, recommended settings, node roles, maps, safe sharing, and local mesh testing in Hampden County and Western Massachusetts.">
   <meta property="og:url" content="https://hampdencountymesh.org/guides/">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Guides | Hampden County Mesh">
-  <meta name="twitter:description" content="Focused MeshCore and Meshtastic guides for getting started, recommended settings, node setup, maps, MeshCore coverage checks with MeshMapper, and local mesh testing in Hampden County and Western Massachusetts.">
+  <meta name="twitter:description" content="Local MeshCore and Meshtastic guides for getting started, recommended settings, node roles, maps, safe sharing, and local mesh testing in Hampden County and Western Massachusetts.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
@@ -48,7 +48,8 @@
         <a href="/">Home</a>
         <a href="/guides/" aria-current="page">Guides</a>
         <a href="/coverage.html">Coverage</a>
-        <a class="discord-nav-button" href="/join/" aria-label="Join the Hampden County Mesh Discord" data-join-source="nav">
+        <a href="/updates/">Updates</a>
+        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord" data-join-source="site-nav">
           <img src="/assets/icons/discord-symbol-white.svg" alt="" aria-hidden="true">
         </a>
       </nav>
@@ -68,7 +69,8 @@
         <h1>Guides</h1>
 
         <p class="hero-text">
-          Focused MeshCore and Meshtastic guides for setup, recommended settings, node use, maps, MeshCore coverage checks with MeshMapper, and local mesh activity in Western Massachusetts.
+          Local MeshCore and Meshtastic guides for setup, settings, node use,
+          maps, safe sharing, and testing around Western Massachusetts.
         </p>
 
         <div class="hero-actions">
@@ -83,7 +85,8 @@
         <div class="section-heading">Read first</div>
         <h2 class="portal-title">Start with the basics, then use the local settings.</h2>
         <p class="section-lede">
-          Most people should start with one normal node, the recommended local settings, and a few real-world tests from home, a window, a vehicle, a public park, or a nearby high spot.
+          Most people should start with one normal node, the recommended local settings,
+          and a few real-world tests from home, a window, a vehicle, a public park, or a nearby high spot.
         </p>
 
         <div class="resource-grid guide-grid">
@@ -114,11 +117,11 @@
         <h2 class="portal-title">Start with MeshCore. Meshtastic users are welcome.</h2>
 
         <p class="section-lede">
-          Hampden County Mesh supports both MeshCore and Meshtastic, but we recommend MeshCore for new users who want dependable local messaging.
+          Hampden County Mesh supports both MeshCore and Meshtastic. MeshCore is the main setup focus here because it fits the local direction for two-way messaging, fixed nodes, repeaters, and shared community use.
         </p>
 
         <p class="section-lede section-lede-secondary">
-          MeshCore is the main setup focus here because it is built around two-way conversations, routing, encrypted messaging, and shared local communications. Meshtastic is still welcome and useful for mapping, telemetry, outdoor use, beaconing, casual participation, and learning.
+          Meshtastic is still useful for learning LoRa basics, testing antennas and placement, telemetry, portable use, outdoor experiments, and casual participation.
         </p>
 
         <div class="resource-grid guide-grid">
@@ -126,7 +129,7 @@
             <span class="guide-label">Recommended start</span>
             <h3>MeshCore Basics</h3>
             <p>
-              A short guide to MeshCore, why Hampden County Mesh recommends it, how to start, and where to find local settings.
+              What MeshCore is, why this site focuses on it, and how to start with a simple local setup.
             </p>
             <span class="card-link">Read MeshCore basics →</span>
           </a>
@@ -135,7 +138,7 @@
             <span class="guide-label">Also supported</span>
             <h3>Meshtastic Basics</h3>
             <p>
-              A short guide to Meshtastic, how it fits here, simple starting settings, MQTT cautions, and official resources.
+              How Meshtastic fits here, what to keep simple at first, and where to find official Meshtastic resources.
             </p>
             <span class="card-link">Read Meshtastic basics →</span>
           </a>
@@ -148,24 +151,25 @@
         <div class="section-heading">Setup, testing, and maps</div>
         <h2 class="portal-title">Get a node working, then learn what it can hear.</h2>
         <p class="section-lede">
-          These pages are for practical use: choosing a setup, placing a node well, checking observed activity, and using map tools carefully.
+          These pages are for practical use: understanding node roles, placing a node well,
+          checking observed activity, and using map tools carefully.
         </p>
 
         <div class="resource-grid guide-grid">
-          <a class="resource-card action-card guide-card kicker-card" href="/guides/node-setups.html">
-            <span class="guide-label">Practical setup</span>
-            <h3>Node Setups</h3>
+          <a class="resource-card action-card guide-card kicker-card" href="/guides/nodes-repeaters-observers.html">
+            <span class="guide-label">Node roles</span>
+            <h3>Nodes, Repeaters, and Observers</h3>
             <p>
-              Personal nodes, fixed nodes, mobile use, repeaters, observers, antennas, power, placement, maps, MeshMapper for MeshCore, and troubleshooting.
+              Personal nodes, fixed nodes, repeaters, observers, gateways, map-support systems, coverage, visibility, and MeshMapper for MeshCore checks.
             </p>
-            <span class="card-link">Read node setups →</span>
+            <span class="card-link">Read node roles →</span>
           </a>
 
           <a class="resource-card action-card guide-card" href="/coverage.html">
             <span class="guide-label">Map</span>
             <h3>Coverage</h3>
             <p>
-              Open the Hampden County map, observed-activity status, regional links, and coverage notes.
+              Open the Hampden County map, observed-activity status, nearby public tools, and terrain notes.
             </p>
             <span class="card-link">Open coverage →</span>
           </a>
@@ -182,7 +186,7 @@
         <div class="section-heading">Community</div>
         <h2 class="portal-title">Ask questions, share useful results, and keep private details private.</h2>
         <p class="section-lede">
-          The community side supports setup help, local testing, maps, safe screenshots, and practical coordination.
+          These pages cover the community side: Discord, safe sharing, public updates, and how to ask for help.
         </p>
 
         <div class="resource-grid guide-grid">
@@ -204,7 +208,16 @@
             <span class="card-link">Read sharing guide →</span>
           </a>
 
-          <a class="resource-card action-card guide-card" href="/join/" data-join-source="guides-community-card">
+          <a class="resource-card action-card guide-card" href="/updates/">
+            <span class="guide-label">Updates</span>
+            <h3>Community Updates</h3>
+            <p>
+              Occasional notes about site changes, local events, seminars, and observed activity work.
+            </p>
+            <span class="card-link">Read updates →</span>
+          </a>
+
+          <a class="resource-card action-card guide-card" href="/join/guides/" data-join-source="guides">
             <span class="guide-label">Help</span>
             <h3>Ask the Community</h3>
             <p>
@@ -269,8 +282,8 @@
             </div>
 
             <div class="path-step">
-              <strong>3. Node Setups</strong>
-              <span>Learn about placement, antennas, repeaters, observers, maps, MeshMapper for MeshCore, and troubleshooting.</span>
+              <strong>3. Nodes, Repeaters, and Observers</strong>
+              <span>Learn about placement, antennas, repeaters, observers, gateways, maps, MeshMapper for MeshCore, and troubleshooting.</span>
             </div>
 
             <div class="path-step">
@@ -291,7 +304,7 @@
   <footer>
     <div class="container">
       <p class="footer-subtitle">Community-based mesh and radio communications in Western Massachusetts.</p>
-      <p class="footer-updated">Last updated: <span id="last-updated">Loading...</span></p>
+      <p class="footer-updated">Site updated: <span id="last-updated">Loading...</span></p>
     </div>
   </footer>
 

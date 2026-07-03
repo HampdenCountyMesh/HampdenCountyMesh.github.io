@@ -8,7 +8,7 @@ It is intended for documentation and continuity. It should not include broker pa
 
 MQTT is used for infrastructure experimentation, observer-related testing, local logging, and future observed-activity tooling.
 
-For Hampden County Mesh, MQTT should be described as a support and reporting tool. It is not the same thing as direct radio coverage, and it should not be used to imply ownership of every node, packet, marker, observer, or repeater visible in public tools.
+For Hampden County Mesh, MQTT should be described as a support and reporting tool. It is not the same thing as direct radio coverage, and it should not be used to imply ownership of every node, packet, marker, observer, gateway, or repeater visible in public tools.
 
 Use careful wording:
 
@@ -89,6 +89,9 @@ When documenting an MQTT result, try to distinguish between:
 * Dashboard result
 * Public map result
 * Local log result
+* MeshMapper result
+* MeshCore coverage-check result
+* Field-test result
 * Unknown source
 
 Useful public wording:
@@ -131,6 +134,9 @@ Before publishing MQTT-derived data, check for:
 
 * Private node locations
 * Exact coordinates
+* Private observer locations
+* Private gateway locations
+* Private repeater locations
 * Private keys
 * Channel keys
 * Broker credentials
@@ -281,14 +287,19 @@ Do not include live credentials or private access details in maintenance notes.
 * `docs/observed-activity-data.md`
 * `docs/nodes.md`
 * `docs/discord.md`
+* `docs/ASSETS.md`
 
 Related public pages:
 
 * https://hampdencountymesh.org/coverage.html
-* https://hampdencountymesh.org/guides/node-setups.html
-* https://hampdencountymesh.org/guides/using-your-node.html
-* https://hampdencountymesh.org/guides/radio-aids.html
+* https://hampdencountymesh.org/guides/getting-started.html
+* https://hampdencountymesh.org/guides/recommended-settings.html
+* https://hampdencountymesh.org/guides/meshcore-basics.html
+* https://hampdencountymesh.org/guides/meshtastic-basics.html
+* https://hampdencountymesh.org/guides/nodes-repeaters-observers.html
 * https://hampdencountymesh.org/guides/sharing-safely.html
+* https://hampdencountymesh.org/guides/discord.html
+* https://hampdencountymesh.org/updates/
 
 Only link to public pages that currently exist. If a guide is planned but not live, keep it out of public navigation until it is ready.
 

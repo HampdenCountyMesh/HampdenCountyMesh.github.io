@@ -49,7 +49,7 @@ This policy also applies to accidental publication of sensitive information, inc
 * Admin URLs
 * Private IP addresses
 * SSH details
-* Exact private node, observer, or repeater locations
+* Exact private node, observer, gateway, or repeater locations
 * Private home addresses
 * Sensitive screenshots
 * Raw logs containing sensitive data

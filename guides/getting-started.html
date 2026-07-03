@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Getting Started | Hampden County Mesh</title>
-  <meta name="description" content="A short beginner guide for getting started with MeshCore, Meshtastic, recommended settings, node setup, MeshMapper, and local mesh testing in Western Massachusetts.">
+  <meta name="description" content="A beginner guide for getting started with MeshCore, Meshtastic, recommended settings, node roles, and local mesh testing in Western Massachusetts.">
 
   <link rel="canonical" href="https://hampdencountymesh.org/guides/getting-started.html">
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Hampden County Mesh">
   <meta property="og:title" content="Getting Started | Hampden County Mesh">
-  <meta property="og:description" content="A short beginner guide for getting started with MeshCore, Meshtastic, recommended settings, node setup, MeshMapper, and local mesh testing in Western Massachusetts.">
+  <meta property="og:description" content="A beginner guide for getting started with MeshCore, Meshtastic, recommended settings, node roles, and local mesh testing in Western Massachusetts.">
   <meta property="og:url" content="https://hampdencountymesh.org/guides/getting-started.html">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Getting Started | Hampden County Mesh">
-  <meta name="twitter:description" content="A short beginner guide for getting started with MeshCore, Meshtastic, recommended settings, node setup, MeshMapper, and local mesh testing in Western Massachusetts.">
+  <meta name="twitter:description" content="A beginner guide for getting started with MeshCore, Meshtastic, recommended settings, node roles, and local mesh testing in Western Massachusetts.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
@@ -30,7 +30,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=20260701b">
+  <link rel="stylesheet" href="/style.css?v=20260701h">
 </head>
 
 <body>
@@ -48,7 +48,8 @@
         <a href="/">Home</a>
         <a href="/guides/" aria-current="page">Guides</a>
         <a href="/coverage.html">Coverage</a>
-        <a class="discord-nav-button" href="/join/" aria-label="Join the Hampden County Mesh Discord" data-join-source="nav">
+        <a href="/updates/">Updates</a>
+        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord" data-join-source="site-nav">
           <img src="/assets/icons/discord-symbol-white.svg" alt="" aria-hidden="true">
         </a>
       </nav>
@@ -65,7 +66,7 @@
         <h1>Getting Started</h1>
 
         <p class="docs-lede">
-          Start here if you are new to MeshCore, Meshtastic, or local mesh networking. The goal is simple: pick a path, get one normal node working, use the recommended settings, and test from real places.
+          Start here if you are new to MeshCore, Meshtastic, or local mesh radio. The goal is simple: pick a path, get one normal node working, use the recommended settings, and test from real places.
         </p>
 
         <div class="hero-actions">
@@ -89,7 +90,7 @@
             <li>Start with MeshCore if you are buying or setting up a new device.</li>
             <li>Use the <a href="/guides/recommended-settings.html">Recommended Settings</a>.</li>
             <li>Place the node near a window or take it somewhere with a clearer view.</li>
-            <li>Use <a href="/guides/node-setups.html">Node Setups</a> for placement, antennas, maps, MeshMapper, and troubleshooting.</li>
+            <li>Use <a href="/guides/nodes-repeaters-observers.html">Nodes, Repeaters, and Observers</a> for placement, roles, maps, and troubleshooting.</li>
             <li>Check <a href="/coverage.html">Coverage</a> and ask in Discord if you are unsure what you are seeing.</li>
           </ol>
 
@@ -118,14 +119,18 @@
           <h2>Choose a first path</h2>
 
           <p>
-            Hampden County Mesh supports both MeshCore and Meshtastic, but we recommend MeshCore for new users who want dependable local messaging. Meshtastic users are welcome, especially people who already have devices or want to compare both systems.
+            Hampden County Mesh supports both MeshCore and Meshtastic. MeshCore is the main setup focus here because it fits the local direction for two-way messaging, fixed nodes, repeaters, and shared community use.
+          </p>
+
+          <p>
+            Meshtastic users are welcome too, especially people who already have devices or want to compare both systems.
           </p>
 
           <div class="docs-action-grid">
             <div class="docs-action-card">
               <h3>Start with MeshCore</h3>
               <p>
-                Choose MeshCore if you are starting from scratch and want to follow the main direction Hampden County Mesh is focusing on for local channels, repeaters, observers, and regional mesh work.
+                Choose MeshCore if you are starting from scratch and want to follow the main local direction for setup help, settings, repeaters, observers, and regional mesh work.
               </p>
 
               <div class="button-row">
@@ -136,7 +141,7 @@
             <div class="docs-action-card">
               <h3>Already using Meshtastic?</h3>
               <p>
-                Meshtastic is welcome here. It is useful for mapping, telemetry, outdoor use, beaconing, casual participation, and learning.
+                Meshtastic is useful for learning LoRa basics, testing antennas and placement, telemetry, portable use, outdoor experiments, and casual participation.
               </p>
 
               <div class="button-row">
@@ -151,7 +156,7 @@
               </p>
 
               <div class="button-row">
-                <a class="btn secondary" href="/join/" data-join-source="getting-started-choose">Join Discord</a>
+                <a class="btn secondary" href="/join/guides/" data-join-source="guides">Join Discord</a>
               </div>
             </div>
           </div>
@@ -209,13 +214,13 @@
             <div class="docs-card">
               <h3>Observer or gateway</h3>
               <p>
-                A node or support system used to hear activity and contribute to maps or analysis. Future Hampden County Mesh MQTT access should be uplink-only for this kind of use.
+                A node or support system used to hear activity and contribute to maps, logs, or analysis.
               </p>
             </div>
           </div>
 
           <p>
-            Read <a href="/guides/node-setups.html">Node Setups</a> for practical details about node types, antennas, placement, mobile use, repeaters, observers, maps, MeshMapper, and troubleshooting.
+            Read <a href="/guides/nodes-repeaters-observers.html">Nodes, Repeaters, and Observers</a> for practical details about node roles, antennas, placement, mobile use, repeaters, observers, gateways, maps, MeshMapper for MeshCore, and troubleshooting.
           </p>
         </section>
 
@@ -269,7 +274,6 @@
             <li>Attach the antenna before transmitting.</li>
             <li>Place the device near a window or outside temporarily if safe.</li>
             <li>Make one change at a time when troubleshooting.</li>
-            <li>Use maps, app screens, or tools like <a href="https://meshmapper.net/" target="_blank" rel="noopener noreferrer">MeshMapper</a> where appropriate instead of trying to manually track everything.</li>
           </ul>
 
           <p>
@@ -314,7 +318,7 @@
           </ol>
 
           <p>
-            For placement, range, mobile use, maps, and wardriving, use <a href="https://meshmapper.net/" target="_blank" rel="noopener noreferrer">MeshMapper</a> and read <a href="/guides/node-setups.html">Node Setups</a>.
+            For placement, range, mobile use, maps, and troubleshooting, read <a href="/guides/nodes-repeaters-observers.html">Nodes, Repeaters, and Observers</a>. For MeshCore coverage checks, use <a href="https://meshmapper.net/" target="_blank" rel="noopener noreferrer">MeshMapper</a>.
           </p>
         </section>
 
@@ -354,23 +358,15 @@
           </ul>
         </section>
 
-        <section class="docs-section" id="privacy">
-          <h2>Privacy basics</h2>
+        <section class="docs-section" id="sharing">
+          <h2>Before posting screenshots or setup details</h2>
 
           <p>
-            Mesh observations are more useful when they avoid exposing private details.
+            Before posting publicly, check for private messages, exact locations, keys, credentials, Wi-Fi details, addresses, license plates, and anything someone else did not agree to share.
           </p>
 
-          <ul>
-            <li>Do not post private keys, passwords, broker credentials, or Wi-Fi details.</li>
-            <li>Do not publish exact home node locations without careful thought and permission.</li>
-            <li>Do not share someone else’s setup details without permission.</li>
-            <li>Check photos for addresses, license plates, screens, reflections, and EXIF metadata.</li>
-            <li>Use a general area when talking publicly about where a device was used.</li>
-          </ul>
-
           <p>
-            Read <a href="/guides/sharing-safely.html">Sharing Safely</a> before posting public information or photos.
+            For the longer version, read <a href="/guides/sharing-safely.html">Sharing Safely</a>.
           </p>
         </section>
 
@@ -402,12 +398,20 @@
               <span class="card-link">Read Meshtastic basics →</span>
             </a>
 
-            <a class="resource-card action-card" href="/guides/node-setups.html">
-              <h3>Node Setups</h3>
+            <a class="resource-card action-card" href="/guides/nodes-repeaters-observers.html">
+              <h3>Nodes, Repeaters, and Observers</h3>
               <p>
-                Practical guidance for node types, placement, antennas, MeshMapper, maps, and troubleshooting.
+                Practical guidance for node roles, placement, antennas, MeshMapper for MeshCore, maps, and troubleshooting.
               </p>
-              <span class="card-link">Read node setups →</span>
+              <span class="card-link">Read node roles →</span>
+            </a>
+
+            <a class="resource-card action-card" href="/updates/">
+              <h3>Updates</h3>
+              <p>
+                Occasional notes about site changes, local events, seminars, and observed activity work.
+              </p>
+              <span class="card-link">Read updates →</span>
             </a>
           </div>
         </section>
@@ -424,7 +428,7 @@
           </p>
 
           <div class="button-row">
-            <a class="btn primary" href="/join/" data-join-source="getting-started-bottom">Join Discord</a>
+            <a class="btn primary" href="/join/guides/" data-join-source="guides">Join Discord</a>
           </div>
         </section>
       </article>
@@ -434,7 +438,7 @@
   <footer>
     <div class="container">
       <p class="footer-subtitle">Community-based mesh and radio communications in Western Massachusetts.</p>
-      <p class="footer-updated">Last updated: <span id="last-updated">Loading...</span></p>
+      <p class="footer-updated">Site updated: <span id="last-updated">Loading...</span></p>
     </div>
   </footer>
 

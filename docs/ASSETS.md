@@ -29,7 +29,10 @@ Photographs, personal images, contributor-provided images, logos, screenshots, a
 Current public branding and social assets may include:
 
 * `assets/icons/favicon.svg`
+* `assets/icons/hAMPDENcOUNTY.png`
 * `assets/icons/discord-symbol-white.svg`
+* `assets/icons/meshcore.svg`
+* `assets/icons/meshtastic.svg`
 * `assets/images/social/hcm-og-towers.jpg`
 * `assets/images/social/hcm-og-blue.jpg`
 * `assets/images/social/hampden-county-mesh-logo.jpg`
@@ -38,6 +41,10 @@ Legacy or previously used social assets may include:
 
 * `assets/images/social/hcm-logo-900.png`
 * `assets/images/social/hcm-social-card.jpg`
+* `assets/images/social/HCMRockit.png`
+* `assets/images/social/HampdenRockit.png`
+* `assets/images/social/bluebannerrockitt.png`
+* `assets/images/social/mttomrockitt.png`
 
 Current social image alt text:
 
@@ -63,6 +70,14 @@ Site photographs may include:
 * Other Hampden County or regional images relevant to the site
 
 Some photographs may include personally owned devices, the maintainer’s hands, or other personal context. These images are included for Hampden County Mesh documentation and website presentation.
+
+Current or planned cleaned site photo paths may include:
+
+* `assets/images/hero/mt-tom-towers-01.jpg`
+* `assets/images/community/mt-tom-sign-01.jpg`
+* `assets/images/coverage/wio-tracker-field-test-01.jpg`
+
+Only list image paths here if the files exist in the repository or are intentionally being added.
 
 ## Friend-Provided or Contributor-Provided Photographs
 
@@ -116,6 +131,8 @@ Photos may contain:
 
 Remove metadata before publishing public site photos when practical, especially if a photo was taken near a private location, home, vehicle, or sensitive setup.
 
+For public site photos, prefer cleaned versions with EXIF removed.
+
 ## Privacy Checks Before Publishing Images
 
 Before publishing a photo, screenshot, map, or other visual asset, check whether it reveals:
@@ -123,6 +140,9 @@ Before publishing a photo, screenshot, map, or other visual asset, check whether
 * Private addresses
 * License plates
 * Private node locations
+* Private observer locations
+* Private gateway locations
+* Private repeater locations
 * Private coordinates
 * Screens with messages, keys, passwords, or admin pages
 * Wi-Fi names or network details
@@ -144,6 +164,7 @@ Good examples:
 
 * `mt-tom-towers-01.jpg`
 * `mt-tom-sign-01.jpg`
+* `wio-tracker-field-test-01.jpg`
 * `wio-tracker-node-01.jpg`
 * `west-springfield-public-park-01.jpg`
 * `node-demo-table-01.jpg`
@@ -206,7 +227,11 @@ Public map points may be generalized or omitted for privacy and safety.
 
 Published map data should not be treated as exact infrastructure location data unless explicitly stated.
 
-Observed activity data should be described carefully. It may show something heard by a site-maintained system, public source, nearby tool, observer, map, dashboard, or public-safe note. It should not imply that Hampden County Mesh owns, operates, endorses, or manages every visible node, observer, repeater, marker, packet, or device.
+Observed activity data should be described carefully. It may show something heard by a site-maintained system, public source, nearby tool, observer, gateway, map, dashboard, MeshMapper result, or public-safe note. It should not imply that Hampden County Mesh owns, operates, endorses, or manages every visible node, observer, gateway, repeater, marker, packet, or device.
+
+For MeshCore coverage checks, Hampden County Mesh points people toward MeshMapper:
+
+https://meshmapper.net/
 
 ## Third-Party Assets and Services
 
@@ -217,10 +242,13 @@ This may include:
 * OpenStreetMap map tiles and attribution
 * Leaflet
 * Google Fonts
+* Rokkitt
+* Inter
 * GitHub Pages
 * MeshCore
 * Meshtastic
 * Discord
+* MeshMapper
 * External community links
 * Referenced radio, mesh, mapping, or device projects
 

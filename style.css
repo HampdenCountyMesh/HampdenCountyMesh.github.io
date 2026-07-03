@@ -1667,6 +1667,59 @@ footer {
 }
 
 /* =========================================================
+   Updates / Join Redirect Helpers
+   ========================================================= */
+
+.update-list {
+    display: grid;
+    gap: 16px;
+    margin: 22px 0;
+}
+
+.update-card {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+    background:
+        radial-gradient(circle at 18% 10%, var(--green-soft), transparent 35%),
+        linear-gradient(180deg, var(--panel-strong), var(--panel));
+}
+
+.update-card h2,
+.update-card h3 {
+    margin-top: 0;
+}
+
+.update-meta {
+    display: inline-flex;
+    margin-bottom: 10px;
+    color: var(--blue-light);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.update-empty {
+    border-left: 4px solid var(--green);
+    background: var(--green-soft);
+    color: var(--text-soft);
+    padding: 16px 18px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.join-redirect .docs-article {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.join-redirect .button-row {
+    justify-content: center;
+}
+
+/* =========================================================
    Responsive
    ========================================================= */
 
