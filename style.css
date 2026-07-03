@@ -1669,7 +1669,6 @@ footer {
 /* =========================================================
    Updates / Join Redirect Helpers
    ========================================================= */
-
 .update-list {
     display: grid;
     gap: 16px;
@@ -1689,7 +1688,14 @@ footer {
 .update-card h3 {
     margin-top: 0;
 }
+.update-card p {
+    color: var(--text-soft);
+    margin: 0 0 12px;
+}
 
+.update-card p:last-child {
+    margin-bottom: 0;
+}
 .update-meta {
     display: inline-flex;
     margin-bottom: 10px;
@@ -1719,6 +1725,31 @@ footer {
     justify-content: center;
 }
 
+.update-card h2 a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+.update-card h2 a:hover,
+.update-card h2 a:focus-visible {
+    color: var(--blue-light);
+    text-decoration: underline;
+}
+
+.update-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.update-tags span {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 4px 10px;
+    color: var(--text-soft);
+    font-size: 0.78rem;
+}
 /* =========================================================
    Responsive
    ========================================================= */
