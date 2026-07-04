@@ -1,4 +1,5 @@
 ---
+nav: updates
 ---
 <!doctype html>
 <html lang="en">
@@ -16,6 +17,8 @@
   <meta property="og:description" content="Occasional updates from Hampden County Mesh about site changes, guides, local events, seminars, and observed activity work.">
   <meta property="og:url" content="https://hampdencountymesh.org/updates/">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
   <meta name="twitter:card" content="summary_large_image">
@@ -37,24 +40,7 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="noise" aria-hidden="true"></div>
 
-  <header>
-    <div class="container">
-      <a class="brand" href="/" aria-label="Hampden County Mesh home">
-        <img class="brand-icon" src="/assets/icons/favicon.svg" alt="" width="26" height="26" aria-hidden="true">
-        <span>Hampden County Mesh</span>
-      </a>
-
-      <nav aria-label="Main navigation">
-        <a href="/">Home</a>
-        <a href="/guides/">Guides</a>
-        <a href="/coverage.html">Coverage</a>
-        <a href="/updates/" aria-current="page">Updates</a>
-        <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord" data-join-source="site-nav">
-          <img src="/assets/icons/discord-symbol-white.svg" alt="" aria-hidden="true">
-        </a>
-      </nav>
-    </div>
-  </header>
+  {% include header.html active="updates" %}
 
   <main id="main" class="docs-shell">
     <div class="container">
@@ -89,7 +75,7 @@
               {% if update.tags %}
                 <p class="update-tags">
                   {% for tag in update.tags %}
-                    <span>{{ tag }}</span>
+                    <span>{{ tag | escape }}</span>
                   {% endfor %}
                 </p>
               {% endif %}
@@ -112,19 +98,13 @@
 
           <div class="button-row">
             <a class="btn primary" href="/join/updates/" data-join-source="updates">Join Discord</a>
+            <a class="btn secondary" href="/guides/">Read Guides</a>
           </div>
         </section>
       </article>
     </div>
   </main>
 
-  <footer>
-    <div class="container">
-      <p class="footer-subtitle">Community-based mesh and radio communications in Western Massachusetts.</p>
-      <p class="footer-updated">Site updated: <span id="last-updated">Loading...</span></p>
-    </div>
-  </footer>
-
-  <script src="/last-updated.js" defer></script>
+  {% include footer.html %}
 </body>
 </html>
