@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: "Joining Discord" | escape }} | Hampden County Mesh</title>
+  <meta name="description" content="Redirecting to the Hampden County Mesh Discord.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta http-equiv="refresh" content="0; url=https://discord.gg/egyUeREcmX">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Hampden County Mesh">
+  <meta property="og:title" content="Join the Hampden County Mesh Discord">
+  <meta property="og:description" content="Join the Hampden County Mesh Discord for setup help, local testing, guide questions, and community discussion.">
+  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
+  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Join the Hampden County Mesh Discord">
+  <meta name="twitter:description" content="Join the Hampden County Mesh Discord for setup help, local testing, guide questions, and community discussion.">
+  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
+
+  <meta name="theme-color" content="#101820">
+
+  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css?v=20260701h">
+
+  <script>
+    window.location.replace("https://discord.gg/egyUeREcmX");
+  </script>
+</head>
+
+<body class="join-redirect" data-join-source="{{ page.join_source | default: 'general' | escape }}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="noise" aria-hidden="true"></div>
+
+  {% include header.html %}
+
+  <main id="main" class="docs-shell">
+    <div class="container">
+      <article class="docs-article">
+        <p class="docs-breadcrumb">
+          Hampden County Mesh / Discord
+        </p>
+
+        <h1>Joining Discord</h1>
+
+        <p class="docs-lede">
+          You should be redirected to the Hampden County Mesh Discord automatically.
+        </p>
+
+        <p>
+          If the redirect does not work, use the button below.
+        </p>
+
+        <div class="button-row">
+          <a class="btn primary" href="https://discord.gg/egyUeREcmX" rel="nofollow" data-join-source="{{ page.join_source | default: 'general' | escape }}">Join Discord</a>
+          <a class="btn secondary" href="/">Back to Home</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  {% include footer.html %}
+</body>
+</html>
