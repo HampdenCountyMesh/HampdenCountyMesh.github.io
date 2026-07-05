@@ -161,6 +161,9 @@ The `/docs/` folder contains supporting documentation for repo maintainers and c
 
 * Discord notes
 * Observed activity data notes
+* Map subdomain notes
+* Broker and data access notes
+* MQTT and observer notes
 * Asset and media handling notes
 * Website or repository support notes
 * Future infrastructure notes when they are ready to be public
