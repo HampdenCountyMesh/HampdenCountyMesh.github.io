@@ -39,6 +39,12 @@ The `/docs/` folder may include more technical notes, maintenance notes, impleme
 * `observed-activity-data.md`
   Notes about how observed activity data should be collected, described, published, limited, and explained.
 
+* `map-subdomain.md`
+  Notes about `map.hampdencountymesh.org`, the temporary Coverage redirect, and future live map expectations.
+
+* `broker-data-access.md`
+  Notes about future broker/data-feed sharing, CoreScope-style integrations, read-only access expectations, and what must not be published.
+
 ## Purpose
 
 Documentation in this folder should help maintainers understand:
@@ -118,6 +124,25 @@ Good wording:
 
 Use care with wording like “network.” When used publicly, it should usually describe the people and community, not imply ownership of one official device network.
 
+## Map and Data Readiness
+
+The public map address is:
+
+https://map.hampdencountymesh.org/
+
+For now, that address redirects to the Coverage page while future live or near-live map tooling is prepared.
+
+Future map, bot, broker, observer, MQTT, or CoreScope-related work should follow the privacy and safety rules in this folder before public data is published.
+
+Relevant files:
+
+* `map-subdomain.md`
+* `broker-data-access.md`
+* `observed-activity-data.md`
+* `mqtt.md`
+* `observers.md`
+* `nodes.md`
+
 ## Maintenance Notes
 
 Keep documentation practical and current.
@@ -138,6 +163,10 @@ Good documentation should answer:
 Public website:
 
 https://hampdencountymesh.org/
+
+Map address:
+
+https://map.hampdencountymesh.org/
 
 Guide library:
 
