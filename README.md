@@ -1,6 +1,6 @@
 # Hampden County Mesh
 
-Hampden County Mesh is a local community effort for MeshCore, Meshtastic, maps, setup help, and local mesh radio across Hampden County and nearby Western Massachusetts.
+Hampden County Mesh is a local community effort for MeshCore, Meshtastic, public-safe map references, setup help, and local mesh radio across Hampden County and nearby Western Massachusetts.
 
 This repository contains the public website and supporting documentation for Hampden County Mesh.
 
@@ -60,6 +60,25 @@ Current public status:
 * Site-maintained systems: manually documented
 * Public live data automation: not enabled yet
 * New participants: welcome
+* Map address: reserved and redirecting to Coverage
+
+* ## Map and Public Data Status
+
+The public map address is:
+
+https://map.hampdencountymesh.org/
+
+For now, that address redirects to the Coverage page while future live or near-live observed activity tooling is prepared.
+
+Public live activity data is not automated yet. The repository includes placeholder public data files and documentation for future observer, MQTT, broker, CoreScope, or map-related work.
+
+Related documentation:
+
+* `docs/map-subdomain.md`
+* `docs/broker-data-access.md`
+* `docs/observed-activity-data.md`
+* `docs/mqtt.md`
+* `docs/observers.md`
 
 The broader local mesh ecosystem may include independent nodes, observers, repeaters, mobile devices, nearby regions, and public tools that are not operated by Hampden County Mesh.
 
