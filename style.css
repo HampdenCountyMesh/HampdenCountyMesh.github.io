@@ -828,6 +828,19 @@ h1 {
     color: var(--text-soft);
     margin: 0 0 16px;
 }
+.compact-image-feature {
+  align-items: center;
+}
+
+.compact-image-feature .image-frame {
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+.compact-image-feature img {
+  max-height: 360px;
+  object-fit: cover;
+}
 
 /* =========================================================
    Footer
