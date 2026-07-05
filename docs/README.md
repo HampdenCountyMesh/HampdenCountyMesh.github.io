@@ -8,42 +8,28 @@ The `/docs/` folder is for supporting documentation. It is different from the pu
 
 The `/guides/` folder contains public-facing educational pages for beginners and community members.
 
-The `/docs/` folder may include more technical notes, maintenance notes, implementation details, and background information for people helping maintain the site or related systems.
-
 ## Documentation Index
 
 ### Community and Coordination
 
-* `discord.md`
-  Notes about the Discord server, channels, roles, onboarding, moderation expectations, and future integrations.
+* `discord.md`  
+  Notes about the Discord server, channels, roles, onboarding, moderation expectations, GitHub integration, and future bot or relay planning.
 
 ### Website Assets
 
-* `ASSETS.md`
-  Notes about website images, icons, file naming, photo permissions, EXIF cleanup, screenshots, map assets, and media usage.
+* `ASSETS.md`  
+  Notes about website images, icons, file naming, photo permissions, EXIF cleanup, screenshots, map assets, third-party assets, and media usage.
 
 ### Infrastructure and Systems
 
-* `infrastructure.md`
-  Notes about site-maintained systems, local support hardware, server roles, and general infrastructure layout.
+* `infrastructure.md`  
+  Main overview of site-maintained systems, local support hardware, MeshCore-Hub, CoreScope, Mosquitto, observer work, portable devices, fixed nodes, and general infrastructure status.
 
-* `nodes.md`
-  Notes about documented nodes, repeaters, observers, portable devices, and other mesh-related hardware.
+* `data-access-and-observed-activity.md`  
+  Notes about observed activity, MQTT-backed tooling, broker or data-feed access, CoreScope-style integrations, public-safe data rules, source types, privacy review, and what must not be published.
 
-* `observers.md`
-  Notes about observer devices, what they hear, what they report, and how observed activity should be described.
-
-* `mqtt.md`
-  Notes about MQTT, brokers, uplinks, logging, public activity feeds, and related backend work.
-
-* `observed-activity-data.md`
-  Notes about how observed activity data should be collected, described, published, limited, and explained.
-
-* `map-subdomain.md`
-  Notes about `map.hampdencountymesh.org`, the temporary Coverage redirect, and future live map expectations.
-
-* `broker-data-access.md`
-  Notes about future broker/data-feed sharing, CoreScope-style integrations, read-only access expectations, and what must not be published.
+* `map-subdomain.md`  
+  Notes about `map.hampdencountymesh.org`, the current Coverage redirect, future public map expectations, launch checklist, and public map wording.
 
 ## Purpose
 
@@ -82,31 +68,7 @@ Do not include:
 
 When documentation needs to describe a location, use a general area, town, public landmark, or broad terrain description unless exact sharing is clearly intentional and safe.
 
-## Observed Activity Wording
-
-When documenting maps, dashboards, observers, logs, MQTT feeds, or public activity data, use careful wording.
-
-Observed activity means something was heard, logged, reported, mapped, or shown by a system or public source. It does not mean Hampden County Mesh owns or operates every node, marker, packet, observer, repeater, gateway, or device shown.
-
-Use wording like:
-
-* observed activity
-* activity heard by site-maintained systems
-* activity reported by public sources
-* public activity data where available
-* local radio observations
-* local use information
-* MeshCore coverage checks
-* field-testing results
-
-Avoid wording that suggests:
-
-* complete coverage
-* guaranteed communication
-* ownership of all nodes
-* control of all nearby mesh activity
-* emergency service capability
-* replacement for 911 or official emergency services
+Detailed data, broker, MQTT, observed-activity, and CoreScope rules should live in `data-access-and-observed-activity.md` instead of being repeated in every file.
 
 ## Public Wording
 
@@ -121,6 +83,18 @@ Good wording:
 * site-maintained systems
 * public sources
 * observed activity
+* field testing
+* MeshCore field testing
+* MeshMapper field testing
+
+Avoid wording that suggests:
+
+* complete coverage
+* guaranteed communication
+* ownership of all nodes
+* control of all nearby mesh activity
+* emergency service capability
+* replacement for 911 or official emergency services
 
 Use care with wording like “network.” When used publicly, it should usually describe the people and community, not imply ownership of one official device network.
 
@@ -132,16 +106,11 @@ https://map.hampdencountymesh.org/
 
 For now, that address redirects to the Coverage page while future live or near-live map tooling is prepared.
 
-Future map, bot, broker, observer, MQTT, or CoreScope-related work should follow the privacy and safety rules in this folder before public data is published.
+Future map, bot, broker, observer, MQTT, or CoreScope-related work should follow the privacy and safety rules in:
 
-Relevant files:
-
+* `data-access-and-observed-activity.md`
 * `map-subdomain.md`
-* `broker-data-access.md`
-* `observed-activity-data.md`
-* `mqtt.md`
-* `observers.md`
-* `nodes.md`
+* `infrastructure.md`
 
 ## Maintenance Notes
 
@@ -157,6 +126,8 @@ Good documentation should answer:
 * What should be checked later?
 * Does the public site need to be updated too?
 * Does any related guide page need to be updated too?
+
+Avoid copying the same long privacy or observed-activity language into every document. Link to the main related file instead.
 
 ## Related Public Pages
 
@@ -196,17 +167,9 @@ Meshtastic Basics:
 
 https://hampdencountymesh.org/guides/meshtastic-basics.html
 
-Nodes, Repeaters, and Observers:
-
-https://hampdencountymesh.org/guides/nodes-repeaters-observers.html
-
 Sharing Safely:
 
 https://hampdencountymesh.org/guides/sharing-safely.html
-
-Discord guide:
-
-https://hampdencountymesh.org/guides/discord.html
 
 Discord join route:
 
@@ -216,4 +179,4 @@ Only link to public pages that currently exist. If a guide is planned but not li
 
 ## Emergency and Safety Note
 
-Hampden County Mesh is a community education and hobby effort. It is not an emergency service or a replacement for 911.
+Hampden County Mesh is a community education and hobby effort. It is not an emergency service, public safety system, or replacement for 911.

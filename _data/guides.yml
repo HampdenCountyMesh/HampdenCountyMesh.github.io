@@ -3,7 +3,7 @@
   title: Getting Started
   url: /guides/getting-started.html
   label: First stop
-  summary: Choose MeshCore or Meshtastic, understand what you need, and avoid overcomplicating your first setup.
+  summary: Choose MeshCore or Meshtastic, get one device working, and avoid overcomplicating your first setup.
   link_text: Start here →
   featured: true
 
@@ -20,9 +20,9 @@
   group: mesh_systems
   title: MeshCore Basics
   url: /guides/meshcore-basics.html
-  label: Recommended start
-  summary: What MeshCore is, why this site focuses on it, and how to start with a simple local setup.
-  link_text: Read MeshCore basics →
+  label: Main focus
+  summary: MeshCore basics, local settings, roles, channels, maps, observers, and how to start simply.
+  link_text: Read MeshCore Basics →
   featured: true
 
 - order: 4
@@ -31,29 +31,21 @@
   url: /guides/meshtastic-basics.html
   label: Also supported
   summary: How Meshtastic fits here, what to keep simple at first, and where to find official Meshtastic resources.
-  link_text: Read Meshtastic basics →
+  link_text: Read Meshtastic Basics →
 
 - order: 5
   group: setup_maps
-  title: Nodes, Repeaters, and Observers
-  url: /guides/nodes-repeaters-observers.html
-  label: Node roles
-  summary: Personal nodes, fixed nodes, repeaters, observers, gateways, map-support systems, coverage, visibility, and MeshMapper for MeshCore checks.
-  link_text: Read node roles →
+  title: Coverage
+  url: /coverage.html
+  label: Map and testing
+  summary: Terrain notes, MeshMapper, local testing notes, map status, and observed-activity planning.
+  link_text: Open Coverage →
   featured: true
 
 - order: 6
-  group: community
-  title: Discord Guide
-  url: /guides/discord.html
-  label: Discord
-  summary: How the Discord is used for setup help, announcements, local testing, maps, and community coordination.
-  link_text: Read Discord guide →
-
-- order: 7
   group: community
   title: Sharing Safely
   url: /guides/sharing-safely.html
   label: Privacy
   summary: Share useful mesh observations, screenshots, photos, and map results without exposing private details.
-  link_text: Read sharing guide →
+  link_text: Read Sharing Safely →

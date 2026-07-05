@@ -1,71 +1,33 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ page.title | escape }} | Hampden County Mesh</title>
-  <meta name="description" content="{{ page.summary | default: page.excerpt | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+---
+layout: default
+main_class: docs-shell
+nav: updates
+og_type: article
+---
 
-  <link rel="canonical" href="{{ page.url | absolute_url }}">
+<div class="container">
+  <article class="docs-article">
+    <p class="docs-breadcrumb">
+      <a href="{{ '/updates/' | relative_url }}">Updates</a> / {{ page.title | escape }}
+    </p>
 
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Hampden County Mesh">
-  <meta property="og:title" content="{{ page.title | escape }} | Hampden County Mesh">
-  <meta property="og:description" content="{{ page.summary | default: page.excerpt | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
-  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+    {% if page.date %}
+      <p class="update-meta">{{ page.date | date: "%B %-d, %Y" }}</p>
+    {% endif %}
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ page.title | escape }} | Hampden County Mesh">
-  <meta name="twitter:description" content="{{ page.summary | default: page.excerpt | strip_html | normalize_whitespace | truncate: 160 | escape }}">
-  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
-  <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+    <h1>{{ page.title | escape }}</h1>
 
-  <meta name="theme-color" content="#101820">
+    {% if page.summary %}
+      <p class="docs-lede">
+        {{ page.summary | escape }}
+      </p>
+    {% endif %}
 
-  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=20260701h">
-</head>
+    {{ content }}
 
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="noise" aria-hidden="true"></div>
-
-  {% include header.html active="updates" %}
-
-  <main id="main" class="docs-shell">
-    <div class="container">
-      <article class="docs-article">
-        <p class="docs-breadcrumb">
-          <a href="/updates/">Updates</a> / {{ page.title | escape }}
-        </p>
-
-        <p class="update-meta">{{ page.date | date: "%B %-d, %Y" }}</p>
-
-        <h1>{{ page.title | escape }}</h1>
-
-        {% if page.summary %}
-        <p class="docs-lede">
-          {{ page.summary | escape }}
-        </p>
-        {% endif %}
-
-        {{ content }}
-
-        <div class="button-row">
-          <a class="btn secondary" href="/updates/">Back to Updates</a>
-          <a class="btn primary" href="/join/updates/" data-join-source="updates">Join Discord</a>
-        </div>
-      </article>
+    <div class="button-row">
+      <a class="btn secondary" href="{{ '/updates/' | relative_url }}">Back to Updates</a>
+      {% include discord-cta.html source="updates" %}
     </div>
-  </main>
-
-  {% include footer.html %}
-
-  <script src="/last-updated.js" defer></script>
-</body>
-</html>
+  </article>
+</div>

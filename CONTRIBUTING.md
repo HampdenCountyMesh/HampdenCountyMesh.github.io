@@ -2,7 +2,7 @@
 
 Thank you for your interest in contributing to Hampden County Mesh.
 
-Hampden County Mesh is a local community effort focused on mesh radio, radio learning, public-safe documentation, setup help, maps, and shared communications knowledge across Hampden County and nearby Western Massachusetts.
+Hampden County Mesh is a local community effort focused on mesh radio, radio learning, setup help, public-safe documentation, maps, and shared communications knowledge across Hampden County and nearby Western Massachusetts.
 
 You do not need to write code or be a radio expert to contribute.
 
@@ -17,7 +17,7 @@ Useful contributions include:
 * Typo and link fixes
 * Public-safe local radio observations
 * Public-safe device notes
-* Public-safe map or coverage suggestions
+* Public-safe map or field testing suggestions
 * Public-safe setup examples
 * Hardware testing notes
 * Mapping suggestions
@@ -113,6 +113,7 @@ Good wording includes:
 
 * observed activity
 * local radio observations
+* field testing
 * local use notes
 * activity heard by site-maintained systems
 * activity reported by public sources
@@ -128,7 +129,7 @@ Avoid wording like:
 * emergency-ready coverage
 * official public safety system
 
-## Node, Observer, and Infrastructure Information
+## Device, Site, and Infrastructure Information
 
 When submitting information about nodes, observers, gateways, repeaters, portable devices, support systems, or infrastructure:
 
@@ -162,7 +163,7 @@ Avoid posting:
 * Credentials or keys
 * Photos that reveal private locations unintentionally
 
-## Local Radio Observations
+## Field Testing and Local Radio Observations
 
 Local radio observations do not need to be formal.
 
@@ -181,6 +182,10 @@ Helpful public-safe notes may include:
 * Date or general time, if safe to share
 
 Do not include exact private locations or sensitive details unless sharing is intentional and safe.
+
+For MeshCore field testing, Hampden County Mesh points people toward MeshMapper:
+
+https://meshmapper.net/
 
 ## Photos and Media
 
@@ -222,12 +227,52 @@ When changing public website pages, check for:
 * Mobile readability
 * Consistent navigation
 * Clear beginner-friendly wording
-* Current favicon, font, metadata, and stylesheet references
-* No raw temporary Discord invite links
 * No stale planned content shown as live
 * No private credentials or sensitive data
 * No overclaims about coverage or ownership
 * No links to retired pages or old guide filenames
+* No raw temporary Discord invite links
+* Correct use of shared Jekyll layouts and includes
+
+Normal public pages should use the shared Jekyll layout instead of duplicating the full HTML shell.
+
+For most pages, use front matter like:
+
+    ---
+    layout: default
+    title: Page Title
+    description: Short page description.
+    nav: guides
+    ---
+
+Guide pages should normally use:
+
+    ---
+    layout: guide
+    title: Guide Title
+    description: Short guide description.
+    lede: Short intro text for the guide.
+    ---
+
+Do not duplicate these shared pieces inside normal pages:
+
+* `<!doctype html>`
+* `<head>`
+* Header navigation
+* Footer
+* Font links
+* Favicon links
+* `last-updated.js`
+
+Those are handled through:
+
+* `_layouts/default.html`
+* `_layouts/guide.html`
+* `_includes/head.html`
+* `_includes/header.html`
+* `_includes/footer.html`
+* `_includes/discord-cta.html`
+* `_data/nav.yml`
 
 Use local join routes for Discord links, such as:
 
@@ -240,6 +285,35 @@ Use local join routes for Discord links, such as:
 * `/join/flier/`
 
 Do not publish raw Discord invite links in website pages or documentation unless there is a specific reason.
+
+## Retired Pages and Old Paths
+
+Do not add new links to retired pages or old guide filenames.
+
+Retired paths include:
+
+* `about.html`
+* `infrastructure.html`
+* `status.html`
+* `guides/coverage-and-signal-checks.html`
+* `guides/documenting-a-node.html`
+* `guides/contributing-notes.html`
+* `guides/hosting-a-session.html`
+* `guides/operating-aids.html`
+* `guides/nodes-repeaters-observers.html`
+* `guides/discord.html`
+
+Use current pages instead:
+
+* `/`
+* `/guides/`
+* `/guides/getting-started.html`
+* `/guides/recommended-settings.html`
+* `/guides/meshcore-basics.html`
+* `/guides/meshtastic-basics.html`
+* `/guides/sharing-safely.html`
+* `/coverage.html`
+* `/updates/`
 
 ## Community Expectations
 

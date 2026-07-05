@@ -1,6 +1,6 @@
-name: Coverage / Local Radio Observation
-description: Share a public-safe coverage note, mobile use note, device check, or observed activity report.
-title: "[Coverage]: "
+name: Field Testing / Local Observation
+description: Share a public-safe field testing note, mobile use note, device check, or local mesh observation.
+title: "[Field Test]: "
 labels:
   - coverage
 
@@ -8,27 +8,26 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this template for public-safe local radio observations, coverage notes, mobile use notes, park checks, device checks, repeater or observer notes, or observed activity reports.
+        Use this template for public-safe field testing notes, mobile use notes, park checks, device checks, local mesh observations, or general map/documentation notes.
 
         Please do not post exact private addresses, exact private coordinates, private node locations, private observer locations, credentials, private messages, or sensitive screenshots.
 
         General areas are usually enough: town, neighborhood, road corridor, public park, public landmark, hill, or general area.
 
-        For private location details or sensitive system information, do not open a public issue. Contact contact@hampdencountymesh.org instead.
+        For private location details, exposed credentials, private infrastructure details, or sensitive system information, do not open a public issue. Follow `SECURITY.md` or contact security@hampdencountymesh.org.
 
   - type: dropdown
     id: report_type
     attributes:
       label: Report type
-      description: What kind of coverage or local radio report is this?
+      description: What kind of public-safe report is this?
       options:
-        - Local radio observation
+        - Field testing note
         - Mobile use note
         - Portable node check
-        - Fixed node observation
-        - Repeater or outdoor node check
-        - Observer note
-        - Public map or observed activity note
+        - Public park or public landmark check
+        - General local mesh observation
+        - Map or documentation note
         - Event or temporary setup
         - Other
     validations:
@@ -44,7 +43,6 @@ body:
         - Meshtastic
         - Both MeshCore and Meshtastic
         - FRS / GMRS / MURS / CB / amateur radio
-        - Scanner or receive-only listening
         - Not sure
         - Other
     validations:
@@ -64,7 +62,7 @@ body:
     attributes:
       label: Summary
       description: Briefly describe what you tried, heard, observed, or noticed.
-      placeholder: "Example: Walked around a public park with a portable MeshCore node and checked whether any nodes or packets were heard."
+      placeholder: "Example: Walked around a public park with a portable MeshCore node and noted whether any activity was heard."
     validations:
       required: true
 
@@ -89,11 +87,10 @@ body:
       description: What worked, what did not work, or what was observed?
       placeholder: |
         Example:
-        - Heard packets from...
-        - Could not reach...
-        - Better results near...
+        - Heard public activity from a general area
         - No activity heard during this check
-        - Results changed with height, vehicle placement, or location
+        - Better results near a hill, overlook, window, or open area
+        - Results changed with height, vehicle placement, antenna, or location
     validations:
       required: false
 
@@ -115,7 +112,7 @@ body:
     id: map_notes
     attributes:
       label: Map or documentation notes
-      description: Optional. Should this become a public-safe map note, guide note, or future coverage reference?
+      description: Optional. Should this become a public-safe map note, guide note, update, or future reference?
       placeholder: "Example: This may be useful as a general note for West Springfield parks, but should not include exact coordinates."
     validations:
       required: false

@@ -117,16 +117,16 @@ img {
 }
 
 section {
-    padding: 72px 0;
+    padding: 64px 0;
 }
 
 .section-heading {
     font-family: var(--font-display);
     color: var(--amber);
-    letter-spacing: 0.14em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    font-size: 0.92rem;
-    margin-bottom: 24px;
+    font-size: 0.78rem;
+    margin-bottom: 20px;
 }
 
 /* =========================================================
@@ -174,7 +174,7 @@ header {
 }
 
 header .container {
-    min-height: 72px;
+    min-height: 68px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -184,11 +184,11 @@ header .container {
 .brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0.65rem;
     font-family: var(--font-display);
     color: var(--text);
-    letter-spacing: 0.06em;
-    font-size: 0.95rem;
+    letter-spacing: 0.05em;
+    font-size: 0.92rem;
     white-space: nowrap;
 }
 
@@ -196,10 +196,24 @@ header .container {
     color: var(--text);
 }
 
-.brand-icon {
-    width: 26px;
-    height: 26px;
+.brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(218, 185, 118, 0.55);
+    border-radius: 999px;
+    background: #f1e6c8;
+    box-shadow: 0 0 0 3px rgba(218, 185, 118, 0.08);
     flex: 0 0 auto;
+}
+
+.brand-icon {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    display: block;
 }
 
 nav {
@@ -212,9 +226,9 @@ nav {
 
 nav a {
     color: var(--text-soft);
-    font-size: 0.86rem;
+    font-size: 0.82rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.07em;
 }
 
 nav a:hover,
@@ -326,16 +340,16 @@ h1 {
     margin: 0;
     font-family: var(--font-display);
     color: var(--text);
-    font-size: clamp(2.7rem, 8vw, 6.2rem);
-    line-height: 0.95;
+    font-size: clamp(2.35rem, 6vw, 4.75rem);
+    line-height: 0.98;
     letter-spacing: 0.02em;
 }
 
 .hero-text {
     max-width: 760px;
-    margin: 28px auto 0;
+    margin: 24px auto 0;
     color: var(--text-soft);
-    font-size: clamp(1.05rem, 2vw, 1.25rem);
+    font-size: clamp(1rem, 1.7vw, 1.16rem);
 }
 
 .hero-actions,
@@ -411,8 +425,8 @@ h1 {
     margin: 0 0 18px;
     color: var(--text);
     font-family: var(--font-display);
-    font-size: clamp(3rem, 8vw, 6rem);
-    line-height: 0.95;
+    font-size: clamp(2.2rem, 6vw, 4.2rem);
+    line-height: 1;
     letter-spacing: 0.01em;
 }
 
@@ -481,8 +495,8 @@ h1 {
     margin: 0 0 18px;
     font-family: var(--font-display);
     color: var(--text);
-    font-size: clamp(2.8rem, 7vw, 5.4rem);
-    line-height: 0.95;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    line-height: 1;
     letter-spacing: 0.01em;
 }
 
@@ -521,7 +535,7 @@ h1 {
 }
 
 .home-image-copy h3 {
-    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-size: clamp(1.9rem, 4vw, 3rem);
 }
 
 .home-image-copy p {
@@ -685,9 +699,9 @@ h1 {
 .community-card h3 {
     margin: 0 0 12px;
     color: var(--text);
-    font-size: 1rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font-size: 1.08rem;
+    letter-spacing: 0.02em;
+    text-transform: none;
 }
 
 .dashboard-card .value {
@@ -773,7 +787,7 @@ h1 {
 .map-overlay h2 {
     margin: 0 0 16px;
     font-family: var(--font-display);
-    font-size: clamp(1.9rem, 4vw, 3.2rem);
+    font-size: clamp(1.65rem, 3vw, 2.35rem);
     color: var(--text);
 }
 
@@ -828,18 +842,19 @@ h1 {
     color: var(--text-soft);
     margin: 0 0 16px;
 }
+
 .compact-image-feature {
-  align-items: center;
+    align-items: center;
 }
 
 .compact-image-feature .image-frame {
-  max-width: 420px;
-  margin-inline: auto;
+    width: min(100%, 420px);
+    margin-inline: auto;
 }
 
 .compact-image-feature img {
-  max-height: 360px;
-  object-fit: cover;
+    max-height: 360px;
+    object-fit: cover;
 }
 
 /* =========================================================
@@ -988,7 +1003,7 @@ footer {
 }
 
 .docs-article h1 {
-    font-size: clamp(2.3rem, 5vw, 4.5rem);
+    font-size: clamp(2.1rem, 4.5vw, 3.6rem);
     margin-bottom: 18px;
 }
 
@@ -1011,7 +1026,7 @@ footer {
     margin: 0 0 14px;
     color: var(--amber);
     font-family: var(--font-display);
-    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-size: clamp(1.45rem, 2.7vw, 2rem);
 }
 
 .docs-section h3 {
@@ -1224,9 +1239,9 @@ footer {
     margin: 0 auto 14px;
     color: var(--text);
     font-family: var(--font-display);
-    font-size: clamp(1.9rem, 4vw, 3.25rem);
+    font-size: clamp(1.7rem, 3.5vw, 2.7rem);
     font-weight: 800;
-    line-height: 1.08;
+    line-height: 1.1;
 }
 
 .section-lede {
@@ -1325,9 +1340,9 @@ footer {
 .quick-path h2 {
     margin: 0 0 14px;
     font-family: var(--font-display);
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.12;
 }
 
 .quick-path p {
@@ -1397,7 +1412,7 @@ footer {
 }
 
 /* =========================================================
-   Basics / Setup / Sharing s
+   Basics / Setup / Sharing
    ========================================================= */
 
 .basics-grid,
@@ -1476,7 +1491,7 @@ footer {
     margin: 0 0 10px;
     font-family: var(--font-display);
     color: var(--text);
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-size: clamp(1.55rem, 2.7vw, 2.15rem);
     font-weight: 800;
 }
 
@@ -1529,9 +1544,9 @@ footer {
 .guide-panel h2 {
     margin: 0 0 14px;
     font-family: var(--font-display);
-    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-size: clamp(1.6rem, 3.2vw, 2.4rem);
     font-weight: 800;
-    line-height: 1.1;
+    line-height: 1.12;
 }
 
 .guide-panel h3 {
@@ -1588,57 +1603,35 @@ footer {
 }
 
 /* =========================================================
-   Coverage Map
+   Embedded Maps / External Tools
    ========================================================= */
 
-.coverage-map-panel {
-    border: 1px solid rgba(73, 102, 132, 0.42);
-    background:
-        radial-gradient(circle at 15% 10%, rgba(111, 143, 95, 0.18), transparent 34%),
-        linear-gradient(180deg, rgba(17, 24, 25, 0.96), rgba(7, 9, 8, 0.96));
-    border-radius: 20px;
-    padding: 18px;
-    box-shadow: 0 0 35px rgba(0, 0, 0, 0.34);
-    overflow: hidden;
-}
-
-#coverage-map,
-.coverage-map {
+.embed-frame {
     width: 100%;
-    height: 500px;
-    border-radius: 14px;
-    border: 1px solid rgba(95, 127, 104, 0.38);
-    background: #132125;
-    z-index: 1;
+    min-height: 420px;
+    margin: 1.25rem 0;
+    overflow: hidden;
+    border: 1px solid rgba(241, 230, 200, 0.16);
+    border-radius: 18px;
+    background: rgba(0, 0, 0, 0.22);
 }
 
-.coverage-map-note {
-    color: var(--text);
-    line-height: 1.65;
-    font-size: 0.95rem;
-    margin-top: 14px;
-    padding: 14px 16px;
-    border-left: 4px solid var(--green);
-    background: rgba(95, 127, 104, 0.12);
-    border-radius: 12px;
+.embed-frame iframe {
+    display: block;
+    width: 100%;
+    height: 420px;
+    border: 0;
 }
 
-.coverage-map-note strong {
-    color: var(--amber);
-}
-
-.leaflet-container {
-    font-family: var(--font-body);
-}
-
-.leaflet-popup-content-wrapper,
-.leaflet-popup-tip {
-    background: #101820;
-    color: #e7d8b5;
-}
-
-.leaflet-popup-content strong {
-    color: var(--amber);
+.page-emblem {
+    width: 54px;
+    height: 54px;
+    margin: 0 auto 1rem;
+    padding: 0.45rem;
+    object-fit: contain;
+    border: 1px solid rgba(218, 185, 118, 0.55);
+    border-radius: 999px;
+    background: #f1e6c8;
 }
 
 /* =========================================================
@@ -1672,20 +1665,6 @@ footer {
     color: var(--green);
 }
 
-.coverage-data-status {
-    margin-top: 12px;
-    padding: 14px 16px;
-    border: 1px solid rgba(73, 102, 132, 0.46);
-    border-radius: 14px;
-    background: rgba(16, 24, 32, 0.72);
-    color: var(--muted);
-    font-size: 0.92rem;
-    line-height: 1.55;
-}
-
-.coverage-data-status strong {
-    color: var(--cream);
-}
 
 /* =========================================================
    Updates / Join Redirect Helpers
@@ -1902,9 +1881,10 @@ footer {
         overflow: visible;
     }
 
-    #coverage-map,
-    .coverage-map {
-        height: 360px;
+    .embed-frame,
+    .embed-frame iframe {
+        min-height: 340px;
+        height: 340px;
     }
 }
 

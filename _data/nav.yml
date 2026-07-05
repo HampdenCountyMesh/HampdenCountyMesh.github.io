@@ -1,0 +1,15 @@
+- title: Home
+  url: /
+  key: home
+
+- title: Guides
+  url: /guides/
+  key: guides
+
+- title: Coverage
+  url: /coverage.html
+  key: coverage
+
+- title: Updates
+  url: /updates/
+  key: updates

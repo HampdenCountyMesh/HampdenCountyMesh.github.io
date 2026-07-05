@@ -28,9 +28,10 @@ The Discord is used for:
 * Photos and public-safe device examples
 * Website and GitHub work
 * Documentation updates
-* MeshCore coverage-check planning
+* MeshCore field-testing planning
+* MeshMapper discussion for MeshCore field testing
 * Mapping and observed-activity planning
-* MQTT, observer, logging, and backend discussion
+* MQTT, observer, logging, CoreScope, and backend discussion
 * Announcements and coordination
 * Casual discussion related to the local radio and mesh community
 
@@ -95,7 +96,7 @@ The off-topic area is for casual conversation, memes, and general discussion as 
 
 ### Main Mesh Discussion
 
-Main mesh channels are for MeshCore, Meshtastic, node help, coverage checks, and infrastructure discussion.
+Main mesh channels are for MeshCore, Meshtastic, node help, field testing, mapping, and infrastructure discussion.
 
 Current or expected channels include:
 
@@ -111,9 +112,9 @@ Use `meshtastic` for Meshtastic setup, device questions, channels, roles, MQTT q
 
 Use `node-help` for hardware, antennas, power, placement, troubleshooting, and beginner device questions that do not fit neatly in one system channel.
 
-Use `wardriving` for MeshCore coverage checks and related MeshMapper discussion. MeshMapper is for MeshCore coverage checks, not Meshtastic.
+Use `wardriving` for MeshCore field testing and related MeshMapper discussion. MeshMapper is for MeshCore field testing, not Meshtastic.
 
-Use `infrastructure` for site-maintained systems, observer notes, hub notes, MQTT testing, logging, backend work, and future automation planning.
+Use `infrastructure` for site-maintained systems, observer notes, hub notes, MQTT testing, CoreScope testing, logging, backend work, and future automation planning.
 
 ### Project Work
 
@@ -149,7 +150,7 @@ Keep GitHub update channels focused so they remain readable.
 
 ## Future Relay and Bot Integrations
 
-Future integrations may include MeshCore, MQTT, observer, or Discord relay tools.
+Future integrations may include MeshCore, MQTT, observer, CoreScope, or Discord relay tools.
 
 Relay or bot output should have a clear purpose and a clear place before channels are created for it.
 
@@ -326,9 +327,9 @@ Updates:
 
 https://hampdencountymesh.org/updates/
 
-Discord guide:
+Sharing Safely:
 
-https://hampdencountymesh.org/guides/discord.html
+https://hampdencountymesh.org/guides/sharing-safely.html
 
 Discord join route:
 
@@ -342,10 +343,10 @@ https://github.com/HampdenCountyMesh/HampdenCountyMesh.github.io
 
 Current public status is maintained on the website and through Discord updates where appropriate.
 
-Public live data automation, observer reporting, MQTT integrations, mapping improvements, and relay tools should be documented as they become real and maintainable.
+Public live data automation, observer reporting, MQTT integrations, mapping improvements, CoreScope public map work, and relay tools should be documented as they become real and maintainable.
 
 Do not describe future integrations as live until they are actually working.
 
 ## Emergency and Safety Note
 
-Hampden County Mesh is a community education and hobby effort. It is not an emergency service or a replacement for 911.
+Hampden County Mesh is a community education and hobby effort. It is not an emergency service, public safety system, or replacement for 911.

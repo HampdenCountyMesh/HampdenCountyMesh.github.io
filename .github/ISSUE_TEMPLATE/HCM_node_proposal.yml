@@ -1,5 +1,5 @@
-name: Node / Site Proposal
-description: Propose a public-safe node, repeater, observer, temporary setup, or possible host location.
+name: Node / Site Idea
+description: Suggest a public-safe node, temporary setup, host-location idea, or placement concept.
 title: "[Node]: "
 labels:
   - deployment
@@ -8,29 +8,30 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this template for public-safe node, repeater, observer, temporary setup, or coverage improvement ideas.
+        Use this template for public-safe node ideas, temporary setups, event setups, host-location ideas, or general placement concepts.
 
         Please do not post exact private addresses, exact private coordinates, private access details, private property information, credentials, keys, photos with sensitive details, or anything that should not be public.
 
-        Use general locations such as town, neighborhood, public landmark, road corridor, hill, park, or general area.
+        Use general locations such as a town, neighborhood, public landmark, road corridor, hill, park, or general area.
 
-        For private location details, security concerns, or sensitive infrastructure details, do not open a public issue. Contact security@hampdencountymesh.org or contact@hampdencountymesh.org instead.
+        For private location details, exposed credentials, private infrastructure details, or sensitive system information, do not open a public issue. Follow `SECURITY.md` or contact security@hampdencountymesh.org.
+
+        For a private site or host-location conversation that is not a security issue, contact contact@hampdencountymesh.org.
 
   - type: dropdown
     id: proposal_type
     attributes:
-      label: Proposal type
+      label: Idea type
       description: What kind of node, site, or setup idea is this?
       options:
         - Portable or temporary test setup
         - Temporary event node
-        - Fixed indoor node
-        - Fixed outdoor node
-        - Solar node
-        - Repeater
-        - Observer
-        - Gateway or support system
-        - Potential host location
+        - Indoor node idea
+        - Outdoor node idea
+        - Solar node idea
+        - Public venue or host-location idea
+        - Education or demo setup
+        - Map or field-testing idea
         - Other
     validations:
       required: true
@@ -51,10 +52,10 @@ body:
       description: What kind of place is being discussed?
       options:
         - Public place
-        - Private property with permission
-        - Private property without permission yet
         - Business or organization site
         - Library, school, club, or community venue
+        - Private property with permission
+        - Private property without permission yet
         - Vehicle, portable, or mobile use
         - Not sure
     validations:
@@ -63,28 +64,29 @@ body:
   - type: textarea
     id: proposal_details
     attributes:
-      label: Proposal details
+      label: Idea details
       description: Describe the idea and expected benefit in public-safe terms.
       placeholder: |
         What would this help with?
-        Is this for coverage, observing, education, events, or redundancy?
-        Is it temporary, portable, or fixed?
+        Is this for field testing, education, events, learning, or general mesh improvement?
+        Is it temporary, portable, indoor, or outdoor?
     validations:
       required: true
 
   - type: textarea
     id: equipment
     attributes:
-      label: Proposed equipment
+      label: Possible equipment
       description: List equipment if known. Do not include private keys, credentials, admin URLs, passwords, or exact private setup details.
       placeholder: |
         Example:
         - MeshCore node
+        - Meshtastic node
         - Solar node
         - LoRa antenna
         - Battery or solar power
         - Weatherproof enclosure
-        - Mounting hardware
+        - Temporary tripod or mount
     validations:
       required: false
 
@@ -106,15 +108,15 @@ body:
   - type: textarea
     id: goals
     attributes:
-      label: Coverage or learning goals
+      label: Goals
       description: What should this help observe, test, teach, or improve?
       placeholder: |
         Example:
-        - Improve general coverage in an area
         - Compare indoor vs outdoor placement
         - Support a community demo
-        - Observe public-safe mesh activity
+        - Test a general public area
         - Learn whether a general area is useful for future activity
+        - Improve beginner understanding of mesh devices
     validations:
       required: false
 
@@ -134,8 +136,8 @@ body:
       description: When would this matter?
       options:
         - Temporary test idea
-        - Useful before launch
-        - Useful after launch
+        - Useful now
+        - Useful soon
         - Future possibility
         - Event-specific
         - Not sure

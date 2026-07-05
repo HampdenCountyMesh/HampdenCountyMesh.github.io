@@ -7,7 +7,7 @@ This document explains where to ask questions, report website problems, suggest 
 For general questions, setup help, guide corrections, local radio discussion, or community support:
 
 * Join the Hampden County Mesh Discord through the website: https://hampdencountymesh.org/join/
-* Open a GitHub Issue if the question is directly related to the website, documentation, map, data files, or repository content
+* Open a GitHub Issue if the question is directly related to the website, documentation, map files, or repository content
 * Use the general contact email for questions that do not fit Discord or GitHub
 
 General contact:
@@ -16,20 +16,20 @@ General contact:
 
 ## Website or Documentation Problems
 
-Please open an issue if you notice:
+Please open a GitHub Issue if you notice:
 
 * Broken links
 * Outdated guide information
 * Typos or unclear wording
 * Missing attribution
 * Public information that should be generalized or removed
-* Problems with the coverage page, observed activity data, map behavior, or site layout
+* Problems with the coverage page, map display, site layout, or repository content
 
 ## Bugs
 
-Please use the Bug Report issue template when available.
+Use the Bug Report issue template when available.
 
-Include enough detail for someone else to understand the problem, such as:
+Helpful details include:
 
 * The page or file involved
 * What you expected to happen
@@ -37,7 +37,7 @@ Include enough detail for someone else to understand the problem, such as:
 * Screenshots, if useful and public-safe
 * Browser or device details, if the issue appears layout-related
 
-Do not include credentials, private locations, private messages, sensitive screenshots, private system details, exact private node locations, or exact private observer locations.
+Do not include credentials, private locations, private messages, sensitive screenshots, private system details, exact private node locations, or exact private observer locations in public issues.
 
 ## Documentation Suggestions
 
@@ -80,12 +80,6 @@ Use the security contact for issues involving:
 For Discord-related questions, invite problems, onboarding problems, moderation concerns, or server access issues, contact:
 
 [discord@hampdencountymesh.org](mailto:discord@hampdencountymesh.org)
-
-## General Contact
-
-For general contact:
-
-[contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)
 
 ## Emergency and Safety Note
 

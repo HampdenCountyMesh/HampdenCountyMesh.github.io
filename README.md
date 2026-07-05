@@ -1,6 +1,6 @@
 # Hampden County Mesh
 
-Hampden County Mesh is a local community effort for MeshCore, Meshtastic, public-safe map references, setup help, and local mesh radio across Hampden County and nearby Western Massachusetts.
+Hampden County Mesh is a local community effort for MeshCore, Meshtastic, setup help, public-safe map references, and local mesh radio across Hampden County and nearby Western Massachusetts.
 
 This repository contains the public website and supporting documentation for Hampden County Mesh.
 
@@ -17,10 +17,10 @@ The site and community focus on:
 * MeshCore and LoRa mesh use
 * Meshtastic and related mesh tools
 * Recommended local starting settings
-* Node roles, placement, antennas, and practical setup choices
+* Device roles, placement, antennas, and practical setup choices
 * Local terrain and radio behavior
-* MeshCore coverage checks with MeshMapper
-* Maps and observed mesh activity
+* MeshMapper field testing for MeshCore
+* Maps and observed mesh activity planning
 * Beginner-friendly guides
 * Safe sharing of photos, screenshots, setup details, and map results
 * Community coordination through Discord, the website, updates, and future local learning sessions
@@ -57,12 +57,11 @@ Current public status:
 * Discord: active
 * Coverage page: active
 * Updates page: active
-* Site-maintained systems: manually documented
 * Public live data automation: not enabled yet
-* New participants: welcome
 * Map address: reserved and redirecting to Coverage
+* New participants: welcome
 
-* ## Map and Public Data Status
+## Map and Public Data Status
 
 The public map address is:
 
@@ -70,9 +69,9 @@ https://map.hampdencountymesh.org/
 
 For now, that address redirects to the Coverage page while future live or near-live observed activity tooling is prepared.
 
-Public live activity data is not automated yet. The repository includes placeholder public data files and documentation for future observer, MQTT, broker, CoreScope, or map-related work.
+Public live activity data is not automated yet. Future map work may use observer logs, MQTT-backed tools, broker data, public analyzers, CoreScope-style tooling, MeshMapper results, or other public-safe sources.
 
-Related documentation:
+Related documentation may include:
 
 * `docs/map-subdomain.md`
 * `docs/broker-data-access.md`
@@ -98,7 +97,7 @@ The Guides section is the main home for public setup, settings, safety, and how-
 
 https://hampdencountymesh.org/guides/
 
-The Coverage page includes the Hampden County map, observed-activity status, nearby public tools, and coverage notes:
+The Coverage page includes local terrain notes, MeshMapper, nearby public tools, map status, and observed-activity planning:
 
 https://hampdencountymesh.org/coverage.html
 
@@ -106,7 +105,7 @@ The Updates page is for occasional notes about site changes, local events, semin
 
 https://hampdencountymesh.org/updates/
 
-## Coverage and Local Use
+## Field Testing and Local Use
 
 Coverage is learned through real-world use. That does not need to be formal.
 
@@ -124,7 +123,7 @@ Helpful details, when available, include:
 
 You do not need to publish exact private locations. General areas, public landmarks, road corridors, parks, neighborhoods, and town-level results are often enough.
 
-For MeshCore coverage checks, Hampden County Mesh points people toward MeshMapper:
+For MeshCore field testing, Hampden County Mesh points people toward MeshMapper:
 
 https://meshmapper.net/
 
@@ -145,11 +144,12 @@ This repository may include:
 * Website pages
 * Public guides
 * Coverage page files
+* Updates
 * Community documents
 * Issue templates
 * Contribution guidelines
 * Supporting files for GitHub Pages
-* Public-safe data files
+* Public-safe map or boundary files where useful
 
 Backend credentials, private keys, API tokens, passwords, private node locations, private infrastructure details, and sensitive access information should not be committed here.
 
@@ -160,7 +160,7 @@ The `/guides/` folder contains public-facing website guide pages.
 The `/docs/` folder contains supporting documentation for repo maintainers and contributors. Examples may include:
 
 * Discord notes
-* Observed activity data notes
+* Observed activity notes
 * Map subdomain notes
 * Broker and data access notes
 * MQTT and observer notes

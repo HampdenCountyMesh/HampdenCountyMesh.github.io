@@ -1,5 +1,5 @@
 name: Feature Request
-description: Suggest a new website feature, guide, data tool, integration, service, or improvement.
+description: Suggest a new website feature, guide, map improvement, integration, workflow, or public-facing improvement.
 title: "[Feature]: "
 labels:
   - enhancement
@@ -8,9 +8,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this template for new ideas, feature requests, site improvements, guide ideas, map or data improvements, Discord integrations, automation ideas, or public-facing tools.
+        Use this template for new ideas, feature requests, site improvements, guide ideas, map improvements, Discord integrations, automation ideas, or public-facing tools.
 
-        Please do not include private node locations, private coordinates, credentials, private messages, or sensitive screenshots.
+        Please do not include private locations, private coordinates, credentials, private messages, sensitive screenshots, or anything that should not be public.
 
         For security or privacy concerns, do not open a public issue. Please follow `SECURITY.md` or contact security@hampdencountymesh.org.
 
@@ -22,10 +22,12 @@ body:
       options:
         - Website or page improvement
         - Guide or documentation idea
-        - Coverage map or observed activity data
+        - Coverage page or map improvement
+        - Observed activity or public-safe data workflow
+        - Updates or public note
         - Discord integration or automation
         - MeshCore or Meshtastic support
-        - Radio reference or learning resource
+        - Radio learning resource
         - Community event or outreach support
         - Repository or GitHub workflow
         - Other
@@ -37,7 +39,7 @@ body:
     attributes:
       label: Proposal
       description: Describe the feature or improvement.
-      placeholder: "Example: Add a public-safe local radio observation form that can be used after mobile checks, park use, or temporary node tests."
+      placeholder: "Example: Add a public-safe way to collect field testing notes from parks, road corridors, or temporary device checks."
     validations:
       required: true
 
@@ -46,7 +48,7 @@ body:
     attributes:
       label: Benefit
       description: How would this help Hampden County Mesh, newcomers, maintainers, or the local radio and mesh community?
-      placeholder: "Example: This would make it easier for people to share useful local radio notes without posting private locations."
+      placeholder: "Example: This would make it easier for people to share useful local notes without posting private locations."
     validations:
       required: false
 
@@ -68,7 +70,7 @@ body:
     attributes:
       label: Alternatives considered
       description: Optional. Are there simpler ways to solve the same problem?
-      placeholder: "Example: This could start as a static guide before becoming an automated tool."
+      placeholder: "Example: This could start as a short update or guide note before becoming an automated tool."
     validations:
       required: false
 
@@ -78,8 +80,8 @@ body:
       label: Timing
       description: How urgent or near-term is this?
       options:
-        - Useful before launch
-        - Useful soon after launch
+        - Useful now
+        - Useful soon
         - Nice to have later
         - Long-term idea
         - Not sure
@@ -92,5 +94,5 @@ body:
       label: Privacy check
       description: Confirm that this public issue does not include sensitive information.
       options:
-        - label: I have not included private node locations, private coordinates, credentials, private messages, or sensitive screenshots.
+        - label: I have not included private locations, private coordinates, credentials, private messages, or sensitive screenshots.
           required: true

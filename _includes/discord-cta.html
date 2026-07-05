@@ -1,0 +1,7 @@
+{% assign join_source = include.source | default: "site" %}
+{% assign button_text = include.text | default: "Join Discord" %}
+{% assign button_class = include.class | default: "btn primary" %}
+
+<a class="{{ button_class | escape }}" href="{{ '/join/' | append: join_source | append: '/' | relative_url }}" data-join-source="{{ join_source | escape }}">
+  {{ button_text | escape }}
+</a>
