@@ -8,8 +8,6 @@ tags:
   - documentation
 ---
 
-The guide section has been cleaned up and reorganized around Getting Started, Recommended Settings, MeshCore Basics, Meshtastic Basics, Nodes, Repeaters, and Observers, Sharing Safely, and Discord.
+The guide section has been cleaned up and reorganized around Getting Started, Recommended Settings, MeshCore Basics, Meshtastic Basics, Nodes, Repeaters and Observers, Sharing Safely, and Discord.
 
-Supporting documentation was also added for observers, MQTT, node notes, observed activity data, Discord planning, and website assets.
-
-This is part of making the site easier to maintain without turning public guide pages into dense technical manuals.
+Supporting documentation was also added for observers, MQTT, node notes, observed activity data, Discord planning, and website assets. This is part of making the site easier to maintain without turning public guide pages into dense technical manuals.
