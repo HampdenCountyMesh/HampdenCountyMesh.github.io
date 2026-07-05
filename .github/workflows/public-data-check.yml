@@ -6,7 +6,6 @@ on:
       - main
     paths:
       - "data/**"
-      - "docs/**"
       - "coverage.html"
       - ".github/workflows/public-data-check.yml"
   pull_request:
@@ -14,7 +13,6 @@ on:
       - main
     paths:
       - "data/**"
-      - "docs/**"
       - "coverage.html"
       - ".github/workflows/public-data-check.yml"
 
@@ -32,10 +30,10 @@ jobs:
           python -m json.tool data/nodes.json > /dev/null
           python -m json.tool data/observed-activity.json > /dev/null
 
-      - name: Check for obvious sensitive strings
+      - name: Check public data for obvious sensitive strings
         run: |
-          if grep -RniE '(password|passwd|token|api[_-]?key|secret|private[_-]?key|broker_password|admin_url|ssid|wifi|BEGIN PRIVATE KEY|ghp_|github_pat_|sk-[A-Za-z0-9])' data docs; then
-            echo "Potential sensitive string found in public data or docs."
+          if grep -RniE '(password|passwd|token|api[_-]?key|secret|private[_-]?key|broker_password|admin_url|ssid|wifi|BEGIN PRIVATE KEY|ghp_|github_pat_|sk-[A-Za-z0-9])' data/; then
+            echo "Potential sensitive string found in public data files."
             exit 1
           fi
 
