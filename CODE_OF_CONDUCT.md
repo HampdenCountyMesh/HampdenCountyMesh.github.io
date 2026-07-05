@@ -2,7 +2,7 @@
 
 ## Our Pledge
 
-Hampden County Mesh is intended to be a useful, respectful, beginner-friendly space for local mesh radio, radio learning, documentation, setup help, public-safe local radio observations, and related technical discussion.
+Hampden County Mesh is intended to be a useful, respectful, beginner-friendly space for local mesh radio, radio learning, documentation, setup help, field testing, public-safe local observations, and related technical discussion.
 
 We pledge to make participation in this community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socioeconomic status, nationality, personal appearance, race, religion, sexual orientation, or technical background.
 
@@ -63,7 +63,7 @@ This includes:
 * Credentials, keys, passwords, tokens, or access URLs
 * Photos that reveal private locations or personal details unintentionally
 
-When discussing maps, observers, gateways, MQTT, dashboards, logs, local radio observations, or observed activity data, use general locations unless exact sharing is clearly intentional and safe.
+When discussing maps, observers, gateways, MQTT, dashboards, logs, field testing, or observed activity, use general locations unless exact sharing is clearly intentional and safe.
 
 ## Radio and Technical Safety
 
@@ -71,13 +71,13 @@ Members are responsible for following applicable radio laws, service rules, and 
 
 Do not use Hampden County Mesh spaces to encourage or coordinate unlawful transmitting, harmful interference, jamming, impersonation, unauthorized access, credential misuse, or abuse of radio, network, server, or public safety systems.
 
-Hampden County Mesh is not an emergency service, not a replacement for 911, and not an official public safety system.
+Hampden County Mesh is a community education and hobby effort. It is not an emergency service, public safety system, or replacement for 911.
 
 ## Enforcement Responsibilities
 
 Community leaders and moderators are responsible for clarifying and enforcing standards of acceptable behavior.
 
-They may remove, edit, or reject comments, messages, commits, issues, pull requests, documentation edits, wiki edits, images, links, or other contributions that are not aligned with this Code of Conduct.
+They may remove, edit, or reject comments, messages, commits, issues, pull requests, documentation edits, images, links, or other contributions that are not aligned with this Code of Conduct.
 
 They may also limit or remove access to community spaces when behavior is unsafe, disruptive, abusive, or inconsistent with these expectations.
 
@@ -190,3 +190,4 @@ https://github.com/mozilla/diversity
 Contributor Covenant homepage:
 
 https://www.contributor-covenant.org
+

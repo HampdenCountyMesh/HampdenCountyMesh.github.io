@@ -1,0 +1,23 @@
+---
+layout: default
+main_class: docs-shell
+nav: guides
+---
+
+<div class="container">
+  <article class="docs-article">
+    <p class="docs-breadcrumb">
+      <a href="{{ '/guides/' | relative_url }}">Guides</a> / {{ page.title | escape }}
+    </p>
+
+    <h1>{{ page.title | escape }}</h1>
+
+    {% if page.lede %}
+      <p class="docs-lede">
+        {{ page.lede }}
+      </p>
+    {% endif %}
+
+    {{ content }}
+  </article>
+</div>

@@ -1,5 +1,5 @@
 name: Community
-description: Suggest or report something related to community resources, events, outreach, or local coordination.
+description: Suggest something related to community resources, events, outreach, or local learning.
 title: "[Community]: "
 labels:
   - community
@@ -8,9 +8,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this for community-related topics such as event ideas, library or club contacts, local learning sessions, outreach ideas, useful resources, Discord/community coordination, or public-facing community notes.
+        Use this for community-related topics such as event ideas, library or club contacts, local learning sessions, outreach ideas, useful public resources, Discord coordination, or public-facing community notes.
 
-        Please do not include private contact information, private addresses, private node locations, private coordinates, private messages, or sensitive screenshots.
+        Please do not include private contact information, private addresses, private locations, private coordinates, private messages, or sensitive screenshots.
 
         For security or privacy concerns, do not open a public issue. Please follow `SECURITY.md` or contact security@hampdencountymesh.org.
 
@@ -26,6 +26,7 @@ body:
         - Outreach idea
         - Discord or community coordination
         - Website community information
+        - Updates or public note
         - Accessibility or newcomer support
         - Other
     validations:
@@ -38,6 +39,7 @@ body:
       description: Where does this mainly apply?
       options:
         - Website
+        - Updates
         - Discord
         - GitHub
         - Local event or in-person activity
@@ -50,8 +52,8 @@ body:
     id: summary
     attributes:
       label: Summary
-      description: Briefly describe the idea, issue, resource, or opportunity.
-      placeholder: "Example: A local library may be a good place to host a beginner radio basics session."
+      description: Briefly describe the idea, resource, issue, or opportunity.
+      placeholder: "Example: A local library may be a good place to host a beginner mesh or radio session."
     validations:
       required: true
 
@@ -81,7 +83,7 @@ body:
     attributes:
       label: Suggested follow-up
       description: What should happen next?
-      placeholder: "Example: Add this to the outreach list, discuss in Discord, contact the venue closer to launch, or write a guide page."
+      placeholder: "Example: Discuss in Discord, add to the outreach list, contact the venue, or write a short update."
 
   - type: checkboxes
     id: privacy_check
@@ -89,5 +91,5 @@ body:
       label: Privacy check
       description: Confirm that this public issue does not include sensitive information.
       options:
-        - label: I have not included private contact information, private addresses, private node locations, private coordinates, private messages, or sensitive screenshots.
+        - label: I have not included private contact information, private addresses, private locations, private coordinates, private messages, or sensitive screenshots.
           required: true

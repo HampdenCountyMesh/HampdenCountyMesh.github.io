@@ -6,7 +6,18 @@
   {% for guide in sorted_guides %}
     {% if guide_group == "" or guide.group == guide_group %}
       {% unless guide.url == exclude_url %}
-        <a class="resource-card action-card guide-card {% if guide.featured %}kicker-card{% endif %}" href="{{ guide.url }}">
+        {% assign guide_url = guide.url | default: "#" %}
+        {% assign is_external = false %}
+
+        {% if guide_url contains "://" %}
+          {% assign is_external = true %}
+        {% endif %}
+
+        <a
+          class="resource-card action-card guide-card {% if guide.featured %}kicker-card{% endif %}"
+          href="{% if is_external %}{{ guide_url }}{% else %}{{ guide_url | relative_url }}{% endif %}"
+          {% if is_external %}target="_blank" rel="noopener noreferrer"{% endif %}
+        >
           {% if guide.label %}
             <span class="guide-label">{{ guide.label | escape }}</span>
           {% endif %}

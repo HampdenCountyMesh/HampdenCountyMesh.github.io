@@ -36,17 +36,7 @@
   </url>
 
   <url>
-    <loc>{{ "/guides/nodes-repeaters-observers.html" | absolute_url }}</loc>
-    <lastmod>{{ build_date }}</lastmod>
-  </url>
-
-  <url>
     <loc>{{ "/guides/sharing-safely.html" | absolute_url }}</loc>
-    <lastmod>{{ build_date }}</lastmod>
-  </url>
-
-  <url>
-    <loc>{{ "/guides/discord.html" | absolute_url }}</loc>
     <lastmod>{{ build_date }}</lastmod>
   </url>
 

@@ -1,7 +1,7 @@
 ---
 title: "Map subdomain and public data prep"
 date: 2026-07-05
-summary: "The map subdomain has been reserved and public data checks are being added before live activity tooling is enabled."
+summary: "The map address is reserved, and the data side is being prepared before live activity tools are added."
 tags:
   - website
   - map
@@ -9,10 +9,12 @@ tags:
   - public-data
 ---
 
-The map address `map.hampdencountymesh.org` has been reserved for future Hampden County Mesh map and observed-activity work.
+The map address is now reserved:
 
-For now, it redirects to the Coverage page while live or near-live map tooling is still being prepared.
+`map.hampdencountymesh.org`
 
-Supporting documentation is also being added for the map subdomain, public-safe data expectations, and future broker or CoreScope-style integrations.
+For now, it sends people to the Coverage page. That keeps the address available while the actual map and observed-activity tools are still being worked out.
 
-Public live activity data is not automated yet.
+Some background documentation is also being added for public-safe data, the map subdomain, and possible future integrations with broker data or CoreScope-style tools.
+
+The live activity side is not automated yet. This is just the groundwork before that gets added.

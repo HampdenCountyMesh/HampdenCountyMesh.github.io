@@ -2,9 +2,9 @@
 {% assign page_description = page.description | default: page.summary | default: site.description | default: "Community-based mesh and radio communications in Western Massachusetts." %}
 {% assign page_canonical = page.canonical | default: page.url %}
 {% assign page_og_type = page.og_type | default: "website" %}
-{% assign page_social_image = page.social_image | default: site.default_social_image %}
-{% assign page_social_image_alt = page.social_image_alt | default: site.default_social_image_alt %}
-{% assign page_css_version = site.css_version | default: "20260701h" %}
+{% assign page_social_image = page.social_image | default: site.default_social_image | default: "/assets/images/social/hcm-og-towers.jpg" %}
+{% assign page_social_image_alt = page.social_image_alt | default: site.default_social_image_alt | default: "Hampden County Mesh logo over a view of Mount Tom radio towers." %}
+{% assign page_css_version = site.css_version | default: "20260705a" %}
 
 <head>
   <meta charset="utf-8">
@@ -17,6 +17,13 @@
   {% endif %}
 
   <meta name="description" content="{{ page_description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+  {% if page.noindex %}
+    <meta name="robots" content="noindex">
+  {% elsif page.robots %}
+    <meta name="robots" content="{{ page.robots | escape }}">
+  {% endif %}
+
   <link rel="canonical" href="{{ page_canonical | absolute_url }}">
 
   <meta property="og:type" content="{{ page_og_type | escape }}">
@@ -49,9 +56,13 @@
 
   <meta name="theme-color" content="#101820">
 
-  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="{{ '/assets/icons/favicon.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="icon" href="{{ '/assets/icons/HampdenCounty.png' | relative_url }}" type="image/png">
+  <link rel="apple-touch-icon" href="{{ '/assets/icons/HampdenCounty.png' | relative_url }}">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v={{ page_css_version }}">
+
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v={{ page_css_version | escape }}">
 </head>

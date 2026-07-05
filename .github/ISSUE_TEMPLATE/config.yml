@@ -3,7 +3,7 @@ blank_issues_enabled: false
 contact_links:
   - name: Report a Security or Privacy Issue
     url: mailto:security@hampdencountymesh.org
-    about: Report exposed credentials, private node locations, private coordinates, sensitive screenshots, or security vulnerabilities privately.
+    about: Report exposed credentials, private locations, sensitive screenshots, or security vulnerabilities privately.
 
   - name: General Contact
     url: mailto:contact@hampdencountymesh.org
@@ -15,7 +15,7 @@ contact_links:
 
   - name: Hampden County Mesh Website
     url: https://hampdencountymesh.org/
-    about: Visit the public website, guides, coverage page, and radio reference.
+    about: Visit the public website, guides, coverage page, and updates.
 
   - name: Join the Discord
     url: https://hampdencountymesh.org/join/

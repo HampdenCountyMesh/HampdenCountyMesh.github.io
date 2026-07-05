@@ -1,19 +1,23 @@
-{% assign active_nav = include.active | default: page.nav | default: "" %}
+{% assign active_nav = include.active | default: page.nav | default: layout.nav | default: "" %}
 
 <header>
   <div class="container">
-    <a class="brand" href="/" aria-label="Hampden County Mesh home">
-      <img class="brand-icon" src="/assets/icons/favicon.svg" alt="" width="26" height="26" aria-hidden="true">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Hampden County Mesh home">
+      <span class="brand-mark" aria-hidden="true">
+        <img class="brand-icon" src="{{ '/assets/icons/HampdenCounty.png' | relative_url }}" alt="" width="26" height="26">
+      </span>
       <span>Hampden County Mesh</span>
     </a>
 
     <nav aria-label="Main navigation">
-      <a href="/" {% if active_nav == "home" %}aria-current="page"{% endif %}>Home</a>
-      <a href="/guides/" {% if active_nav == "guides" %}aria-current="page"{% endif %}>Guides</a>
-      <a href="/coverage.html" {% if active_nav == "coverage" %}aria-current="page"{% endif %}>Coverage</a>
-      <a href="/updates/" {% if active_nav == "updates" %}aria-current="page"{% endif %}>Updates</a>
-      <a class="discord-nav-button" href="/join/site-nav/" aria-label="Join the Hampden County Mesh Discord" data-join-source="site-nav">
-        <img src="/assets/icons/discord-symbol-white.svg" alt="" aria-hidden="true">
+      {% for item in site.data.nav %}
+        <a href="{{ item.url | relative_url }}" {% if active_nav == item.key %}aria-current="page"{% endif %}>
+          {{ item.title | escape }}
+        </a>
+      {% endfor %}
+
+      <a class="discord-nav-button" href="{{ '/join/site-nav/' | relative_url }}" aria-label="Join the Hampden County Mesh Discord" data-join-source="site-nav">
+        <img src="{{ '/assets/icons/discord-symbol-white.svg' | relative_url }}" alt="" aria-hidden="true">
       </a>
     </nav>
   </div>

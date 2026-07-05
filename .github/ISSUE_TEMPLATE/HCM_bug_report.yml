@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report a problem with the website, guides, data files, map, repository, or public documentation.
+description: Report a problem with the website, guides, Coverage page, repository, or public documentation.
 title: "[Bug]: "
 labels:
   - bug
@@ -10,7 +10,7 @@ body:
       value: |
         Thanks for reporting a problem.
 
-        Please do not include passwords, private keys, private node locations, private coordinates, private messages, screenshots with sensitive details, or anything that should not be public.
+        Please do not include passwords, private keys, private locations, private coordinates, private messages, screenshots with sensitive details, or anything that should not be public.
 
         For security or privacy issues, do not open a public issue. Please follow `SECURITY.md` or contact security@hampdencountymesh.org.
 
@@ -21,13 +21,14 @@ body:
       description: What part of Hampden County Mesh is affected?
       options:
         - Website
-        - Coverage map
-        - Data files
+        - Coverage page
+        - Map or embedded map
         - Guides or documentation
+        - Updates
         - GitHub repository
         - Discord documentation or join flow
-        - Site-maintained system status
-        - Observer or MQTT documentation
+        - Observer, MQTT, or map-planning documentation
+        - Data or boundary files
         - Other
     validations:
       required: true
@@ -44,7 +45,7 @@ body:
     attributes:
       label: What happened?
       description: Describe the problem clearly.
-      placeholder: "Example: The Coverage page loads, but the observed activity status never updates."
+      placeholder: "Example: A link goes to a 404 page, a page does not load correctly, or wording appears outdated."
     validations:
       required: true
 
@@ -65,14 +66,14 @@ body:
     attributes:
       label: Expected behavior
       description: What did you expect to happen instead?
-      placeholder: "Example: The page should show the Hampden County outline and the observed activity status message."
+      placeholder: "Example: The link should open the current guide page."
 
   - type: textarea
     id: actual
     attributes:
       label: Actual behavior
       description: What actually happened?
-      placeholder: "Example: The map area is blank, or the link goes to a 404 page."
+      placeholder: "Example: The link goes to a 404 page, the map area is blank, or the page layout is broken."
 
   - type: input
     id: browser

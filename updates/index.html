@@ -1,110 +1,68 @@
 ---
+layout: default
+title: Updates
+description: Occasional updates from Hampden County Mesh about site changes, guides, local events, seminars, and observed activity work.
 nav: updates
+main_class: docs-shell
 ---
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Updates | Hampden County Mesh</title>
-  <meta name="description" content="Occasional updates from Hampden County Mesh about site changes, guides, local events, seminars, and observed activity work.">
 
-  <link rel="canonical" href="https://hampdencountymesh.org/updates/">
+<div class="container">
+  <article class="docs-article">
+    <p class="docs-breadcrumb">
+      Hampden County Mesh / Updates
+    </p>
 
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Hampden County Mesh">
-  <meta property="og:title" content="Updates | Hampden County Mesh">
-  <meta property="og:description" content="Occasional updates from Hampden County Mesh about site changes, guides, local events, seminars, and observed activity work.">
-  <meta property="og:url" content="https://hampdencountymesh.org/updates/">
-  <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+    <h1>Updates</h1>
 
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Updates | Hampden County Mesh">
-  <meta name="twitter:description" content="Occasional updates from Hampden County Mesh about site changes, guides, local events, seminars, and observed activity work.">
-  <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
-  <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
+    <p class="docs-lede">
+      Occasional notes about site changes, guide updates, local events, seminars, and observed activity work.
+    </p>
 
-  <meta name="theme-color" content="#101820">
+    <div class="update-list">
+      {% assign sorted_updates = site.updates | sort: "date" | reverse %}
 
-  <link rel="icon" href="/assets/icons/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css?v=20260701h">
-</head>
+      {% for update in sorted_updates %}
+        <article class="update-card">
+          <span class="update-meta">{{ update.date | date: "%B %-d, %Y" }}</span>
 
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="noise" aria-hidden="true"></div>
+          <h2>
+            <a href="{{ update.url | relative_url }}">{{ update.title | escape }}</a>
+          </h2>
 
-  {% include header.html active="updates" %}
-
-  <main id="main" class="docs-shell">
-    <div class="container">
-      <article class="docs-article">
-        <p class="docs-breadcrumb">
-          Hampden County Mesh / Updates
-        </p>
-
-        <h1>Updates</h1>
-
-        <p class="docs-lede">
-          Occasional notes about site changes, guide updates, local events, seminars, and observed activity work.
-        </p>
-
-        <div class="update-list">
-          {% assign sorted_updates = site.updates | sort: "date" | reverse %}
-
-          {% for update in sorted_updates %}
-            <article class="update-card">
-              <span class="update-meta">{{ update.date | date: "%B %-d, %Y" }}</span>
-
-              <h2>
-                <a href="{{ update.url }}">{{ update.title | escape }}</a>
-              </h2>
-
-              {% if update.summary %}
-                <p>{{ update.summary | escape }}</p>
-              {% else %}
-                <p>{{ update.excerpt | strip_html | normalize_whitespace | truncate: 220 }}</p>
-              {% endif %}
-
-              {% if update.tags %}
-                <p class="update-tags">
-                  {% for tag in update.tags %}
-                    <span>{{ tag | escape }}</span>
-                  {% endfor %}
-                </p>
-              {% endif %}
-
-              <a class="card-link" href="{{ update.url }}">Read more →</a>
-            </article>
+          {% if update.summary %}
+            <p>{{ update.summary | escape }}</p>
           {% else %}
-            <div class="update-empty">
-              No community updates have been posted yet.
+            <p>{{ update.excerpt | strip_html | normalize_whitespace | truncate: 220 | escape }}</p>
+          {% endif %}
+
+          {% if update.tags %}
+            <div class="update-tags">
+              {% for tag in update.tags %}
+                <span>{{ tag | escape }}</span>
+              {% endfor %}
             </div>
-          {% endfor %}
+          {% endif %}
+
+          <a class="card-link" href="{{ update.url | relative_url }}">Read more →</a>
+        </article>
+      {% else %}
+        <div class="update-empty">
+          No community updates have been posted yet.
         </div>
-
-        <section class="docs-section">
-          <h2>Have a question?</h2>
-
-          <p>
-            The Discord is the best place for setup help, local testing, guide questions, and community discussion.
-          </p>
-
-          <div class="button-row">
-            <a class="btn primary" href="/join/updates/" data-join-source="updates">Join Discord</a>
-            <a class="btn secondary" href="/guides/">Read Guides</a>
-          </div>
-        </section>
-      </article>
+      {% endfor %}
     </div>
-  </main>
 
-  {% include footer.html %}
-</body>
-</html>
+    <section class="docs-section">
+      <h2>Have a question?</h2>
+
+      <p>
+        The Discord is the best place for setup help, local testing, guide questions, and community discussion.
+      </p>
+
+      <div class="button-row">
+        {% include discord-cta.html source="updates" text="Join Discord" class="btn primary" %}
+        <a class="btn secondary" href="{{ '/guides/' | relative_url }}">Read Guides</a>
+      </div>
+    </section>
+  </article>
+</div>
