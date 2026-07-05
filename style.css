@@ -167,71 +167,82 @@ section {
 header {
     position: sticky;
     top: 0;
-    z-index: 50;
-    border-bottom: 1px solid rgba(73, 102, 132, 0.30);
-    background: rgba(8, 10, 9, 0.86);
+    z-index: 100;
+    background:
+        linear-gradient(180deg, rgba(8, 12, 10, 0.96), rgba(8, 12, 10, 0.9)),
+        rgba(8, 12, 10, 0.95);
+    border-bottom: 1px solid rgba(242, 231, 202, 0.12);
     backdrop-filter: blur(12px);
 }
 
 header .container {
-    min-height: 68px;
+    min-height: 4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 1.5rem;
 }
 
 .brand {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.65rem;
+    color: var(--cream);
     font-family: var(--font-display);
-    color: var(--text);
-    letter-spacing: 0.05em;
-    font-size: 0.92rem;
+    font-size: 1rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-decoration: none;
     white-space: nowrap;
 }
 
-.brand:hover {
-    color: var(--text);
+.brand:hover,
+.brand:focus-visible {
+    color: var(--cream);
+    text-decoration: none;
 }
 
 .brand-mark {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
-    border: 1px solid rgba(218, 185, 118, 0.55);
+    width: 2.2rem;
+    height: 2.2rem;
     border-radius: 999px;
-    background: #f1e6c8;
-    box-shadow: 0 0 0 3px rgba(218, 185, 118, 0.08);
-    flex: 0 0 auto;
+    background: #ffffff;
+    border: 1px solid rgba(242, 231, 202, 0.35);
+    box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 0.5rem 1.25rem rgba(0, 0, 0, 0.28);
+    flex-shrink: 0;
+    overflow: hidden;
 }
 
 .brand-icon {
-    width: 25px;
-    height: 25px;
-    object-fit: contain;
     display: block;
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
 }
 
 nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    flex-wrap: wrap;
-    gap: 8px 16px;
+    gap: 1.15rem;
 }
 
 nav a {
-    color: var(--text-soft);
-    font-size: 0.82rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    letter-spacing: 0.07em;
+    text-decoration: none;
 }
 
 nav a:hover,
+nav a:focus-visible,
 nav a[aria-current="page"] {
     color: var(--cream);
 }
@@ -240,37 +251,51 @@ nav a[aria-current="page"] {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
-    padding: 0;
-    border: 1px solid rgba(73, 102, 132, 0.46);
+    width: 2.15rem;
+    height: 2.15rem;
     border-radius: 999px;
-    background: rgba(73, 102, 132, 0.16);
-}
-
-.discord-nav-button img,
-.discord-nav-button svg {
-    width: 18px;
-    height: 18px;
-    display: block;
+    background: rgba(49, 95, 140, 0.3);
+    border: 1px solid rgba(120, 164, 204, 0.45);
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.24);
 }
 
 .discord-nav-button img {
-    opacity: 0.95;
-}
-
-.discord-nav-button svg {
-    fill: currentColor;
+    display: block;
+    width: 1.1rem;
+    height: 1.1rem;
 }
 
 .discord-nav-button:hover,
-.discord-nav-button:focus,
 .discord-nav-button:focus-visible {
-    color: #ffffff;
-    background: var(--discord);
-    border-color: var(--discord);
+    background: rgba(49, 95, 140, 0.48);
+    border-color: rgba(180, 210, 238, 0.7);
 }
 
+@media (max-width: 760px) {
+    header .container {
+        min-height: auto;
+        padding-top: 0.9rem;
+        padding-bottom: 0.9rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .brand {
+        white-space: normal;
+        text-align: center;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.75rem 1rem;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+}
 /* =========================================================
    Hero
    ========================================================= */
@@ -437,6 +462,13 @@ h1 {
     color: var(--text-soft);
     font-size: clamp(1.05rem, 2vw, 1.22rem);
     line-height: 1.65;
+}
+
+.community-panel.home-card p {
+    max-width: 44rem;
+    margin-left: auto;
+    margin-right: auto;
+    text-wrap: pretty;
 }
 
 .home-copy p + p {
@@ -1783,25 +1815,6 @@ footer {
 }
 
 @media (max-width: 800px) {
-    header .container {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 12px;
-        padding: 16px 0;
-    }
-
-    .brand {
-        white-space: normal;
-    }
-
-    nav {
-        justify-content: flex-start;
-    }
-
-    nav a {
-        font-size: 0.78rem;
-    }
-
     section {
         padding: 52px 0;
     }
