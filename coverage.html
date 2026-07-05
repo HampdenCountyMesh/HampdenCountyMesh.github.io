@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Coverage | Hampden County Mesh</title>
-  <meta name="description" content="Maps, terrain notes, observed activity links, and public tools for understanding MeshCore and Meshtastic activity around Hampden County and Western Massachusetts.">
+  <meta name="description" content="Terrain notes, testing guidance, and practical coverage information for mesh radio around Hampden County and nearby Western Massachusetts.">
 
   <link rel="canonical" href="https://hampdencountymesh.org/coverage.html">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Hampden County Mesh">
   <meta property="og:title" content="Coverage | Hampden County Mesh">
-  <meta property="og:description" content="Maps, terrain notes, observed activity links, and public tools for understanding MeshCore and Meshtastic activity around Hampden County and Western Massachusetts.">
+  <meta property="og:description" content="Terrain notes, testing guidance, and practical coverage information for mesh radio around Hampden County and nearby Western Massachusetts.">
   <meta property="og:url" content="https://hampdencountymesh.org/coverage.html">
   <meta property="og:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta property="og:image:width" content="1200">
@@ -20,7 +20,7 @@
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Coverage | Hampden County Mesh">
-  <meta name="twitter:description" content="Maps, terrain notes, observed activity links, and public tools for understanding MeshCore and Meshtastic activity around Hampden County and Western Massachusetts.">
+  <meta name="twitter:description" content="Terrain notes, testing guidance, and practical coverage information for mesh radio around Hampden County and nearby Western Massachusetts.">
   <meta name="twitter:image" content="https://hampdencountymesh.org/assets/images/social/hcm-og-towers.jpg">
   <meta name="twitter:image:alt" content="Hampden County Mesh logo over a view of Mount Tom radio towers.">
 
@@ -32,8 +32,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rokkitt:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <link rel="stylesheet" href="/style.css?v=20260701h">
+  <link rel="stylesheet" href="/style.css?v=20260705a">
 </head>
 
 <body>
@@ -66,133 +65,56 @@
 
         <div class="status-line">
           <span class="status-dot" aria-hidden="true"></span>
-          <span>Maps • Terrain • Observed Activity</span>
+          <span>Terrain • Testing • Local Coverage</span>
         </div>
 
         <h1>Coverage</h1>
 
         <p class="hero-text">
-          Maps, terrain notes, observed activity links, and public tools for understanding
-          mesh activity around Hampden County and Western Massachusetts.
+          Terrain notes, testing guidance, and practical coverage information for
+          mesh radio around Hampden County and nearby Western Massachusetts.
         </p>
 
         <div class="hero-actions">
-          <a class="btn primary" href="#coverage-map-section">View Map</a>
+          <a class="btn primary" href="#coverage-notes">Coverage Notes</a>
           <a class="btn secondary" href="/guides/nodes-repeaters-observers.html">Node Roles</a>
           <a class="btn secondary" href="/join/coverage/" data-join-source="coverage">Join Discord</a>
         </div>
       </div>
     </section>
 
-    <section id="coverage-map-section">
+    <section id="coverage-notes">
       <div class="container">
-        <div class="section-heading">Local Map</div>
-
-        <div class="coverage-map-panel">
-          <div id="coverage-map" aria-label="Hampden County Mesh coverage map"></div>
-
-          <div class="coverage-map-note">
-            <strong>Map note:</strong>
-            This map keeps Hampden County visible as the site’s local reference area.
-            It is not a complete coverage map and does not show every mesh device in the region.
-          </div>
-
-          <div class="coverage-data-status" id="activity-data-status">
-            <strong>Activity data status:</strong>
-            <span id="activity-data-status-text">Checking observed activity data...</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="nearby-public-tools">
-      <div class="container">
-        <div class="section-heading">Nearby Public Tools</div>
+        <div class="section-heading">Coverage Notes</div>
 
         <div class="community-panel">
-          <h2>Regional maps and analyzers</h2>
+          <h2>Coverage depends on terrain, height, antennas, and placement.</h2>
 
           <p>
-            Hampden County sits near a wider mesh ecosystem. These public tools can help
-            show nearby MeshCore activity, packet paths, observers, and regional testing.
+            Hampden County has hills, valleys, dense neighborhoods, wooded areas,
+            river corridors, older buildings, campuses, parks, and rural edges.
+            Small radio devices can behave very differently from one place to another.
           </p>
 
           <p>
-            They are maintained by neighboring communities, not Hampden County Mesh.
-            Treat them as useful partial views, not a complete list of local devices.
+            A node near a window, outside, higher up, or connected to a better antenna
+            may hear more than the same node sitting deeper inside a building or vehicle.
           </p>
 
-          <div class="resource-grid">
-            <a class="resource-card action-card" href="https://meshcore-map.ctmesh.org/" target="_blank" rel="noopener noreferrer">
-              <h3>CT Mesh Live Map</h3>
-              <p>
-                Public MeshCore map showing active regional nodes and packet paths where available.
-              </p>
-              <span class="card-link">Open CT Mesh Map →</span>
-            </a>
-
-            <a class="resource-card action-card" href="https://live.bostonme.sh/" target="_blank" rel="noopener noreferrer">
-              <h3>Greater Boston Live Packet Map</h3>
-              <p>
-                Near-real-time view of Greater Boston MeshCore nodes, packet flow, and advert paths.
-              </p>
-              <span class="card-link">Open Boston Live Map →</span>
-            </a>
-
-            <a class="resource-card action-card" href="https://analyzer.bostonme.sh/" target="_blank" rel="noopener noreferrer">
-              <h3>Boston Analyzer</h3>
-              <p>
-                Packet analyzer for recent Greater Boston Mesh traffic, visibility, observers, and activity.
-              </p>
-              <span class="card-link">Open Boston Analyzer →</span>
-            </a>
-
-            <a class="resource-card action-card" href="/guides/meshcore-basics.html">
-              <h3>What am I looking at?</h3>
-              <p>
-                New to MeshCore? Start with the basics before trying to interpret public packet maps.
-              </p>
-              <span class="card-link">Read MeshCore Basics →</span>
-            </a>
-          </div>
+          <p>
+            The dedicated map address is
+            <strong>map.hampdencountymesh.org</strong>. For now, it points here.
+            Later, it may point to a live or near-live map when that system is ready.
+          </p>
         </div>
       </div>
     </section>
-
-<section id="site-maintained-systems">
-  <div class="container">
-    <div class="section-heading">Observed Activity Work</div>
-
-    <div class="community-panel">
-      <p>
-        Public activity tools for this site are still in development. The goal is to
-        eventually show useful, public-safe observed activity without turning the map
-        into a claim that every visible node belongs to Hampden County Mesh.
-      </p>
-
-      <p>
-        A dedicated map address is reserved at
-        <strong>map.hampdencountymesh.org</strong>.
-        For now, it points here while future live or near-live observed activity tools are prepared.
-      </p>
-
-      <p>
-        Normal users do not need site-maintained infrastructure to get started. A basic
-        node, the right settings, and a reasonable location are enough to begin testing.
-      </p>
-
-      <div class="button-row">
-        <a class="btn secondary" href="/updates/">Read Updates</a>
-      </div>
-    </div>
-  </div>
-</section>
 
     <section>
       <div class="container">
         <div class="section-heading">Local Terrain</div>
 
-        <div class="image-feature">
+        <div class="image-feature compact-image-feature">
           <div class="image-frame">
             <img src="/assets/images/coverage/wio-tracker-field-test-01.jpg" alt="A handheld mesh radio device used outdoors">
 
@@ -202,17 +124,16 @@
           </div>
 
           <div class="image-copy">
-            <h3>Radio behaves differently from place to place.</h3>
+            <h3>Radio changes from place to place.</h3>
 
             <p>
-              Hampden County has hills, valleys, wooded areas, dense neighborhoods, old brick buildings,
-              river corridors, highways, campuses, hospitals, parks, and rural edges. All of that affects
-              small radios.
+              A short move can matter. A parking lot, hill, window, field, vehicle,
+              or wooded trail may all produce different results.
             </p>
 
             <p>
-              A device near a window may behave differently than the same device deeper inside a building
-              or vehicle. A little more height, a better antenna, or a different location can make a real difference.
+              Testing locally helps people understand what works here instead of relying
+              only on guesses, spec sheets, or results from other regions.
             </p>
 
             <a class="btn secondary" href="/guides/getting-started.html">Get Started</a>
@@ -256,7 +177,7 @@
           <a class="resource-card action-card" href="/join/coverage/" data-join-source="coverage">
             <h3>Ask the community</h3>
             <p>
-              Join the Discord to ask questions, talk about devices, compare results,
+              Join the Discord to ask questions, talk about devices, share results,
               and coordinate local testing.
             </p>
             <span class="card-link">Join Discord →</span>
@@ -271,14 +192,18 @@
 
         <div class="community-panel">
           <p>
-            Public activity tools for this site are still in development. The goal is to
-            eventually show useful, public-safe observed activity without turning the map
-            into a claim that every visible node belongs to Hampden County Mesh.
+            Live map and activity tools are still being prepared. Public live data is not automated yet.
           </p>
 
           <p>
-            Normal users do not need site-maintained infrastructure to get started. A basic
-            node, the right settings, and a reasonable location are enough to begin testing.
+            For now, coverage information comes from local testing, public notes,
+            and community reports. As the site grows, activity data should be added carefully
+            and without exposing private locations or sensitive details.
+          </p>
+
+          <p>
+            The map address is reserved at
+            <strong>map.hampdencountymesh.org</strong>.
           </p>
 
           <div class="button-row">
@@ -294,7 +219,7 @@
           <div class="section-heading">Contact</div>
 
           <p>
-            Questions, corrections, public map links, or ideas for improving this page?
+            Questions, corrections, coverage notes, or ideas for improving this page?
           </p>
 
           <p>
@@ -318,8 +243,6 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
   <script src="/last-updated.js" defer></script>
-  <script src="/assets/js/coverage-map.js" defer></script>
 </body>
 </html>
