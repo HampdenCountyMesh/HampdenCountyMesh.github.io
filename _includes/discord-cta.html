@@ -1,7 +1,58 @@
-{% assign join_source = include.source | default: "site" %}
+{% assign join_source = include.source | default: "general" %}
 {% assign button_text = include.text | default: "Join Discord" %}
 {% assign button_class = include.class | default: "btn primary" %}
+{% assign join_path = "/join/" %}
+{% assign tracked_source = "general" %}
 
-<a class="{{ button_class | escape }}" href="{{ '/join/' | append: join_source | append: '/' | relative_url }}" data-join-source="{{ join_source | escape }}">
+{% case join_source %}
+  {% when "404" %}
+    {% assign join_path = "/join/404/" %}
+    {% assign tracked_source = "404" %}
+
+  {% when "better-coverage" %}
+    {% assign join_path = "/join/better-coverage/" %}
+    {% assign tracked_source = "better-coverage" %}
+
+  {% when "card" %}
+    {% assign join_path = "/join/card/" %}
+    {% assign tracked_source = "card" %}
+
+  {% when "coverage" %}
+    {% assign join_path = "/join/coverage/" %}
+    {% assign tracked_source = "coverage" %}
+
+  {% when "flier" %}
+    {% assign join_path = "/join/flier/" %}
+    {% assign tracked_source = "flier" %}
+
+  {% when "getting-started" %}
+    {% assign join_path = "/join/getting-started/" %}
+    {% assign tracked_source = "getting-started" %}
+
+  {% when "guides" %}
+    {% assign join_path = "/join/guides/" %}
+    {% assign tracked_source = "guides" %}
+
+  {% when "home-bottom" %}
+    {% assign join_path = "/join/home-bottom/" %}
+    {% assign tracked_source = "home-bottom" %}
+
+  {% when "home-hero" %}
+    {% assign join_path = "/join/home-hero/" %}
+    {% assign tracked_source = "home-hero" %}
+
+  {% when "site-nav" %}
+    {% assign join_path = "/join/site-nav/" %}
+    {% assign tracked_source = "site-nav" %}
+
+  {% when "updates" %}
+    {% assign join_path = "/join/updates/" %}
+    {% assign tracked_source = "updates" %}
+{% endcase %}
+
+<a
+  class="{{ button_class | escape }}"
+  href="{{ join_path | relative_url }}"
+  data-join-source="{{ tracked_source | escape }}">
   {{ button_text | escape }}
 </a>

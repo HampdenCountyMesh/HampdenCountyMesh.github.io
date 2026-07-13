@@ -1,252 +1,177 @@
 # Hampden County Mesh
 
-Hampden County Mesh is a local community effort for MeshCore, Meshtastic, setup help, public-safe map references, and local mesh radio across Hampden County and nearby Western Massachusetts.
+Hampden County Mesh is a volunteer-run Western Massachusetts community for MeshCore, Meshtastic, and local mesh radio.
 
-This repository contains the public website and supporting documentation for Hampden County Mesh.
+This repository contains the public website, guides, updates, project documentation, and supporting files for Hampden County Mesh.
 
 Website: https://hampdencountymesh.org/
 
-Discord join route: https://hampdencountymesh.org/join/
+Discord: https://hampdencountymesh.org/join/
+
+Live map: https://map.hampdencountymesh.org/
+
+Analyzer: https://analyzer.hampdencountymesh.org/
 
 ## Purpose
 
-Hampden County Mesh exists to help local people learn about mesh radio, nearby mesh activity, practical device use, local terrain, and related communications tools.
+Hampden County Mesh helps people around Hampden County and nearby Western Massachusetts learn about mesh radio, get devices working, understand local radio conditions, and participate in the regional mesh community.
 
-The site and community focus on:
+The project focuses on:
 
-* MeshCore and LoRa mesh use
-* Meshtastic and related mesh tools
-* Recommended local starting settings
-* Device roles, placement, antennas, and practical setup choices
-* Local terrain and radio behavior
-* MeshMapper field testing for MeshCore
-* Maps and observed mesh activity planning
-* Beginner-friendly guides
-* Safe sharing of photos, screenshots, setup details, and map results
-* Community coordination through Discord, the website, updates, and future local learning sessions
+- MeshCore
+- Meshtastic
+- Beginner-friendly setup guidance
+- Recommended regional settings
+- Fixed and portable mesh nodes
+- Antennas, placement, and local terrain
+- Coverage testing and MeshMapper
+- Live observed MeshCore activity
+- Community coordination through the website and Discord
 
-Hampden County Mesh does not claim ownership over every mesh node, observer, repeater, radio user, packet, map marker, or public feed in the county.
-
-The goal is to make it easier for people to learn, participate, and share useful local information.
-
-## Beginners Are Welcome
-
-You do not need to be an expert, own expensive equipment, run infrastructure, or understand every technical detail to participate.
-
-Useful participation can be as simple as:
-
-* Asking a beginner question
-* Getting one node working
-* Bringing a node along while you are out
-* Seeing what your device can hear from a park, street, hill, window, vehicle, or parking lot
-* Sharing that something worked or did not work
-* Taking a public-safe photo of a device, setup, or local terrain example
-* Helping someone else understand the basics
-* Suggesting a good place for a future meetup, demo, or learning session
-
-Documentation helps, but it is not a barrier to entry.
-
-Short, public-safe results are welcome.
+Hampden County Mesh does not own or operate every node, repeater, observer, packet, or map marker visible through regional mesh tools.
 
 ## Current Status
 
-Current public status:
+The following services are active:
 
-* Public website: active
-* Guide library: active
-* Discord: active
-* Coverage page: active
-* Updates page: active
-* Public live data automation: not enabled yet
-* Map address: reserved and redirecting to Coverage
-* New participants: welcome
+- Public website
+- Guide library
+- Discord community
+- Live MeshCore activity map
+- CoreScope analyzer
+- Coverage and MeshMapper page
+- Project updates
+- Tracked Discord join routes
 
-## Map and Public Data Status
-
-The public map address is:
-
-https://map.hampdencountymesh.org/
-
-For now, that address redirects to the Coverage page while future live or near-live observed activity tooling is prepared.
-
-Public live activity data is not automated yet. Future map work may use observer logs, MQTT-backed tools, broker data, public analyzers, CoreScope-style tooling, MeshMapper results, or other public-safe sources.
-
-Related documentation may include:
-
-* `docs/map-subdomain.md`
-* `docs/broker-data-access.md`
-* `docs/observed-activity-data.md`
-* `docs/mqtt.md`
-* `docs/observers.md`
-
-The broader local mesh ecosystem may include independent nodes, observers, repeaters, mobile devices, nearby regions, and public tools that are not operated by Hampden County Mesh.
-
-Any future public activity views should be understood as observed mesh activity where available, not as a claim that every visible node belongs to Hampden County Mesh.
+The network and its public data views continue to develop as more nodes, observers, and radio paths become available.
 
 ## Website Sections
 
-Main public sections:
+### Home
 
-* Home
-* Guides
-* Coverage
-* Updates
-* Discord join route
+The main introduction to Hampden County Mesh:
 
-The Guides section is the main home for public setup, settings, safety, and how-to material:
+https://hampdencountymesh.org/
+
+### Guides
+
+Beginner information, recommended settings, MeshCore and Meshtastic basics, coverage information, and safe-sharing guidance:
 
 https://hampdencountymesh.org/guides/
 
-The Coverage page includes local terrain notes, MeshMapper, nearby public tools, map status, and observed-activity planning:
+### Live Map
+
+The map displays geolocated MeshCore packet activity observed through participating systems:
+
+https://map.hampdencountymesh.org/
+
+The map represents observed activity, not a complete inventory of every node or radio path in the region.
+
+### Analyzer
+
+CoreScope provides more detailed packet, node, path, and observer information:
+
+https://analyzer.hampdencountymesh.org/
+
+### Coverage and Field Testing
+
+The Coverage page includes access to the Western Massachusetts MeshMapper region and related testing information:
 
 https://hampdencountymesh.org/coverage.html
 
-The Updates page is for occasional notes about site changes, local events, seminars, and observed activity work:
+MeshMapper:
+
+https://psf.meshmapper.net/
+
+MeshMapper is an independent project and is not operated by Hampden County Mesh.
+
+### Updates
+
+Project updates, site changes, event notes, and other occasional announcements:
 
 https://hampdencountymesh.org/updates/
 
-## Field Testing and Local Use
+## Building Better Coverage
 
-Coverage is learned through real-world use. That does not need to be formal.
+Reliable mesh coverage depends heavily on height, antenna placement, terrain, and fixed infrastructure.
 
-Most of the time, it means bringing a node somewhere, seeing what it can hear, and sharing anything useful in a public-safe way.
+The Building Better Mesh Coverage page explains how useful radio paths are created and how local participants can contribute:
 
-Helpful details, when available, include:
+https://hampdencountymesh.org/building-better-mesh-coverage.html
 
-* General location or public landmark
-* Device used
-* Antenna and placement
-* What connected or was heard
-* What did not connect or was not heard
-* Whether the result came from direct radio, an observer, MQTT, a map, a dashboard, or a local log
-* General terrain, building, tree, weather, or placement context
+## Repository Structure
 
-You do not need to publish exact private locations. General areas, public landmarks, road corridors, parks, neighborhoods, and town-level results are often enough.
+Important locations include:
 
-For MeshCore field testing, Hampden County Mesh points people toward MeshMapper:
+- `_data/` — Navigation and guide metadata
+- `_includes/` — Shared Liquid components
+- `_layouts/` — Page and redirect layouts
+- `_updates/` — Update collection entries
+- `assets/` — Stylesheets, scripts, images, and icons
+- `guides/` — Public guide pages
+- `join/` — Tracked Discord redirect routes
+- `updates/` — Updates landing page
+- `docs/` — Maintainer and contributor documentation
 
-https://meshmapper.net/
+The `docs/` directory is excluded from the generated GitHub Pages website, but remains available in the repository.
 
-## Observed Activity
+Current documentation includes:
 
-A goal of the site is to make useful observed mesh activity easier to understand.
-
-Observed activity may include data heard by site-maintained systems, public sources, nearby tools, logs, dashboards, or public-safe community results where available.
-
-Observed activity should not imply that every node, observer, repeater, marker, packet, or device shown is owned, operated, endorsed, or managed by Hampden County Mesh.
-
-The purpose is to help people see that mesh activity exists nearby, understand what may be possible, and connect with others interested in local mesh radio.
-
-## Repository Contents
-
-This repository may include:
-
-* Website pages
-* Public guides
-* Coverage page files
-* Updates
-* Community documents
-* Issue templates
-* Contribution guidelines
-* Supporting files for GitHub Pages
-* Public-safe map or boundary files where useful
-
-Backend credentials, private keys, API tokens, passwords, private node locations, private infrastructure details, and sensitive access information should not be committed here.
-
-## Documentation Folders
-
-The `/guides/` folder contains public-facing website guide pages.
-
-The `/docs/` folder contains supporting documentation for repo maintainers and contributors. Examples may include:
-
-* Discord notes
-* Observed activity notes
-* Map subdomain notes
-* Broker and data access notes
-* MQTT and observer notes
-* Asset and media handling notes
-* Website or repository support notes
-* Future infrastructure notes when they are ready to be public
+- `docs/ASSETS.md`
+- `docs/data-access-and-observed-activity.md`
+- `docs/discord.md`
+- `docs/infrastructure.md`
+- `docs/map-subdomain.md`
+- `docs/README.md`
 
 ## Contributing
 
-Contributions are welcome.
+Contributions are welcome, including:
 
-Useful contributions include:
+- Documentation corrections
+- Guide improvements
+- Website fixes
+- Accessibility improvements
+- Public map and data presentation improvements
+- Issue reports
+- Suggestions for local workshops or learning sessions
 
-* Documentation edits
-* Public-safe local mesh results
-* Public-safe device notes
-* Guide improvements
-* Website fixes
-* Accessibility improvements
-* Issue reports
-* Suggestions for future learning sessions
+Larger changes should be discussed before implementation so the site remains accurate and consistent.
 
-Larger changes should be discussed first so the public site stays accurate, beginner-friendly, and respectful of independent nodes and nearby communities.
+See `CONTRIBUTING.md`.
 
-See `CONTRIBUTING.md` for more information.
+## Security and Privacy
 
-## Safety and Privacy
+Do not commit passwords, private keys, API tokens, broker credentials, private messages, or non-public infrastructure details.
 
-Do not publish:
+Exact private installation locations should not be published without permission.
 
-* Private addresses without permission
-* Private keys
-* Passwords
-* API tokens
-* Broker credentials
-* Admin URLs
-* Exact private node locations unless intentionally public and safe
-* Photos that reveal sensitive personal or location details
-* Screenshots that expose private messages, credentials, or coordinates
-* Unverified emergency claims
-
-When in doubt, use general areas and plain summaries.
-
-See `SECURITY.md` for sensitive security issues.
-
-## Security
-
-For security issues, private credentials, exposed secrets, or sensitive infrastructure concerns, contact:
+Sensitive security reports should be sent to:
 
 [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org)
 
-Do not open a public GitHub issue for sensitive security problems.
+Do not open a public GitHub issue containing credentials, private data, or information that could provide unauthorized access.
 
-See `SECURITY.md` for more information.
+See `SECURITY.md`.
 
 ## Contact
 
-General contact:
+General inquiries:
 
 [contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)
 
-Discord-related contact:
+Discord-related questions:
 
 [discord@hampdencountymesh.org](mailto:discord@hampdencountymesh.org)
 
-Security contact:
+Security reports:
 
 [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org)
 
-Discord join route:
+## Limits
 
-https://hampdencountymesh.org/join/
-
-## Important Limits
-
-Hampden County Mesh is not:
-
-* An emergency service
-* A replacement for 911
-* A guarantee of coverage during an outage
-* An official public safety system
-* A claim of ownership over all mesh activity in Hampden County
-* A finished county-wide network
-
-The community becomes more useful as more people learn, ask questions, try devices, host nodes where appropriate, share public-safe results, and help others get started.
+Hampden County Mesh is a community education and hobby project. It is not an emergency service, a public safety system, a guarantee of coverage, or a claim of ownership over all mesh activity in the region.
 
 ## License
 
-See `LICENSE` for repository license information.
+See `LICENSE`.

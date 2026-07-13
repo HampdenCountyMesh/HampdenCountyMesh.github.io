@@ -1,12 +1,12 @@
 title: Hampden County Mesh
-description: Community-based mesh and radio communications in Western Massachusetts.
+description: Hampden County Mesh is a Western Massachusetts community for MeshCore, Meshtastic, and local mesh radio.
 url: "https://hampdencountymesh.org"
 timezone: America/New_York
 
-default_social_image: /assets/images/social/hcm-og-towers.jpg
-default_social_image_alt: Hampden County Mesh logo over a view of Mount Tom radio towers.
+default_social_image: /assets/images/social/mttomrockitt.png
+default_social_image_alt: Hampden County Mesh branding over a view of Mount Tom.
 
-css_version: "20260705b"
+css_version: "20260713a"
 
 discord_invite_url: "https://discord.gg/egyUeREcmX"
 
@@ -23,3 +23,6 @@ defaults:
       layout: update
       nav: updates
       og_type: article
+
+exclude:
+  - docs/

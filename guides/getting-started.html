@@ -1,15 +1,14 @@
 ---
 layout: guide
 title: Getting Started
-description: A beginner guide for getting started with MeshCore, Meshtastic, recommended settings, and local mesh testing in Western Massachusetts.
-lede: Start here if you are new to MeshCore, Meshtastic, or local mesh radio. Pick a path, use the recommended settings, and test from real places.
+description: A beginner guide to choosing MeshCore or Meshtastic, setting up a first device, and getting started with local mesh radio in Western Massachusetts.
+lede: New to mesh radio? Start with one device, keep the setup simple, and learn the basics before changing advanced settings.
 ---
 
 <div class="hero-actions">
   <a class="btn secondary" href="#quick-path">Quick Path</a>
-  <a class="btn secondary" href="#what-mesh-is">What Mesh Is</a>
-  <a class="btn secondary" href="#choose">Choose a Path</a>
-  <a class="btn secondary" href="#settings">Settings</a>
+  <a class="btn secondary" href="#choose">Choose a System</a>
+  <a class="btn secondary" href="#first-setup">First Setup</a>
   <a class="btn secondary" href="#first-test">First Test</a>
   <a class="btn secondary" href="#ask">Ask for Help</a>
 </div>
@@ -18,77 +17,70 @@ lede: Start here if you are new to MeshCore, Meshtastic, or local mesh radio. Pi
   <h2>Quick path</h2>
 
   <p>
-    You do not need to understand every setting, channel, map, or node role before starting. Most people should begin with one normal device and keep the setup simple.
+    You do not need to understand every setting, channel, or node role before starting.
+    Most people should begin with one normal device and keep the setup simple.
   </p>
 
   <ol>
-    <li>Read the short explanation on this page.</li>
-    <li>Start with MeshCore if you are buying or setting up a new device for local HCM use.</li>
+    <li>Choose MeshCore or Meshtastic.</li>
+    <li>Get one supported device running.</li>
     <li>Use the <a href="{{ '/guides/recommended-settings.html' | relative_url }}">Recommended Settings</a>.</li>
-    <li>Place the device near a window or take it somewhere with a clearer view.</li>
-    <li>Read the basics page for the system you are using: <a href="{{ '/guides/meshcore-basics.html' | relative_url }}">MeshCore Basics</a> or <a href="{{ '/guides/meshtastic-basics.html' | relative_url }}">Meshtastic Basics</a>.</li>
-    <li>Use <a href="{{ '/coverage.html' | relative_url }}">Coverage</a> for terrain notes, MeshMapper, and local map-related updates.</li>
+    <li>Read the basics page for the system you are using.</li>
+    <li>Try the device from a reasonable location and see what it hears.</li>
   </ol>
 
   <p>
-    The first goal is not a perfect installation. The first goal is to get oriented, get a device working, and learn what local mesh radio looks like from real locations around Hampden County.
-  </p>
-</section>
-
-<section class="docs-section" id="what-mesh-is">
-  <h2>What mesh is</h2>
-
-  <p>
-    Mesh radios pass short messages between nearby devices. A node can send and receive messages, and other nodes may help relay traffic across an area.
-  </p>
-
-  <p>
-    Results are local. Terrain, height, antenna placement, buildings, trees, and nearby activity all matter.
-  </p>
-
-  <p>
-    Maps and dashboards can help, but they do not replace local testing. A map point, dashboard result, or observed activity does not always mean your device can directly reach that node from where you are.
+    The first goal is not a permanent installation or perfect coverage.
+    Get familiar with the device and learn what local mesh activity looks like from where you are.
   </p>
 </section>
 
 <section class="docs-section" id="choose">
-  <h2>Choose a first path</h2>
+  <h2>Choose a system</h2>
 
   <p>
-    Hampden County Mesh supports both MeshCore and Meshtastic. MeshCore is the main setup focus here because it fits the local direction for two-way messaging, fixed nodes, repeaters, rooms, observers, and shared community use.
-  </p>
-
-  <p>
-    Meshtastic users are welcome too, especially people who already have devices or want to compare both systems.
+    Hampden County Mesh supports both MeshCore and Meshtastic.
+    MeshCore is the main local focus for shared messaging, rooms, repeaters,
+    observers, and regional mesh work.
   </p>
 
   <div class="docs-action-grid">
     <div class="docs-action-card">
       <h3>MeshCore</h3>
+
       <p>
-        Choose MeshCore if you are starting from scratch and want to follow the main local direction for settings, room use, repeaters, observers, and regional mesh work.
+        A good starting point for someone who wants to follow the main local
+        MeshCore network and community direction.
       </p>
 
       <div class="button-row">
-        <a class="btn secondary" href="{{ '/guides/meshcore-basics.html' | relative_url }}">MeshCore Basics</a>
+        <a class="btn secondary" href="{{ '/guides/meshcore-basics.html' | relative_url }}">
+          MeshCore Basics
+        </a>
       </div>
     </div>
 
     <div class="docs-action-card">
       <h3>Meshtastic</h3>
+
       <p>
-        Meshtastic is useful for learning LoRa basics, trying antennas and placement, telemetry, portable use, outdoor experiments, and casual participation.
+        Also supported, especially for people who already use it or want to
+        experiment with portable LoRa devices and telemetry.
       </p>
 
       <div class="button-row">
-        <a class="btn secondary" href="{{ '/guides/meshtastic-basics.html' | relative_url }}">Meshtastic Basics</a>
+        <a class="btn secondary" href="{{ '/guides/meshtastic-basics.html' | relative_url }}">
+          Meshtastic Basics
+        </a>
       </div>
     </div>
 
     <div class="docs-action-card">
-      <h3>Ask first</h3>
+      <h3>Not sure yet?</h3>
+
       <p>
-        If you are not sure what to buy, ask before ordering. A short question can save you from buying hardware that does not fit what you want to do.
+        Ask before buying hardware. A short conversation can help narrow down
+        which system and device fit what you actually want to do.
       </p>
 
       <div class="button-row">
@@ -102,19 +94,19 @@ lede: Start here if you are new to MeshCore, Meshtastic, or local mesh radio. Pi
   <h2>What you need</h2>
 
   <p>
-    A first setup does not need to be complicated. For most people, the basic pieces are:
+    A basic first setup is usually just:
   </p>
 
   <ul>
     <li>A supported MeshCore or Meshtastic device.</li>
     <li>A phone or computer to configure it.</li>
-    <li>A working antenna for the device and frequency band.</li>
-    <li>A power source or battery.</li>
-    <li>A place to test it, such as a window, yard, vehicle, public park, or other real location.</li>
+    <li>The correct antenna.</li>
+    <li>A battery or other power source.</li>
   </ul>
 
   <p>
-    Do not start with outdoor installs, solar power, MQTT, router roles, repeater behavior, or multiple nodes unless you already know why you need them.
+    Start there. Outdoor enclosures, solar power, MQTT, repeaters, and multiple
+    nodes can wait until you have a reason to use them.
   </p>
 </section>
 
@@ -122,76 +114,45 @@ lede: Start here if you are new to MeshCore, Meshtastic, or local mesh radio. Pi
   <h2>Use the recommended settings</h2>
 
   <p>
-    Settings are where many beginner problems start. Use the local starting settings first. Change advanced settings only after you know what problem you are solving.
+    Use the local starting settings before changing advanced options.
+    This avoids many of the most common setup problems and makes it easier
+    to compare what your device is doing with other local users.
   </p>
 
-  <div class="settings-mini">
-    <div class="settings-mini-card">
-      <h3>MeshCore</h3>
-      <ul>
-        <li>US / USA-Canada recommended preset</li>
-        <li><code>910.525 MHz</code></li>
-        <li><code>62.5 kHz</code> bandwidth</li>
-        <li><code>SF7</code></li>
-        <li><code>CR5</code></li>
-        <li>Flood advert interval: <code>47 hours</code></li>
-      </ul>
-    </div>
-
-    <div class="settings-mini-card">
-      <h3>Meshtastic</h3>
-      <ul>
-        <li>United States region</li>
-        <li>LongFast / default primary channel</li>
-        <li><code>AQ==</code> primary key</li>
-        <li><code>CLIENT</code> role for most users</li>
-        <li>MQTT off for normal beginner use</li>
-      </ul>
-    </div>
+  <div class="button-row">
+    <a class="btn primary" href="{{ '/guides/recommended-settings.html' | relative_url }}">
+      Recommended Settings
+    </a>
   </div>
-
-  <p>
-    The main settings page is <a href="{{ '/guides/recommended-settings.html' | relative_url }}">Recommended Settings</a>. Use that page when configuring a device.
-  </p>
 </section>
 
 <section class="docs-section" id="first-setup">
-  <h2>First setup goals</h2>
+  <h2>First setup</h2>
 
   <p>
-    A good first setup is boring. Get the device running, make sure the settings are right, place it somewhere reasonable, and watch what happens.
+    Get the device working before trying to improve it.
   </p>
 
   <ul>
     <li>Flash the correct firmware for your device.</li>
-    <li>Set a clear node name that does not expose private details.</li>
-    <li>Use the recommended settings before changing anything advanced.</li>
     <li>Attach the antenna before transmitting.</li>
-    <li>Place the device near a window or outside temporarily if safe.</li>
+    <li>Set a clear node name that does not expose private details.</li>
+    <li>Use the recommended local settings.</li>
     <li>Make one change at a time when troubleshooting.</li>
   </ul>
 
   <p>
-    Use official project documentation for exact firmware, app, and device-specific steps. Hampden County Mesh guides are here for local context, starting settings, practical choices, and community help.
+    Use the official project documentation for exact firmware, app, and
+    device-specific instructions.
   </p>
 
-  <div class="resource-grid docs-resource-grid">
-    <a class="resource-card action-card project-resource-card" href="https://meshcore.io/" target="_blank" rel="noopener noreferrer">
-      <img class="project-card-icon" src="{{ '/assets/icons/meshcore.svg' | relative_url }}" alt="" aria-hidden="true">
-      <h3>MeshCore</h3>
-      <p>
-        Official MeshCore site, documentation, apps, firmware, and project links.
-      </p>
-      <span class="card-link">Visit MeshCore →</span>
+  <div class="button-row">
+    <a class="btn secondary" href="https://meshcore.io/" target="_blank" rel="noopener noreferrer">
+      MeshCore
     </a>
 
-    <a class="resource-card action-card project-resource-card" href="https://meshtastic.org/" target="_blank" rel="noopener noreferrer">
-      <img class="project-card-icon" src="{{ '/assets/icons/meshtastic.svg' | relative_url }}" alt="" aria-hidden="true">
-      <h3>Meshtastic</h3>
-      <p>
-        Official Meshtastic documentation, apps, supported hardware, firmware, and project information.
-      </p>
-      <span class="card-link">Visit Meshtastic →</span>
+    <a class="btn secondary" href="https://meshtastic.org/" target="_blank" rel="noopener noreferrer">
+      Meshtastic
     </a>
   </div>
 </section>
@@ -200,114 +161,54 @@ lede: Start here if you are new to MeshCore, Meshtastic, or local mesh radio. Pi
   <h2>First test</h2>
 
   <p>
-    After the device is running, test simply. Do not judge the whole mesh from one indoor attempt.
+    Do not judge the whole mesh from one attempt in the middle of a room.
   </p>
 
   <ol>
     <li>Put the device near a window or another reasonable location.</li>
     <li>Leave it powered long enough to hear normal activity.</li>
-    <li>Send a short test message only if it makes sense for the system and channel you are using.</li>
-    <li>Move the device once and see whether anything changes.</li>
-    <li>Try a different real location, such as a yard, car, park, hill, or other open area.</li>
-    <li>Keep location details general when posting publicly.</li>
+    <li>Move it once and see whether anything changes.</li>
+    <li>Try another location such as a yard, vehicle, park, or higher ground.</li>
   </ol>
 
   <p>
-    For MeshCore field testing, MeshMapper may be useful:
-    <a href="https://psf.meshmapper.net/" target="_blank" rel="noopener noreferrer">Western Massachusetts MeshMapper</a>.
+    The <a href="https://map.hampdencountymesh.org/">Hampden County Mesh live map</a>
+    can show geolocated MeshCore activity observed through participating systems.
+  </p>
+
+  <p>
+    MeshCore users can also use
+    <a href="https://psf.meshmapper.net/" target="_blank" rel="noopener noreferrer">Western Massachusetts MeshMapper</a>
+    for field testing and coverage work.
   </p>
 </section>
 
-<section class="docs-section" id="range">
-  <h2>What affects range</h2>
+<section class="docs-section" id="better-coverage">
+  <h2>Thinking about better coverage?</h2>
 
   <p>
-    More power is usually not the first answer. Placement and antenna setup often matter more.
+    Height, placement, antennas, and fixed nodes all affect how radio paths develop.
+    That is a separate step from getting a first device working.
   </p>
 
-  <ul>
-    <li>Height usually helps.</li>
-    <li>A window can be better than the middle of a room.</li>
-    <li>Outside can be better than inside, if the setup is safe.</li>
-    <li>Terrain can block or shape radio paths.</li>
-    <li>A better antenna can help, but only if it is matched and installed well.</li>
-    <li>A stable power source matters for fixed nodes.</li>
-    <li>Other useful nodes nearby make testing easier.</li>
-  </ul>
-
-  <p>
-    Hampden County has hills, valleys, dense neighborhoods, wooded areas, river corridors, and high spots. Results from one town, street, building, or park may not apply everywhere else.
-  </p>
-</section>
-
-<section class="docs-section" id="what-to-avoid">
-  <h2>What to avoid at first</h2>
-
-  <ul>
-    <li>Buying several devices before understanding your first one.</li>
-    <li>Changing many settings at the same time.</li>
-    <li>Using router or repeater roles on a normal beginner node.</li>
-    <li>Enabling MQTT just because the option exists.</li>
-    <li>Publishing exact private locations when a general area is enough.</li>
-    <li>Assuming no replies means the device is broken.</li>
-    <li>Assuming a map point means you can directly reach that node.</li>
-  </ul>
+  <div class="button-row">
+    <a class="btn secondary" href="{{ '/building-better-mesh-coverage.html' | relative_url }}">
+      Building Better Mesh Coverage
+    </a>
+  </div>
 </section>
 
 <section class="docs-section" id="sharing">
-  <h2>Before posting screenshots or setup details</h2>
+  <h2>Before sharing publicly</h2>
 
   <p>
-    Before posting publicly, check for private messages, exact locations, keys, credentials, Wi-Fi details, addresses, license plates, and anything someone else did not agree to share.
+    Check screenshots, photos, and setup details for information you did not
+    intend to post.
   </p>
 
-  <p>
-    For the longer version, read <a href="{{ '/guides/sharing-safely.html' | relative_url }}">Sharing Safely</a>.
-  </p>
-</section>
-
-<section class="docs-section" id="what-to-read-next">
-  <h2>What to read next</h2>
-
-  <div class="resource-grid docs-resource-grid">
-    <a class="resource-card action-card" href="{{ '/guides/recommended-settings.html' | relative_url }}">
-      <h3>Recommended Settings</h3>
-      <p>
-        The local quick reference for MeshCore and Meshtastic starting settings.
-      </p>
-      <span class="card-link">View settings →</span>
-    </a>
-
-    <a class="resource-card action-card" href="{{ '/guides/meshcore-basics.html' | relative_url }}">
-      <h3>MeshCore Basics</h3>
-      <p>
-        MeshCore terms, local setup notes, rooms, channels, and role-specific information.
-      </p>
-      <span class="card-link">Read MeshCore basics →</span>
-    </a>
-
-    <a class="resource-card action-card" href="{{ '/guides/meshtastic-basics.html' | relative_url }}">
-      <h3>Meshtastic Basics</h3>
-      <p>
-        Meshtastic terms, local setup notes, common roles, and beginner use.
-      </p>
-      <span class="card-link">Read Meshtastic basics →</span>
-    </a>
-
-    <a class="resource-card action-card" href="{{ '/coverage.html' | relative_url }}">
-      <h3>Coverage</h3>
-      <p>
-        Terrain notes, MeshMapper, local testing notes, and map-related updates.
-      </p>
-      <span class="card-link">Open Coverage →</span>
-    </a>
-
-    <a class="resource-card action-card" href="{{ '/updates/' | relative_url }}">
-      <h3>Updates</h3>
-      <p>
-        Occasional notes about site changes, local events, seminars, map work, and public data preparation.
-      </p>
-      <span class="card-link">Read updates →</span>
+  <div class="button-row">
+    <a class="btn secondary" href="{{ '/guides/sharing-safely.html' | relative_url }}">
+      Sharing Safely
     </a>
   </div>
 </section>
@@ -316,11 +217,7 @@ lede: Start here if you are new to MeshCore, Meshtastic, or local mesh radio. Pi
   <h2>Ask before you get stuck</h2>
 
   <p>
-    The Discord is there for setup questions, device choices, local settings, map testing, and community discussion.
-  </p>
-
-  <p>
-    You do not need to own a node yet, and you do not need to know the right terms before asking.
+    You do not need to own a node yet or know the right terminology before asking a question.
   </p>
 
   <div class="button-row">

@@ -1,182 +1,142 @@
 # Hampden County Mesh Documentation
 
-This directory contains supporting documentation for Hampden County Mesh.
+This directory contains supporting documentation for Hampden County Mesh maintainers and contributors.
 
-These files are meant to help with continuity, maintenance, troubleshooting, public site updates, and shared understanding of the systems behind the website.
-
-The `/docs/` folder is for supporting documentation. It is different from the public guide pages in `/guides/`.
-
-The `/guides/` folder contains public-facing educational pages for beginners and community members.
+The `/docs/` folder is excluded from the generated public website. Public educational pages belong in `/guides/`.
 
 ## Documentation Index
 
-### Community and Coordination
+### `ASSETS.md`
 
-* `discord.md`  
-  Notes about the Discord server, channels, roles, onboarding, moderation expectations, GitHub integration, and future bot or relay planning.
+Licensing, attribution, privacy review, file naming, photographs, screenshots, icons, branding, and third-party media.
 
-### Website Assets
+### `data-access-and-observed-activity.md`
 
-* `ASSETS.md`  
-  Notes about website images, icons, file naming, photo permissions, EXIF cleanup, screenshots, map assets, third-party assets, and media usage.
+Observed activity, MQTT data, broker access, public feeds, map data, privacy boundaries, and external integrations.
 
-### Infrastructure and Systems
+### `discord.md`
 
-* `infrastructure.md`  
-  Main overview of site-maintained systems, local support hardware, MeshCore-Hub, CoreScope, Mosquitto, observer work, portable devices, fixed nodes, and general infrastructure status.
+Discord structure, channels, roles, onboarding, moderation, integrations, and bot planning.
 
-* `data-access-and-observed-activity.md`  
-  Notes about observed activity, MQTT-backed tooling, broker or data-feed access, CoreScope-style integrations, public-safe data rules, source types, privacy review, and what must not be published.
+### `infrastructure.md`
 
-* `map-subdomain.md`  
-  Notes about `map.hampdencountymesh.org`, the current Coverage redirect, future public map expectations, launch checklist, and public map wording.
+Project-maintained servers, observers, brokers, CoreScope, fixed nodes, and related technical systems.
+
+### `map-subdomain.md`
+
+Configuration and maintenance notes for `map.hampdencountymesh.org`, the live activity map, and related public wording.
 
 ## Purpose
 
 Documentation in this folder should help maintainers understand:
 
-* What exists
-* What it is for
-* What is public
-* What is private
-* What still needs manual checking
-* What should not be overclaimed
-* Where related public pages live
+- What systems and services exist
+- What each system is used for
+- Which parts are public
+- Which details must remain private
+- How public pages relate to project infrastructure
+- What needs to be updated when a system changes
+- What remains incomplete or needs further testing
 
-This folder should support the public site without turning beginner-facing guide pages into dense technical manuals.
+Technical details should remain here rather than turning beginner-facing guides into infrastructure manuals.
 
-## Privacy and Safety
+## Current Public Services
 
-Do not commit private or sensitive information to this folder.
+The primary public services are:
 
-Do not include:
+- Website: https://hampdencountymesh.org/
+- Guides: https://hampdencountymesh.org/guides/
+- Live map: https://map.hampdencountymesh.org/
+- Analyzer: https://analyzer.hampdencountymesh.org/
+- Coverage and MeshMapper page: https://hampdencountymesh.org/coverage.html
+- Updates: https://hampdencountymesh.org/updates/
+- Discord join route: https://hampdencountymesh.org/join/
 
-* Private keys
-* Passwords
-* API tokens
-* Broker credentials
-* Admin URLs
-* Private IP addresses
-* Exact private node locations
-* Exact private observer locations
-* Exact private gateway locations
-* Exact private repeater locations
-* Private home addresses
-* Sensitive screenshots
-* Photos that reveal private locations unintentionally
-* Details someone shared privately and did not agree to publish
+The live map displays geolocated MeshCore packet activity observed through participating systems.
 
-When documentation needs to describe a location, use a general area, town, public landmark, or broad terrain description unless exact sharing is clearly intentional and safe.
+The analyzer provides more detailed packet, path, node, and observer information.
 
-Detailed data, broker, MQTT, observed-activity, and CoreScope rules should live in `data-access-and-observed-activity.md` instead of being repeated in every file.
+The Coverage page remains a secondary public page for MeshMapper and field-testing information.
+
+## Documentation Standards
+
+Keep documentation:
+
+- Accurate and current
+- Clear about what is active, planned, or retired
+- Specific enough to support maintenance
+- Careful about credentials and non-public infrastructure
+- Consistent with the public website
+- Free of unnecessary repeated warnings and disclaimers
+
+Do not commit passwords, private keys, API tokens, broker credentials, private messages, or information that could provide unauthorized access.
+
+Private locations and infrastructure details should only be documented when necessary, appropriate, and intentionally safe to publish in the repository.
+
+Security-sensitive information should follow `SECURITY.md`.
 
 ## Public Wording
 
-Public-facing wording should describe Hampden County Mesh as a community, not as the owner or operator of every nearby device.
+Hampden County Mesh should generally be described as a volunteer-run community project.
 
-Good wording:
+Use wording such as:
 
-* Hampden County Mesh
-* local mesh radio community
-* radio education in Western Massachusetts
-* practical off-grid communications
-* site-maintained systems
-* public sources
-* observed activity
-* field testing
-* MeshCore field testing
-* MeshMapper field testing
+- Observed MeshCore activity
+- Participating observers
+- Regional mesh activity
+- Field testing
+- Project-maintained systems
+- Independent nodes and services
 
-Avoid wording that suggests:
+Avoid implying:
 
-* complete coverage
-* guaranteed communication
-* ownership of all nodes
-* control of all nearby mesh activity
-* emergency service capability
-* replacement for 911 or official emergency services
+- Complete regional coverage
+- Guaranteed communications
+- Ownership of every visible node or packet
+- That every displayed device is currently reachable
+- That independent regional systems are operated by Hampden County Mesh
 
-Use care with wording like “network.” When used publicly, it should usually describe the people and community, not imply ownership of one official device network.
+## Maps and Observed Activity
 
-## Map and Data Readiness
-
-The public map address is:
+The public map is active at:
 
 https://map.hampdencountymesh.org/
 
-For now, that address redirects to the Coverage page while future live or near-live map tooling is prepared.
+Observed activity is not a complete inventory of the regional mesh. Quiet periods, incomplete locations, and partial radio paths are expected.
 
-Future map, bot, broker, observer, MQTT, or CoreScope-related work should follow the privacy and safety rules in:
+More detailed rules for public data, MQTT, broker access, and observed-activity integrations belong in:
 
-* `data-access-and-observed-activity.md`
-* `map-subdomain.md`
-* `infrastructure.md`
+- `data-access-and-observed-activity.md`
+- `infrastructure.md`
+- `map-subdomain.md`
 
-## Maintenance Notes
+For MeshCore field testing, use the Western Massachusetts MeshMapper region:
 
-Keep documentation practical and current.
+https://psf.meshmapper.net/
 
-When something changes, update the relevant file instead of leaving stale assumptions in place. If a file becomes obsolete, remove it or replace it with a short current note.
+MeshMapper is an independent project and is not operated by Hampden County Mesh. It should not be presented as a Meshtastic field-testing tool.
 
-Good documentation should answer:
+## Maintenance
 
-* What changed?
-* Why does it matter?
-* Is it public or private?
-* What should be checked later?
-* Does the public site need to be updated too?
-* Does any related guide page need to be updated too?
+When a system or public service changes:
 
-Avoid copying the same long privacy or observed-activity language into every document. Link to the main related file instead.
+1. Update the relevant file in `/docs/`.
+2. Check whether the website, guides, navigation, sitemap, README, or update posts also need changes.
+3. Remove stale descriptions of active systems as planned or future work.
+4. Check related links and tracked Discord routes.
+5. Record unfinished work clearly without presenting it as live.
+
+If a document becomes obsolete, remove it or replace it with a brief current note rather than leaving outdated instructions in place.
 
 ## Related Public Pages
 
-Public website:
-
-https://hampdencountymesh.org/
-
-Map address:
-
-https://map.hampdencountymesh.org/
-
-Guide library:
-
-https://hampdencountymesh.org/guides/
-
-Coverage:
-
-https://hampdencountymesh.org/coverage.html
-
-Updates:
-
-https://hampdencountymesh.org/updates/
-
-Getting Started:
-
-https://hampdencountymesh.org/guides/getting-started.html
-
-Recommended Settings:
-
-https://hampdencountymesh.org/guides/recommended-settings.html
-
-MeshCore Basics:
-
-https://hampdencountymesh.org/guides/meshcore-basics.html
-
-Meshtastic Basics:
-
-https://hampdencountymesh.org/guides/meshtastic-basics.html
-
-Sharing Safely:
-
-https://hampdencountymesh.org/guides/sharing-safely.html
-
-Discord join route:
-
-https://hampdencountymesh.org/join/
-
-Only link to public pages that currently exist. If a guide is planned but not live, keep it out of public navigation until it is ready.
-
-## Emergency and Safety Note
-
-Hampden County Mesh is a community education and hobby effort. It is not an emergency service, public safety system, or replacement for 911.
+- Website: https://hampdencountymesh.org/
+- Guides: https://hampdencountymesh.org/guides/
+- Getting Started: https://hampdencountymesh.org/guides/getting-started.html
+- Recommended Settings: https://hampdencountymesh.org/guides/recommended-settings.html
+- MeshCore Basics: https://hampdencountymesh.org/guides/meshcore-basics.html
+- Meshtastic Basics: https://hampdencountymesh.org/guides/meshtastic-basics.html
+- Sharing Safely: https://hampdencountymesh.org/guides/sharing-safely.html
+- Building Better Mesh Coverage: https://hampdencountymesh.org/building-better-mesh-coverage.html
+- Coverage: https://hampdencountymesh.org/coverage.html
+- Updates: https://hampdencountymesh.org/updates/

@@ -1,94 +1,75 @@
 ## Summary
 
-Describe what this pull request changes.
-
-Examples:
-
-* Updates a guide page
-* Fixes a broken link
-* Refreshes public wording
-* Improves the Coverage page
-* Updates GitHub issue templates
-* Changes site layout or navigation
+Describe what this pull request changes and why.
 
 ## Type of Change
 
 Check all that apply:
 
-* [ ] Website page update
-* [ ] Guide or documentation update
-* [ ] Coverage, map, or embed update
-* [ ] GitHub workflow, template, or repository maintenance
-* [ ] Accessibility or mobile layout improvement
-* [ ] Security, privacy, or public-safe wording cleanup
-* [ ] Other
+- [ ] Public website content
+- [ ] Guide or documentation
+- [ ] Map, analyzer, or observed-activity work
+- [ ] Layout, styling, or accessibility
+- [ ] Discord join route or tracking
+- [ ] GitHub workflow or repository maintenance
+- [ ] Security or privacy correction
+- [ ] Other
 
 ## Pages or Files Changed
 
-List the main pages or files changed.
-
-Example:
-
-* `index.html`
-* `coverage.html`
-* `guides/meshcore-basics.html`
-* `.github/ISSUE_TEMPLATE/HCM_bug_report.yml`
-
-## Privacy and Public-Safe Review
-
-Confirm before merging:
-
-* [ ] No passwords, private keys, API tokens, credentials, webhook URLs, admin URLs, or private system details are included.
-* [ ] No exact private node locations, observer locations, private coordinates, access details, or private property details are included.
-* [ ] No private messages, sensitive logs, private screenshots, or images with sensitive details are included.
-* [ ] Public wording does not imply Hampden County Mesh owns or controls all nearby mesh activity.
-* [ ] Observed activity is described carefully and does not expose private systems or locations.
-* [ ] Emergency-related wording does not imply this is an emergency service, public safety system, or replacement for 911.
-
-## Link and Path Check
-
-Check any that apply:
-
-* [ ] Links use `https://hampdencountymesh.org/` or root-relative site paths where appropriate.
-* [ ] Discord links use approved `/join/` routes where possible instead of direct invite links.
-* [ ] No old `hampdencountymesh.github.io` links were added unless intentionally needed.
-* [ ] No links point to deleted or retired pages.
-* [ ] No accidental double extensions such as `.html.html` were added.
-* [ ] Asset paths use the correct lowercase filenames and folders where applicable.
-
-Retired pages to watch for:
-
-* `about.html`
-* `infrastructure.html`
-* `status.html`
-* `guides/coverage-and-signal-checks.html`
-* `guides/documenting-a-node.html`
-* `guides/contributing-notes.html`
-* `guides/hosting-a-session.html`
-* `guides/operating-aids.html`
-* `guides/nodes-repeaters-observers.html`
-* `guides/discord.html`
-
-## Testing
-
-Describe what you checked.
+List the main files changed.
 
 Examples:
 
-* Opened the page locally or through GitHub Pages
-* Checked links
-* Checked mobile layout
-* Checked JSON or YAML validity
-* Checked the Coverage page
-* Checked browser console for errors
-* Checked that issue templates render correctly
+- `index.html`
+- `coverage.html`
+- `building-better-mesh-coverage.html`
+- `guides/meshcore-basics.html`
+- `_includes/discord-cta.html`
+
+## Review Checklist
+
+Confirm before merging:
+
+- [ ] The change matches the current project status.
+- [ ] Active services are not described as planned or future work.
+- [ ] Public wording does not imply complete coverage or ownership of independent nodes.
+- [ ] No credentials, private keys, tokens, private messages, or sensitive access details are included.
+- [ ] No exact non-public installation locations are exposed without permission.
+- [ ] Links and asset paths point to files that actually exist.
+- [ ] No links to deleted or retired pages were added.
+- [ ] Discord buttons use an appropriate `/join/` tracking route.
+- [ ] Map links use `https://map.hampdencountymesh.org/`.
+- [ ] Analyzer links use `https://analyzer.hampdencountymesh.org/`.
+- [ ] MeshMapper links use `https://psf.meshmapper.net/` where appropriate.
+- [ ] MeshMapper is not presented as a Meshtastic field-testing tool.
+- [ ] Related navigation, sitemap, metadata, or documentation was updated when necessary.
+
+## Website Checks
+
+Check the items relevant to this change:
+
+- [ ] Page renders correctly
+- [ ] Desktop layout checked
+- [ ] Mobile layout checked
+- [ ] Links checked
+- [ ] Browser console checked
+- [ ] YAML or Liquid syntax checked
+- [ ] Images and alt text checked
+- [ ] Accessibility and keyboard focus checked
+- [ ] `css_version` updated because the stylesheet changed
+- [ ] New Discord tracking route created and added to `_includes/discord-cta.html`
+
+## Testing Notes
+
+Describe what was tested and any limitations.
 
 ## Screenshots
 
-Add screenshots if useful.
+Add screenshots when they help reviewers understand a visual change.
 
-Do not include screenshots with private locations, private messages, credentials, admin pages, private system details, or sensitive information.
+Remove private messages, credentials, exact non-public locations, administrative pages, and other sensitive information before posting screenshots.
 
 ## Notes for Reviewers
 
-Add anything reviewers should pay special attention to.
+List anything that needs particular attention or further testing.

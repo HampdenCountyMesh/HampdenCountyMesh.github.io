@@ -225,14 +225,14 @@ header .container {
     object-fit: contain;
 }
 
-nav {
+header nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     gap: 1.15rem;
 }
 
-nav a {
+header nav a {
     color: var(--muted);
     font-size: 0.88rem;
     font-weight: 800;
@@ -241,9 +241,9 @@ nav a {
     text-decoration: none;
 }
 
-nav a:hover,
-nav a:focus-visible,
-nav a[aria-current="page"] {
+header nav a:hover,
+header nav a:focus-visible,
+header nav a[aria-current="page"] {
     color: var(--cream);
 }
 
@@ -286,13 +286,13 @@ nav a[aria-current="page"] {
         text-align: center;
     }
 
-    nav {
+    header nav {
         flex-wrap: wrap;
         justify-content: center;
         gap: 0.75rem 1rem;
     }
 
-    nav a {
+    header nav a {
         font-size: 0.8rem;
     }
 }
@@ -1018,14 +1018,15 @@ footer {
     padding: clamp(24px, 5vw, 48px);
 }
 
+
 .docs-breadcrumb {
+    display: block;
     color: var(--green);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 0.78rem;
     margin-bottom: 14px;
 }
-
 .docs-breadcrumb a {
     color: var(--green);
 }
@@ -1315,15 +1316,6 @@ footer {
         linear-gradient(180deg, var(--panel-strong), var(--panel));
 }
 
-.guide-card .guide-label {
-    display: inline-flex;
-    margin-bottom: 12px;
-    color: var(--blue-light);
-    font-size: 0.76rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
 
 .guide-card h3 {
     margin-bottom: 12px;
@@ -1730,7 +1722,7 @@ footer {
 }
 .update-meta {
     display: inline-flex;
-    margin-bottom: 10px;
+    margin: 0 0 10px;
     color: var(--blue-light);
     font-size: 0.76rem;
     font-weight: 800;

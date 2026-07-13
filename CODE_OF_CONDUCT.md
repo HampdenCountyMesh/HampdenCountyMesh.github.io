@@ -2,192 +2,120 @@
 
 ## Our Pledge
 
-Hampden County Mesh is intended to be a useful, respectful, beginner-friendly space for local mesh radio, radio learning, documentation, setup help, field testing, public-safe local observations, and related technical discussion.
+Hampden County Mesh is intended to be a respectful, useful, and beginner-friendly community for mesh radio, technical learning, documentation, local testing, and related discussion.
 
-We pledge to make participation in this community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socioeconomic status, nationality, personal appearance, race, religion, sexual orientation, or technical background.
+We are committed to providing a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity or expression, level of experience, education, socioeconomic status, nationality, personal appearance, race, religion, sexual orientation, or technical background.
 
-We pledge to act and interact in ways that support an open, welcoming, inclusive, and healthy community.
+We expect participants to help maintain an open, welcoming, inclusive, and healthy community.
 
-## Our Standards
+## Expected Behavior
 
-Examples of behavior that contributes to a positive community include:
+Examples of behavior that supports the community include:
 
-* Treating other people with respect
-* Welcoming beginners and basic questions
-* Sharing knowledge without talking down to people
-* Being patient when explaining technical topics
-* Giving and accepting constructive feedback
-* Correcting mistakes without personal attacks
-* Respecting privacy and safety boundaries
-* Keeping disagreements focused on facts, safety, documentation, and practical results
-* Helping keep public information accurate and responsible
+- Treating others with respect
+- Welcoming beginners and basic questions
+- Sharing knowledge without talking down to people
+- Correcting mistakes without personal attacks
+- Giving and accepting constructive feedback
+- Keeping disagreements focused on facts and practical results
+- Respecting privacy, consent, and safety boundaries
+- Helping keep public information accurate
+- Following applicable radio and technical rules
+- Taking responsibility for mistakes and correcting them
 
-Examples of unacceptable behavior include:
+## Unacceptable Behavior
 
-* Harassment, threats, intimidation, or targeted abuse
-* Hate speech, slurs, racism, xenophobia, homophobia, transphobia, sexism, ableism, or other bigotry
-* Demeaning comments toward protected or marginalized groups
-* Trolling, insults, personal attacks, or repeated bad-faith arguments
-* Sexualized language, imagery, attention, or advances
-* Publishing private information without explicit permission
-* Doxxing or encouraging others to identify private locations
-* Sharing private addresses, private node locations, private coordinates, private infrastructure details, private messages, credentials, keys, passwords, tokens, webhook URLs, broker credentials, or admin URLs
-* Encouraging illegal transmitting, jamming, interference, impersonation, unauthorized access, or misuse of emergency, public safety, aviation, railroad, utility, commercial, or government systems
-* Spamming, flooding, or intentionally disrupting community spaces
-* Other conduct that community moderators reasonably determine to be inappropriate, unsafe, threatening, or harmful
+Unacceptable behavior includes:
+
+- Harassment, threats, intimidation, or targeted abuse
+- Hate speech, slurs, racism, xenophobia, sexism, ableism, homophobia, transphobia, or other bigotry
+- Trolling, insults, personal attacks, or repeated bad-faith arguments
+- Sexualized language, imagery, attention, or advances
+- Doxxing or publishing private information without permission
+- Sharing non-public addresses, coordinates, messages, credentials, keys, tokens, or access details
+- Encouraging unlawful transmitting, harmful interference, jamming, impersonation, or unauthorized access
+- Misusing emergency, public-safety, aviation, railroad, utility, commercial, or government systems
+- Spamming, flooding, or intentionally disrupting community spaces
+- Retaliating against someone for making a good-faith report
+- Other behavior that moderators reasonably determine to be unsafe, abusive, threatening, or harmful
 
 ## Beginner-Friendly Expectations
 
-Hampden County Mesh includes people with different experience levels.
+Hampden County Mesh includes people with many different experience levels.
 
-Members should not be mocked, dismissed, or pushed out for asking basic questions, using beginner language, owning inexpensive equipment, not having a license for a radio service they are only learning about, or not understanding a technical concept yet.
+Do not mock or dismiss someone for asking a basic question, using beginner terminology, owning inexpensive equipment, or not yet understanding a technical concept.
 
-Correct information when needed, but do it in a way that helps people learn.
+Correct inaccurate information when necessary, but do so in a way that helps people learn.
 
-## Privacy and Safety Expectations
+## Privacy and Technical Responsibility
 
-Do not post someone else’s private information without permission.
+Do not publish someone else’s private information or exact non-public installation location without permission.
 
-This includes:
+When sharing screenshots, maps, logs, photos, configuration details, or observed activity, remove information that could expose private people, accounts, credentials, or infrastructure.
 
-* Home addresses
-* Exact private node locations
-* Exact private observer locations
-* Exact private gateway locations
-* Exact private repeater locations
-* Private coordinates
-* Private messages
-* Email addresses not already public
-* Phone numbers
-* Private infrastructure details
-* Credentials, keys, passwords, tokens, or access URLs
-* Photos that reveal private locations or personal details unintentionally
-
-When discussing maps, observers, gateways, MQTT, dashboards, logs, field testing, or observed activity, use general locations unless exact sharing is clearly intentional and safe.
-
-## Radio and Technical Safety
-
-Members are responsible for following applicable radio laws, service rules, and license requirements.
-
-Do not use Hampden County Mesh spaces to encourage or coordinate unlawful transmitting, harmful interference, jamming, impersonation, unauthorized access, credential misuse, or abuse of radio, network, server, or public safety systems.
-
-Hampden County Mesh is a community education and hobby effort. It is not an emergency service, public safety system, or replacement for 911.
-
-## Enforcement Responsibilities
-
-Community leaders and moderators are responsible for clarifying and enforcing standards of acceptable behavior.
-
-They may remove, edit, or reject comments, messages, commits, issues, pull requests, documentation edits, images, links, or other contributions that are not aligned with this Code of Conduct.
-
-They may also limit or remove access to community spaces when behavior is unsafe, disruptive, abusive, or inconsistent with these expectations.
-
-Moderation decisions will be explained when appropriate, but the privacy and safety of reporters, affected people, and the community may limit what can be shared publicly.
+Participants are responsible for following applicable radio laws, service rules, license requirements, platform rules, and access restrictions.
 
 ## Scope
 
-This Code of Conduct applies in all Hampden County Mesh community spaces, including:
+This Code of Conduct applies in Hampden County Mesh spaces, including:
 
-* GitHub repositories
-* GitHub issues and pull requests
-* Discord
-* Website-related discussions
-* Documentation work
-* Public events or learning sessions
-* Other official or community-recognized Hampden County Mesh spaces
+- GitHub repositories, issues, and pull requests
+- Discord
+- Website and documentation work
+- Public events, workshops, and learning sessions
+- Official email and project accounts
+- Other spaces operated or formally recognized by Hampden County Mesh
 
-It also applies when someone is representing Hampden County Mesh in public, including through an official email address, official account, public event, partner discussion, or similar role.
+It also applies when someone is representing Hampden County Mesh in an official or public capacity.
 
 ## Reporting
 
-Instances of abusive, harassing, unsafe, or otherwise unacceptable behavior may be reported to:
+Abusive, harassing, unsafe, or otherwise unacceptable behavior may be reported privately to:
 
 [contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)
 
-Discord-related conduct concerns may also be reported to:
+Discord-related concerns may also be reported to:
 
 [discord@hampdencountymesh.org](mailto:discord@hampdencountymesh.org)
 
-Security-sensitive issues, exposed credentials, private keys, infrastructure access problems, or sensitive data exposure should be reported to:
+Security vulnerabilities, exposed credentials, or sensitive infrastructure concerns should be reported to:
 
 [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org)
 
-Do not open a public GitHub issue for private safety reports, exposed credentials, private locations, or sensitive security concerns.
+Do not open a public GitHub issue for private conduct reports, exposed credentials, private locations, or sensitive security concerns.
 
-Reports will be reviewed as promptly and fairly as practical.
+Reports will be reviewed as promptly and fairly as practical. The privacy and safety of reporters and affected people will be respected.
 
-Community leaders should respect the privacy and safety of reporters and affected people.
+## Enforcement
 
-## Enforcement Guidelines
+Moderators and project maintainers may remove, edit, or reject messages, comments, commits, issues, pull requests, images, links, or other contributions that violate this Code of Conduct.
 
-Community leaders may use the following guidelines when determining consequences for behavior that violates this Code of Conduct.
+Depending on the severity and pattern of behavior, moderation may include:
 
-### 1. Correction
+### Correction
 
-Community impact:
+A request to stop or correct inappropriate, careless, or disruptive behavior.
 
-Use of inappropriate language or other behavior that is unwelcome, careless, or disruptive.
+### Warning
 
-Possible consequence:
+A clear warning describing the problem and the expected change in behavior.
 
-A private or public correction explaining what behavior was inappropriate and what should change. A public apology or correction may be requested when appropriate.
+### Temporary Restriction
 
-### 2. Warning
+Temporary removal from some or all community spaces, channels, discussions, or interactions.
 
-Community impact:
+### Permanent Ban
 
-A violation through a single incident or repeated behavior.
+Permanent removal for serious misconduct, repeated violations, threats, harassment, hate speech, doxxing, intentional disruption, or other substantial harm.
 
-Possible consequence:
-
-A warning with clear expectations for future behavior. The person may be asked to avoid certain topics, channels, people, or types of interaction for a specified period of time.
-
-### 3. Temporary Restriction or Ban
-
-Community impact:
-
-A serious violation of community standards, sustained inappropriate behavior, or behavior that creates safety, privacy, or trust concerns.
-
-Possible consequence:
-
-Temporary restriction from some or all community spaces. During this period, the person may not interact publicly or privately with affected people or moderators about the issue unless specifically allowed.
-
-Violating the terms of a temporary restriction may lead to a longer restriction or permanent ban.
-
-### 4. Permanent Ban
-
-Community impact:
-
-A pattern of violations, harassment, threats, targeted abuse, hate speech, doxxing, privacy violations, credential exposure, intentional disruption, or other serious harm.
-
-Possible consequence:
-
-Permanent removal from community spaces.
-
-## Additional Expectations
-
-Hampden County Mesh encourages:
-
-* Technical collaboration
-* Respectful disagreement
-* Practical learning
-* Public-safe documentation
-* Knowledge sharing
-* Mentorship of beginners
-* Careful treatment of observed activity, maps, logs, and infrastructure notes
-
-Disruptive behavior, harassment, personal attacks, bigotry, doxxing, intentional interference, or misuse of community spaces may result in moderation action or removal.
+Moderation decisions may be explained when appropriate, but private reports and sensitive details may limit what can be shared publicly.
 
 ## Attribution
 
-This Code of Conduct is adapted in part from the Contributor Covenant, version 2.0:
+This Code of Conduct is informed by the Contributor Covenant, version 2.0:
 
 https://www.contributor-covenant.org/version/2/0/code_of_conduct.html
 
-Community Impact Guidelines were inspired by Mozilla’s code of conduct enforcement ladder:
+The enforcement structure was also informed by Mozilla’s community participation and enforcement guidance:
 
 https://github.com/mozilla/diversity
-
-Contributor Covenant homepage:
-
-https://www.contributor-covenant.org
-

@@ -4,20 +4,42 @@
   <div class="container">
     <a class="brand" href="{{ '/' | relative_url }}" aria-label="Hampden County Mesh home">
       <span class="brand-mark" aria-hidden="true">
-        <img class="brand-icon" src="{{ '/assets/icons/HampdenCounty.png' | relative_url }}" alt="" width="26" height="26">
+        <img
+          class="brand-icon"
+          src="{{ '/assets/icons/HampdenCounty.png' | relative_url }}"
+          alt=""
+          width="26"
+          height="26">
       </span>
+
       <span>Hampden County Mesh</span>
     </a>
 
     <nav aria-label="Main navigation">
       {% for item in site.data.nav %}
-        <a href="{{ item.url | relative_url }}" {% if active_nav == item.key %}aria-current="page"{% endif %}>
+        {% assign nav_url = item.url %}
+        {% assign is_external = false %}
+
+        {% if nav_url contains "://" %}
+          {% assign is_external = true %}
+        {% endif %}
+
+        <a
+          href="{% if is_external %}{{ nav_url | escape }}{% else %}{{ nav_url | relative_url }}{% endif %}"
+          {% if active_nav == item.key %}aria-current="page"{% endif %}>
           {{ item.title | escape }}
         </a>
       {% endfor %}
 
-      <a class="discord-nav-button" href="{{ '/join/site-nav/' | relative_url }}" aria-label="Join the Hampden County Mesh Discord" data-join-source="site-nav">
-        <img src="{{ '/assets/icons/discord-symbol-white.svg' | relative_url }}" alt="" aria-hidden="true">
+      <a
+        class="discord-nav-button"
+        href="{{ '/join/site-nav/' | relative_url }}"
+        aria-label="Join the Hampden County Mesh Discord"
+        data-join-source="site-nav">
+        <img
+          src="{{ '/assets/icons/discord-symbol-white.svg' | relative_url }}"
+          alt=""
+          aria-hidden="true">
       </a>
     </nav>
   </div>

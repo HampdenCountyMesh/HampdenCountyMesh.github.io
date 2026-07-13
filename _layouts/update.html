@@ -7,15 +7,21 @@ og_type: article
 
 <div class="container">
   <article class="docs-article">
-    <p class="docs-breadcrumb">
-      <a href="{{ '/updates/' | relative_url }}">Updates</a> / {{ page.title | escape }}
-    </p>
-
-    {% if page.date %}
-      <p class="update-meta">{{ page.date | date: "%B %-d, %Y" }}</p>
-    {% endif %}
+    <nav class="docs-breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ '/updates/' | relative_url }}">Updates</a>
+      <span aria-hidden="true"> / </span>
+      <span aria-current="page">{{ page.title | escape }}</span>
+    </nav>
 
     <h1>{{ page.title | escape }}</h1>
+
+    {% if page.date %}
+      <p class="update-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%B %-d, %Y" }}
+        </time>
+      </p>
+    {% endif %}
 
     {% if page.summary %}
       <p class="docs-lede">
@@ -26,7 +32,10 @@ og_type: article
     {{ content }}
 
     <div class="button-row">
-      <a class="btn secondary" href="{{ '/updates/' | relative_url }}">Back to Updates</a>
+      <a class="btn secondary" href="{{ '/updates/' | relative_url }}">
+        Back to Updates
+      </a>
+
       {% include discord-cta.html source="updates" %}
     </div>
   </article>

@@ -1,5 +1,5 @@
 name: Feature Request
-description: Suggest a new website feature, guide, map improvement, integration, workflow, or public-facing improvement.
+description: Suggest a new website function, map improvement, integration, automation, or repository workflow.
 title: "[Feature]: "
 labels:
   - enhancement
@@ -8,11 +8,15 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this template for new ideas, feature requests, site improvements, guide ideas, map improvements, Discord integrations, automation ideas, or public-facing tools.
+        Use this form for new functionality, integrations, automation, map or analyzer improvements, and repository workflows.
 
-        Please do not include private locations, private coordinates, credentials, private messages, sensitive screenshots, or anything that should not be public.
+        For wording corrections, guide changes, or new documentation, use the Documentation Improvement template.
 
-        For security or privacy concerns, do not open a public issue. Please follow `SECURITY.md` or contact security@hampdencountymesh.org.
+        For events, outreach, partnerships, or community resources, use the Community template.
+
+        Do not include credentials, private messages, exact non-public locations, or sensitive infrastructure details.
+
+        Security and privacy concerns should be reported privately through `SECURITY.md` or by emailing security@hampdencountymesh.org.
 
   - type: dropdown
     id: category
@@ -20,16 +24,15 @@ body:
       label: Feature category
       description: What kind of improvement is this?
       options:
-        - Website or page improvement
-        - Guide or documentation idea
-        - Coverage page or map improvement
-        - Observed activity or public-safe data workflow
-        - Updates or public note
-        - Discord integration or automation
-        - MeshCore or Meshtastic support
-        - Radio learning resource
-        - Community event or outreach support
+        - Website functionality
+        - Live map
+        - Activity analyzer
+        - Observed-activity or data workflow
+        - Discord integration or bot
+        - Automation or monitoring
+        - Discord join tracking
         - Repository or GitHub workflow
+        - Accessibility or user experience
         - Other
     validations:
       required: true
@@ -39,60 +42,61 @@ body:
     attributes:
       label: Proposal
       description: Describe the feature or improvement.
-      placeholder: "Example: Add a public-safe way to collect field testing notes from parks, road corridors, or temporary device checks."
+      placeholder: "Example: Add a visible service-status notice when the live map is unavailable."
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or need
+      description: What problem would this solve?
+      placeholder: "Example: Visitors currently cannot tell whether a quiet map reflects low activity or a service outage."
     validations:
       required: true
 
   - type: textarea
     id: benefit
     attributes:
-      label: Benefit
-      description: How would this help Hampden County Mesh, newcomers, maintainers, or the local radio and mesh community?
-      placeholder: "Example: This would make it easier for people to share useful local notes without posting private locations."
-    validations:
-      required: false
+      label: Expected benefit
+      description: Who would benefit and how?
+      placeholder: "Example: This would help visitors understand the map state without needing to ask in Discord."
 
   - type: textarea
     id: details
     attributes:
-      label: Useful details
-      description: Add any relevant public-safe context, links, examples, or constraints.
+      label: Technical or practical details
+      description: Include relevant public links, dependencies, limitations, or examples.
       placeholder: |
-        Is this for the website, Discord, GitHub, maps, guides, or backend tools?
-        Does it need automation?
-        Does it depend on outside services?
-        Are there privacy concerns?
-    validations:
-      required: false
+        Does this affect the website, map, analyzer, Discord, or GitHub?
+        Does it depend on an outside service?
+        Would it require ongoing maintenance?
+        Are there privacy or accessibility considerations?
 
   - type: textarea
     id: alternatives
     attributes:
       label: Alternatives considered
-      description: Optional. Are there simpler ways to solve the same problem?
-      placeholder: "Example: This could start as a short update or guide note before becoming an automated tool."
-    validations:
-      required: false
+      description: Note any simpler approaches or existing tools that may solve the same problem.
+      placeholder: "Example: A static notice on the Coverage page could be used instead of automated status checking."
 
   - type: dropdown
-    id: timing
+    id: priority
     attributes:
-      label: Timing
-      description: How urgent or near-term is this?
+      label: Suggested priority
       options:
-        - Useful now
-        - Useful soon
-        - Nice to have later
+        - Current problem
+        - Useful near-term improvement
+        - Nice to have
         - Long-term idea
         - Not sure
-    validations:
-      required: false
 
   - type: checkboxes
-    id: privacy_check
+    id: public_issue_checks
     attributes:
-      label: Privacy check
-      description: Confirm that this public issue does not include sensitive information.
+      label: Public issue checks
       options:
-        - label: I have not included private locations, private coordinates, credentials, private messages, or sensitive screenshots.
+        - label: I have removed credentials, private messages, exact non-public locations, and sensitive infrastructure details.
+          required: true
+        - label: This is a feature request rather than a documentation correction, community proposal, or private security report.
           required: true

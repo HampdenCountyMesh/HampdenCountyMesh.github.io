@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Page Not Found
-description: The page could not be found. Return to Hampden County Mesh, open the guides, check coverage, read updates, or join the Discord.
+description: The page could not be found. Return to Hampden County Mesh, browse the guides, view the live map, read updates, or join the Discord.
 noindex: true
 ---
 
@@ -21,8 +21,13 @@ noindex: true
     </p>
 
     <div class="hero-actions">
-      <a class="btn primary" href="{{ '/' | relative_url }}">Return Home</a>
-      <a class="btn secondary" href="{{ '/guides/getting-started.html' | relative_url }}">Get Started</a>
+      <a class="btn primary" href="{{ '/' | relative_url }}">
+        Return Home
+      </a>
+
+      <a class="btn secondary" href="{{ '/guides/getting-started.html' | relative_url }}">
+        Get Started
+      </a>
     </div>
   </div>
 </section>
@@ -32,69 +37,47 @@ noindex: true
     <div class="section-heading">Try One of These</div>
 
     <div class="resource-grid">
-      <a class="resource-card action-card" href="{{ '/' | relative_url }}">
-        <h3>Home</h3>
-        <p>
-          Return to the main page for a quick overview of Hampden County Mesh.
-        </p>
-        <span class="card-link">Return home →</span>
-      </a>
-
       <a class="resource-card action-card" href="{{ '/guides/' | relative_url }}">
         <h3>Guides</h3>
+
         <p>
-          Open the guide library for getting started, recommended settings,
-          MeshCore, Meshtastic, and safe sharing.
+          Browse the MeshCore, Meshtastic, settings, coverage, and safe-sharing guides.
         </p>
-        <span class="card-link">Open guides →</span>
+
+        <span class="card-link">Open Guides →</span>
       </a>
 
-      <a class="resource-card action-card" href="{{ '/guides/getting-started.html' | relative_url }}">
-        <h3>Getting Started</h3>
-        <p>
-          Start here if you are new to MeshCore, Meshtastic, or local mesh communications.
-        </p>
-        <span class="card-link">Start here →</span>
-      </a>
+      <a class="resource-card action-card" href="https://map.hampdencountymesh.org/">
+        <h3>Live Map</h3>
 
-      <a class="resource-card action-card" href="{{ '/guides/recommended-settings.html' | relative_url }}">
-        <h3>Recommended Settings</h3>
         <p>
-          Check the current MeshCore and Meshtastic starting settings before troubleshooting.
+          View geolocated MeshCore activity observed around Western Massachusetts.
         </p>
-        <span class="card-link">View settings →</span>
-      </a>
 
-      <a class="resource-card action-card" href="{{ '/guides/meshcore-basics.html' | relative_url }}">
-        <h3>MeshCore Basics</h3>
-        <p>
-          Read the MeshCore basics for terms, setup notes, and local use information.
-        </p>
-        <span class="card-link">Read MeshCore Basics →</span>
-      </a>
-
-      <a class="resource-card action-card" href="{{ '/coverage.html' | relative_url }}">
-        <h3>Coverage</h3>
-        <p>
-          Read local terrain notes, MeshMapper information, and map-related updates.
-        </p>
-        <span class="card-link">Open coverage →</span>
+        <span class="card-link">Open Live Map →</span>
       </a>
 
       <a class="resource-card action-card" href="{{ '/updates/' | relative_url }}">
         <h3>Updates</h3>
+
         <p>
-          Read occasional notes about site changes, local events, seminars, and map work.
+          Read project updates, event notes, and recent site changes.
         </p>
-        <span class="card-link">Read updates →</span>
+
+        <span class="card-link">Read Updates →</span>
       </a>
 
-      <a class="resource-card action-card" href="{{ '/join/404/' | relative_url }}" data-join-source="404">
+      <a
+        class="resource-card action-card"
+        href="{{ '/join/404/' | relative_url }}"
+        data-join-source="404">
+
         <h3>Discord</h3>
+
         <p>
-          Join the community to ask questions, get setup help, talk devices,
-          and work through local settings.
+          Ask questions, get device help, and join the local mesh discussion.
         </p>
+
         <span class="card-link">Join Discord →</span>
       </a>
     </div>

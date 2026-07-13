@@ -1,337 +1,286 @@
 # Infrastructure
 
-This document summarizes site-maintained infrastructure and support systems for Hampden County Mesh.
+This document summarizes project-maintained infrastructure used by Hampden County Mesh.
 
-It is intended for continuity, maintenance, and public-safe documentation. It should not include private credentials, private IP addresses, admin URLs, exact private locations, passwords, keys, or sensitive access details.
+It is intended for continuity and maintenance. Because this repository is public, it must not contain passwords, private keys, tokens, broker credentials, private addresses, exact non-public installation locations, or instructions that would provide unauthorized access.
 
-## Overview
+Detailed data-access and observed-activity rules belong in `docs/data-access-and-observed-activity.md`.
 
-Hampden County Mesh maintains a small set of support systems used for local mesh learning, observer work, logging, MQTT testing, documentation, field testing, MeshMapper field testing, and future public-safe activity views.
+## Current Public Services
 
-These systems support the website and local documentation work. They should not be described as proof that Hampden County Mesh owns or operates every node, observer, gateway, repeater, packet, marker, or device visible in the broader mesh ecosystem.
+### Website
 
-Detailed rules for MQTT, broker access, CoreScope data, public feeds, source types, privacy review, and observed-activity wording live in `docs/data-access-and-observed-activity.md`.
+Public address:
 
-## Current Site-Maintained Systems
+https://hampdencountymesh.org/
 
-### Hampden Room Observer
+The website is hosted through GitHub Pages and contains the public guides, updates, coverage information, and tracked Discord join routes.
 
-Purpose:
+The website repository is:
 
-* Mesh activity observation
-* Local radio visibility
-* Observer logging
-* Public activity context where appropriate
-* Future observed-activity data support
+https://github.com/HampdenCountyMesh/HampdenCountyMesh.github.io
 
-Status:
+### Live Map
 
-* Operational
-* Manually documented
-* Public activity publication is not automated on the main website yet
+Public address:
 
-Hardware:
+https://map.hampdencountymesh.org/
 
-* Heltec V3
+The map displays geolocated MeshCore packet activity observed through participating systems.
 
-System:
+It is not a complete inventory of every regional node or radio path. Quiet periods, incomplete locations, and activity that never reaches a participating observer are expected.
 
-* MeshCore / LetsMesh observer firmware
+The preferred public presentation uses:
 
-Notes:
+- Hampden County Mesh branding
+- A dark map layer
+- A Western Massachusetts regional view
+- Clear observed-activity wording
+- No public administrative controls or credentials
 
-* The observer helps show what can be heard from its location.
-* An observer improves visibility, not necessarily radio coverage.
-* Observer data should be described as observed activity, not as a complete map of all mesh activity.
-* Do not publish private keys, exact private location details, credentials, or sensitive configuration.
+### Analyzer
 
-### MeshCore-Hub
+Public address:
 
-Purpose:
+https://analyzer.hampdencountymesh.org/
 
-* Local infrastructure development
-* MQTT testing
-* Log collection
-* Backend experiments
-* CoreScope local observed-activity testing
-* Future support for public-safe map, status, observer, or activity-summary work
+The analyzer is the public CoreScope interface for more detailed packet, node, path, and observer information.
 
-Status:
+The map and analyzer display MeshCore activity. They should not be described as Meshtastic activity tools.
 
-* Operational
-* Development and support role
+### MeshMapper
 
-Platform:
+Western Massachusetts MeshMapper region:
 
-* HP Stream laptop
-* Linux-based system
+https://psf.meshmapper.net/
 
-Services and tools may include:
+MeshMapper is used for MeshCore field testing and recorded coverage checks.
 
-* Mosquitto MQTT
-* CoreScope local observed-activity tooling
-* Logging tools
-* Development environment
-* Local scripts
-* Data storage for logs and testing
+It is an independent project and is not operated by Hampden County Mesh. It should not be presented as a Meshtastic field-testing tool.
 
-Notes:
+## MeshCore-Hub
 
-* This system should be treated as support infrastructure.
-* CoreScope is local tooling unless it is intentionally published through the public map subdomain.
-* Local MQTT testing does not automatically mean there is a public broker.
-* Public-facing automation should only be documented as live after it is working, maintainable, and reviewed for privacy.
-* Do not publish private IP addresses, SSH details, usernames, passwords, broker credentials, admin URLs, private paths, or internal access details.
+MeshCore-Hub is the primary project-maintained support host.
 
-### HampdenCountyTreeNode
+### Platform
 
-Purpose:
+- HP Stream laptop
+- Linux
+- Docker
+- Internal and removable storage used for application data, logs, and backups
 
-* Outdoor mesh infrastructure
-* Long-term deployment testing
-* Local placement learning
-* Solar node testing
-* Local radio behavior learning
+### Current Roles
 
-Status:
+MeshCore-Hub supports:
 
-* Active
-* Manually documented
+- Mosquitto MQTT
+- CoreScope
+- Observer data ingestion
+- Packet and activity storage
+- Public map and analyzer services
+- Local logging
+- Supporting scripts and maintenance work
 
-Hardware:
+### Storage
 
-* Seeed SenseCAP Solar Node P1-Pro
+Persistent project data is kept under:
 
-System:
+`/meshdata/`
 
-* MeshCore
+CoreScope data is stored under:
 
-Location:
+`/meshdata/corescope-data/`
 
-* General Hampden County area
+Paths may be documented where useful, but the repository must not contain private credentials, internal addresses, SSH access details, or sensitive configuration values.
 
-Notes:
+## Mosquitto MQTT
 
-* Do not publish exact private coordinates or install details unless intentionally public and safe.
-* Public notes should describe the node by general area, purpose, role, and observed behavior.
-* Maintenance notes should track whether it is active, reachable, powered, and physically secure.
-* Public notes should not imply guaranteed coverage from its location.
+Mosquitto provides the local MQTT transport used by participating observer systems and CoreScope.
 
-### Cassiopeia
+General operating expectations:
 
-Purpose:
+- Anonymous access remains disabled
+- Credentials are not committed to this repository
+- Public documentation may describe the data flow without publishing connection secrets
+- The broker should not be described as a public community broker unless that becomes an intentionally supported service
+- External data sharing should be outbound-only unless a different arrangement is deliberately configured
 
-* Portable field testing
-* Mobile or temporary mesh testing
-* MeshCore field-testing support
-* Local placement comparison
-* Device and antenna testing
+Topic and feed details belong in:
 
-Status:
+`docs/data-access-and-observed-activity.md`
 
-* Active
-* Manually documented
+## CoreScope
 
-Hardware:
+CoreScope is the active observed-activity platform used for the public map and analyzer.
 
-* Seeed Wio Tracker L1 Pro
+The active Docker service is named:
 
-System:
+`corescope`
 
-* MeshCore
+The service uses persistent storage under:
 
-Location:
+`/meshdata/corescope-data/`
 
-* Portable / mobile
+The local service currently uses host port:
 
-Notes:
+`8090`
 
-* Cassiopeia should not be mapped as a fixed location.
-* Public notes should describe field testing in general areas unless exact sharing is clearly safe.
-* MeshMapper and field-testing results should be treated as observations, not guaranteed coverage.
-* Do not publish exact private routes, private addresses, or sensitive screenshots.
+Public visitors should use the map and analyzer hostnames rather than the local port.
 
-## Supporting Files and Data
+The container should use a restart policy that allows it to recover after a host reboot.
 
-Infrastructure-related public files may include:
+Do not expose:
 
-* boundary data
-* map-support data
-* guide pages
-* public-safe notes
-* manually maintained status text
-* future public-safe observed-activity data
+- Administrative controls
+- Broker credentials
+- Private configuration files
+- Internal-only addresses
+- Decrypted private messages
+- Sensitive logs
 
-Possible repository paths may include:
+## Observer Systems
 
-* `data/`
-* `data/boundaries/`
-* `assets/data/`
-* `docs/`
-* `guides/`
-* a dedicated public map service
-* a CoreScope-style public service
+Hampden County Mesh maintains or participates in observer systems that supply MeshCore activity to the project’s data pipeline.
 
-Use the actual current repository path when linking from website code.
+The primary local observer is a Heltec V3 running MeshCore observer firmware.
 
-Old placeholder public data files such as `nodes.json`, `status.json`, and `observed-activity.json` should not be referenced as active unless they are recreated intentionally with a current maintained workflow.
+An observer improves visibility into activity that it can hear. It does not necessarily improve radio coverage and does not provide a complete view of the regional mesh.
 
-## Observed Activity
+Public documentation should describe data as:
 
-Observed activity may come from:
+- Observed MeshCore activity
+- Activity heard by participating systems
+- Geolocated packet activity
+- Partial regional activity
 
-* Site-maintained observers
-* Local logs
-* MQTT testing
-* CoreScope local tooling
-* Public analyzers
-* Public feeds
-* Manual local notes
-* Community reports
-* MeshMapper, for MeshCore field testing
-* Field testing
-* Future dashboards or integrations
+It should not claim:
 
-Observed activity should be described carefully.
+- Every node is visible
+- Every displayed node is currently reachable
+- Every packet in the region is captured
+- Every visible device belongs to Hampden County Mesh
 
-It may show that something was heard, logged, reported, mapped, or displayed by a system. It does not necessarily prove direct radio reachability from a user’s location, and it does not imply that Hampden County Mesh owns every device shown.
+## Radio Infrastructure and Field Devices
 
-For detailed observed-activity rules, use `docs/data-access-and-observed-activity.md`.
+The project uses a mixture of fixed, portable, and experimental MeshCore devices for testing and regional participation.
 
-For MeshCore field testing, Hampden County Mesh points people toward MeshMapper:
+These may include:
 
-https://meshmapper.net/
+- Fixed solar-powered relay nodes
+- Portable companion devices
+- Room observers
+- Experimental outdoor nodes
+- Antenna and placement test equipment
 
-## MQTT, CoreScope, and Backend Notes
+A detailed public inventory of exact node locations is not required for maintaining the website or map services.
 
-MQTT and backend services are useful for development, logging, observer work, dashboards, maps, and future integrations.
+Public notes should generally use:
 
-CoreScope is currently treated as local observed-activity tooling unless or until it is intentionally published through a public Hampden County Mesh map path.
+- Device role
+- General area
+- Hardware type
+- Current status
+- Publicly relevant behavior
 
-Current backend-related documentation should be kept in:
+Exact private placement details should only be published when the location owner has agreed and there is a clear reason to make the location public.
 
-* `docs/data-access-and-observed-activity.md`
-* `docs/map-subdomain.md`
+## Data Flow
 
-General rule:
+The current high-level activity flow is:
 
-Public documentation may describe what MQTT, observers, and CoreScope-style tooling are used for, but should not expose credentials, broker passwords, private hostnames, internal IP addresses, admin details, private system paths, or access instructions for private systems.
+1. Participating MeshCore observer systems receive radio packets.
+2. Observer systems publish appropriate packet data through MQTT.
+3. CoreScope consumes the configured packet feed.
+4. CoreScope stores and processes observed activity.
+5. The public map displays geolocated packet activity.
+6. The analyzer provides more detailed activity views.
 
-Local MQTT testing should not be described as a public broker unless a public broker actually exists and is intended to be supported.
+This flow represents observed activity, not guaranteed end-to-end radio coverage.
 
-Local CoreScope testing should not be described as the public Hampden County Mesh map unless the public map service is intentionally configured, maintainable, and reviewed for privacy.
+Data formats, MQTT topics, external sharing, and access boundaries belong in:
 
-## Discord and GitHub Integrations
+`docs/data-access-and-observed-activity.md`
 
-Current public-facing integrations may include:
+## Public Wording
 
-* GitHub webhook updates to Discord
-* Manual status updates
-* Documentation updates
-* Future bot or relay planning notes
+Use wording such as:
 
-Future integrations may include:
+- Active
+- Operational
+- Testing
+- Observed activity
+- Participating observers
+- Project-maintained infrastructure
+- Partial regional view
+- Independent nodes and services
 
-* Observer status summaries
-* MQTT-to-Discord relay output
-* Mesh activity summaries
-* Dashboard updates
-* Automated status checks
-* CoreScope-style public map updates
+Avoid wording such as:
 
-Do not describe a future integration as live until it is actually working and maintainable.
+- Complete county-wide coverage
+- Guaranteed communication
+- All nodes are online
+- All regional traffic
+- Every visible node belongs to Hampden County Mesh
+- Official public-safety network
 
-Automated relay output should have a clear purpose and a clear channel before it is enabled. It should stay separate from normal discussion so automated messages do not bury human conversation.
+## Maintenance Checks
 
-## Maintenance Expectations
+After infrastructure, map, analyzer, or observer changes, verify:
 
-For each site-maintained system, keep enough public-safe information to answer:
+- The website still loads
+- HTTPS works for the map and analyzer
+- The expected Hampden County Mesh branding appears
+- The map opens in an appropriate regional view
+- The preferred dark map layer remains available
+- CoreScope is receiving current packet data
+- The map displays geolocated activity when such packets are received
+- Analyzer pages load correctly
+- Mobile map controls remain usable
+- No credentials or administrative controls are exposed
+- Containers recover after a host reboot
+- Public website links remain correct
+- Public wording still matches actual system behavior
 
-* What is it?
-* What is its role?
-* Is it active, testing, offline, or retired?
-* What general hardware is used?
-* What public-facing function does it support?
-* What should not be published?
-* Where should related notes be kept?
+A quiet map does not by itself indicate a failure. Check observer input, MQTT flow, and CoreScope ingestion before assuming the public service is broken.
 
-Maintenance notes should avoid private access details.
+## Service Failure and Fallback
 
-Useful public-safe maintenance fields:
+The main website and Coverage page should remain usable when the live map or analyzer is temporarily unavailable.
 
-    System name:
-    Role:
-    General area:
-    Status:
-    Hardware:
-    Software or firmware:
-    Public access: yes / no
-    Last checked:
-    Public notes:
-    Private details removed before sharing: yes / no
+Do not redirect a failed service to an unrelated site or present stale information as current activity.
 
-## Public Status Language
+A simple unavailable or maintenance response is preferable to a misleading redirect.
 
-Use:
+## Documentation Updates
 
-* active
-* operational
-* testing
-* manually documented
-* offline
-* retired
-* future work
-* not automated yet
-* local tooling
-* public map not published yet
+When infrastructure changes, review:
 
-Avoid overclaiming with language like:
+- `README.md`
+- `docs/README.md`
+- `docs/data-access-and-observed-activity.md`
+- `SECURITY.md`
+- `coverage.html`
+- Relevant update posts
+- Navigation and public links
+- Map and analyzer descriptions
 
-* guaranteed
-* complete
-* county-wide coverage
-* emergency-ready
-* official public safety system
-* all nodes
-* all traffic
+Remove stale future-tense descriptions once a service becomes active.
 
-## Future Work
-
-Future infrastructure work may include:
-
-* Additional fixed nodes
-* Additional observers
-* Improved public-safe status summaries
-* Better observed-activity data handling
-* MQTT logging improvements
-* Dashboard or map improvements
-* Coverage page observed-activity summaries
-* Public map service through `map.hampdencountymesh.org`
-* Discord bot or relay integrations
-* More maintainable backend automation
-
-Future work should be documented as future work until it is live.
+Do not duplicate long data-access, security, or privacy rules in every infrastructure document. Link to the primary document instead.
 
 ## Related Documentation
 
-* `docs/README.md`
-* `docs/data-access-and-observed-activity.md`
-* `docs/map-subdomain.md`
-* `docs/discord.md`
-* `docs/ASSETS.md`
+- `docs/README.md`
+- `docs/data-access-and-observed-activity.md`
+- `docs/ASSETS.md`
+- `docs/discord.md`
+- `SECURITY.md`
 
 Related public pages:
 
-* https://hampdencountymesh.org/coverage.html
-* https://hampdencountymesh.org/updates/
-* https://hampdencountymesh.org/guides/getting-started.html
-* https://hampdencountymesh.org/guides/recommended-settings.html
-* https://hampdencountymesh.org/guides/meshcore-basics.html
-* https://hampdencountymesh.org/guides/meshtastic-basics.html
-* https://hampdencountymesh.org/guides/sharing-safely.html
-
-Only link to public pages that currently exist. If a guide is planned but not live, keep it out of public navigation until it is ready.
-
-## Emergency and Safety Note
-
-Hampden County Mesh is a community education and hobby effort. It is not an emergency service, public safety system, or replacement for 911.
+- https://hampdencountymesh.org/
+- https://hampdencountymesh.org/coverage.html
+- https://hampdencountymesh.org/building-better-mesh-coverage.html
+- https://hampdencountymesh.org/updates/
+- https://hampdencountymesh.org/guides/meshcore-basics.html
+- https://hampdencountymesh.org/guides/sharing-safely.html

@@ -41,6 +41,11 @@
   </url>
 
   <url>
+    <loc>{{ "/building-better-mesh-coverage.html" | absolute_url }}</loc>
+    <lastmod>{{ build_date }}</lastmod>
+  </url>
+
+  <url>
     <loc>{{ "/coverage.html" | absolute_url }}</loc>
     <lastmod>{{ build_date }}</lastmod>
   </url>
