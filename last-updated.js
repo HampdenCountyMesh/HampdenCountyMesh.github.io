@@ -123,7 +123,7 @@
         }
       }
 
-      lastUpdatedElement.textContent = "Recently updated";
+      lastUpdatedElement.textContent = "Recently";
     })
     .finally(function () {
       if (timeout) {

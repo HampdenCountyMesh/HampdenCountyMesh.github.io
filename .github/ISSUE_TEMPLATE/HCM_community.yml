@@ -1,5 +1,5 @@
 name: Community
-description: Suggest something related to community resources, events, outreach, or local learning.
+description: Suggest a community resource, event, outreach idea, local partnership, or learning opportunity.
 title: "[Community]: "
 labels:
   - community
@@ -8,26 +8,26 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this for community-related topics such as event ideas, library or club contacts, local learning sessions, outreach ideas, useful public resources, Discord coordination, or public-facing community notes.
+        Use this form for public community ideas, events, workshops, outreach, useful local resources, Discord coordination, or possible partnerships.
 
-        Please do not include private contact information, private addresses, private locations, private coordinates, private messages, or sensitive screenshots.
+        Keep locations and contact details general. Do not include private addresses, private messages, exact non-public installation locations, or sensitive information.
 
-        For security or privacy concerns, do not open a public issue. Please follow `SECURITY.md` or contact security@hampdencountymesh.org.
+        Security and privacy concerns should be reported privately through `SECURITY.md` or by emailing security@hampdencountymesh.org.
 
   - type: dropdown
     id: category
     attributes:
       label: Category
-      description: What kind of community item is this?
+      description: What kind of community proposal is this?
       options:
-        - Event or seminar idea
-        - Library, club, school, or makerspace contact
-        - Local radio or mesh resource
-        - Outreach idea
+        - Event, workshop, or seminar
+        - Library, club, school, or makerspace
+        - Coverage-building or site outreach
+        - Local mesh or radio resource
+        - General outreach or printed materials
         - Discord or community coordination
-        - Website community information
-        - Updates or public note
         - Accessibility or newcomer support
+        - Website or update content
         - Other
     validations:
       required: true
@@ -36,14 +36,14 @@ body:
     id: related_area
     attributes:
       label: Related area
-      description: Where does this mainly apply?
+      description: Where would this mainly apply?
       options:
         - Website
-        - Updates
         - Discord
-        - GitHub
-        - Local event or in-person activity
+        - Local event or workshop
         - Local organization or venue
+        - Coverage or community infrastructure
+        - Multiple areas
         - Other
     validations:
       required: true
@@ -52,8 +52,8 @@ body:
     id: summary
     attributes:
       label: Summary
-      description: Briefly describe the idea, resource, issue, or opportunity.
-      placeholder: "Example: A local library may be a good place to host a beginner mesh or radio session."
+      description: Briefly describe the idea, resource, or opportunity.
+      placeholder: "Example: A local library may be interested in hosting a beginner MeshCore presentation."
     validations:
       required: true
 
@@ -61,35 +61,40 @@ body:
     id: details
     attributes:
       label: Details
-      description: Add any useful public-safe context.
+      description: Add any useful public context.
       placeholder: |
-        What is the idea or issue?
-        Who might it help?
-        Is there a public link?
+        Who might this help?
+        What would the activity or resource involve?
         Is there a general town or area involved?
-        Are there timing considerations?
-    validations:
-      required: false
+        Are there timing, accessibility, equipment, or space considerations?
+
+  - type: input
+    id: general_area
+    attributes:
+      label: General area
+      description: Include a town or broad area when location matters. Do not post a private address.
+      placeholder: "Example: Westfield, Springfield, or western Hampden County"
 
   - type: textarea
     id: public_links
     attributes:
       label: Public links or references
-      description: Add public websites, public event pages, or public organization pages if relevant.
-      placeholder: "Example: https://example.org/events"
+      description: Add public organization pages, event listings, or other relevant references.
+      placeholder: "https://example.org/"
 
   - type: textarea
     id: suggested_followup
     attributes:
-      label: Suggested follow-up
-      description: What should happen next?
-      placeholder: "Example: Discuss in Discord, add to the outreach list, contact the venue, or write a short update."
+      label: Suggested next step
+      description: What would be a reasonable next action?
+      placeholder: "Example: Discuss it in Discord, contact the organization, prepare a short presentation, or add it to an outreach list."
 
   - type: checkboxes
-    id: privacy_check
+    id: public_issue_checks
     attributes:
-      label: Privacy check
-      description: Confirm that this public issue does not include sensitive information.
+      label: Public issue checks
       options:
-        - label: I have not included private contact information, private addresses, private locations, private coordinates, private messages, or sensitive screenshots.
+        - label: I have removed private contact details, private addresses, exact non-public locations, private messages, and sensitive screenshots.
+          required: true
+        - label: This is a public community proposal, not a private security, conduct, or access report.
           required: true

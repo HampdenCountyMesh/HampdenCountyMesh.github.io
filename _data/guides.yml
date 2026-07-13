@@ -12,7 +12,7 @@
   title: Recommended Settings
   url: /guides/recommended-settings.html
   label: Settings
-  summary: The local quick reference for MeshCore and Meshtastic starting settings in Western Massachusetts.
+  summary: A quick reference for MeshCore and Meshtastic starting settings in Western Massachusetts.
   link_text: View settings →
   featured: true
 
@@ -21,7 +21,7 @@
   title: MeshCore Basics
   url: /guides/meshcore-basics.html
   label: Main focus
-  summary: MeshCore basics, local settings, roles, channels, maps, observers, and how to start simply.
+  summary: MeshCore node types, channels, observers, maps, and how the regional mesh fits together.
   link_text: Read MeshCore Basics →
   featured: true
 
@@ -30,16 +30,16 @@
   title: Meshtastic Basics
   url: /guides/meshtastic-basics.html
   label: Also supported
-  summary: How Meshtastic fits here, what to keep simple at first, and where to find official Meshtastic resources.
+  summary: How Meshtastic fits here, the basics of normal node use, and where to find current official documentation.
   link_text: Read Meshtastic Basics →
 
 - order: 5
   group: setup_maps
-  title: Coverage
-  url: /coverage.html
-  label: Map and testing
-  summary: Terrain notes, MeshMapper, local testing notes, map status, and observed-activity planning.
-  link_text: Open Coverage →
+  title: Building Better Mesh Coverage
+  url: /building-better-mesh-coverage.html
+  label: Coverage
+  summary: How placement, height, and fixed nodes can help build stronger radio paths around the region.
+  link_text: Learn about coverage →
   featured: true
 
 - order: 6
@@ -47,5 +47,5 @@
   title: Sharing Safely
   url: /guides/sharing-safely.html
   label: Privacy
-  summary: Share useful mesh observations, screenshots, photos, and map results without exposing private details.
+  summary: Share useful observations, screenshots, photos, and map results without exposing private details.
   link_text: Read Sharing Safely →

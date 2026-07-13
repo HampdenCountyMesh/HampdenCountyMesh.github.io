@@ -1,5 +1,5 @@
 name: Documentation Improvement
-description: Suggest improvements to guides, docs, public pages, examples, wording, or reference material.
+description: Suggest a correction or improvement to guides, project documentation, public pages, wording, or reference material.
 title: "[Docs]: "
 labels:
   - documentation
@@ -8,37 +8,34 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this template for documentation improvements, unclear wording, missing context, outdated links, broken references, typos, or guide suggestions.
+        Use this form for outdated information, unclear wording, broken references, typos, missing context, or suggested documentation improvements.
 
-        Please do not include private locations, private coordinates, credentials, private messages, sensitive screenshots, or anything that should not be public.
+        Do not include credentials, private messages, exact non-public locations, or sensitive screenshots.
 
-        For security or privacy concerns, do not open a public issue. Please follow `SECURITY.md` or contact security@hampdencountymesh.org.
+        Security and privacy concerns should be reported privately through `SECURITY.md` or by emailing security@hampdencountymesh.org.
 
   - type: input
     id: page
     attributes:
       label: Document, page, or file
-      description: Which page, guide, document, or file needs attention?
-      placeholder: "Example: guides/meshcore-basics.html, guides/getting-started.html, coverage.html, README.md, or https://hampdencountymesh.org/guides/"
+      description: Which page, guide, document, or repository file needs attention?
+      placeholder: "Example: guides/meshcore-basics.html, coverage.html, README.md, or docs/infrastructure.md"
     validations:
-      required: false
+      required: true
 
   - type: dropdown
     id: documentation_type
     attributes:
       label: Type of documentation issue
-      description: What kind of documentation improvement is this?
       options:
         - Typo or grammar
-        - Broken link
+        - Broken link or reference
         - Outdated information
         - Unclear wording
         - Missing beginner context
-        - Missing safety or privacy note
         - Incorrect terminology
-        - Old page name or retired link
+        - Retired page or old path
         - Suggested new guide or section
-        - Suggested update or public note
         - Other
     validations:
       required: true
@@ -48,7 +45,7 @@ body:
     attributes:
       label: What needs improvement?
       description: Describe what is unclear, outdated, missing, or incorrect.
-      placeholder: "Example: The guide mentions an old page path, or a beginner may not understand the difference between MeshCore and Meshtastic."
+      placeholder: "Example: The page describes the live map as a future project."
     validations:
       required: true
 
@@ -56,25 +53,29 @@ body:
     id: suggestion
     attributes:
       label: Suggested change
-      description: Suggest replacement wording, a new section, or a correction if you have one.
-      placeholder: "Example: Replace the old link with /guides/meshcore-basics.html."
-    validations:
-      required: false
+      description: Include replacement wording, a corrected link, or another proposed fix when available.
+      placeholder: "Example: Replace the old description with current live-map wording."
 
-  - type: textarea
+  - type: dropdown
     id: audience
     attributes:
-      label: Who would this help?
-      description: Optional. Note whether this helps beginners, radio users, Discord members, maintainers, event hosts, or another group.
-      placeholder: "Example: This would help newcomers understand which guide to read first."
-    validations:
-      required: false
+      label: Main audience affected
+      options:
+        - Beginners
+        - General website visitors
+        - MeshCore users
+        - Meshtastic users
+        - Contributors or maintainers
+        - Discord members
+        - Multiple audiences
+        - Not sure
 
   - type: checkboxes
-    id: privacy_check
+    id: public_issue_checks
     attributes:
-      label: Privacy check
-      description: Confirm that this public issue does not include sensitive information.
+      label: Public issue checks
       options:
-        - label: I have not included private locations, private coordinates, credentials, private messages, or sensitive screenshots.
+        - label: I have removed credentials, private messages, exact non-public locations, and other sensitive information.
+          required: true
+        - label: This is a documentation request, not a private security or conduct report.
           required: true

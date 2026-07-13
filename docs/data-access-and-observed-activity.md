@@ -1,531 +1,339 @@
 # Data Access and Observed Activity
 
-This document describes how Hampden County Mesh should handle observed mesh activity data, MQTT-backed tooling, broker/data-feed access, map feeds, analyzer feeds, and CoreScope-style integrations.
+This document describes how Hampden County Mesh handles observed MeshCore activity, MQTT data, public map output, analyzer output, and trusted regional integrations.
 
-It replaces the separate notes that would otherwise live in:
+It is intended for maintainers and contributors. It must not contain live credentials, private keys, broker passwords, tokens, or information that would provide unauthorized access.
 
-* `broker-data-access.md`
-* `mqtt.md`
-* `observed-activity-data.md`
+## Current Public Services
 
-The goal is to keep one clear policy for public-safe activity data instead of repeating the same privacy and access rules across several files.
+### Live Map
 
-## Current Status
-
-Automated public activity publishing is not live on the main website yet.
-
-The public map address is:
+Public address:
 
 `https://map.hampdencountymesh.org/`
 
-For now, that address redirects to the Coverage page:
+The map displays geolocated MeshCore packet activity observed through participating systems.
 
-`https://hampdencountymesh.org/coverage.html`
+It is a partial activity view. It does not represent every node, packet, observer, or radio path in Western Massachusetts.
 
-Local MQTT services are for testing and site-maintained infrastructure work only unless a future public-safe access plan is created.
+### Analyzer
 
-CoreScope is currently treated as local observed-activity tooling unless or until it is intentionally published through a public Hampden County Mesh map path.
+Public address:
 
-Do not describe local broker access, local CoreScope access, local observer feeds, or local MQTT feeds as public services unless they are intentionally configured, maintainable, and reviewed for privacy.
+`https://analyzer.hampdencountymesh.org/`
+
+The analyzer provides more detailed packet, node, path, and observer information through the project’s CoreScope deployment.
+
+The map and analyzer are MeshCore activity tools. They should not be described as Meshtastic maps.
 
 ## What Observed Activity Means
 
-Observed activity means something was heard, logged, reported, mapped, summarized, or shown by a system or public-safe source.
+Observed activity means that a packet, node, path, or other event was heard or reported by a participating system.
 
 Observed activity may come from:
 
-* A site-maintained observer
-* Local logs
-* MQTT testing
-* CoreScope local tooling
-* Public analyzers
-* Public feeds
-* Manual local notes
-* Community reports
-* MeshMapper, for MeshCore field testing
-* Field testing
-* Future dashboards or integrations
+- A MeshCore observer
+- MQTT packet reporting
+- CoreScope
+- Local logs
+- A trusted regional feed
+- A public analyzer
+- MeshMapper field testing
+- A public-safe community report
 
 Observed activity does not automatically prove:
 
-* Direct reachability from every location
-* Two-way communication
-* Complete area coverage
-* Current live status
-* That a device is fixed in place
-* That Hampden County Mesh owns the device
-* That Hampden County Mesh controls the device
-* That the data is complete
-* Emergency-ready communications
+- Direct reachability from a particular user
+- Two-way communication
+- Complete regional coverage
+- Continuous availability
+- That a device is fixed in place
+- That Hampden County Mesh owns or operates the device
+- That every packet in the region was received
+- That the displayed route is currently usable
 
-## Current Local Support Systems
+## Current Data Flow
 
-### MeshCore-Hub
+The current high-level flow is:
 
-MeshCore-Hub is a site-maintained support system used for local infrastructure development, MQTT testing, observer/logging work, CoreScope testing, and future public-safe map or activity-summary work.
+1. Participating MeshCore observers receive radio packets.
+2. Appropriate packet data is published through MQTT.
+3. CoreScope consumes the configured packet feed.
+4. CoreScope stores and processes observed activity.
+5. The public map displays geolocated packet activity.
+6. The analyzer provides more detailed activity views.
 
-Current or possible services may include:
+A quiet map does not necessarily indicate a failure. Activity may be absent, lack location information, or not reach a participating observer.
 
-* Mosquitto MQTT
-* CoreScope local observed-activity tooling
-* Observer-related logging
-* Development scripts
-* Local data storage for testing
+## MQTT and Broker Access
 
-Do not publish:
+MQTT is used as project support infrastructure for observer reporting, packet transport, logging, and CoreScope ingestion.
 
-* Private IP addresses
-* SSH details
-* Usernames
-* Passwords
-* Broker credentials
-* Admin URLs
-* Internal paths
-* Private logs
-* Screenshots showing private configuration
+The broker is not offered as an anonymous public community broker.
 
-### Hampden Room Observer
+General access rules:
 
-The Hampden Room Observer is a site-maintained MeshCore observer.
+- Anonymous access remains disabled
+- Credentials are not committed to this repository
+- Access is granted only when there is a clear project or integration need
+- Read-only or narrowly limited access is preferred
+- Access should be restricted through ACLs where practical
+- Credentials must be revocable
+- Credentials are shared privately, not through GitHub or public Discord channels
+- Public documentation may explain the data flow without publishing connection details
 
-It helps show what can be heard from its location. It improves visibility, not necessarily radio coverage.
-
-Do not describe observer output as complete county-wide coverage or as proof that every visible node can be reached from every other location.
-
-### CoreScope
-
-CoreScope may be useful as local or future public observed-activity tooling.
-
-Until it is intentionally published through a public map path, describe it as local support tooling.
-
-Before any CoreScope-style service becomes public, confirm:
-
-* What data is shown
-* What data is hidden
-* Whether private locations are exposed
-* Whether raw packet contents are exposed
-* Whether credentials or backend details are exposed
-* Whether node names reveal private details
-* Whether public wording explains observed activity correctly
-* Whether the service can be maintained
-* Whether there is a fallback plan if the service is down
-
-## MQTT
-
-MQTT is used or may be used for infrastructure experimentation, observer-related testing, local logging, and future observed-activity tooling.
-
-For Hampden County Mesh, MQTT should be described as a support and reporting tool.
-
-Good wording:
-
-* MQTT testing
-* observer reporting
-* local logging
-* activity reported to a broker
-* observed activity
-* public-safe activity data where available
-* site-maintained systems
-* support infrastructure
-* CoreScope-style observed-activity tooling
-
-Avoid wording that suggests:
-
-* complete coverage
-* guaranteed communication
-* emergency service capability
-* control of all nearby mesh activity
-* ownership of all visible nodes
-* public broker access when no public broker exists
-
-## Broker and Data Access
-
-Public anonymous broker access is not currently offered.
-
-If access is ever offered, it should be:
-
-* Read-only
-* Authenticated
-* Limited by ACLs
-* Limited to intended topics
-* Revocable
-* Logged where appropriate
-* Documented privately
-* Shared out-of-band, not committed to GitHub
-
-Do not publish public broker credentials in this repository.
-
-Avoid anonymous public access unless there is a clear reason and the privacy/security consequences are understood.
-
-Requests for trusted integration access can be sent to:
+Requests for legitimate integration access may be sent to:
 
 `contact@hampdencountymesh.org`
 
-Security concerns should go to:
+Security concerns should be sent to:
 
 `security@hampdencountymesh.org`
 
-## Future Integration Requests
+## Topic Structure and Regional Namespace
 
-Future data or broker access requests may come from:
-
-* CoreScope operators
-* Regional mesh map maintainers
-* Analyzer operators
-* Neighboring mesh communities
-* Research or documentation projects
-* Public dashboard maintainers
-
-Before offering access to a broker, feed, map service, analyzer, or CoreScope-style integration, confirm:
-
-* Who is requesting access?
-* What project or tool will use the data?
-* What topics or feeds are actually needed?
-* Is read-only access enough?
-* Can access be limited by ACL?
-* Can access be revoked quickly?
-* Will exact private locations be exposed?
-* Will private messages be exposed?
-* Will broker credentials be stored safely?
-* Will public output explain observed activity carefully?
-* Is the integration maintainable?
-* Who should be contacted if something breaks or needs to be revoked?
-
-If the answers are unclear, do not provide access yet.
-
-## Example Private Configuration Shape
-
-This is an example only. Do not commit real credentials.
-
-    Broker: mqtts://example.invalid:8883
-    Topic: meshcore/BDL/+/packets
-    Username: read-only-user
-    Password: provided out-of-band
-    IATA filter: BDL
-    Access type: read-only
-    Public access: no
-
-Use fake values in public documentation. Real broker hostnames, usernames, passwords, certificates, access notes, and ACL details should be shared privately only when needed.
-
-## Topic Notes
-
-Expected MeshCore packet topic shape:
+The general MeshCore packet topic shape is:
 
     meshcore/{IATA}/{PUBKEY}/packets
 
-For Hampden County Mesh planning, the expected regional alignment is currently:
+For Hampden County Mesh, the local regional namespace is:
 
-    BDL
+    BAF
 
-Do not assume BAF unless that changes later.
+BAF refers to the Westfield-Barnes regional identifier used for Hampden County Mesh activity.
 
-## Source Types
+Do not use BDL as the default HCM namespace. BDL may appear only when specifically documenting Connecticut systems, historical configuration, or a neighboring integration.
 
-When documenting observed activity, use source labels that describe where the information came from.
+Public examples should use placeholders rather than real public keys, usernames, passwords, or hostnames.
 
-Useful source types:
+Example:
 
-* `direct_radio`
-* `observer`
-* `mqtt`
-* `map`
-* `dashboard`
-* `local_log`
-* `corescope`
-* `meshmapper`
-* `meshmapper_field_test`
-* `meshcore_field_test`
-* `field_test`
-* `manual_note`
-* `public_source`
-* `unknown`
+    meshcore/BAF/example-public-key/packets
 
-Avoid source names that overclaim. For example, use `meshcore_field_test` instead of `meshcore_coverage_check`.
+## Trusted Regional Integrations
 
-## Public Wording
+Hampden County Mesh may share selected observed activity outbound with trusted neighboring systems or regional tools.
 
-Use careful wording when observed activity is shown publicly.
+Examples may include:
 
-Good wording:
+- Neighboring mesh communities
+- Regional map operators
+- Analyzer operators
+- Documentation or research projects
+- Public-safe activity aggregators
 
-* observed activity
-* activity heard by an observer
-* activity heard by site-maintained systems
-* activity heard from this general area
-* activity reported by a public source
-* activity shown by a public map or dashboard
-* field-testing result
-* MeshMapper field-testing result
-* local radio observation
-* public-safe activity note
-* activity summary
-* partial observed-activity view
+Before enabling or changing an integration, confirm:
 
-Avoid wording that suggests:
+- Who operates the receiving system
+- What data is needed
+- Which topics are required
+- Whether read-only or outbound-only sharing is sufficient
+- Whether access can be limited and revoked
+- Whether private content or non-public locations could be exposed
+- Who should be contacted if the integration fails
+- Whether the public output describes the data accurately
 
-* guaranteed coverage
-* complete coverage
-* confirmed county-wide communication
-* emergency-ready communication
-* ownership of all nodes
-* control of all nearby devices
-* a complete live network view
-* replacement for official emergency services
+Neighboring systems remain independent services. Sharing data with them does not make them part of Hampden County Mesh infrastructure.
 
-## Privacy Rules
+## Public Data Boundaries
 
-Do not publish observed activity data, MQTT-derived data, broker-derived data, logs, screenshots, or map output that exposes:
+Public activity output may include:
 
-* Private keys
-* Owner keys
-* Passwords
-* API tokens
-* Broker credentials
-* Webhook URLs
-* Wi-Fi details
-* Admin URLs
-* Private IP addresses
-* Exact private home locations
-* Exact private observer locations
-* Exact private gateway locations
-* Exact private repeater locations
-* Exact private node coordinates
-* Private messages
-* Sensitive screenshots
-* Raw sensitive logs
-* Device names that reveal private addresses
-* Usernames or identifiers that should not be public
-* Sensitive telemetry
-* Information someone shared privately and did not agree to publish
+- Public node names
+- Packet timestamps
+- Public keys used by MeshCore
+- Packet types
+- Repeater paths
+- Observer attribution
+- Coordinates intentionally included in packets
+- Signal and routing information
+- General activity summaries
 
-When public location context is useful, prefer:
+Public output must not expose:
 
-* Town
-* General area
-* Public landmark
-* Public park
-* Hill or ridge
-* Road corridor
-* Broad terrain description
-* Approximate region
+- Passwords or authentication secrets
+- Broker credentials
+- Private keys
+- API tokens or webhook secrets
+- Administrative interfaces
+- Decrypted private messages
+- Private configuration files
+- Non-public installation details
+- Sensitive logs
+- Information that would provide unauthorized access
 
-Use exact coordinates only when they are intentionally public, safe, and appropriate.
+A public key transmitted by MeshCore is not the same as a private key and may legitimately appear in activity data.
+
+Local addresses, device identifiers, and network details should be evaluated in context rather than treated as automatically secret. Remove them when they reveal internal access details or serve no public purpose.
+
+## Location Information
+
+Coordinates may appear when a device intentionally includes location information in a packet.
+
+Their presence does not establish:
+
+- Ownership by Hampden County Mesh
+- Permission to visit or access the location
+- Continuous device availability
+- Accuracy of the reported location
+- A complete infrastructure inventory
+
+Do not add exact private locations manually without permission.
+
+When adding explanatory notes, prefer:
+
+- Town
+- General area
+- Public landmark
+- Park
+- Road corridor
+- Hill or ridge
+- Broad regional description
+
+## Private Messages and Packet Content
+
+Do not publish decrypted private messages or content intended for a restricted audience.
+
+Public channels and packet metadata may appear in analyzer or map tooling when they are already part of the intentionally public MeshCore activity stream.
+
+Before exposing a new packet field or message type, confirm that it is appropriate for public display.
 
 ## Credential Handling
 
-Never commit MQTT credentials, broker credentials, API tokens, webhook URLs, certificates, private keys, or `.env` files containing secrets to the repository.
+Never commit:
 
-If a credential is accidentally committed or posted:
+- MQTT usernames or passwords
+- Broker credentials
+- API tokens
+- Webhook URLs containing secrets
+- Certificates or private keys
+- `.env` files containing active secrets
+- Administrative login details
 
-1. Remove it from the public location.
-2. Rotate the credential.
-3. Check whether it was exposed in Git history, Discord, logs, screenshots, or other public places.
-4. Update documentation only with safe placeholder examples.
+Use placeholders in documentation:
 
-Use placeholders in public docs:
-
-    MQTT_HOST=example-broker
+    MQTT_HOST=example.invalid
     MQTT_PORT=1883
     MQTT_USERNAME=example-user
-    MQTT_PASSWORD=do-not-commit-real-passwords
+    MQTT_PASSWORD=not-a-real-password
 
-## Data Review Before Publishing
+If a credential is exposed:
 
-Before publishing public observed activity data, check:
+1. Remove it from the public location.
+2. Rotate or revoke it.
+3. Check Git history, screenshots, logs, Discord, and caches.
+4. Update affected configuration.
+5. Report the issue according to `SECURITY.md`.
 
-* Does this reveal an exact private location?
-* Does this expose a private observer location?
-* Does this identify someone who did not agree to be identified?
-* Does this include credentials, keys, tokens, admin URLs, or private IPs?
-* Does this include private messages?
-* Does this make a private installation easier to tamper with?
-* Does the wording overclaim coverage or ownership?
-* Does the public page explain what the data can and cannot prove?
-* Is the data source documented?
-* Is the update process maintainable?
+Removing a secret from the latest commit does not make the old value safe.
 
-If the answer is unclear, do not publish the data yet.
+## Public Wording
 
-## Data File Expectations
+Use wording such as:
 
-If public observed activity data files are added later, they should be:
+- Observed MeshCore activity
+- Activity heard by participating systems
+- Geolocated packet activity
+- Partial regional activity view
+- Packet activity reported through MQTT
+- Independent nodes and observers
+- Public map data
+- Field-testing results
 
-* Public-safe
-* Small enough for GitHub Pages or the chosen hosting path
-* Documented
-* Valid JSON, GeoJSON, or another clearly documented format
-* Free of credentials and private details
-* Reviewed before publication
-* Removed or updated if stale
-* Clearly separated from private logs or backend data
+Avoid claims such as:
 
-Old placeholder public data files such as `nodes.json`, `status.json`, and `observed-activity.json` should not be referenced as active unless they are recreated intentionally with a current maintained workflow.
+- Complete regional coverage
+- Guaranteed communication
+- Every node is online
+- Every visible node belongs to Hampden County Mesh
+- All regional traffic is displayed
+- Exact infrastructure ownership
+- Official public-safety network
 
-Future data locations may include:
+## Map and Analyzer Review
 
-* `data/`
-* `assets/data/`
-* a dedicated map service
-* a CoreScope-style public service
-* another documented public-safe feed
+After changes to MQTT ingestion, CoreScope, the map, or the analyzer, verify:
 
-Do not add public data files just to make the repository look ready. Add them only when there is a real maintained workflow.
-
-## Suggested Public Data Fields
-
-Use general fields where possible, such as:
-
-* `source_type`
-* `system`
-* `general_area`
-* `last_observed`
-* `summary`
-* `public_note`
-* `status`
-* `updated_at`
-
-Be careful with fields such as:
-
-* `lat`
-* `lon`
-* `latitude`
-* `longitude`
-* `coordinates`
-* `address`
-* `owner`
-* `exact_location`
-
-Exact location fields should not be used for private nodes, private observers, private gateways, private repeaters, or private home installs.
-
-## Relationship to the Coverage Page
-
-The Coverage page should remain practical and public-facing.
-
-It may include:
-
-* Terrain notes
-* MeshMapper links
-* Local testing notes
-* Public-safe map planning notes
-* Future activity summaries when ready
-
-It should not imply:
-
-* Complete local coverage
-* Guaranteed reach
-* Live public automation before it exists
-* Ownership of independent nodes
-* Control over nearby mesh activity
+- The map loads over HTTPS
+- The analyzer loads over HTTPS
+- New packet activity reaches CoreScope
+- Geolocated packets appear on the map
+- Packet and path views work in the analyzer
+- The expected observer attribution appears
+- The default map area remains appropriate
+- The preferred dark map layer remains available
+- No credentials or administrative controls are exposed
+- Mobile controls remain usable
+- Public wording still matches the data being displayed
 
 ## Relationship to MeshMapper
 
-MeshMapper is a separate public tool.
+MeshMapper is used for MeshCore field testing and recorded coverage checks.
 
-It can be useful for reviewing MeshCore field testing around Western Massachusetts, but it is not operated by Hampden County Mesh.
+Western Massachusetts region:
 
-When referencing MeshMapper:
+`https://psf.meshmapper.net/`
 
-* Make clear that it is separate
-* Do not imply Hampden County Mesh owns its data
-* Do not treat every result as direct local reach
-* Do not add private details to public map screenshots
-* Use it only in MeshCore field-testing context, not as a Meshtastic tool
+MeshMapper is an independent project and is not operated by Hampden County Mesh.
 
-## Relationship to the Map Subdomain
+MeshMapper results and the HCM live map show different information:
 
-The public map address is:
+- MeshMapper records field-testing results and coverage observations
+- The HCM map displays geolocated activity heard by participating systems
 
-`https://map.hampdencountymesh.org/`
+MeshMapper should not be presented as a Meshtastic field-testing tool.
 
-For now, it redirects to the Coverage page.
+## Relationship to the Coverage Page
 
-If broker-backed, observer-backed, MQTT-backed, or CoreScope-style map access becomes public later, the map subdomain should be updated only after privacy review, basic reliability checks, and public wording cleanup.
+The Coverage page remains a public entry point for:
 
-Before replacing the temporary redirect with a live service:
+- The HCM live map
+- The analyzer
+- MeshMapper
+- Field-testing information
+- Building Better Mesh Coverage
 
-* HTTPS works without browser warnings
-* The service loads from `https://map.hampdencountymesh.org/`
-* The service has Hampden County Mesh branding or clear local context
-* The default region is appropriate for local use
-* Private locations are not exposed
-* Broker credentials are not exposed
-* Raw private messages are not exposed
-* Backend/admin routes are not exposed
-* The Coverage page links to the map
-* The Updates page has a short launch note
-* Public wording makes clear that the map is a partial observed-activity view
-* The public page explains what the map can and cannot prove
-* There is a simple fallback plan if the map service is down
+It should not duplicate the detailed broker, MQTT, or data-handling rules in this document.
 
-## Discord and Website Output
+Public page:
 
-MQTT-to-Discord, observer-to-Discord, CoreScope-to-website, or activity-summary integrations may be useful later, but they should have a clear purpose and a clear channel before being enabled.
+`https://hampdencountymesh.org/coverage.html`
 
-Automated output should not bury normal discussion.
+## Maintenance
 
-Possible future output may include:
+Update this document when:
 
-* Observer status summaries
-* Site-maintained system status
-* Short activity summaries
-* Maintenance alerts
-* Test-feed updates
-* Public map updates
+- MQTT topic structures change
+- The BAF namespace changes
+- Broker access policy changes
+- A trusted integration is added or removed
+- Public map fields change
+- CoreScope behavior changes
+- New packet content is exposed publicly
+- The map or analyzer hostname changes
+- Privacy or credential-handling rules need clarification
 
-Do not post raw MQTT payloads publicly unless they have been reviewed for privacy and usefulness.
+Also review:
 
-## Public Examples
+- `README.md`
+- `docs/README.md`
+- `docs/infrastructure.md`
+- `SECURITY.md`
+- `coverage.html`
+- Relevant update posts
 
-Public examples should use fake values.
+## Related Documentation
 
-Good example:
+- `docs/README.md`
+- `docs/infrastructure.md`
+- `docs/ASSETS.md`
+- `docs/discord.md`
+- `SECURITY.md`
 
-    Broker: local test broker
-    Host: not public
-    Port: 1883
-    Authentication: enabled
-    Status: testing
-    Public access: no
+Related public services:
 
-Avoid example values that look real or reveal internal setup details.
-
-When topic examples are needed, use generic names:
-
-    hcm/observed/test
-    hcm/status/example-node
-    hcm/observer/example
-
-## Maintenance Notes
-
-Update this file when:
-
-* Public observed activity data is added
-* Public data files are removed
-* A live map becomes active
-* A dashboard becomes active
-* CoreScope or another map tool becomes public
-* MQTT or broker data starts feeding public pages
-* Broker access policy changes
-* Read-only access is offered to a trusted integration
-* Topic structure changes
-* Regional alignment changes
-* Privacy or credential rules need clarification
-* Public wording changes
-* Related guide pages change
-
-Related documentation:
-
-* `docs/README.md`
-* `docs/infrastructure.md`
-* `docs/map-subdomain.md`
-* `docs/discord.md`
-* `docs/ASSETS.md`
-
-Related public pages:
-
-* `https://hampdencountymesh.org/coverage.html`
-* `https://hampdencountymesh.org/updates/`
-* `https://hampdencountymesh.org/guides/sharing-safely.html`
-
-## Emergency and Safety Note
-
-Hampden County Mesh is a community education and hobby effort. It is not an emergency service, public safety system, or replacement for 911.
+- `https://map.hampdencountymesh.org/`
+- `https://analyzer.hampdencountymesh.org/`
+- `https://hampdencountymesh.org/coverage.html`
+- `https://hampdencountymesh.org/building-better-mesh-coverage.html`
+- `https://hampdencountymesh.org/guides/sharing-safely.html`

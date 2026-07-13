@@ -6,9 +6,9 @@
   url: /guides/
   key: guides
 
-- title: Coverage
-  url: /coverage.html
-  key: coverage
+- title: Map
+  url: https://map.hampdencountymesh.org/
+  key: map
 
 - title: Updates
   url: /updates/

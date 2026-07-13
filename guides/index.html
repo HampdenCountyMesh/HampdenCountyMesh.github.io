@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Guides
-description: Local MeshCore and Meshtastic guides for getting started, recommended settings, maps, safe sharing, channels, and local mesh testing in Hampden County and Western Massachusetts.
+description: MeshCore and Meshtastic guides, local settings, and practical mesh radio notes for Hampden County and Western Massachusetts.
 nav: guides
 body_class: guides-landing
 ---
@@ -18,25 +18,26 @@ body_class: guides-landing
     <h1>Guides</h1>
 
     <p class="hero-text">
-      Local MeshCore and Meshtastic notes for setup, settings, safe sharing,
-      map tools, channels, and testing around Western Massachusetts.
+      Local notes for getting a device configured, understanding the two mesh
+      systems we support, and using them around Western Massachusetts.
     </p>
 
     <div class="hero-actions">
-      <a class="btn primary" href="{{ '/guides/getting-started.html' | relative_url }}">Getting Started</a>
-      <a class="btn secondary" href="{{ '/guides/recommended-settings.html' | relative_url }}">Recommended Settings</a>
+      <a class="btn primary" href="{{ '/guides/getting-started.html' | relative_url }}">
+        Getting Started
+      </a>
     </div>
   </div>
 </section>
 
 <section>
   <div class="container narrow centered">
-    <div class="section-heading">Start here</div>
-    <h2 class="portal-title">First steps</h2>
+    <div class="section-heading">Start Here</div>
+    <h2 class="portal-title">New to mesh radio?</h2>
 
     <p class="section-lede">
-      Start with one device, the recommended local settings, and a few ordinary test locations:
-      home, a window, a vehicle, a public park, or higher ground nearby.
+      These pages cover the basics, local starting settings, and the first things
+      worth knowing before changing advanced options.
     </p>
 
     {% include guide-card-grid.html group="read_first" %}
@@ -45,17 +46,12 @@ body_class: guides-landing
 
 <section>
   <div class="container narrow centered">
-    <div class="section-heading">Mesh systems</div>
+    <div class="section-heading">Mesh Systems</div>
     <h2 class="portal-title">MeshCore and Meshtastic</h2>
 
     <p class="section-lede">
-      Hampden County Mesh supports both MeshCore and Meshtastic. MeshCore is the main setup focus here
-      because it fits the local direction for two-way messaging, fixed nodes, repeaters, rooms, and shared community use.
-    </p>
-
-    <p class="section-lede section-lede-secondary">
-      Meshtastic is still useful for learning LoRa basics, testing antennas and placement,
-      telemetry, portable use, outdoor experiments, and casual participation.
+      Hampden County Mesh supports both systems. The guides are kept separate
+      where their roles, settings, or network behavior differ.
     </p>
 
     {% include guide-card-grid.html group="mesh_systems" %}
@@ -64,133 +60,87 @@ body_class: guides-landing
 
 <section>
   <div class="container narrow centered">
-    <div class="section-heading">Testing and maps</div>
-    <h2 class="portal-title">Local testing</h2>
+    <div class="section-heading">Using the Mesh</div>
+    <h2 class="portal-title">Devices, testing, and maps</h2>
 
     <p class="section-lede">
-      These pages are for practical local use: trying a node in different places,
-      reading map tools carefully, and understanding what your device can hear.
+      Practical notes for using a node, trying different locations, and making
+      sense of locally observed activity.
     </p>
 
     {% include guide-card-grid.html group="setup_maps" %}
 
     <div class="hero-actions">
-      <a class="btn secondary" href="{{ '/coverage.html' | relative_url }}">Open Coverage</a>
-      <a class="btn secondary" href="https://psf.meshmapper.net/" target="_blank" rel="noopener noreferrer">Open MeshMapper</a>
-    </div>
+      <a class="btn primary" href="https://map.hampdencountymesh.org/">
+        View Live Map
+      </a>
 
-    <p class="section-note">
-      MeshMapper is a separate public tool that can be useful for reviewing MeshCore testing
-      around Western Massachusetts.
-    </p>
+      <a class="btn secondary" href="https://psf.meshmapper.net/" target="_blank" rel="noopener noreferrer">
+        Open MeshMapper
+      </a>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="container narrow centered">
-    <div class="section-heading">Community</div>
-    <h2 class="portal-title">Community notes</h2>
+    <div class="section-heading">Regional Mesh</div>
+    <h2 class="portal-title">Nearby Communities</h2>
 
     <p class="section-lede">
-      These pages cover the community side: Discord, safe sharing, public updates,
-      and how to ask for help without posting private details.
+      Mesh activity does not stop at county lines. These communities maintain
+      their own sites and local projects around the region.
+    </p>
+
+    <div class="resource-grid guide-grid">
+      <a class="resource-card action-card guide-card" href="https://brkme.sh/" target="_blank" rel="noopener noreferrer">
+        <span class="guide-label">Berkshire County</span>
+        <h3>Berkshire Mesh</h3>
+        <p>
+          Local mesh community and resources for Berkshire County.
+        </p>
+        <span class="card-link">Visit Berkshire Mesh →</span>
+      </a>
+
+      <a class="resource-card action-card guide-card" href="https://ctmesh.org/" target="_blank" rel="noopener noreferrer">
+        <span class="guide-label">Connecticut</span>
+        <h3>CT Mesh</h3>
+        <p>
+          Guides, projects, and mesh community information from Connecticut.
+        </p>
+        <span class="card-link">Visit CT Mesh →</span>
+      </a>
+
+      <a class="resource-card action-card guide-card" href="https://bostonme.sh/" target="_blank" rel="noopener noreferrer">
+        <span class="guide-label">Greater Boston</span>
+        <h3>Greater Boston Mesh</h3>
+        <p>
+          Mesh community and regional information for the Greater Boston area.
+        </p>
+        <span class="card-link">Visit Greater Boston Mesh →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container narrow centered">
+    <div class="section-heading">Community Notes</div>
+    <h2 class="portal-title">Sharing and participation</h2>
+
+    <p class="section-lede">
+      A few notes on sharing information publicly and participating in local
+      project work.
     </p>
 
     {% include guide-card-grid.html group="community" %}
 
-    <div class="resource-grid guide-grid">
-      <a class="resource-card action-card guide-card" href="{{ '/updates/' | relative_url }}">
-        <span class="guide-label">Updates</span>
-        <h3>Updates</h3>
-        <p>
-          Occasional notes about site changes, local events, seminars, map work, and public data preparation.
-        </p>
-        <span class="card-link">Read updates →</span>
+    <div class="button-row">
+      {% include discord-cta.html source="guides" text="Join Discord" class="btn primary" %}
+
+      <a class="btn secondary" href="{{ '/updates/' | relative_url }}">
+        Read Updates
       </a>
-
-      <a class="resource-card action-card guide-card" href="{{ '/join/guides/' | relative_url }}" data-join-source="guides">
-        <span class="guide-label">Discord</span>
-        <h3>Discord</h3>
-        <p>
-          Ask setup questions, talk through settings, compare devices, and coordinate local testing.
-        </p>
-        <span class="card-link">Join Discord →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container narrow centered">
-    <div class="section-heading">Official resources</div>
-    <h2 class="portal-title">Project docs</h2>
-
-    <p class="section-lede">
-      Use Hampden County Mesh for local notes and community support.
-      Use the official project sites for firmware, apps, supported hardware, and project-specific changes.
-    </p>
-
-    <div class="resource-grid guide-grid">
-      <a class="resource-card action-card guide-card project-resource-card" href="https://meshcore.io/" target="_blank" rel="noopener noreferrer">
-        <img class="project-card-icon" src="{{ '/assets/icons/meshcore.svg' | relative_url }}" alt="" aria-hidden="true">
-        <span class="guide-label">Official</span>
-        <h3>MeshCore</h3>
-        <p>
-          Official MeshCore site, documentation, apps, firmware, and project links.
-        </p>
-        <span class="card-link">Visit MeshCore →</span>
-      </a>
-
-      <a class="resource-card action-card guide-card project-resource-card" href="https://meshtastic.org/" target="_blank" rel="noopener noreferrer">
-        <img class="project-card-icon" src="{{ '/assets/icons/meshtastic.svg' | relative_url }}" alt="" aria-hidden="true">
-        <span class="guide-label">Official</span>
-        <h3>Meshtastic</h3>
-        <p>
-          Official Meshtastic documentation, apps, supported hardware, firmware, and project information.
-        </p>
-        <span class="card-link">Visit Meshtastic →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="quick-path">
-      <div class="section-heading">Suggested path</div>
-      <h2>Not sure what to read?</h2>
-
-      <p>
-        This is a short route through the site for someone who wants to understand the basics,
-        configure a device, and start testing locally.
-      </p>
-
-      <div class="path-steps">
-        <div class="path-step">
-          <strong>1. Getting Started</strong>
-          <span>Learn what mesh is, choose MeshCore or Meshtastic, and understand what you need for a first node.</span>
-        </div>
-
-        <div class="path-step">
-          <strong>2. Recommended Settings</strong>
-          <span>Use the local starting settings before changing anything advanced.</span>
-        </div>
-
-        <div class="path-step">
-          <strong>3. MeshCore or Meshtastic Basics</strong>
-          <span>Read the page for the system you are using. Node roles and behavior are different between projects.</span>
-        </div>
-
-        <div class="path-step">
-          <strong>4. Discord or Coverage</strong>
-          <span>Ask questions, share public-safe results, or check local map and testing notes.</span>
-        </div>
-      </div>
-
-      <div class="hero-actions">
-        <a class="btn primary" href="{{ '/guides/getting-started.html' | relative_url }}">Getting Started</a>
-        <a class="btn secondary" href="{{ '/guides/recommended-settings.html' | relative_url }}">Recommended Settings</a>
-      </div>
     </div>
   </div>
 </section>

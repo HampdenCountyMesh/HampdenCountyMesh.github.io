@@ -6,30 +6,30 @@
   {% for guide in sorted_guides %}
     {% if guide_group == "" or guide.group == guide_group %}
       {% unless guide.url == exclude_url %}
-        {% assign guide_url = guide.url | default: "#" %}
-        {% assign is_external = false %}
+        {% if guide.url %}
+          {% assign guide_url = guide.url %}
+          {% assign is_external = false %}
 
-        {% if guide_url contains "://" %}
-          {% assign is_external = true %}
-        {% endif %}
-
-        <a
-          class="resource-card action-card guide-card {% if guide.featured %}kicker-card{% endif %}"
-          href="{% if is_external %}{{ guide_url }}{% else %}{{ guide_url | relative_url }}{% endif %}"
-          {% if is_external %}target="_blank" rel="noopener noreferrer"{% endif %}
-        >
-          {% if guide.label %}
-            <span class="guide-label">{{ guide.label | escape }}</span>
+          {% if guide_url contains "://" %}
+            {% assign is_external = true %}
           {% endif %}
 
-          <h3>{{ guide.title | escape }}</h3>
+          <a
+            class="resource-card action-card guide-card{% if guide.featured %} kicker-card{% endif %}"
+            href="{% if is_external %}{{ guide_url | escape }}{% else %}{{ guide_url | relative_url }}{% endif %}"
+            {% if is_external %}target="_blank" rel="noopener noreferrer"{% endif %}
+          >
+            {% if guide.label %}
+              <span class="guide-label">{{ guide.label | escape }}</span>
+            {% endif %}
 
-          <p>
-            {{ guide.summary | escape }}
-          </p>
+            <h3>{{ guide.title | escape }}</h3>
 
-          <span class="card-link">{{ guide.link_text | escape }}</span>
-        </a>
+            <p>{{ guide.summary | escape }}</p>
+
+            <span class="card-link">{{ guide.link_text | escape }}</span>
+          </a>
+        {% endif %}
       {% endunless %}
     {% endif %}
   {% endfor %}

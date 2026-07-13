@@ -1,88 +1,94 @@
 ---
 layout: default
-title: Coverage
-description: Terrain notes, local testing, MeshMapper links, and practical coverage information for mesh radio around Hampden County and nearby Western Massachusetts.
-nav: coverage
+title: Map and Coverage
+description: Live observed MeshCore activity and MeshMapper coverage around Hampden County and Western Massachusetts.
 ---
 
 <section class="hero">
   <div class="hero-panel">
-    <div class="frequency-display">Coverage</div>
+    <div class="frequency-display">Map</div>
 
     <div class="status-line">
       <span class="status-dot" aria-hidden="true"></span>
-      <span>Terrain • Testing • Local Notes</span>
+      <span>Observed Activity • Coverage • Western Massachusetts</span>
     </div>
 
-    <h1>Coverage</h1>
+    <h1>Map and Coverage</h1>
 
     <p class="hero-text">
-      Terrain notes, local testing, MeshMapper links, and practical coverage information
-      for mesh radio around Hampden County and nearby Western Massachusetts.
+      View observed MeshCore activity and field testing around Hampden County
+      and Western Massachusetts.
     </p>
 
     <div class="hero-actions">
-      <a class="btn primary" href="#coverage-notes">Coverage Notes</a>
-      <a class="btn secondary" href="#meshmapper">MeshMapper</a>
-      {% include discord-cta.html source="coverage" text="Join Discord" class="btn secondary" %}
+      <a class="btn primary" href="https://map.hampdencountymesh.org/">
+        Open Live Map
+      </a>
+
+      <a class="btn secondary" href="#meshmapper">
+        MeshMapper
+      </a>
     </div>
   </div>
 </section>
 
-<section id="coverage-notes">
+<section id="live-map">
   <div class="container">
-    <div class="section-heading">Coverage Notes</div>
+    <div class="section-heading">Observed Activity</div>
 
     <div class="community-panel">
-      <h2>Coverage depends on terrain, height, antennas, and placement.</h2>
+      <h2>Hampden County Mesh Live Map</h2>
 
       <p>
-        Hampden County has hills, valleys, dense neighborhoods, wooded areas,
-        river corridors, older buildings, campuses, parks, and rural edges.
-        Small radio devices can behave very differently from one place to another.
+        The live map shows geolocated MeshCore activity heard through participating
+        observer systems.
       </p>
 
       <p>
-        A node near a window, outside, higher up, or connected to a better antenna
-        may hear more than the same node sitting deeper inside a building or vehicle.
+        It reflects recently observed traffic with location data. A quiet map does
+        not necessarily mean the map or local mesh is offline.
       </p>
 
-      <p>
-        The dedicated map address is
-        <strong>map.hampdencountymesh.org</strong>. For now, it points here.
-        Later, it may point to a live or near-live map when that system is ready.
-      </p>
+      <div class="button-row">
+        <a class="btn primary large" href="https://map.hampdencountymesh.org/">
+          Open Live Map
+        </a>
+
+        <a class="btn secondary" href="https://analyzer.hampdencountymesh.org/">
+          Open Activity Analyzer
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="meshmapper">
   <div class="container">
-    <div class="section-heading">MeshMapper</div>
+    <div class="section-heading">Field Testing</div>
 
     <div class="community-panel">
       <h2>Western Massachusetts MeshMapper</h2>
 
       <p>
-        MeshMapper is a separate public tool that can be useful for reviewing
-        MeshCore testing and activity around Western Massachusetts.
-      </p>
-
-      <p>
-        It is not operated by Hampden County Mesh, and it is not limited to Hampden County.
+        MeshMapper is a separate public tool used for MeshCore field testing and
+        reviewing coverage around Western Massachusetts.
       </p>
 
       <div class="embed-frame">
         <iframe
-  title="Western Massachusetts MeshMapper"
-  src="https://psf.meshmapper.net/embed.php?lat=42.125&lon=-72.620&zoom=10&geofence=0"
-  loading="lazy"
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
+          title="Western Massachusetts MeshMapper"
+          src="https://psf.meshmapper.net/embed.php?lat=42.125&lon=-72.620&zoom=10&geofence=0"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
       </div>
 
       <div class="button-row">
-        <a class="btn secondary" href="https://psf.meshmapper.net/" target="_blank" rel="noopener noreferrer">
+        <a
+          class="btn secondary"
+          href="https://psf.meshmapper.net/"
+          target="_blank"
+          rel="noopener noreferrer">
           Open MeshMapper
         </a>
       </div>
@@ -90,98 +96,24 @@ nav: coverage
   </div>
 </section>
 
-<section>
+<section id="better-coverage">
   <div class="container">
-    <div class="section-heading">Local Terrain</div>
-
-    <div class="image-feature compact-image-feature">
-      <div class="image-frame">
-        <img src="{{ '/assets/images/coverage/wio-tracker-field-test-01.jpg' | relative_url }}" alt="A handheld mesh radio device used outdoors">
-      </div>
-
-      <div class="image-copy">
-        <h3>Radio changes from place to place.</h3>
-
-        <p>
-          A short move can matter. A parking lot, hill, window, field, vehicle,
-          or wooded trail may all produce different results.
-        </p>
-
-        <p>
-          Local testing helps people understand what works here instead of relying
-          only on guesses, spec sheets, or results from other regions.
-        </p>
-
-        <a class="btn secondary" href="{{ '/guides/getting-started.html' | relative_url }}">Get Started</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-heading">Useful First Steps</div>
-
-    <div class="resource-grid">
-      <a class="resource-card action-card" href="{{ '/guides/getting-started.html' | relative_url }}">
-        <h3>Getting Started</h3>
-        <p>
-          Start with one device, basic settings, and simple local testing.
-        </p>
-        <span class="card-link">Read Getting Started →</span>
-      </a>
-
-      <a class="resource-card action-card" href="{{ '/guides/recommended-settings.html' | relative_url }}">
-        <h3>Recommended Settings</h3>
-        <p>
-          Check the current MeshCore and Meshtastic starting settings for Hampden County
-          and nearby Western Massachusetts.
-        </p>
-        <span class="card-link">View Settings →</span>
-      </a>
-
-      <a class="resource-card action-card" href="{{ '/guides/meshcore-basics.html' | relative_url }}">
-        <h3>MeshCore Basics</h3>
-        <p>
-          Learn the basic MeshCore terms, settings, and local use notes.
-        </p>
-        <span class="card-link">Read MeshCore Basics →</span>
-      </a>
-
-      <a class="resource-card action-card" href="{{ '/join/coverage/' | relative_url }}" data-join-source="coverage">
-        <h3>Discord</h3>
-        <p>
-          Ask questions, talk about devices, share results, and coordinate local testing.
-        </p>
-        <span class="card-link">Join Discord →</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="map-activity-work">
-  <div class="container">
-    <div class="section-heading">Map and Activity Work</div>
-
     <div class="community-panel">
-      <p>
-        Live map, health-check, and activity tools are still being prepared.
-        Public live data is not automated yet.
-      </p>
+      <div class="section-heading">Coverage</div>
+
+      <h2>Building better radio paths takes more than adding map points.</h2>
 
       <p>
-        For now, this page points people toward local testing, MeshMapper, Discord,
-        and public notes. Future activity data should be added carefully and without
-        exposing private locations or sensitive details.
-      </p>
-
-      <p>
-        The map address is reserved at
-        <strong>map.hampdencountymesh.org</strong>.
+        Placement, height, antennas, and useful fixed nodes all affect how local
+        MeshCore coverage develops.
       </p>
 
       <div class="button-row">
-        <a class="btn secondary" href="{{ '/updates/' | relative_url }}">Read Updates</a>
+        <a
+          class="btn secondary"
+          href="{{ '/building-better-mesh-coverage.html' | relative_url }}">
+          Building Better Mesh Coverage
+        </a>
       </div>
     </div>
   </div>
@@ -190,21 +122,19 @@ nav: coverage
 <section id="contact">
   <div class="container">
     <div class="community-panel">
-      <div class="section-heading">Contact</div>
+      <div class="section-heading">Questions</div>
 
       <p>
-        Questions, corrections, local testing notes, or ideas for improving this page?
+        Have a map correction, coverage question, or something useful to share?
       </p>
 
-      <p>
-        <a href="mailto:contact@hampdencountymesh.org">contact@hampdencountymesh.org</a>
-      </p>
+      <div class="button-row">
+        {% include discord-cta.html source="coverage" text="Join Discord" class="btn primary" %}
 
-      <p>
-        You can also join the community Discord.
-      </p>
-
-      {% include discord-cta.html source="coverage" text="Join Discord" class="btn primary large" %}
+        <a class="btn secondary" href="mailto:contact@hampdencountymesh.org">
+          Email HCM
+        </a>
+      </div>
     </div>
   </div>
 </section>

@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Hampden County Mesh
-description: Hampden County Mesh is a Western Massachusetts community for learning about MeshCore, Meshtastic, and practical radio communications.
+description: Hampden County Mesh is a Western Massachusetts community for MeshCore, Meshtastic, and local mesh radio.
 nav: home
 ---
 
@@ -12,16 +12,14 @@ nav: home
     <h1>Hampden County<br>Mesh</h1>
 
     <p class="hero-text">
-      A Western Massachusetts community for learning about MeshCore,
-      Meshtastic, and practical radio communications.
+      A local community for MeshCore, Meshtastic, and low-power mesh radio
+      around Hampden County and Western Massachusetts.
     </p>
 
     <div class="hero-actions">
-      <a class="btn primary large" href="{{ '/guides/recommended-settings.html' | relative_url }}">
-        Recommended Settings
+      <a class="btn primary large" href="{{ '/guides/getting-started.html' | relative_url }}">
+        Start Here
       </a>
-
-      {% include discord-cta.html source="home-hero" text="Join Discord" class="btn secondary large" %}
     </div>
   </div>
 </section>
@@ -29,20 +27,44 @@ nav: home
 <section class="home-section">
   <div class="container">
     <div class="home-copy">
-      <h2>Why mesh radio?</h2>
+      <h2>Why mesh communications?</h2>
 
       <p>
-        Mesh radio lets small devices pass short messages from one nearby
-        node to another. A message can move across an area without depending on
-        cell service, Wi-Fi, or normal internet access.
+        Mesh radios can pass short messages directly between nearby devices.
+        Messages may also travel through other nodes, extending communication
+        across a wider area without relying on cell service or normal internet access.
       </p>
 
       <p>
-        MeshCore and Meshtastic make this easier to explore with affordable
-        hardware, phone apps, and low-power radio. Around Hampden County,
-        it is a practical way to learn, try local routes, send short messages,
-        and understand what small radios can do here.
+        MeshCore and Meshtastic make it possible to explore this with small,
+        low-power hardware. Hampden County Mesh is a place to learn how it works
+        and see what is practical in our region.
       </p>
+    </div>
+  </div>
+</section>
+
+<section class="home-section">
+  <div class="container">
+    <div class="community-panel home-card">
+      <div class="section-heading">Local Mesh</div>
+
+      <h2>See what is being observed around the region.</h2>
+
+      <p>
+        View the Hampden County Mesh live activity map or learn how placement
+        and fixed nodes can help improve local radio paths.
+      </p>
+
+      <div class="button-row">
+        <a class="btn primary" href="https://map.hampdencountymesh.org/">
+          View Live Map
+        </a>
+
+        <a class="btn secondary" href="{{ '/building-better-mesh-coverage.html' | relative_url }}">
+          Building Better Mesh Coverage
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -50,11 +72,10 @@ nav: home
 <section class="home-section home-section-tight">
   <div class="container">
     <div class="home-copy">
-      <div class="section-heading">Official project sites</div>
+      <div class="section-heading">Official Project Sites</div>
 
       <p>
-        MeshCore and Meshtastic are separate open-source radio projects. These
-        links go to their official sites.
+        MeshCore and Meshtastic are separate open-source radio projects.
       </p>
 
       <div class="button-row project-buttons">
@@ -77,11 +98,11 @@ nav: home
     <div class="community-panel home-card">
       <div class="section-heading">Community Discord</div>
 
-      <h2>Ask questions, talk devices, and get setup help.</h2>
+      <h2>Talk with other local mesh users.</h2>
 
       <p>
-        Join the Discord for local setup help, device discussion, testing notes,
-        event ideas, and community updates.
+        Join the Discord for device help, regional discussion, project work,
+        and community updates.
       </p>
 
       <div class="button-row">
@@ -96,11 +117,11 @@ nav: home
     <div class="home-copy">
       <div class="section-heading">Contact</div>
 
-      <h2>Questions, events, or local mesh help?</h2>
+      <h2>Get in touch with Hampden County Mesh.</h2>
 
       <p>
-        Email us about setup questions, local testing, event ideas, or possible
-        places to host a mesh demo, workshop, or meetup.
+        For events, community outreach, local projects, or other questions,
+        email us directly.
       </p>
 
       <div class="button-row">

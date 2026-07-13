@@ -6,9 +6,11 @@ nav: guides
 
 <div class="container">
   <article class="docs-article">
-    <p class="docs-breadcrumb">
-      <a href="{{ '/guides/' | relative_url }}">Guides</a> / {{ page.title | escape }}
-    </p>
+    <nav class="docs-breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ '/guides/' | relative_url }}">Guides</a>
+      <span aria-hidden="true"> / </span>
+      <span aria-current="page">{{ page.title | escape }}</span>
+    </nav>
 
     <h1>{{ page.title | escape }}</h1>
 

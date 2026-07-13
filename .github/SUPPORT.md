@@ -1,86 +1,99 @@
 # Support
 
-This document explains where to ask questions, report website problems, suggest documentation changes, raise community ideas, or report security and privacy issues for Hampden County Mesh.
+This document explains where to ask questions, report problems, suggest changes, and raise security or privacy concerns related to Hampden County Mesh.
 
-## General Questions
+## General Help
 
-For general questions, setup help, guide corrections, local radio discussion, or community support:
+For device setup, local mesh discussion, beginner questions, and community support, join the Discord:
 
-* Join the Hampden County Mesh Discord through the website: https://hampdencountymesh.org/join/
-* Open a GitHub Issue if the question is directly related to the website, documentation, map files, or repository content
-* Use the general contact email for questions that do not fit Discord or GitHub
+https://hampdencountymesh.org/join/
 
-General contact:
+For questions that do not fit Discord or GitHub, contact:
 
 [contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)
 
-## Website or Documentation Problems
+## Website and Documentation Issues
 
-Please open a GitHub Issue if you notice:
+Open a public GitHub issue for problems involving:
 
-* Broken links
-* Outdated guide information
-* Typos or unclear wording
-* Missing attribution
-* Public information that should be generalized or removed
-* Problems with the coverage page, map display, site layout, or repository content
+- Broken links
+- Outdated or incorrect guides
+- Typos or unclear wording
+- Accessibility or mobile-layout problems
+- Missing attribution
+- Navigation problems
+- The public website, map links, analyzer links, or repository files
+- Public information that should be corrected, generalized, or removed
 
-## Bugs
+Include, when relevant:
 
-Use the Bug Report issue template when available.
+- The affected page or file
+- What you expected
+- What happened instead
+- Browser or device information
+- A screenshot with private details removed
+- Suggested replacement wording or a possible fix
 
-Helpful details include:
+Use the available issue template that best matches the report.
 
-* The page or file involved
-* What you expected to happen
-* What actually happened
-* Screenshots, if useful and public-safe
-* Browser or device details, if the issue appears layout-related
+## Feature and Community Suggestions
 
-Do not include credentials, private locations, private messages, sensitive screenshots, private system details, exact private node locations, or exact private observer locations in public issues.
+Public GitHub issues may also be used for:
 
-## Documentation Suggestions
+- Guide ideas
+- Website improvements
+- Map or data-presentation suggestions
+- Accessibility improvements
+- Event or workshop ideas
+- Outreach resources
+- Other public project proposals
 
-For guide corrections, unclear wording, outdated links, or suggested new pages, use the Documentation Improvement issue template when available.
+Keep public issues general. Do not include private contact information, non-public addresses, private messages, credentials, or exact private installation locations.
 
-Helpful details include:
+## Live Map and Analyzer
 
-* The page, file, or guide involved
-* What is unclear, missing, or outdated
-* Suggested replacement wording, if you have it
-* Whether the change would help beginners, maintainers, event hosts, Discord members, or other readers
+Public services:
 
-## Community Ideas
+- Live map: https://map.hampdencountymesh.org/
+- Analyzer: https://analyzer.hampdencountymesh.org/
 
-For community resources, event ideas, outreach ideas, local learning sessions, venue suggestions, or public-facing community notes, use the Community issue template when available.
+Public issues may be used for visible problems such as:
 
-Please keep public issues general. Do not post private contact information, private addresses, private messages, exact private node locations, or sensitive screenshots.
+- A page failing to load
+- Broken controls or navigation
+- Incorrect branding or wording
+- Mobile-display problems
+- Broken links from the main website
 
-## Security or Privacy Issues
+Do not post broker credentials, internal host details, private logs, administrative URLs, or other sensitive configuration in a public report.
 
-Do not open a public issue for security reports, exposed credentials, private locations, private node details, private observer details, private access information, or sensitive screenshots.
+A quiet map does not necessarily indicate a failure. The map displays observed MeshCore activity and may be quiet when no geolocated packets are received by participating systems.
 
-Follow the process described in `SECURITY.md`, or contact:
+## Security and Privacy Reports
+
+Do not open a public issue for:
+
+- Exposed credentials, keys, or tokens
+- Unauthorized-access concerns
+- Private messages or personal information
+- Exact non-public installation locations
+- Sensitive infrastructure details
+- Vulnerabilities affecting the website, map, analyzer, Discord integrations, or project-maintained systems
+
+Follow `SECURITY.md` or contact:
 
 [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org)
 
-Use the security contact for issues involving:
-
-* Exposed credentials
-* Private keys
-* Tokens
-* Webhook URLs
-* Private infrastructure details
-* Private node or observer locations
-* Sensitive screenshots
-* Anything that could help someone access, disrupt, or identify a private system
-
 ## Discord Support
 
-For Discord-related questions, invite problems, onboarding problems, moderation concerns, or server access issues, contact:
+For invite problems, onboarding issues, moderation concerns, role questions, or server-access problems, contact:
 
 [discord@hampdencountymesh.org](mailto:discord@hampdencountymesh.org)
 
-## Emergency and Safety Note
+## Related Documents
 
-Hampden County Mesh is a community education and hobby effort. It is not an emergency service, public safety system, or replacement for 911.
+- `README.md`
+- `CONTRIBUTING.md`
+- `CODE_OF_CONDUCT.md`
+- `SECURITY.md`
+- `docs/discord.md`

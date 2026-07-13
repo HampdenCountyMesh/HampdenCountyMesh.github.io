@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report a problem with the website, guides, Coverage page, repository, or public documentation.
+description: Report a problem with the website, guides, live map, analyzer, repository, or public documentation.
 title: "[Bug]: "
 labels:
   - bug
@@ -10,9 +10,9 @@ body:
       value: |
         Thanks for reporting a problem.
 
-        Please do not include passwords, private keys, private locations, private coordinates, private messages, screenshots with sensitive details, or anything that should not be public.
+        Do not include credentials, private messages, exact non-public locations, sensitive screenshots, or information that could provide unauthorized access.
 
-        For security or privacy issues, do not open a public issue. Please follow `SECURITY.md` or contact security@hampdencountymesh.org.
+        For security or privacy issues, do not open a public issue. Follow `SECURITY.md` or contact [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org).
 
   - type: dropdown
     id: area
@@ -20,15 +20,15 @@ body:
       label: Affected area
       description: What part of Hampden County Mesh is affected?
       options:
-        - Website
-        - Coverage page
-        - Map or embedded map
-        - Guides or documentation
+        - Public website
+        - Live map
+        - Activity analyzer
+        - Coverage or MeshMapper page
+        - Guides
         - Updates
-        - GitHub repository
-        - Discord documentation or join flow
-        - Observer, MQTT, or map-planning documentation
-        - Data or boundary files
+        - Repository documentation
+        - GitHub workflow or template
+        - Discord join route or tracking
         - Other
     validations:
       required: true
@@ -37,15 +37,15 @@ body:
     id: page_or_file
     attributes:
       label: Page, file, or URL
-      description: Link the affected page or name the file if you know it.
-      placeholder: "Example: https://hampdencountymesh.org/coverage.html or guides/meshcore-basics.html"
+      description: Link the affected page or name the repository file.
+      placeholder: "Example: https://map.hampdencountymesh.org/ or guides/meshcore-basics.html"
 
   - type: textarea
     id: description
     attributes:
       label: What happened?
-      description: Describe the problem clearly.
-      placeholder: "Example: A link goes to a 404 page, a page does not load correctly, or wording appears outdated."
+      description: Describe the problem and where you encountered it.
+      placeholder: "Example: A link opens a deleted page, the map controls do not work on mobile, or wording is outdated."
     validations:
       required: true
 
@@ -53,47 +53,46 @@ body:
     id: reproduce
     attributes:
       label: Steps to reproduce
-      description: How can someone else see the same problem?
+      description: List the steps needed to see the problem, when applicable.
       placeholder: |
-        1. Go to ...
-        2. Click ...
+        1. Open ...
+        2. Select ...
         3. See ...
-    validations:
-      required: true
 
   - type: textarea
     id: expected
     attributes:
       label: Expected behavior
-      description: What did you expect to happen instead?
+      description: What did you expect to happen?
       placeholder: "Example: The link should open the current guide page."
 
   - type: textarea
     id: actual
     attributes:
       label: Actual behavior
-      description: What actually happened?
-      placeholder: "Example: The link goes to a 404 page, the map area is blank, or the page layout is broken."
+      description: Add any details not already included above.
+      placeholder: "Example: The link returns a 404 page or the control does not respond."
 
   - type: input
     id: browser
     attributes:
       label: Browser and device
-      description: Include browser, operating system, and device if relevant.
-      placeholder: "Example: Firefox on Windows 11, Safari on iPhone, Chrome on Android"
+      description: Include the browser, operating system, and device when relevant.
+      placeholder: "Example: Firefox on Windows 11 or Safari on iPhone"
 
   - type: textarea
     id: logs_or_screenshots
     attributes:
-      label: Logs, screenshots, or extra context
-      description: Add screenshots, browser console output, or extra details only if they do not contain private or sensitive information.
+      label: Screenshots, console output, or additional context
+      description: Add supporting information only after removing private or sensitive details.
       placeholder: "Paste public-safe details here."
 
   - type: checkboxes
-    id: privacy_check
+    id: checks
     attributes:
-      label: Privacy check
-      description: Confirm that this public issue does not include sensitive information.
+      label: Public issue checks
       options:
-        - label: I have not included passwords, private keys, private locations, private coordinates, private messages, or sensitive screenshots.
+        - label: I have removed credentials, private messages, exact non-public locations, and other sensitive information.
+          required: true
+        - label: I checked that this is not a security or privacy report that should be sent privately.
           required: true

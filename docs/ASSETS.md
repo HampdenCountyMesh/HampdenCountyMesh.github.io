@@ -1,286 +1,203 @@
 # Asset Credits and Usage
 
-This document explains how website images, media files, map data, third-party assets, and other public-facing assets should be handled in the Hampden County Mesh repository.
+This document explains the licensing, attribution, privacy, and reuse expectations for images and other media in the Hampden County Mesh repository.
 
-It clarifies permissions, credits, reuse limits, and privacy expectations. It does not replace the repository license.
+It supplements the repository license but does not replace it.
 
-## Repository Assets
+## License Boundaries
 
-This repository may include:
+Unless otherwise noted, the repository’s MIT License applies to:
 
-* Website source files
-* Documentation
-* Public guide pages
-* Icons
-* Photographs
-* Screenshots
-* Map-related files
-* Social preview images
-* Branding images
-* Other website media
+- Source code
+- HTML and Liquid templates
+- Stylesheets and scripts
+- Documentation
+- Configuration files
+- Other non-media repository files
 
-Code, documentation, and non-photo site files are covered by the repository license unless otherwise noted.
+The MIT License does not automatically grant reuse rights for:
 
-Photographs, personal images, contributor-provided images, logos, screenshots, social images, and some media assets may have more limited reuse permissions.
+- Hampden County Mesh logos and branding
+- Photographs
+- Social preview images
+- Screenshots
+- Contributor-provided images
+- Personal images
+- Third-party logos or icons
+- Other media stored in `assets/images/` or `assets/icons/`
 
-## Current Branding and Social Assets
+No separate license is granted for those assets unless one is explicitly stated.
 
-Current public branding and social assets include:
+## Current Hampden County Mesh Assets
 
-* `assets/icons/favicon.svg`
-* `assets/icons/HampdenCounty.png`
-* `assets/icons/discord-symbol-white.svg`
-* `assets/icons/meshcore.svg`
-* `assets/icons/meshtastic.svg`
-* `assets/images/social/hcm-og-towers.jpg`
+Current site assets include:
 
-Current social image alt text:
+- `assets/icons/favicon.svg`
+- `assets/icons/HampdenCounty.png`
+- `assets/images/hero/bannertom.png`
+- `assets/images/social/mttomrockitt.png`
+- `assets/images/coverage/wio-tracker-field-test-01.jpg`
 
-    Hampden County Mesh logo over a view of Mount Tom radio towers.
+Current default social-image alt text:
 
-Legacy or previously used social assets may include, if still present in the repository:
+> Hampden County Mesh branding over a view of Mount Tom.
 
-* `assets/images/social/hcm-logo-900.png`
-* `assets/images/social/hcm-social-card.jpg`
-* `assets/images/social/HCMRockit.png`
-* `assets/images/social/HampdenRockit.png`
-* `assets/images/social/bluebannerrockitt.png`
-* `assets/images/social/mttomrockitt.png`
+Older social or branding files may remain in the repository for compatibility or historical reference. Their presence does not mean they are still used by the website.
 
-Only list additional branding or social files as current assets if they actually exist in the repository and are actively used by the site.
+## Third-Party Icons
 
-These image assets are part of the Hampden County Mesh public presentation. Do not assume they are available for unrelated reuse outside the site, Discord, GitHub profile, related Hampden County Mesh documentation, or Hampden County Mesh community materials.
+The repository also contains icons associated with outside projects or services, including:
+
+- `assets/icons/discord-symbol-white.svg`
+- `assets/icons/meshcore.svg`
+- `assets/icons/meshtastic.svg`
+
+These names, logos, and marks remain subject to the rights and usage rules of their respective owners. Their inclusion does not transfer ownership to Hampden County Mesh.
 
 ## Photographs
 
-Unless otherwise noted, photographs in `assets/images/` were taken by the Hampden County Mesh maintainer and are used as website and documentation assets.
+Unless otherwise noted, photographs used by the site were taken by the Hampden County Mesh maintainer or provided with permission for use in Hampden County Mesh materials.
 
-Site photographs may include:
+They may include:
 
-* Mount Tom radio tower photographs
-* Mount Tom State Reservation sign photographs
-* Local terrain photographs
-* MeshCore or Meshtastic hardware photographs
-* Photos of equipment, radios, antennas, and node devices
-* Local communications or infrastructure images
-* Public-safe local use images
-* Other Hampden County or regional images relevant to the site
+- Local terrain and Mount Tom
+- Radio equipment and antennas
+- MeshCore or Meshtastic devices
+- Field-testing examples
+- Fixed or portable node setups
+- Community demonstrations or project work
 
-Some photographs may include personally owned devices, the maintainer’s hands, or other personal context. These images are included for Hampden County Mesh documentation and website presentation.
+These photographs are provided for Hampden County Mesh website, documentation, Discord, and related community use. Do not assume they may be copied into unrelated projects, advertisements, datasets, publications, or social posts.
 
-Current or planned cleaned site photo paths may include:
+Contact Hampden County Mesh before reusing a photograph or branded image when permission is unclear.
 
-* `assets/images/hero/mt-tom-towers-01.jpg`
-* `assets/images/community/mt-tom-sign-01.jpg`
-* `assets/images/coverage/wio-tracker-field-test-01.jpg`
+## Contributor-Provided Media
 
-Only list image paths here if the files exist in the repository or are intentionally being added.
+Images supplied by community members should only be published when permission is clear.
 
-## Contributor-Provided Photographs
+Keep a reasonable record of:
 
-Some images may be provided by friends, community members, or other contributors with permission to use them for Hampden County Mesh.
+- Who provided the image
+- What permission was granted
+- Whether attribution was requested
+- Whether the image may be edited
+- Whether reuse outside Hampden County Mesh is allowed
 
-Contributor-provided photos should be treated carefully:
+Permission to use an image on the HCM website does not automatically include permission for unrelated reuse.
 
-* Keep a note of who provided the image, if appropriate.
-* Keep a note that permission was granted.
-* Do not assume permission extends to unrelated projects.
-* Do not reuse the image outside Hampden County Mesh without permission.
-* Avoid publishing photos that reveal private addresses, private locations, people, plates, screens, or other sensitive details without review.
+## Privacy Review
 
-If there is uncertainty about permission, do not publish the image until permission is clear.
+Before publishing a photograph, screenshot, map, or other visual asset, check for:
 
-## Photo and Media Reuse
+- Exact private addresses or coordinates
+- Non-public node or infrastructure locations
+- Passwords, keys, tokens, or broker credentials
+- Private messages or administrative pages
+- Personal documents, mail, badges, or account details
+- License plates or identifying information
+- People who did not agree to be shown
+- Location metadata or other hidden file metadata
 
-Photographs and image assets in `assets/images/` are not automatically licensed for broad reuse outside the Hampden County Mesh website, Discord, GitHub profile, and related documentation.
+Network names, local IP addresses, and device information should be reviewed in context. They are not automatically secret, but they should be removed when they reveal non-public access details, internal infrastructure, or information that does not need to be published.
 
-Ask for permission before reusing, modifying, redistributing, republishing, incorporating into datasets, or using site photographs or image assets in unrelated projects.
+Crop, redact, blur, or replace an image when necessary.
 
-This applies especially to:
+## Metadata
 
-* Photos of people
-* Photos showing hands or personal equipment
-* Photos taken during local use
-* Photos of private setups
-* Photos of node locations
-* Photos provided by someone else with limited permission
-* Photos that may reveal location or personal details
-* Logos, social cards, and branding images made specifically for Hampden County Mesh
+Public photographs should be checked for EXIF and other embedded metadata.
 
-## Personal Images
+Metadata may include:
 
-Some photographs may include the maintainer, their hands, their personally owned equipment, or their personally owned devices.
+- GPS coordinates
+- Capture time
+- Phone or camera information
+- Editing history
+- Device details
 
-These images are included for Hampden County Mesh documentation and website presentation. They should not be reused in unrelated projects, advertisements, training material, social media posts, derivative works, public datasets, or unrelated publications without permission.
+Remove location and identifying metadata when practical, especially for images taken near homes, vehicles, private installations, or other sensitive locations.
 
-## EXIF and Metadata
+## File Names and Organization
 
-Before uploading public photographs, check for EXIF metadata and other hidden metadata.
-
-Photos may contain:
-
-* GPS coordinates
-* Camera or phone details
-* Timestamps
-* Device information
-* Editing history
-* Other metadata
-
-Remove metadata before publishing public site photos when practical, especially if a photo was taken near a private location, home, vehicle, or sensitive setup.
-
-For public site photos, prefer cleaned versions with EXIF removed.
-
-## Privacy Checks Before Publishing Images
-
-Before publishing a photo, screenshot, map, or other visual asset, check whether it reveals:
-
-* Private addresses
-* License plates
-* Private node locations
-* Private observer locations
-* Private gateway locations
-* Private repeater locations
-* Private coordinates
-* Screens with messages, keys, passwords, or admin pages
-* Wi-Fi names or network details
-* Broker credentials
-* API keys or tokens
-* Private IP addresses
-* Reflections showing sensitive details
-* People who did not agree to be shown
-* Children or bystanders
-* Badges, mail, documents, or identifying details
-
-When a photo is useful but contains sensitive details, crop, blur, redact, or choose a different image.
-
-For broader public-data and observed-activity rules, use `docs/data-access-and-observed-activity.md`.
-
-## File Naming
-
-Use clear, lowercase, descriptive filenames when possible.
-
-Good examples:
-
-* `mt-tom-towers-01.jpg`
-* `mt-tom-sign-01.jpg`
-* `wio-tracker-field-test-01.jpg`
-* `wio-tracker-node-01.jpg`
-* `west-springfield-public-park-01.jpg`
-* `node-demo-table-01.jpg`
-* `solar-node-example-01.jpg`
-* `hcm-og-towers.jpg`
-* `hampden-county-mesh-logo.jpg`
-
-Avoid filenames that include:
-
-* Exact private addresses
-* Personal names
-* Phone numbers
-* Private coordinates
-* Device passwords or keys
-* Temporary joke names that will not make sense later
-
-## Suggested Image Folders
-
-Use folders that describe the asset’s purpose.
+Use descriptive filenames that do not expose private information.
 
 Examples:
 
-* `assets/images/hero/`
-* `assets/images/community/`
-* `assets/images/coverage/`
-* `assets/images/guides/`
-* `assets/images/equipment/`
-* `assets/images/social/`
-* `assets/icons/`
+- `mt-tom-towers-01.jpg`
+- `wio-tracker-field-test-01.jpg`
+- `node-demo-table-01.jpg`
+- `solar-node-example-01.jpg`
 
-Keep images organized enough that future maintainers can tell what they are for.
+Avoid putting personal names, private addresses, coordinates, credentials, or temporary joke names in filenames.
 
-## Screenshots
+Organize images by purpose where practical:
 
-Screenshots can be useful for documentation, but they often reveal more than expected.
+- `assets/images/hero/`
+- `assets/images/community/`
+- `assets/images/coverage/`
+- `assets/images/guides/`
+- `assets/images/equipment/`
+- `assets/images/social/`
+- `assets/icons/`
 
-Before publishing screenshots, check for:
+## Maps and Observed Activity
 
-* Usernames
-* Direct messages
-* Private channels
-* Email addresses
-* Admin URLs
-* IP addresses
-* Tokens or credentials
-* Browser tabs
-* Bookmarks
-* Device IDs
-* Node coordinates
-* Map locations
-* Private Discord server details
+The Hampden County Mesh live map displays geolocated MeshCore packet activity observed through participating systems:
 
-Use cropped or redacted screenshots when possible.
+https://map.hampdencountymesh.org/
 
-## Maps and Data
+Displayed activity should not be interpreted as:
 
-Site map data may include public boundary data, manually maintained public-safe data, generalized locations, and future observed-activity information.
+- A complete inventory of the regional mesh
+- Proof that every visible node is currently reachable
+- A claim that every node or packet belongs to Hampden County Mesh
+- Exact infrastructure ownership information
 
-Public map points may be generalized or omitted for privacy and safety.
+Public locations may be generalized or omitted where appropriate.
 
-Published map data should not be treated as exact infrastructure location data unless explicitly stated.
+For MeshCore field testing, Hampden County Mesh also refers users to the Western Massachusetts MeshMapper region:
 
-Observed activity data should be described carefully. It may show something heard by a site-maintained system, public source, nearby tool, observer, gateway, map, dashboard, MeshMapper result, or public-safe note. It should not imply that Hampden County Mesh owns, operates, endorses, or manages every visible node, observer, gateway, repeater, marker, packet, or device.
+https://psf.meshmapper.net/
 
-For MeshCore field testing, Hampden County Mesh points people toward MeshMapper:
+MeshMapper is an independent project and is not operated by Hampden County Mesh. It should not be presented as a Meshtastic field-testing tool.
 
-https://meshmapper.net/
+See `docs/data-access-and-observed-activity.md` for further guidance.
 
-Do not use MeshMapper as Meshtastic field-testing guidance unless that changes later.
+## Third-Party Services and Assets
 
-For detailed data, broker, MQTT, CoreScope, and observed-activity rules, use `docs/data-access-and-observed-activity.md`.
-
-## Third-Party Assets and Services
-
-Third-party logos, maps, fonts, icons, libraries, external services, and referenced projects remain the property of their respective owners and are subject to their own licenses and terms.
+Third-party fonts, logos, maps, libraries, services, and project materials remain subject to their respective licenses and terms.
 
 This may include:
 
-* OpenStreetMap map tiles and attribution, if used
-* Leaflet, if reintroduced
-* Google Fonts
-* Rokkitt
-* Inter
-* GitHub Pages
-* MeshCore
-* Meshtastic
-* Discord
-* MeshMapper
-* External community links
-* Referenced radio, mesh, mapping, or device projects
+- MeshCore
+- Meshtastic
+- Discord
+- MeshMapper
+- GitHub Pages
+- Google Fonts
+- Rokkitt
+- Inter
+- OpenStreetMap and map-tile providers
+- Other linked community or software projects
 
-Do not remove required attribution from third-party assets.
-
-Do not copy third-party logos, graphics, screenshots, or media into the repository unless their use is allowed.
-
-## Code and Documentation
-
-Source code, documentation, and non-photo site files are covered by the repository license unless otherwise noted.
-
-This asset notice is intended to clarify that the repository license does not automatically grant broad reuse rights for site photographs, personal images, contributor-provided photos, logos, social images, screenshots, or other media assets stored in `assets/images/` or `assets/icons/`.
+Do not remove required attribution or copy third-party media into the repository without permission.
 
 ## Related Documentation
 
-* `docs/README.md`
-* `docs/infrastructure.md`
-* `docs/data-access-and-observed-activity.md`
-* `docs/map-subdomain.md`
-* `docs/discord.md`
+- `docs/README.md`
+- `docs/data-access-and-observed-activity.md`
+- `docs/infrastructure.md`
+- `docs/map-subdomain.md`
+- `docs/discord.md`
+- `SECURITY.md`
 
 Related public pages:
 
-* `https://hampdencountymesh.org/coverage.html`
-* `https://hampdencountymesh.org/guides/sharing-safely.html`
-* `https://hampdencountymesh.org/updates/`
+- `https://hampdencountymesh.org/building-better-mesh-coverage.html`
+- `https://hampdencountymesh.org/coverage.html`
+- `https://hampdencountymesh.org/guides/sharing-safely.html`
 
 ## Contact
 
-For questions about asset reuse, permissions, corrections, or attribution, contact:
+For questions about attribution, permission, corrections, or asset reuse, contact:
 
 [contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)

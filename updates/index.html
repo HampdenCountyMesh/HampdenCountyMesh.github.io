@@ -1,21 +1,24 @@
 ---
 layout: default
 title: Updates
-description: Occasional updates from Hampden County Mesh about site changes, guides, local events, seminars, and observed activity work.
+description: Project updates from Hampden County Mesh about the website, guides, events, maps, and local mesh work.
 nav: updates
 main_class: docs-shell
 ---
 
 <div class="container">
   <article class="docs-article">
-    <p class="docs-breadcrumb">
-      Hampden County Mesh / Updates
-    </p>
+    <nav class="docs-breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ '/' | relative_url }}">Hampden County Mesh</a>
+      <span aria-hidden="true"> / </span>
+      <span aria-current="page">Updates</span>
+    </nav>
 
     <h1>Updates</h1>
 
     <p class="docs-lede">
-      Occasional notes about site changes, guide updates, local events, seminars, and observed activity work.
+      Occasional notes about site changes, guides, events, seminars,
+      maps, and other Hampden County Mesh projects.
     </p>
 
     <div class="update-list">
@@ -23,16 +26,24 @@ main_class: docs-shell
 
       {% for update in sorted_updates %}
         <article class="update-card">
-          <span class="update-meta">{{ update.date | date: "%B %-d, %Y" }}</span>
+          <p class="update-meta">
+            <time datetime="{{ update.date | date_to_xmlschema }}">
+              {{ update.date | date: "%B %-d, %Y" }}
+            </time>
+          </p>
 
           <h2>
-            <a href="{{ update.url | relative_url }}">{{ update.title | escape }}</a>
+            <a href="{{ update.url | relative_url }}">
+              {{ update.title | escape }}
+            </a>
           </h2>
 
           {% if update.summary %}
             <p>{{ update.summary | escape }}</p>
           {% else %}
-            <p>{{ update.excerpt | strip_html | normalize_whitespace | truncate: 220 | escape }}</p>
+            <p>
+              {{ update.excerpt | strip_html | normalize_whitespace | truncate: 220 | escape }}
+            </p>
           {% endif %}
 
           {% if update.tags %}
@@ -43,7 +54,9 @@ main_class: docs-shell
             </div>
           {% endif %}
 
-          <a class="card-link" href="{{ update.url | relative_url }}">Read more →</a>
+          <a class="card-link" href="{{ update.url | relative_url }}">
+            Read More →
+          </a>
         </article>
       {% else %}
         <div class="update-empty">
@@ -53,15 +66,18 @@ main_class: docs-shell
     </div>
 
     <section class="docs-section">
-      <h2>Have a question?</h2>
+      <h2>Questions about an update?</h2>
 
       <p>
-        The Discord is the best place for setup help, local testing, guide questions, and community discussion.
+        Join the Discord to ask about current projects or get involved.
       </p>
 
       <div class="button-row">
         {% include discord-cta.html source="updates" text="Join Discord" class="btn primary" %}
-        <a class="btn secondary" href="{{ '/guides/' | relative_url }}">Read Guides</a>
+
+        <a class="btn secondary" href="{{ '/guides/' | relative_url }}">
+          Read Guides
+        </a>
       </div>
     </section>
   </article>
