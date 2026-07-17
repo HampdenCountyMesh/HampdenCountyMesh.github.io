@@ -1,268 +1,296 @@
 ---
 layout: guide
 title: MeshCore Basics
-description: A plain-language guide to MeshCore, node types, channels, and observed activity around Hampden County and Western Massachusetts.
-lede: MeshCore is the main mesh system used by Hampden County Mesh. Learn the basic node types, how channels work, and where local activity can be viewed.
+description: A plain-language guide to MeshCore, node roles, channels, routing, and observed activity around Hampden County and Western Massachusetts.
+lede: MeshCore is the main mesh system used by Hampden County Mesh. Learn how messages move, what the different node roles do, and where local activity can be viewed.
+body_class: meshcore-basics-guide
 og_type: article
 ---
-
-<div class="hero-actions">
-  <a class="btn secondary" href="#what-meshcore-is">What It Is</a>
-  <a class="btn secondary" href="#nodes">Node Types</a>
-  <a class="btn secondary" href="#channels">Channels</a>
-  <a class="btn secondary" href="#maps">Maps</a>
-  <a class="btn secondary" href="#ask">Ask for Help</a>
-</div>
 
 <section class="docs-section" id="what-meshcore-is">
   <h2>What MeshCore is</h2>
 
   <p>
-    MeshCore is a lightweight messaging and packet-routing system for LoRa radio
-    devices. Compatible nodes can communicate directly or through other MeshCore
-    infrastructure without relying on normal internet or cellular service.
+    MeshCore is a lightweight messaging and packet-routing system for compatible
+    LoRa radios. Devices can communicate directly or through fixed repeaters
+    without depending on normal cellular service or an internet connection.
   </p>
 
   <p>
-    A basic setup can be simple: one supported device, MeshCore firmware,
-    a phone or computer app, a working antenna, and radio settings that match
-    the regional mesh.
+    A basic setup can remain simple: one supported radio, companion firmware,
+    a phone or computer, the correct antenna, and radio settings that match the
+    regional mesh.
   </p>
 
-  <div class="resource-grid docs-resource-grid">
+  <div class="docs-note">
+    One companion radio is enough to begin. Ordinary companion devices do not
+    repeat traffic for other users, so wider regional paths depend on separately
+    operated repeater infrastructure.
+  </div>
+
+  <div class="guide-resource-links">
     <a
-      class="resource-card action-card project-resource-card"
       href="https://meshcore.io/"
       target="_blank"
       rel="noopener noreferrer">
-
-      <img
-        class="project-card-icon"
-        src="{{ '/assets/icons/meshcore.svg' | relative_url }}"
-        alt=""
-        aria-hidden="true">
-
-      <h3>MeshCore</h3>
-
-      <p>
-        Official MeshCore site, apps, hardware links, and project documentation.
-      </p>
-
-      <span class="card-link">Visit MeshCore →</span>
+      Official MeshCore Site ↗
     </a>
 
     <a
-      class="resource-card action-card project-resource-card"
-      href="https://meshcore.io/flasher/"
+      href="https://flasher.meshcore.io/"
       target="_blank"
       rel="noopener noreferrer">
+      MeshCore Flasher ↗
+    </a>
 
-      <img
-        class="project-card-icon"
-        src="{{ '/assets/icons/meshcore.svg' | relative_url }}"
-        alt=""
-        aria-hidden="true">
-
-      <h3>MeshCore Flasher</h3>
-
-      <p>
-        Official web flasher for installing MeshCore firmware on supported devices.
-      </p>
-
-      <span class="card-link">Open Flasher →</span>
+    <a
+      href="https://docs.meshcore.io/"
+      target="_blank"
+      rel="noopener noreferrer">
+      Official Documentation ↗
     </a>
   </div>
 </section>
 
-<section class="docs-section" id="starting">
-  <h2>Start with a companion</h2>
+<section class="docs-section" id="how-messages-move">
+  <h2>How messages move</h2>
 
   <p>
-    For most people, the first MeshCore device should be a companion or personal
-    node connected to a phone or computer.
+    MeshCore uses both flooding and directed paths. The distinction helps it
+    reach unfamiliar destinations without making every later message travel
+    through every available repeater.
   </p>
+
+  <ol class="start-path">
+    <li>
+      <strong>Nearby radios may communicate directly.</strong>
+      <span>
+        No repeater is needed when the two devices can already hear each other.
+      </span>
+    </li>
+
+    <li>
+      <strong>A new direct message can begin as a flood.</strong>
+      <span>
+        Repeaters help the first message find the destination when no known path
+        is available.
+      </span>
+    </li>
+
+    <li>
+      <strong>A successful reply helps establish a path.</strong>
+      <span>
+        Later direct messages can follow a more selective repeater path rather
+        than flooding the entire reachable mesh.
+      </span>
+    </li>
+
+    <li>
+      <strong>Group-channel messages use flood routing.</strong>
+      <span>
+        Channels do not have one defined destination, so repeaters forward them
+        according to the limits and regional rules they are configured to use.
+      </span>
+    </li>
+  </ol>
 
   <p>
-    Get one device working before planning repeaters, room servers, observers,
-    solar installations, or other infrastructure.
+    Flooding still happens entirely over the radio network. It does not mean the
+    message is being carried through the internet.
   </p>
-
-  <div class="button-row">
-    <a
-      class="btn primary"
-      href="{{ '/guides/getting-started.html' | relative_url }}">
-      Getting Started
-    </a>
-
-    <a
-      class="btn secondary"
-      href="{{ '/guides/recommended-settings.html#meshcore' | relative_url }}">
-      MeshCore Settings
-    </a>
-  </div>
 </section>
 
-<section class="docs-section" id="nodes">
-  <h2>MeshCore node types</h2>
+<section class="docs-section" id="roles">
+  <h2>The main MeshCore roles</h2>
 
-  <div class="basics-grid">
-    <div class="basics-card">
-      <span class="label">Start here</span>
+  <p>
+    The roles serve different purposes. Combining them conceptually can lead to
+    poor placement decisions or the assumption that every node improves
+    coverage.
+  </p>
+
+  <div class="meshcore-role-grid">
+    <article class="meshcore-role">
+      <p class="meshcore-role-label">Start here</p>
 
       <h3>Companion</h3>
 
       <p>
-        A personal MeshCore device used with a phone or computer for contacts,
-        channels, messages, and normal day-to-day use.
+        A personal radio connected to a phone or computer. It manages contacts,
+        direct messages, channels, adverts, and normal day-to-day use.
       </p>
-    </div>
 
-    <div class="basics-card">
-      <span class="label">Infrastructure</span>
+      <p class="meshcore-role-note">
+        Companion devices send and receive messages but do not relay ordinary
+        traffic for the rest of the mesh.
+      </p>
+    </article>
+
+    <article class="meshcore-role">
+      <p class="meshcore-role-label">Relay infrastructure</p>
 
       <h3>Repeater</h3>
 
       <p>
-        A fixed relay node placed where it can provide useful radio paths for
-        other MeshCore devices.
+        A fixed radio that forwards eligible MeshCore packets and helps create
+        paths between devices that cannot communicate directly.
       </p>
-    </div>
 
-    <div class="basics-card">
-      <span class="label">Room</span>
+      <p class="meshcore-role-note">
+        Height, terrain, antenna quality, power, and placement matter more than
+        simply adding another repeater at ground level.
+      </p>
+    </article>
+
+    <article class="meshcore-role">
+      <p class="meshcore-role-label">Stored group messages</p>
 
       <h3>Room Server</h3>
 
       <p>
-        A node that hosts a persistent room where users can connect and read
-        recent messages.
+        A small bulletin-board-style server that stores room history so users
+        can connect later and retrieve messages they did not hear live.
       </p>
-    </div>
 
-    <div class="basics-card">
-      <span class="label">Supporting tools</span>
+      <p class="meshcore-role-note">
+        A room server serves a different purpose from a repeater. Separate
+        devices are generally preferable for the two infrastructure roles.
+      </p>
+    </article>
+
+    <article class="meshcore-role">
+      <p class="meshcore-role-label">Supporting integration</p>
 
       <h3>Observer</h3>
 
       <p>
-        A system used to hear activity and report observations to mapping,
-        analysis, or logging tools.
+        An observer setup reports activity heard by participating infrastructure
+        to logging, mapping, or packet-analysis software.
       </p>
-    </div>
+
+      <p class="meshcore-role-note">
+        Observation improves visibility into the mesh. It does not by itself
+        improve the radio path between two devices.
+      </p>
+    </article>
   </div>
 
-  <h3>Companions</h3>
+  <div class="docs-note">
+    In practical terms: companions are used by people, repeaters extend radio
+    paths, room servers retain group posts, and observers help document what
+    participating infrastructure hears.
+  </div>
 
-  <p>
-    A companion is the normal place to begin. It lets you discover contacts,
-    use channels, send messages, and learn what the local mesh looks like.
-  </p>
+  <div class="guide-resource-links">
+    <a href="{{ '/guides/getting-started.html' | relative_url }}">
+      Getting Started
+    </a>
 
-  <h3>Repeaters</h3>
+    <a href="{{ '/guides/recommended-settings.html#meshcore' | relative_url }}">
+      Recommended MeshCore Settings
+    </a>
 
-  <p>
-    Repeaters help relay MeshCore traffic. Their usefulness depends heavily on
-    placement, antenna setup, power, and the radio paths around them.
-  </p>
-
-  <p>
-    Running a repeater is infrastructure work rather than a normal beginner step.
-  </p>
-
-  <div class="button-row">
-    <a
-      class="btn secondary"
-      href="{{ '/building-better-mesh-coverage.html' | relative_url }}">
+    <a href="{{ '/building-better-mesh-coverage.html' | relative_url }}">
       Building Better Mesh Coverage
     </a>
   </div>
+</section>
 
-  <h3>Room servers</h3>
-
-  <p>
-    A room server provides a persistent room for group messages. It serves a
-    different purpose from a repeater, and the two are normally better treated
-    as separate infrastructure roles.
-  </p>
-
-  <h3>Observers</h3>
+<section class="docs-section" id="adverts">
+  <h2>Adverts and contacts</h2>
 
   <p>
-    An observer is supporting infrastructure around the mesh rather than a
-    replacement for a repeater. It reports what it hears to other tools but does
-    not improve the RF path between two radios.
+    An advert announces that a node exists. Depending on the node and its
+    configuration, an advert can include its name, public key, node type, and
+    optional location information.
   </p>
 
   <p>
-    Hampden County Mesh uses observed packet activity to support its live map
-    and activity analyzer.
+    A zero-hop advert is heard only by radios that can receive it directly. A
+    flood advert may be forwarded by repeaters, allowing the node to become
+    visible across a wider portion of the mesh.
   </p>
+
+  <p>
+    Companion applications use adverts to populate or refresh contacts. An
+    advert is not itself a chat message, and seeing a contact does not guarantee
+    that a working route currently exists.
+  </p>
+
+  <div class="docs-note">
+    Location included in a public advert may be displayed by compatible apps or
+    mapping systems. Do not attach a precise private location unless you
+    intentionally want to publish it.
+  </div>
+
+  <div class="guide-resource-links">
+    <a href="{{ '/guides/sharing-safely.html' | relative_url }}">
+      Sharing Safely
+    </a>
+  </div>
 </section>
 
 <section class="docs-section" id="channels">
   <h2>MeshCore channels</h2>
 
   <p>
-    Channels are used for group messages. Public and shared channels use flood
-    routing, so a channel name should not be treated as a way to keep traffic
-    physically confined to one town or county.
+    Channels are used for group messages. All channel traffic uses flood
+    routing because there is no single destination from which to learn a
+    directed path.
   </p>
 
-  <div class="docs-card-grid">
-    <div class="docs-card">
-      <h3>Public</h3>
-
-      <p>
-        The broad public channel. Useful for first contact and occasional messages
-        intended for the wider mesh.
-      </p>
+  <dl class="meshcore-channel-list">
+    <div>
+      <dt>Public</dt>
+      <dd>
+        The built-in public group channel. Anyone using the standard public
+        channel configuration can receive its messages.
+      </dd>
     </div>
 
-    <div class="docs-card">
-      <h3>Hashtag channels</h3>
-
-      <p>
-        Public topic or regional channels such as <code>#test</code>. They help
-        organize conversation but are still public channel traffic.
-      </p>
+    <div>
+      <dt>Hashtag channels</dt>
+      <dd>
+        Topic or regional channels such as <code>#test</code>. Their keys are
+        derived from their names, so they should be treated as public rather
+        than secret.
+      </dd>
     </div>
 
-    <div class="docs-card">
-      <h3>Shared channels</h3>
-
-      <p>
-        Channels configured with a shared secret. Anyone with that channel
-        configuration can participate and read its messages.
-      </p>
+    <div>
+      <dt>Private or shared-key channels</dt>
+      <dd>
+        Channels created with a randomly generated secret. Anyone who has the
+        channel name and secret can participate and read messages sent through
+        that channel.
+      </dd>
     </div>
-  </div>
+  </dl>
 
   <h3>Local channel use</h3>
 
   <p>
-    Use <code>#test</code> for routine test messages where it is configured
-    rather than repeatedly testing in <code>Public</code>.
+    Use <code>#test</code> for routine test traffic where it is configured
+    rather than repeatedly testing in the broad Public channel.
   </p>
 
   <p>
-    Hampden County Mesh also uses or is preparing channels for local tools and
-    community purposes. Current channel information is kept in the Discord so
-    conventions can change without leaving old instructions scattered across the site.
+    Current local channel conventions are kept in the HCM Discord so they can
+    change without leaving obsolete channel instructions scattered across the
+    website.
   </p>
 
-  <h3>Keep public messages public-safe</h3>
+  <h3>A channel name is not a geographic boundary</h3>
 
   <p>
-    Public or shared channels should not be treated as private messaging.
-    Avoid posting information that does not belong in a broadly visible group conversation.
+    A town, county, or regional name helps organize conversation, but it does
+    not physically confine radio traffic to that area. Repeaters may carry the
+    channel beyond the place named in it.
   </p>
 
-  <div class="button-row">
-    <a
-      class="btn secondary"
-      href="{{ '/guides/sharing-safely.html' | relative_url }}">
-      Sharing Safely
-    </a>
+  <div class="docs-note">
+    Public and hashtag-channel messages should be written as though they may be
+    received, logged, or repeated beyond the immediate local area.
   </div>
 </section>
 
@@ -270,106 +298,125 @@ og_type: article
   <h2>Maps and observed activity</h2>
 
   <p>
-    The Hampden County Mesh live map shows geolocated MeshCore activity heard
-    through participating observer systems.
+    Hampden County Mesh operates public tools that display MeshCore activity
+    heard through participating observer systems.
   </p>
 
-  <p>
-    The activity analyzer provides a deeper view of packets, nodes, paths,
-    observers, and other data collected by the HCM observer feed.
-  </p>
-
-  <p>
-    Observed activity is not a complete list of every MeshCore device in the
-    region. A node must be heard by a participating observer, and location data
-    must be available for it to appear on the live map.
-  </p>
-
-  <p>
-    A visible node also does not necessarily mean your own device can reach it
-    directly from its current location.
-  </p>
-
-  <div class="button-row">
-    <a
-      class="btn primary"
-      href="https://map.hampdencountymesh.org/">
-      View Live Map
+  <div class="guide-next-list">
+    <a href="https://map.hampdencountymesh.org/">
+      <strong>Hampden County Mesh Live Map</strong>
+      <span>
+        View recently observed nodes, reported locations, paths, and regional
+        activity.
+      </span>
     </a>
 
     <a
-      class="btn secondary"
-      href="https://analyzer.hampdencountymesh.org/">
-      Open Activity Analyzer
+      href="https://analyzer.hampdencountymesh.org/"
+      target="_blank"
+      rel="noopener noreferrer">
+      <strong>Activity Analyzer</strong>
+      <span>
+        Examine received packets, nodes, repeaters, paths, and participating
+        observers in greater detail.
+      </span>
     </a>
-  </div>
 
-  <h3>MeshMapper</h3>
-
-  <p>
-    MeshMapper is useful for MeshCore field testing and coverage work around
-    Western Massachusetts.
-  </p>
-
-  <div class="button-row">
     <a
-      class="btn secondary"
       href="https://psf.meshmapper.net/"
       target="_blank"
       rel="noopener noreferrer">
-      Open MeshMapper
+      <strong>Western Massachusetts MeshMapper</strong>
+      <span>
+        Record and explore contributed MeshCore field-testing observations.
+      </span>
     </a>
   </div>
-</section>
-
-<section class="docs-section" id="mqtt">
-  <h2>MQTT and observer infrastructure</h2>
 
   <p>
-    Normal MeshCore users do not need MQTT to participate.
+    Observed activity is not a complete inventory of every MeshCore device in
+    the region. A node must be heard by participating infrastructure, and usable
+    location information must be available for it to appear geographically.
   </p>
 
   <p>
-    Hampden County Mesh uses MQTT behind its observer, map, and analyzer systems.
-    That is infrastructure for collecting and presenting observed activity rather
-    than a requirement for a personal node.
+    Seeing a node or path on a map also does not prove that your radio can reach
+    it directly from its current location.
+  </p>
+
+  <h3>MQTT and personal nodes</h3>
+
+  <p>
+    HCM uses MQTT behind some observer, map, and analyzer systems. Normal
+    MeshCore users do not need MQTT to send messages or participate through
+    LoRa.
   </p>
 </section>
 
 <section class="docs-section" id="troubleshooting">
-  <h2>Quick troubleshooting</h2>
+  <h2>If a MeshCore device seems quiet</h2>
 
-  <p>
-    If a MeshCore device seems quiet, check the simple things first.
-  </p>
+  <ol>
+    <li>Confirm that the regional frequency and modem settings match.</li>
+    <li>Confirm that the correct companion firmware was installed.</li>
+    <li>Make sure the correct antenna is attached securely.</li>
+    <li>Check that the phone or computer remains connected to the companion.</li>
+    <li>Leave the radio powered long enough to hear normal activity.</li>
+    <li>Try a window, outdoor location, vehicle, or higher ground.</li>
+    <li>Send or request an advert when appropriate.</li>
+    <li>Change only one setting at a time while troubleshooting.</li>
+  </ol>
 
-  <ul>
-    <li>Confirm the regional radio settings match.</li>
-    <li>Make sure the correct firmware was installed for the device.</li>
-    <li>Make sure the antenna is attached before transmitting.</li>
-    <li>Leave the device powered long enough to hear normal activity.</li>
-    <li>Try another location before assuming the radio is not working.</li>
-    <li>Change one thing at a time while troubleshooting.</li>
-  </ul>
-
-  <div class="button-row">
-    <a
-      class="btn secondary"
-      href="{{ '/guides/recommended-settings.html#meshcore' | relative_url }}">
-      Check MeshCore Settings
-    </a>
+  <div class="docs-note">
+    A visible contact may be old, and a quiet test location may simply have a
+    poor radio path. Neither result alone proves that the device is defective.
   </div>
 </section>
 
-<section class="docs-section" id="ask">
-  <h2>Ask before you get stuck</h2>
+<section class="docs-section" id="next">
+  <h2>Where to go next</h2>
 
-  <p>
-    Bring your device model, firmware version, general area, antenna, and a short
-    description of what you have already tried.
-  </p>
+  <div class="guide-next-list">
+    <a href="{{ '/guides/recommended-settings.html#meshcore' | relative_url }}">
+      <strong>Recommended MeshCore Settings</strong>
+      <span>
+        Confirm the regional frequency, bandwidth, spreading factor, and coding
+        rate.
+      </span>
+    </a>
 
-  <div class="button-row">
-    {% include discord-cta.html source="meshcore-basics" text="Ask in Discord" class="btn primary" %}
+    <a href="{{ '/building-better-mesh-coverage.html' | relative_url }}">
+      <strong>Building Better Mesh Coverage</strong>
+      <span>
+        Learn how terrain, height, placement, antennas, and fixed repeaters
+        affect regional paths.
+      </span>
+    </a>
+
+    <a href="{{ '/guides/sharing-safely.html' | relative_url }}">
+      <strong>Sharing Safely</strong>
+      <span>
+        Review node names, locations, screenshots, photographs, and map data
+        before posting them publicly.
+      </span>
+    </a>
+  </div>
+
+  <div class="getting-started-help" id="ask">
+    <div>
+      <h3>Ask before you get stuck</h3>
+
+      <p>
+        Bring the device model, firmware version, antenna, current settings,
+        general testing area, and a short description of what you already tried.
+      </p>
+    </div>
+
+    <div class="button-row">
+      {% include discord-cta.html
+        source="meshcore-basics"
+        text="Ask in Discord"
+        class="btn primary" %}
+    </div>
   </div>
 </section>
