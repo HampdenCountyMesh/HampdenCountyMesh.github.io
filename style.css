@@ -29,6 +29,11 @@
     --blue-light: #a9bdd1;
     --blue-soft: rgba(73, 102, 132, 0.20);
 
+    /* Semantic link colors: links stay visibly distinct from headings/body text. */
+    --link: var(--blue-light);
+    --link-hover: var(--cream);
+    --link-underline: rgba(169, 189, 209, 0.42);
+
     --border: rgba(231, 216, 181, 0.22);
     --border-green: rgba(95, 127, 104, 0.30);
     --border-blue: rgba(73, 102, 132, 0.42);
@@ -94,12 +99,31 @@ body::before {
 }
 
 a {
-    color: var(--blue-light);
+    color: var(--link);
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--cream);
+    color: var(--link-hover);
+}
+
+/* Inline prose links use both color and an underline. Row, card, nav, and
+   button links provide their own non-color affordance. */
+main p a:not(.btn),
+main li a:not(.btn) {
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-color: var(--link-underline);
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.2em;
+}
+
+main p a:not(.btn):hover,
+main p a:not(.btn):focus-visible,
+main li a:not(.btn):hover,
+main li a:not(.btn):focus-visible {
+    color: var(--link-hover);
+    text-decoration-color: currentColor;
 }
 
 img {
@@ -471,10 +495,10 @@ h1 {
 }
 
 .text-link {
-    color: var(--blue-light);
+    color: var(--link);
     font-weight: 700;
     text-decoration: underline;
-    text-decoration-color: rgba(169, 189, 209, 0.42);
+    text-decoration-color: var(--link-underline);
     text-underline-offset: 0.22em;
 }
 
@@ -559,7 +583,7 @@ h1 {
     position: absolute;
     top: 20px;
     right: 4px;
-    color: var(--blue-light);
+    color: var(--link);
     font-size: 1.1rem;
     transition: transform 0.16s ease;
 }
@@ -734,10 +758,10 @@ h1 {
 }
 
 .project-links a {
-    color: var(--blue-light);
+    color: var(--link);
     font-weight: 700;
     text-decoration: underline;
-    text-decoration-color: rgba(169, 189, 209, 0.36);
+    text-decoration-color: var(--link-underline);
     text-underline-offset: 0.2em;
 }
 
@@ -1039,9 +1063,25 @@ h1 {
 .community-card span {
     display: inline-block;
     margin-top: 16px;
-    color: var(--amber);
+    color: var(--link);
     font-weight: 700;
     font-size: 0.9rem;
+}
+
+.action-card h3,
+a.community-card h3 {
+    color: var(--link);
+}
+
+.action-card:hover h3,
+.action-card:focus-visible h3,
+a.community-card:hover h3,
+a.community-card:focus-visible h3,
+.action-card:hover .card-link,
+.action-card:focus-visible .card-link,
+a.community-card:hover span,
+a.community-card:focus-visible span {
+    color: var(--link-hover);
 }
 
 /* =========================================================
@@ -1410,6 +1450,15 @@ footer {
     color: var(--text);
 }
 
+a.docs-card h3 {
+    color: var(--link);
+}
+
+a.docs-card:hover h3,
+a.docs-card:focus-visible h3 {
+    color: var(--link-hover);
+}
+
 .docs-card p {
     margin: 0;
     color: var(--text-soft);
@@ -1658,7 +1707,7 @@ footer {
 .resource-card .guide-label {
     display: inline-flex;
     margin-bottom: 12px;
-    color: var(--blue-light);
+    color: var(--link);
     font-size: 0.76rem;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -1761,7 +1810,7 @@ footer {
 .guides-route strong {
     display: block;
     margin-bottom: 6px;
-    color: var(--cream);
+    color: var(--link);
     font-family: var(--font-display);
     font-size: 1.38rem;
     line-height: 1.15;
@@ -1775,8 +1824,10 @@ footer {
 }
 
 .guides-route:hover strong,
-.guides-route:focus-visible strong {
-    color: var(--blue-light);
+.guides-route:focus-visible strong,
+.guides-route:hover::after,
+.guides-route:focus-visible::after {
+    color: var(--link-hover);
 }
 
 .guides-section {
@@ -1860,10 +1911,10 @@ footer {
 .guides-system > a {
     display: inline-block;
     margin-top: 22px;
-    color: var(--blue-light);
+    color: var(--link);
     font-weight: 700;
     text-decoration: underline;
-    text-decoration-color: rgba(169, 189, 209, 0.38);
+    text-decoration-color: var(--link-underline);
     text-underline-offset: 0.22em;
 }
 
@@ -1906,7 +1957,7 @@ footer {
     position: absolute;
     top: 21px;
     right: 4px;
-    color: var(--blue-light);
+    color: var(--link);
     transition: transform 0.16s ease;
 }
 
@@ -1918,7 +1969,7 @@ footer {
 .guides-action strong {
     display: block;
     margin-bottom: 5px;
-    color: var(--cream);
+    color: var(--link);
     font-family: var(--font-display);
     font-size: 1.22rem;
     line-height: 1.2;
@@ -1932,8 +1983,10 @@ footer {
 }
 
 .guides-action:hover strong,
-.guides-action:focus-visible strong {
-    color: var(--blue-light);
+.guides-action:focus-visible strong,
+.guides-action:hover::after,
+.guides-action:focus-visible::after {
+    color: var(--link-hover);
 }
 
 .guides-regional-list {
@@ -1967,7 +2020,7 @@ footer {
     position: absolute;
     top: 30px;
     right: 28px;
-    color: var(--blue-light);
+    color: var(--link);
     transition: transform 0.16s ease;
 }
 
@@ -1988,7 +2041,7 @@ footer {
 .guides-regional-link strong {
     display: block;
     padding-right: 28px;
-    color: var(--cream);
+    color: var(--link);
     font-family: var(--font-display);
     font-size: 1.4rem;
     line-height: 1.15;
@@ -2009,8 +2062,10 @@ footer {
 }
 
 .guides-regional-link:hover strong,
-.guides-regional-link:focus-visible strong {
-    color: var(--blue-light);
+.guides-regional-link:focus-visible strong,
+.guides-regional-link:hover::after,
+.guides-regional-link:focus-visible::after {
+    color: var(--link-hover);
 }
 
 .guides-community-strip {
@@ -2356,7 +2411,12 @@ footer {
 .next-card strong {
     display: block;
     margin-bottom: 8px;
-    color: var(--text);
+    color: var(--link);
+}
+
+.next-card:hover strong,
+.next-card:focus-visible strong {
+    color: var(--link-hover);
 }
 
 .next-card span {
@@ -2488,14 +2548,16 @@ footer {
 }
 
 .update-card h2 a {
-    color: var(--text);
-    text-decoration: none;
+    color: var(--link);
+    text-decoration: underline;
+    text-decoration-color: var(--link-underline);
+    text-underline-offset: 0.18em;
 }
 
 .update-card h2 a:hover,
 .update-card h2 a:focus-visible {
-    color: var(--blue-light);
-    text-decoration: underline;
+    color: var(--link-hover);
+    text-decoration-color: currentColor;
 }
 
 .update-tags {
