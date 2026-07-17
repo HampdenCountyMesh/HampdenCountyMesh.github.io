@@ -6,137 +6,204 @@ nav: guides
 body_class: guides-landing
 ---
 
-<section class="hero">
-  <div class="hero-panel">
-    <div class="frequency-display">Guides</div>
+{% assign read_first_guides = site.data.guides
+  | where: "group", "read_first"
+  | sort: "order" %}
 
-    <div class="status-line">
-      <span class="status-dot" aria-hidden="true"></span>
-      <span>Setup • Settings • MeshCore • Meshtastic</span>
+{% assign mesh_system_guides = site.data.guides
+  | where: "group", "mesh_systems"
+  | sort: "order" %}
+
+{% assign setup_map_guides = site.data.guides
+  | where: "group", "setup_maps"
+  | sort: "order" %}
+
+{% assign community_guides = site.data.guides
+  | where: "group", "community"
+  | sort: "order" %}
+
+<section class="guides-hero">
+  <div class="container guides-hero-grid">
+    <div class="guides-hero-copy">
+      <p class="section-heading">HCM Guides</p>
+
+      <h1>Practical mesh radio guides for Western Massachusetts.</h1>
+
+      <p>
+        Start with one working device, use the regional settings, and learn
+        more as you need it. These guides cover MeshCore, Meshtastic, local
+        coverage, maps, and responsible information sharing.
+      </p>
     </div>
 
-    <h1>Guides</h1>
+    <nav class="guides-first-steps" aria-label="Recommended first guides">
+      <p class="guides-list-title">Recommended first steps</p>
 
-    <p class="hero-text">
-      Local notes for getting a device configured, understanding the two mesh
-      systems we support, and using them around Western Massachusetts.
-    </p>
+      {% for guide in read_first_guides %}
+        <a class="guides-route" href="{{ guide.url | relative_url }}">
+          <span class="guides-route-label">
+            {{ guide.label | escape }}
+          </span>
 
-    <div class="hero-actions">
-      <a class="btn primary" href="{{ '/guides/getting-started.html' | relative_url }}">
-        Getting Started
-      </a>
+          <strong>{{ guide.title | escape }}</strong>
+
+          <span class="guides-route-summary">
+            {{ guide.summary | escape }}
+          </span>
+        </a>
+      {% endfor %}
+    </nav>
+  </div>
+</section>
+
+<section class="guides-section guides-systems">
+  <div class="container">
+    <div class="guides-section-header">
+      <p class="section-heading">Choose a System</p>
+
+      <h2>MeshCore and Meshtastic serve different networks.</h2>
+
+      <p>
+        Hampden County Mesh supports both projects. MeshCore is the main focus
+        for shared regional infrastructure, while Meshtastic remains supported
+        for people using its devices and network.
+      </p>
     </div>
-  </div>
-</section>
 
-<section>
-  <div class="container narrow centered">
-    <div class="section-heading">Start Here</div>
-    <h2 class="portal-title">New to mesh radio?</h2>
+    <div class="guides-system-grid">
+      {% for guide in mesh_system_guides %}
+        <article class="guides-system">
+          <p class="guides-system-label">
+            {{ guide.label | escape }}
+          </p>
 
-    <p class="section-lede">
-      These pages cover the basics, local starting settings, and the first things
-      worth knowing before changing advanced options.
-    </p>
+          <h3>{{ guide.title | escape }}</h3>
 
-    {% include guide-card-grid.html group="read_first" %}
-  </div>
-</section>
+          <p>{{ guide.summary | escape }}</p>
 
-<section>
-  <div class="container narrow centered">
-    <div class="section-heading">Mesh Systems</div>
-    <h2 class="portal-title">MeshCore and Meshtastic</h2>
-
-    <p class="section-lede">
-      Hampden County Mesh supports both systems. The guides are kept separate
-      where their roles, settings, or network behavior differ.
-    </p>
-
-    {% include guide-card-grid.html group="mesh_systems" %}
-  </div>
-</section>
-
-<section>
-  <div class="container narrow centered">
-    <div class="section-heading">Using the Mesh</div>
-    <h2 class="portal-title">Devices, testing, and maps</h2>
-
-    <p class="section-lede">
-      Practical notes for using a node, trying different locations, and making
-      sense of locally observed activity.
-    </p>
-
-    {% include guide-card-grid.html group="setup_maps" %}
-
-    <div class="hero-actions">
-      <a class="btn primary" href="https://map.hampdencountymesh.org/">
-        View Live Map
-      </a>
-
-      <a class="btn secondary" href="https://psf.meshmapper.net/" target="_blank" rel="noopener noreferrer">
-        Open MeshMapper
-      </a>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container narrow centered">
-    <div class="section-heading">Regional Mesh</div>
-    <h2 class="portal-title">Nearby Communities</h2>
-
-    <p class="section-lede">
-      Mesh activity does not stop at county lines. These communities maintain
-      their own sites and local projects around the region.
-    </p>
-
-    <div class="resource-grid guide-grid">
-      <a class="resource-card action-card guide-card" href="https://brkme.sh/" target="_blank" rel="noopener noreferrer">
-        <span class="guide-label">Berkshire County</span>
-        <h3>Berkshire Mesh</h3>
-        <p>
-          Local mesh community and resources for Berkshire County.
-        </p>
-        <span class="card-link">Visit Berkshire Mesh →</span>
-      </a>
-
-      <a class="resource-card action-card guide-card" href="https://ctmesh.org/" target="_blank" rel="noopener noreferrer">
-        <span class="guide-label">Connecticut</span>
-        <h3>CT Mesh</h3>
-        <p>
-          Guides, projects, and mesh community information from Connecticut.
-        </p>
-        <span class="card-link">Visit CT Mesh →</span>
-      </a>
-
-      <a class="resource-card action-card guide-card" href="https://bostonme.sh/" target="_blank" rel="noopener noreferrer">
-        <span class="guide-label">Greater Boston</span>
-        <h3>Greater Boston Mesh</h3>
-        <p>
-          Mesh community and regional information for the Greater Boston area.
-        </p>
-        <span class="card-link">Visit Greater Boston Mesh →</span>
-      </a>
+          <a href="{{ guide.url | relative_url }}">
+            {{ guide.link_text | escape }}
+          </a>
+        </article>
+      {% endfor %}
     </div>
   </div>
 </section>
 
-<section>
-  <div class="container narrow centered">
-    <div class="section-heading">Community Notes</div>
-    <h2 class="portal-title">Sharing and participation</h2>
+<section class="guides-section guides-practical">
+  <div class="container guides-practical-grid">
+    <div class="guides-section-header">
+      <p class="section-heading">Use the Network</p>
 
-    <p class="section-lede">
-      A few notes on sharing information publicly and participating in local
-      project work.
-    </p>
+      <h2>Coverage, testing, maps, and public information.</h2>
 
-    {% include guide-card-grid.html group="community" %}
+      <p>
+        These resources help with node placement, local testing, viewing
+        observed activity, and deciding what information is appropriate to
+        share publicly.
+      </p>
+    </div>
+
+    <div class="guides-action-list">
+      {% for guide in setup_map_guides %}
+        <a class="guides-action" href="{{ guide.url | relative_url }}">
+          <strong>{{ guide.title | escape }}</strong>
+          <span>{{ guide.summary | escape }}</span>
+        </a>
+      {% endfor %}
+
+      {% for guide in community_guides %}
+        <a class="guides-action" href="{{ guide.url | relative_url }}">
+          <strong>{{ guide.title | escape }}</strong>
+          <span>{{ guide.summary | escape }}</span>
+        </a>
+      {% endfor %}
+
+      <a class="guides-action" href="https://map.hampdencountymesh.org/">
+        <strong>Hampden County Mesh Live Map</strong>
+        <span>
+          View recently observed MeshCore activity, nodes, and radio paths.
+        </span>
+      </a>
+
+      <a
+        class="guides-action"
+        href="https://psf.meshmapper.net/"
+        target="_blank"
+        rel="noopener noreferrer">
+        <strong>Western Massachusetts MeshMapper</strong>
+        <span>
+          Explore contributed coverage observations from field testing.
+        </span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="guides-section guides-regional">
+  <div class="container">
+    <div class="guides-section-header">
+      <p class="section-heading">Around New England</p>
+
+      <h2>Nearby mesh communities</h2>
+
+      <p>
+        Radio paths and community projects do not stop at county or state
+        lines. These independent groups maintain their own local resources
+        and networks.
+      </p>
+    </div>
+
+    <div class="guides-regional-list">
+      <a
+        class="guides-regional-link"
+        href="https://brkme.sh/"
+        target="_blank"
+        rel="noopener noreferrer">
+        <span>Berkshire County</span>
+        <strong>Berkshire Mesh</strong>
+        <small>Local projects and resources west of Hampden County.</small>
+      </a>
+
+      <a
+        class="guides-regional-link"
+        href="https://ctmesh.org/"
+        target="_blank"
+        rel="noopener noreferrer">
+        <span>Connecticut</span>
+        <strong>CT Mesh</strong>
+        <small>MeshCore, Meshtastic, guides, maps, and community projects.</small>
+      </a>
+
+      <a
+        class="guides-regional-link"
+        href="https://bostonme.sh/"
+        target="_blank"
+        rel="noopener noreferrer">
+        <span>Greater Boston</span>
+        <strong>Greater Boston Mesh</strong>
+        <small>Regional mesh information for eastern Massachusetts.</small>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="guides-community-strip">
+  <div class="container guides-community-inner">
+    <div>
+      <h2>Need help or want to participate?</h2>
+
+      <p>
+        Join the local Discord for setup help, field testing, infrastructure
+        discussion, and project updates.
+      </p>
+    </div>
 
     <div class="button-row">
-      {% include discord-cta.html source="guides" text="Join Discord" class="btn primary" %}
+      {% include discord-cta.html
+        source="guides"
+        text="Join Discord"
+        class="btn primary" %}
 
       <a class="btn secondary" href="{{ '/updates/' | relative_url }}">
         Read Updates
