@@ -3072,6 +3072,152 @@ a.docs-card:focus-visible h3 {
     }
 }
 /* =========================================================
+   Recommended Settings Guide Refresh
+   ========================================================= */
+
+.settings-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 24px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.settings-summary {
+    padding: 28px;
+}
+
+.settings-summary:first-child {
+    padding-left: 0;
+    border-right: 1px solid var(--border);
+}
+
+.settings-summary:last-child {
+    padding-right: 0;
+}
+
+.settings-summary-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 17px;
+}
+
+.settings-summary-header img {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 auto;
+    object-fit: contain;
+}
+
+.settings-summary-label {
+    margin: 0 0 4px;
+    color: var(--green) !important;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.settings-summary h3 {
+    margin: 0;
+    color: var(--cream);
+    font-family: var(--font-display);
+    font-size: clamp(1.65rem, 3vw, 2.1rem);
+    line-height: 1;
+}
+
+.settings-summary > p:not(.settings-summary-label) {
+    margin: 0;
+    line-height: 1.65;
+}
+
+.settings-table {
+    margin: 22px 0 0;
+}
+
+.settings-table > div {
+    display: grid;
+    grid-template-columns: minmax(120px, 0.68fr) minmax(0, 1fr);
+    gap: 18px;
+    padding: 11px 0;
+    border-top: 1px solid var(--border-blue);
+}
+
+.settings-table > div:last-child {
+    border-bottom: 1px solid var(--border-blue);
+}
+
+.settings-table dt {
+    color: rgba(231, 216, 181, 0.68);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.settings-table dd {
+    min-width: 0;
+    margin: 0;
+    color: var(--cream);
+    line-height: 1.5;
+}
+
+.settings-summary > a {
+    display: inline-block;
+    margin-top: 21px;
+    color: var(--link);
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: var(--link-underline);
+    text-underline-offset: 0.22em;
+}
+
+.settings-summary > a:hover,
+.settings-summary > a:focus-visible {
+    color: var(--link-hover);
+    text-decoration-color: currentColor;
+}
+
+.recommended-settings-guide .docs-section {
+    scroll-margin-top: 88px;
+}
+
+@media (max-width: 700px) {
+    .settings-summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-summary {
+        padding: 26px 0;
+    }
+
+    .settings-summary:first-child {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .settings-summary:last-child {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .settings-summary-header img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .settings-table > div {
+        grid-template-columns: 1fr;
+        gap: 3px;
+    }
+
+    .settings-table dt {
+        font-size: 0.8rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+    }
+}
+/* =========================================================
    Reduced Motion
    ========================================================= */
 
