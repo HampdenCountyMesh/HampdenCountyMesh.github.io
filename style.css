@@ -3218,6 +3218,119 @@ a.docs-card:focus-visible h3 {
     }
 }
 /* =========================================================
+   MeshCore Basics Guide Refresh
+   ========================================================= */
+
+.meshcore-basics-guide .docs-section {
+    scroll-margin-top: 88px;
+}
+
+.meshcore-role-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 24px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.meshcore-role {
+    padding: 28px;
+}
+
+.meshcore-role:nth-child(odd) {
+    padding-left: 0;
+    border-right: 1px solid var(--border);
+}
+
+.meshcore-role:nth-child(even) {
+    padding-right: 0;
+}
+
+.meshcore-role:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--border);
+}
+
+.meshcore-role-label {
+    margin: 0 0 10px;
+    color: var(--green) !important;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.meshcore-role h3 {
+    margin: 0 0 13px;
+    color: var(--cream);
+    font-family: var(--font-display);
+    font-size: clamp(1.55rem, 3vw, 2rem);
+    line-height: 1;
+}
+
+.meshcore-role > p:not(.meshcore-role-label) {
+    margin: 0;
+    line-height: 1.65;
+}
+
+.meshcore-role .meshcore-role-note {
+    margin-top: 15px !important;
+    color: rgba(231, 216, 181, 0.66);
+    font-size: 0.92rem;
+}
+
+.meshcore-channel-list {
+    margin: 24px 0;
+    border-top: 1px solid var(--border-blue);
+}
+
+.meshcore-channel-list > div {
+    display: grid;
+    grid-template-columns: minmax(155px, 0.42fr) minmax(0, 1fr);
+    gap: 24px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border-blue);
+}
+
+.meshcore-channel-list dt {
+    color: var(--cream);
+    font-family: var(--font-display);
+    font-size: 1.16rem;
+    font-weight: 800;
+    line-height: 1.25;
+}
+
+.meshcore-channel-list dd {
+    margin: 0;
+    color: var(--text-soft);
+    line-height: 1.62;
+}
+
+@media (max-width: 700px) {
+    .meshcore-role-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .meshcore-role {
+        padding: 26px 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .meshcore-role:nth-child(odd) {
+        border-right: 0;
+    }
+
+    .meshcore-role:last-child {
+        border-bottom: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .meshcore-channel-list > div {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+}
+/* =========================================================
    Reduced Motion
    ========================================================= */
 
