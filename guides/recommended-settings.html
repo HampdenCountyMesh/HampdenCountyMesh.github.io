@@ -1,289 +1,377 @@
 ---
-layout: default
+layout: guide
 title: Recommended Settings
 description: Recommended MeshCore and Meshtastic starting settings for Hampden County Mesh users in Western Massachusetts.
-nav: guides
+lede: Start with the regional radio settings, ordinary client roles, and as few custom options as possible.
+body_class: recommended-settings-guide
 og_type: article
 ---
 
-<section class="hero">
-  <div class="hero-panel">
-    <div class="frequency-display">Recommended Settings</div>
+<section class="docs-section" id="starting-point">
+  <h2>Use the regional starting point first</h2>
 
-    <div class="status-line">
-      <span class="status-dot" aria-hidden="true"></span>
-      <span>MeshCore • Meshtastic • Local Starting Point</span>
-    </div>
+  <p>
+    Radios need compatible settings to communicate. Begin with the settings
+    used around Western Massachusetts before changing frequencies, modem
+    presets, node roles, channels, or infrastructure options.
+  </p>
 
-    <h1>Recommended Settings</h1>
-
-    <p class="hero-text">
-      Starting settings for MeshCore and Meshtastic around Hampden County
-      and Western Massachusetts.
-    </p>
-
-    <div class="hero-actions">
-      <a class="btn primary" href="#meshcore">MeshCore</a>
-      <a class="btn secondary" href="#meshtastic">Meshtastic</a>
-      <a class="btn secondary" href="#troubleshooting">Troubleshooting</a>
-    </div>
+  <div class="docs-note">
+    These settings were reviewed in July 2026. Project defaults and application
+    labels can change, so use the current official documentation when an app or
+    firmware release presents different options.
   </div>
 </section>
 
-<section>
-  <div class="container narrow centered">
-    <div class="section-heading">Settings</div>
-    <h2 class="portal-title">Use the local starting point first.</h2>
+<section class="docs-section" id="at-a-glance">
+  <h2>Settings at a glance</h2>
 
-    <p class="section-lede">
-      Matching settings matter. Start here before changing radio parameters,
-      roles, or other advanced options.
-    </p>
+  <p>
+    These are starting recommendations, not a requirement that every device
+    serve the same purpose. Begin here, confirm the radio works, and make later
+    changes deliberately.
+  </p>
 
-    <div class="settings-grid">
-      <div class="settings-card" id="meshcore">
+  <div class="settings-summary-grid">
+    <article class="settings-summary" id="meshcore">
+      <div class="settings-summary-header">
         <img
-          class="project-card-icon"
           src="{{ '/assets/icons/meshcore.svg' | relative_url }}"
           alt=""
           aria-hidden="true">
 
-        <h2>MeshCore</h2>
-
-        <p class="settings-intro">
-          Recommended starting point for regional MeshCore activity.
-        </p>
-
-        <dl class="settings-list">
-          <div>
-            <dt>Preset</dt>
-            <dd>USA/Canada recommended preset</dd>
-          </div>
-
-          <div>
-            <dt>Frequency</dt>
-            <dd><code>910.525 MHz</code></dd>
-          </div>
-
-          <div>
-            <dt>Bandwidth</dt>
-            <dd><code>62.5 kHz</code></dd>
-          </div>
-
-          <div>
-            <dt>Spreading factor</dt>
-            <dd><code>SF7</code></dd>
-          </div>
-
-          <div>
-            <dt>Coding rate</dt>
-            <dd><code>CR5</code></dd>
-          </div>
-
-          <div>
-            <dt>Flood advert</dt>
-            <dd><code>47 hours</code> as a local starting recommendation</dd>
-          </div>
-        </dl>
-
-        <div class="button-row">
-          <a class="btn secondary" href="{{ '/guides/meshcore-basics.html' | relative_url }}">
-            MeshCore Basics
-          </a>
+        <div>
+          <p class="settings-summary-label">Main local focus</p>
+          <h3>MeshCore</h3>
         </div>
       </div>
 
-      <div class="settings-card" id="meshtastic">
+      <p>
+        Use the USA/Canada recommended preset wherever the app or web flasher
+        provides it.
+      </p>
+
+      <dl class="settings-table">
+        <div>
+          <dt>Preset</dt>
+          <dd>USA/Canada (Recommended)</dd>
+        </div>
+
+        <div>
+          <dt>Frequency</dt>
+          <dd><code>910.525 MHz</code></dd>
+        </div>
+
+        <div>
+          <dt>Bandwidth</dt>
+          <dd><code>62.5 kHz</code></dd>
+        </div>
+
+        <div>
+          <dt>Spreading factor</dt>
+          <dd><code>SF7</code></dd>
+        </div>
+
+        <div>
+          <dt>Coding rate</dt>
+          <dd><code>CR5</code></dd>
+        </div>
+      </dl>
+
+      <a href="{{ '/guides/meshcore-basics.html' | relative_url }}">
+        Read MeshCore Basics →
+      </a>
+    </article>
+
+    <article class="settings-summary" id="meshtastic">
+      <div class="settings-summary-header">
         <img
-          class="project-card-icon"
           src="{{ '/assets/icons/meshtastic.svg' | relative_url }}"
           alt=""
           aria-hidden="true">
 
-        <h2>Meshtastic</h2>
-
-        <p class="settings-intro">
-          Recommended starting point for normal local use.
-        </p>
-
-        <dl class="settings-list">
-          <div>
-            <dt>Region</dt>
-            <dd>United States</dd>
-          </div>
-
-          <div>
-            <dt>LoRa preset</dt>
-            <dd>LongFast / Long Range Fast</dd>
-          </div>
-
-          <div>
-            <dt>Primary channel</dt>
-            <dd>Default primary channel</dd>
-          </div>
-
-          <div>
-            <dt>Primary key</dt>
-            <dd><code>AQ==</code></dd>
-          </div>
-
-          <div>
-            <dt>Device role</dt>
-            <dd><code>CLIENT</code> for most users</dd>
-          </div>
-
-          <div>
-            <dt>MQTT</dt>
-            <dd>Off for normal use unless you are intentionally running an integration</dd>
-          </div>
-        </dl>
-
-        <div class="button-row">
-          <a class="btn secondary" href="{{ '/guides/meshtastic-basics.html' | relative_url }}">
-            Meshtastic Basics
-          </a>
+        <div>
+          <p class="settings-summary-label">Also supported</p>
+          <h3>Meshtastic</h3>
         </div>
       </div>
-    </div>
+
+      <p>
+        Stay close to the ordinary public defaults unless you are intentionally
+        joining another configured network.
+      </p>
+
+      <dl class="settings-table">
+        <div>
+          <dt>Region</dt>
+          <dd>United States / <code>US</code></dd>
+        </div>
+
+        <div>
+          <dt>Modem preset</dt>
+          <dd>LongFast / <code>LONG_FAST</code></dd>
+        </div>
+
+        <div>
+          <dt>Primary channel</dt>
+          <dd>Default LongFast public channel</dd>
+        </div>
+
+        <div>
+          <dt>Primary key</dt>
+          <dd><code>AQ==</code> — public default-key shorthand</dd>
+        </div>
+
+        <div>
+          <dt>Device role</dt>
+          <dd><code>CLIENT</code> for ordinary user nodes</dd>
+        </div>
+
+        <div>
+          <dt>MQTT module</dt>
+          <dd>Off unless intentionally operating an integration</dd>
+        </div>
+      </dl>
+
+      <a href="{{ '/guides/meshtastic-basics.html' | relative_url }}">
+        Read Meshtastic Basics →
+      </a>
+    </article>
   </div>
 </section>
 
-<section id="meshcore-notes">
-  <div class="container narrow">
-    <div class="guide-panel">
-      <div class="section-heading">MeshCore</div>
+<section class="docs-section" id="meshcore-details">
+  <h2>MeshCore settings</h2>
 
-      <h2>Radio settings need to match.</h2>
+  <p>
+    MeshCore nodes must use matching frequency, bandwidth, spreading factor,
+    and coding rate settings to participate in the same radio network.
+  </p>
 
-      <p>
-        MeshCore nodes using different frequency, bandwidth, spreading factor,
-        or coding rate settings will not participate in the same radio network.
-      </p>
+  <p>
+    Use the named USA/Canada recommended preset when it is available rather
+    than manually entering each parameter. This reduces mistakes and makes it
+    easier to compare your configuration with other local users.
+  </p>
 
-      <p>
-        For local use, start with the USA/Canada recommended preset shown above
-        rather than entering custom radio parameters manually.
-      </p>
+  <h3>Ordinary companion devices</h3>
 
-      <h3>Flood adverts</h3>
+  <p>
+    A normal companion node usually does not need custom repeater commands,
+    automatic infrastructure adverts, or experimental path settings. Apply the
+    radio preset, give the node an appropriate name, and confirm that it can
+    hear normal activity.
+  </p>
 
-      <p>
-        Hampden County Mesh recommends a <code>47 hour</code> flood advert interval
-        where the setting is exposed. This is a local starting recommendation for
-        fixed MeshCore infrastructure.
-      </p>
+  <h3>Fixed repeater flood adverts</h3>
 
-      <h3>Repeater advert path hashes</h3>
+  <p>
+    MeshCore repeaters use a configurable flood-advert interval. The firmware
+    default is not the same as the local HCM recommendation.
+  </p>
 
-      <p>
-        Repeaters running current MeshCore firmware can use longer path hashes in
-        their own adverts. This helps mapping and analysis tools distinguish
-        repeaters whose shorter identifiers may otherwise collide.
-      </p>
+  <div class="docs-note">
+    Hampden County Mesh currently recommends a
+    <code>47 hour</code> flood-advert interval for intentionally planned,
+    fixed MeshCore infrastructure. This is an HCM regional recommendation,
+    not a general MeshCore default and not a setting for ordinary companion
+    devices.
+  </div>
 
-      <p>
-        For a repeater on firmware 1.14 or newer, this CLI command selects
-        a 2-byte path hash for the repeater's own adverts:
-      </p>
+  <p>On a repeater CLI, the corresponding command is:</p>
 
-      <p>
-        <code class="code-line">set path.hash.mode 1</code>
-      </p>
+  <p>
+    <code class="code-line">set flood.advert.interval 47</code>
+  </p>
 
-      <p>
-        This setting controls the repeater's advert path hash size. It does not
-        determine which supported path sizes the repeater forwards.
-      </p>
-    </div>
+  <h3>Repeater advert path hashes</h3>
+
+  <p>
+    Repeaters running MeshCore firmware 1.14 or newer can use a longer path
+    hash in their own advert broadcasts. This helps mapping and analysis tools
+    distinguish repeaters whose one-byte identifiers might otherwise collide.
+  </p>
+
+  <p>
+    HCM’s current starting recommendation for an updated fixed repeater is:
+  </p>
+
+  <p>
+    <code class="code-line">set path.hash.mode 1</code>
+  </p>
+
+  <p>
+    Mode <code>1</code> selects a two-byte path hash for that repeater’s own
+    adverts. It does not determine which supported path-hash sizes the repeater
+    forwards.
+  </p>
+
+  <div class="guide-resource-links">
+    <a
+      href="https://docs.meshcore.io/faq/"
+      target="_blank"
+      rel="noopener noreferrer">
+      Official MeshCore FAQ ↗
+    </a>
+
+    <a
+      href="https://docs.meshcore.io/cli_commands/"
+      target="_blank"
+      rel="noopener noreferrer">
+      MeshCore CLI Reference ↗
+    </a>
   </div>
 </section>
 
-<section id="meshtastic-notes">
-  <div class="container narrow">
-    <div class="guide-panel">
-      <div class="section-heading">Meshtastic</div>
+<section class="docs-section" id="meshtastic-details">
+  <h2>Meshtastic settings</h2>
 
-      <h2>Most users should stay close to the defaults.</h2>
+  <p>
+    For ordinary local participation, use the United States region, LongFast,
+    the default public LongFast channel, and the <code>CLIENT</code> role.
+  </p>
 
-      <p>
-        For normal local participation, use the United States region,
-        LongFast, the default primary channel and key, and the
-        <code>CLIENT</code> role.
-      </p>
+  <h3>The public primary key</h3>
 
-      <h3>Infrastructure roles</h3>
+  <p>
+    <code>AQ==</code> represents the default public channel key. It allows
+    devices using the same standard channel configuration to communicate, but
+    it should not be treated as private or secret.
+  </p>
 
-      <p>
-        <code>ROUTER</code>, <code>REPEATER</code>, and other specialized roles
-        change how a device participates in packet forwarding. They should be used
-        for intentionally planned infrastructure rather than ordinary handheld,
-        vehicle, desk, or portable nodes.
-      </p>
+  <h3>Device roles</h3>
 
-      <p>
-        Read the Meshtastic Basics page before changing device roles.
-      </p>
-    </div>
+  <p>
+    Specialized roles such as <code>ROUTER</code> and
+    <code>REPEATER</code> change how a device participates in packet
+    forwarding. HCM recommends leaving handheld, desk, vehicle, and portable
+    nodes on <code>CLIENT</code> unless the device is part of an intentionally
+    planned infrastructure deployment.
+  </p>
+
+  <h3>MQTT</h3>
+
+  <p>
+    Normal LoRa messaging does not require MQTT. Leave the MQTT module disabled
+    unless the device has a suitable internet connection and is deliberately
+    being used for an MQTT integration.
+  </p>
+
+  <p>
+    The separate permission allowing another connected node to forward data
+    toward MQTT is not the same as running the MQTT module directly on the
+    device.
+  </p>
+
+  <div class="guide-resource-links">
+    <a
+      href="https://meshtastic.org/docs/"
+      target="_blank"
+      rel="noopener noreferrer">
+      Official Meshtastic Documentation ↗
+    </a>
+
+    <a
+      href="{{ '/guides/meshtastic-basics.html' | relative_url }}">
+      Meshtastic Basics
+    </a>
   </div>
 </section>
 
-<section id="map-tools">
-  <div class="container narrow">
-    <div class="guide-panel">
-      <div class="section-heading">Observed Activity</div>
+<section class="docs-section" id="after-configuration">
+  <h2>After the radio is configured</h2>
 
-      <h2>Maps are useful after the radio is configured.</h2>
+  <p>
+    Maps can help show activity observed through participating systems, but
+    they do not prove that your current device can directly reach every point
+    shown.
+  </p>
 
-      <p>
-        The Hampden County Mesh live map shows geolocated MeshCore activity
-        observed through participating systems.
-      </p>
+  <p>
+    Try more than one physical location before changing radio settings. Height,
+    surrounding buildings, terrain, antenna orientation, and indoor placement
+    can make a substantial difference.
+  </p>
 
-      <p>
-        Maps help show observed activity, but a point on a map does not necessarily
-        mean your device can directly reach that node from its current location.
-      </p>
+  <div class="guide-resource-links">
+    <a href="https://map.hampdencountymesh.org/">
+      Hampden County Mesh Live Map
+    </a>
 
-      <div class="button-row">
-        <a class="btn primary" href="https://map.hampdencountymesh.org/">
-          View Live Map
-        </a>
-
-        <a
-          class="btn secondary"
-          href="https://psf.meshmapper.net/"
-          target="_blank"
-          rel="noopener noreferrer">
-          Open MeshMapper
-        </a>
-      </div>
-    </div>
+    <a
+      href="https://psf.meshmapper.net/"
+      target="_blank"
+      rel="noopener noreferrer">
+      Western Massachusetts MeshMapper ↗
+    </a>
   </div>
 </section>
 
-<section id="troubleshooting">
-  <div class="container narrow">
-    <div class="guide-panel">
-      <div class="section-heading">Troubleshooting</div>
+<section class="docs-section" id="troubleshooting">
+  <h2>If you hear nothing</h2>
 
-      <h2>If you hear nothing, check the settings first.</h2>
+  <ol>
+    <li>Confirm that the correct region or named preset is selected.</li>
+    <li>Confirm that all MeshCore radio parameters match the regional preset.</li>
+    <li>
+      For Meshtastic, confirm <code>US</code>, <code>LONG_FAST</code>,
+      the public LongFast channel, and the expected key.
+    </li>
+    <li>Make sure the correct antenna is securely attached.</li>
+    <li>Restart the radio and reconnect the application if necessary.</li>
+    <li>Try a window, outdoor location, vehicle, or higher ground.</li>
+    <li>Change one setting at a time while troubleshooting.</li>
+  </ol>
 
-      <ul>
-        <li>Confirm you are using the correct region or preset.</li>
-        <li>Confirm all MeshCore radio parameters match.</li>
-        <li>For Meshtastic, confirm LongFast, the default primary channel, and <code>AQ==</code>.</li>
-        <li>Make sure the antenna is attached before transmitting.</li>
-        <li>Restart the device or app if the connection between them is acting strangely.</li>
-        <li>Try another location before assuming the radio is not working.</li>
-      </ul>
+  <div class="docs-note">
+    A quiet location is not proof that the radio is defective. Ask what activity
+    other users normally observe in your part of Western Massachusetts before
+    repeatedly changing the configuration.
+  </div>
+</section>
 
-      <div class="button-row">
-        {% include discord-cta.html source="recommended-settings" text="Ask in Discord" class="btn primary" %}
+<section class="docs-section" id="next">
+  <h2>Where to go next</h2>
 
-        <a class="btn secondary" href="{{ '/guides/getting-started.html' | relative_url }}">
-          Getting Started
-        </a>
-      </div>
+  <div class="guide-next-list">
+    <a href="{{ '/guides/getting-started.html' | relative_url }}">
+      <strong>Getting Started</strong>
+      <span>
+        Return to the complete first-device setup and testing sequence.
+      </span>
+    </a>
+
+    <a href="{{ '/guides/meshcore-basics.html' | relative_url }}">
+      <strong>MeshCore Basics</strong>
+      <span>
+        Learn about companion nodes, repeaters, rooms, observers, and adverts.
+      </span>
+    </a>
+
+    <a href="{{ '/guides/meshtastic-basics.html' | relative_url }}">
+      <strong>Meshtastic Basics</strong>
+      <span>
+        Learn how Meshtastic devices, channels, roles, and applications fit
+        together.
+      </span>
+    </a>
+  </div>
+
+  <div class="getting-started-help">
+    <div>
+      <h3>Still not hearing anything?</h3>
+
+      <p>
+        Share the device model, firmware version, current settings, and a
+        general description of where you tested it.
+      </p>
+    </div>
+
+    <div class="button-row">
+      {% include discord-cta.html
+        source="recommended-settings"
+        text="Ask in Discord"
+        class="btn primary" %}
     </div>
   </div>
 </section>
