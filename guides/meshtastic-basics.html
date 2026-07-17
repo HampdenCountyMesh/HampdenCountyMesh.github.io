@@ -1,75 +1,53 @@
 ---
 layout: guide
 title: Meshtastic Basics
-description: A plain-language guide to Meshtastic, how it fits with Hampden County Mesh, and the basics of local use.
-lede: Hampden County Mesh mainly focuses on MeshCore, but Meshtastic is also supported. This page covers the basics without duplicating the full Meshtastic documentation.
+description: A plain-language guide to Meshtastic, device roles, channels, location sharing, and how it fits with Hampden County Mesh.
+lede: Hampden County Mesh mainly focuses on MeshCore, but Meshtastic is also supported. Learn what an ordinary Meshtastic node does and which settings are best left alone at first.
+body_class: meshtastic-basics-guide
 og_type: article
 ---
-
-<div class="hero-actions">
-  <a class="btn secondary" href="#what-meshtastic-is">What It Is</a>
-  <a class="btn secondary" href="#how-it-fits">How It Fits</a>
-  <a class="btn secondary" href="#roles">Roles</a>
-  <a class="btn secondary" href="#location">Location</a>
-  <a class="btn secondary" href="#mqtt">MQTT</a>
-  <a class="btn secondary" href="#ask">Ask for Help</a>
-</div>
 
 <section class="docs-section" id="what-meshtastic-is">
   <h2>What Meshtastic is</h2>
 
   <p>
-    Meshtastic is open-source firmware and software for LoRa radio devices.
-    Supported nodes can exchange text messages, position information, telemetry,
-    and other small packets over radio.
+    Meshtastic is open-source firmware and software for compatible LoRa radio
+    devices. Nodes can exchange short messages, position information,
+    telemetry, and other small packets over radio.
   </p>
 
   <p>
-    A typical personal node connects to a phone or computer through a Meshtastic
-    client app.
+    A typical personal node connects to a phone, tablet, or computer through a
+    Meshtastic client application. The radio handles the LoRa connection while
+    the application provides the main messaging and configuration interface.
   </p>
 
-  <div class="resource-grid docs-resource-grid">
+  <div class="docs-note">
+    Meshtastic does not require cellular service or an internet connection for
+    normal LoRa messaging. Optional internet integrations such as MQTT are
+    separate from the radio mesh itself.
+  </div>
+
+  <div class="guide-resource-links">
     <a
-      class="resource-card action-card project-resource-card"
       href="https://meshtastic.org/"
       target="_blank"
       rel="noopener noreferrer">
-
-      <img
-        class="project-card-icon"
-        src="{{ '/assets/icons/meshtastic.svg' | relative_url }}"
-        alt=""
-        aria-hidden="true">
-
-      <h3>Meshtastic</h3>
-
-      <p>
-        Official Meshtastic documentation, apps, and project information.
-      </p>
-
-      <span class="card-link">Visit Meshtastic →</span>
+      Official Meshtastic Site ↗
     </a>
 
     <a
-      class="resource-card action-card project-resource-card"
+      href="https://flasher.meshtastic.org/"
+      target="_blank"
+      rel="noopener noreferrer">
+      Official Web Flasher ↗
+    </a>
+
+    <a
       href="https://meshtastic.org/docs/getting-started/"
       target="_blank"
       rel="noopener noreferrer">
-
-      <img
-        class="project-card-icon"
-        src="{{ '/assets/icons/meshtastic.svg' | relative_url }}"
-        alt=""
-        aria-hidden="true">
-
-      <h3>Getting Started Docs</h3>
-
-      <p>
-        Official setup instructions for supported devices and client apps.
-      </p>
-
-      <span class="card-link">Open Docs →</span>
+      Official Getting Started Guide ↗
     </a>
   </div>
 </section>
@@ -78,25 +56,45 @@ og_type: article
   <h2>How Meshtastic fits here</h2>
 
   <p>
-    Hampden County Mesh supports both MeshCore and Meshtastic.
-    MeshCore is the main network and infrastructure focus of the local project.
+    Hampden County Mesh supports both Meshtastic and MeshCore. MeshCore remains
+    the main focus for HCM’s shared regional infrastructure, observer systems,
+    live map, and current coverage work.
   </p>
 
   <p>
-    Meshtastic remains useful for personal nodes, portable use, telemetry,
-    experimenting with LoRa hardware, and people who already participate in
-    Meshtastic networks.
+    Meshtastic remains useful for people who already operate Meshtastic nodes,
+    portable communication, position sharing, telemetry, hardware
+    experimentation, and participation in other Meshtastic communities.
   </p>
 
-  <p>
-    The two systems use different firmware, apps, settings, and network behavior.
-    A Meshtastic node does not participate directly in a MeshCore mesh.
-  </p>
+  <div class="meshtastic-comparison">
+    <div>
+      <strong>Separate firmware and applications</strong>
+      <span>
+        A radio normally runs MeshCore or Meshtastic firmware, not both at the
+        same time.
+      </span>
+    </div>
 
-  <div class="button-row">
-    <a
-      class="btn secondary"
-      href="{{ '/guides/meshcore-basics.html' | relative_url }}">
+    <div>
+      <strong>Separate radio networks</strong>
+      <span>
+        A Meshtastic node does not directly exchange messages with MeshCore
+        companions or repeaters.
+      </span>
+    </div>
+
+    <div>
+      <strong>Separate mapping systems</strong>
+      <span>
+        HCM’s live activity map and Western Massachusetts MeshMapper currently
+        describe MeshCore observations, not Meshtastic coverage.
+      </span>
+    </div>
+  </div>
+
+  <div class="guide-resource-links">
+    <a href="{{ '/guides/meshcore-basics.html' | relative_url }}">
       MeshCore Basics
     </a>
   </div>
@@ -106,26 +104,156 @@ og_type: article
   <h2>Start with one normal node</h2>
 
   <p>
-    Use supported hardware, follow the official setup instructions, and get one
-    device working before changing specialized roles or integrations.
+    Use supported hardware, install the current firmware, and get one device
+    working before changing specialized roles, hop limits, frequency slots, or
+    internet integrations.
+  </p>
+
+  <ol class="start-path">
+    <li>
+      <strong>Install the correct firmware.</strong>
+      <span>
+        Use the official flasher or the instructions provided for your specific
+        supported device.
+      </span>
+    </li>
+
+    <li>
+      <strong>Connect a client application.</strong>
+      <span>
+        Depending on the hardware and platform, this may use Bluetooth, USB,
+        Wi-Fi, or a network connection.
+      </span>
+    </li>
+
+    <li>
+      <strong>Select the United States region.</strong>
+      <span>
+        The region controls the legal frequency plan and related radio limits.
+      </span>
+    </li>
+
+    <li>
+      <strong>Use the regional LongFast starting point.</strong>
+      <span>
+        Matching modem settings are necessary to hear and relay the same radio
+        traffic.
+      </span>
+    </li>
+
+    <li>
+      <strong>Leave the device role on CLIENT.</strong>
+      <span>
+        This is the ordinary starting role for personal and general-purpose
+        nodes.
+      </span>
+    </li>
+  </ol>
+
+  <div class="guide-resource-links">
+    <a href="{{ '/guides/recommended-settings.html#meshtastic' | relative_url }}">
+      Recommended Meshtastic Settings
+    </a>
+
+    <a href="{{ '/guides/getting-started.html' | relative_url }}">
+      Getting Started
+    </a>
+  </div>
+</section>
+
+<section class="docs-section" id="how-the-mesh-works">
+  <h2>How the Meshtastic mesh works</h2>
+
+  <p>
+    Nodes using compatible LoRa modem settings can hear and rebroadcast radio
+    packets even when they do not share the same messaging-channel encryption
+    key. The key determines whether the message contents can be read, while the
+    modem settings determine whether the radio packet can be received.
+  </p>
+
+  <dl class="meshtastic-concept-list">
+    <div>
+      <dt>Region</dt>
+      <dd>
+        Selects the frequency plan and limits appropriate for the country where
+        the node is operating.
+      </dd>
+    </div>
+
+    <div>
+      <dt>Modem preset</dt>
+      <dd>
+        Controls radio parameters such as bandwidth and spreading factor.
+        Devices need matching settings to participate in the same radio mesh.
+      </dd>
+    </div>
+
+    <div>
+      <dt>Frequency slot</dt>
+      <dd>
+        Determines the actual LoRa frequency used within the regional band. A
+        custom primary-channel name can affect the automatically selected slot.
+      </dd>
+    </div>
+
+    <div>
+      <dt>Messaging channel</dt>
+      <dd>
+        Defines a message group using a channel name and encryption key. One
+        primary channel and up to seven secondary channels can be configured.
+      </dd>
+    </div>
+
+    <div>
+      <dt>Hop limit</dt>
+      <dd>
+        Limits how many rebroadcasts a packet may travel through. Raising it
+        unnecessarily can increase congestion rather than improve delivery.
+      </dd>
+    </div>
+  </dl>
+
+  <h3>The default public channel</h3>
+
+  <p>
+    The default LongFast primary channel uses the publicly known
+    <code>AQ==</code> key. It is useful for public participation and testing,
+    but it should not be treated as private communication.
   </p>
 
   <p>
-    Hampden County Mesh keeps its local Meshtastic starting point on the
-    Recommended Settings page.
+    Hampden County Mesh does not currently maintain a separate regional
+    Meshtastic channel. Use the built-in LongFast public channel unless you are
+    coordinating a different channel with a specific group.
   </p>
 
-  <div class="button-row">
+  <h3>Private channels</h3>
+
+  <p>
+    A private secondary channel should use a randomly generated key shared only
+    with the intended participants. All participating devices need the matching
+    channel configuration.
+  </p>
+
+  <div class="docs-note">
+    Encryption protects message contents from people who do not have the key.
+    It does not make the existence of radio packets, node identifiers, or all
+    associated metadata invisible.
+  </div>
+
+  <div class="guide-resource-links">
     <a
-      class="btn primary"
-      href="{{ '/guides/recommended-settings.html#meshtastic' | relative_url }}">
-      Meshtastic Settings
+      href="https://meshtastic.org/docs/configuration/radio/channels/"
+      target="_blank"
+      rel="noopener noreferrer">
+      Official Channel Configuration ↗
     </a>
 
     <a
-      class="btn secondary"
-      href="{{ '/guides/getting-started.html' | relative_url }}">
-      Getting Started
+      href="https://meshtastic.org/docs/configuration/radio/lora/"
+      target="_blank"
+      rel="noopener noreferrer">
+      Official LoRa Configuration ↗
     </a>
   </div>
 </section>
@@ -134,35 +262,108 @@ og_type: article
   <h2>Device roles</h2>
 
   <p>
-    For most personal Meshtastic nodes, <code>CLIENT</code> is the normal
-    starting role.
+    A role changes forwarding behavior, power use, visibility, and sometimes
+    access to Bluetooth or other interfaces. Do not select a role merely
+    because its name sounds more capable.
   </p>
 
-  <p>
-    Meshtastic also includes specialized roles for base stations, trackers,
-    sensors, and network infrastructure. These roles change device behavior
-    and should be selected for a specific use rather than because they sound
-    more powerful.
-  </p>
+  <dl class="meshtastic-role-list">
+    <div>
+      <dt>
+        <code>CLIENT</code>
+        <span class="role-recommendation">Normal starting role</span>
+      </dt>
 
-  <p>
-    Role definitions can change as Meshtastic develops. Use the current official
-    device-role documentation before configuring infrastructure.
-  </p>
+      <dd>
+        Sends and receives messages and can intelligently rebroadcast packets
+        when useful. This is the correct choice for most personal and
+        general-purpose nodes.
+      </dd>
+    </div>
 
-  <div class="button-row">
+    <div>
+      <dt>
+        <code>CLIENT_MUTE</code>
+        <span class="role-recommendation">Does not relay</span>
+      </dt>
+
+      <dd>
+        Sends and receives its own traffic but does not rebroadcast packets for
+        other devices. It can be useful for an indoor or handheld node located
+        near a better-positioned node.
+      </dd>
+    </div>
+
+    <div>
+      <dt>
+        <code>CLIENT_BASE</code>
+        <span class="role-recommendation">Personal base node</span>
+      </dt>
+
+      <dd>
+        Gives forwarding priority to favorited personal nodes. It is intended
+        for a better-positioned home or base node supporting a user’s weaker
+        nearby devices.
+      </dd>
+    </div>
+
+    <div>
+      <dt>
+        <code>TRACKER</code> and <code>SENSOR</code>
+        <span class="role-recommendation">Specialized devices</span>
+      </dt>
+
+      <dd>
+        Prioritize position or telemetry behavior and may use specialized sleep
+        patterns. Use them for an actual tracking or sensing purpose.
+      </dd>
+    </div>
+
+    <div>
+      <dt>
+        <code>ROUTER</code> and <code>ROUTER_LATE</code>
+        <span class="role-recommendation">Planned infrastructure</span>
+      </dt>
+
+      <dd>
+        Change rebroadcast timing and infrastructure behavior. Poorly placed or
+        unnecessary routers can increase collisions and reduce network
+        performance.
+      </dd>
+    </div>
+
+    <div>
+      <dt>
+        <code>REPEATER</code>
+        <span class="role-recommendation">Deprecated</span>
+      </dt>
+
+      <dd>
+        The official documentation marks this role as deprecated in current
+        firmware. Do not use older instructions that recommend it for a new
+        installation.
+      </dd>
+    </div>
+  </dl>
+
+  <div class="docs-note">
+    HCM recommends beginning with <code>CLIENT</code>. Coordinate any fixed
+    infrastructure role with nearby Meshtastic users before deploying it.
+  </div>
+
+  <div class="guide-resource-links">
     <a
-      class="btn secondary"
       href="https://meshtastic.org/docs/configuration/radio/device/"
       target="_blank"
       rel="noopener noreferrer">
-      Meshtastic Device Roles
+      Current Device Role Documentation ↗
     </a>
 
     <a
-      class="btn secondary"
-      href="{{ '/building-better-mesh-coverage.html' | relative_url }}">
-      Building Better Mesh Coverage
+      href="https://meshtastic.org/docs/configuration/tips/"
+      target="_blank"
+      rel="noopener noreferrer">
+      Meshtastic Configuration Tips ↗
     </a>
   </div>
 </section>
@@ -171,29 +372,85 @@ og_type: article
   <h2>Location sharing</h2>
 
   <p>
-    Meshtastic can share position information over configured channels.
-    Think about how precise that information needs to be before broadcasting
-    a home or other private location.
+    Meshtastic can obtain position data from an integrated GPS receiver, a
+    paired phone, or a manually configured fixed position. GPS information is
+    not required for ordinary messaging.
   </p>
 
   <p>
-    Meshtastic supports position precision controls that can reduce the accuracy
-    of shared location data.
+    Position sharing is configured per messaging channel. The precision setting
+    ranges from <code>0</code>, which sends no location on that channel, to
+    <code>32</code>, which sends full precision.
   </p>
 
-  <div class="button-row">
+  <div class="meshtastic-privacy-list">
+    <div>
+      <strong>Public channel</strong>
+      <span>
+        Reduce precision or disable location sharing before regularly operating
+        from a home or another private location.
+      </span>
+    </div>
+
+    <div>
+      <strong>Private secondary channel</strong>
+      <span>
+        A separate channel can be configured for more precise sharing among a
+        smaller group with the correct key.
+      </span>
+    </div>
+
+    <div>
+      <strong>Fixed installations</strong>
+      <span>
+        A manually configured fixed position should be reviewed before the node
+        begins broadcasting it.
+      </span>
+    </div>
+
+    <div>
+      <strong>Photos and screenshots</strong>
+      <span>
+        Client applications may show coordinates, maps, node identifiers, and
+        nearby devices that were not meant to be shared publicly.
+      </span>
+    </div>
+  </div>
+
+  <div class="guide-resource-links">
     <a
-      class="btn secondary"
-      href="https://meshtastic.org/docs/configuration/tips/"
+      href="https://meshtastic.org/docs/configuration/radio/channels/#position-precision"
       target="_blank"
       rel="noopener noreferrer">
-      Meshtastic Privacy Tips
+      Position Precision Documentation ↗
     </a>
 
-    <a
-      class="btn secondary"
-      href="{{ '/guides/sharing-safely.html' | relative_url }}">
+    <a href="{{ '/guides/sharing-safely.html' | relative_url }}">
       Sharing Safely
+    </a>
+  </div>
+</section>
+
+<section class="docs-section" id="telemetry">
+  <h2>Telemetry</h2>
+
+  <p>
+    Meshtastic can report ordinary device information such as battery level,
+    voltage, channel utilization, and airtime. Supported external sensors can
+    also provide environmental, air-quality, and other measurements.
+  </p>
+
+  <p>
+    Telemetry uses radio airtime like other mesh traffic. Use reasonable update
+    intervals and enable only the measurements that serve an actual purpose.
+  </p>
+
+  <div class="guide-resource-links">
+    <a
+      href="https://meshtastic.org/docs/configuration/module/telemetry/"
+      target="_blank"
+      rel="noopener noreferrer">
+      Official Telemetry Documentation ↗
     </a>
   </div>
 </section>
@@ -202,65 +459,130 @@ og_type: article
   <h2>MQTT</h2>
 
   <p>
-    MQTT lets a Meshtastic node or client forward selected traffic through an
+    MQTT allows selected Meshtastic packets to pass between a radio mesh and an
     MQTT broker when an internet connection is available.
   </p>
 
   <p>
-    It can support integrations, remote meshes, and map reporting, but it is not
-    required for normal Meshtastic radio use.
+    Enabling the MQTT module alone is not enough. Individual messaging channels
+    also need uplink or downlink enabled before their packets cross the gateway.
   </p>
 
-  <p>
-    Leave MQTT off unless you are intentionally connecting the node to an MQTT
-    service and understand which channels or data are being forwarded.
-  </p>
+  <dl class="meshtastic-concept-list">
+    <div>
+      <dt>Uplink</dt>
+      <dd>
+        Allows messages from the local radio mesh to be forwarded toward the
+        configured MQTT broker.
+      </dd>
+    </div>
 
-  <div class="button-row">
+    <div>
+      <dt>Downlink</dt>
+      <dd>
+        Allows packets arriving through MQTT to be transmitted onto the local
+        radio mesh.
+      </dd>
+    </div>
+
+    <div>
+      <dt>Client proxy</dt>
+      <dd>
+        Allows a connected client, such as a phone, to provide the internet path
+        when the radio itself does not have Wi-Fi or Ethernet.
+      </dd>
+    </div>
+
+    <div>
+      <dt>Map reporting</dt>
+      <dd>
+        Can publish an unencrypted report containing node identity, hardware,
+        firmware, role, and location with configurable precision.
+      </dd>
+    </div>
+  </dl>
+
+  <div class="docs-note">
+    Leave MQTT disabled for an ordinary first node. Before enabling it, identify
+    the broker, the channels being bridged, whether messages remain encrypted,
+    and what location or node information may be published.
+  </div>
+
+  <div class="guide-resource-links">
     <a
-      class="btn secondary"
       href="https://meshtastic.org/docs/configuration/module/mqtt/"
       target="_blank"
       rel="noopener noreferrer">
-      Meshtastic MQTT Docs
+      Official MQTT Documentation ↗
     </a>
   </div>
 </section>
 
 <section class="docs-section" id="troubleshooting">
-  <h2>Quick troubleshooting</h2>
+  <h2>If a Meshtastic node seems quiet</h2>
 
-  <p>
-    If a Meshtastic node seems quiet, check the basics first.
-  </p>
+  <ol>
+    <li>Confirm that the United States region is selected.</li>
+    <li>Confirm that the expected modem preset and frequency slot match.</li>
+    <li>Confirm that the messaging-channel name and key match.</li>
+    <li>Leave the device role on <code>CLIENT</code> while troubleshooting.</li>
+    <li>Make sure the correct antenna is attached securely.</li>
+    <li>Check that the phone or computer remains connected to the node.</li>
+    <li>Leave the radio powered long enough to hear normal activity.</li>
+    <li>Try a window, outdoor location, vehicle, or higher ground.</li>
+    <li>Change one setting at a time.</li>
+  </ol>
 
-  <ul>
-    <li>Confirm the United States region is selected.</li>
-    <li>Confirm the modem preset matches the nodes you expect to hear.</li>
-    <li>Make sure the antenna is attached before transmitting.</li>
-    <li>Check that the phone or computer is still connected to the node.</li>
-    <li>Leave the node powered long enough to hear normal activity.</li>
-    <li>Try another location before assuming the radio is not working.</li>
-  </ul>
-
-  <div class="button-row">
-    <a
-      class="btn secondary"
-      href="{{ '/guides/recommended-settings.html#meshtastic' | relative_url }}">
-      Check Meshtastic Settings
-    </a>
+  <div class="docs-note">
+    HCM’s MeshCore live map does not indicate whether Meshtastic activity is
+    present near you. Ask other Meshtastic users what they normally hear in the
+    area before assuming the hardware is defective.
   </div>
 </section>
 
-<section class="docs-section" id="ask">
-  <h2>Ask before you get stuck</h2>
+<section class="docs-section" id="next">
+  <h2>Where to go next</h2>
 
-  <p>
-    Bring your device model, firmware version, general area, antenna, and a short
-    description of what you have already tried.
-  </p>
+  <div class="guide-next-list">
+    <a href="{{ '/guides/recommended-settings.html#meshtastic' | relative_url }}">
+      <strong>Recommended Meshtastic Settings</strong>
+      <span>
+        Confirm the United States region, LongFast preset, default public
+        channel, and ordinary client role.
+      </span>
+    </a>
 
-  <div class="button-row">
-    {% include discord-cta.html source="meshtastic-basics" text="Ask in Discord" class="btn primary" %}
+    <a href="{{ '/guides/getting-started.html' | relative_url }}">
+      <strong>Getting Started</strong>
+      <span>
+        Return to the complete first-device setup and testing sequence.
+      </span>
+    </a>
+
+    <a href="{{ '/guides/sharing-safely.html' | relative_url }}">
+      <strong>Sharing Safely</strong>
+      <span>
+        Review positions, screenshots, photographs, identifiers, and map data
+        before publishing them.
+      </span>
+    </a>
+  </div>
+
+  <div class="getting-started-help" id="ask">
+    <div>
+      <h3>Ask before you get stuck</h3>
+
+      <p>
+        Bring the device model, firmware version, antenna, region, modem preset,
+        role, general testing area, and a short description of what you tried.
+      </p>
+    </div>
+
+    <div class="button-row">
+      {% include discord-cta.html
+        source="meshtastic-basics"
+        text="Ask in Discord"
+        class="btn primary" %}
+    </div>
   </div>
 </section>
