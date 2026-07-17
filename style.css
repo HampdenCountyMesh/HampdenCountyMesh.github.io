@@ -272,13 +272,17 @@ header nav a[aria-current="page"] {
 }
 
 @media (max-width: 760px) {
+    header {
+        position: static;
+    }
+
     header .container {
         min-height: auto;
-        padding-top: 0.9rem;
-        padding-bottom: 0.9rem;
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
         flex-direction: column;
         align-items: center;
-        gap: 0.75rem;
+        gap: 0.65rem;
     }
 
     .brand {
@@ -289,11 +293,11 @@ header nav a[aria-current="page"] {
     header nav {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 0.75rem 1rem;
+        gap: 0.65rem 0.9rem;
     }
 
     header nav a {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
     }
 }
 /* =========================================================
@@ -2112,11 +2116,17 @@ footer {
 
 @media (max-width: 520px) {
     .guides-hero {
-        padding: 58px 0;
+        padding: 46px 0 50px;
     }
 
     .guides-hero h1 {
-        font-size: clamp(2.7rem, 15vw, 4rem);
+        font-size: clamp(2.35rem, 11.5vw, 3.1rem);
+        line-height: 0.98;
+    }
+
+    .guides-hero-copy > p:last-child {
+        font-size: 1rem;
+        line-height: 1.62;
     }
 
     .guides-route,
@@ -2125,11 +2135,12 @@ footer {
     }
 
     .guides-section {
-        padding: 52px 0;
+        padding: 46px 0;
     }
 
     .guides-section-header h2 {
-        font-size: clamp(2rem, 11vw, 3rem);
+        font-size: clamp(1.9rem, 8.5vw, 2.45rem);
+        line-height: 1.04;
     }
 
     .guides-community-inner .button-row {
@@ -2659,11 +2670,11 @@ footer {
 
 @media (max-width: 520px) {
     .container {
-        width: min(100% - 22px, var(--max-width));
+        width: min(var(--max-width), calc(100% - 32px));
     }
 
     .hero-panel {
-        width: min(100% - 22px, 960px);
+        width: min(960px, calc(100% - 32px));
         padding: 24px;
     }
 
