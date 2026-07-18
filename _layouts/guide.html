@@ -2,6 +2,7 @@
 layout: default
 main_class: docs-shell
 nav: guides
+og_type: article
 ---
 
 <div class="container">
@@ -16,7 +17,7 @@ nav: guides
 
     {% if page.lede %}
       <p class="docs-lede">
-        {{ page.lede }}
+        {{ page.lede | escape }}
       </p>
     {% endif %}
 
