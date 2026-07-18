@@ -3,264 +3,384 @@ layout: guide
 title: Sharing Safely
 description: How to share mesh photos, screenshots, map observations, and setup details without exposing private information.
 lede: Photos, screenshots, and local observations can help other people learn. Check what else is visible before posting.
+body_class: sharing-safely-guide
 og_type: article
 ---
 
-<div class="docs-note">
-  Do not post passwords, private keys, access tokens, broker credentials,
-  private messages, or exact private locations without permission.
-</div>
-
-<div class="hero-actions">
-  <a class="btn secondary" href="#safe-to-share">Safe to Share</a>
-  <a class="btn secondary" href="#check-first">Check First</a>
-  <a class="btn secondary" href="#locations">Locations</a>
-  <a class="btn secondary" href="#maps">Maps</a>
-  <a class="btn secondary" href="#security">Security</a>
-</div>
-
-<section class="docs-section" id="safe-to-share">
-  <h2>Usually safe to share</h2>
+<section class="docs-section" id="before-posting">
+  <h2>Share what helps explain the problem</h2>
 
   <p>
-    Useful technical context does not need to include every detail about a
-    person or location.
+    Good troubleshooting information usually includes the device, firmware,
+    antenna, settings, general location, and what happened. It rarely requires
+    an exact private address, account details, or a complete unedited screenshot.
   </p>
 
-  <div class="safe-grid">
-    <div class="safe-card">
-      <span class="label">Area</span>
+  <div class="docs-note">
+    Do not post passwords, private keys, access tokens, broker credentials,
+    private messages, or exact private locations without permission.
+  </div>
 
-      <h3>General location</h3>
+  <p>
+    Before posting, ask whether each visible detail helps another person
+    understand the equipment or result. Crop or remove anything that does not.
+  </p>
+</section>
 
-      <p>
-        A town, public place, road corridor, hill, or broad area is often enough
-        to explain local results.
-      </p>
+<section class="docs-section" id="useful-context">
+  <h2>Useful information to include</h2>
+
+  <p>
+    Enough technical context makes it easier for other people to help without
+    requiring unnecessary personal information.
+  </p>
+
+  <dl class="sharing-context-list">
+    <div>
+      <dt>Device</dt>
+      <dd>
+        The radio model, firmware version, companion application, and any
+        relevant hardware revision.
+      </dd>
     </div>
 
-    <div class="safe-card">
-      <span class="label">Device</span>
-
-      <h3>Setup details</h3>
-
-      <p>
-        Device model, firmware version, antenna type, power source, and general
-        placement are normally useful troubleshooting information.
-      </p>
+    <div>
+      <dt>Radio setup</dt>
+      <dd>
+        Antenna type, connector or adapter, power source, and whether the device
+        was indoors, outdoors, in a vehicle, or mounted higher up.
+      </dd>
     </div>
 
-    <div class="safe-card">
-      <span class="label">Results</span>
-
-      <h3>Short observations</h3>
-
-      <p>
-        Notes such as “heard activity near downtown” or “window placement worked
-        better” can help other local users.
-      </p>
+    <div>
+      <dt>Settings</dt>
+      <dd>
+        The selected region, preset, frequency, role, channel, or other setting
+        directly related to the question.
+      </dd>
     </div>
 
-    <div class="safe-card">
-      <span class="label">Docs</span>
-
-      <h3>Public project information</h3>
-
-      <p>
-        Broken links, confusing instructions, public tool problems, and guide
-        corrections are appropriate for Discord or GitHub.
-      </p>
+    <div>
+      <dt>General area</dt>
+      <dd>
+        A town, neighborhood, public landmark, road corridor, hill, or broad
+        testing area is usually enough.
+      </dd>
     </div>
+
+    <div>
+      <dt>What happened</dt>
+      <dd>
+        Describe what you expected, what actually happened, and whether the
+        device heard any contacts, adverts, messages, or packets.
+      </dd>
+    </div>
+
+    <div>
+      <dt>What you tried</dt>
+      <dd>
+        Mention restarts, firmware changes, alternate antennas, different
+        locations, or settings you already checked.
+      </dd>
+    </div>
+  </dl>
+
+  <div class="docs-note">
+    Change one thing at a time while troubleshooting. A clear sequence of tests
+    is usually more useful than a long list of settings changed at once.
   </div>
 </section>
 
-<section class="docs-section" id="check-first">
-  <h2>Check before posting</h2>
+<section class="docs-section" id="screenshots-and-photos">
+  <h2>Check screenshots and photos</h2>
 
   <p>
-    Screenshots and photos often include more than the thing you intended to show.
+    Images often include more information than the person posting them notices
+    at first.
   </p>
 
-  <h3>Screenshots</h3>
+  <div class="sharing-check-grid">
+    <article>
+      <h3>Screenshots</h3>
 
-  <ul>
-    <li>Crop the image to the part that matters.</li>
-    <li>Remove passwords, keys, tokens, and credentials.</li>
-    <li>Check private messages and contact names.</li>
-    <li>Check browser tabs, bookmarks, notifications, and account details.</li>
-    <li>Remove exact private coordinates when they are not relevant.</li>
-  </ul>
+      <ul>
+        <li>Crop the image to the part that matters.</li>
+        <li>Remove passwords, keys, tokens, and broker credentials.</li>
+        <li>Check private messages and contact names.</li>
+        <li>Check coordinates and saved locations.</li>
+        <li>Look for account names, email addresses, and profile details.</li>
+        <li>Check browser tabs, bookmarks, notifications, and filenames.</li>
+        <li>Inspect QR codes before posting them.</li>
+      </ul>
+    </article>
 
-  <h3>Photos</h3>
+    <article>
+      <h3>Photographs</h3>
 
-  <ul>
-    <li>Check addresses, license plates, screens, badges, and reflections.</li>
-    <li>Think about whether the photo reveals a private node location.</li>
-    <li>Check whether people in the photo are comfortable being posted.</li>
-    <li>Use a closer photo of the equipment when the surrounding location is not important.</li>
-  </ul>
+      <ul>
+        <li>Check addresses, house numbers, and street signs.</li>
+        <li>Check license plates, badges, labels, and paperwork.</li>
+        <li>Look at screens, windows, mirrors, and other reflections.</li>
+        <li>Consider whether the surroundings reveal a private node location.</li>
+        <li>Make sure visible people are comfortable being posted.</li>
+        <li>Use a closer equipment photo when the wider setting is unnecessary.</li>
+      </ul>
+    </article>
+  </div>
+</section>
 
-  <h3>Setup details</h3>
+<section class="docs-section" id="files-and-metadata">
+  <h2>Files can contain hidden details</h2>
 
-  <ul>
-    <li>Do not post passwords, private keys, access tokens, or broker credentials.</li>
-    <li>Do not post private messages or someone else's information without permission.</li>
-    <li>Be careful with admin interfaces, internal infrastructure details, and anything that could provide access to a system.</li>
-  </ul>
+  <p>
+    A photo, exported configuration, log, or diagnostic file may contain more
+    information than appears on the screen.
+  </p>
+
+  <dl class="sharing-context-list">
+    <div>
+      <dt>Photo metadata</dt>
+      <dd>
+        Some image files may include capture time, device information, or GPS
+        coordinates. Remove unnecessary metadata before publicly posting photos
+        taken at a private location.
+      </dd>
+    </div>
+
+    <div>
+      <dt>Configuration exports</dt>
+      <dd>
+        Review exported settings for channel keys, Wi-Fi credentials, broker
+        details, device secrets, and administrative information.
+      </dd>
+    </div>
+
+    <div>
+      <dt>Logs</dt>
+      <dd>
+        Logs may contain node identifiers, usernames, filesystem paths, IP
+        addresses, hostnames, coordinates, or message contents.
+      </dd>
+    </div>
+
+    <div>
+      <dt>QR codes</dt>
+      <dd>
+        A QR code may contain a channel configuration, key, invitation, Wi-Fi
+        password, or another value that is not obvious from the image alone.
+      </dd>
+    </div>
+  </dl>
+
+  <p>
+    When possible, copy only the relevant lines into a message rather than
+    uploading an entire configuration or log file.
+  </p>
 </section>
 
 <section class="docs-section" id="locations">
-  <h2>Location sharing</h2>
+  <h2>Choose the right amount of location detail</h2>
 
   <p>
-    The right amount of location detail depends on what you are describing.
-    A public event can be named precisely. A private home installation usually
-    does not need to be.
+    The appropriate level of detail depends on the location and why it is being
+    discussed.
   </p>
 
-  <p>
-    A town, neighborhood, public landmark, or general area is often enough for
-    troubleshooting and coverage discussion.
-  </p>
-
-  <div class="docs-card-grid">
-    <div class="docs-card">
-      <h3>General area</h3>
-
-      <p>
-        “Monson area,” “near downtown Springfield,” or “Southwick” gives useful
-        regional context.
-      </p>
+  <div class="sharing-scope-list">
+    <div>
+      <strong>General area</strong>
+      <span>
+        A town or broad area such as “Southwick,” “near downtown Springfield,”
+        or “the Monson area” is usually enough for initial troubleshooting.
+      </span>
     </div>
 
-    <div class="docs-card">
-      <h3>Public location</h3>
-
-      <p>
-        A park, trail, event site, or other clearly public location can usually
-        be identified directly.
-      </p>
+    <div>
+      <strong>Public testing location</strong>
+      <span>
+        A park, trail, public event, road overlook, or other clearly public
+        location can often be identified directly.
+      </span>
     </div>
 
-    <div class="docs-card">
-      <h3>Private installation</h3>
-
-      <p>
-        Avoid adding exact coordinates, addresses, or detailed directions unless
-        the location is intentionally public and the owner has agreed.
-      </p>
+    <div>
+      <strong>Private installation</strong>
+      <span>
+        Avoid posting an address, exact coordinates, roof access information,
+        or detailed directions unless the location is intentionally public and
+        the property owner has agreed.
+      </span>
     </div>
+
+    <div>
+      <strong>Third-party location</strong>
+      <span>
+        Do not publish someone else’s home, workplace, node location, or travel
+        pattern merely because it appeared in an application or packet.
+      </span>
+    </div>
+  </div>
+
+  <div class="docs-note">
+    A precise location may be appropriate for a public event or an intentionally
+    documented public node. It is not automatically appropriate for every fixed
+    device visible on the mesh.
   </div>
 </section>
 
 <section class="docs-section" id="node-names">
-  <h2>Node names</h2>
+  <h2>Node names and identifiers</h2>
 
   <p>
-    A useful node name helps people recognize what they are seeing without
-    pointing directly at a private address.
+    A useful node name helps people understand what they are seeing without
+    unnecessarily identifying a person or private address.
   </p>
 
   <ul>
-    <li>Use a short and recognizable name.</li>
-    <li>A town, area, hill, park, or general landmark may be useful.</li>
-    <li>Add a role such as repeater, room, or observer when it helps.</li>
-    <li>Avoid addresses, apartment numbers, phone numbers, or other unnecessary personal details.</li>
+    <li>Use a short, recognizable name.</li>
+    <li>A town, broad area, hill, park, or public landmark may be useful.</li>
+    <li>Add a role such as repeater, room, observer, or tracker when it helps.</li>
+    <li>Avoid addresses, apartment numbers, phone numbers, or full personal names.</li>
+    <li>Do not assume another operator wants their node name connected publicly to their identity.</li>
   </ul>
+
+  <p>
+    Node identifiers, public keys, hashes, and packet details may be technically
+    visible over the radio. That does not necessarily mean they need to be
+    collected into a public profile of the person operating the device.
+  </p>
+</section>
+
+<section class="docs-section" id="channels-and-messages">
+  <h2>Public channels should be treated as public</h2>
+
+  <p>
+    Messages sent through public MeshCore channels or the default public
+    Meshtastic channel may be received, repeated, logged, or viewed outside the
+    immediate area.
+  </p>
+
+  <p>
+    Shared-key channels limit who can read the message contents, but anyone with
+    the configuration can participate. They should not be treated as a safe
+    place for passwords, credentials, highly sensitive personal information, or
+    anything that would cause serious harm if exposed.
+  </p>
+
+  <div class="docs-note">
+    Keep routine tests short and use the locally recommended test channel where
+    one is available. Avoid repeatedly filling a broad public channel with test
+    messages.
+  </div>
 </section>
 
 <section class="docs-section" id="maps">
   <h2>Maps and observed activity</h2>
 
   <p>
-    The Hampden County Mesh map and analyzer display activity heard through
-    participating observer systems.
+    The Hampden County Mesh live map and activity analyzer display MeshCore
+    activity heard through participating observer systems.
   </p>
 
   <p>
-    A visible node or packet does not mean Hampden County Mesh owns that device,
-    knows who operates it, or can confirm that your own radio can reach it directly.
+    A visible node or packet does not mean Hampden County Mesh owns the device,
+    knows who operates it, or can confirm that another radio can reach it
+    directly.
   </p>
 
   <p>
-    Public map data also does not make additional private information fair game.
-    Be careful about combining a public marker with names, addresses, photos, or
-    other details that identify a person or private installation.
+    Publicly visible map data also does not make unrelated private information
+    fair game. Avoid combining a marker with names, addresses, photographs,
+    property records, or other information to identify a private operator.
   </p>
 
-  <div class="button-row">
-    <a class="btn primary" href="https://map.hampdencountymesh.org/">
-      View Live Map
+  <div class="guide-resource-links">
+    <a href="https://map.hampdencountymesh.org/">
+      Hampden County Mesh Live Map
     </a>
 
-    <a class="btn secondary" href="https://analyzer.hampdencountymesh.org/">
-      Open Activity Analyzer
+    <a href="https://analyzer.hampdencountymesh.org/">
+      HCM Activity Analyzer
     </a>
   </div>
 </section>
 
 <section class="docs-section" id="where-to-share">
-  <h2>Where to share</h2>
+  <h2>Choose the right place to share it</h2>
 
-  <div class="safe-grid">
-    <div class="safe-card">
-      <span class="label">Discord</span>
+  <div class="guide-next-list">
+    <a href="{{ '/join/' | relative_url }}">
+      <strong>Discord</strong>
+      <span>
+        Device help, setup questions, local observations, community discussion,
+        and ordinary troubleshooting.
+      </span>
+    </a>
 
-      <h3>Questions and discussion</h3>
+    <a href="https://github.com/HampdenCountyMesh/HampdenCountyMesh.github.io">
+      <strong>GitHub</strong>
+      <span>
+        Website corrections, broken links, documentation changes, and public
+        repository issues.
+      </span>
+    </a>
 
-      <p>
-        Device help, setup questions, local observations, and normal project discussion.
-      </p>
-    </div>
-
-    <div class="safe-card">
-      <span class="label">GitHub</span>
-
-      <h3>Website and documentation</h3>
-
-      <p>
-        Broken links, guide corrections, and public website or repository issues.
-      </p>
-    </div>
-
-    <div class="safe-card">
-      <span class="label">Email</span>
-
-      <h3>Direct contact</h3>
-
-      <p>
-        Outreach, events, private questions, or information that should not begin
-        in a public channel.
-      </p>
-    </div>
+    <a href="mailto:contact@hampdencountymesh.org">
+      <strong>Email</strong>
+      <span>
+        Outreach, events, private questions, property discussions, or
+        information that should not begin in a public channel.
+      </span>
+    </a>
   </div>
 </section>
 
 <section class="docs-section" id="security">
-  <h2>Security issues</h2>
+  <h2>Report security issues privately</h2>
 
   <p>
-    Do not open a public Discord or GitHub discussion with exposed credentials,
-    private keys, access tokens, or details that could help someone access or
-    disrupt a system.
+    Do not open a public Discord or GitHub discussion containing exposed
+    credentials, private keys, access tokens, administrative access details, or
+    instructions that could help someone disrupt a system.
   </p>
 
   <p>
-    Send security concerns directly to:
+    Preserve enough information to explain the issue, but redact credentials
+    and unrelated personal data before sending it.
   </p>
 
-  <div class="button-row">
-    <a class="btn secondary" href="mailto:security@hampdencountymesh.org">
+  <div class="sharing-security-contact">
+    <div>
+      <h3>Security contact</h3>
+
+      <p>
+        Send reports involving HCM systems, credentials, or infrastructure
+        access directly to the project.
+      </p>
+    </div>
+
+    <a
+      class="btn secondary"
+      href="mailto:security@hampdencountymesh.org">
       security@hampdencountymesh.org
     </a>
   </div>
 </section>
 
-<section class="docs-section" id="before-sharing">
+<section class="docs-section" id="final-check">
   <h2>One last check</h2>
 
+  <ol class="sharing-final-check">
+    <li>Does the post include enough information to understand the question?</li>
+    <li>Does it expose a credential, key, private message, or exact private location?</li>
+    <li>Does the image show unrelated people, accounts, notifications, or surroundings?</li>
+    <li>Could a general area describe the test just as well as precise coordinates?</li>
+    <li>Does the file contain metadata or hidden configuration details?</li>
+    <li>Are you sharing someone else’s information without their permission?</li>
+  </ol>
+
   <p>
-    Before posting, ask whether the extra details in the image or message actually
-    help explain what you are sharing. If they do not, crop them out or leave them out.
+    When a detail does not help explain the equipment, test, or problem, leave
+    it out.
   </p>
 </section>
