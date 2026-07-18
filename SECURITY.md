@@ -1,105 +1,55 @@
 # Security Policy
 
-This policy explains how to report security issues affecting Hampden County Mesh websites, repositories, maps, integrations, and project-maintained infrastructure.
+This policy covers security issues involving systems, websites, repositories, integrations, and public data maintained by Hampden County Mesh.
 
-Do not report sensitive security issues through public GitHub issues, Discord channels, comments, or social posts.
+Do not report sensitive security issues through public GitHub issues, Discord channels, comments, or social media.
 
-## Reporting a Security Issue
+## Report an Issue
 
-Send reports to:
+Email:
 
 [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org)
 
-Include, when relevant:
+Include:
 
-- A clear description of the issue
-- Where the issue was found
-- Steps needed to reproduce it
+- What you found
+- Where you found it
+- Steps to reproduce it
 - The possible impact
-- Screenshots, logs, or examples with unrelated private details removed
-- Whether credentials, private data, or non-public locations may have been exposed
+- Relevant screenshots or logs with unrelated private details removed
 
-Do not include live passwords, private keys, API tokens, broker credentials, or other active secrets in the initial report. Describe the type of information involved and wait for instructions if securely transferring it is necessary.
+Do not send active passwords, private keys, API tokens, broker credentials, or other secrets in the initial report. Describe what may have been exposed and wait for instructions before transferring sensitive material.
 
-## Scope
+## What Is Covered
 
-This policy applies to security issues involving Hampden County Mesh-maintained:
+Reports may involve HCM-maintained:
 
 - Websites and GitHub repositories
-- GitHub Pages configuration
-- Public map and boundary files
-- Discord integrations and bots
+- Maps and public data
+- Discord bots and integrations
 - Webhooks and automations
-- MQTT, observer, analyzer, and logging infrastructure
-- Project documentation
-- Other systems operated specifically for Hampden County Mesh
+- MQTT, observer, analyzer, and logging systems
+- Documentation and configuration files
 
-Accidental publication of the following is also in scope:
+Accidental exposure of credentials, private messages, personal information, administrative details, or exact private node locations is also covered.
 
-- Passwords, private keys, tokens, or broker credentials
-- Channel keys or webhook URLs
-- Non-public administrative endpoints or infrastructure details
-- Exact private node or installation locations
-- Private messages or personal information
-- Logs, screenshots, or files containing sensitive data
+Hampden County Mesh does not operate every node, radio, map marker, application, or service visible through regional mesh tools. Problems involving independent operators or third-party services should normally be reported to their maintainers.
 
-## Out of Scope
+## Responsible Reporting
 
-Hampden County Mesh does not own or operate every node, repeater, observer, packet, map marker, radio, or third-party service visible through regional mesh tools.
+Please do not:
 
-Issues involving independent operators, equipment vendors, neighboring communities, third-party applications, or unrelated infrastructure should generally be reported to the appropriate maintainer.
-
-An issue is in scope when it affects an HCM-maintained system, repository, integration, document, or public data presentation.
-
-## What Not to Post Publicly
-
-Do not open a public issue or discussion containing:
-
-- Passwords, keys, tokens, or credentials
-- Private messages or personal information
-- Exact private installation locations
-- Details that could provide unauthorized access to a system
-- Sensitive screenshots, logs, or configuration files
-- Information belonging to someone else without permission
-
-Use the security email address instead.
-
-## Response and Remediation
-
-Reports will be reviewed as promptly as practical. Hampden County Mesh is a volunteer-run community project, so response times may vary.
-
-Depending on the issue, maintainers may:
-
-- Remove or redact exposed content
-- Rotate credentials, keys, or tokens
-- Disable an affected integration or webhook
-- Generalize private location information
-- Update documentation or configuration
-- Review related files for similar exposure
-- Contact third-party maintainers when the issue is outside HCM control
-
-Information copied into Git history, caches, screenshots, Discord messages, or third-party services may take longer to address.
-
-## Responsible Disclosure
-
-Please allow reasonable time for investigation and remediation before publishing details about a vulnerability or sensitive exposure.
-
-Good-faith reporting intended to improve project security is appreciated. Do not:
-
-- Access accounts or systems without permission
-- Collect more private data than is necessary to demonstrate an issue
-- Disrupt services, community spaces, or radio systems
-- Attempt to maintain access after testing
 - Publish credentials, private messages, or private locations
-- Use a report as justification for unrelated testing
+- Access accounts or systems without permission
+- Collect more private information than needed to demonstrate the issue
+- Disrupt services, community spaces, or radio systems
+- Maintain access after testing
+- Publicly disclose the issue before maintainers have had reasonable time to respond
 
-## Related Documents
+Good-faith reports intended to improve project security are appreciated.
 
-- `README.md`
-- `CONTRIBUTING.md`
-- `CODE_OF_CONDUCT.md`
-- `.github/SUPPORT.md`
-- `docs/discord.md`
-- `docs/data-access-and-observed-activity.md`
-- `docs/infrastructure.md`
-- `docs/map-subdomain.md`
+## Response
+
+Hampden County Mesh is volunteer-run, so response times may vary. Depending on the issue, maintainers may remove exposed content, rotate credentials, disable affected systems, generalize location information, update documentation, or contact a third-party maintainer.
+
+Information copied into Git history, caches, screenshots, messages, or third-party services may take longer to remove.
