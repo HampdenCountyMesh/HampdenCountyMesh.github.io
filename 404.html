@@ -2,84 +2,113 @@
 layout: default
 title: Page Not Found
 description: The page could not be found. Return to Hampden County Mesh, browse the guides, view the live map, read updates, or join the Discord.
+body_class: not-found-page
 noindex: true
 ---
 
-<section class="hero">
-  <div class="hero-panel">
-    <div class="frequency-display">Error 404</div>
+<main>
+  <section class="not-found-hero">
+    <div class="container not-found-narrow">
+      <div class="not-found-heading">
+        <p class="not-found-code" aria-hidden="true">404</p>
 
-    <div class="status-line">
-      <span class="status-dot" aria-hidden="true"></span>
-      <span>Lost Signal</span>
+        <div>
+          <p class="section-heading">Page Not Found</p>
+
+          <h1>That page isn’t here.</h1>
+        </div>
+      </div>
+
+      <p class="not-found-lede">
+        The address may be old, mistyped, moved, or removed. The main parts of
+        Hampden County Mesh are still available below.
+      </p>
+
+      <div class="hero-actions">
+        <a
+          class="btn primary"
+          href="{{ '/' | relative_url }}">
+          Return Home
+        </a>
+
+        <a
+          class="btn secondary"
+          href="{{ '/guides/' | relative_url }}">
+          Browse Guides
+        </a>
+      </div>
     </div>
+  </section>
 
-    <h1>Page<br>Not Found</h1>
+  <section class="not-found-section">
+    <div class="container not-found-narrow">
+      <p class="section-heading">Useful Destinations</p>
 
-    <p class="hero-text">
-      That page is not here. The link may be old, mistyped, deleted, or moved.
-    </p>
+      <div class="not-found-links">
+        <a href="{{ '/guides/' | relative_url }}">
+          <strong>Guides</strong>
 
-    <div class="hero-actions">
-      <a class="btn primary" href="{{ '/' | relative_url }}">
-        Return Home
-      </a>
+          <span>
+            Learn about MeshCore, Meshtastic, recommended settings, safe
+            sharing, and getting started.
+          </span>
 
-      <a class="btn secondary" href="{{ '/guides/getting-started.html' | relative_url }}">
-        Get Started
-      </a>
+          <span class="not-found-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="https://map.hampdencountymesh.org/">
+          <strong>Live Map</strong>
+
+          <span>
+            View recently observed MeshCore activity around Western
+            Massachusetts.
+          </span>
+
+          <span class="not-found-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a href="{{ '/updates/' | relative_url }}">
+          <strong>Updates</strong>
+
+          <span>
+            Read project notes about the website, maps, events, field work, and
+            other current activity.
+          </span>
+
+          <span class="not-found-arrow" aria-hidden="true">→</span>
+        </a>
+
+        <a
+          href="{{ '/join/404/' | relative_url }}"
+          data-join-source="404">
+
+          <strong>Discord</strong>
+
+          <span>
+            Ask questions, get device help, or join the local mesh discussion.
+          </span>
+
+          <span class="not-found-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="container">
-    <div class="section-heading">Try One of These</div>
-
-    <div class="resource-grid">
-      <a class="resource-card action-card" href="{{ '/guides/' | relative_url }}">
-        <h3>Guides</h3>
+  <section class="not-found-section not-found-contact">
+    <div class="container not-found-narrow">
+      <div>
+        <h2>Found a broken link?</h2>
 
         <p>
-          Browse the MeshCore, Meshtastic, settings, coverage, and safe-sharing guides.
+          Send the address that brought you here so it can be corrected.
         </p>
-
-        <span class="card-link">Open Guides →</span>
-      </a>
-
-      <a class="resource-card action-card" href="https://map.hampdencountymesh.org/">
-        <h3>Live Map</h3>
-
-        <p>
-          View geolocated MeshCore activity observed around Western Massachusetts.
-        </p>
-
-        <span class="card-link">Open Live Map →</span>
-      </a>
-
-      <a class="resource-card action-card" href="{{ '/updates/' | relative_url }}">
-        <h3>Updates</h3>
-
-        <p>
-          Read project updates, event notes, and recent site changes.
-        </p>
-
-        <span class="card-link">Read Updates →</span>
-      </a>
+      </div>
 
       <a
-        class="resource-card action-card"
-        href="{{ '/join/404/' | relative_url }}"
-        data-join-source="404">
-
-        <h3>Discord</h3>
-
-        <p>
-          Ask questions, get device help, and join the local mesh discussion.
-        </p>
-
-        <span class="card-link">Join Discord →</span>
+        class="btn secondary"
+        href="mailto:contact@hampdencountymesh.org?subject=Broken%20Website%20Link">
+        Report the Link
       </a>
     </div>
-  </div>
-</section>
+  </section>
+</main>
