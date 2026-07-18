@@ -1,42 +1,60 @@
 ---
 layout: default
-main_class: docs-shell
+main_class: update-article-shell
+body_class: update-article-page
 nav: updates
 og_type: article
 ---
 
-<div class="container">
-  <article class="docs-article">
+<div class="container updates-narrow">
+  <article class="update-article">
     <nav class="docs-breadcrumb" aria-label="Breadcrumb">
       <a href="{{ '/updates/' | relative_url }}">Updates</a>
       <span aria-hidden="true"> / </span>
       <span aria-current="page">{{ page.title | escape }}</span>
     </nav>
 
-    <h1>{{ page.title | escape }}</h1>
+    <header class="update-article-header">
+      <p class="section-heading">Project Update</p>
 
-    {% if page.date %}
-      <p class="update-meta">
-        <time datetime="{{ page.date | date_to_xmlschema }}">
-          {{ page.date | date: "%B %-d, %Y" }}
-        </time>
-      </p>
-    {% endif %}
+      <h1>{{ page.title | escape }}</h1>
 
-    {% if page.summary %}
-      <p class="docs-lede">
-        {{ page.summary | escape }}
-      </p>
-    {% endif %}
+      <div class="update-article-meta">
+        {% if page.date %}
+          <time datetime="{{ page.date | date_to_xmlschema }}">
+            {{ page.date | date: "%B %-d, %Y" }}
+          </time>
+        {% endif %}
 
-    {{ content }}
+        {% if page.tags and page.tags != empty %}
+          <span aria-hidden="true">·</span>
 
-    <div class="button-row">
-      <a class="btn secondary" href="{{ '/updates/' | relative_url }}">
-        Back to Updates
-      </a>
+          <span>
+            {{ page.tags | join: " · " | escape }}
+          </span>
+        {% endif %}
+      </div>
 
-      {% include discord-cta.html source="updates" %}
+      {% assign update_summary = page.summary | default: page.description %}
+
+      {% if update_summary %}
+        <p class="update-article-lede">
+          {{ update_summary | escape }}
+        </p>
+      {% endif %}
+    </header>
+
+    <div class="update-article-content">
+      {{ content }}
     </div>
+
+    <footer class="update-article-footer">
+      <a
+        class="update-back-link"
+        href="{{ '/updates/' | relative_url }}">
+        <span aria-hidden="true">←</span>
+        Back to all updates
+      </a>
+    </footer>
   </article>
 </div>
