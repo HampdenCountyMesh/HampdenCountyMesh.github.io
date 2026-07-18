@@ -4,9 +4,9 @@ url: "https://hampdencountymesh.org"
 timezone: America/New_York
 
 default_social_image: /assets/images/social/mttomrockitt.png
-default_social_image_alt: Hampden County Mesh branding over a view of Mount Tom.
+default_social_image_alt: Hampden County Mesh title beside a view of Mount Tom in Western Massachusetts.
 
-css_version: "20260713a"
+css_version: "20260718b"
 
 discord_invite_url: "https://discord.gg/egyUeREcmX"
 
