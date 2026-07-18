@@ -10,7 +10,7 @@ The [live map](https://map.hampdencountymesh.org/) shows MeshCore activity obser
 
 Our next step is local outreach. We are beginning to contact property owners, businesses, radio clubs, libraries, and other community organizations about two things:
 
-- Legal locations that may be able to host a small mesh node
+- Possible locations that may be able to host a small mesh node
 - Places that may be interested in hosting a beginner-friendly seminar or workshop
 
 These nodes are small, low-power radio devices. A useful location does not necessarily mean tower space. Depending on the site, a building, roof, fence post, existing mast, or another approved outdoor location may be enough to help improve coverage.
