@@ -1,114 +1,87 @@
 # Code of Conduct
 
-## Our Pledge
-
 Hampden County Mesh is intended to be a respectful, useful, and beginner-friendly community for mesh radio, technical learning, documentation, local testing, and related discussion.
 
-We are committed to providing a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, sex characteristics, gender identity or expression, level of experience, education, socioeconomic status, nationality, personal appearance, race, religion, sexual orientation, or technical background.
-
-We expect participants to help maintain an open, welcoming, inclusive, and healthy community.
+Everyone is welcome regardless of identity, background, experience, education, disability, appearance, religion, nationality, or socioeconomic status.
 
 ## Expected Behavior
 
-Examples of behavior that supports the community include:
+Participants are expected to:
 
-- Treating others with respect
-- Welcoming beginners and basic questions
-- Sharing knowledge without talking down to people
-- Correcting mistakes without personal attacks
-- Giving and accepting constructive feedback
-- Keeping disagreements focused on facts and practical results
-- Respecting privacy, consent, and safety boundaries
-- Helping keep public information accurate
-- Following applicable radio and technical rules
-- Taking responsibility for mistakes and correcting them
+- Treat others with respect
+- Welcome beginners and basic questions
+- Share knowledge without talking down to people
+- Correct mistakes without personal attacks
+- Give and accept constructive feedback
+- Keep disagreements focused on facts and practical results
+- Respect privacy, consent, and safety boundaries
+- Take responsibility for mistakes and correct them
+- Follow applicable radio, technical, and platform rules
+
+Do not mock people for using beginner terminology, owning inexpensive equipment, or not yet understanding a technical subject.
 
 ## Unacceptable Behavior
 
 Unacceptable behavior includes:
 
 - Harassment, threats, intimidation, or targeted abuse
-- Hate speech, slurs, racism, xenophobia, sexism, ableism, homophobia, transphobia, or other bigotry
+- Hate speech, slurs, or discriminatory behavior
 - Trolling, insults, personal attacks, or repeated bad-faith arguments
 - Sexualized language, imagery, attention, or advances
-- Doxxing or publishing private information without permission
-- Sharing non-public addresses, coordinates, messages, credentials, keys, tokens, or access details
-- Encouraging unlawful transmitting, harmful interference, jamming, impersonation, or unauthorized access
+- Doxxing or sharing private information without permission
+- Publishing private locations, messages, credentials, keys, tokens, or access details
+- Encouraging jamming, harmful interference, impersonation, unauthorized access, or unlawful transmitting
 - Misusing emergency, public-safety, aviation, railroad, utility, commercial, or government systems
-- Spamming, flooding, or intentionally disrupting community spaces
+- Spamming or intentionally disrupting community spaces
 - Retaliating against someone for making a good-faith report
-- Other behavior that moderators reasonably determine to be unsafe, abusive, threatening, or harmful
+- Other behavior moderators reasonably determine to be abusive, threatening, unsafe, or harmful
 
-## Beginner-Friendly Expectations
-
-Hampden County Mesh includes people with many different experience levels.
-
-Do not mock or dismiss someone for asking a basic question, using beginner terminology, owning inexpensive equipment, or not yet understanding a technical concept.
-
-Correct inaccurate information when necessary, but do so in a way that helps people learn.
-
-## Privacy and Technical Responsibility
-
-Do not publish someone else’s private information or exact non-public installation location without permission.
-
-When sharing screenshots, maps, logs, photos, configuration details, or observed activity, remove information that could expose private people, accounts, credentials, or infrastructure.
-
-Participants are responsible for following applicable radio laws, service rules, license requirements, platform rules, and access restrictions.
+When sharing screenshots, maps, logs, photographs, configuration details, or observed activity, remove information that could expose private people, accounts, credentials, or non-public infrastructure.
 
 ## Scope
 
-This Code of Conduct applies in Hampden County Mesh spaces, including:
+This Code of Conduct applies in spaces operated or formally recognized by Hampden County Mesh, including:
 
-- GitHub repositories, issues, and pull requests
+- GitHub repositories and discussions
 - Discord
 - Website and documentation work
-- Public events, workshops, and learning sessions
+- Events, workshops, and learning sessions
 - Official email and project accounts
-- Other spaces operated or formally recognized by Hampden County Mesh
 
-It also applies when someone is representing Hampden County Mesh in an official or public capacity.
+It also applies when someone is publicly representing Hampden County Mesh.
 
 ## Reporting
 
-Abusive, harassing, unsafe, or otherwise unacceptable behavior may be reported privately to:
+Conduct concerns may be reported privately to:
 
 [contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)
 
-Discord-related concerns may also be reported to:
+Discord-related concerns may also be sent to:
 
 [discord@hampdencountymesh.org](mailto:discord@hampdencountymesh.org)
 
-Security vulnerabilities, exposed credentials, or sensitive infrastructure concerns should be reported to:
+Security vulnerabilities, exposed credentials, or sensitive infrastructure concerns should be sent to:
 
 [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org)
 
-Do not open a public GitHub issue for private conduct reports, exposed credentials, private locations, or sensitive security concerns.
+Do not use a public GitHub issue for private conduct reports, exposed credentials, private locations, or sensitive security concerns.
 
-Reports will be reviewed as promptly and fairly as practical. The privacy and safety of reporters and affected people will be respected.
+Reports will be reviewed as promptly and fairly as practical. Reporter privacy and sensitive details will be protected where possible.
 
 ## Enforcement
 
-Moderators and project maintainers may remove, edit, or reject messages, comments, commits, issues, pull requests, images, links, or other contributions that violate this Code of Conduct.
+Moderators and maintainers may remove or reject content that violates this Code of Conduct.
 
-Depending on the severity and pattern of behavior, moderation may include:
+Depending on the severity and pattern of behavior, enforcement may include:
 
-### Correction
+1. A request to stop or correct the behavior
+2. A formal warning
+3. Temporary restrictions or removal
+4. A permanent ban
 
-A request to stop or correct inappropriate, careless, or disruptive behavior.
+Serious misconduct may result in immediate removal. This includes threats, harassment, hate speech, doxxing, intentional disruption, or other substantial harm.
 
-### Warning
-
-A clear warning describing the problem and the expected change in behavior.
-
-### Temporary Restriction
-
-Temporary removal from some or all community spaces, channels, discussions, or interactions.
-
-### Permanent Ban
-
-Permanent removal for serious misconduct, repeated violations, threats, harassment, hate speech, doxxing, intentional disruption, or other substantial harm.
-
-Moderation decisions may be explained when appropriate, but private reports and sensitive details may limit what can be shared publicly.
+Moderation decisions may be explained when appropriate, but private reports and sensitive information may limit what can be shared publicly.
 
 ## Attribution
 
@@ -116,6 +89,6 @@ This Code of Conduct is informed by the Contributor Covenant, version 2.0:
 
 https://www.contributor-covenant.org/version/2/0/code_of_conduct.html
 
-The enforcement structure was also informed by Mozilla’s community participation and enforcement guidance:
+Its enforcement approach was also informed by Mozilla’s community participation guidance:
 
 https://github.com/mozilla/diversity
