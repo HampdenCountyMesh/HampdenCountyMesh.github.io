@@ -15,40 +15,15 @@
     <lastmod>{{ build_date }}</lastmod>
   </url>
 
-  <url>
-    <loc>{{ "/guides/getting-started.html" | absolute_url }}</loc>
-    <lastmod>{{ build_date }}</lastmod>
-  </url>
-
-  <url>
-    <loc>{{ "/guides/recommended-settings.html" | absolute_url }}</loc>
-    <lastmod>{{ build_date }}</lastmod>
-  </url>
-
-  <url>
-    <loc>{{ "/guides/meshcore-basics.html" | absolute_url }}</loc>
-    <lastmod>{{ build_date }}</lastmod>
-  </url>
-
-  <url>
-    <loc>{{ "/guides/meshtastic-basics.html" | absolute_url }}</loc>
-    <lastmod>{{ build_date }}</lastmod>
-  </url>
-
-  <url>
-    <loc>{{ "/guides/sharing-safely.html" | absolute_url }}</loc>
-    <lastmod>{{ build_date }}</lastmod>
-  </url>
-
-  <url>
-    <loc>{{ "/building-better-mesh-coverage.html" | absolute_url }}</loc>
-    <lastmod>{{ build_date }}</lastmod>
-  </url>
-
-  <url>
-    <loc>{{ "/coverage.html" | absolute_url }}</loc>
-    <lastmod>{{ build_date }}</lastmod>
-  </url>
+  {% assign sorted_guides = site.data.guides | sort: "order" %}
+  {% for guide in sorted_guides %}
+    {% if guide.url and guide.url contains "://" == false %}
+      <url>
+        <loc>{{ guide.url | absolute_url }}</loc>
+        <lastmod>{{ build_date }}</lastmod>
+      </url>
+    {% endif %}
+  {% endfor %}
 
   <url>
     <loc>{{ "/updates/" | absolute_url }}</loc>
@@ -57,9 +32,9 @@
 
   {% assign sorted_updates = site.updates | sort: "date" | reverse %}
   {% for update in sorted_updates %}
-  <url>
-    <loc>{{ update.url | absolute_url }}</loc>
-    <lastmod>{{ update.date | date: "%Y-%m-%d" }}</lastmod>
-  </url>
+    <url>
+      <loc>{{ update.url | absolute_url }}</loc>
+      <lastmod>{{ update.date | date: "%Y-%m-%d" }}</lastmod>
+    </url>
   {% endfor %}
 </urlset>
