@@ -3,82 +3,160 @@ layout: default
 title: Updates
 description: Project updates from Hampden County Mesh about the website, guides, events, maps, and local mesh work.
 nav: updates
-main_class: docs-shell
+body_class: updates-page
+og_type: website
 ---
 
-<div class="container">
-  <article class="docs-article">
-    <nav class="docs-breadcrumb" aria-label="Breadcrumb">
-      <a href="{{ '/' | relative_url }}">Hampden County Mesh</a>
-      <span aria-hidden="true"> / </span>
-      <span aria-current="page">Updates</span>
-    </nav>
+{% assign sorted_updates = site.updates | sort: "date" | reverse %}
+{% assign latest_update = sorted_updates | first %}
+{% assign update_count = sorted_updates | size %}
+
+<section class="updates-hero">
+  <div class="container updates-narrow">
+    <p class="section-heading">Project Log</p>
 
     <h1>Updates</h1>
 
-    <p class="docs-lede">
-      Occasional notes about site changes, guides, events, seminars,
-      maps, and other Hampden County Mesh projects.
+    <p class="updates-hero-text">
+      Occasional notes about the website, guides, events, maps, field work,
+      and other Hampden County Mesh projects.
     </p>
+  </div>
+</section>
 
-    <div class="update-list">
-      {% assign sorted_updates = site.updates | sort: "date" | reverse %}
+<main>
+  <section class="updates-section" id="latest">
+    <div class="container updates-narrow">
+      {% if latest_update %}
+        <p class="section-heading">Latest Update</p>
 
-      {% for update in sorted_updates %}
-        <article class="update-card">
-          <p class="update-meta">
-            <time datetime="{{ update.date | date_to_xmlschema }}">
-              {{ update.date | date: "%B %-d, %Y" }}
+        <article class="update-featured">
+          <p class="update-date">
+            <time datetime="{{ latest_update.date | date_to_xmlschema }}">
+              {{ latest_update.date | date: "%B %-d, %Y" }}
             </time>
           </p>
 
           <h2>
-            <a href="{{ update.url | relative_url }}">
-              {{ update.title | escape }}
+            <a href="{{ latest_update.url | relative_url }}">
+              {{ latest_update.title | escape }}
             </a>
           </h2>
 
-          {% if update.summary %}
-            <p>{{ update.summary | escape }}</p>
+          {% if latest_update.summary %}
+            <p class="update-featured-summary">
+              {{ latest_update.summary | escape }}
+            </p>
           {% else %}
-            <p>
-              {{ update.excerpt | strip_html | normalize_whitespace | truncate: 220 | escape }}
+            <p class="update-featured-summary">
+              {{ latest_update.excerpt
+                | strip_html
+                | normalize_whitespace
+                | truncate: 280
+                | escape }}
             </p>
           {% endif %}
 
-          {% if update.tags %}
-            <div class="update-tags">
-              {% for tag in update.tags %}
-                <span>{{ tag | escape }}</span>
-              {% endfor %}
-            </div>
+          {% if latest_update.tags %}
+            <p class="update-topic-line">
+              <span>Filed under</span>
+              {{ latest_update.tags | join: " · " | escape }}
+            </p>
           {% endif %}
 
-          <a class="card-link" href="{{ update.url | relative_url }}">
-            Read More →
+          <a
+            class="update-read-link"
+            href="{{ latest_update.url | relative_url }}">
+            Read the update →
           </a>
         </article>
       {% else %}
         <div class="update-empty">
-          No community updates have been posted yet.
+          <h2>No project updates have been posted yet.</h2>
+
+          <p>
+            Current discussion and work-in-progress information can still be
+            found in the Hampden County Mesh Discord.
+          </p>
         </div>
-      {% endfor %}
+      {% endif %}
     </div>
+  </section>
 
-    <section class="docs-section">
-      <h2>Questions about an update?</h2>
+  {% if update_count > 1 %}
+    <section class="updates-section" id="archive">
+      <div class="container updates-narrow">
+        <p class="section-heading">Earlier Posts</p>
 
-      <p>
-        Join the Discord to ask about current projects or get involved.
-      </p>
+        <h2>Project archive</h2>
 
-      <div class="button-row">
-        {% include discord-cta.html source="updates" text="Join Discord" class="btn primary" %}
+        <div class="update-archive">
+          {% for update in sorted_updates offset: 1 %}
+            <a
+              class="update-row"
+              href="{{ update.url | relative_url }}">
 
-        <a class="btn secondary" href="{{ '/guides/' | relative_url }}">
-          Read Guides
-        </a>
+              <time datetime="{{ update.date | date_to_xmlschema }}">
+                {{ update.date | date: "%b %-d, %Y" }}
+              </time>
+
+              <div class="update-row-copy">
+                <h3>{{ update.title | escape }}</h3>
+
+                {% if update.summary %}
+                  <p>{{ update.summary | escape }}</p>
+                {% else %}
+                  <p>
+                    {{ update.excerpt
+                      | strip_html
+                      | normalize_whitespace
+                      | truncate: 180
+                      | escape }}
+                  </p>
+                {% endif %}
+
+                {% if update.tags %}
+                  <span class="update-row-tags">
+                    {{ update.tags | join: " · " | escape }}
+                  </span>
+                {% endif %}
+              </div>
+
+              <span class="update-row-arrow" aria-hidden="true">→</span>
+            </a>
+          {% endfor %}
+        </div>
       </div>
     </section>
-  </article>
-</div>
+  {% endif %}
+
+  <section class="updates-section updates-follow-up">
+    <div class="container updates-narrow">
+      <div class="updates-contact">
+        <div>
+          <p class="section-heading">Stay Connected</p>
+
+          <h2>Questions about current work?</h2>
+
+          <p>
+            Join the Discord to ask about an update, follow active projects,
+            or help with local mesh work.
+          </p>
+        </div>
+
+        <div class="button-row">
+          {% include discord-cta.html
+            source="updates"
+            text="Join Discord"
+            class="btn primary" %}
+
+          <a
+            class="btn secondary"
+            href="{{ '/guides/' | relative_url }}">
+            Read the Guides
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
