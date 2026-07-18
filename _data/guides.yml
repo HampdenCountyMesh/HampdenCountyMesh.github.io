@@ -5,7 +5,6 @@
   label: First stop
   summary: Choose MeshCore or Meshtastic, get one device working, and avoid overcomplicating your first setup.
   link_text: Start here →
-  featured: true
 
 - order: 2
   group: read_first
@@ -14,7 +13,6 @@
   label: Settings
   summary: A quick reference for MeshCore and Meshtastic starting settings in Western Massachusetts.
   link_text: View settings →
-  featured: true
 
 - order: 3
   group: mesh_systems
@@ -23,7 +21,6 @@
   label: Main focus
   summary: MeshCore node types, channels, observers, maps, and how the regional mesh fits together.
   link_text: Read MeshCore Basics →
-  featured: true
 
 - order: 4
   group: mesh_systems
@@ -38,9 +35,8 @@
   title: Building Better Mesh Coverage
   url: /building-better-mesh-coverage.html
   label: Coverage
-  summary: How placement, height, and fixed nodes can help build stronger radio paths around the region.
+  summary: Why people run personal, home, solar, and temporary nodes—and how good placement strengthens regional radio paths.
   link_text: Learn about coverage →
-  featured: true
 
 - order: 6
   group: community
