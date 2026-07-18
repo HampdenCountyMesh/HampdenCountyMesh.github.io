@@ -57,12 +57,12 @@ og_type: website
             </p>
           {% endif %}
 
-          {% if latest_update.tags %}
-            <p class="update-topic-line">
-              <span>Filed under</span>
-              {{ latest_update.tags | join: " · " | escape }}
-            </p>
-          {% endif %}
+{% if latest_update.tags and latest_update.tags != empty %}
+  <p class="update-topic-line">
+    <span>Filed under</span>
+    {{ latest_update.tags | join: " · " | escape }}
+  </p>
+{% endif %}
 
           <a
             class="update-read-link"
@@ -115,7 +115,7 @@ og_type: website
                   </p>
                 {% endif %}
 
-                {% if update.tags %}
+                {% if update.tags and update.tags != empty %}
                   <span class="update-row-tags">
                     {{ update.tags | join: " · " | escape }}
                   </span>
