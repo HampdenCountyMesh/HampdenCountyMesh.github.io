@@ -17,11 +17,13 @@
 
   {% assign sorted_guides = site.data.guides | sort: "order" %}
   {% for guide in sorted_guides %}
-    {% if guide.url and guide.url contains "://" == false %}
-      <url>
-        <loc>{{ guide.url | absolute_url }}</loc>
-        <lastmod>{{ build_date }}</lastmod>
-      </url>
+    {% if guide.url %}
+      {% unless guide.url contains "://" %}
+        <url>
+          <loc>{{ guide.url | absolute_url }}</loc>
+          <lastmod>{{ build_date }}</lastmod>
+        </url>
+      {% endunless %}
     {% endif %}
   {% endfor %}
 
