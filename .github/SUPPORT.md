@@ -1,99 +1,45 @@
 # Support
 
-This document explains where to ask questions, report problems, suggest changes, and raise security or privacy concerns related to Hampden County Mesh.
+Use the channel that best matches the question or problem.
 
-## General Help
+## Community and Device Help
 
-For device setup, local mesh discussion, beginner questions, and community support, join the Discord:
+For beginner questions, device setup, local mesh discussion, field testing, and general community support, join the Hampden County Mesh Discord:
 
 https://hampdencountymesh.org/join/
 
-For questions that do not fit Discord or GitHub, contact:
+For questions that do not fit Discord or GitHub, email:
 
 [contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)
 
-## Website and Documentation Issues
+## Website and Documentation Problems
 
-Open a public GitHub issue for problems involving:
+Open a public GitHub issue for:
 
 - Broken links
-- Outdated or incorrect guides
-- Typos or unclear wording
-- Accessibility or mobile-layout problems
-- Missing attribution
+- Incorrect or outdated information
+- Website, map, or analyzer display problems
+- Accessibility or mobile-layout issues
 - Navigation problems
-- The public website, map links, analyzer links, or repository files
-- Public information that should be corrected, generalized, or removed
+- Documentation corrections
+- Feature and project suggestions
 
-Include, when relevant:
+Include the affected page or file, what happened, and any useful browser or device information. Screenshots should have private details removed.
 
-- The affected page or file
-- What you expected
-- What happened instead
-- Browser or device information
-- A screenshot with private details removed
-- Suggested replacement wording or a possible fix
+Do not post credentials, private messages, non-public addresses, exact private installation locations, internal host details, or sensitive logs in a public issue.
 
-Use the available issue template that best matches the report.
+## Security and Privacy
 
-## Feature and Community Suggestions
+Do not open a public issue for vulnerabilities, exposed credentials, unauthorized-access concerns, private information, or sensitive infrastructure details.
 
-Public GitHub issues may also be used for:
-
-- Guide ideas
-- Website improvements
-- Map or data-presentation suggestions
-- Accessibility improvements
-- Event or workshop ideas
-- Outreach resources
-- Other public project proposals
-
-Keep public issues general. Do not include private contact information, non-public addresses, private messages, credentials, or exact private installation locations.
-
-## Live Map and Analyzer
-
-Public services:
-
-- Live map: https://map.hampdencountymesh.org/
-- Analyzer: https://analyzer.hampdencountymesh.org/
-
-Public issues may be used for visible problems such as:
-
-- A page failing to load
-- Broken controls or navigation
-- Incorrect branding or wording
-- Mobile-display problems
-- Broken links from the main website
-
-Do not post broker credentials, internal host details, private logs, administrative URLs, or other sensitive configuration in a public report.
-
-A quiet map does not necessarily indicate a failure. The map displays observed MeshCore activity and may be quiet when no geolocated packets are received by participating systems.
-
-## Security and Privacy Reports
-
-Do not open a public issue for:
-
-- Exposed credentials, keys, or tokens
-- Unauthorized-access concerns
-- Private messages or personal information
-- Exact non-public installation locations
-- Sensitive infrastructure details
-- Vulnerabilities affecting the website, map, analyzer, Discord integrations, or project-maintained systems
-
-Follow `SECURITY.md` or contact:
+Follow `SECURITY.md` or email:
 
 [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org)
 
-## Discord Support
+Do not include active passwords, private keys, tokens, or other secrets in the initial email.
 
-For invite problems, onboarding issues, moderation concerns, role questions, or server-access problems, contact:
+## Discord and Moderation
+
+For Discord invite problems, account access, onboarding, roles, or moderation concerns, email:
 
 [discord@hampdencountymesh.org](mailto:discord@hampdencountymesh.org)
-
-## Related Documents
-
-- `README.md`
-- `CONTRIBUTING.md`
-- `CODE_OF_CONDUCT.md`
-- `SECURITY.md`
-- `docs/discord.md`

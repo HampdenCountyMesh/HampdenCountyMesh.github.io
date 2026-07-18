@@ -1,5 +1,5 @@
 name: Community
-description: Suggest a community resource, event, outreach idea, local partnership, or learning opportunity.
+description: Suggest a community resource, event, outreach idea, partnership, or learning opportunity.
 title: "[Community]: "
 labels:
   - community
@@ -8,42 +8,25 @@ body:
   - type: markdown
     attributes:
       value: |
-        Use this form for public community ideas, events, workshops, outreach, useful local resources, Discord coordination, or possible partnerships.
+        Use this form for public community ideas, events, workshops, outreach, local resources, and possible partnerships.
 
-        Keep locations and contact details general. Do not include private addresses, private messages, exact non-public installation locations, or sensitive information.
+        Keep locations and contact details general. Do not include private addresses, messages, exact non-public installation locations, or sensitive information.
 
-        Security and privacy concerns should be reported privately through `SECURITY.md` or by emailing security@hampdencountymesh.org.
+        Report security or privacy concerns privately to [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org).
 
   - type: dropdown
     id: category
     attributes:
       label: Category
-      description: What kind of community proposal is this?
+      description: What kind of proposal is this?
       options:
         - Event, workshop, or seminar
-        - Library, club, school, or makerspace
+        - Local organization, partnership, or venue
         - Coverage-building or site outreach
         - Local mesh or radio resource
-        - General outreach or printed materials
+        - Outreach or printed materials
         - Discord or community coordination
         - Accessibility or newcomer support
-        - Website or update content
-        - Other
-    validations:
-      required: true
-
-  - type: dropdown
-    id: related_area
-    attributes:
-      label: Related area
-      description: Where would this mainly apply?
-      options:
-        - Website
-        - Discord
-        - Local event or workshop
-        - Local organization or venue
-        - Coverage or community infrastructure
-        - Multiple areas
         - Other
     validations:
       required: true
@@ -61,11 +44,10 @@ body:
     id: details
     attributes:
       label: Details
-      description: Add any useful public context.
+      description: Add useful public context.
       placeholder: |
         Who might this help?
-        What would the activity or resource involve?
-        Is there a general town or area involved?
+        What would it involve?
         Are there timing, accessibility, equipment, or space considerations?
 
   - type: input
@@ -79,7 +61,7 @@ body:
     id: public_links
     attributes:
       label: Public links or references
-      description: Add public organization pages, event listings, or other relevant references.
+      description: Add relevant public organization pages, event listings, or other references.
       placeholder: "https://example.org/"
 
   - type: textarea
@@ -87,14 +69,14 @@ body:
     attributes:
       label: Suggested next step
       description: What would be a reasonable next action?
-      placeholder: "Example: Discuss it in Discord, contact the organization, prepare a short presentation, or add it to an outreach list."
+      placeholder: "Example: Discuss it in Discord, contact the organization, or prepare a short presentation."
 
   - type: checkboxes
-    id: public_issue_checks
+    id: privacy_check
     attributes:
-      label: Public issue checks
+      label: Privacy check
       options:
-        - label: I have removed private contact details, private addresses, exact non-public locations, private messages, and sensitive screenshots.
+        - label: I removed private contact details, addresses, exact non-public locations, private messages, and sensitive screenshots.
           required: true
         - label: This is a public community proposal, not a private security, conduct, or access report.
           required: true

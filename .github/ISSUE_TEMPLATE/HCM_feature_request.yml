@@ -1,5 +1,5 @@
 name: Feature Request
-description: Suggest a new website function, map improvement, integration, automation, or repository workflow.
+description: Suggest a website function, map improvement, integration, automation, or repository workflow.
 title: "[Feature]: "
 labels:
   - enhancement
@@ -10,13 +10,11 @@ body:
       value: |
         Use this form for new functionality, integrations, automation, map or analyzer improvements, and repository workflows.
 
-        For wording corrections, guide changes, or new documentation, use the Documentation Improvement template.
-
-        For events, outreach, partnerships, or community resources, use the Community template.
+        Use the Documentation Improvement template for wording or guide changes. Use the Community template for events, outreach, partnerships, or local resources.
 
         Do not include credentials, private messages, exact non-public locations, or sensitive infrastructure details.
 
-        Security and privacy concerns should be reported privately through `SECURITY.md` or by emailing security@hampdencountymesh.org.
+        Report security or privacy concerns privately to [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org).
 
   - type: dropdown
     id: category
@@ -27,10 +25,9 @@ body:
         - Website functionality
         - Live map
         - Activity analyzer
-        - Observed-activity or data workflow
-        - Discord integration or bot
+        - Data or observed-activity workflow
+        - Discord integration, bot, or join tracking
         - Automation or monitoring
-        - Discord join tracking
         - Repository or GitHub workflow
         - Accessibility or user experience
         - Other
@@ -40,7 +37,7 @@ body:
   - type: textarea
     id: proposal
     attributes:
-      label: Proposal
+      label: Proposed feature
       description: Describe the feature or improvement.
       placeholder: "Example: Add a visible service-status notice when the live map is unavailable."
     validations:
@@ -50,25 +47,18 @@ body:
     id: problem
     attributes:
       label: Problem or need
-      description: What problem would this solve?
-      placeholder: "Example: Visitors currently cannot tell whether a quiet map reflects low activity or a service outage."
+      description: What problem would this solve, and who would it help?
+      placeholder: "Example: Visitors cannot easily tell whether a quiet map reflects low activity or a service outage."
     validations:
       required: true
-
-  - type: textarea
-    id: benefit
-    attributes:
-      label: Expected benefit
-      description: Who would benefit and how?
-      placeholder: "Example: This would help visitors understand the map state without needing to ask in Discord."
 
   - type: textarea
     id: details
     attributes:
       label: Technical or practical details
-      description: Include relevant public links, dependencies, limitations, or examples.
+      description: Include relevant public links, dependencies, limitations, maintenance needs, or examples.
       placeholder: |
-        Does this affect the website, map, analyzer, Discord, or GitHub?
+        What parts of the project would this affect?
         Does it depend on an outside service?
         Would it require ongoing maintenance?
         Are there privacy or accessibility considerations?
@@ -78,25 +68,14 @@ body:
     attributes:
       label: Alternatives considered
       description: Note any simpler approaches or existing tools that may solve the same problem.
-      placeholder: "Example: A static notice on the Coverage page could be used instead of automated status checking."
-
-  - type: dropdown
-    id: priority
-    attributes:
-      label: Suggested priority
-      options:
-        - Current problem
-        - Useful near-term improvement
-        - Nice to have
-        - Long-term idea
-        - Not sure
+      placeholder: "Example: Add a short static explanation near the live map link instead of automated status checking."
 
   - type: checkboxes
-    id: public_issue_checks
+    id: privacy_check
     attributes:
-      label: Public issue checks
+      label: Privacy check
       options:
-        - label: I have removed credentials, private messages, exact non-public locations, and sensitive infrastructure details.
+        - label: I removed credentials, private messages, exact non-public locations, and sensitive infrastructure details.
           required: true
-        - label: This is a feature request rather than a documentation correction, community proposal, or private security report.
+        - label: This is a public feature request, not a documentation correction, community proposal, or private security report.
           required: true

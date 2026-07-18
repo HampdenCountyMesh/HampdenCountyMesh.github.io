@@ -2,29 +2,17 @@ blank_issues_enabled: false
 
 contact_links:
   - name: Report a Security or Privacy Issue
-    url: mailto:security@hampdencountymesh.org
+    url: "mailto:security@hampdencountymesh.org"
     about: Privately report vulnerabilities, exposed credentials, sensitive data, or non-public infrastructure details.
 
   - name: General Contact
-    url: mailto:contact@hampdencountymesh.org
-    about: Ask a general question that does not fit an issue template or Discord discussion.
+    url: "mailto:contact@hampdencountymesh.org"
+    about: Ask a question that does not fit an issue template or Discord discussion.
 
   - name: Discord Support
-    url: mailto:discord@hampdencountymesh.org
-    about: Ask about Discord invites, onboarding, moderation, roles, or server access.
+    url: "mailto:discord@hampdencountymesh.org"
+    about: Get help with Discord invites, onboarding, moderation, roles, or server access.
 
   - name: Join the Discord
-    url: https://hampdencountymesh.org/join/
+    url: "https://hampdencountymesh.org/join/"
     about: Join the Hampden County Mesh community Discord.
-
-  - name: Hampden County Mesh Website
-    url: https://hampdencountymesh.org/
-    about: Visit the public website, guides, coverage information, and updates.
-
-  - name: Live MeshCore Map
-    url: https://map.hampdencountymesh.org/
-    about: View geolocated MeshCore activity observed through participating systems.
-
-  - name: Activity Analyzer
-    url: https://analyzer.hampdencountymesh.org/
-    about: View detailed MeshCore packet, path, node, and observer information.

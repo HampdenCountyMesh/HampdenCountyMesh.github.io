@@ -12,7 +12,7 @@ body:
 
         Do not include credentials, private messages, exact non-public locations, sensitive screenshots, or information that could provide unauthorized access.
 
-        For security or privacy issues, do not open a public issue. Follow `SECURITY.md` or contact [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org).
+        Security and privacy concerns should be reported privately to [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org), not through a public issue.
 
   - type: dropdown
     id: area
@@ -21,11 +21,11 @@ body:
       description: What part of Hampden County Mesh is affected?
       options:
         - Public website
-        - Live map
-        - Activity analyzer
-        - Coverage or MeshMapper page
         - Guides
         - Updates
+        - Live map
+        - Activity analyzer
+        - MeshMapper or coverage observations
         - Repository documentation
         - GitHub workflow or template
         - Discord join route or tracking
@@ -45,7 +45,7 @@ body:
     attributes:
       label: What happened?
       description: Describe the problem and where you encountered it.
-      placeholder: "Example: A link opens a deleted page, the map controls do not work on mobile, or wording is outdated."
+      placeholder: "Example: A link opens a deleted page, a map control does not work on mobile, or wording is outdated."
     validations:
       required: true
 
@@ -66,13 +66,6 @@ body:
       description: What did you expect to happen?
       placeholder: "Example: The link should open the current guide page."
 
-  - type: textarea
-    id: actual
-    attributes:
-      label: Actual behavior
-      description: Add any details not already included above.
-      placeholder: "Example: The link returns a 404 page or the control does not respond."
-
   - type: input
     id: browser
     attributes:
@@ -92,7 +85,7 @@ body:
     attributes:
       label: Public issue checks
       options:
-        - label: I have removed credentials, private messages, exact non-public locations, and other sensitive information.
+        - label: I removed credentials, private messages, exact non-public locations, and other sensitive information.
           required: true
-        - label: I checked that this is not a security or privacy report that should be sent privately.
+        - label: This is not a security or privacy report that should be sent privately.
           required: true

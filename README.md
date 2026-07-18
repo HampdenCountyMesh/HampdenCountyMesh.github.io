@@ -2,157 +2,92 @@
 
 Hampden County Mesh is a volunteer-run Western Massachusetts community for MeshCore, Meshtastic, and local mesh radio.
 
-This repository contains the public website, guides, updates, project documentation, and supporting files for Hampden County Mesh.
+This repository contains the public website, guides, updates, tracked Discord routes, and maintainer documentation.
 
-Website: https://hampdencountymesh.org/
+## Project Links
 
-Discord: https://hampdencountymesh.org/join/
+- Website: https://hampdencountymesh.org/
+- Guides: https://hampdencountymesh.org/guides/
+- Live MeshCore map: https://map.hampdencountymesh.org/
+- Activity analyzer: https://analyzer.hampdencountymesh.org/
+- Updates: https://hampdencountymesh.org/updates/
+- Discord: https://hampdencountymesh.org/join/
+- Western Massachusetts MeshMapper: https://psf.meshmapper.net/
 
-Live map: https://map.hampdencountymesh.org/
+The live map and analyzer show MeshCore activity heard through participating systems. They provide a partial regional view, not a complete inventory of every node or usable radio path.
 
-Analyzer: https://analyzer.hampdencountymesh.org/
+MeshMapper is an independent project used for MeshCore field testing and is not operated by Hampden County Mesh.
 
 ## Purpose
 
-Hampden County Mesh helps people around Hampden County and nearby Western Massachusetts learn about mesh radio, get devices working, understand local radio conditions, and participate in the regional mesh community.
+Hampden County Mesh helps people around Hampden County and nearby Western Massachusetts:
 
-The project focuses on:
+- Learn about MeshCore and Meshtastic
+- Get devices working
+- Use practical regional settings
+- Understand antennas, placement, and terrain
+- Test and improve local radio paths
+- View observed MeshCore activity
+- Coordinate through the website and Discord
 
-- MeshCore
-- Meshtastic
-- Beginner-friendly setup guidance
+Hampden County Mesh does not own or operate every node, repeater, observer, packet, or map marker visible through regional tools.
+
+## Public Guides
+
+Current guides cover:
+
+- Getting started
 - Recommended regional settings
-- Fixed and portable mesh nodes
-- Antennas, placement, and local terrain
-- Coverage testing and MeshMapper
-- Live observed MeshCore activity
-- Community coordination through the website and Discord
+- MeshCore basics
+- Meshtastic basics
+- Building better mesh coverage
+- Sharing information safely
 
-Hampden County Mesh does not own or operate every node, repeater, observer, packet, or map marker visible through regional mesh tools.
-
-## Current Status
-
-The following services are active:
-
-- Public website
-- Guide library
-- Discord community
-- Live MeshCore activity map
-- CoreScope analyzer
-- Coverage and MeshMapper page
-- Project updates
-- Tracked Discord join routes
-
-The network and its public data views continue to develop as more nodes, observers, and radio paths become available.
-
-## Website Sections
-
-### Home
-
-The main introduction to Hampden County Mesh:
-
-https://hampdencountymesh.org/
-
-### Guides
-
-Beginner information, recommended settings, MeshCore and Meshtastic basics, coverage information, and safe-sharing guidance:
+Guide index:
 
 https://hampdencountymesh.org/guides/
 
-### Live Map
-
-The map displays geolocated MeshCore packet activity observed through participating systems:
-
-https://map.hampdencountymesh.org/
-
-The map represents observed activity, not a complete inventory of every node or radio path in the region.
-
-### Analyzer
-
-CoreScope provides more detailed packet, node, path, and observer information:
-
-https://analyzer.hampdencountymesh.org/
-
-### Coverage and Field Testing
-
-The Coverage page includes access to the Western Massachusetts MeshMapper region and related testing information:
-
-https://hampdencountymesh.org/coverage.html
-
-MeshMapper:
-
-https://psf.meshmapper.net/
-
-MeshMapper is an independent project and is not operated by Hampden County Mesh.
-
-### Updates
-
-Project updates, site changes, event notes, and other occasional announcements:
-
-https://hampdencountymesh.org/updates/
-
-## Building Better Coverage
-
-Reliable mesh coverage depends heavily on height, antenna placement, terrain, and fixed infrastructure.
-
-The Building Better Mesh Coverage page explains how useful radio paths are created and how local participants can contribute:
-
-https://hampdencountymesh.org/building-better-mesh-coverage.html
-
 ## Repository Structure
-
-Important locations include:
 
 - `_data/` — Navigation and guide metadata
 - `_includes/` — Shared Liquid components
 - `_layouts/` — Page and redirect layouts
 - `_updates/` — Update collection entries
-- `assets/` — Stylesheets, scripts, images, and icons
+- `assets/` — Images, icons, scripts, and other site assets
 - `guides/` — Public guide pages
 - `join/` — Tracked Discord redirect routes
 - `updates/` — Updates landing page
 - `docs/` — Maintainer and contributor documentation
 
-The `docs/` directory is excluded from the generated GitHub Pages website, but remains available in the repository.
+The `docs/` directory is excluded from the generated GitHub Pages site.
 
-Current documentation includes:
-
-- `docs/ASSETS.md`
-- `docs/data-access-and-observed-activity.md`
-- `docs/discord.md`
-- `docs/infrastructure.md`
-- `docs/map-subdomain.md`
-- `docs/README.md`
+See [`docs/README.md`](docs/README.md) for the documentation index.
 
 ## Contributing
 
-Contributions are welcome, including:
+Contributions may include:
 
 - Documentation corrections
 - Guide improvements
 - Website fixes
 - Accessibility improvements
-- Public map and data presentation improvements
-- Issue reports
-- Suggestions for local workshops or learning sessions
+- Map and data-presentation improvements
+- Bug reports
+- Community and workshop suggestions
 
-Larger changes should be discussed before implementation so the site remains accurate and consistent.
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) before making larger changes.
 
-See `CONTRIBUTING.md`.
+Support and reporting options are listed in [`.github/SUPPORT.md`](.github/SUPPORT.md).
 
 ## Security and Privacy
 
-Do not commit passwords, private keys, API tokens, broker credentials, private messages, or non-public infrastructure details.
+Do not commit credentials, private keys, tokens, private messages, exact non-public installation locations, or information that could provide unauthorized access.
 
-Exact private installation locations should not be published without permission.
-
-Sensitive security reports should be sent to:
+Report sensitive security or privacy concerns privately:
 
 [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org)
 
-Do not open a public GitHub issue containing credentials, private data, or information that could provide unauthorized access.
-
-See `SECURITY.md`.
+See [`SECURITY.md`](SECURITY.md).
 
 ## Contact
 
@@ -160,18 +95,14 @@ General inquiries:
 
 [contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)
 
-Discord-related questions:
+Discord and moderation:
 
 [discord@hampdencountymesh.org](mailto:discord@hampdencountymesh.org)
 
-Security reports:
+## Project Limits
 
-[security@hampdencountymesh.org](mailto:security@hampdencountymesh.org)
-
-## Limits
-
-Hampden County Mesh is a community education and hobby project. It is not an emergency service, a public safety system, a guarantee of coverage, or a claim of ownership over all mesh activity in the region.
+Hampden County Mesh is a community education and hobby project. It is not an emergency service, a public-safety system, or a guarantee of communication or coverage.
 
 ## License
 
-See `LICENSE`.
+See [`LICENSE`](LICENSE).
