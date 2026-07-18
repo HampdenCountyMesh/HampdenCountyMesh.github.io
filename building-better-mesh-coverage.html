@@ -1,198 +1,669 @@
 ---
 layout: default
 title: Building Better Mesh Coverage
-description: How fixed mesh nodes, good placement, and local participation can improve MeshCore coverage around Hampden County and Western Massachusetts.
+description: Learn how community members, organizations, and property owners can help expand practical MeshCore coverage across Hampden County and Western Massachusetts.
+nav: guides
+body_class: better-coverage-page
+og_type: article
 ---
 
-<section class="hero">
-  <div class="hero-panel">
-    <div class="frequency-display">Better Coverage</div>
+<section class="better-coverage-hero">
+  <div class="container better-coverage-wide">
+    <div class="better-coverage-hero-grid">
+      <div class="better-coverage-hero-copy">
+        <p class="section-heading">A Community-Built Radio Network</p>
 
-    <div class="status-line">
-      <span class="status-dot" aria-hidden="true"></span>
-      <span>Height • Placement • Local Infrastructure</span>
-    </div>
+        <h1>Building Better Mesh Coverage</h1>
 
-    <h1>Building Better Mesh Coverage</h1>
-
-    <p class="hero-text">
-      Mesh coverage grows when useful radio paths connect neighborhoods,
-      towns, and local users across the terrain of Western Massachusetts.
-    </p>
-
-    <div class="hero-actions">
-      <a class="btn primary" href="#how-coverage-grows">
-        How Coverage Grows
-      </a>
-
-      <a class="btn secondary" href="https://map.hampdencountymesh.org/">
-        View Live Map
-      </a>
-
-      {% include discord-cta.html source="better-coverage" text="Join Discord" class="btn secondary" %}
-    </div>
-  </div>
-</section>
-
-<section id="how-coverage-grows">
-  <div class="container">
-    <div class="section-heading">How Coverage Grows</div>
-
-    <div class="community-panel">
-      <h2>A well-placed node can help more than one person.</h2>
-
-      <p>
-        Mesh radios communicate directly with nearby nodes and can relay messages
-        across other nodes in the network. A fixed node in a useful location can
-        improve radio paths for people across a wider area.
-      </p>
-
-      <p>
-        This is especially important in Hampden County and Western Massachusetts,
-        where hills, valleys, buildings, and wooded terrain can make radio coverage
-        change quickly from one place to another.
-      </p>
-
-      <p>
-        Better coverage does not necessarily come from using more transmit power.
-        Height, antenna placement, and a clear radio path often matter much more.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-heading">Location Matters</div>
-
-    <div class="resource-grid">
-      <div class="resource-card">
-        <h3>Height</h3>
+        <p class="better-coverage-hero-text">
+          Small, well-placed radio nodes can help connect neighborhoods, towns,
+          and local users across the difficult terrain of Western Massachusetts.
+        </p>
 
         <p>
-          A node placed above nearby buildings, trees, or terrain may hear and be
-          heard across a much larger area.
+          Hampden County Mesh is a volunteer, not-for-profit community project
+          working to build useful MeshCore radio paths through cooperation,
+          field testing, and legally hosted fixed nodes.
         </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#hosting">
+            What Hosting Involves
+          </a>
+
+          <a
+            class="btn secondary"
+            href="mailto:contact@hampdencountymesh.org?subject=Possible%20Mesh%20Node%20Location">
+            Discuss a Possible Site
+          </a>
+        </div>
       </div>
 
-      <div class="resource-card">
-        <h3>Terrain</h3>
-
-        <p>
-          Hills and ridgelines can create useful radio paths while valleys and
-          dense development may block them.
-        </p>
-      </div>
-
-      <div class="resource-card">
-        <h3>Placement</h3>
-
-        <p>
-          Windows, rooftops, exterior walls, existing masts, fences, and other
-          elevated locations can all perform differently.
-        </p>
-      </div>
-
-      <div class="resource-card">
-        <h3>Reliability</h3>
-
-        <p>
-          A fixed node that stays powered and in place can provide a more consistent
-          part of the mesh than a portable device that moves around.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-heading">Small Radio Infrastructure</div>
-
-    <div class="community-panel">
-      <h2>Fixed mesh nodes can be simple and low power.</h2>
-
-      <p>
-        A mesh node does not need to look like a traditional radio tower or large
-        communications installation. Many systems use compact radios and antennas
-        that can fit in relatively small outdoor enclosures.
-      </p>
-
-      <p>
-        Some fixed relay nodes can operate from solar power and do not require an
-        internet connection to relay MeshCore traffic.
-      </p>
-
-      <p>
-        The right setup depends on the location. A node mounted on a building may
-        be designed differently from one installed on a fence, mast, or other
-        suitable elevated structure.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-heading">Local Testing</div>
-
-    <div class="image-feature compact-image-feature">
-      <div class="image-frame">
+      <figure class="better-coverage-hero-media">
         <img
-          src="{{ '/assets/images/coverage/wio-tracker-field-test-01.jpg' | relative_url }}"
-          alt="A handheld mesh radio device used outdoors">
-      </div>
+          src="{{ '/assets/images/hero/mt-tom-towers-01.jpg' | relative_url }}"
+          alt="Communications towers on Mount Tom in Western Massachusetts">
 
-      <div class="image-copy">
-        <h3>Useful sites are found through testing.</h3>
-
-        <p>
-          Maps and terrain are useful starting points, but real radio testing helps
-          show which paths actually work.
-        </p>
-
-        <p>
-          Hampden County Mesh uses local observations, field testing, and public
-          mapping tools to better understand coverage around the region.
-        </p>
-
-        <a class="btn secondary" href="https://map.hampdencountymesh.org/">
-          View Live Map
-        </a>
-      </div>
+        <figcaption>
+          Western Massachusetts terrain makes elevation and placement especially
+          important for radio coverage.
+        </figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<section>
-  <div class="container">
-    <div class="section-heading">Getting Involved</div>
+<main>
+  <section class="better-coverage-section" id="what-we-are-building">
+    <div class="container better-coverage-narrow">
+      <p class="section-heading">What We Are Building</p>
 
-    <div class="community-panel">
-      <h2>There are different ways to help improve local coverage.</h2>
+      <h2>A practical local network carried by radio</h2>
 
-      <p>
-        Some people run portable radios. Others test coverage, build nodes, maintain
-        fixed equipment, or help identify locations where a radio path may be useful.
+      <p class="better-coverage-lede">
+        MeshCore devices exchange short messages directly or through fixed
+        repeaters. The radio network can operate locally without requiring
+        cellular service or an internet connection for every message.
       </p>
 
-      <p>
-        Hampden County Mesh can help people learn about MeshCore equipment, placement,
-        antennas, and the practical considerations involved in running a fixed node.
-      </p>
+      <div class="better-purpose-list">
+        <div>
+          <strong>Community communication</strong>
 
-      <p>
-        Questions about running a node, local coverage, or a possible installation
-        location are welcome.
-      </p>
+          <span>
+            Local users can exchange short messages through compatible radios
+            and shared regional infrastructure.
+          </span>
+        </div>
 
-      <div class="button-row">
-        {% include discord-cta.html source="better-coverage" text="Join Discord" class="btn primary large" %}
+        <div>
+          <strong>Additional resilience</strong>
 
-        <a class="btn secondary" href="mailto:contact@hampdencountymesh.org">
-          Contact Us
+          <span>
+            Radio provides another communication path when ordinary cellular or
+            internet service is unavailable, congested, or unreliable.
+          </span>
+        </div>
+
+        <div>
+          <strong>Technical learning</strong>
+
+          <span>
+            The project gives community members practical experience with
+            radio, antennas, electronics, mapping, solar power, and local
+            infrastructure.
+          </span>
+        </div>
+
+        <div>
+          <strong>Regional cooperation</strong>
+
+          <span>
+            Useful paths can connect independently operated nodes and neighboring
+            mesh communities across Western Massachusetts and southern New England.
+          </span>
+        </div>
+      </div>
+
+      <div class="docs-note">
+        Hampden County Mesh is not a commercial communications provider and does
+        not promise continuous coverage. It is a community-built network that
+        improves as useful sites and participants are added.
+      </div>
+
+      <div class="guide-resource-links">
+        <a href="{{ '/guides/what-is-mesh.html' | relative_url }}">
+          What Is Mesh?
+        </a>
+
+        <a href="{{ '/guides/meshcore-basics.html' | relative_url }}">
+          MeshCore Basics
         </a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <section class="better-coverage-section" id="why-fixed-nodes-matter">
+    <div class="container better-coverage-narrow">
+      <p class="section-heading">Why Fixed Nodes Matter</p>
+
+      <h2>One useful location can help many nearby users</h2>
+
+      <p>
+        A personal companion radio is used for messaging, but ordinary MeshCore
+        companions do not relay traffic for the rest of the network. Wider
+        coverage depends on separately operated repeaters placed where they can
+        provide useful radio paths.
+      </p>
+
+      <p>
+        In Western Massachusetts, hills, valleys, buildings, trees, and dense
+        neighborhoods can cause coverage to change quickly over short distances.
+        Height and a clear path often matter more than simply using more
+        transmitter power.
+      </p>
+
+      <dl class="better-fixed-node-facts">
+        <div>
+          <dt>Height</dt>
+          <dd>
+            Getting above nearby roofs, trees, and terrain can greatly increase
+            the area a node can hear.
+          </dd>
+        </div>
+
+        <div>
+          <dt>Placement</dt>
+          <dd>
+            A good location can connect areas that otherwise cannot communicate
+            directly.
+          </dd>
+        </div>
+
+        <div>
+          <dt>Reliability</dt>
+          <dd>
+            A fixed node that remains powered and in place provides a more
+            consistent path than a portable radio that moves around.
+          </dd>
+        </div>
+
+        <div>
+          <dt>Coordination</dt>
+          <dd>
+            A smaller number of carefully placed nodes is generally more useful
+            than many poorly positioned or redundant installations.
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="better-coverage-section" id="what-a-node-looks-like">
+    <div class="container better-coverage-wide">
+      <div class="better-node-layout">
+        <div class="better-node-copy">
+          <p class="section-heading">Small Radio Infrastructure</p>
+
+          <h2>A hosted node does not need to be a radio tower</h2>
+
+          <p>
+            A typical fixed MeshCore node can consist of a compact radio inside
+            a weather-resistant enclosure, a small antenna, and a power source.
+          </p>
+
+          <p>
+            Depending on the site, it may use a small solar panel and battery or
+            nearby electrical power. A repeater does not need a site internet
+            connection to relay ordinary MeshCore radio traffic.
+          </p>
+
+          <p>
+            Useful locations are not limited to commercial communications
+            towers. An approved rooftop edge, upper-floor window, exterior
+            railing, outbuilding, existing mast, fence post, or other elevated
+            position may be enough.
+          </p>
+        </div>
+
+        <dl class="better-node-specs">
+          <div>
+            <dt>Radio</dt>
+            <dd>
+              A compact, low-power LoRa device running MeshCore repeater
+              firmware.
+            </dd>
+          </div>
+
+          <div>
+            <dt>Antenna</dt>
+            <dd>
+              A small antenna selected and tested for the regional 915 MHz band.
+            </dd>
+          </div>
+
+          <div>
+            <dt>Power</dt>
+            <dd>
+              Solar and battery power or an agreed nearby electrical source,
+              depending on the location.
+            </dd>
+          </div>
+
+          <div>
+            <dt>Internet</dt>
+            <dd>
+              Not required for the node’s basic radio-relay function.
+            </dd>
+          </div>
+
+          <div>
+            <dt>Mounting</dt>
+            <dd>
+              A site-specific bracket, strap, clamp, mast, or other approved
+              mounting method.
+            </dd>
+          </div>
+
+          <div>
+            <dt>Size</dt>
+            <dd>
+              Usually much smaller and less visually prominent than traditional
+              radio or telecommunications equipment.
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="better-coverage-section" id="hosting">
+    <div class="container better-coverage-narrow">
+      <p class="section-heading">Hosting a Node</p>
+
+      <h2>Every possible site is discussed individually</h2>
+
+      <p>
+        HCM is not asking every interested organization for tower space or a
+        large permanent installation. We are looking for legal, approved
+        locations where a small radio node may provide a useful path.
+      </p>
+
+      <p>
+        Before anything is installed, the location, mounting method, power,
+        access, equipment responsibility, maintenance, and removal expectations
+        should be clear to everyone involved.
+      </p>
+
+      <ol class="better-hosting-process">
+        <li>
+          <strong>Initial conversation</strong>
+
+          <span>
+            The property owner or organization describes the general location,
+            available height, access limitations, and any concerns.
+          </span>
+        </li>
+
+        <li>
+          <strong>Site evaluation</strong>
+
+          <span>
+            HCM reviews terrain, nearby activity, possible radio paths, power,
+            sun exposure, mounting options, and whether testing is worthwhile.
+          </span>
+        </li>
+
+        <li>
+          <strong>Simple installation plan</strong>
+
+          <span>
+            Any proposed equipment, mounting method, access arrangement, and
+            responsibilities are described before approval.
+          </span>
+        </li>
+
+        <li>
+          <strong>Testing and review</strong>
+
+          <span>
+            A temporary or trial installation may be used to confirm that the
+            site actually provides useful coverage before treating it as a
+            longer-term location.
+          </span>
+        </li>
+      </ol>
+
+      <div class="docs-note">
+        Hosting a node does not open a property to the public. Any installation
+        or maintenance access is arranged with the site owner, and equipment can
+        be removed when a host no longer wishes to participate.
+      </div>
+    </div>
+  </section>
+
+  <section class="better-coverage-section" id="what-hosts-should-expect">
+    <div class="container better-coverage-narrow">
+      <p class="section-heading">Practical Expectations</p>
+
+      <h2>What a host may—and may not—need to provide</h2>
+
+      <div class="better-expectations-grid">
+        <article>
+          <h3>A possible location</h3>
+
+          <p>
+            The most valuable contribution may simply be permission to evaluate
+            an elevated or unobstructed part of the property.
+          </p>
+        </article>
+
+        <article>
+          <h3>Occasional arranged access</h3>
+
+          <p>
+            Maintenance or inspection may require scheduled access, depending
+            on where the equipment is installed.
+          </p>
+        </article>
+
+        <article>
+          <h3>No daily operation</h3>
+
+          <p>
+            A host should not normally need to operate, monitor, or administer
+            the radio as part of ordinary participation.
+          </p>
+        </article>
+
+        <article>
+          <h3>No site internet account</h3>
+
+          <p>
+            A normal fixed repeater can relay radio traffic without using the
+            host’s internet service.
+          </p>
+        </article>
+
+        <article>
+          <h3>Power may be optional</h3>
+
+          <p>
+            Sites with adequate sun exposure may support solar operation.
+            Building power is useful in some locations but is not always needed.
+          </p>
+        </article>
+
+        <article>
+          <h3>No commercial lease</h3>
+
+          <p>
+            HCM is a volunteer community project and does not operate a paid
+            tower-leasing or site-rental program.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="better-coverage-section" id="possible-sites">
+    <div class="container better-coverage-narrow">
+      <p class="section-heading">Possible Locations</p>
+
+      <h2>Many different properties may have a useful site</h2>
+
+      <p>
+        A suitable location does not need to be the tallest structure in the
+        region. A modest building or property in the right place may fill an
+        important gap between existing radio paths.
+      </p>
+
+      <div class="better-site-list">
+        <div>
+          <strong>Homes and apartment buildings</strong>
+          <span>
+            Upper floors, balconies, roof edges, garages, sheds, and existing
+            antenna mounts.
+          </span>
+        </div>
+
+        <div>
+          <strong>Businesses and office buildings</strong>
+          <span>
+            Rooftops, mechanical areas, railings, exterior structures, or other
+            approved elevated locations.
+          </span>
+        </div>
+
+        <div>
+          <strong>Nonprofits and community organizations</strong>
+          <span>
+            Community centers, clubs, meeting spaces, houses of worship, and
+            organizations interested in local communication projects.
+          </span>
+        </div>
+
+        <div>
+          <strong>Schools, libraries, and municipal properties</strong>
+          <span>
+            Locations where the appropriate organization and property authority
+            are interested and able to approve a small installation.
+          </span>
+        </div>
+
+        <div>
+          <strong>Farms and larger private properties</strong>
+          <span>
+            Barns, outbuildings, ridgelines, clear fields, existing masts, and
+            other sites with useful elevation or visibility.
+          </span>
+        </div>
+
+        <div>
+          <strong>Radio and technical sites</strong>
+          <span>
+            Amateur-radio properties, communications facilities, towers, and
+            existing equipment locations where a small community node is
+            appropriate.
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="better-coverage-section" id="testing">
+    <div class="container better-coverage-wide">
+      <div class="better-testing-feature">
+        <figure>
+          <img
+            src="{{ '/assets/images/coverage/wio-tracker-field-test-01.jpg' | relative_url }}"
+            alt="A portable MeshCore radio being used for field testing">
+
+          <figcaption>
+            Portable testing helps determine whether a proposed fixed location
+            provides a useful regional radio path.
+          </figcaption>
+        </figure>
+
+        <div>
+          <p class="section-heading">Local Testing</p>
+
+          <h2>Maps identify possibilities; radio testing confirms them</h2>
+
+          <p>
+            Terrain maps, elevation data, and observed network activity can help
+            identify promising areas. Actual testing is still needed because
+            buildings, trees, antenna placement, interference, and local terrain
+            can affect the result.
+          </p>
+
+          <p>
+            HCM uses portable radios, contributed observations, MeshMapper, and
+            its activity tools to better understand which locations may connect
+            existing nodes or fill meaningful gaps.
+          </p>
+
+          <div class="guide-resource-links">
+            <a href="https://map.hampdencountymesh.org/">
+              View the HCM Live Map
+            </a>
+
+            <a
+              href="https://psf.meshmapper.net/"
+              target="_blank"
+              rel="noopener noreferrer">
+              Western Massachusetts MeshMapper ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="better-coverage-section" id="other-ways-to-help">
+    <div class="container better-coverage-narrow">
+      <p class="section-heading">Other Ways to Participate</p>
+
+      <h2>Hosting a fixed node is only one way to help</h2>
+
+      <div class="better-participation-list">
+        <a href="{{ '/guides/getting-started.html' | relative_url }}">
+          <strong>Use a personal companion node</strong>
+
+          <span>
+            Learn MeshCore, exchange messages, and become part of normal local
+            activity.
+          </span>
+        </a>
+
+        <a href="https://psf.meshmapper.net/">
+          <strong>Help test coverage</strong>
+
+          <span>
+            Record field observations and help identify where reliable paths
+            already exist or where gaps remain.
+          </span>
+        </a>
+
+        <a href="{{ '/join/' | relative_url }}">
+          <strong>Help build and maintain equipment</strong>
+
+          <span>
+            Work on radios, antennas, enclosures, solar power, software,
+            documentation, and testing.
+          </span>
+        </a>
+
+        <a
+          href="mailto:contact@hampdencountymesh.org?subject=Possible%20Mesh%20Node%20Location">
+          <strong>Suggest a possible location</strong>
+
+          <span>
+            Introduce HCM to a property owner or organization that may be open
+            to a conversation.
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="better-coverage-section" id="questions">
+    <div class="container better-coverage-narrow">
+      <p class="section-heading">Common Questions</p>
+
+      <h2>Before discussing a possible site</h2>
+
+      <div class="better-faq">
+        <details>
+          <summary>Does a node need internet service?</summary>
+
+          <p>
+            No. A normal MeshCore repeater relays radio packets without needing
+            the host’s internet connection. Separate observer or mapping
+            integrations may use internet service, but those are not required
+            for a basic repeater.
+          </p>
+        </details>
+
+        <details>
+          <summary>Does it need building power?</summary>
+
+          <p>
+            Not always. Some locations can use a small solar panel and battery.
+            Other sites may be better suited to an agreed low-power electrical
+            connection.
+          </p>
+        </details>
+
+        <details>
+          <summary>Does the property need to have a tower?</summary>
+
+          <p>
+            No. A rooftop edge, railing, upper-floor window, outbuilding,
+            existing mast, fence post, or other approved position may be useful.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is an installation necessarily permanent?</summary>
+
+          <p>
+            No. A temporary or trial installation may be used first, and
+            removable mounting is preferred where practical. Longer-term
+            arrangements are discussed with the host before installation.
+          </p>
+        </details>
+
+        <details>
+          <summary>Who supplies and maintains the equipment?</summary>
+
+          <p>
+            That is decided for each site. HCM discusses equipment ownership,
+            installation, maintenance, access, and removal responsibilities
+            before anything is placed on the property.
+          </p>
+        </details>
+
+        <details>
+          <summary>Does hosting provide public access to the property?</summary>
+
+          <p>
+            No. Access remains under the control of the property owner or
+            organization. Any maintenance visit is arranged in advance.
+          </p>
+        </details>
+
+        <details>
+          <summary>Does HCM pay rent for node locations?</summary>
+
+          <p>
+            No. Hampden County Mesh is a volunteer, not-for-profit community
+            project rather than a commercial telecommunications provider or
+            paid site-leasing program.
+          </p>
+        </details>
+
+        <details>
+          <summary>Does a node guarantee coverage?</summary>
+
+          <p>
+            No. Coverage depends on terrain, antenna placement, surrounding
+            structures, other active nodes, and radio conditions. That is why
+            HCM evaluates and tests locations before relying on them.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="better-coverage-section better-contact-section" id="contact">
+    <div class="container better-coverage-narrow">
+      <div class="better-contact">
+        <div>
+          <p class="section-heading">Start a Conversation</p>
+
+          <h2>Have a possible location—or just questions?</h2>
+
+          <p>
+            A conversation does not commit anyone to hosting equipment. Share
+            the general area, type of property, approximate available height,
+            and any questions or limitations.
+          </p>
+        </div>
+
+        <div class="button-row">
+          <a
+            class="btn primary"
+            href="mailto:contact@hampdencountymesh.org?subject=Possible%20Mesh%20Node%20Location">
+            Email HCM
+          </a>
+
+          {% include discord-cta.html
+            source="better-coverage"
+            text="Ask in Discord"
+            class="btn secondary" %}
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
