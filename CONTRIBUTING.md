@@ -1,52 +1,32 @@
 # Contributing to Hampden County Mesh
 
-Hampden County Mesh is a volunteer-run Western Massachusetts community for MeshCore, Meshtastic, and local mesh radio.
+Hampden County Mesh is a volunteer-run community project for MeshCore, Meshtastic, and local mesh radio in Western Massachusetts.
 
-Contributions do not need to involve code or advanced radio knowledge. Small corrections and practical local information are useful.
+Contributions do not need to involve code or advanced radio knowledge. Corrections, local observations, accessibility improvements, and practical suggestions are useful.
 
 ## Ways to Contribute
 
 Contributions may include:
 
-- Website fixes
-- Documentation corrections
-- Guide improvements
-- Accessibility improvements
-- Broken-link and typo fixes
-- Public-safe device or antenna notes
+- Website, guide, and documentation improvements
+- Broken-link, typo, and accessibility fixes
+- Bug reports and feature suggestions
+- Public-safe device and antenna notes
 - Coverage and field-testing observations
 - Map and data-presentation improvements
-- Bug reports and feature requests
-- Suggestions for workshops, demonstrations, or learning sessions
+- Ideas for workshops, demonstrations, and community projects
 
-## Before You Start
+For larger changes, open an issue before doing substantial work so the direction can be discussed.
 
-Review:
-
-- `README.md`
-- `CODE_OF_CONDUCT.md`
-- `SECURITY.md`
-- `docs/README.md`
-
-For larger changes, open an issue first so the direction can be discussed before substantial work is done.
-
-General contact:
+General questions may be sent to:
 
 [contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)
 
 ## Reporting Issues
 
-Use public GitHub issues for non-sensitive matters such as:
+Use public GitHub issues for non-sensitive problems such as broken links, layout problems, documentation errors, accessibility issues, and stale information.
 
-- Broken links
-- Display or mobile-layout problems
-- Documentation errors
-- Guide suggestions
-- Accessibility problems
-- Public-safe feature requests
-- Incorrect or stale project information
-
-Include, when relevant:
+Include, when useful:
 
 - The affected page or file
 - What you expected
@@ -55,234 +35,101 @@ Include, when relevant:
 - A screenshot with private details removed
 - A suggested correction
 
-Do not include credentials, private messages, non-public locations, or sensitive infrastructure information in a public issue.
+Do not post credentials, private messages, exact private locations, or sensitive infrastructure information in a public issue.
 
-## Security Issues
-
-Do not report vulnerabilities or exposed secrets through public issues.
-
-Send sensitive reports to:
+Security issues and exposed secrets should be sent to:
 
 [security@hampdencountymesh.org](mailto:security@hampdencountymesh.org)
 
-See `SECURITY.md` for scope and reporting guidance.
+See `SECURITY.md` for details.
 
-## Writing Standards
+## Documentation Standards
 
-Public documentation should be:
+Public material should be:
 
-- Clear and practical
-- Understandable to beginners
+- Clear and understandable to beginners
 - Accurate about the current state of the project
 - Careful not to promise coverage or reliability
-- Clear about the difference between HCM-operated systems and independent regional activity
-- Specific enough to be useful without exposing unnecessary private details
+- Clear about what HCM operates and what belongs to independent users or services
+- Useful without exposing unnecessary private information
 
-Do not describe planned features as live or active systems as merely planned.
+Do not describe planned features as active. Avoid claims of guaranteed coverage, complete regional coverage, or public-safety reliability.
 
-Useful terms include:
+## Field Observations
 
-- Observed activity
-- Field testing
-- Regional settings
-- Participating observers
-- Public map data
-- Independent nodes and services
+Useful field reports may include:
 
-Avoid claims such as:
-
-- Guaranteed coverage
-- Complete county-wide coverage
-- Every visible node belongs to Hampden County Mesh
-- All displayed nodes are currently reachable
-- Emergency-ready or public-safety coverage
-
-## Local Observations and Field Testing
-
-Useful contributions may include:
-
-- General location or public landmark
+- A town, public landmark, road corridor, or broad area
 - Device and antenna used
 - Indoor or outdoor placement
 - Approximate height
-- What was heard or reached
-- What did not work
-- Relevant terrain or building conditions
+- What worked and what did not
+- Relevant terrain, buildings, or vegetation
 - Whether the result came from direct radio, MeshMapper, an observer, the live map, or another tool
 
-Exact private locations are usually unnecessary. Towns, parks, road corridors, landmarks, and broad areas are often enough.
+Exact private addresses and coordinates are usually unnecessary.
 
-For MeshCore field testing, use the Western Massachusetts MeshMapper region:
+MeshMapper is used for MeshCore field testing, not Meshtastic:
 
 https://psf.meshmapper.net/
 
-MeshMapper is not used for Meshtastic field testing.
+HCM public activity tools:
 
-The HCM live observed-activity map is:
+- https://map.hampdencountymesh.org/
+- https://analyzer.hampdencountymesh.org/
 
-https://map.hampdencountymesh.org/
+## Photos and Screenshots
 
-Detailed packet and path information is available through:
+Before contributing media, remove or obscure:
 
-https://analyzer.hampdencountymesh.org/
-
-## Photos and Media
-
-Before contributing an image, screenshot, or map capture, check for:
-
-- Credentials, keys, or tokens
-- Private messages or administrative pages
-- Exact private locations or coordinates
-- Personal documents or account details
+- Credentials, keys, and tokens
+- Private messages and administrative pages
+- Exact private locations and coordinates
+- Personal documents and account details
 - People who did not agree to be shown
-- GPS or other embedded metadata
+- GPS and other unnecessary embedded metadata
 
-See `docs/ASSETS.md` for licensing, attribution, and media-handling guidance.
+See `docs/ASSETS.md` for licensing and attribution guidance.
 
 ## Pull Requests
 
 When submitting a pull request:
 
 1. Keep the change focused.
-2. Describe what changed and why.
+2. Explain what changed and why.
 3. Reference related issues when applicable.
 4. Check spelling, links, and page layout.
 5. Test desktop and mobile presentation where practical.
 6. Remove sensitive or unnecessary private information.
-7. Update related files when a change affects navigation, metadata, tracking, or documentation.
+7. Update related navigation or metadata when needed.
 
-## Website Structure
+The site uses shared Jekyll layouts and includes. Do not duplicate the site header, footer, metadata, fonts, or other shared page structure inside individual pages.
 
-The site uses shared Jekyll layouts and includes.
+Maintainer and repository-structure notes belong in `docs/README.md`.
 
-Normal pages generally use:
+## Discord Links
 
-```yaml
----
-layout: default
-title: Page Title
-description: Short page description.
-nav: guides
----
-```
-
-Guide pages generally use:
-
-```yaml
----
-layout: guide
-title: Guide Title
-description: Short guide description.
-lede: Short introduction.
----
-```
-
-Do not duplicate the shared HTML shell, header, footer, metadata, fonts, or favicon markup inside individual pages.
-
-Shared components include:
-
-- `_layouts/default.html`
-- `_layouts/guide.html`
-- `_layouts/update.html`
-- `_layouts/join-redirect.html`
-- `_includes/head.html`
-- `_includes/header.html`
-- `_includes/footer.html`
-- `_includes/discord-cta.html`
-- `_data/nav.yml`
-- `_data/guides.yml`
-
-The `docs/` directory contains maintainer and contributor documentation and is excluded from the generated public site.
-
-## Current Public Pages
-
-Current primary pages include:
-
-- `/`
-- `/guides/`
-- `/guides/getting-started.html`
-- `/guides/recommended-settings.html`
-- `/guides/meshcore-basics.html`
-- `/guides/meshtastic-basics.html`
-- `/guides/sharing-safely.html`
-- `/building-better-mesh-coverage.html`
-- `/coverage.html`
-- `/updates/`
-
-The primary navigation is:
-
-- Home
-- Guides
-- Map
-- Updates
-
-The Map navigation item links to:
-
-https://map.hampdencountymesh.org/
-
-The Coverage page remains a secondary page for observed activity and MeshMapper information.
-
-## Discord Links and Tracking
-
-Public website buttons should use the shared Discord include rather than raw invite URLs:
+Public site buttons should use the shared Discord include rather than a raw invite URL:
 
 ```liquid
 {% include discord-cta.html source="guides" text="Join Discord" class="btn primary" %}
 ```
 
-Existing tracked sources include:
-
-- `general`
-- `404`
-- `better-coverage`
-- `card`
-- `coverage`
-- `flier`
-- `getting-started`
-- `guides`
-- `home-bottom`
-- `home-hero`
-- `site-nav`
-- `updates`
-
-When adding a new tracked source:
-
-1. Create the matching route under `join/`.
-2. Add the source to `_includes/discord-cta.html`.
-3. Use that source value in the page include.
-
-Do not place raw Discord invite links in normal public pages unless there is a specific reason.
-
-## Retired Paths
-
-Do not add new links to removed pages, including:
-
-- `about.html`
-- `infrastructure.html`
-- `status.html`
-- `guides/coverage-and-signal-checks.html`
-- `guides/documenting-a-node.html`
-- `guides/contributing-notes.html`
-- `guides/hosting-a-session.html`
-- `guides/operating-aids.html`
-- `guides/nodes-repeaters-observers.html`
-- `guides/discord.html`
-
-Use the current Guides, Coverage, Building Better Mesh Coverage, Map, and Updates pages instead.
+New tracking routes or changes to the Discord include should be coordinated through an issue or pull request.
 
 ## Community Expectations
 
 Contributors must follow `CODE_OF_CONDUCT.md`.
 
-Keep discussion focused on facts, documentation, safety, and practical project needs. Harassment, threats, hate speech, discriminatory abuse, and targeted intimidation are not acceptable.
+Harassment, threats, hate speech, discriminatory abuse, and targeted intimidation are not acceptable.
 
 ## Questions
 
-For non-sensitive contribution questions, open a GitHub issue or contact:
+For general contribution questions, open a GitHub issue or email:
 
 [contact@hampdencountymesh.org](mailto:contact@hampdencountymesh.org)
 
-Discord-related questions:
+Discord questions:
 
 [discord@hampdencountymesh.org](mailto:discord@hampdencountymesh.org)
 
