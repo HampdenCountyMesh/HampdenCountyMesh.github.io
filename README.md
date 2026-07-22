@@ -11,7 +11,7 @@ This repository contains the public website, guides, updates, tracked Discord ro
 - Live MeshCore map: https://map.hampdencountymesh.org/
 - Activity analyzer: https://analyzer.hampdencountymesh.org/
 - Updates: https://hampdencountymesh.org/updates/
-- Discord: https://hampdencountymesh.org/join/
+- Discord: https://hampdencountymesh.org/join/github-readme/
 - Western Massachusetts MeshMapper: https://psf.meshmapper.net/
 
 The live map and analyzer show MeshCore activity heard through participating systems. They provide a partial regional view, not a complete inventory of every node or usable radio path.
