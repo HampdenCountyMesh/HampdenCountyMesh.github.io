@@ -72,7 +72,7 @@ Security-sensitive information and reporting should follow [`../SECURITY.md`](..
 - Live map: https://map.hampdencountymesh.org/
 - Activity analyzer: https://analyzer.hampdencountymesh.org/
 - Updates: https://hampdencountymesh.org/updates/
-- Discord join route: https://hampdencountymesh.org/join/
+- Discord join route: https://hampdencountymesh.org/join/github-docs/
 - Building Better Mesh Coverage: https://hampdencountymesh.org/building-better-mesh-coverage.html
 - Western Massachusetts MeshMapper: https://psf.meshmapper.net/
 
