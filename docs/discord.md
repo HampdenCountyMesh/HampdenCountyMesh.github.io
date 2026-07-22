@@ -6,7 +6,7 @@ The Hampden County Mesh Discord is the main discussion and coordination space fo
 
 Public join route:
 
-https://hampdencountymesh.org/join/
+https://hampdencountymesh.org/join/github-docs/
 
 Use the website route instead of publishing the underlying Discord invite. This preserves source tracking and allows the invite to change without updating every public link.
 
