@@ -6,7 +6,7 @@ Use the channel that best matches the question or problem.
 
 For beginner questions, device setup, local mesh discussion, field testing, and general community support, join the Hampden County Mesh Discord:
 
-https://hampdencountymesh.org/join/
+https://hampdencountymesh.org/join/github-support/
 
 For questions that do not fit Discord or GitHub, email:
 
