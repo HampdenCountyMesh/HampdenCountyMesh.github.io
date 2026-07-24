@@ -1,18 +1,20 @@
 ---
 title: Interactive MeshCore simulator is live
 date: 2026-07-24
-description: Step through MeshCore flooding, learned direct paths, repeaters, and simplified terrain effects in a new interactive simulator.
+description: Try out first messages, saved paths, channel messages, and broken-route retries in the new MeshCore simulator.
 tags:
   - Website
   - MeshCore
 ---
 
-Hampden County Mesh now has an [interactive MeshCore simulator](/simulator/) for people who want to see how messages move instead of only reading about routing.
+We added an [interactive MeshCore simulator](/simulator/) to the site.
 
-Start with a first direct message. The simulator shows the message flooding through reachable repeaters, a flood-routed delivery report returning, and a path being stored. Then follow the on-screen prompt to compare that run with a later direct message, a channel flood, and recovery from a broken path.
+Start with **First direct message** and run it. You will see the message move through repeaters, get a delivery report, and save a path for later messages. The prompt above the map will tell you when to try the next example.
 
-The map is generated for the demonstration. Mountains block simulated radio paths, while wooded areas reduce simulated range. A running log keeps the status changes and transmission count from each scenario on the current map.
+The mountains and woods make the examples easier to follow: mountains block a path and woods shorten radio range. The log under the map keeps track of what happened in each run.
 
-This is an educational network model, not a firmware emulator or an RF coverage forecast. Real radio performance also depends on hardware, antennas, elevation, buildings, interference, timing, settings, firmware versions, and the nodes available at that moment.
+It is meant to show the basic idea. It is not a copy of the firmware or a prediction of real-world coverage.
 
-We also added a [Network Tools guide](/network-tools/) that explains when to use the live map, Health Check, and the more advanced Activity Analyzer. New users can stay with the simulator, Getting Started guide, and live map until they need the troubleshooting tools.
+We also added a [Network Tools page](/network-tools/) with quick explanations of the live map, Health Check, and Activity Analyzer.
+
+Give it a try. See you on the mesh!

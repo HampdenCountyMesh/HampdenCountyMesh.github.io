@@ -557,6 +557,7 @@ textarea.form-control {
 
 .form-select {
   appearance: none;
+  color-scheme: dark;
   display: block;
   width: 100%;
   min-height: 28px;
@@ -576,6 +577,16 @@ textarea.form-control {
   background-repeat: no-repeat;
   background-size: 4px 4px;
   cursor: var(--cursor-interaction, default);
+}
+
+.form-select option {
+  color: #f4e8c1;
+  background: #172329;
+}
+
+.form-select option:checked {
+  color: #101820;
+  background: #a9bdd1;
 }
 
 .form-select:not(:disabled):hover {
@@ -2228,10 +2239,15 @@ svg {
         ctx.fillText(node.name, p.x, labelY);
 
         if (node.id === "source" || node.id === "target") {
-          ctx.fillStyle = colors.mutedForeground;
-          ctx.font = "400 11px system-ui, sans-serif";
+          const endpointLabel = node.id === "source" ? "Sender" : "Target";
+          ctx.font = "700 11px system-ui, sans-serif";
           ctx.textBaseline = "top";
-          ctx.fillText(node.id === "source" ? "Sender" : "Target", p.x, labelY + 3);
+          ctx.lineWidth = 3;
+          ctx.lineJoin = "round";
+          ctx.strokeStyle = "rgba(6, 10, 14, 0.9)";
+          ctx.strokeText(endpointLabel, p.x, labelY + 3);
+          ctx.fillStyle = colors.foreground;
+          ctx.fillText(endpointLabel, p.x, labelY + 3);
         }
       };
 
