@@ -21,6 +21,8 @@
   label: Main focus
   summary: MeshCore node types, channels, observers, maps, and how the regional mesh fits together.
   link_text: Read MeshCore Basics →
+  secondary_url: /simulator/
+  secondary_link_text: Try the MeshCore simulator →
 
 - order: 4
   group: mesh_systems

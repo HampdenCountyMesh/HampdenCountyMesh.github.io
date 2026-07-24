@@ -20,7 +20,15 @@ https://analyzer.hampdencountymesh.org/
 
 The analyzer provides more detailed MeshCore packet, node, path, and observer information through the project’s CoreScope deployment.
 
-The map and analyzer are MeshCore tools. They should not be described as Meshtastic maps.
+### Health Check
+
+https://healthcheck.hampdencountymesh.org/app
+
+Health Check matches a temporary test code sent on the MeshCore `#health-check` channel with reports from participating observers.
+
+Its result means that a listed observer heard that test message. It does not establish complete coverage, two-way reachability, or a reliable route to every node.
+
+The map, analyzer, and health check are MeshCore tools. They should not be described as Meshtastic tools.
 
 ## What Observed Activity Means
 
@@ -211,9 +219,9 @@ MeshMapper should not be presented as a Meshtastic field-testing tool.
 
 ## Review After Data Changes
 
-After changes to MQTT ingestion, CoreScope, the map, or the analyzer, verify that:
+After changes to MQTT ingestion, CoreScope, the map, the analyzer, or Health Check, verify that:
 
-- The public map and analyzer load correctly
+- The public map, analyzer, and health check load correctly
 - New packet activity reaches the expected systems
 - Geolocated activity appears where expected
 - Packet, path, and observer information remains accurate
@@ -229,8 +237,10 @@ Update this document when:
 - Broker access policy changes
 - A regional integration is added or removed
 - Public map or analyzer fields change
+- Health-check collection or result behavior changes
 - New packet content is displayed publicly
 - The map or analyzer hostname changes
+- The health-check hostname or public path changes
 - Privacy or access rules change
 
 Related documentation:

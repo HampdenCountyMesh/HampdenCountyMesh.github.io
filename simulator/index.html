@@ -1,0 +1,139 @@
+---
+layout: default
+title: MeshCore Simulator
+description: An interactive educational simulator showing MeshCore flooding, learned direct paths, repeaters, hop progression, and simplified terrain effects.
+nav: simulator
+body_class: simulator-page
+---
+
+<section class="simulator-hero">
+  <div class="container simulator-hero-grid">
+    <div>
+      <p class="section-heading">Interactive Learning</p>
+
+      <h1>How MeshCore Works</h1>
+
+      <p class="simulator-lede">
+        Follow a message across a sample MeshCore network. Watch an unfamiliar
+        direct-message destination get found by flooding, compare it with a
+        later message using a learned path, and see what changes when a path
+        breaks or a channel message is sent.
+      </p>
+    </div>
+
+    <aside class="simulator-start" aria-labelledby="simulator-start-title">
+      <h2 id="simulator-start-title">Start with the first message</h2>
+
+      <ol>
+        <li>Use the sample map or generate a new one.</li>
+        <li>Leave <strong>Message</strong> on <strong>First direct message</strong>.</li>
+        <li>Select <strong>Run message</strong>, then follow the bold next-step prompt.</li>
+      </ol>
+
+      <p>
+        The log keeps each run on the current map so you can compare them.
+        Generating a new map clears the log.
+      </p>
+    </aside>
+  </div>
+</section>
+
+<section class="simulator-section">
+  <div class="container">
+    <div class="simulator-frame-wrap">
+      <iframe
+        id="meshcore-simulator-frame"
+        class="simulator-frame"
+        src="{{ '/assets/simulator/meshcore-radio-simulator.html' | relative_url }}"
+        title="Interactive MeshCore radio and routing simulator"
+        aria-describedby="simulator-description"
+        loading="eager">
+      </iframe>
+    </div>
+
+    <p class="simulator-fullscreen-link">
+      <a
+        href="{{ '/assets/simulator/meshcore-radio-simulator.html' | relative_url }}"
+        target="_blank"
+        rel="noopener noreferrer">
+        Open the simulator by itself ↗
+      </a>
+    </p>
+  </div>
+</section>
+
+<section class="simulator-section simulator-about" id="simulator-description">
+  <div class="container simulator-about-grid">
+    <div>
+      <p class="section-heading">What It Shows</p>
+
+      <h2>An educational model of message movement</h2>
+
+      <p>
+        The simulator models direct reception, repeater forwarding, flood hop
+        progression, a learned direct-message path, channel flooding, and
+        simplified recovery when a stored path no longer works.
+      </p>
+
+      <p>
+        Mountains block simulated radio paths. Wooded areas reduce simulated
+        range instead of acting like solid walls. Those terrain effects make
+        routing choices easier to see; they are not calculated from a real
+        location.
+      </p>
+    </div>
+
+    <div class="simulator-limitations">
+      <h2>What it does not predict</h2>
+
+      <p>
+        This is not a firmware emulator or an RF coverage forecast. Real
+        results also depend on radios, antennas, elevation, buildings,
+        interference, packet timing, firmware versions, regional settings, and
+        which nodes are available at that moment.
+      </p>
+
+      <p>
+        Some timing and retry details are simplified so the important
+        difference between flooding and a directed path remains readable.
+      </p>
+    </div>
+  </div>
+
+  <div class="container simulator-related">
+    <a href="{{ '/guides/meshcore-basics.html#how-messages-move' | relative_url }}">
+      Read how MeshCore messages move
+    </a>
+
+    <a href="{{ '/network-tools/' | relative_url }}">
+      Explore the real network tools
+    </a>
+
+    <a
+      href="https://docs.meshcore.io/"
+      target="_blank"
+      rel="noopener noreferrer">
+      Official MeshCore documentation ↗
+    </a>
+  </div>
+</section>
+
+<script>
+  (() => {
+    "use strict";
+
+    const frame = document.getElementById("meshcore-simulator-frame");
+    if (!frame) return;
+
+    window.addEventListener("message", (event) => {
+      if (event.origin !== window.location.origin) return;
+      if (event.source !== frame.contentWindow) return;
+      if (event.data?.type !== "hcm-meshcore-simulator-height") return;
+
+      const requestedHeight = Number(event.data.height);
+      if (!Number.isFinite(requestedHeight)) return;
+
+      frame.style.height = Math.max(760, Math.min(2400, requestedHeight)) + "px";
+    });
+  })();
+</script>

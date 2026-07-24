@@ -18,7 +18,7 @@ Open a public GitHub issue for:
 
 - Broken links
 - Incorrect or outdated information
-- Website, map, or analyzer display problems
+- Website, simulator, map, health-check, or analyzer display problems
 - Accessibility or mobile-layout issues
 - Navigation problems
 - Documentation corrections

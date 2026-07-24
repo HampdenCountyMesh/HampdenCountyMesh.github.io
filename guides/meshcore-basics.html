@@ -78,10 +78,11 @@ og_type: article
     </li>
 
     <li>
-      <strong>A successful reply helps establish a path.</strong>
+      <strong>A successful delivery report helps establish a path.</strong>
       <span>
-        Later direct messages can follow a more selective repeater path rather
-        than flooding the entire reachable mesh.
+        Path information returned with the report lets later direct messages
+        follow a more selective repeater path rather than flooding the entire
+        reachable mesh.
       </span>
     </li>
 
@@ -98,6 +99,13 @@ og_type: article
     Flooding still happens entirely over the radio network. It does not mean the
     message is being carried through the internet.
   </p>
+
+  <div class="docs-note">
+    Watch these steps happen in the
+    <a href="{{ '/simulator/' | relative_url }}">interactive MeshCore simulator →</a>
+    Start with a first direct message, then compare the learned path with a
+    channel flood.
+  </div>
 </section>
 
 <section class="docs-section" id="roles">
@@ -315,7 +323,7 @@ og_type: article
       href="https://analyzer.hampdencountymesh.org/"
       target="_blank"
       rel="noopener noreferrer">
-      <strong>Activity Analyzer</strong>
+      <strong>Activity Analyzer (advanced)</strong>
       <span>
         Examine received packets, nodes, repeaters, paths, and participating
         observers in greater detail.
@@ -370,6 +378,16 @@ og_type: article
   <div class="docs-note">
     A visible contact may be old, and a quiet test location may simply have a
     poor radio path. Neither result alone proves that the device is defective.
+  </div>
+
+  <div class="guide-resource-links">
+    <a href="https://healthcheck.hampdencountymesh.org/app">
+      Try the MeshCore Health Check
+    </a>
+
+    <a href="{{ '/network-tools/' | relative_url }}">
+      How to use HCM Network Tools
+    </a>
   </div>
 </section>
 
