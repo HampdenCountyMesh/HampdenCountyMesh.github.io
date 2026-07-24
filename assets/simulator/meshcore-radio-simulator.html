@@ -1,0 +1,2381 @@
+<!doctype html>
+<html lang="en" data-hcm-simulator>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>MeshCore Radio Simulator</title>
+<style>:root {
+  color-scheme: light dark;
+  background-color: transparent !important;
+  --background: var(
+    --main-surface-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: light-dark(rgb(26 28 31), rgb(255 255 255));
+  --card: color-mix(in oklab, var(--foreground) 5%, transparent);
+  --card-foreground: var(--foreground);
+  --popover: light-dark(rgb(255 255 255), rgb(45 45 45));
+  --popover-foreground: var(--foreground);
+  --primary: light-dark(rgb(51 156 255), rgb(131 195 255));
+  --primary-foreground: light-dark(rgb(255 255 255), rgb(13 13 13));
+  --secondary: light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%));
+  --secondary-foreground: var(--foreground);
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: light-dark(
+    rgb(26 28 31 / 49.4%),
+    rgb(255 255 255 / 49.8%)
+  );
+  --accent: light-dark(rgb(229 242 255), rgb(13 39 63));
+  --accent-foreground: var(--primary);
+  --destructive: light-dark(rgb(226 85 7), rgb(255 133 73));
+  --border: light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%));
+  --input: light-dark(
+    rgb(26 28 31 / 11.8%),
+    color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+  );
+  --ring: light-dark(rgb(51 156 255), rgb(131 195 255 / 76%));
+  --font-size-base: 14px;
+  --red: light-dark(rgb(186 38 35), rgb(250 66 62));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+
+  --font-sans: -apple-system, system-ui, "Segoe UI", sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: 10px;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 17'%3E%3Cpath d='M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z'/%3E%3C/svg%3E");
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+  --color-background-primary: var(--background);
+  --color-text-primary: var(--foreground);
+  --color-border-secondary: var(--border);
+}
+
+:root[data-hcm-simulator] {
+  background-color: var(--background) !important;
+}
+
+:root:not([data-app-block-surface]) {
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(#f3883b, #f59a56);
+  --viz-series-3: light-dark(#5dc977, #74d58b);
+  --viz-series-4: light-dark(#eb77b1, #f08fc0);
+  --viz-series-5: light-dark(#9b79ec, #aa91ef);
+  --viz-series-6: light-dark(#3ab9b1, #5acbc2);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html > body {
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+:root:not([data-app-block-surface]) > body {
+  padding: 12px;
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive > .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align="right"]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align="center"]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget > :not(.card) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+main [data-tooltip]::after {
+  content: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls > .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls > .form-label > :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--interactive-label-primary-default, var(--primary-foreground));
+  background: var(--interactive-bg-primary-default, var(--foreground));
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(
+    in srgb,
+    var(--interactive-label-primary-default, var(--primary-foreground)) 50%,
+    transparent
+  );
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type="file"] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type="file"]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type="file"]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type="color"] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type="color"]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type="checkbox"] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type="checkbox"]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type="checkbox"]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: "";
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type="radio"] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type="radio"]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: "";
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+    [aria-pressed="true"],
+    [aria-selected="true"],
+    .is-selected
+  ) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed="true"], [aria-selected="true"], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget > svg {
+  width: 100%;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+:root[data-hcm-simulator] {
+  color-scheme: dark;
+  --background: #101820;
+  --foreground: #f4e8c1;
+  --card: rgba(231, 216, 181, 0.08);
+  --card-foreground: var(--foreground);
+  --popover: #172329;
+  --popover-foreground: var(--foreground);
+  --primary: #a9bdd1;
+  --primary-foreground: #101820;
+  --secondary: rgba(231, 216, 181, 0.09);
+  --secondary-foreground: var(--foreground);
+  --muted: rgba(231, 216, 181, 0.1);
+  --muted-foreground: rgba(231, 216, 181, 0.7);
+  --accent: rgba(73, 102, 132, 0.3);
+  --accent-foreground: #d9e5f0;
+  --destructive: #b86f45;
+  --border: rgba(231, 216, 181, 0.24);
+  --input: rgba(231, 216, 181, 0.14);
+  --ring: #a9bdd1;
+  --green: #6f9e78;
+  --viz-series-1: #78a4cc;
+  --viz-series-2: #e3a35d;
+  --viz-series-3: #6f9e78;
+  --viz-series-4: #e48db8;
+  --viz-series-5: #b7a2ef;
+  --viz-series-6: #62c5bd;
+  background-color: var(--background) !important;
+}
+
+:root[data-hcm-simulator] > body {
+  padding: 16px;
+  background: var(--background) !important;
+}
+</style>
+</head>
+<body>
+<div id="meshcore-radio-simulator">
+  <style>
+    #meshcore-radio-simulator {
+      color: var(--foreground);
+      --mcs-mountain-color: color-mix(in srgb, var(--destructive) 82%, var(--viz-series-2));
+      --mcs-woods-color: color-mix(in srgb, var(--green) 84%, var(--viz-series-3));
+      width: 100%;
+    }
+
+    #meshcore-radio-simulator .mcs-guide {
+      margin: 0 0 10px;
+    }
+
+    #meshcore-radio-simulator .mcs-guide strong,
+    #meshcore-radio-simulator .mcs-next-step strong {
+      font-weight: 500;
+    }
+
+    #meshcore-radio-simulator .mcs-controls {
+      align-items: end;
+      display: grid;
+      gap: 10px;
+      grid-template-columns: minmax(220px, 1.5fr) repeat(5, minmax(105px, 1fr)) auto;
+      margin-bottom: 10px;
+    }
+
+    #meshcore-radio-simulator .mcs-control-value {
+      color: var(--foreground);
+      float: right;
+    }
+
+    #meshcore-radio-simulator .mcs-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    #meshcore-radio-simulator .mcs-status {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      min-height: 34px;
+      margin-bottom: 6px;
+    }
+
+    #meshcore-radio-simulator .mcs-status-text {
+      flex: 1 1 280px;
+      min-width: 0;
+    }
+
+    #meshcore-radio-simulator .mcs-stage {
+      position: relative;
+      width: 100%;
+    }
+
+    #meshcore-radio-simulator .mcs-next-step {
+      margin-bottom: 8px;
+    }
+
+    #meshcore-radio-simulator .mcs-canvas {
+      background: color-mix(in srgb, var(--muted) 34%, transparent);
+      display: block;
+      width: 100%;
+    }
+
+    #meshcore-radio-simulator .mcs-options {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: space-between;
+      margin-top: 8px;
+    }
+
+    #meshcore-radio-simulator .mcs-legend {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    #meshcore-radio-simulator .mcs-legend-item {
+      align-items: center;
+      display: inline-flex;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    #meshcore-radio-simulator .mcs-companion,
+    #meshcore-radio-simulator .mcs-repeater {
+      background: var(--card);
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+    }
+
+    #meshcore-radio-simulator .mcs-companion {
+      border: 2px solid var(--viz-series-2);
+      border-radius: 50%;
+    }
+
+    #meshcore-radio-simulator .mcs-repeater {
+      border: 2px solid var(--viz-series-1);
+      transform: rotate(45deg);
+    }
+
+    #meshcore-radio-simulator .mcs-wave {
+      border-top: 3px solid var(--viz-series-1);
+      display: inline-block;
+      width: 23px;
+    }
+
+    #meshcore-radio-simulator .mcs-route {
+      border-top: 3px solid var(--viz-series-5);
+      display: inline-block;
+      width: 23px;
+    }
+
+    #meshcore-radio-simulator .mcs-mountain {
+      background: var(--mcs-mountain-color);
+      clip-path: polygon(0 100%, 27% 25%, 48% 70%, 68% 8%, 100% 100%);
+      display: inline-block;
+      height: 13px;
+      width: 24px;
+    }
+
+    #meshcore-radio-simulator .mcs-woods {
+      background: var(--mcs-woods-color);
+      border-radius: 52% 48% 44% 56% / 44% 56% 48% 52%;
+      display: inline-block;
+      height: 12px;
+      width: 22px;
+    }
+
+    #meshcore-radio-simulator .mcs-log {
+      margin-top: 14px;
+    }
+
+    #meshcore-radio-simulator .mcs-log-heading {
+      align-items: baseline;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 12px;
+      justify-content: space-between;
+      margin-bottom: 4px;
+    }
+
+    #meshcore-radio-simulator .mcs-log-heading h3 {
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      #meshcore-radio-simulator .mcs-controls {
+        grid-template-columns: repeat(3, minmax(120px, 1fr));
+      }
+
+      #meshcore-radio-simulator .mcs-scenario {
+        grid-column: span 2;
+      }
+    }
+
+    @media (max-width: 560px) {
+      #meshcore-radio-simulator .mcs-controls {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      #meshcore-radio-simulator .mcs-scenario,
+      #meshcore-radio-simulator .mcs-actions {
+        grid-column: 1 / -1;
+      }
+
+      #meshcore-radio-simulator .mcs-actions .btn {
+        flex: 1 1 auto;
+      }
+
+      #meshcore-radio-simulator .mcs-status-text {
+        flex-basis: 100%;
+      }
+
+      #meshcore-radio-simulator .mcs-options {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+
+  <p class="text-small mcs-guide">
+    <strong>How to use it:</strong>
+    Generate a new map if you want, leave Message on “First direct message,” and choose Run message.
+    After each run, follow the bold Next step prompt.
+  </p>
+
+  <div class="mcs-controls viz-controls">
+    <label class="form-label mcs-scenario" for="mcs-scenario">
+      Message
+      <select class="form-select" id="mcs-scenario">
+        <option value="first-direct">First direct message: flood, then learn a path</option>
+        <option value="known-direct">Later direct message: use the learned path</option>
+        <option value="channel">Channel message: always flood</option>
+        <option value="broken-route">Broken direct path: retry, then flood</option>
+      </select>
+    </label>
+
+    <label class="form-label" for="mcs-repeaters">
+      Repeaters <span class="mcs-control-value" id="mcs-repeaters-value">10</span>
+      <input class="form-range" id="mcs-repeaters" type="range" min="2" max="20" value="10">
+    </label>
+
+    <label class="form-label" for="mcs-mountains">
+      Mountains <span class="mcs-control-value" id="mcs-mountains-value">3</span>
+      <input class="form-range" id="mcs-mountains" type="range" min="1" max="5" value="3">
+    </label>
+
+    <label class="form-label" for="mcs-woods">
+      Woods <span class="mcs-control-value" id="mcs-woods-value">5</span>
+      <input class="form-range" id="mcs-woods" type="range" min="0" max="10" value="5">
+    </label>
+
+    <label class="form-label" for="mcs-hops">
+      Flood limit <span class="mcs-control-value" id="mcs-hops-value">6 hops</span>
+      <input class="form-range" id="mcs-hops" type="range" min="3" max="10" value="6">
+    </label>
+
+    <label class="form-label" for="mcs-speed">
+      Simulation speed <span class="mcs-control-value" id="mcs-speed-value">0.5×</span>
+      <input class="form-range" id="mcs-speed" type="range" min="0.25" max="1.5" step="0.25" value="0.5">
+    </label>
+
+    <div class="mcs-actions">
+      <button class="btn btn-primary" id="mcs-run" type="button">Run message</button>
+      <button class="btn" id="mcs-new-map" type="button">Generate new map</button>
+    </div>
+  </div>
+
+  <div class="mcs-status">
+    <span class="viz-badge" id="mcs-mode">Mode: Flood</span>
+    <span class="viz-badge" id="mcs-tx">Transmissions: 0</span>
+    <span class="viz-badge" id="mcs-reached">Companions reached: 0</span>
+    <span class="text-small mcs-status-text" id="mcs-status" aria-live="polite">Building a connected sample mesh…</span>
+  </div>
+
+  <div class="card mcs-next-step" id="mcs-next-step" role="status" aria-live="polite" hidden>
+    <strong id="mcs-next-step-copy"></strong>
+  </div>
+
+  <div class="mcs-stage" id="mcs-stage">
+    <canvas
+      class="mcs-canvas"
+      id="mcs-canvas"
+      role="img"
+      aria-label="Animated MeshCore radio and routing simulation"
+    ></canvas>
+  </div>
+
+  <div class="mcs-options">
+    <div class="mcs-legend text-small" aria-label="Legend">
+      <span class="mcs-legend-item"><span class="mcs-companion" aria-hidden="true"></span>Companion</span>
+      <span class="mcs-legend-item"><span class="mcs-repeater" aria-hidden="true"></span>Repeater</span>
+      <span class="mcs-legend-item"><span class="mcs-wave" aria-hidden="true"></span>Radio transmission</span>
+      <span class="mcs-legend-item"><span class="mcs-route" aria-hidden="true"></span>Stored direct path</span>
+      <span class="mcs-legend-item"><span class="mcs-mountain" aria-hidden="true"></span>Blocking terrain</span>
+      <span class="mcs-legend-item"><span class="mcs-woods" aria-hidden="true"></span>Woods attenuate</span>
+    </div>
+    <label class="form-check">
+      <input class="form-check-input" id="mcs-show-ranges" type="checkbox">
+      <span class="form-check-label">Show radio ranges</span>
+    </label>
+  </div>
+
+  <section class="mcs-log" aria-labelledby="mcs-log-title">
+    <div class="mcs-log-heading">
+      <h3 id="mcs-log-title">Simulation log</h3>
+      <span class="text-small text-muted">Keeps this map’s history; generating a new map clears it.</span>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th class="text-nowrap" scope="col">Run</th>
+            <th scope="col">Message</th>
+            <th scope="col">What happened</th>
+            <th class="text-end text-nowrap" scope="col">Transmissions</th>
+          </tr>
+        </thead>
+        <tbody id="mcs-log-body">
+          <tr id="mcs-log-empty">
+            <td class="text-muted" colspan="4">Run a message to record each status update here.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const root = document.getElementById("meshcore-radio-simulator");
+      if (!root || root.dataset.ready === "true") return;
+      root.dataset.ready = "true";
+
+      const canvas = root.querySelector("#mcs-canvas");
+      const stage = root.querySelector("#mcs-stage");
+      const ctx = canvas.getContext("2d");
+      const scenarioInput = root.querySelector("#mcs-scenario");
+      const repeatersInput = root.querySelector("#mcs-repeaters");
+      const mountainsInput = root.querySelector("#mcs-mountains");
+      const woodsInput = root.querySelector("#mcs-woods");
+      const hopsInput = root.querySelector("#mcs-hops");
+      const speedInput = root.querySelector("#mcs-speed");
+      const showRangesInput = root.querySelector("#mcs-show-ranges");
+      const repeatersValue = root.querySelector("#mcs-repeaters-value");
+      const mountainsValue = root.querySelector("#mcs-mountains-value");
+      const woodsValue = root.querySelector("#mcs-woods-value");
+      const hopsValue = root.querySelector("#mcs-hops-value");
+      const speedValue = root.querySelector("#mcs-speed-value");
+      const runButton = root.querySelector("#mcs-run");
+      const newMapButton = root.querySelector("#mcs-new-map");
+      const modeBadge = root.querySelector("#mcs-mode");
+      const txBadge = root.querySelector("#mcs-tx");
+      const reachedBadge = root.querySelector("#mcs-reached");
+      const statusText = root.querySelector("#mcs-status");
+      const nextStep = root.querySelector("#mcs-next-step");
+      const nextStepCopy = root.querySelector("#mcs-next-step-copy");
+      const logBody = root.querySelector("#mcs-log-body");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const worldScale = 0.88;
+
+      let width = 736;
+      let height = 430;
+      let pixelRatio = 1;
+      let nodes = [];
+      let mountains = [];
+      let woods = [];
+      let waves = [];
+      let timers = [];
+      let pendingTimers = 0;
+      let usedLinks = new Map();
+      let flashes = new Map();
+      let seenPackets = new Map();
+      let storedRoute = [];
+      let alternateRoute = [];
+      let brokenNodeId = null;
+      let routeOverlay = [];
+      let running = false;
+      let phase = "idle";
+      let lastFrame = performance.now();
+      let lastActivity = performance.now();
+      let quietHandled = false;
+      let packetSequence = 0;
+      let txCount = 0;
+      let companionsReached = new Set();
+      let delivered = false;
+      let routeLearned = false;
+      let directAttempt = 0;
+      let runNumber = 0;
+      let logSequence = 0;
+      let resizeTimer = null;
+      let themeCache = null;
+      let themeReadAt = 0;
+
+      const scenarioNames = {
+        "first-direct": "First direct message",
+        "known-direct": "Later direct message",
+        "channel": "Channel message",
+        "broken-route": "Broken direct path"
+      };
+
+      const colorProbe = document.createElement("span");
+      colorProbe.setAttribute("aria-hidden", "true");
+      colorProbe.style.cssText = [
+        "height:0",
+        "overflow:hidden",
+        "pointer-events:none",
+        "position:absolute",
+        "visibility:hidden",
+        "width:0"
+      ].join(";");
+      root.appendChild(colorProbe);
+
+      const resolveColor = (value) => {
+        colorProbe.style.color = "";
+        colorProbe.style.color = value;
+        return getComputedStyle(colorProbe).color;
+      };
+
+      const theme = () => {
+        const now = performance.now();
+        if (themeCache && now - themeReadAt < 250) return themeCache;
+        themeReadAt = now;
+        themeCache = {
+          background: resolveColor("var(--background)"),
+          foreground: resolveColor("var(--foreground)"),
+          card: resolveColor("var(--card)"),
+          muted: resolveColor("var(--muted)"),
+          mutedForeground: resolveColor("var(--muted-foreground)"),
+          border: resolveColor("var(--border)"),
+          primary: resolveColor("var(--primary)"),
+          primaryForeground: resolveColor("var(--primary-foreground)"),
+          destructive: resolveColor("var(--destructive)"),
+          green: resolveColor("var(--green)"),
+          series1: resolveColor("var(--viz-series-1)"),
+          series2: resolveColor("var(--viz-series-2)"),
+          series3: resolveColor("var(--viz-series-3)"),
+          series4: resolveColor("var(--viz-series-4)"),
+          series5: resolveColor("var(--viz-series-5)"),
+          mountain: resolveColor("var(--mcs-mountain-color)"),
+          woods: resolveColor("var(--mcs-woods-color)")
+        };
+        return themeCache;
+      };
+
+      const nodeById = (id) => nodes.find((node) => node.id === id);
+      const sourceNode = () => nodeById("source");
+      const targetNode = () => nodeById("target");
+      const edgeKey = (a, b) => [a, b].sort().join("--");
+      const simulationSpeed = () => Number(speedInput.value);
+      const scaledDuration = (milliseconds) => milliseconds / simulationSpeed();
+      const worldPoint = (nx, ny) => ({
+        x: (0.5 + (nx - 0.5) * worldScale) * width,
+        y: (0.5 + (ny - 0.5) * worldScale) * height
+      });
+      const position = (node) => worldPoint(node.nx, node.ny);
+      const radioRange = (node) => Math.min(width, height) * node.rangeFactor * worldScale;
+      const distance = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
+
+      const mountainPoints = (mountain) => mountain.points.map((point) => (
+        worldPoint(point.x, point.y)
+      ));
+
+      const woodPoints = (wood) => wood.points.map((point) => (
+        worldPoint(point.x, point.y)
+      ));
+
+      const orientation = (a, b, c) => {
+        const value = (b.y - a.y) * (c.x - b.x) - (b.x - a.x) * (c.y - b.y);
+        if (Math.abs(value) < 0.00001) return 0;
+        return value > 0 ? 1 : 2;
+      };
+
+      const onSegment = (a, b, c) => (
+        b.x <= Math.max(a.x, c.x) + 0.00001 &&
+        b.x >= Math.min(a.x, c.x) - 0.00001 &&
+        b.y <= Math.max(a.y, c.y) + 0.00001 &&
+        b.y >= Math.min(a.y, c.y) - 0.00001
+      );
+
+      const segmentsIntersect = (a, b, c, d) => {
+        const o1 = orientation(a, b, c);
+        const o2 = orientation(a, b, d);
+        const o3 = orientation(c, d, a);
+        const o4 = orientation(c, d, b);
+        if (o1 !== o2 && o3 !== o4) return true;
+        if (o1 === 0 && onSegment(a, c, b)) return true;
+        if (o2 === 0 && onSegment(a, d, b)) return true;
+        if (o3 === 0 && onSegment(c, a, d)) return true;
+        if (o4 === 0 && onSegment(c, b, d)) return true;
+        return false;
+      };
+
+      const pointInPolygon = (point, polygon) => {
+        let inside = false;
+        for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
+          const pi = polygon[i];
+          const pj = polygon[j];
+          const intersects = (
+            (pi.y > point.y) !== (pj.y > point.y) &&
+            point.x < ((pj.x - pi.x) * (point.y - pi.y)) / (pj.y - pi.y) + pi.x
+          );
+          if (intersects) inside = !inside;
+        }
+        return inside;
+      };
+
+      const segmentHitsPolygon = (start, end, polygon) => {
+        if (pointInPolygon(start, polygon) || pointInPolygon(end, polygon)) return true;
+        for (let i = 0; i < polygon.length; i += 1) {
+          const a = polygon[i];
+          const b = polygon[(i + 1) % polygon.length];
+          if (segmentsIntersect(start, end, a, b)) return true;
+        }
+        return false;
+      };
+
+      const isBlocked = (start, end) => mountains.some((mountain) => (
+        segmentHitsPolygon(start, end, mountainPoints(mountain))
+      ));
+
+      const forestCrossings = (start, end) => woods.reduce((count, wood) => (
+        count + (segmentHitsPolygon(start, end, woodPoints(wood)) ? 1 : 0)
+      ), 0);
+
+      const canHear = (a, b) => {
+        if (!a || !b || a.offline || b.offline) return false;
+        const pa = position(a);
+        const pb = position(b);
+        const woodsCrossed = forestCrossings(pa, pb);
+        const attenuation = Math.pow(0.72, woodsCrossed);
+        const maxDistance = Math.min(radioRange(a), radioRange(b)) * attenuation;
+        return distance(pa, pb) <= maxDistance && !isBlocked(pa, pb);
+      };
+
+      const neighbors = (node, offlineId = null) => nodes.filter((candidate) => (
+        candidate.id !== node.id &&
+        candidate.id !== offlineId &&
+        canHear(node, candidate)
+      ));
+
+      const findPath = (offlineId = null) => {
+        const source = sourceNode();
+        const target = targetNode();
+        const queue = [[source.id]];
+        const visited = new Set([source.id]);
+
+        while (queue.length) {
+          const path = queue.shift();
+          const current = nodeById(path[path.length - 1]);
+          if (current.id === target.id) return path;
+
+          neighbors(current, offlineId).forEach((candidate) => {
+            if (visited.has(candidate.id)) return;
+            if (candidate.kind === "companion" && candidate.id !== target.id) return;
+            visited.add(candidate.id);
+            queue.push(path.concat(candidate.id));
+          });
+        }
+        return null;
+      };
+
+      const makeMountain = (cx, cy, mountainWidth, mountainHeight) => ({
+        points: [
+          { x: cx - mountainWidth * 0.5, y: cy + mountainHeight * 0.5 },
+          { x: cx - mountainWidth * 0.38, y: cy - mountainHeight * 0.12 },
+          { x: cx - mountainWidth * 0.23, y: cy - mountainHeight * 0.45 },
+          { x: cx - mountainWidth * 0.06, y: cy + mountainHeight * 0.02 },
+          { x: cx + mountainWidth * 0.16, y: cy - mountainHeight * 0.58 },
+          { x: cx + mountainWidth * 0.34, y: cy - mountainHeight * 0.16 },
+          { x: cx + mountainWidth * 0.5, y: cy + mountainHeight * 0.5 }
+        ]
+      });
+
+      const makeWood = (cx, cy, woodWidth, woodHeight) => {
+        const points = [];
+        const pointCount = 11;
+        for (let i = 0; i < pointCount; i += 1) {
+          const angle = (i / pointCount) * Math.PI * 2;
+          const variation = 0.78 + Math.random() * 0.28;
+          points.push({
+            x: cx + Math.cos(angle) * woodWidth * 0.5 * variation,
+            y: cy + Math.sin(angle) * woodHeight * 0.5 * variation
+          });
+        }
+        return { points };
+      };
+
+      const baseRepeaterPositions = [
+        [0.19, 0.58],
+        [0.33, 0.31],
+        [0.49, 0.22],
+        [0.67, 0.30],
+        [0.81, 0.44],
+        [0.34, 0.78],
+        [0.52, 0.74],
+        [0.70, 0.67]
+      ];
+
+      const createCandidateMap = () => {
+        const repeaterCount = Number(repeatersInput.value);
+        const mountainCount = Number(mountainsInput.value);
+        const woodCount = Number(woodsInput.value);
+        const nextNodes = [
+          { id: "source", name: "User A", kind: "companion", nx: 0.07, ny: 0.60, rangeFactor: 0.49 },
+          { id: "target", name: "User B", kind: "companion", nx: 0.93, ny: 0.52, rangeFactor: 0.49 },
+          { id: "listener-1", name: "User C", kind: "companion", nx: 0.72, ny: 0.12, rangeFactor: 0.47 },
+          { id: "listener-2", name: "User D", kind: "companion", nx: 0.21, ny: 0.90, rangeFactor: 0.47 }
+        ];
+
+        for (let i = 0; i < repeaterCount; i += 1) {
+          const base = baseRepeaterPositions[i] || [
+            0.17 + Math.random() * 0.68,
+            0.12 + Math.random() * 0.76
+          ];
+          const jitter = i < baseRepeaterPositions.length ? 0.018 : 0;
+          nextNodes.push({
+            id: "r" + (i + 1),
+            name: "R" + (i + 1),
+            kind: "repeater",
+            nx: Math.min(0.88, Math.max(0.12, base[0] + (Math.random() - 0.5) * jitter)),
+            ny: Math.min(0.88, Math.max(0.12, base[1] + (Math.random() - 0.5) * jitter)),
+            rangeFactor: 0.48 + Math.random() * 0.05
+          });
+        }
+
+        const nextMountains = [makeMountain(0.43, 0.50, 0.17, 0.14)];
+        for (let i = 1; i < mountainCount; i += 1) {
+          const upper = i % 2 === 0;
+          nextMountains.push(makeMountain(
+            0.23 + Math.random() * 0.56,
+            upper ? 0.13 + Math.random() * 0.12 : 0.84 + Math.random() * 0.08,
+            0.11 + Math.random() * 0.10,
+            0.07 + Math.random() * 0.07
+          ));
+        }
+
+        const nextWoods = [];
+        for (let i = 0; i < woodCount; i += 1) {
+          nextWoods.push(makeWood(
+            0.12 + Math.random() * 0.76,
+            0.12 + Math.random() * 0.76,
+            0.055 + Math.random() * 0.075,
+            0.045 + Math.random() * 0.065
+          ));
+        }
+
+        return { nextNodes, nextMountains, nextWoods };
+      };
+
+      const chooseBrokenRoute = (route) => {
+        const interior = route.slice(1, -1);
+        for (let i = Math.floor(interior.length / 2); i >= 0; i -= 1) {
+          const candidate = interior[i];
+          const alternative = findPath(candidate);
+          if (alternative) return { candidate, alternative };
+        }
+        for (let i = Math.floor(interior.length / 2) + 1; i < interior.length; i += 1) {
+          const candidate = interior[i];
+          const alternative = findPath(candidate);
+          if (alternative) return { candidate, alternative };
+        }
+        return null;
+      };
+
+      const generateMap = (resetHistory = false) => {
+        clearRun();
+        if (resetHistory) clearLog();
+        let selected = null;
+
+        for (let attempt = 0; attempt < 80; attempt += 1) {
+          const candidate = createCandidateMap();
+          nodes = candidate.nextNodes;
+          mountains = candidate.nextMountains;
+          woods = candidate.nextWoods;
+          const path = findPath();
+          if (!path) continue;
+          const broken = chooseBrokenRoute(path);
+          if (!broken) continue;
+          selected = { path, broken };
+          break;
+        }
+
+        if (!selected) {
+          const candidate = createCandidateMap();
+          nodes = candidate.nextNodes;
+          mountains = candidate.nextMountains.slice(0, 1);
+          woods = candidate.nextWoods.slice(0, Math.min(2, candidate.nextWoods.length));
+          selected = {
+            path: findPath(),
+            broken: null
+          };
+        }
+
+        if (!selected.path) {
+          mountains = [];
+          woods = [];
+          selected.path = findPath();
+        }
+
+        storedRoute = selected.path ? selected.path.slice(1, -1) : [];
+        brokenNodeId = selected.broken ? selected.broken.candidate : storedRoute[Math.floor(storedRoute.length / 2)];
+        alternateRoute = selected.broken ? selected.broken.alternative.slice(1, -1) : [];
+        routeOverlay = scenarioInput.value === "known-direct" || scenarioInput.value === "broken-route"
+          ? storedRoute.slice()
+          : [];
+        hideNextStep();
+        runButton.textContent = "Run message";
+        setStatus("Ready. User A will send to User B.", scenarioInput.value === "known-direct" ? "Direct" : "Flood");
+      };
+
+      const clearTimers = () => {
+        timers.forEach((timer) => window.clearTimeout(timer));
+        timers = [];
+        pendingTimers = 0;
+      };
+
+      function clearRun() {
+        clearTimers();
+        waves = [];
+        usedLinks = new Map();
+        flashes = new Map();
+        seenPackets = new Map();
+        running = false;
+        phase = "idle";
+        txCount = 0;
+        companionsReached = new Set();
+        delivered = false;
+        routeLearned = false;
+        directAttempt = 0;
+        quietHandled = false;
+        routeOverlay = [];
+        nodes.forEach((node) => {
+          node.offline = false;
+        });
+        updateBadges();
+      }
+
+      const schedule = (callback, delay) => {
+        pendingTimers += 1;
+        const timer = window.setTimeout(() => {
+          pendingTimers = Math.max(0, pendingTimers - 1);
+          timers = timers.filter((value) => value !== timer);
+          quietHandled = false;
+          callback();
+        }, scaledDuration(delay));
+        timers.push(timer);
+      };
+
+      const markSeen = (nodeId, packetId) => {
+        if (!seenPackets.has(nodeId)) seenPackets.set(nodeId, new Set());
+        seenPackets.get(nodeId).add(packetId);
+      };
+
+      const hasSeen = (nodeId, packetId) => (
+        seenPackets.has(nodeId) && seenPackets.get(nodeId).has(packetId)
+      );
+
+      const flash = (nodeId, state, duration = 700) => {
+        flashes.set(nodeId, { state, until: performance.now() + scaledDuration(duration) });
+      };
+
+      const rememberLink = (a, b, kind, hop) => {
+        const key = edgeKey(a, b);
+        const existing = usedLinks.get(key);
+        if (!existing || hop < existing.hop) {
+          usedLinks.set(key, {
+            a,
+            b,
+            kind,
+            hop,
+            createdAt: performance.now()
+          });
+        }
+      };
+
+      const updateBadges = () => {
+        txBadge.textContent = "Transmissions: " + txCount;
+        reachedBadge.textContent = "Companions reached: " + companionsReached.size;
+      };
+
+      function clearLog() {
+        logBody.replaceChildren();
+        const row = document.createElement("tr");
+        row.id = "mcs-log-empty";
+        const cell = document.createElement("td");
+        cell.colSpan = 4;
+        cell.className = "text-muted";
+        cell.textContent = "Run a message to record each status update here.";
+        row.appendChild(cell);
+        logBody.appendChild(row);
+        runNumber = 0;
+        logSequence = 0;
+      }
+
+      const addLogEntry = (text, mode) => {
+        const empty = logBody.querySelector("#mcs-log-empty");
+        if (empty) empty.remove();
+        logSequence += 1;
+
+        const row = document.createElement("tr");
+        row.dataset.sequence = String(logSequence);
+
+        const runCell = document.createElement("td");
+        runCell.className = "text-nowrap";
+        runCell.textContent = String(runNumber);
+
+        const messageCell = document.createElement("td");
+        messageCell.textContent = scenarioNames[scenarioInput.value] || "Message";
+
+        const eventCell = document.createElement("td");
+        const eventText = document.createElement("span");
+        eventText.textContent = text;
+        const modeText = document.createElement("span");
+        modeText.className = "text-small text-muted";
+        modeText.textContent = " — " + mode;
+        eventCell.append(eventText, modeText);
+
+        const txCell = document.createElement("td");
+        txCell.className = "text-end text-nowrap";
+        txCell.textContent = String(txCount);
+
+        row.append(runCell, messageCell, eventCell, txCell);
+        logBody.appendChild(row);
+      };
+
+      function hideNextStep() {
+        nextStep.hidden = true;
+        nextStepCopy.textContent = "";
+      }
+
+      const showNextStep = (text) => {
+        nextStepCopy.textContent = text;
+        nextStep.hidden = false;
+      };
+
+      function setStatus(text, mode) {
+        statusText.textContent = text;
+        modeBadge.textContent = "Mode: " + mode;
+        if (running || phase === "complete") addLogEntry(text, mode);
+        canvas.setAttribute(
+          "aria-label",
+          "Animated MeshCore simulation. " + text + " " +
+          txCount + " radio transmissions and " +
+          companionsReached.size + " companions reached."
+        );
+      }
+
+      const sendWave = (originId, packet) => {
+        const origin = nodeById(originId);
+        if (!origin || origin.offline) return;
+        markSeen(originId, packet.id);
+        waves.push({
+          originId,
+          packet,
+          radius: 0,
+          triggered: new Set(),
+          speed: reduceMotion ? radioRange(origin) : Math.max(0.28, width / 3000)
+        });
+        txCount += 1;
+        flash(originId, "tx", 800);
+        lastActivity = performance.now();
+        quietHandled = false;
+        updateBadges();
+      };
+
+      const nextPacketId = (prefix) => prefix + "-" + (++packetSequence);
+
+      const makeFloodPacket = (kind, targetId, returnedRoute = []) => ({
+        id: nextPacketId(kind),
+        kind,
+        routeType: "flood",
+        targetId,
+        trail: [],
+        hop: 0,
+        returnedRoute
+      });
+
+      const makeDirectPacket = (route, targetId) => ({
+        id: nextPacketId("direct"),
+        kind: "direct",
+        routeType: "direct",
+        targetId,
+        route: route.slice(),
+        routeIndex: 0
+      });
+
+      const acceptFirstDirect = (receiver, packet) => {
+        if (receiver.id !== packet.targetId || delivered) return;
+        delivered = true;
+        companionsReached.add(receiver.id);
+        flash(receiver.id, "delivered", 1300);
+        updateBadges();
+        setStatus("User B received the flooded DM. A flood-routed delivery report carrying path information is going back.", "Delivery report");
+
+        schedule(() => {
+          const reply = makeFloodPacket("ack", "source", packet.trail);
+          markSeen(receiver.id, reply.id);
+          sendWave(receiver.id, reply);
+        }, 620);
+      };
+
+      const acceptAck = (receiver, packet) => {
+        if (receiver.id !== packet.targetId || routeLearned) return;
+        routeLearned = true;
+        storedRoute = packet.returnedRoute.slice();
+        routeOverlay = storedRoute.slice();
+        companionsReached.add(receiver.id);
+        flash(receiver.id, "delivered", 1200);
+        updateBadges();
+        setStatus(
+          "User A received the delivery report and stored a repeater path for the next DM.",
+          "Path learned"
+        );
+      };
+
+      const acceptChannel = (receiver) => {
+        if (receiver.id === "source") return;
+        companionsReached.add(receiver.id);
+        flash(receiver.id, "delivered", 950);
+        updateBadges();
+      };
+
+      const acceptDirect = (receiver, packet) => {
+        if (
+          receiver.id !== packet.targetId ||
+          packet.routeIndex < packet.route.length ||
+          delivered
+        ) return;
+        delivered = true;
+        companionsReached.add(receiver.id);
+        flash(receiver.id, "delivered", 1200);
+        updateBadges();
+        setStatus("User B received the DM through only the repeaters in the stored path.", "Delivered");
+      };
+
+      const receiveFlood = (receiver, wave) => {
+        const packet = wave.packet;
+        if (hasSeen(receiver.id, packet.id)) return;
+        markSeen(receiver.id, packet.id);
+        rememberLink(wave.originId, receiver.id, packet.kind === "ack" ? "ack" : "flood", packet.hop);
+        flash(receiver.id, "rx", 650);
+
+        if (receiver.kind === "companion") {
+          if (packet.kind === "first-direct" || packet.kind === "fallback-direct") {
+            acceptFirstDirect(receiver, packet);
+          } else if (packet.kind === "ack") {
+            acceptAck(receiver, packet);
+          } else if (packet.kind === "channel") {
+            acceptChannel(receiver);
+          }
+          return;
+        }
+
+        if (packet.hop >= Number(hopsInput.value)) return;
+        const forwarded = {
+          ...packet,
+          trail: packet.trail.concat(receiver.id),
+          hop: packet.hop + 1
+        };
+        schedule(() => sendWave(receiver.id, forwarded), 160 + Math.random() * 240);
+      };
+
+      const receiveDirect = (receiver, wave) => {
+        const packet = wave.packet;
+        if (receiver.kind === "companion") {
+          if (receiver.id === packet.targetId && packet.routeIndex >= packet.route.length) {
+            rememberLink(wave.originId, receiver.id, "direct", packet.routeIndex);
+            acceptDirect(receiver, packet);
+          } else {
+            flash(receiver.id, "ignored", 420);
+          }
+          return;
+        }
+
+        if (receiver.id !== packet.route[packet.routeIndex]) {
+          flash(receiver.id, "ignored", 420);
+          return;
+        }
+        if (hasSeen(receiver.id, packet.id)) return;
+
+        markSeen(receiver.id, packet.id);
+        rememberLink(wave.originId, receiver.id, "direct", packet.routeIndex);
+        flash(receiver.id, "rx", 650);
+        const forwarded = { ...packet, routeIndex: packet.routeIndex + 1 };
+        schedule(() => sendWave(receiver.id, forwarded), 100 + Math.random() * 150);
+      };
+
+      const receiveWave = (receiver, wave) => {
+        if (receiver.offline || receiver.id === wave.originId) return;
+        if (wave.packet.routeType === "flood") receiveFlood(receiver, wave);
+        else receiveDirect(receiver, wave);
+      };
+
+      const beginFlood = (kind) => {
+        const targetId = kind === "channel" ? null : "target";
+        const packet = makeFloodPacket(kind, targetId);
+        markSeen("source", packet.id);
+        sendWave("source", packet);
+      };
+
+      const beginDirect = () => {
+        const packet = makeDirectPacket(storedRoute, "target");
+        markSeen("source", packet.id);
+        sendWave("source", packet);
+      };
+
+      const startScenario = () => {
+        clearRun();
+        hideNextStep();
+        const scenario = scenarioInput.value;
+        routeOverlay = scenario === "known-direct" || scenario === "broken-route"
+          ? storedRoute.slice()
+          : [];
+        running = true;
+        runNumber += 1;
+        lastActivity = performance.now();
+        quietHandled = false;
+        runButton.textContent = "Run again";
+
+        if (scenario === "first-direct") {
+          phase = "first-flood";
+          setStatus("User A has no stored path, so the first DM begins as a flood.", "Flood");
+          beginFlood("first-direct");
+        } else if (scenario === "known-direct") {
+          phase = "known-direct";
+          setStatus("The packet names the stored repeater path. Other repeaters will ignore it.", "Direct");
+          beginDirect();
+        } else if (scenario === "channel") {
+          phase = "channel";
+          routeOverlay = [];
+          setStatus("A channel has no single destination, so the message floods through repeaters.", "Flood");
+          beginFlood("channel");
+        } else {
+          phase = "broken-direct";
+          directAttempt = 1;
+          const broken = nodeById(brokenNodeId);
+          if (broken) broken.offline = true;
+          setStatus("Direct attempt 1 follows the old path, but one repeater is offline.", "Direct retry");
+          beginDirect();
+        }
+      };
+
+      const finishRun = (text, mode) => {
+        running = false;
+        phase = "complete";
+        setStatus(text, mode);
+      };
+
+      const handleQuiet = () => {
+        if (!running || quietHandled) return;
+        quietHandled = true;
+
+        if (phase === "first-flood") {
+          if (routeLearned) {
+            finishRun("Route learned. The first DM and its delivery report are complete.", "Complete");
+            showNextStep(
+              "Next step: choose “Later direct message” above and run it to compare the number of transmissions and shared airtime."
+            );
+          } else {
+            finishRun("The flood ended without a delivery report and usable path. Try a higher flood limit or a new map.", "No route");
+          }
+        } else if (phase === "known-direct") {
+          finishRun(
+            delivered
+              ? "Delivered along the stored path with no network-wide flood."
+              : "The directed packet did not reach User B.",
+            delivered ? "Complete" : "Failed"
+          );
+          if (delivered) {
+            showNextStep(
+              "Next step: choose “Channel message” above and run it to see why a channel still floods."
+            );
+          }
+        } else if (phase === "channel") {
+          finishRun("The live channel flood is complete; companions outside its reach miss this message.", "Complete");
+          showNextStep(
+            "Next step: choose “Broken direct path” above and run it to watch retries and flood recovery."
+          );
+        } else if (phase === "broken-direct") {
+          if (directAttempt < 3) {
+            directAttempt += 1;
+            setStatus("No delivery report. Direct retry " + directAttempt + " uses the same stale path.", "Direct retry");
+            schedule(beginDirect, 520);
+          } else {
+            phase = "broken-flood";
+            routeOverlay = [];
+            setStatus("Directed retries failed. The client clears the stale path and falls back to flood.", "Fallback flood");
+            schedule(() => beginFlood("fallback-direct"), 620);
+          }
+        } else if (phase === "broken-flood") {
+          if (routeLearned) {
+            finishRun("The fallback flood found an alternate route and replaced the stale path.", "Route updated");
+            showNextStep(
+              "Guided comparison complete. Generate a new map or change the settings to try another network."
+            );
+          } else {
+            finishRun("The fallback flood could not find an alternate route.", "Failed");
+          }
+        }
+      };
+
+      const drawMountain = (mountain, colors) => {
+        const points = mountainPoints(mountain);
+        const baseline = Math.max(...points.map((point) => point.y));
+        ctx.beginPath();
+        points.forEach((point, index) => {
+          if (index === 0) ctx.moveTo(point.x, point.y);
+          else ctx.lineTo(point.x, point.y);
+        });
+        ctx.closePath();
+        ctx.globalAlpha = 0.9;
+        ctx.fillStyle = colors.mountain;
+        ctx.fill();
+        ctx.globalAlpha = 1;
+        ctx.strokeStyle = colors.mountain;
+        ctx.lineWidth = 1.25;
+        ctx.stroke();
+
+        for (const level of [0.3, 0.56, 0.78]) {
+          ctx.beginPath();
+          points.slice(1, -1).forEach((point, index) => {
+            const y = point.y + (baseline - point.y) * level;
+            if (index === 0) ctx.moveTo(point.x, y);
+            else ctx.lineTo(point.x, y);
+          });
+          ctx.globalAlpha = 0.45;
+          ctx.strokeStyle = colors.foreground;
+          ctx.lineWidth = 1;
+          ctx.stroke();
+          ctx.globalAlpha = 1;
+        }
+      };
+
+      const drawWood = (wood, colors) => {
+        const points = woodPoints(wood);
+        ctx.beginPath();
+        points.forEach((point, index) => {
+          if (index === 0) ctx.moveTo(point.x, point.y);
+          else ctx.lineTo(point.x, point.y);
+        });
+        ctx.closePath();
+        ctx.globalAlpha = 0.68;
+        ctx.fillStyle = colors.woods;
+        ctx.fill();
+        ctx.globalAlpha = 0.96;
+        ctx.strokeStyle = colors.woods;
+        ctx.lineWidth = 1.2;
+        ctx.stroke();
+
+        const center = points.reduce((sum, point) => ({
+          x: sum.x + point.x / points.length,
+          y: sum.y + point.y / points.length
+        }), { x: 0, y: 0 });
+        ctx.globalAlpha = 0.44;
+        ctx.strokeStyle = colors.foreground;
+        ctx.lineWidth = 1;
+        points.filter((_, index) => index % 3 === 0).forEach((point) => {
+          ctx.beginPath();
+          ctx.moveTo(center.x, center.y);
+          ctx.lineTo(
+            center.x + (point.x - center.x) * 0.62,
+            center.y + (point.y - center.y) * 0.62
+          );
+          ctx.stroke();
+        });
+        ctx.globalAlpha = 1;
+      };
+
+      const routeIds = () => {
+        if (!routeOverlay.length) return [];
+        return ["source"].concat(routeOverlay, ["target"]);
+      };
+
+      const drawRoute = (colors) => {
+        const ids = routeIds();
+        if (ids.length < 2) return;
+        ctx.beginPath();
+        ids.forEach((id, index) => {
+          const node = nodeById(id);
+          if (!node) return;
+          const p = position(node);
+          if (index === 0) ctx.moveTo(p.x, p.y);
+          else ctx.lineTo(p.x, p.y);
+        });
+        ctx.strokeStyle = colors.series5;
+        ctx.lineWidth = 4;
+        ctx.globalAlpha = 0.78;
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      };
+
+      const drawUsedLinks = (colors, now) => {
+        usedLinks.forEach((link) => {
+          const a = nodeById(link.a);
+          const b = nodeById(link.b);
+          if (!a || !b) return;
+          const pa = position(a);
+          const pb = position(b);
+          const progress = Math.min(
+            1,
+            Math.max(0, (now - link.createdAt) / scaledDuration(360))
+          );
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const end = {
+            x: pa.x + (pb.x - pa.x) * eased,
+            y: pa.y + (pb.y - pa.y) * eased
+          };
+          ctx.beginPath();
+          ctx.moveTo(pa.x, pa.y);
+          ctx.lineTo(end.x, end.y);
+          ctx.strokeStyle = link.kind === "ack"
+            ? colors.series4
+            : link.kind === "direct"
+              ? colors.series5
+              : colors.series1;
+          ctx.globalAlpha = 0.52;
+          ctx.lineWidth = link.kind === "direct" ? 3 : 1.5;
+          ctx.stroke();
+          ctx.globalAlpha = 1;
+
+          if (progress > 0.92) {
+            const midpoint = {
+              x: (pa.x + pb.x) / 2,
+              y: (pa.y + pb.y) / 2
+            };
+            const markerColor = link.kind === "ack"
+              ? colors.series4
+              : link.kind === "direct"
+                ? colors.series5
+                : colors.series1;
+            ctx.beginPath();
+            ctx.arc(midpoint.x, midpoint.y, 9, 0, Math.PI * 2);
+            ctx.fillStyle = colors.background;
+            ctx.globalAlpha = 0.92;
+            ctx.fill();
+            ctx.globalAlpha = 1;
+            ctx.strokeStyle = markerColor;
+            ctx.lineWidth = 1.5;
+            ctx.stroke();
+            ctx.fillStyle = colors.foreground;
+            ctx.font = "500 11px system-ui, sans-serif";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText(String(link.hop), midpoint.x, midpoint.y + 0.5);
+          }
+        });
+      };
+
+      const drawRange = (node, colors) => {
+        const p = position(node);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, radioRange(node), 0, Math.PI * 2);
+        ctx.setLineDash([4, 6]);
+        ctx.globalAlpha = 0.32;
+        ctx.strokeStyle = node.kind === "repeater" ? colors.series1 : colors.series2;
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+        ctx.setLineDash([]);
+      };
+
+      const drawWave = (wave, colors) => {
+        const origin = nodeById(wave.originId);
+        if (!origin) return;
+        const p = position(origin);
+        const color = wave.packet.kind === "ack"
+          ? colors.series4
+          : wave.packet.routeType === "direct"
+            ? colors.series5
+            : colors.series1;
+        const samples = Math.max(90, Math.round(wave.radius * 0.65));
+        const clearPath = new Path2D();
+        const woodedPath = new Path2D();
+        let clearVisible = false;
+        let woodedVisible = false;
+
+        for (let i = 0; i <= samples; i += 1) {
+          const angle = (i / samples) * Math.PI * 2;
+          const endpoint = {
+            x: p.x + Math.cos(angle) * wave.radius,
+            y: p.y + Math.sin(angle) * wave.radius
+          };
+          const blocked = isBlocked(p, endpoint);
+          if (blocked) {
+            clearVisible = false;
+            woodedVisible = false;
+            continue;
+          }
+
+          const attenuated = forestCrossings(p, endpoint) > 0;
+          if (attenuated) {
+            clearVisible = false;
+            if (!woodedVisible) {
+              woodedPath.moveTo(endpoint.x, endpoint.y);
+              woodedVisible = true;
+            } else {
+              woodedPath.lineTo(endpoint.x, endpoint.y);
+            }
+          } else {
+            woodedVisible = false;
+            if (!clearVisible) {
+              clearPath.moveTo(endpoint.x, endpoint.y);
+              clearVisible = true;
+            } else {
+              clearPath.lineTo(endpoint.x, endpoint.y);
+            }
+          }
+        }
+
+        ctx.strokeStyle = color;
+        ctx.lineWidth = 2.4;
+        ctx.globalAlpha = Math.max(0.24, 1 - wave.radius / radioRange(origin) * 0.68);
+        ctx.stroke(clearPath);
+        ctx.globalAlpha *= 0.34;
+        ctx.setLineDash([3, 4]);
+        ctx.stroke(woodedPath);
+        ctx.setLineDash([]);
+        ctx.globalAlpha = 1;
+      };
+
+      const drawNode = (node, colors, now) => {
+        const p = position(node);
+        const radius = node.kind === "companion" ? 12 : 13;
+        const activeFlash = flashes.get(node.id);
+        const state = activeFlash && activeFlash.until > now ? activeFlash.state : null;
+        if (activeFlash && activeFlash.until <= now) flashes.delete(node.id);
+        const isRouteNode = routeIds().includes(node.id);
+
+        ctx.save();
+        ctx.translate(p.x, p.y);
+
+        let fill = node.kind === "companion" ? colors.series2 : colors.series1;
+        let fillAlpha = 0.2;
+        let stroke = node.kind === "companion" ? colors.series2 : colors.series1;
+        let lineWidth = isRouteNode ? 4 : 2;
+        let alpha = 1;
+
+        if (state === "tx") {
+          fill = colors.primary;
+          fillAlpha = 0.72;
+          stroke = colors.primary;
+          lineWidth = 4;
+        } else if (state === "rx" || state === "delivered") {
+          stroke = colors.green;
+          lineWidth = 4;
+        } else if (state === "ignored") {
+          alpha = 0.4;
+        }
+
+        ctx.globalAlpha = alpha * fillAlpha;
+        ctx.beginPath();
+        if (node.kind === "companion") {
+          ctx.arc(0, 0, radius, 0, Math.PI * 2);
+        } else {
+          ctx.moveTo(0, -radius);
+          ctx.lineTo(radius, 0);
+          ctx.lineTo(0, radius);
+          ctx.lineTo(-radius, 0);
+          ctx.closePath();
+        }
+        ctx.fillStyle = fill;
+        ctx.fill();
+        ctx.globalAlpha = alpha;
+        ctx.strokeStyle = node.offline ? colors.destructive : stroke;
+        ctx.lineWidth = lineWidth;
+        if (node.offline) ctx.setLineDash([4, 3]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.strokeStyle = state === "tx" ? colors.primaryForeground : colors.foreground;
+        ctx.lineWidth = 1.5;
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        if (node.kind === "companion") {
+          ctx.strokeRect(-4, -7, 8, 14);
+          ctx.beginPath();
+          ctx.moveTo(-1.5, 4);
+          ctx.lineTo(1.5, 4);
+          ctx.stroke();
+        } else {
+          ctx.beginPath();
+          ctx.moveTo(0, 7);
+          ctx.lineTo(0, -5);
+          ctx.moveTo(-5, 7);
+          ctx.lineTo(0, -5);
+          ctx.lineTo(5, 7);
+          ctx.moveTo(-6, -3);
+          ctx.quadraticCurveTo(0, -9, 6, -3);
+          ctx.stroke();
+        }
+
+        if (node.offline) {
+          ctx.setLineDash([]);
+          ctx.strokeStyle = colors.destructive;
+          ctx.lineWidth = 3.5;
+          ctx.beginPath();
+          ctx.moveTo(-10, -10);
+          ctx.lineTo(10, 10);
+          ctx.moveTo(10, -10);
+          ctx.lineTo(-10, 10);
+          ctx.stroke();
+        }
+        ctx.restore();
+
+        ctx.fillStyle = colors.foreground;
+        ctx.font = "500 12px system-ui, sans-serif";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "bottom";
+        const labelY = node.ny < 0.2 ? p.y + 33 : p.y - 18;
+        ctx.fillText(node.name, p.x, labelY);
+
+        if (node.id === "source" || node.id === "target") {
+          ctx.fillStyle = colors.mutedForeground;
+          ctx.font = "400 11px system-ui, sans-serif";
+          ctx.textBaseline = "top";
+          ctx.fillText(node.id === "source" ? "Sender" : "Target", p.x, labelY + 3);
+        }
+      };
+
+      const render = (now) => {
+        const colors = theme();
+        ctx.clearRect(0, 0, width, height);
+
+        if (showRangesInput.checked) nodes.forEach((node) => drawRange(node, colors));
+        mountains.forEach((mountain) => drawMountain(mountain, colors));
+        woods.forEach((wood) => drawWood(wood, colors));
+        drawRoute(colors);
+        drawUsedLinks(colors, now);
+        waves.forEach((wave) => drawWave(wave, colors));
+        nodes.forEach((node) => drawNode(node, colors, now));
+      };
+
+      const updateWaves = (now, delta) => {
+        for (let index = waves.length - 1; index >= 0; index -= 1) {
+          const wave = waves[index];
+          const origin = nodeById(wave.originId);
+          if (!origin) {
+            waves.splice(index, 1);
+            continue;
+          }
+
+          wave.radius += wave.speed * delta * simulationSpeed();
+          nodes.forEach((receiver) => {
+            if (wave.triggered.has(receiver.id) || receiver.id === origin.id) return;
+            const receiverDistance = distance(position(origin), position(receiver));
+            if (receiverDistance > wave.radius) return;
+            wave.triggered.add(receiver.id);
+            if (canHear(origin, receiver)) receiveWave(receiver, wave);
+          });
+
+          if (wave.radius > radioRange(origin)) waves.splice(index, 1);
+        }
+
+        if (waves.length || pendingTimers) lastActivity = now;
+        if (
+          running &&
+          waves.length === 0 &&
+          pendingTimers === 0 &&
+          now - lastActivity > scaledDuration(260)
+        ) {
+          handleQuiet();
+        }
+      };
+
+      const animate = (now) => {
+        const delta = Math.min(40, Math.max(0, now - lastFrame));
+        lastFrame = now;
+        if (running) updateWaves(now, delta);
+        render(now);
+        requestAnimationFrame(animate);
+      };
+
+      const resizeCanvas = () => {
+        const rect = stage.getBoundingClientRect();
+        width = Math.max(320, Math.round(rect.width || 736));
+        height = width < 520 ? 500 : Math.round(Math.min(520, Math.max(390, width * 0.57)));
+        pixelRatio = Math.min(2, window.devicePixelRatio || 1);
+        canvas.style.height = height + "px";
+        canvas.width = Math.round(width * pixelRatio);
+        canvas.height = Math.round(height * pixelRatio);
+        ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+      };
+
+      const updateControlLabels = () => {
+        repeatersValue.textContent = repeatersInput.value;
+        mountainsValue.textContent = mountainsInput.value;
+        woodsValue.textContent = woodsInput.value;
+        hopsValue.textContent = hopsInput.value + " hops";
+        speedValue.textContent = String(Number(speedInput.value)) + "×";
+      };
+
+      repeatersInput.addEventListener("input", updateControlLabels);
+      mountainsInput.addEventListener("input", updateControlLabels);
+      woodsInput.addEventListener("input", updateControlLabels);
+      hopsInput.addEventListener("input", updateControlLabels);
+      speedInput.addEventListener("input", updateControlLabels);
+      showRangesInput.addEventListener("change", () => render(performance.now()));
+
+      scenarioInput.addEventListener("change", () => {
+        clearRun();
+        hideNextStep();
+        routeOverlay = scenarioInput.value === "known-direct" || scenarioInput.value === "broken-route"
+          ? storedRoute.slice()
+          : [];
+        setStatus(
+          scenarioInput.value === "known-direct"
+            ? "Ready to send through the stored path."
+            : scenarioInput.value === "broken-route"
+              ? "Ready to demonstrate direct retries and flood recovery."
+              : "Ready to flood the mesh.",
+          scenarioInput.value === "known-direct" ? "Direct" : "Flood"
+        );
+      });
+
+      runButton.addEventListener("click", startScenario);
+      newMapButton.addEventListener("click", () => {
+        scenarioInput.value = "first-direct";
+        generateMap(true);
+      });
+
+      const resizeObserver = new ResizeObserver(() => {
+        const observedWidth = Math.max(320, Math.round(stage.getBoundingClientRect().width || 736));
+        if (Math.abs(observedWidth - width) < 2) return;
+        if (resizeTimer) window.clearTimeout(resizeTimer);
+        resizeTimer = window.setTimeout(() => {
+          resizeCanvas();
+          render(performance.now());
+        }, 100);
+      });
+      resizeObserver.observe(stage);
+
+      updateControlLabels();
+      resizeCanvas();
+      generateMap(true);
+      requestAnimationFrame(animate);
+    })();
+  </script>
+</div>
+
+<script>
+(() => {
+  "use strict";
+
+  const reportHeight = () => {
+    window.parent.postMessage(
+      {
+        type: "hcm-meshcore-simulator-height",
+        height: Math.ceil(document.body.getBoundingClientRect().height)
+      },
+      window.location.origin
+    );
+  };
+
+  window.addEventListener("load", reportHeight);
+  window.addEventListener("resize", reportHeight);
+
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(reportHeight).observe(document.body);
+  }
+})();
+</script>
+</body>
+</html>

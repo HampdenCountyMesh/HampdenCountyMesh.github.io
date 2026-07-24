@@ -69,7 +69,10 @@ Security-sensitive information and reporting should follow [`../SECURITY.md`](..
 
 - Website: https://hampdencountymesh.org/
 - Guides: https://hampdencountymesh.org/guides/
+- Interactive MeshCore simulator: https://hampdencountymesh.org/simulator/
 - Live map: https://map.hampdencountymesh.org/
+- Network tools guide: https://hampdencountymesh.org/network-tools/
+- MeshCore health check: https://healthcheck.hampdencountymesh.org/app
 - Activity analyzer: https://analyzer.hampdencountymesh.org/
 - Updates: https://hampdencountymesh.org/updates/
 - Discord join route: https://hampdencountymesh.org/join/github-docs/

@@ -15,6 +15,16 @@
     <lastmod>{{ build_date }}</lastmod>
   </url>
 
+  <url>
+    <loc>{{ "/simulator/" | absolute_url }}</loc>
+    <lastmod>{{ build_date }}</lastmod>
+  </url>
+
+  <url>
+    <loc>{{ "/network-tools/" | absolute_url }}</loc>
+    <lastmod>{{ build_date }}</lastmod>
+  </url>
+
   {% assign sorted_guides = site.data.guides | sort: "order" %}
   {% for guide in sorted_guides %}
     {% if guide.url %}

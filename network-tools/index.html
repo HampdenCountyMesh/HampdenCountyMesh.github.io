@@ -1,0 +1,167 @@
+---
+layout: default
+title: Network Tools
+description: A plain-language guide to the Hampden County Mesh live map, MeshCore health check, and advanced activity analyzer.
+nav: tools
+body_class: network-tools-page
+---
+
+<section class="network-tools-hero">
+  <div class="container network-tools-hero-grid">
+    <div>
+      <p class="section-heading">HCM Network Tools</p>
+
+      <h1>See what the local mesh is hearing.</h1>
+
+      <p class="network-tools-lede">
+        Start with the live map. Use Health Check when you want to know whether
+        participating observers heard a test message. Open the Analyzer only
+        when you want packet-level detail.
+      </p>
+    </div>
+
+    <aside class="network-tools-new" aria-labelledby="network-tools-new-title">
+      <p class="network-tools-label" id="network-tools-new-title">New to MeshCore?</p>
+
+      <p>
+        You do not need Health Check or the Analyzer to begin. Set up one
+        companion, try a reasonable location, and use the live map for a simple
+        view of observed activity.
+      </p>
+
+      <a href="{{ '/guides/getting-started.html' | relative_url }}">
+        Start with the beginner guide →
+      </a>
+    </aside>
+  </div>
+</section>
+
+<section class="network-tools-section">
+  <div class="container network-tool-list">
+    <article class="network-tool" id="map">
+      <div class="network-tool-heading">
+        <p class="network-tools-label">Best place to start</p>
+        <h2>Live Map</h2>
+      </div>
+
+      <div class="network-tool-copy">
+        <p>
+          Explore recently observed nodes, paths, and regional MeshCore
+          activity. Pan and zoom around the map, then select a node or path for
+          the details available about it.
+        </p>
+
+        <p>
+          The map shows activity heard through participating systems. It is not
+          a complete inventory of every node or a promise that your radio can
+          reach each marker.
+        </p>
+
+        <a
+          class="btn secondary"
+          href="https://map.hampdencountymesh.org/">
+          Open Live Map
+        </a>
+      </div>
+    </article>
+
+    <article class="network-tool" id="health-check">
+      <div class="network-tool-heading">
+        <p class="network-tools-label">Troubleshooting</p>
+        <h2>Health Check</h2>
+      </div>
+
+      <div class="network-tool-copy">
+        <p>
+          Health Check gives you a one-message test of whether participating
+          observers can hear your node.
+        </p>
+
+        <ol>
+          <li>Open Health Check and generate a test code.</li>
+          <li>Send that exact code on the MeshCore <code>#health-check</code> channel.</li>
+          <li>Leave the page open while it reports which observers received it.</li>
+        </ol>
+
+        <p class="network-tool-note">
+          A result confirms that an observer heard that message. It does not by
+          itself prove a reliable two-way path to every node on the mesh.
+        </p>
+
+        <a
+          class="btn secondary"
+          href="https://healthcheck.hampdencountymesh.org/app">
+          Open Health Check
+        </a>
+      </div>
+    </article>
+
+    <article class="network-tool network-tool-advanced" id="analyzer">
+      <div class="network-tool-heading">
+        <p class="network-tools-label">Advanced and optional</p>
+        <h2>Activity Analyzer</h2>
+      </div>
+
+      <div class="network-tool-copy">
+        <p>
+          Use the Analyzer when the map does not provide enough detail. Search
+          for a node by name or public key, then narrow the view according to
+          what you are investigating.
+        </p>
+
+        <dl class="network-tool-views">
+          <div>
+            <dt>Live</dt>
+            <dd>Watch current activity received by the service.</dd>
+          </div>
+
+          <div>
+            <dt>Packets</dt>
+            <dd>Inspect individual packets and available route details.</dd>
+          </div>
+
+          <div>
+            <dt>Nodes</dt>
+            <dd>Review known node information gathered from observed traffic.</dd>
+          </div>
+
+          <div>
+            <dt>Observers</dt>
+            <dd>See which participating receiving systems reported activity.</dd>
+          </div>
+        </dl>
+
+        <p class="network-tool-note">
+          The Analyzer is useful for troubleshooting and network study, but it
+          is not required for ordinary MeshCore messaging.
+        </p>
+
+        <a
+          class="btn secondary"
+          href="https://analyzer.hampdencountymesh.org/">
+          Open Activity Analyzer
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="network-tools-section network-tools-learn">
+  <div class="container">
+    <p class="section-heading">Learn Before You Diagnose</p>
+
+    <h2>Want to see why the tools report different things?</h2>
+
+    <p>
+      The simulator shows the difference between a flood and a learned direct
+      path. MeshCore Basics explains node roles, adverts, channels, maps, and
+      observed activity in plain language.
+    </p>
+
+    <div class="network-tools-related">
+      <a href="{{ '/simulator/' | relative_url }}">Open the MeshCore Simulator</a>
+      <a href="{{ '/guides/meshcore-basics.html' | relative_url }}">Read MeshCore Basics</a>
+      <a href="{{ '/building-better-mesh-coverage.html' | relative_url }}">Learn About Coverage</a>
+    </div>
+  </div>
+</section>

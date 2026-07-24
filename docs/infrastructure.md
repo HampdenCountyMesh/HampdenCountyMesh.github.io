@@ -32,7 +32,15 @@ https://analyzer.hampdencountymesh.org/
 
 The analyzer is the public CoreScope interface for more detailed MeshCore packet, node, path, and observer information.
 
-The map and analyzer are MeshCore tools. They should not be described as Meshtastic maps.
+### Health Check
+
+https://healthcheck.hampdencountymesh.org/app
+
+Health Check gives a user a test code to send on the MeshCore `#health-check` channel, then reports which participating observers received that message.
+
+A result confirms observer reception of that message. It is not a complete coverage test or a guarantee of a reliable two-way route.
+
+The map, analyzer, and health check are MeshCore tools. They should not be described as Meshtastic tools.
 
 ## MeshCore-Hub
 
@@ -51,7 +59,7 @@ Current roles:
 - CoreScope
 - Observer-data ingestion
 - Packet and activity storage
-- Public map and analyzer support
+- Public map, analyzer, and health-check support
 - Local logging
 - Maintenance scripts
 
@@ -106,6 +114,27 @@ The service should:
 - Remain accessible publicly only through the intended HTTPS services
 - Avoid exposing administrative controls, credentials, private configuration, decrypted messages, or sensitive logs
 
+## MeshCore Health Check
+
+The health-check service listens for matching test codes and reports which participating observers received them.
+
+Active Docker service:
+
+`mesh-health-check`
+
+Local host port:
+
+`3090`
+
+Public visitors should use the Health Check HTTPS address rather than the local port.
+
+The service should:
+
+- Explain the exact channel and test-code steps on its public page
+- Expire or discard test codes according to its configured behavior
+- Avoid exposing credentials, private messages, internal addresses, or sensitive logs
+- Distinguish one-way observer reception from guaranteed two-way communication
+
 ## Observer Systems
 
 Participating MeshCore observers supply activity to the project data pipeline.
@@ -159,12 +188,13 @@ This represents observed activity, not guaranteed end-to-end communication or co
 
 ## Maintenance Checks
 
-After infrastructure, observer, map, or analyzer changes, verify:
+After infrastructure, observer, map, analyzer, or health-check changes, verify:
 
-- The website, map, and analyzer load over HTTPS
+- The website, map, analyzer, and health check load over HTTPS
 - CoreScope is receiving current packet data
 - Geolocated activity appears when suitable packets are received
 - Packet, path, node, and observer views work
+- A generated health-check code can be reported by a participating observer
 - The map opens in an appropriate regional view
 - Mobile controls remain usable
 - Containers recover after a host reboot
@@ -176,7 +206,7 @@ A quiet map does not by itself indicate a failure. Check observer input, MQTT fl
 
 ## Service Failures
 
-The main website should remain usable when the map or analyzer is temporarily unavailable.
+The main website should remain usable when the map, analyzer, or health check is temporarily unavailable.
 
 Do not redirect a failed service to an unrelated site or present stale information as current activity. A clear unavailable or maintenance response is preferable.
 
@@ -221,6 +251,8 @@ Also review:
 Related public pages:
 
 - https://hampdencountymesh.org/
+- https://hampdencountymesh.org/simulator/
+- https://hampdencountymesh.org/network-tools/
 - https://hampdencountymesh.org/building-better-mesh-coverage.html
 - https://hampdencountymesh.org/updates/
 - https://hampdencountymesh.org/guides/meshcore-basics.html
