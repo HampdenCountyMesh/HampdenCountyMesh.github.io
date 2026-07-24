@@ -76,7 +76,9 @@ https://psf.meshmapper.net/
 HCM public activity tools:
 
 - https://map.hampdencountymesh.org/
+- https://healthcheck.hampdencountymesh.org/app
 - https://analyzer.hampdencountymesh.org/
+- https://hampdencountymesh.org/network-tools/
 
 ## Photos and Screenshots
 

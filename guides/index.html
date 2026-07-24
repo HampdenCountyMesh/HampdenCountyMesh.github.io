@@ -81,9 +81,17 @@ body_class: guides-landing
 
           <p>{{ guide.summary | escape }}</p>
 
-          <a href="{{ guide.url | relative_url }}">
-            {{ guide.link_text | escape }}
-          </a>
+          <div class="guides-system-links">
+            <a href="{{ guide.url | relative_url }}">
+              {{ guide.link_text | escape }}
+            </a>
+
+            {% if guide.secondary_url and guide.secondary_link_text %}
+              <a href="{{ guide.secondary_url | relative_url }}">
+                {{ guide.secondary_link_text | escape }}
+              </a>
+            {% endif %}
+          </div>
         </article>
       {% endfor %}
     </div>

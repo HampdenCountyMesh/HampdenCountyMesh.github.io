@@ -8,13 +8,18 @@ This repository contains the public website, guides, updates, tracked Discord ro
 
 - Website: https://hampdencountymesh.org/
 - Guides: https://hampdencountymesh.org/guides/
+- Interactive MeshCore simulator: https://hampdencountymesh.org/simulator/
 - Live MeshCore map: https://map.hampdencountymesh.org/
+- Network tools guide: https://hampdencountymesh.org/network-tools/
+- MeshCore health check: https://healthcheck.hampdencountymesh.org/app
 - Activity analyzer: https://analyzer.hampdencountymesh.org/
 - Updates: https://hampdencountymesh.org/updates/
 - Discord: https://hampdencountymesh.org/join/github-readme/
 - Western Massachusetts MeshMapper: https://psf.meshmapper.net/
 
-The live map and analyzer show MeshCore activity heard through participating systems. They provide a partial regional view, not a complete inventory of every node or usable radio path.
+The live map, health check, and analyzer use MeshCore activity heard through participating systems. They provide a partial regional view, not a complete inventory of every node or usable radio path.
+
+The simulator is an educational model. It is not a firmware emulator or an RF coverage prediction for a real location.
 
 MeshMapper is an independent project used for MeshCore field testing and is not operated by Hampden County Mesh.
 
@@ -26,6 +31,7 @@ Hampden County Mesh helps people around Hampden County and nearby Western Massac
 - Get devices working
 - Use practical regional settings
 - Understand antennas, placement, and terrain
+- See how flooding and directed paths differ
 - Test and improve local radio paths
 - View observed MeshCore activity
 - Coordinate through the website and Discord
@@ -56,6 +62,8 @@ https://hampdencountymesh.org/guides/
 - `assets/` — Images, icons, scripts, and other site assets
 - `guides/` — Public guide pages
 - `join/` — Tracked Discord redirect routes
+- `network-tools/` — Plain-language access to the map, health check, and analyzer
+- `simulator/` — Interactive MeshCore simulator page
 - `updates/` — Updates landing page
 - `docs/` — Maintainer and contributor documentation
 

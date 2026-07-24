@@ -96,28 +96,32 @@ nav: home
       <h2>Explore the local mesh.</h2>
 
       <p>
-        HCM provides two public views of MeshCore activity received through
-        participating systems. The live map shows recently observed nodes and
-        packet paths, while the analyzer offers a closer look at received
-        traffic.
+        Start with the simulator to see how MeshCore messages can move between
+        companions and repeaters. Then open the live map to explore activity
+        heard through participating systems around the region.
       </p>
 
       <p>
-        These tools show observed activity, not a complete inventory of every
-        node operating in the region.
+        The simulator is an educational model. The map shows observed activity,
+        not a complete inventory of every node operating in the region.
       </p>
     </div>
 
     <div class="home-tool-list">
+      <a href="{{ '/simulator/' | relative_url }}">
+        <span>Interactive MeshCore Simulator</span>
+        <small>See flooding, learned paths, repeaters, and terrain in motion</small>
+      </a>
+
       <a href="https://map.hampdencountymesh.org/">
         <span>Live Activity Map</span>
         <small>Observed nodes, paths, history, and regional activity</small>
       </a>
 
-      <a href="https://analyzer.hampdencountymesh.org/">
-        <span>Activity Analyzer</span>
-        <small>Explore packets received through participating observers</small>
-      </a>
+      <p class="home-tool-note">
+        Troubleshooting or looking for packet-level detail?
+        <a href="{{ '/network-tools/' | relative_url }}">Open Network Tools →</a>
+      </p>
     </div>
   </div>
 </section>

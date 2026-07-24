@@ -6,9 +6,17 @@
   url: /guides/
   key: guides
 
+- title: Simulator
+  url: /simulator/
+  key: simulator
+
 - title: Map
   url: https://map.hampdencountymesh.org/
   key: map
+
+- title: Network Tools
+  url: /network-tools/
+  key: tools
 
 - title: Updates
   url: /updates/
