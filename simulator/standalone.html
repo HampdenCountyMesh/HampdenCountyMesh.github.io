@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>MeshCore Radio Simulator</title>
+  <style>
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+      background: #101820;
+    }
+
+    #meshcore-simulator-frame {
+      display: block;
+      width: 100%;
+      min-height: 100vh;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <iframe
+    id="meshcore-simulator-frame"
+    src="/assets/simulator/meshcore-radio-simulator-runtime.html?v=20260724d"
+    title="Interactive MeshCore radio and routing simulator"
+    loading="eager">
+  </iframe>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const frame = document.getElementById("meshcore-simulator-frame");
+      if (!frame) return;
+
+      const patchSimulatorCopy = () => {
+        const doc = frame.contentDocument;
+        if (!doc) return;
+
+        const guide = doc.querySelector(".mcs-guide");
+        if (!guide || doc.documentElement.dataset.hcmNewcomerCopy === "true") return;
+        doc.documentElement.dataset.hcmNewcomerCopy = "true";
+
+        guide.innerHTML =
+          "<strong>What you’re watching:</strong> User A is sending a short text message to User B. " +
+          "If they cannot reach each other directly, repeaters relay it across the network. " +
+          "A <strong>flood</strong> means repeaters rebroadcast a new message so it can spread toward its destination. " +
+          "<br><strong>Try it:</strong> Leave Message on “First direct message,” choose Run message, then follow the bold Next step prompt.";
+
+        const hopsLabel = doc.querySelector('label[for="mcs-hops"]');
+        if (hopsLabel) {
+          const labelText = Array.from(hopsLabel.childNodes).find(
+            (node) => node.nodeType === doc.defaultView.Node.TEXT_NODE && node.textContent.trim()
+          );
+          if (labelText) labelText.textContent = "Maximum relay hops ";
+        }
+
+        const legendItems = doc.querySelectorAll(".mcs-legend-item");
+        if (legendItems[0]?.lastChild) {
+          legendItems[0].lastChild.textContent = " Companion (user radio)";
+        }
+        if (legendItems[1]?.lastChild) {
+          legendItems[1].lastChild.textContent = " Repeater (relay)";
+        }
+
+        const reached = doc.getElementById("mcs-reached");
+        if (reached) {
+          const renameReached = () => {
+            const updated = reached.textContent.replace(
+              "Companions reached:",
+              "User radios reached:"
+            );
+            if (updated !== reached.textContent) reached.textContent = updated;
+          };
+          renameReached();
+          new doc.defaultView.MutationObserver(renameReached).observe(reached, {
+            childList: true,
+            characterData: true,
+            subtree: true
+          });
+        }
+      };
+
+      frame.addEventListener("load", () => {
+        [0, 100, 300, 700, 1500].forEach((delay) => {
+          window.setTimeout(patchSimulatorCopy, delay);
+        });
+      });
+
+      window.addEventListener("message", (event) => {
+        if (event.origin !== window.location.origin) return;
+        if (event.source !== frame.contentWindow) return;
+        if (event.data?.type !== "hcm-meshcore-simulator-height") return;
+
+        const requestedHeight = Number(event.data.height);
+        if (!Number.isFinite(requestedHeight)) return;
+
+        frame.style.height = Math.max(window.innerHeight, requestedHeight) + "px";
+      });
+    })();
+  </script>
+</body>
+</html>
