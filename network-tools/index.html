@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Network Tools
-description: A plain-language guide to the Hampden County Mesh live map, MeshCore health check, and advanced activity analyzer.
+description: A plain-language guide to the Hampden County Mesh live map, MeshCore health check, activity analyzer, and observer contribution endpoint.
 nav: tools
 body_class: network-tools-page
 ---
@@ -141,6 +141,70 @@ body_class: network-tools-page
           href="https://analyzer.hampdencountymesh.org/">
           Open Activity Analyzer
         </a>
+      </div>
+    </article>
+
+    <article class="network-tool" id="contribute-observer-data">
+      <div class="network-tool-heading">
+        <p class="network-tools-label">For observer operators</p>
+        <h2>Contribute Observer Data</h2>
+      </div>
+
+      <div class="network-tool-copy">
+        <p>
+          Running a MeshCore observer with <code>meshcoretomqtt</code>? Add
+          Hampden County Mesh as another broker to contribute the packet and
+          status data your observer hears. No account is required.
+        </p>
+
+        <dl class="network-tool-views">
+          <div>
+            <dt>Server</dt>
+            <dd><code>mqtt.hampdencountymesh.org</code></dd>
+          </div>
+
+          <div>
+            <dt>Port</dt>
+            <dd><code>41313</code></dd>
+          </div>
+
+          <div>
+            <dt>Connection</dt>
+            <dd>TCP, TLS off</dd>
+          </div>
+
+          <div>
+            <dt>Login</dt>
+            <dd>None</dd>
+          </div>
+        </dl>
+
+        <p>
+          Add this block to <code>/etc/mctomqtt/config.d/99-user.toml</code>:
+        </p>
+
+<pre><code>[[broker]]
+name = "hampden-county-mesh"
+enabled = true
+server = "mqtt.hampdencountymesh.org"
+port = 41313
+transport = "tcp"
+
+[broker.tls]
+enabled = false
+
+[broker.auth]
+method = "none"</code></pre>
+
+        <p>Then restart the service:</p>
+
+<pre><code>sudo systemctl restart mctomqtt</code></pre>
+
+        <p class="network-tool-note">
+          This endpoint is upload-only. Anonymous connections cannot read broker
+          traffic, and contributed data is not automatically forwarded to other
+          regional brokers or mapping services.
+        </p>
       </div>
     </article>
   </div>
